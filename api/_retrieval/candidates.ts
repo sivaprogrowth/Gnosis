@@ -6,8 +6,8 @@
  * intent-aligned type bonus), returns top 20 candidates with signal breakdown.
  */
 
-import { tokenize, overlap } from "./tokenize"
-import type { CandidatePage, CandidateSignals, PageIndex, PageRecord, ParsedQuery } from "./types"
+import { tokenize, overlap } from "./tokenize.js"
+import type { CandidatePage, CandidateSignals, PageIndex, PageRecord, ParsedQuery } from "./types.js"
 
 const MAX_CANDIDATES = 20
 const PREVIEW_CHARS = 240

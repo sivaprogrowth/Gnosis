@@ -9,8 +9,8 @@
 import matter from "gray-matter"
 import { readFileSync, readdirSync, statSync } from "node:fs"
 import { join } from "node:path"
-import { tokenize } from "./tokenize"
-import type { PageIndex, PageRecord, PageType, PageSubtype } from "./types"
+import { tokenize } from "./tokenize.js"
+import type { PageIndex, PageRecord, PageType, PageSubtype } from "./types.js"
 
 const VALID_TYPES: ReadonlySet<string> = new Set(["source", "entity", "concept", "query"])
 const VALID_SUBTYPES: ReadonlySet<string> = new Set(["fact", "take", "object"])

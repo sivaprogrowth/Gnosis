@@ -10,7 +10,7 @@
 
 import Anthropic from "@anthropic-ai/sdk"
 import type { MessageParam, TextBlockParam } from "@anthropic-ai/sdk/resources"
-import type { AssembledPage, PageIndex, ParsedQuery, SynthesisModel, TopKPage } from "./types"
+import type { AssembledPage, PageIndex, ParsedQuery, SynthesisModel, TopKPage } from "./types.js"
 
 const MODEL_OPUS = "claude-opus-4-7"
 const MODEL_SONNET = "claude-sonnet-4-6"

@@ -22,11 +22,11 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
-import { parseQuery } from "./_retrieval/parse"
-import { selectCandidates } from "./_retrieval/candidates"
-import { rerank } from "./_retrieval/rerank"
-import { assembleContext, synthesize } from "./_retrieval/synthesize"
-import { getPageIndex } from "./_retrieval/pageIndex"
+import { parseQuery } from "./_retrieval/parse.js"
+import { selectCandidates } from "./_retrieval/candidates.js"
+import { rerank } from "./_retrieval/rerank.js"
+import { assembleContext, synthesize } from "./_retrieval/synthesize.js"
+import { getPageIndex } from "./_retrieval/pageIndex.js"
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {

@@ -7,7 +7,7 @@
  */
 
 import OpenAI from "openai"
-import type { CandidatePage, ParsedQuery, TopKPage } from "./types"
+import type { CandidatePage, ParsedQuery, TopKPage } from "./types.js"
 
 const MODEL = "gpt-4o-mini"
 const TARGET_K = 6

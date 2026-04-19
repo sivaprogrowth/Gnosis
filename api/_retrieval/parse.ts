@@ -7,9 +7,9 @@
  */
 
 import OpenAI from "openai"
-import { EMOTION_PRIMARIES, AESTHETIC_AXES } from "./emotions"
-import { tokenize } from "./tokenize"
-import type { ParsedQuery, QueryIntent } from "./types"
+import { EMOTION_PRIMARIES, AESTHETIC_AXES } from "./emotions.js"
+import { tokenize } from "./tokenize.js"
+import type { ParsedQuery, QueryIntent } from "./types.js"
 
 const MODEL = "gpt-4o-mini"
 

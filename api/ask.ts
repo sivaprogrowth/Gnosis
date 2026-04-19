@@ -1,84 +1,32 @@
 /**
- * POST /api/ask — Gnosis wiki chat endpoint.
+ * POST /api/ask — Gnosis wiki retrieval endpoint.
  *
- * Reads all markdown in content/ at cold start, bundles it into a cached
- * system prompt, and streams Claude's response as Server-Sent Events.
+ * Orchestrates the 6-stage retrieval pipeline (see Gnosis-Plan.md §7 and
+ * Gnosis-Retrieval-Plan.md):
  *
- * Request body: { messages: [{ role: "user" | "assistant", content: string }, ...] }
- * Response:     text/event-stream with `data: {"text": "..."}\n\n`
- *               and a terminal `data: [DONE]\n\n`.
+ *   Stage 1 — parse query (OpenAI gpt-4o-mini, JSON schema)
+ *   Stage 2 — candidate retrieval (pure TS, lexical + tag + alias + emotion)
+ *   Stage 3 — re-rank (OpenAI gpt-4o-mini, JSON schema)
+ *   Stage 4 — assemble scoped context
+ *   Stage 5 — synthesize with citations (Anthropic; opus-4-7 / sonnet-4-6 by intent)
+ *
+ * Streaming contract (unchanged from widget era):
+ *   data: {"text":"..."}         — per-token synthesis chunks
+ *   data: {"meta":{...}}         — metadata frames ignored by widget, consumed
+ *                                  by /chat page. Emitted as each stage completes.
+ *   data: {"done":true,...}      — terminal status frame
+ *   data: [DONE]                 — terminal sentinel
+ *
+ * The widget's client only reads `text` and ignores everything else — so the
+ * contract remains backwards-compatible until R6 migrates to typed events.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
-import Anthropic from "@anthropic-ai/sdk"
-import { readFileSync, readdirSync, statSync } from "node:fs"
-import { join } from "node:path"
-
-const MODEL = "claude-sonnet-4-6"
-const MAX_TOKENS = 1024
-
-// ---- Wiki loading (cold-start, cached at module level) ----
-
-function readAllMarkdown(dir: string): Array<{ path: string; body: string }> {
-  const out: Array<{ path: string; body: string }> = []
-  const walk = (d: string, rel = "") => {
-    for (const name of readdirSync(d)) {
-      const full = join(d, name)
-      const r = rel ? `${rel}/${name}` : name
-      const s = statSync(full)
-      if (s.isDirectory()) walk(full, r)
-      else if (name.endsWith(".md")) {
-        out.push({ path: r, body: readFileSync(full, "utf-8") })
-      }
-    }
-  }
-  walk(dir)
-  return out.sort((a, b) => a.path.localeCompare(b.path))
-}
-
-function stripFrontmatter(md: string): string {
-  if (!md.startsWith("---\n")) return md
-  const end = md.indexOf("\n---\n", 4)
-  return end === -1 ? md : md.slice(end + 5)
-}
-
-let WIKI_BUNDLE: string | null = null
-
-function loadWiki(): string {
-  if (WIKI_BUNDLE) return WIKI_BUNDLE
-  const contentDir = join(process.cwd(), "content")
-  const files = readAllMarkdown(contentDir)
-  const parts = files.map(
-    (f) =>
-      `\n\n===== PAGE: ${f.path.replace(/\.md$/, "")} =====\n\n${stripFrontmatter(f.body).trim()}`,
-  )
-  WIKI_BUNDLE = parts.join("\n")
-  return WIKI_BUNDLE
-}
-
-// ---- System prompt ----
-
-const SYSTEM_INSTRUCTIONS = `You are the Gnosis wiki assistant.
-
-Your only knowledge is the wiki content provided below. Follow these rules strictly:
-
-1. **Answer using ONLY the wiki content below.** Do not use external knowledge.
-2. **Cite every claim** by referencing the page it came from. Use the format [[slug]] where slug is the page path without .md (e.g. [[entities/chatgpt]], [[concepts/earned-media-bias]]).
-3. **If the answer is not in the wiki, say:** "I don't see that covered in this wiki yet." Do not speculate.
-4. **Be concise.** Prefer 3–6 sentences unless asked for depth. Use bullets when listing >2 items.
-5. **Cross-reference.** When an answer touches multiple pages, cite each — the value is in the connections.
-6. **Preserve contradictions.** If the wiki flags a contradiction (e.g. between two sources), surface it rather than picking a side.
-
-Here is the full wiki content:
-
------ WIKI START -----`
-
-const SYSTEM_TAIL = `
------ WIKI END -----
-
-Answer the user's question using only the above content. Cite every claim with [[slug]] links.`
-
-// ---- Handler ----
+import { parseQuery } from "./_retrieval/parse"
+import { selectCandidates } from "./_retrieval/candidates"
+import { rerank } from "./_retrieval/rerank"
+import { assembleContext, synthesize } from "./_retrieval/synthesize"
+import { getPageIndex } from "./_retrieval/pageIndex"
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -86,8 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY
-  if (!apiKey) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     res.status(500).json({ error: "ANTHROPIC_API_KEY not set on the server" })
     return
   }
@@ -101,10 +48,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const wiki = loadWiki()
-  const client = new Anthropic({ apiKey })
+  const lastUser = [...messages].reverse().find((m) => m.role === "user")
+  if (!lastUser) {
+    res.status(400).json({ error: "no user message in conversation" })
+    return
+  }
 
-  // SSE response
+  // --- SSE response setup ---
   res.setHeader("Content-Type", "text/event-stream; charset=utf-8")
   res.setHeader("Cache-Control", "no-cache, no-transform")
   res.setHeader("X-Accel-Buffering", "no")
@@ -116,39 +66,99 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.flush?.()
   }
 
+  const t0 = Date.now()
   try {
-    const stream = await client.messages.stream({
-      model: MODEL,
-      max_tokens: MAX_TOKENS,
-      system: [
-        { type: "text", text: SYSTEM_INSTRUCTIONS },
-        {
-          type: "text",
-          text: wiki,
-          cache_control: { type: "ephemeral" },
+    const index = getPageIndex()
+
+    // Stage 1 — parse
+    const parsed = await parseQuery(lastUser.content)
+    send({
+      meta: {
+        stage: "parsed",
+        data: {
+          topic: parsed.topic,
+          intent: parsed.intent,
+          entities: parsed.entities,
+          emotion: parsed.emotion,
+          emotion_controlled: parsed.emotionControlled,
+          aesthetic: parsed.aesthetic,
+          time_scope: parsed.timeScope,
         },
-        { type: "text", text: SYSTEM_TAIL },
-      ],
+      },
+    })
+    console.log(
+      `[gnosis] parsed in ${Date.now() - t0}ms — intent=${parsed.intent} topic="${parsed.topic}"`,
+    )
+
+    // Stage 2 — candidates
+    const tCand = Date.now()
+    const candidates = selectCandidates(parsed, index)
+    send({
+      meta: {
+        stage: "candidates",
+        data: candidates.map((c) => ({
+          slug: c.slug,
+          type: c.type,
+          score: Number(c.score.toFixed(3)),
+          signals: c.signals,
+        })),
+      },
+    })
+    console.log(
+      `[gnosis] candidates in ${Date.now() - tCand}ms — ${candidates.length} of ${index.pages.length}`,
+    )
+
+    // Stage 3 — rerank
+    const tRank = Date.now()
+    const topK = await rerank(parsed, candidates)
+    send({
+      meta: {
+        stage: "top_k",
+        data: topK.map((t) => ({
+          slug: t.slug,
+          type: t.type,
+          title: t.title,
+          why_selected: t.whySelected,
+        })),
+      },
+    })
+    console.log(
+      `[gnosis] rerank in ${Date.now() - tRank}ms — K=${topK.length} [${topK
+        .map((t) => t.slug)
+        .join(", ")}]`,
+    )
+
+    // Stage 4 — assemble
+    const pages = assembleContext(topK, index)
+
+    // Stage 5 — synthesize (streaming)
+    const tSyn = Date.now()
+    const result = await synthesize({
       messages: messages.map((m) => ({
         role: m.role as "user" | "assistant",
         content: m.content,
       })),
+      parsed,
+      pages,
+      onChunk: (text) => send({ text }),
     })
+    console.log(
+      `[gnosis] synthesis in ${Date.now() - tSyn}ms — model=${result.model} (${result.modelId})`,
+    )
 
-    for await (const event of stream) {
-      if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-        send({ text: event.delta.text })
-      }
-    }
-
-    const final = await stream.finalMessage()
     send({
       done: true,
-      usage: final.usage,
-      stop_reason: final.stop_reason,
+      model: result.model,
+      model_id: result.modelId,
+      usage: result.usage,
+      stop_reason: result.stopReason,
+      timings_ms: {
+        total: Date.now() - t0,
+      },
     })
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : String(err)
+    console.error(`[gnosis] error: ${msg}`)
     send({ error: msg })
   } finally {
     res.write("data: [DONE]\n\n")

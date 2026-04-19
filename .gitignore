@@ -1,6 +1,10 @@
 .DS_Store
-.obsidian/workspace*
-.obsidian/cache
+
+# Obsidian vault config — per-machine. Each developer opens the vault
+# and Obsidian regenerates its config. The Dataview plugin (2.4MB of
+# vendor code) is fetched via the project setup, not tracked in git.
+.obsidian/
+
 *.swp
 *.swo
 .vscode/

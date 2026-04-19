@@ -100,3 +100,21 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 - Documented as a "Cadence" subsection under `CLAUDE.md` §4.3 (drain-the-article-inbox workflow). Soft default, not a hard deadline — skip a week without guilt if no clips accumulated; run twice in a day if a research burst warrants.
 - Surfaced inbox status on `Home.md` with a Dataview table (file.ctime + domain) showing every article currently tagged `inbox`. After the AINS Playbook ingest, the table returns zero rows — confirmation the state machine works.
 - No other schema or workflow changes.
+
+## [2026-04-19 23:55] lint | First lint pass (Task #22)
+
+- Ran `scripts/lint-wiki.py` against the canonical wiki (52 pages across 7 folders). First lint pass since scaffolding.
+- Report checked: orphans, stubs, undefined wiki-links, index drift, sources missing log entries, tag-overlap cross-ref candidates, compounding health, citation centrality.
+- **Real issues caught (3 — all fixed this pass):**
+  - 6 undefined wiki-links across 3 distinct missing targets: `farzapedia-pattern`, `goodmoney`, `from-retrieval-to-agency`. All three pages had been referenced but never written (hackathon-plan deliverable, compounding-rule exception, Chen-et-al. concept surfaced in a bullet point). Wrote all three.
+  - 1 index.md row (`[[farzapedia-pattern]]`) pointing at a missing page — resolved by writing the target.
+  - 2 index.md rows missing for `goodmoney` and `from-retrieval-to-agency` — resolved.
+- **Accepted without fixing:**
+  - 8 stub pages (<100 words) — all under `companies/` for peripheral orgs from the LinkedIn expansion. Intentional per the compounding-over-breadth rule in CLAUDE.md §8.
+  - 15 tag-overlap cross-ref candidates — most are noise (source ↔ engine pairs where both are in the same cluster without direct links). A few genuine misses worth picking up opportunistically, not a blocker.
+- **Informational findings:**
+  - 0 orphans — every page has ≥1 inbound link. The LinkedIn expansion cross-linked well.
+  - 12 pages cite 2+ sources — healthy compounding signal.
+  - Most-cited pages: `earned-media-bias` (23 inbound), `generative-engine-optimization` (21), `progrowth` (19), `siva-cotipalli` (18), `geo-how-to-dominate-ai-search` (18).
+- Lint script fix mid-pass: source-to-log matching was generating 4 false positives due to naive string containment — replaced with 3-consecutive-token matching. Now reports 0 sources missing log entries correctly.
+- Re-running `scripts/lint-wiki.py` at any time is a one-command health check. Intended trigger: per CLAUDE.md §4.5, after ~10 sources or on schema drift. At 6 sources today, this was a proactive run.

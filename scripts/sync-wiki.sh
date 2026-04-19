@@ -17,9 +17,13 @@ fi
 
 mkdir -p "$SITE_DST"
 
-echo "→ Clearing $SITE_DST/ (except index.md and .gitkeep)..."
+echo "→ Clearing $SITE_DST/ (preserving index.md, chat.md, .gitkeep)..."
+# Preserve: landing page (index.md), the /chat route page (chat.md),
+# and any .gitkeep files. Everything else in content/ is regenerated
+# from the canonical wiki on every sync.
 find "$SITE_DST" -mindepth 1 \
   ! -name 'index.md' \
+  ! -name 'chat.md' \
   ! -name '.gitkeep' \
   -delete 2>/dev/null || true
 

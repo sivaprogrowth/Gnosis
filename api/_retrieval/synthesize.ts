@@ -111,15 +111,21 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
       ? "(no pages retrieved — you must say the wiki doesn't cover this)"
       : input.pages.map(formatPageForPrompt).join("\n\n")
 
+  // Block order matters for prompt caching: we want the cacheable prefix to be
+  // contiguous and the last cached block to have cache_control. SCHEMA is
+  // constant; SCOPED_PAGES is identical on repeat queries that retrieve the
+  // same page set. PARSED_QUERY varies per query and sits AFTER the cache
+  // breakpoint so it doesn't invalidate the cached prefix.
   const systemBlocks: TextBlockParam[] = [
-    { type: "text", text: SCHEMA_INSTRUCTIONS, cache_control: { type: "ephemeral" } },
-    {
-      type: "text",
-      text: `----- PARSED QUERY -----\n${formatParsedForPrompt(input.parsed)}`,
-    },
+    { type: "text", text: SCHEMA_INSTRUCTIONS },
     {
       type: "text",
       text: `----- SCOPED PAGES (${input.pages.length}) -----\n\n${scopedBody}\n\n----- END SCOPED PAGES -----\n\nAnswer the user's question using only the pages above. Cite every claim with [[slug]] where slug matches a PAGE header.`,
+      cache_control: { type: "ephemeral" },
+    },
+    {
+      type: "text",
+      text: `----- PARSED QUERY -----\n${formatParsedForPrompt(input.parsed)}`,
     },
   ]
 

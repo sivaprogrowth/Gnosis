@@ -26,17 +26,35 @@ At the start of every session in this directory:
 ├── README.md       # user-facing intro
 ├── index.md        # content catalog (you maintain)
 ├── log.md          # chronological activity log (you append)
+├── Home.md         # OPTIONAL: Obsidian Dataview dashboard at vault root
+├── .obsidian/      # LOCAL ONLY (gitignored): per-machine vault config
 ├── raw/            # IMMUTABLE source documents — you only read
 │   ├── articles/   #   web articles (.md from Web Clipper or fetched)
 │   ├── pdfs/       #   papers, reports, books
 │   ├── notes/      #   user's journal entries / freeform notes
 │   └── assets/     #   images from articles
 └── wiki/           # LLM-owned markdown — you write
-    ├── sources/    #   one summary page per raw source
-    ├── entities/   #   concrete nouns: people, companies, books, products
-    ├── concepts/   #   abstract nouns: ideas, frameworks, theories
-    └── queries/    #   filed answers to user questions
+    ├── sources/      # one summary page per raw source
+    ├── entities/     # AI engines, tools, products (abstract reference nouns)
+    ├── concepts/     # ideas, frameworks, theories
+    ├── people/       # individuals in Siva's network (mapped in relation to him)
+    ├── companies/    # organizations, institutions, universities, scholarships
+    ├── projects/     # active initiatives (ProGrowth-owned + personal)
+    ├── inspiration/  # tweets, screenshots, design refs (Farzapedia pattern)
+    └── queries/      # filed answers to non-trivial questions
 ```
+
+**Type-to-folder routing** (for step 4.1.4 and 4.1.5 below):
+
+- A **person** → `wiki/people/<kebab-case-name>.md`
+- A **company / institution / university / scholarship** → `wiki/companies/<kebab-case-name>.md`
+- An **AI engine / tool / product** (ChatGPT, Perplexity, Semrush AIVI) → `wiki/entities/<slug>.md`
+- A **concept / framework / theory** → `wiki/concepts/<slug>.md`
+- A **source** (PDF, article, web tool snapshot) → `wiki/sources/<slug>.md`
+- An **active project** → `wiki/projects/<slug>.md`
+- A **visual or textual inspiration** (tweet, screenshot) → `wiki/inspiration/<slug>.md`
+
+When a single concrete noun could fit multiple folders, prefer the folder that best describes *why this entry exists in the wiki*. Example: Semrush the company goes in `companies/` but the AIVI product they ship goes in `entities/`.
 
 ## 4. Workflows
 
@@ -53,9 +71,10 @@ When the user says "ingest <URL>" or "ingest <path>":
    - Key claims / arguments as bullets.
    - Entities and concepts surfaced (as `[[wiki-links]]`).
    - A citation line pointing back to the raw path and original URL if any.
-5. **Update entities and concepts** — for each entity/concept mentioned:
-   - If a page exists in `wiki/entities/` or `wiki/concepts/`, *update* it: add the new claim, update `sources:` frontmatter, refresh `updated:` date, append to the `## Sources citing this page` section.
-   - If no page exists, create one. Lead with a one-paragraph summary, then the specific claims this source makes.
+5. **Update or create referenced pages** — for each entity, concept, person, company, or project mentioned:
+   - If a page exists in any `wiki/*/` folder, *update* it: add the new claim, update `sources:` frontmatter, refresh `updated:` date, append to the `## Sources citing this page` section.
+   - If no page exists, create one using the type-to-folder routing in §3. Lead with a one-paragraph summary, then the specific claims this source makes.
+   - **Compounding over breadth** — only create a dedicated page for a mentioned entity if the wiki already has, or plausibly soon will have, *another* page that would cite it. A one-line mention of "Infosys" on Siva's LinkedIn does not justify an `infosys.md` page if nothing else in the wiki relates to Infosys. Keep such mentions inline.
 6. **Flag contradictions** — if the new source contradicts a claim already in the wiki, add a `## Contradictions` section (or subsection) on the affected page noting both claims with source citations. Do not silently overwrite.
 7. **Cross-reference** — ensure every relevant page has `[[wiki-links]]` to sibling pages. Every new page ends with a `## Links` section.
 8. **Update `index.md`** — add rows for any new pages, update `updated` dates on touched rows.
@@ -92,11 +111,11 @@ Suggest specific fixes; ask before making them.
 
 ## 5. Page Conventions
 
-Every file in `wiki/` starts with YAML frontmatter:
+### 5.1 Frontmatter — required fields (every page)
 
 ```yaml
 ---
-type: source | entity | concept | query
+type: source | entity | concept | person | company | project | inspiration | query
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources:
@@ -106,23 +125,90 @@ tags: [optional-tag, another-tag]
 ---
 ```
 
-Every page ends with:
+The `sources:` list accepts either **raw paths** (`raw/pdfs/foo.pdf`) or **slug pointers** (`geo-how-to-dominate-ai-search`). Both work. Prefer raw paths when the source is a concrete file; slug pointers are acceptable when citing another wiki page's source record.
+
+### 5.2 Frontmatter — type-specific fields
+
+Fields beyond the required set are typed per folder. Only include ones that add value; don't fill them all in to look complete.
+
+- **person** — `role`, `company: "[[progrowth]]"`, `based-in`, `linkedin`, `email`, `relationship-to-siva`
+- **company** — `website`, `headquartered`, `founded-by: "[[person-slug]]"`
+- **source** — `authors`, `published`, `venue`, `url`
+- **project** — `status`, `url`, `repos: [github.com/...]`
+- **concept / entity** — `aliases: [alt-term-1, alt-term-2]` so search can find the page by synonyms
+
+**Wiki-links inside frontmatter** (`company: "[[progrowth]]"`) render clickably in Obsidian's Properties panel. They are strings to Quartz (non-breaking). Safe to use.
+
+### 5.3 Required body sections
+
+Every non-source page ends with:
 
 ```markdown
+## Sources citing this page
+
+- [[source-or-page-slug]] — what it adds to this page
+
 ## Links
 
 - [[related-page-1]] — why it's related
 - [[related-page-2]] — why it's related
 ```
 
-**Naming rules:**
-- Filenames: `kebab-case.md`.
-- Entities: use the common name (`daniel-kahneman.md`, not `kahneman-d.md`).
-- Concepts: use the phrase you'd search for (`fractional-marketing.md`, not `fm-concept.md`).
-- Source pages: match the raw filename slug where reasonable.
-- Query pages: phrase the question as a noun clause (`how-ai-changes-b2b-marketing.md`).
+The **Sources citing this page** section is a *backlink tracker* you maintain as new sources touch the page. It's the audit trail for where the page's claims come from. The **Links** section is outbound — related wiki pages regardless of whether they cited this one.
 
-**Wiki-links:** use `[[page-name]]` syntax (Obsidian-compatible). Paths are relative to `wiki/` root; Obsidian will resolve across subfolders.
+### 5.4 Query page structure
+
+Query pages (`wiki/queries/<slug>.md`) follow this shape:
+
+```markdown
+# <the question, phrased as a sentence>
+
+## The question
+One paragraph on why it's worth filing.
+
+## The findings (or "The two findings" / "The evidence")
+Present the source material with `[[page]]` citations.
+
+## The reconciliation / answer / synthesis
+The value-adding part — what the scattered claims mean together.
+
+## Practical implications (optional)
+Where the answer should change behavior — clients, product, ops.
+
+## Links
+Standard closing section.
+```
+
+Filename: phrase the question as a noun clause — `how-chen-and-mckinsey-disagree-on-big-brand-bias.md`, not `big-brand-bias-question.md`.
+
+### 5.5 Privacy convention — ProGrowth sections
+
+When a page contains tactical, client-specific, or otherwise non-public content, wrap it in an H2 section whose heading starts with `## ` and contains the word `ProGrowth`:
+
+```markdown
+## ProGrowth relevance
+Tactical notes that should not appear on the public site.
+
+## ProGrowth playbook for this client
+<private content>
+```
+
+The `scripts/sync-wiki.sh` pipeline (see §9) strips these H2 blocks wholesale when syncing to the public site. **Anything outside such a section is considered public.** If you're unsure whether a claim should be public, put it under a `## ProGrowth …` heading and the sync will keep it private.
+
+Do not use the word "ProGrowth" as plain body text and then expect it to be stripped — the heuristic is H2-heading-based, not word-based.
+
+### 5.6 Naming rules
+
+- Filenames: `kebab-case.md`.
+- People: full common name (`phani-sama.md`, `daniel-kahneman.md`).
+- Companies: common short name (`bits-pilani.md`, `redbus.md`). Well-known abbreviations (`lse.md`, `iim-kozhikode.md`) are fine when more recognizable than the full name.
+- Concepts: the phrase you'd search for (`earned-media-bias.md`, not `emb-concept.md`).
+- Sources: match the raw filename slug where reasonable.
+- Query pages: noun-clause question (`how-ai-changes-b2b-marketing.md`).
+
+### 5.7 Wiki-links
+
+Use `[[page-name]]` syntax (Obsidian-compatible). Paths are relative to `wiki/` root; Obsidian resolves across subfolders. Aliased form `[[page-slug|display text]]` is supported. If you use a wiki-link pointing to a page that does not yet exist, either (a) create the page, or (b) drop the link — do not leave broken wiki-links in place.
 
 ## 6. `log.md` Format
 
@@ -139,13 +225,17 @@ The `## [YYYY-MM-DD HH:MM]` prefix must be consistent so `grep "^## \[" log.md |
 
 ## 7. `index.md` Format
 
-Four sections, one table each. Row format:
+Four top-level sections: **Sources**, **Entities**, **Concepts**, **Queries**. Maintain them in that order.
+
+Row format inside any section:
 
 ```markdown
 | [[page-slug]] | One-line summary. | YYYY-MM-DD |
 ```
 
-Maintain these sections in this order: Sources, Entities, Concepts, Queries. Alphabetize within each section. Keep summaries tight (<80 chars).
+Alphabetize within each section. Keep summaries tight (<80 chars).
+
+**Sub-tabling is allowed inside Entities.** When the entity count grows past ~10, break the Entities section into H3 sub-tables by concrete noun kind — e.g., `### People`, `### Companies and institutions`, `### AI engines and search products`, `### Projects`, `### Inspiration`. This keeps navigation manageable while staying inside the four-top-section schema. Do not sub-table Sources, Concepts, or Queries — they stay flat.
 
 ## 8. Failure Modes to Avoid
 
@@ -155,3 +245,27 @@ Maintain these sections in this order: Sources, Entities, Concepts, Queries. Alp
 - **Do not skip the log** — every ingest, non-trivial query, and lint gets an entry.
 - **Do not touch `raw/`** — not even to rename or reorganize. If the user asks you to reorganize raw sources, confirm explicitly first.
 - **Do not invent sources** — every claim in the wiki must be traceable to a raw file via `sources:` frontmatter.
+- **Do not edit auto-generated widget blocks.** The public-site generator injects blocks delimited by `<!-- GNOSIS:WIDGET:TOP:START -->…<!-- GNOSIS:WIDGET:TOP:END -->`, `<!-- GNOSIS:WIDGET:BOTTOM:* -->`, and `<!-- GNOSIS:TABLECHART:* -->` into pages under `~/Projects/gnosis-main/content/`. Those blocks are regenerated on every build. Never edit the canonical page to "fix" a generated block — edit the generator in `~/Projects/gnosis-main/scripts/generate-dataview.cjs` instead.
+- **Do not leak private content outside a `## ProGrowth …` H2 section.** The sync strip is heading-based, not word-based. Tactical notes mentioned in passing body prose will reach the public site.
+- **Do not stub-expand.** Creating a dedicated page for every name mentioned in a source produces a graph of orphans. Only promote a mention to a page when a second page in the wiki would credibly cite it (§4.1 step 5).
+
+## 9. Publication Pipeline (read-only context)
+
+The canonical wiki at `~/Projects/gnosis/` is the source of truth. A public projection lives at `~/Projects/gnosis-main/` (deployed to `gnosis-main.vercel.app`). You normally do not touch the projection — it regenerates itself:
+
+1. `scripts/sync-wiki.sh` in `~/Projects/gnosis-main/` copies every `wiki/<folder>/*.md` into `content/<folder>/` and strips any `## ... ProGrowth ...` H2 section.
+2. `scripts/generate-dataview.cjs` reads the synced content, regenerates `content/dashboard.md` and `content/{people,companies,sources,concepts}/index.md` with live tables + inline SVG charts, and injects per-page widget blocks (stats strip, table auto-charts, Gnosis-context bottom widget).
+3. Vercel's `buildCommand` runs the generator then `npx quartz build`, publishing to `gnosis-main.vercel.app`.
+4. A `/chat` route and `/api/ask` serverless function (6-stage retrieval pipeline) also live in the projection; they read the same `content/` files. `content/chat.md` and `content/index.md` are hand-maintained in the projection and **preserved** by `sync-wiki.sh`'s clear step.
+
+For a typical ingest workflow this means: edit canonical → run `bash ~/Projects/gnosis-main/scripts/sync-wiki.sh` → run `vercel --prod --yes` from `~/Projects/gnosis-main/`. The canonical wiki is untouched by the projection.
+
+If you ever need to *change how the public site looks* (dashboard composition, widget content, chart styles), edit the generator, not the canonical pages.
+
+## 10. Operating Modes
+
+**Interactive (default).** On ingest, discuss key takeaways with the user before writing. Wait for direction on emphasis. Ask clarifying questions.
+
+**Compact ("just do it").** If the user says something like "just do what's required", "trim the unnecessary ones", or "don't over-explain", drop the discussion step and produce the minimum-viable set of pages. Use your best judgment on which entities earn dedicated pages under the compounding rule. Still produce the log entry.
+
+The mode is set per-task by the user's phrasing, not by a global setting. Switch back to interactive on the next ingest unless the user carries the compact instruction forward.

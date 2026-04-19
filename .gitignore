@@ -5,6 +5,9 @@
 # vendor code) is fetched via the project setup, not tracked in git.
 .obsidian/
 
+# Marp slide export output — regenerated on demand by scripts/build-slides.sh
+slides/dist/
+
 *.swp
 *.swo
 .vscode/

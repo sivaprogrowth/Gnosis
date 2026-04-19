@@ -33,15 +33,20 @@ At the start of every session in this directory:
 │   ├── pdfs/       #   papers, reports, books
 │   ├── notes/      #   user's journal entries / freeform notes
 │   └── assets/     #   images from articles
-└── wiki/           # LLM-owned markdown — you write
-    ├── sources/      # one summary page per raw source
-    ├── entities/     # AI engines, tools, products (abstract reference nouns)
-    ├── concepts/     # ideas, frameworks, theories
-    ├── people/       # individuals in Siva's network (mapped in relation to him)
-    ├── companies/    # organizations, institutions, universities, scholarships
-    ├── projects/     # active initiatives (ProGrowth-owned + personal)
-    ├── inspiration/  # tweets, screenshots, design refs (Farzapedia pattern)
-    └── queries/      # filed answers to non-trivial questions
+├── wiki/           # LLM-owned markdown — you write
+│   ├── sources/      # one summary page per raw source
+│   ├── entities/     # AI engines, tools, products (abstract reference nouns)
+│   ├── concepts/     # ideas, frameworks, theories
+│   ├── people/       # individuals in Siva's network (mapped in relation to him)
+│   ├── companies/    # organizations, institutions, universities, scholarships
+│   ├── projects/     # active initiatives (ProGrowth-owned + personal)
+│   ├── inspiration/  # tweets, screenshots, design refs (Farzapedia pattern)
+│   └── queries/      # filed answers to non-trivial questions
+├── slides/         # Marp-authored slide decks sourced from wiki content
+│   ├── _template.md  #   starting point for a new deck
+│   └── dist/         #   export output (gitignored) — PDF / HTML / PPTX
+└── scripts/        # helper scripts for vault-side workflows
+    └── build-slides.sh  # wraps `npx @marp-team/marp-cli` to export decks
 ```
 
 **Type-to-folder routing** (for step 4.1.4 and 4.1.5 below):
@@ -118,7 +123,18 @@ inbox → dismissed  (D — raw file kept, no wiki action)
 
 `Home.md`'s `LIST FROM #inbox` Dataview query surfaces the backlog count in Obsidian so the user can see when a drain is due.
 
-### 4.4 Lint
+### 4.4 Slide deck generation
+
+When the user asks for slides on a topic (e.g., "give me a 10-slide deck on Mirage PMF for a client meeting"):
+
+1. **Read the relevant wiki pages** first. A deck sourced from the wiki should cite the wiki — not re-derive claims.
+2. **Author the deck** at `slides/<kebab-slug>.md` using `slides/_template.md` as the starting point. Use Marp slide separators (`---` on its own line) between slides.
+3. **Citations** — use full URLs in slides that will leave the laptop (`[earned-media bias](https://gnosis-main.vercel.app/concepts/earned-media-bias)`). Obsidian-style `[[wiki-links]]` don't resolve in exported PDFs.
+4. **Structure** — prefer one claim per slide. Use tables, short bullet lists, one-sentence headlines. No paragraphs longer than 2 lines.
+5. **Export** — run `bash scripts/build-slides.sh <deck-slug>` to produce `slides/dist/<slug>.{pdf,html,pptx}`. The `dist/` folder is gitignored; regenerate on demand.
+6. **Don't log slide generation** in `log.md` — decks are derived artifacts, not wiki state. Logging them clutters the ingest/query history.
+
+### 4.5 Lint
 
 When the user says "lint the wiki" or "/lint":
 

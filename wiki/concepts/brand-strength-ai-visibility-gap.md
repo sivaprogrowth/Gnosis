@@ -4,6 +4,7 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - new-front-door-to-the-internet
+  - semrush-ai-visibility-index
 tags: [geo, ai-search, challenger-brands, progrowth, seo-strategy]
 aliases: [sov-market-share-gap, ai-sov-gap, brand-ai-mismatch]
 ---
@@ -14,7 +15,9 @@ The empirical finding that a brand's offline market share does **not** predict i
 
 ## The finding
 
-McKinsey audited five anonymized sportswear companies, measuring AI-powered search share of voice (SoV) normalized against market share (parity = 0):
+McKinsey audited five anonymized sportswear companies, measuring AI-powered search share of voice (SoV) normalized against market share (parity = 0).
+
+**Formal SoV definition** (per [[semrush-ai-visibility-index]]): *"If a brand was mentioned first in every AI answer, they would achieve an SoV of 100%."* — factors both mention frequency *and* mention position. This is the operational metric any AI-visibility diagnostic should produce.
 
 | Brand | Normalized AI SoV vs market share |
 |---|---|
@@ -65,6 +68,7 @@ This is the *empirical proof* for ProGrowth's challenger-brand positioning. A Pr
 ## Sources citing this page
 
 - [[new-front-door-to-the-internet]] — McKinsey sportswear audit, Oct 2025
+- [[semrush-ai-visibility-index]] — formal SoV metric definition and productized gap measurement
 
 ## Links
 
@@ -72,3 +76,4 @@ This is the *empirical proof* for ProGrowth's challenger-brand positioning. A Pr
 - [[generative-engine-optimization]] — the strategy to close or widen the gap
 - [[earned-media-bias]] — key driver of the gap
 - [[citation-network-mapping]] — how a brand diagnoses its own gap
+- [[semrush-ai-visibility-index]] — a public tool making gaps visible for many brands monthly

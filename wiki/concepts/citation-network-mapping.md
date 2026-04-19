@@ -57,6 +57,16 @@ Per [[new-front-door-to-the-internet]] (McKinsey CMO survey, Sep 2025): **only 1
 
 McKinsey's 4-move GEO framework begins with "undertake a robust diagnostic" — which is this concept, renamed for executive audiences.
 
+## Productization: existing tools
+
+[[semrush-ai-visibility-index]] is the clearest public example of citation-network-mapping productized — a free interactive dashboard ranking brands across AI search by Share of Voice, Brand Diversity, and Source Diversity. Its existence signals three things:
+
+1. The practice is real and commercially viable (Semrush chose to invest).
+2. The TAM is large enough for a well-resourced incumbent to build toward.
+3. Current tools have coverage gaps (AIVI covers only ChatGPT + Google AI Mode) — opening differentiation windows for purpose-built alternatives.
+
+For ProGrowth's `overviews.progrowth.services`, this is both a reference methodology and a competitor to differentiate against.
+
 ## Tooling implications
 
 This mapping is tractable via APIs (Claude via Anthropic, ChatGPT via OpenAI with web search, Perplexity via its API, Gemini via Google AI Studio, Google via Custom Search). The paper's own methodology in §4.1 is essentially a recipe for a citation-mapping tool.
@@ -69,6 +79,7 @@ Direct specification for `overviews.progrowth.services`. The AI Overview tool sh
 
 - [[geo-how-to-dominate-ai-search]] — §6 "The Imperative for Principled GEO Methodologies and Services", pillar 1
 - [[new-front-door-to-the-internet]] — McKinsey's 4-move framework, move #1 "robust diagnostic"
+- [[semrush-ai-visibility-index]] — a public tool that productizes this practice
 
 ## Links
 
@@ -76,4 +87,5 @@ Direct specification for `overviews.progrowth.services`. The AI Overview tool sh
 - [[brand-earned-social-taxonomy]] — the classification applied during mapping
 - [[earned-media-bias]] — the pattern mapping operationalizes
 - [[brand-strength-ai-visibility-gap]] — the diagnostic output that quantifies a client's gap
+- [[semrush-ai-visibility-index]] — reference/competitor tool to benchmark against
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]], [[google-ai-overview]] — per-engine maps are needed for each

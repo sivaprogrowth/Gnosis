@@ -5,6 +5,7 @@ updated: 2026-04-19
 sources:
   - new-front-door-to-the-internet
   - geo-how-to-dominate-ai-search
+  - semrush-ai-visibility-index
 tags: [ai-engine, ai-search, progrowth, seo-strategy, ai-visibility]
 aliases: [aio, google-aio, ai-overview, sge, search-generative-experience]
 ---
@@ -40,6 +41,16 @@ Per [[new-front-door-to-the-internet]]'s analysis of AIO source mix (July 2025, 
 - vs [[gemini]] (standalone): Gemini is a full chatbot; AIO is a search-result-integrated summary. Different corpus, different real-estate.
 - vs [[google-search]] blue links: AIO displaces some traffic from the first-page organic results.
 
+## Naming nuance: "Google AI Mode" vs "Google AI Overview"
+
+Google has shipped multiple AI-flavored surfaces within Search with overlapping names:
+
+- **Google AI Overview (AIO)** — the summary box inserted above organic results for qualifying queries. The subject of this page.
+- **Google AI Mode** — a distinct conversational mode within Google Search covered by [[semrush-ai-visibility-index]]. More chatbot-like; appears as a dedicated surface rather than inline.
+- **SGE (Search Generative Experience)** — the earlier name for the AIO experiment phase.
+
+These are related products but measured distinctly. When citing a source, verify which surface it evaluated. For ProGrowth client work, track both AIO and AI Mode — they have different citation ecologies.
+
 ## GEO implications for this engine
 
 1. **Affiliate-publisher placements are the #1 leverage point** for AIO visibility in CPG and e-commerce — not brand-owned content, not review sites. This is a specific tactical target (e.g., Wirecutter, NerdWallet, category-specific affiliate sites).
@@ -55,6 +66,7 @@ AIO is the AI surface with the largest total addressable reach (appears in half 
 
 - [[new-front-door-to-the-internet]] — McKinsey source-mix data per vertical (Oct 2025)
 - [[geo-how-to-dominate-ai-search]] — cites Pew and industry data on AIO click behavior (Sep 2025)
+- [[semrush-ai-visibility-index]] — tracks "Google AI Mode" (related but distinct surface; see naming nuance)
 
 ## Links
 

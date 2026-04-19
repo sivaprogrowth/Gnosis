@@ -32,3 +32,14 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 - Compounding behavior confirmed: existing entities updated in place, not duplicated. Index.md grew from 14 to 18 rows.
 - Key contradiction flagged and resolved: Chen et al.'s "Big Brand Bias" (AI favors major brands) vs McKinsey's "market share ≠ AI SoV" — reconciled as scope-different (unbranded ranking prompts vs aggregate query distribution). Captured in big-brand-bias.md Contradictions section.
 - Methodology contrast captured: Chen et al.'s 3-tier Brand/Earned/Social taxonomy vs McKinsey's 6-category (affiliate blogs / UGC / news-media / brand-retailer / academic / other). "Affiliate blogs" is the largest category that doesn't cleanly fit the 3-tier scheme.
+
+## [2026-04-19 12:35] ingest | Semrush AI Visibility Index (bit.ly shortlink → ai-visibility-index.semrush.com)
+
+- Third ingest. A bit.ly shortlink (shared by Elena Verna in a Semrush newsletter) pointing to Semrush's public AI Visibility Index tool.
+- Raw artifacts saved: raw/notes/semrush-aivi-shortlink.txt (original 22-byte URL file) and raw/articles/semrush-ai-visibility-index.md (fetched overview + methodology snapshot).
+- Unlike prior ingests (static papers), this source is an interactive tool with monthly-updating data. Treated as both a source (April 2026 snapshot) and an entity (the evolving tool).
+- Trimmed per user direction: skipped separate Semrush company entity, skipped separate "Google AI Mode" entity (captured as naming note on google-ai-overview instead), skipped new SoV concept page (captured inline on brand-strength-ai-visibility-gap).
+- Wrote 2 new wiki pages: source (semrush-ai-visibility-index) + entity (semrush-ai-visibility-index).
+- Updated 3 existing pages: citation-network-mapping (added productization section), brand-strength-ai-visibility-gap (added formal SoV definition), google-ai-overview (added AI Overview vs AI Mode vs SGE naming nuance).
+- Flagged unverified claim: "LLM-search users convert 4.4× more" has no primary source on the page. Marked as needs-verification in wiki for any client-facing use.
+- ProGrowth competitive positioning captured: AIVI is the closest public reference for overviews.progrowth.services; differentiation levers identified (broader engine coverage, fractional-agency integration, challenger-brand focus, niche B2B verticals).

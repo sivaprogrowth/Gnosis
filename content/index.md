@@ -48,6 +48,12 @@ Open the chat widget (bottom-right of any page) to begin.
 ### Engines
 - [[entities/chatgpt|ChatGPT]], [[entities/claude|Claude]], [[entities/perplexity|Perplexity]], [[entities/gemini|Gemini]], [[entities/google-ai-overview|Google AI Overview]], [[entities/google-search|Google Search]] — all with engine-specific behavior from the sources.
 
+### Siva's network (LinkedIn-ingested, Apr 2026)
+
+- [[people/siva-cotipalli|Siva Cotipalli]] — owner of this wiki; Founder of ProGrowth.
+- [[people/phani-sama|Phani Sama]] — founder of redBus; Siva's contact. Shared [[companies/bits-pilani|BITS Pilani]] + [[companies/chevening-scholarship|Chevening]] + [[companies/government-of-telangana|Telangana govt]] overlap.
+- Companies: [[companies/redbus|redBus]], [[companies/t-works|T-Works]], [[companies/kakatiya-sandbox|Kakatiya Sandbox]], [[companies/deshpande-skilling|Deshpande Skilling]], [[companies/cityfalcon|CityFALCON]], [[companies/reverie-language-technologies|Reverie]], [[companies/ntwist|NTWIST]], [[companies/dhanax|dhanaX]], [[companies/yogyabano|YogyaBano]], and more under `companies/` in the sidebar.
+
 ## How this works
 
 - Sources live at `raw/` in the canonical wiki (not published here).

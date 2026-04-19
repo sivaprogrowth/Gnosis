@@ -14,7 +14,23 @@
 const fs = require("node:fs")
 const path = require("node:path")
 const matter = require("gray-matter")
-const { donutChart, barChart, tagCloud, timelineBar, escapeHtml } = require("./lib/charts.cjs")
+const {
+  donutChart,
+  barChart,
+  tagCloud,
+  timelineBar,
+  escapeHtml,
+  statsStrip,
+  chartFromMdTable,
+  cleanLabel,
+} = require("./lib/charts.cjs")
+
+const WIDGET_TOP_START = "<!-- GNOSIS:WIDGET:TOP:START -->"
+const WIDGET_TOP_END = "<!-- GNOSIS:WIDGET:TOP:END -->"
+const WIDGET_BOTTOM_START = "<!-- GNOSIS:WIDGET:BOTTOM:START -->"
+const WIDGET_BOTTOM_END = "<!-- GNOSIS:WIDGET:BOTTOM:END -->"
+const TABLE_CHART_START = "<!-- GNOSIS:TABLECHART:START -->"
+const TABLE_CHART_END = "<!-- GNOSIS:TABLECHART:END -->"
 
 const ROOT = path.resolve(__dirname, "..")
 const CONTENT = path.join(ROOT, "content")
@@ -373,6 +389,235 @@ ${rows.join("\n")}
   return writeGenerated("concepts/index.md", "Concepts", md)
 }
 
+// ---------- Per-page widgets ----------
+
+// Remove prior widget blocks so re-runs are idempotent.
+function stripWidgets(body) {
+  return body
+    .replace(new RegExp(`${WIDGET_TOP_START}[\\s\\S]*?${WIDGET_TOP_END}\\n?`, "g"), "")
+    .replace(new RegExp(`${WIDGET_BOTTOM_START}[\\s\\S]*?${WIDGET_BOTTOM_END}\\n?`, "g"), "")
+    .replace(new RegExp(`${TABLE_CHART_START}[\\s\\S]*?${TABLE_CHART_END}\\n?`, "g"), "")
+}
+
+function buildBacklinkIndex(pages) {
+  const byTarget = new Map()
+  for (const p of pages) {
+    for (const link of p.outLinks) {
+      const key = link.toLowerCase()
+      if (!byTarget.has(key)) byTarget.set(key, [])
+      byTarget.get(key).push(p)
+    }
+  }
+  return byTarget
+}
+
+function backlinksFor(page, backlinkIdx) {
+  const keys = new Set([page.basename, page.slug, page.title?.toLowerCase()])
+  const seen = new Set()
+  const out = []
+  for (const k of keys) {
+    if (!k) continue
+    for (const p of backlinkIdx.get(k.toLowerCase()) ?? []) {
+      if (p.slug === page.slug) continue
+      if (seen.has(p.slug)) continue
+      seen.add(p.slug)
+      out.push(p)
+    }
+  }
+  return out
+}
+
+// Top widget: stats strip.
+function topWidget(page, backlinks) {
+  const strip = statsStrip({
+    type: page.type,
+    tags: page.tags,
+    outbound: page.outLinks.length,
+    backlinks: backlinks.length,
+    sources: page.sources.length,
+    updated: page.updated ?? page.created ?? "",
+  })
+  return `${WIDGET_TOP_START}\n${strip}\n${WIDGET_TOP_END}\n`
+}
+
+// Inject auto-charts after every numeric markdown table in the body.
+function injectTableCharts(body) {
+  // Find markdown tables by detecting header+separator+rows blocks.
+  const lines = body.split("\n")
+  const blocks = []
+  let i = 0
+  while (i < lines.length) {
+    if (/^\|.+\|\s*$/.test(lines[i]) && i + 1 < lines.length && /^\|[\s\-:|]+\|\s*$/.test(lines[i + 1])) {
+      const start = i
+      let end = i + 2
+      while (end < lines.length && /^\|.+\|\s*$/.test(lines[end])) end++
+      blocks.push({ start, end })
+      i = end
+    } else {
+      i++
+    }
+  }
+  if (!blocks.length) return body
+  // Process in reverse so indices stay valid.
+  for (let b = blocks.length - 1; b >= 0; b--) {
+    const block = blocks[b]
+    const tableText = lines.slice(block.start, block.end).join("\n")
+    // Skip tables that already have a chart marker right after.
+    const after = lines[block.end] ?? ""
+    if (after.includes(TABLE_CHART_START)) continue
+    const chart = chartFromMdTable(tableText)
+    if (!chart) continue
+    const wrapped = `${TABLE_CHART_START}\n${chart.trim()}\n${TABLE_CHART_END}`
+    lines.splice(block.end, 0, wrapped)
+  }
+  return lines.join("\n")
+}
+
+function typeSpecificWidget(page, idx, pages, backlinks) {
+  const parts = []
+
+  if (page.type === "source") {
+    // Bar chart: pages citing this source, grouped by type.
+    const citers = pages.filter((p) =>
+      p.sources.some((s) => {
+        const name = path.basename(String(s)).replace(/\.(md|pdf|txt)$/i, "")
+        return name === page.basename || String(s).includes(page.basename)
+      }),
+    )
+    if (citers.length) {
+      const byType = new Map()
+      for (const c of citers) byType.set(c.type, (byType.get(c.type) ?? 0) + 1)
+      const rows = [...byType.entries()]
+        .map(([type, count]) => ({ label: type, value: count, type }))
+        .sort((a, b) => b.value - a.value)
+      parts.push(`### Pages citing this source\n\n${barChart(rows, { width: 520 })}\n\n**${citers.length} pages** cite this source across ${byType.size} types.`)
+    }
+  }
+
+  if (page.type === "concept" || page.type === "entity") {
+    // Related pages by tag overlap.
+    const related = pages
+      .filter((p) => p.slug !== page.slug && p.tags.length)
+      .map((p) => {
+        const overlap = p.tags.filter((t) => page.tags.includes(t)).length
+        return { page: p, overlap }
+      })
+      .filter((r) => r.overlap > 0)
+      .sort((a, b) => b.overlap - a.overlap)
+      .slice(0, 8)
+    if (related.length) {
+      const rows = related.map((r) => ({ label: r.page.title, value: r.overlap, type: r.page.type }))
+      parts.push(`### Related by shared tags\n\n${barChart(rows, { width: 520 })}\n\n*X-axis: number of tags this page shares with each related page.*`)
+    }
+  }
+
+  if (page.type === "person") {
+    // Stat list: companies linked, other people linked, top 5 connected pages by backlink density.
+    const companyLinks = page.outLinks
+      .map((l) => pages.find((p) => p.basename === l && p.type === "company"))
+      .filter(Boolean)
+    const peopleLinks = page.outLinks
+      .map((l) => pages.find((p) => p.basename === l && p.type === "person"))
+      .filter(Boolean)
+    if (companyLinks.length) {
+      const rows = companyLinks
+        .slice(0, 10)
+        .map((p) => ({ label: p.title, value: 1, type: "company" }))
+      // Single-value bars aren't useful; render as styled list instead.
+      const items = companyLinks
+        .map(
+          (p) =>
+            `<li style="display:inline-block;margin:.25rem .4rem .25rem 0;padding:.2rem .65rem;background:${cleanLabel ? "" : ""}var(--lightgray,#e2e8f0);border-radius:999px"><a href="../companies/${p.basename}" style="color:inherit;text-decoration:none">${escapeHtml(p.title)}</a></li>`,
+        )
+        .join("")
+      parts.push(`### Companies linked from this profile\n\n<ul style="list-style:none;padding:0;margin:.5rem 0">${items}</ul>`)
+    }
+    if (peopleLinks.length) {
+      parts.push(
+        `### People linked from this profile\n\n` +
+          peopleLinks.map((p) => `- [${p.title}](${p.basename})`).join("\n"),
+      )
+    }
+  }
+
+  if (page.type === "company") {
+    // Bar chart: which people are linked here (backlinks from people/ pages).
+    const people = backlinks.filter((p) => p.type === "person")
+    if (people.length) {
+      const rows = people.map((p) => ({ label: p.title, value: 1, type: "person" }))
+      parts.push(`### People linked to this company\n\n${people.map((p) => `- [${p.title}](../people/${p.basename})`).join("\n")}`)
+    }
+    // Related companies by shared tags.
+    const related = pages
+      .filter((p) => p.type === "company" && p.slug !== page.slug && p.tags.length)
+      .map((p) => ({ page: p, overlap: p.tags.filter((t) => page.tags.includes(t)).length }))
+      .filter((r) => r.overlap > 0)
+      .sort((a, b) => b.overlap - a.overlap)
+      .slice(0, 6)
+    if (related.length) {
+      const rows = related.map((r) => ({ label: r.page.title, value: r.overlap, type: "company" }))
+      parts.push(`### Similar companies (by shared tags)\n\n${barChart(rows, { width: 520 })}`)
+    }
+  }
+
+  if (!parts.length && backlinks.length) {
+    // Universal fallback: "Cited by" list.
+    parts.push(
+      `### Pages referencing this one\n\n` +
+        backlinks
+          .slice(0, 8)
+          .map((p) => `- [${p.title}](../${p.type === "concept" ? "concepts" : p.type === "person" ? "people" : p.type === "company" ? "companies" : p.type === "source" ? "sources" : p.type === "entity" ? "entities" : "projects"}/${p.basename}) (${p.type})`)
+          .join("\n"),
+    )
+  }
+
+  if (!parts.length) return ""
+  const body = parts.join("\n\n")
+  return `${WIDGET_BOTTOM_START}\n## Gnosis context\n\n${body}\n${WIDGET_BOTTOM_END}\n`
+}
+
+function injectWidgetsIntoFile(fullPath, page, idx, pages, backlinks) {
+  const raw = fs.readFileSync(fullPath, "utf8")
+  const { data, content } = matter(raw)
+  let body = stripWidgets(content)
+
+  // 1. Top stats strip — insert after first H1 (or at top of body if no H1).
+  const top = topWidget(page, backlinks)
+  const h1Match = body.match(/^(#\s+.+\n)/m)
+  if (h1Match) {
+    body = body.replace(h1Match[1], `${h1Match[1]}\n${top}\n`)
+  } else {
+    body = `${top}\n${body}`
+  }
+
+  // 2. Auto-chart every numeric table.
+  body = injectTableCharts(body)
+
+  // 3. Type-specific bottom widget — insert before final `## Links` section if present.
+  const bottom = typeSpecificWidget(page, idx, pages, backlinks)
+  if (bottom) {
+    const linksMatch = body.match(/\n(## Links\s*\n)/)
+    if (linksMatch) {
+      body = body.replace(linksMatch[0], `\n${bottom}\n${linksMatch[1]}`)
+    } else {
+      body = `${body.trimEnd()}\n\n${bottom}`
+    }
+  }
+
+  fs.writeFileSync(fullPath, matter.stringify(body, data), "utf8")
+}
+
+function processAllPages(pages, idx) {
+  const backlinkIdx = buildBacklinkIndex(pages)
+  let modified = 0
+  for (const page of pages) {
+    const backlinks = backlinksFor(page, backlinkIdx)
+    injectWidgetsIntoFile(page.fullPath, page, idx, pages, backlinks)
+    modified += 1
+  }
+  return modified
+}
+
 // ---------- Main ----------
 
 function main() {
@@ -385,11 +630,14 @@ function main() {
   written.push(buildSourcesIndex(pages, idx))
   written.push(buildConceptsIndex(pages, idx))
 
+  const injected = processAllPages(pages, idx)
+
   console.log(`  Indexed ${pages.length} pages across ${idx.byType.size} types.`)
   console.log(`  Types: ${[...idx.byType.entries()].map(([t, ps]) => `${t}=${ps.length}`).join(", ")}`)
   console.log(`  Tags: ${idx.byTag.size} unique, ${idx.citationsBySource.size} cited sources.`)
-  console.log(`  Wrote ${written.length} generated files:`)
+  console.log(`  Wrote ${written.length} aggregation files:`)
   for (const w of written) console.log(`    - content/${w}`)
+  console.log(`  Injected widgets into ${injected} content pages.`)
 }
 
 try {

@@ -1,15 +1,30 @@
 ---
 type: concept
-created: 2026-04-19
-updated: 2026-04-19
+created: 2026-04-19T00:00:00.000Z
+updated: 2026-04-19T00:00:00.000Z
 sources:
   - geo-how-to-dominate-ai-search
   - new-front-door-to-the-internet
-tags: [geo, ai-search, competitive-intelligence, ai-visibility]
-aliases: [citation-mapping, ai-source-auditing, engine-citation-network, geo-diagnostic]
+tags:
+  - geo
+  - ai-search
+  - competitive-intelligence
+  - ai-visibility
+aliases:
+  - citation-mapping
+  - ai-source-auditing
+  - engine-citation-network
+  - geo-diagnostic
 ---
 
 # Citation Network Mapping
+
+<!-- GNOSIS:WIDGET:TOP:START -->
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#22c55e"></span>concept</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>13</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>8</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>2</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">geo</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">ai-search</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">competitive-intelligence</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">ai-visibility</span></span></div>
+<!-- GNOSIS:WIDGET:TOP:END -->
+
+
+
 
 A continuous competitive-intelligence practice in which a brand audits which domains each AI search engine actually cites for queries in its core vertical — building a per-engine map of "the citation network" that answers get drawn from. The first of five pillars in the [[generative-engine-optimization]] operating system.
 
@@ -76,6 +91,17 @@ This mapping is tractable via APIs (Claude via Anthropic, ChatGPT via OpenAI wit
 - [[geo-how-to-dominate-ai-search]] — §6 "The Imperative for Principled GEO Methodologies and Services", pillar 1
 - [[new-front-door-to-the-internet]] — McKinsey's 4-move framework, move #1 "robust diagnostic"
 - [[semrush-ai-visibility-index]] — a public tool that productizes this practice
+
+
+<!-- GNOSIS:WIDGET:BOTTOM:START -->
+## Gnosis context
+
+### Related by shared tags
+
+<svg width="520" height="266" viewBox="0 0 520 266" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;margin:1rem 0" role="img" aria-label="Bar chart"><g><text x="0" y="22" font-size=".85rem" fill="currentColor">Earned-Media Bias (in AI Search)</text><rect x="220" y="5" width="240.0" height="26" rx="4" fill="#22c55e"><title>Earned-Media Bias (in AI Search): 3</title></rect><text x="466" y="22" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="54" font-size=".85rem" fill="currentColor">Generative Engine Optimization (GEO)</text><rect x="220" y="37" width="240.0" height="26" rx="4" fill="#22c55e"><title>Generative Engine Optimization (GEO): 3</title></rect><text x="466" y="54" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="86" font-size=".85rem" fill="currentColor">Semrush AI Visibility Index (AIVI)</text><rect x="220" y="69" width="240.0" height="26" rx="4" fill="#f97316"><title>Semrush AI Visibility Index (AIVI): 3</title></rect><text x="466" y="86" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="118" font-size=".85rem" fill="currentColor">Generative Engine Optimization: How to Dominate AI Search</text><rect x="220" y="101" width="240.0" height="26" rx="4" fill="#6366f1"><title>Generative Engine Optimization: How to Dominate AI Search: 3</title></rect><text x="466" y="118" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="150" font-size=".85rem" fill="currentColor">New Front Door to the Internet: Winning in the Age of AI Search</text><rect x="220" y="133" width="240.0" height="26" rx="4" fill="#6366f1"><title>New Front Door to the Internet: Winning in the Age of AI Search: 3</title></rect><text x="466" y="150" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="182" font-size=".85rem" fill="currentColor">Semrush AI Visibility Index (snapshot, April 2026)</text><rect x="220" y="165" width="240.0" height="26" rx="4" fill="#6366f1"><title>Semrush AI Visibility Index (snapshot, April 2026): 3</title></rect><text x="466" y="182" font-size=".85rem" fill="currentColor" opacity=".75">3</text></g><g><text x="0" y="214" font-size=".85rem" fill="currentColor">AI Search Decision Journey</text><rect x="220" y="197" width="160.0" height="26" rx="4" fill="#22c55e"><title>AI Search Decision Journey: 2</title></rect><text x="386" y="214" font-size=".85rem" fill="currentColor" opacity=".75">2</text></g><g><text x="0" y="246" font-size=".85rem" fill="currentColor">The API-able Brand</text><rect x="220" y="229" width="160.0" height="26" rx="4" fill="#22c55e"><title>The API-able Brand: 2</title></rect><text x="386" y="246" font-size=".85rem" fill="currentColor" opacity=".75">2</text></g></svg>
+
+*X-axis: number of tags this page shares with each related page.*
+<!-- GNOSIS:WIDGET:BOTTOM:END -->
 
 ## Links
 

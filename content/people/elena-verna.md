@@ -1,14 +1,25 @@
 ---
 type: person
-created: 2026-04-19
-updated: 2026-04-19
+created: 2026-04-19T00:00:00.000Z
+updated: 2026-04-19T00:00:00.000Z
 sources:
   - semrush-ai-visibility-index
-tags: [person, growth, plg, writer]
-role: Growth / PLG writer, advisor
+tags:
+  - person
+  - growth
+  - plg
+  - writer
+role: 'Growth / PLG writer, advisor'
 ---
 
 # Elena Verna
+
+<!-- GNOSIS:WIDGET:TOP:START -->
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#ec4899"></span>person</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>4</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>1</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>1</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">person</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">growth</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">plg</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">writer</span></span></div>
+<!-- GNOSIS:WIDGET:TOP:END -->
+
+
+
 
 Growth and product-led-growth (PLG) writer, advisor, and community figure. Known for frameworks on PLG motion, growth-operating-system thinking, and marketing leadership.
 
@@ -25,6 +36,15 @@ This is a small but telling signal: **Semrush chose Elena's audience as a distri
 ## Sources citing this page
 
 - [[semrush-ai-visibility-index]] — she amplified it in her newsletter
+
+
+<!-- GNOSIS:WIDGET:BOTTOM:START -->
+## Gnosis context
+
+### Companies linked from this profile
+
+<ul style="list-style:none;padding:0;margin:.5rem 0"><li style="display:inline-block;margin:.25rem .4rem .25rem 0;padding:.2rem .65rem;background:var(--lightgray,#e2e8f0);border-radius:999px"><a href="../companies/semrush" style="color:inherit;text-decoration:none">Semrush</a></li></ul>
+<!-- GNOSIS:WIDGET:BOTTOM:END -->
 
 ## Links
 

@@ -137,4 +137,130 @@ function timelineBar(datesByType, { width = 520, height = 200 } = {}) {
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;margin:1rem 0" role="img" aria-label="Ingest timeline">${bars}</svg>`
 }
 
-module.exports = { donutChart, barChart, tagCloud, timelineBar, colorFor, escapeHtml }
+// Compact HTML badge row shown at the top of every content page.
+function statsStrip({ type, tags = [], outbound = 0, backlinks = 0, sources = 0, updated = "" } = {}) {
+  const typeColor = colorFor(type)
+  const tagSpans = tags
+    .slice(0, 6)
+    .map(
+      (t) =>
+        `<span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">${escapeHtml(t)}</span>`,
+    )
+    .join(" ")
+  const badge = (emoji, label, value) =>
+    value !== undefined
+      ? `<span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">${emoji}</span><strong>${value}</strong><span style="opacity:.7">${label}</span></span>`
+      : ""
+  const parts = [
+    type
+      ? `<span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:${typeColor}"></span>${escapeHtml(type)}</span>`
+      : "",
+    badge("🔗", "outbound", outbound),
+    badge("📥", "backlinks", backlinks),
+    sources ? badge("📚", "sources", sources) : "",
+    updated ? badge("🕓", "updated " + String(updated).slice(0, 10), "") : "",
+    tagSpans
+      ? `<span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap">${tagSpans}</span>`
+      : "",
+  ].filter(Boolean)
+  return `<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)">${parts.join("")}</div>`
+}
+
+// Parse a markdown table and return { headers, rows } or null.
+function parseMdTable(tableText) {
+  const lines = tableText.trim().split("\n")
+  if (lines.length < 3) return null
+  const split = (line) =>
+    line
+      .trim()
+      .replace(/^\|/, "")
+      .replace(/\|$/, "")
+      .split("|")
+      .map((c) => c.trim())
+  const headers = split(lines[0])
+  if (!/^[\s:|\-]+$/.test(lines[1])) return null
+  const rows = lines.slice(2).filter((l) => l.trim().startsWith("|")).map(split)
+  if (!rows.length) return null
+  return { headers, rows }
+}
+
+function parseNumber(cell) {
+  if (!cell) return null
+  const cleaned = String(cell)
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1") // strip markdown links
+    .replace(/[*_`]/g, "") // strip emphasis/code
+    .replace(/[$,]/g, "")
+    .replace(/\s*%\s*/g, "") // strip % anywhere
+    .trim()
+  if (!/^-?\d+(?:\.\d+)?$/.test(cleaned)) return null
+  return parseFloat(cleaned)
+}
+
+// Given a parsed table, pick the best numeric column. Returns { labelIdx, valueIdx, hasPercent } or null.
+function pickNumericColumn(table) {
+  const { headers, rows } = table
+  const candidates = []
+  for (let i = 0; i < headers.length; i++) {
+    const numerics = rows.map((r) => parseNumber(r[i])).filter((n) => n !== null)
+    if (numerics.length >= 2 && numerics.length >= rows.length * 0.6) {
+      const hasPercent = rows.some((r) => /%/.test(r[i] ?? ""))
+      candidates.push({ idx: i, numerics, hasPercent })
+    }
+  }
+  if (!candidates.length) return null
+  // Prefer percentage columns; otherwise rightmost.
+  candidates.sort((a, b) => (b.hasPercent - a.hasPercent) || (b.idx - a.idx))
+  const pick = candidates[0]
+  // Label column: leftmost column that is NOT the value column and not purely numeric.
+  let labelIdx = 0
+  for (let i = 0; i < headers.length; i++) {
+    if (i === pick.idx) continue
+    const numericShare = rows.map((r) => parseNumber(r[i])).filter((n) => n !== null).length / rows.length
+    if (numericShare < 0.5) {
+      labelIdx = i
+      break
+    }
+  }
+  return { labelIdx, valueIdx: pick.idx, hasPercent: pick.hasPercent }
+}
+
+// Strip markdown emphasis/links/wiki-links from a cell to get a clean label.
+function cleanLabel(cell) {
+  return String(cell ?? "")
+    .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, p1, p2) => p2 ?? p1)
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .trim()
+}
+
+// Render an SVG bar chart for a markdown table's numeric column. Returns "" if not chartable.
+function chartFromMdTable(tableText, { maxRows = 12 } = {}) {
+  const table = parseMdTable(tableText)
+  if (!table) return ""
+  const pick = pickNumericColumn(table)
+  if (!pick) return ""
+  const rows = table.rows.slice(0, maxRows).map((r) => ({
+    label: cleanLabel(r[pick.labelIdx]) || "—",
+    value: parseNumber(r[pick.valueIdx]) ?? 0,
+    type: "source",
+  }))
+  // Suffix percent sign in tooltip if applicable
+  const header = cleanLabel(table.headers[pick.valueIdx])
+  const chart = barChart(rows, { width: 620 })
+  if (!chart) return ""
+  return `\n<figure style="margin:0.5rem 0 1.5rem"><figcaption style="font-size:.8rem;color:currentColor;opacity:.7;margin-bottom:.25rem">Auto-chart: ${escapeHtml(header)}${pick.hasPercent ? " (%)" : ""}</figcaption>${chart}</figure>\n`
+}
+
+module.exports = {
+  donutChart,
+  barChart,
+  tagCloud,
+  timelineBar,
+  colorFor,
+  escapeHtml,
+  statsStrip,
+  parseMdTable,
+  pickNumericColumn,
+  chartFromMdTable,
+  cleanLabel,
+}

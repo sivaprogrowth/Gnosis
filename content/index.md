@@ -4,6 +4,13 @@ title: Gnosis
 
 # Gnosis — A Personal LLM Wiki
 
+<!-- GNOSIS:WIDGET:TOP:START -->
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#94a3b8"></span>other</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>29</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>0</strong><span style="opacity:.7">backlinks</span></span></div>
+<!-- GNOSIS:WIDGET:TOP:END -->
+
+
+
+
 A personal knowledge base where an LLM acts as a disciplined wiki maintainer. Drop in sources — articles, PDFs, notes — and the LLM reads them, summarizes, cross-references, and integrates them into a living wiki. Knowledge **compounds** on every source instead of being re-derived on every query.
 
 > *"The tedious part of a knowledge base is not the reading or thinking — it's the bookkeeping. Humans abandon wikis because maintenance grows faster than value. LLMs don't."*

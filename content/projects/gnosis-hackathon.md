@@ -1,18 +1,28 @@
 ---
 type: project
-created: 2026-04-19
-updated: 2026-04-19
+created: 2026-04-19T00:00:00.000Z
+updated: 2026-04-19T00:00:00.000Z
 sources:
   - semrush-ai-visibility-index
-tags: [project, demo, active]
+tags:
+  - project
+  - demo
+  - active
 status: Live (April 2026 hackathon POC)
-url: https://gnosis-site.vercel.app
+url: 'https://gnosis-site.vercel.app'
 repos:
-  - https://github.com/sivaprogrowth/gnosis-site
-  - https://github.com/abhinavagarwal31/Gnosis
+  - 'https://github.com/sivaprogrowth/gnosis-site'
+  - 'https://github.com/abhinavagarwal31/Gnosis'
 ---
 
 # Gnosis (Hackathon POC)
+
+<!-- GNOSIS:WIDGET:TOP:START -->
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#eab308"></span>project</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>9</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>2</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>1</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">project</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">demo</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">active</span></span></div>
+<!-- GNOSIS:WIDGET:TOP:END -->
+
+
+
 
 The meta-entry: this wiki itself, along with its public demo surface at `gnosis-site.vercel.app`, built as a hackathon demonstration of the **LLM-maintained personal wiki** pattern applied to a fractional-marketing operator's knowledge base.
 
@@ -48,6 +58,16 @@ The meta-entry: this wiki itself, along with its public demo surface at `gnosis-
 
 - [[siva-cotipalli]] — founder, builder
 - [[progrowth]] — the parent company
+
+
+<!-- GNOSIS:WIDGET:BOTTOM:START -->
+## Gnosis context
+
+### Pages referencing this one
+
+- [ProGrowth](../companies/progrowth) (company)
+- [Siva Cotipalli](../people/siva-cotipalli) (person)
+<!-- GNOSIS:WIDGET:BOTTOM:END -->
 
 ## Links
 

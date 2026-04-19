@@ -11,6 +11,8 @@ title: Gnosis
 
 
 
+
+
 A personal knowledge base where an LLM acts as a disciplined wiki maintainer. Drop in sources — articles, PDFs, notes — and the LLM reads them, summarizes, cross-references, and integrates them into a living wiki. Knowledge **compounds** on every source instead of being re-derived on every query.
 
 > *"The tedious part of a knowledge base is not the reading or thinking — it's the bookkeeping. Humans abandon wikis because maintenance grows faster than value. LLMs don't."*

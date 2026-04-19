@@ -10,10 +10,10 @@ title: "Sources"
 
 | Title | Authors | Published | Cited by |
 |-------|---------|-----------|----------|
-| [Generative Engine Optimization: How to Dominate AI Search](geo-how-to-dominate-ai-search) | Mahe Chen, Xiaoxuan Wang, Kaiwen Chen, Nick Koudas | 2025-09-10 | 15 |
+| [Generative Engine Optimization: How to Dominate AI Search](geo-how-to-dominate-ai-search) | Mahe Chen, Xiaoxuan Wang, Kaiwen Chen, Nick Koudas | 2025-09-10 | 16 |
 | [LinkedIn Profile — Phani Sama (Apr 2026 export)](linkedin-phani-sama) |  | 2026-04-19 | 11 |
 | [LinkedIn Profile — Siva Cotipalli (Apr 2026 export)](linkedin-siva-cotipalli) |  | 2026-04-19 | 12 |
-| [New Front Door to the Internet: Winning in the Age of AI Search](new-front-door-to-the-internet) | Elizabeth Silliman, Julien Boudet, Kelsey Robinson, Desirae Oppong, Nilay Shah | 2025-10 | 9 |
+| [New Front Door to the Internet: Winning in the Age of AI Search](new-front-door-to-the-internet) | Elizabeth Silliman, Julien Boudet, Kelsey Robinson, Desirae Oppong, Nilay Shah | 2025-10 | 10 |
 | [Semrush AI Visibility Index (snapshot, April 2026)](semrush-ai-visibility-index) | Semrush | 2026-04 (m | 7 |
 
 > **Cited by** counts how many non-source wiki pages list this source in their `sources:` frontmatter. Higher = source is earning its keep.

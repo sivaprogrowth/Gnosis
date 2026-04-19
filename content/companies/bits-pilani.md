@@ -20,8 +20,6 @@ website: 'https://www.bits-pilani.ac.in'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Birla Institute of Technology and Science, Pilani — a deemed-to-be university in Rajasthan, India, and one of the most selective undergraduate engineering institutions in the country. Known for producing a high density of Indian tech founders.
 
 ## Why it's in this wiki
@@ -34,7 +32,6 @@ The **shared alma mater** of [[siva-cotipalli]] and [[phani-sama]] — the prima
 | [[phani-sama]] | BE (Hons.), Electrical and Electronics Engineering | 1998 – 2002 |
 
 Siva was recognized as **BITSAA 30 under 30** in 2009.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

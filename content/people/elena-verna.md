@@ -19,8 +19,6 @@ role: 'Growth / PLG writer, advisor'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Growth and product-led-growth (PLG) writer, advisor, and community figure. Known for frameworks on PLG motion, growth-operating-system thinking, and marketing leadership.
 
 ## Why she's in this wiki
@@ -36,7 +34,6 @@ This is a small but telling signal: **Semrush chose Elena's audience as a distri
 ## Sources citing this page
 
 - [[semrush-ai-visibility-index]] — she amplified it in her newsletter
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

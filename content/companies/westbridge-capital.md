@@ -20,8 +20,6 @@ headquartered: 'Bengaluru, Karnataka, India'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Indian growth-stage investment firm. Notable LP in the Indian venture ecosystem.
 
 ## Why it's in this wiki
@@ -29,7 +27,6 @@ Indian growth-stage investment firm. Notable LP in the Indian venture ecosystem.
 [[phani-sama]] has been an **Advisor since June 2021** (~4+ years) — a post-[[redbus]]-exit role that anchors his presence in Indian VC circles.
 
 Relevant for [[progrowth]] only as a network-awareness node: if a ProGrowth client is raising growth-stage India capital, Phani's WestBridge relationship is one path worth remembering.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

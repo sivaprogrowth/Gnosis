@@ -20,14 +20,11 @@ website: 'https://www.iimk.ac.in'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Indian Institute of Management, Kozhikode — one of the Indian Institutes of Management.
 
 ## Why it's in this wiki
 
 [[siva-cotipalli]]'s MBA — Finance and Technology specialization. One of three educational credentials (alongside [[bits-pilani]] and [[lse]]).
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

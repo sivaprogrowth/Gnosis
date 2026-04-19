@@ -26,8 +26,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 The AI-generated summary surface Google injects at the top of search results for qualifying queries. Formerly called Search Generative Experience (SGE). Distinct from [[google-search]]'s traditional blue-link results and distinct from [[gemini]] as a standalone chatbot — AIO is a hybrid surface that sits *inside* Google Search.
 
 ## Scale and impact
@@ -82,7 +80,6 @@ These are related products but measured distinctly. When citing a source, verify
 - [[new-front-door-to-the-internet]] — McKinsey source-mix data per vertical (Oct 2025)
 - [[geo-how-to-dominate-ai-search]] — cites Pew and industry data on AIO click behavior (Sep 2025)
 - [[semrush-ai-visibility-index]] — tracks "Google AI Mode" (related but distinct surface; see naming nuance)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

@@ -19,8 +19,6 @@ website: 'https://www.weforum.org'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 International organization for public-private cooperation, best known for Davos. The **Young Global Leaders (YGL)** programme selects ~100 leaders under 40 annually from across sectors.
 
 ## Why it's in this wiki
@@ -28,7 +26,6 @@ International organization for public-private cooperation, best known for Davos.
 [[phani-sama]] has been a **Young Global Leader since March 2019** (class of 2019) — a prestige credential that signals his inclusion in a global peer network of ~1,500+ YGL alumni.
 
 Useful as context: Phani's YGL status plus Siva's own TEDIndia Fellowship (2009) put both in the "curated global fellowship" tier of network — different programs, similar signal.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

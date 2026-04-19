@@ -20,14 +20,11 @@ website: 'https://www.cityfalcon.ai'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Personalized financial news and content platform for investors and traders. Leverages NLP, machine learning, and voice/chatbot technologies. Distribution across web, mobile, API, Alexa, and Google Home — framed as "Spotify for financial news."
 
 ## Why it's in this wiki
 
 [[siva-cotipalli]] was **Head of Marketing** from April 2023 to April 2024 (~1 year). His most recent in-house marketing leadership role before going full-time on [[progrowth]].
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

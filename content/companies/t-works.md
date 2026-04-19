@@ -20,8 +20,6 @@ headquartered: 'Hyderabad, Telangana, India'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 India's largest prototyping centre for electronics, electromechanical, and mechanical startups. State-backed initiative in Hyderabad, Telangana.
 
 ## Why it's in this wiki
@@ -29,7 +27,6 @@ India's largest prototyping centre for electronics, electromechanical, and mecha
 [[phani-sama]] is a **Director on the Board** since Dec 2017 (~8+ years). Adjacent to his CIO role at [[government-of-telangana]] — T-Works is the physical-prototyping arm of that innovation mandate.
 
 Potentially relevant for [[progrowth]] if any client works in hardware/IoT/electronics and needs India-side prototyping partners — Phani is the warm introduction path.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

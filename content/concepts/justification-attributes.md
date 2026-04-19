@@ -21,8 +21,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Machine-extractable reasons that explain *why* a product or service is a superior choice for a specific use case, structured so AI search engines can lift them directly into synthesized answers. The tactical core of winning a place on an AI's shortlist.
 
 ## The reframe
@@ -70,7 +68,6 @@ For any page expected to surface in AI search:
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — §3.2.1 "Battle for the Shortlist" and §6
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

@@ -21,8 +21,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Empirical map of how consumers use AI-powered search across the full purchase decision journey — not just at the top of the funnel. Based on McKinsey's AI Discovery Survey (August 2025, n=1,927 US consumers) from [[new-front-door-to-the-internet]].
 
 ## The seven-stage usage map
@@ -77,7 +75,6 @@ Consumer electronics leads — consistent with Chen et al.'s finding in [[geo-ho
 ## Sources citing this page
 
 - [[new-front-door-to-the-internet]] — McKinsey AI Discovery Survey (Oct 2025)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

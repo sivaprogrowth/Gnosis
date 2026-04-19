@@ -19,9 +19,9 @@ title: "Companies"
 | [IIM Kozhikode](iim-kozhikode) | institution | 3 | [www.iimk.ac.in](https://www.iimk.ac.in) |
 | [Kakatiya Sandbox](kakatiya-sandbox) | company | 6 |  |
 | [London School of Economics (LSE)](lse) | institution | 5 | [www.lse.ac.uk](https://www.lse.ac.uk) |
-| [Marketri](marketri) | company | 2 | [marketri.com](https://marketri.com) |
+| [Marketri](marketri) | company | 3 | [marketri.com](https://marketri.com) |
 | [NTWIST](ntwist) | company | 3 | [www.ntwist.com](https://www.ntwist.com) |
-| [ProGrowth](progrowth) | company | 11 | [progrowth.services](https://progrowth.services) |
+| [ProGrowth](progrowth) | company | 12 | [progrowth.services](https://progrowth.services) |
 | [redBus](redbus) | company | 4 | [www.redbus.in](https://www.redbus.in) |
 | [Reverie Language Technologies](reverie-language-technologies) | company | 3 |  |
 | [Semrush](semrush) | company | 2 | [semrush.com](https://semrush.com) |

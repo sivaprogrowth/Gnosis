@@ -19,14 +19,11 @@ headquartered: 'Bengaluru, Karnataka, India'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Indian language-technology company (localization, translation, speech, NLP) serving enterprise, product, and government customers.
 
 ## Why it's in this wiki
 
 [[siva-cotipalli]] was **Digital & Content Strategist** from Nov 2021 to Apr 2023 (~1.5 years). Responsibilities spanned digital brand strategy, product marketing, content marketing, PPC, social engagement, and enterprise/government lead gen — a broad B2B marketing remit that directly informed the [[progrowth]] playbook.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

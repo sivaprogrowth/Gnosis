@@ -21,8 +21,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Traditional web search engine. Still holds ~90% global search market share as of mid-2025. Used as the baseline in the GEO paper via its Programmable (Custom) Search API, top-10 web results per query.
 
 ## Behavior vs AI search engines
@@ -48,7 +46,6 @@ Per [[geo-how-to-dominate-ai-search]]:
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — comparative empirical analysis (Sep 2025)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

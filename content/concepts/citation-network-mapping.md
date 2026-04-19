@@ -24,8 +24,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 A continuous competitive-intelligence practice in which a brand audits which domains each AI search engine actually cites for queries in its core vertical — building a per-engine map of "the citation network" that answers get drawn from. The first of five pillars in the [[generative-engine-optimization]] operating system.
 
 ## Why it's necessary
@@ -91,7 +89,6 @@ This mapping is tractable via APIs (Claude via Anthropic, ChatGPT via OpenAI wit
 - [[geo-how-to-dominate-ai-search]] — §6 "The Imperative for Principled GEO Methodologies and Services", pillar 1
 - [[new-front-door-to-the-internet]] — McKinsey's 4-move framework, move #1 "robust diagnostic"
 - [[semrush-ai-visibility-index]] — a public tool that productizes this practice
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

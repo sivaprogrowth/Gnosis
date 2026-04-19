@@ -23,8 +23,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Anthropic's conversational AI. Smaller market share (~1% of AI chatbot traffic, July 2025 StatCounter) but distinctive search behavior. The variant tested in the GEO paper is Claude 3.5 Sonnet with the `web_search_20250305` tool.
 
 ## Behavior as an AI search engine
@@ -47,7 +45,6 @@ Per [[geo-how-to-dominate-ai-search]]:
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — comparative empirical analysis (Sep 2025)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

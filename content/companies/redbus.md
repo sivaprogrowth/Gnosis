@@ -20,8 +20,6 @@ website: 'https://www.redbus.in'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 India's largest bus ticketing platform. Founded in 2006 by [[phani-sama]] (with co-founders) in Bangalore. Acquired by **Naspers** in June 2013 — a landmark exit in Indian consumer-internet history.
 
 ## Why it's in this wiki
@@ -32,7 +30,6 @@ redBus is [[phani-sama]]'s flagship company and the anchor of his credibility ac
 - Phani's role: Founder & CEO
 - Tenure: Aug 2006 – Jun 2014 (~8 years)
 - Exit: Naspers acquisition, Jun 2013 (Wharton case-study writeup referenced on LinkedIn)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

@@ -21,8 +21,6 @@ headquartered: 'Bengaluru, India'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 AI-assisted skilling platform for vocational jobs — edtech for blue-collar workers. Positions itself as a "Personal A.I Tutor" that helps candidates train for vocational courses and get jobs. Serves candidates, skilling agencies, and corporates (India, UK, Europe).
 
 ## Why it's in this wiki
@@ -30,7 +28,6 @@ AI-assisted skilling platform for vocational jobs — edtech for blue-collar wor
 [[siva-cotipalli]] is a **Director since March 2024** — a current active side role alongside [[progrowth]].
 
 Mission-adjacent to [[phani-sama]]'s [[deshpande-skilling]] chairmanship — both are Indian skilling plays, YogyaBano AI-tutor-driven and Deshpande Skilling foundation-backed. Natural conversation starter if Siva re-engages Phani.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

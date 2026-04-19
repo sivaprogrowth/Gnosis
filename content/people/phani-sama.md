@@ -26,8 +26,6 @@ relationship-to-siva: >-
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Founder of [[redbus]] — India's largest bus ticketing company (acquired by Naspers in Jun 2013). Widely respected figure in the Indian startup ecosystem, now active across skilling, venture advisory, civic innovation, and prototyping.
 
 A contact of [[siva-cotipalli|Siva]]. The two share unusually dense overlap: both [[bits-pilani]] alumni, both [[chevening-scholarship]] scholars (different tracks/years), both tied to [[government-of-telangana]] work in the 2017–2020 window, and both in the Bengaluru + Telangana tech-and-civic network.
@@ -82,7 +80,6 @@ These overlaps make Phani a natural warm-intro/advisor node for ProGrowth's Indi
 ## Sources citing this page
 
 - [[linkedin-phani-sama]] — LinkedIn profile dump (Apr 2026)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

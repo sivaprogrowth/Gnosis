@@ -23,8 +23,6 @@ email: siva@progrowth.services
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Founder of [[progrowth]]. This wiki belongs to Siva — every other person, company, and concept here is mapped in relation to him.
 
 B2B fractional CMO and AI marketing operator with 15+ years across SaaS, fintech, e-commerce, and machine-learning startups. Track record includes scaling a fintech SaaS from $0 → $20M ARR in 24 months, 125% pipeline lift for a $50M AI software company, and $5M → $45M growth for an e-commerce brand.
@@ -100,7 +98,6 @@ AI search ([[generative-engine-optimization]]), LLM-maintained knowledge systems
 
 - [[gnosis-hackathon]] — this project is Siva's work
 - [[linkedin-siva-cotipalli]] — LinkedIn profile dump (Apr 2026)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

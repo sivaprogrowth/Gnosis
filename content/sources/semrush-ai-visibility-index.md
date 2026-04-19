@@ -25,8 +25,6 @@ accessed: 2026-04-19T00:00:00.000Z
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 ## What this source is
 
 The Semrush AI Visibility Index is a **monthly-updated interactive benchmarking tool** — not a research paper — that ranks brand visibility across AI search engines. Discovered via a bit.ly shortlink shared by Elena Verna (growth/PLG writer) in a Semrush newsletter promotion.
@@ -65,7 +63,6 @@ This source page is a **snapshot of the April 2026 data release and overview cop
 - Local raw: `raw/articles/semrush-ai-visibility-index.md` (fetched 2026-04-19)
 - URL: https://ai-visibility-index.semrush.com/
 - Shortlink: https://bit.ly/4nAfMQO
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

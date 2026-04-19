@@ -20,8 +20,6 @@ website: 'https://www.chevening.org'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 UK government's international scholarship programme funded by the Foreign, Commonwealth & Development Office. Places mid-career leaders at UK universities for a year of study, with several named variants (Gurukul, Standard Chartered Financial Services, etc.) targeting specific cohorts.
 
 ## Why it's in this wiki
@@ -37,7 +35,6 @@ The **second shared credential** linking [[siva-cotipalli]] and [[phani-sama]] â
 <!-- GNOSIS:TABLECHART:END -->
 
 Different tracks, different cohorts, same programme â€” a useful warm-intro pretext if Siva ever needs to re-engage Phani on shared-network terms.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

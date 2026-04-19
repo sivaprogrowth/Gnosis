@@ -21,8 +21,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 A brand whose digital presence (website, product data, service details) is structured so that AI agents can parse, interpret, and act on it with the same reliability as if it exposed a formal API. The technical prerequisite for surviving the "[[from-retrieval-to-agency]]" shift in AI search.
 
 ## The core claim
@@ -70,7 +68,6 @@ API-ability is the **technical layer**; justification attributes are the **conte
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — §3.2.2 "The Rise of the API-able Brand" and §5.3.1 "Engineer for Agency and Scannability"
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

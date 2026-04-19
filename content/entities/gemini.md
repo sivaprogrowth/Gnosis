@@ -23,8 +23,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Google's conversational AI, with Google Search grounding. ~2% global AI chatbot share (July 2025 StatCounter). The variant tested in the GEO paper is `gemini-2.5-flash` with the `google_search` tool enabled via generation config.
 
 ## Behavior as an AI search engine
@@ -47,7 +45,6 @@ Per [[geo-how-to-dominate-ai-search]]:
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — comparative empirical analysis (Sep 2025)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

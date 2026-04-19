@@ -21,8 +21,6 @@ aliases:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Originally a Google Search Quality Rater concept used to evaluate content quality. Now — per [[geo-how-to-dominate-ai-search]] — **no longer an abstract SEO framework** but a set of **direct, concrete inputs to AI search engines' recommendation algorithms**.
 
 ## The four dimensions
@@ -66,7 +64,6 @@ In traditional SEO, E-E-A-T influences rankings indirectly, via quality raters a
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — §3.2.3 "Trust is the New Currency: Cultivating AI-Perceived Authority"
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

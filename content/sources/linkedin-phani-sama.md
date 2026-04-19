@@ -19,8 +19,6 @@ tags:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 A 3-page LinkedIn profile export for [[phani-sama]], a contact of [[siva-cotipalli|Siva]] and the founder of [[redbus]]. Ingested alongside Siva's own profile to map the "Siva + adjacent network" graph.
 
 ## Key claims
@@ -50,7 +48,6 @@ Companies and institutions: [[redbus]], [[t-works]], [[kakatiya-sandbox]], [[des
 
 - Raw: `raw/pdfs/linkedin-phani-sama.pdf` (3 pages, exported Apr 2026)
 - Original: https://www.linkedin.com/in/phanisama
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

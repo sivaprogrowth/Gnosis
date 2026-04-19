@@ -20,14 +20,11 @@ website: 'https://www.lse.ac.uk'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 The London School of Economics and Political Science — UK social sciences university.
 
 ## Why it's in this wiki
 
 [[siva-cotipalli]]'s Chevening Gurukul Scholarship host institution (2012) — leadership programme. One of three educational credentials (alongside [[bits-pilani]] and [[iim-kozhikode]]).
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

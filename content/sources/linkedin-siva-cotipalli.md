@@ -19,8 +19,6 @@ tags:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 An 8-page LinkedIn profile export for [[siva-cotipalli]] (the owner of this wiki). Serves as the canonical biographical source for Siva's career, education, credentials, and voice positioning.
 
 ## Key claims
@@ -44,7 +42,6 @@ Concepts: [[generative-engine-optimization]] (via ProGrowth's AI-marketing pract
 
 - Raw: `raw/pdfs/linkedin-siva-cotipalli.pdf` (8 pages, exported Apr 2026)
 - Original: https://www.linkedin.com/in/sivacotipalli
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

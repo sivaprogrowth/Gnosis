@@ -21,8 +21,6 @@ website: 'https://www.dhanax.com'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 India's **first commercial peer-to-peer lending platform** (dhanax.com). Originally focused on unbanked populations and self-help groups. Shut down after scaling to a few thousand customers due to regulatory uncertainty.
 
 ## Why it's in this wiki
@@ -39,7 +37,6 @@ India's **first commercial peer-to-peer lending platform** (dhanax.com). Origina
 ## Why it ended
 
 "Lack of clarity on the regulatory environment" (Siva's own framing on LinkedIn). Predates India's P2P lending regulatory framework by several years.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

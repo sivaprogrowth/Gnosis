@@ -23,8 +23,8 @@ find "$SITE_DST" -mindepth 1 \
   ! -name '.gitkeep' \
   -delete 2>/dev/null || true
 
-echo "→ Copying wiki/{sources,entities,concepts,people,companies,projects,inspiration}/ into content/..."
-for sub in sources entities concepts people companies projects inspiration; do
+echo "→ Copying wiki/{sources,entities,concepts,people,companies,projects,inspiration,queries}/ into content/..."
+for sub in sources entities concepts people companies projects inspiration queries; do
   if [[ -d "$WIKI_SRC/$sub" ]]; then
     mkdir -p "$SITE_DST/$sub"
     # copy all .md files (skip .gitkeep and any auto-generated index.md — we regenerate those)

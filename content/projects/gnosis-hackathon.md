@@ -22,8 +22,6 @@ repos:
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 The meta-entry: this wiki itself, along with its public demo surface at `gnosis-site.vercel.app`, built as a hackathon demonstration of the **LLM-maintained personal wiki** pattern applied to a fractional-marketing operator's knowledge base.
 
 ## What it is
@@ -58,7 +56,6 @@ The meta-entry: this wiki itself, along with its public demo surface at `gnosis-
 
 - [[siva-cotipalli]] — founder, builder
 - [[progrowth]] — the parent company
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

@@ -19,8 +19,6 @@ website: 'https://semrush.com'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Public SaaS company providing SEO, content marketing, and competitive-research tooling. NYSE-listed, one of the largest players in the SEO-software category alongside Ahrefs, Moz, and SimilarWeb.
 
 ## Why they're in this wiki
@@ -45,7 +43,6 @@ These are exactly the differentiation levers for [[ai-overview-tool]].
 ## Sources citing this page
 
 - [[semrush-ai-visibility-index]] — the tool Semrush ships
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

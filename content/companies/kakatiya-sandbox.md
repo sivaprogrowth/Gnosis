@@ -20,8 +20,6 @@ headquartered: 'Nizamabad, Telangana, India'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 Co-founded by [[phani-sama]] in July 2013 in the Nizamabad area of Telangana. Positioned as a "sandbox" — a space for people to work on solutions to local problems.
 
 ## Why it's in this wiki
@@ -29,7 +27,6 @@ Co-founded by [[phani-sama]] in July 2013 in the Nizamabad area of Telangana. Po
 The earliest of [[phani-sama]]'s civic-innovation commitments (12+ years active) and a direct expression of the Benjamin Disraeli quote on his profile: *"The greatest good you can do for another is not just to share your riches, but to reveal to him his own."*
 
 Useful as context for Phani's "CIO of Telangana → T-Works board → Deshpande Skilling chair" arc — all threads start here.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

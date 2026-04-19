@@ -24,8 +24,6 @@ url: 'https://ai-visibility-index.semrush.com/'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 A product/tool from Semrush that benchmarks brand visibility across AI search engines. Publicly accessible interactive dashboard, monthly data refresh. The clearest public reference point for what an AI-search benchmarking tool looks like as a productized offering — highly relevant to ProGrowth's `overviews.progrowth.services` initiative.
 
 ## What it measures
@@ -57,7 +55,6 @@ A product/tool from Semrush that benchmarks brand visibility across AI search en
 ## Sources citing this page
 
 - [[semrush-ai-visibility-index]] (source, April 2026 snapshot)
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

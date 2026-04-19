@@ -19,8 +19,6 @@ website: 'https://www.telangana.gov.in'
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
-
-
 The state government of Telangana, India (capital: Hyderabad). Formed in 2014 after the bifurcation of Andhra Pradesh. Relevant in this wiki as a civic-innovation node.
 
 ## Why it's in this wiki
@@ -33,7 +31,6 @@ The state government of Telangana, India (capital: Hyderabad). Formed in 2014 af
 
 - **[[t-works]]** — Telangana's state-backed prototyping centre; Phani on the board since 2017.
 - **[[kakatiya-sandbox]]** — Nizamabad-based civic innovation sandbox co-founded by Phani.
-
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

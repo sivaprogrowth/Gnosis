@@ -1,0 +1,31 @@
+Task ID,Phase,Task,Description,Priority,Status,Owner,Dependencies,Notes
+1,1. Setup,Create project directory,Create ~/Projects/gnosis root directory,High,Not Started,Claude,,
+2,1. Setup,Create raw/ subdirectories,"Create raw/articles/, raw/pdfs/, raw/notes/, raw/assets/ with .gitkeep files",High,Not Started,Claude,1,Immutable source zone
+3,1. Setup,Create wiki/ subdirectories,"Create wiki/sources/, wiki/entities/, wiki/concepts/, wiki/queries/ with .gitkeep files",High,Not Started,Claude,1,LLM-owned zone
+4,1. Setup,Write CLAUDE.md schema,"Draft the schema file: identity, session start protocol, ingest/query/lint workflows, page conventions, log format, index format, naming rules",High,Not Started,Claude,1,The single most important file
+5,1. Setup,Write README.md,One-paragraph project description + instructions to start a Claude session and ingest,Medium,Not Started,Claude,1,
+6,1. Setup,Create index.md template,"Empty index with four section headers: Sources, Entities, Concepts, Queries",High,Not Started,Claude,1,Claude maintains from here
+7,1. Setup,Create log.md template,Empty log with header comment describing the format,High,Not Started,Claude,1,Append-only chronological
+8,1. Setup,Create .gitignore,"Ignore .DS_Store and optionally raw/assets/* for large binaries",Medium,Not Started,Claude,1,
+9,1. Setup,git init + initial commit,Initialize git repo and commit scaffolding,High,Not Started,Claude,"2,3,4,5,6,7,8",Version history for the wiki
+10,2. Smoke Test,Ingest smoke test #1,"Paste URL of a recently-read article; Claude should fetch, discuss, write summary, create 2-4 entity/concept pages, update index.md, append log",High,Not Started,Siva + Claude,9,First real validation
+11,2. Smoke Test,Verify pages cross-linked,Confirm source page has [[links]] to entity/concept pages and vice versa,High,Not Started,Siva,10,
+12,2. Smoke Test,Ingest smoke test #2,"Ingest a second source that overlaps topically; Claude should UPDATE existing entity pages, not duplicate; add cross-refs between sources",High,Not Started,Siva + Claude,10,Tests compounding
+13,2. Smoke Test,Query synthesis test,Ask a question that requires combining both sources; answer should cite [[page]] links,High,Not Started,Siva + Claude,12,
+14,2. Smoke Test,File query as wiki page,Confirm query answer can be filed back to wiki/queries/ and indexed,Medium,Not Started,Claude,13,Exploration compounds too
+15,2. Smoke Test,Grep log.md,Run `grep '^## \[' log.md | tail -5` and confirm clean chronological entries,Low,Not Started,Siva,10,Validates log format
+16,2. Smoke Test,Obsidian vault check,"Optional: open ~/Projects/gnosis as an Obsidian vault, check graph view renders connected nodes",Low,Not Started,Siva,12,Optional
+17,3. First Real Use,Ingest first real source,Drop in your first real article/PDF/note and run a full interactive ingest,High,Not Started,Siva + Claude,13,Real use begins
+18,3. First Real Use,Review output quality,"Read generated wiki pages; note what's good, what's missing, what feels wrong",High,Not Started,Siva,17,
+19,3. First Real Use,Iterate on CLAUDE.md,Refine schema based on observations (page structure, emphasis guidance, naming),High,Not Started,Siva + Claude,18,Schema co-evolves
+20,3. First Real Use,Commit schema refinements,Commit updated CLAUDE.md with rationale in commit message,Medium,Not Started,Claude,19,
+21,4. Ongoing Ops,Establish ingest cadence,"Decide weekly/daily/ad-hoc; document in CLAUDE.md if it affects workflow",Medium,Not Started,Siva,20,
+22,4. Ongoing Ops,First lint pass,"After ~10 sources, run a lint check: contradictions, orphans, undefined concepts",Medium,Not Started,Siva + Claude,21,
+23,4. Ongoing Ops,Review orphan pages,Read the lint report; decide which orphans deserve cross-references or deletion,Medium,Not Started,Siva,22,
+24,5. Growth (Optional),Install Obsidian plugins,"Optional: Dataview, Marp, Templater if you want Obsidian-native features",Low,Not Started,Siva,16,Only if using Obsidian heavily
+25,5. Growth (Optional),Set up Obsidian Web Clipper,"Browser extension to clip web articles directly into raw/articles/",Low,Not Started,Siva,,Speeds up article ingest
+26,5. Growth (Optional),Configure image download hotkey,"Obsidian hotkey (Ctrl+Shift+D) to download inline article images to raw/assets/",Low,Not Started,Siva,25,Optional per pattern doc
+27,5. Growth (Optional),Evaluate qmd local search,"When wiki exceeds ~50 sources, benchmark index.md reads vs qmd BM25/vector search",Low,Not Started,Siva + Claude,,Trigger: 50+ sources
+28,5. Growth (Optional),Install qmd + MCP integration,"If qmd wins, install CLI + MCP server so Claude can search natively",Low,Not Started,Claude,27,Conditional on Task 27
+29,5. Growth (Optional),Configure Marp slide export,"If you want to generate slides from wiki content, configure Marp plugin",Low,Not Started,Siva,,Optional
+30,5. Growth (Optional),Configure Dataview queries,"If you want dynamic tables from YAML frontmatter, install Dataview",Low,Not Started,Siva,,Optional

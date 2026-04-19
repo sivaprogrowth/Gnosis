@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npx quartz build",
+  "outputDirectory": "public",
+  "framework": null,
+  "functions": {
+    "api/ask.ts": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -1,0 +1,319 @@
+@use "../../styles/variables.scss" as *;
+
+.gnosis-chat {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 1000;
+  font-family: var(--bodyFont);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  // ---- floating toggle button ----
+  .gnosis-chat-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--secondary);
+    color: var(--light);
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  // ---- expanded panel ----
+  .gnosis-chat-panel {
+    display: none;
+    width: min(420px, calc(100vw - 2rem));
+    height: min(600px, calc(100vh - 6rem));
+    background: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &.expanded .gnosis-chat-panel {
+    display: flex;
+  }
+
+  &.expanded .gnosis-chat-toggle {
+    display: none;
+  }
+
+  // ---- header ----
+  .gnosis-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--lightgray);
+    background: var(--light);
+
+    .gnosis-chat-title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+
+      strong {
+        color: var(--dark);
+        font-size: 1rem;
+      }
+
+      .gnosis-chat-subtitle {
+        font-size: 0.75rem;
+        color: var(--gray);
+      }
+    }
+
+    .gnosis-chat-close {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--darkgray);
+      padding: 0.35rem;
+      border-radius: 6px;
+
+      &:hover {
+        background: var(--lightgray);
+      }
+    }
+  }
+
+  // ---- messages list ----
+  .gnosis-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .gnosis-chat-empty {
+    color: var(--darkgray);
+    font-size: 0.9rem;
+
+    p {
+      margin: 0 0 0.75rem 0;
+      line-height: 1.45;
+    }
+  }
+
+  .gnosis-chat-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gnosis-chat-suggestion {
+    text-align: left;
+    background: var(--highlight);
+    border: 1px solid var(--lightgray);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.1s ease;
+    line-height: 1.35;
+
+    &:hover {
+      background: var(--lightgray);
+    }
+  }
+
+  // ---- individual messages ----
+  .gnosis-chat-msg {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .gnosis-chat-msg-user {
+    justify-content: flex-end;
+
+    .gnosis-chat-bubble {
+      background: var(--secondary);
+      color: var(--light);
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  .gnosis-chat-msg-assistant {
+    justify-content: flex-start;
+
+    .gnosis-chat-bubble {
+      background: var(--highlight);
+      color: var(--dark);
+      border-bottom-left-radius: 4px;
+    }
+  }
+
+  .gnosis-chat-bubble {
+    max-width: 88%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    word-wrap: break-word;
+
+    p {
+      margin: 0;
+
+      & + p {
+        margin-top: 0.5rem;
+      }
+    }
+
+    ul, ol {
+      margin: 0.4rem 0;
+      padding-left: 1.2rem;
+    }
+
+    li + li {
+      margin-top: 0.2rem;
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.08);
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    a.gnosis-chat-citation {
+      color: inherit;
+      background: rgba(0, 0, 0, 0.08);
+      padding: 0.05em 0.3em;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  // typing indicator
+  .gnosis-chat-dots {
+    display: inline-flex;
+    gap: 3px;
+
+    span {
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: gnosis-chat-pulse 1.2s infinite ease-in-out;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  @keyframes gnosis-chat-pulse {
+    0%, 60%, 100% { opacity: 0.3; transform: scale(0.9); }
+    30% { opacity: 0.9; transform: scale(1.15); }
+  }
+
+  // ---- input form ----
+  .gnosis-chat-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.7rem 0.8rem;
+    border-top: 1px solid var(--lightgray);
+    background: var(--light);
+  }
+
+  .gnosis-chat-input {
+    flex: 1;
+    resize: none;
+    border: 1px solid var(--lightgray);
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 0.55rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    outline: none;
+    max-height: 140px;
+
+    &:focus {
+      border-color: var(--secondary);
+    }
+  }
+
+  .gnosis-chat-send {
+    background: var(--secondary);
+    color: var(--light);
+    border: none;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.1s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ---- mobile ----
+@media (max-width: 600px) {
+  .gnosis-chat {
+    bottom: 0.75rem;
+    right: 0.75rem;
+
+    &.expanded {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+
+      .gnosis-chat-panel {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+      }
+    }
+
+    .gnosis-chat-toggle-label {
+      display: none;
+    }
+  }
+}

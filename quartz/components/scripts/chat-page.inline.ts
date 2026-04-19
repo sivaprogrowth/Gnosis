@@ -138,20 +138,83 @@ function ensureEmptyStateHidden(): void {
   if (empty) empty.style.display = "none"
 }
 
-function addMessage(role: "user" | "assistant", content: string): HTMLElement {
+function addUserMessage(content: string): HTMLElement {
   const list = $("#gnosis-chat-page-messages")
   if (!list) throw new Error("messages container not found")
   ensureEmptyStateHidden()
 
   const wrap = document.createElement("div")
-  wrap.className = `gnosis-chat-page-msg gnosis-chat-page-msg-${role}`
+  wrap.className = "gnosis-chat-page-msg gnosis-chat-page-msg-user"
   const bubble = document.createElement("div")
   bubble.className = "gnosis-chat-page-bubble"
-  if (role === "user") {
-    bubble.textContent = content
-  } else {
-    bubble.innerHTML = renderMarkdown(content || "")
-  }
+  bubble.textContent = content
+  wrap.appendChild(bubble)
+  list.appendChild(wrap)
+  list.scrollTop = list.scrollHeight
+  return bubble
+}
+
+type AssistantSlot = {
+  wrap: HTMLElement
+  thinkingPanel: HTMLDetailsElement
+  thinkingBody: HTMLElement
+  thinkingSummary: HTMLElement
+  bubble: HTMLElement
+}
+
+function addAssistantSlot(): AssistantSlot {
+  const list = $("#gnosis-chat-page-messages")
+  if (!list) throw new Error("messages container not found")
+  ensureEmptyStateHidden()
+
+  const wrap = document.createElement("div")
+  wrap.className = "gnosis-chat-page-msg gnosis-chat-page-msg-assistant"
+
+  // --- reasoning panel (hidden until first thinking chunk) ---
+  const thinkingPanel = document.createElement("details")
+  thinkingPanel.className = "gnosis-chat-page-thinking is-hidden"
+  thinkingPanel.open = true
+
+  const thinkingSummary = document.createElement("summary")
+  thinkingSummary.className = "gnosis-chat-page-thinking-summary"
+  thinkingSummary.innerHTML = `
+    <span class="gnosis-chat-page-thinking-chev" aria-hidden="true">▾</span>
+    <span class="gnosis-chat-page-thinking-label">Reasoning</span>
+    <span class="gnosis-chat-page-thinking-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  `
+  thinkingPanel.appendChild(thinkingSummary)
+
+  const thinkingBody = document.createElement("div")
+  thinkingBody.className = "gnosis-chat-page-thinking-body"
+  thinkingPanel.appendChild(thinkingBody)
+
+  // --- answer bubble with placeholder dots ---
+  const bubble = document.createElement("div")
+  bubble.className = "gnosis-chat-page-bubble gnosis-chat-page-streaming"
+  bubble.innerHTML =
+    '<span class="gnosis-chat-page-dots"><span></span><span></span><span></span></span>'
+
+  wrap.appendChild(thinkingPanel)
+  wrap.appendChild(bubble)
+  list.appendChild(wrap)
+  list.scrollTop = list.scrollHeight
+
+  return { wrap, thinkingPanel, thinkingBody, thinkingSummary, bubble }
+}
+
+function addAssistantRestored(content: string): HTMLElement {
+  // Restored history — no thinking panel (not persisted).
+  const list = $("#gnosis-chat-page-messages")
+  if (!list) throw new Error("messages container not found")
+  ensureEmptyStateHidden()
+
+  const wrap = document.createElement("div")
+  wrap.className = "gnosis-chat-page-msg gnosis-chat-page-msg-assistant"
+  const bubble = document.createElement("div")
+  bubble.className = "gnosis-chat-page-bubble"
+  bubble.innerHTML = renderMarkdown(content || "")
   wrap.appendChild(bubble)
   list.appendChild(wrap)
   list.scrollTop = list.scrollHeight
@@ -259,7 +322,7 @@ async function sendMessage(userText: string): Promise<void> {
 
   STATE.inFlight = true
   STATE.messages.push({ role: "user", content: text })
-  addMessage("user", text)
+  addUserMessage(text)
   clearSidebar()
 
   const input = $("#gnosis-chat-page-input") as HTMLTextAreaElement | null
@@ -268,13 +331,30 @@ async function sendMessage(userText: string): Promise<void> {
     input.style.height = "auto"
   }
 
-  const assistantBubble = addMessage("assistant", "")
-  assistantBubble.classList.add("gnosis-chat-page-streaming")
-  assistantBubble.innerHTML =
-    '<span class="gnosis-chat-page-dots"><span></span><span></span><span></span></span>'
+  const slot = addAssistantSlot()
 
-  let assistantText = ""
-  let firstChunk = true
+  let thinkingText = ""
+  let answerText = ""
+  let firstAnswerChunk = true
+  let thinkingFinalized = false
+
+  const revealThinking = () => {
+    if (slot.thinkingPanel.classList.contains("is-hidden")) {
+      slot.thinkingPanel.classList.remove("is-hidden")
+    }
+  }
+
+  const finalizeThinking = () => {
+    if (thinkingFinalized) return
+    thinkingFinalized = true
+    slot.thinkingPanel.classList.add("is-done")
+    // auto-collapse once the answer starts; user can re-open.
+    slot.thinkingPanel.open = false
+    const label = slot.thinkingSummary.querySelector(".gnosis-chat-page-thinking-label")
+    if (label) label.textContent = "Reasoning"
+    const dots = slot.thinkingSummary.querySelector(".gnosis-chat-page-thinking-dots")
+    if (dots) dots.remove()
+  }
 
   try {
     const res = await fetch("/api/ask", {
@@ -284,7 +364,7 @@ async function sendMessage(userText: string): Promise<void> {
     })
     if (!res.ok || !res.body) {
       const errText = await res.text().catch(() => "")
-      assistantBubble.innerHTML = `<em>Error: ${escapeHtml(errText || res.statusText)}</em>`
+      slot.bubble.innerHTML = `<em>Error: ${escapeHtml(errText || res.statusText)}</em>`
       STATE.inFlight = false
       return
     }
@@ -292,6 +372,7 @@ async function sendMessage(userText: string): Promise<void> {
     const reader = res.body.getReader()
     const decoder = new TextDecoder()
     let buffer = ""
+    const list = $("#gnosis-chat-page-messages")
 
     while (true) {
       const { value, done } = await reader.read()
@@ -305,15 +386,21 @@ async function sendMessage(userText: string): Promise<void> {
         if (!payload || payload === "[DONE]") continue
         try {
           const obj = JSON.parse(payload)
-          if (obj.text) {
-            if (firstChunk) {
-              assistantBubble.innerHTML = ""
-              firstChunk = false
+          if (typeof obj.thinking === "string") {
+            revealThinking()
+            thinkingText += obj.thinking
+            slot.thinkingBody.textContent = thinkingText
+            if (list) list.scrollTop = list.scrollHeight
+          } else if (typeof obj.text === "string") {
+            if (firstAnswerChunk) {
+              slot.bubble.innerHTML = ""
+              slot.bubble.classList.remove("gnosis-chat-page-streaming")
+              firstAnswerChunk = false
+              if (thinkingText) finalizeThinking()
             }
-            assistantText += obj.text
-            assistantBubble.innerHTML = renderMarkdown(assistantText)
-            attachCitationHoverSync(assistantBubble)
-            const list = $("#gnosis-chat-page-messages")
+            answerText += obj.text
+            slot.bubble.innerHTML = renderMarkdown(answerText)
+            attachCitationHoverSync(slot.bubble)
             if (list) list.scrollTop = list.scrollHeight
           } else if (obj.meta) {
             const stage = obj.meta.stage
@@ -322,7 +409,8 @@ async function sendMessage(userText: string): Promise<void> {
             else if (stage === "top_k" && Array.isArray(data)) renderTopK(data as TopKItem[])
             // "candidates" stage is logged only for now.
           } else if (obj.error) {
-            assistantBubble.innerHTML = `<em>Error: ${escapeHtml(obj.error)}</em>`
+            slot.bubble.innerHTML = `<em>Error: ${escapeHtml(obj.error)}</em>`
+            slot.bubble.classList.remove("gnosis-chat-page-streaming")
           }
         } catch {
           // ignore unparseable keepalive frames
@@ -331,11 +419,16 @@ async function sendMessage(userText: string): Promise<void> {
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
-    assistantBubble.innerHTML = `<em>Error: ${escapeHtml(msg)}</em>`
+    slot.bubble.innerHTML = `<em>Error: ${escapeHtml(msg)}</em>`
   } finally {
-    assistantBubble.classList.remove("gnosis-chat-page-streaming")
-    if (assistantText) {
-      STATE.messages.push({ role: "assistant", content: assistantText })
+    slot.bubble.classList.remove("gnosis-chat-page-streaming")
+    // If thinking streamed but no answer arrived, still mark thinking done.
+    if (thinkingText && !thinkingFinalized) finalizeThinking()
+    // Clean up the thinking panel if it never had any content.
+    if (!thinkingText) slot.thinkingPanel.remove()
+
+    if (answerText) {
+      STATE.messages.push({ role: "assistant", content: answerText })
       saveHistory(STATE.messages)
     }
     STATE.inFlight = false
@@ -350,8 +443,12 @@ function restore(): void {
   STATE.messages = stored
   ensureEmptyStateHidden()
   for (const m of stored) {
-    const bubble = addMessage(m.role, m.content)
-    if (m.role === "assistant") attachCitationHoverSync(bubble)
+    if (m.role === "user") {
+      addUserMessage(m.content)
+    } else {
+      const bubble = addAssistantRestored(m.content)
+      attachCitationHoverSync(bubble)
+    }
   }
 }
 

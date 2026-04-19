@@ -141,6 +141,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       parsed,
       pages,
       onChunk: (text) => send({ text }),
+      // Extended thinking deltas (Opus path only). Widget ignores these frames
+      // because it only reads `text`; the /chat page renders them as a
+      // collapsible reasoning panel above the answer.
+      onThinking: (text) => send({ thinking: text }),
     })
     console.log(
       `[gnosis] synthesis in ${Date.now() - tSyn}ms — model=${result.model} (${result.modelId})`,

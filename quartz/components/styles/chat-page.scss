@@ -269,12 +269,107 @@
 
   .gnosis-chat-page-msg-assistant {
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
 
     .gnosis-chat-page-bubble {
       background: var(--highlight);
       color: var(--dark);
       border-bottom-left-radius: 4px;
     }
+  }
+
+  // ----- reasoning (extended thinking) panel -----
+  .gnosis-chat-page-thinking {
+    max-width: min(48rem, 78%);
+    background: transparent;
+    border-left: 2px solid var(--lightgray);
+    padding-left: 0.75rem;
+    color: var(--darkgray);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    transition: border-color 0.15s ease;
+
+    &.is-hidden {
+      display: none;
+    }
+
+    &[open] {
+      border-left-color: var(--secondary);
+    }
+
+    &.is-done {
+      border-left-color: var(--lightgray);
+      opacity: 0.9;
+    }
+  }
+
+  .gnosis-chat-page-thinking-summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding: 0.1rem 0;
+    user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  .gnosis-chat-page-thinking[open]
+    .gnosis-chat-page-thinking-summary
+    .gnosis-chat-page-thinking-chev {
+    transform: rotate(0deg);
+  }
+
+  .gnosis-chat-page-thinking-chev {
+    display: inline-block;
+    font-size: 0.7rem;
+    transform: rotate(-90deg);
+    transition: transform 0.15s ease;
+  }
+
+  .gnosis-chat-page-thinking-dots {
+    display: inline-flex;
+    gap: 2px;
+    margin-left: 0.15rem;
+
+    span {
+      width: 4px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: gnosis-chat-page-pulse 1.2s infinite ease-in-out;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  .gnosis-chat-page-thinking-body {
+    margin-top: 0.35rem;
+    white-space: pre-wrap;
+    font-family: var(--bodyFont);
+    font-style: italic;
+    color: var(--darkgray);
   }
 
   .gnosis-chat-page-bubble {

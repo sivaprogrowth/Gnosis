@@ -9,12 +9,23 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk"
-import type { MessageParam, TextBlockParam } from "@anthropic-ai/sdk/resources"
+import type {
+  MessageCreateParamsNonStreaming,
+  MessageParam,
+  TextBlockParam,
+} from "@anthropic-ai/sdk/resources"
 import type { AssembledPage, PageIndex, ParsedQuery, SynthesisModel, TopKPage } from "./types.js"
 
 const MODEL_OPUS = "claude-opus-4-7"
 const MODEL_SONNET = "claude-sonnet-4-6"
-const MAX_TOKENS = 1536
+
+// Sonnet path: no extended thinking, compact response.
+const MAX_TOKENS_SONNET = 1536
+
+// Opus path: reserve headroom for thinking + answer.
+// max_tokens must exceed thinking.budget_tokens per Anthropic's spec.
+const OPUS_THINKING_BUDGET = 4096
+const MAX_TOKENS_OPUS = 8192
 
 const SCHEMA_INSTRUCTIONS = `You are the Gnosis wiki assistant.
 
@@ -72,6 +83,11 @@ export type SynthesizeInput = {
   parsed: ParsedQuery
   pages: AssembledPage[]
   onChunk: (text: string) => void
+  /**
+   * Called for each extended-thinking delta when the Opus path is used.
+   * Omitted for Sonnet (which doesn't emit thinking blocks).
+   */
+  onThinking?: (text: string) => void
 }
 
 export type SynthesizeResult = {
@@ -106,17 +122,28 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
     },
   ]
 
-  const stream = await client.messages.stream({
+  const requestParams: MessageCreateParamsNonStreaming = {
     model: modelId,
-    max_tokens: MAX_TOKENS,
+    max_tokens: model === "opus" ? MAX_TOKENS_OPUS : MAX_TOKENS_SONNET,
     system: systemBlocks,
     messages: input.messages,
-  })
+    // Extended thinking on Opus gives the user a visible reasoning trace.
+    // Sonnet path stays lean — no thinking block.
+    ...(model === "opus" && {
+      thinking: { type: "enabled" as const, budget_tokens: OPUS_THINKING_BUDGET },
+    }),
+  }
+
+  const stream = await client.messages.stream(requestParams)
 
   for await (const event of stream) {
-    if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+    if (event.type !== "content_block_delta") continue
+    if (event.delta.type === "text_delta") {
       input.onChunk(event.delta.text)
+    } else if (event.delta.type === "thinking_delta") {
+      input.onThinking?.(event.delta.thinking)
     }
+    // signature_delta / other deltas are not surfaced to the client.
   }
 
   const final = await stream.finalMessage()

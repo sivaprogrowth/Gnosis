@@ -4,6 +4,7 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - geo-how-to-dominate-ai-search
+  - new-front-door-to-the-internet
 tags: [geo, ai-search, niche-brands, progrowth, seo-strategy]
 aliases: [major-brand-preference, big-brand-preference, market-leader-bias]
 ---
@@ -54,17 +55,30 @@ Breaking through requires building **tangible, verifiable authority** in a narro
 - [[claude]]: similar to ChatGPT in conservatism.
 - [[gemini]]: more brand-diverse generally, but not specifically studied in the cola experiment.
 
+## Contradictions / nuance
+
+[[new-front-door-to-the-internet]] (McKinsey sportswear audit) produces a finding that **appears to contradict** this page: across 5 anonymized sportswear brands, AI share-of-voice does **not** track market share. Three brands have AI SoV 30–60% *below* market share; two have SoV 40–60% *above*. Market leadership does not translate into AI visibility at all. See [[brand-strength-ai-visibility-gap]].
+
+**How to reconcile:**
+
+- Chen et al. measured **unbranded query defaults** ("best-selling soda", "most popular cola") — asked the AI to rank brands in a category. Under that prompt condition, the AI falls back on priors, and priors favor major brands.
+- McKinsey measured **aggregate AI answers across a richer prompt distribution** — including specific-use-case queries, feature comparisons, and niche considerations. Across that wider surface, market leadership stops predicting visibility.
+
+**Practical takeaway:** Big Brand Bias is real but **scoped to unbranded ranking prompts**. Challengers can still win in specific-use-case, feature-led, or niche-audience queries. The gap between these two findings is actually the **opportunity surface** for challenger-brand GEO investment: query types where major-brand defaulting weakens and earned-media authority in a specific niche takes over.
+
 ## ProGrowth relevance
 
 Directly applicable to **challenger/fractional marketing clients** who compete against category incumbents. The Big Brand Bias finding is both a warning (AI search is structurally unfriendly to challengers) and a strategic case (investing in niche-specific earned-media authority is high-leverage because incumbents don't focus there). Strong angle for ProGrowth positioning against marketri.com and similar.
 
 ## Sources citing this page
 
-- [[geo-how-to-dominate-ai-search]] — §5.2.6 "Big Brand Bias (Cola Vertical)" and §5.3.6 "Niche Brand Strategy"
+- [[geo-how-to-dominate-ai-search]] — §5.2.6 "Big Brand Bias (Cola Vertical)" and §5.3.6 "Niche Brand Strategy" — direct evidence
+- [[new-front-door-to-the-internet]] — presents apparently-contradictory sportswear data; reconciled above as scope-different
 
 ## Links
 
 - [[earned-media-bias]] — related but distinct structural bias
+- [[brand-strength-ai-visibility-gap]] — the counter-finding from McKinsey; read together with this page
 - [[generative-engine-optimization]] — strategic response framework
 - [[justification-attributes]] — niche brands need explicit use-case claims to differentiate
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]] — engine-level severity

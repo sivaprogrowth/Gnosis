@@ -4,8 +4,9 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - geo-how-to-dominate-ai-search
+  - new-front-door-to-the-internet
 tags: [geo, ai-search, competitive-intelligence, progrowth, ai-visibility]
-aliases: [citation-mapping, ai-source-auditing, engine-citation-network]
+aliases: [citation-mapping, ai-source-auditing, engine-citation-network, geo-diagnostic]
 ---
 
 # Citation Network Mapping
@@ -50,6 +51,12 @@ For each target vertical:
 - Monthly: refresh domain frequency distributions; flag shifts.
 - Quarterly: deep re-audit; re-prioritize earned-media pipeline.
 
+## Market context: the readiness gap
+
+Per [[new-front-door-to-the-internet]] (McKinsey CMO survey, Sep 2025): **only 16% of Fortune 500 consumer brands systematically track AI search performance**. This is the readiness gap citation-network-mapping solves — and a key reason challenger brands can overperform incumbents on AI visibility (see [[brand-strength-ai-visibility-gap]]).
+
+McKinsey's 4-move GEO framework begins with "undertake a robust diagnostic" — which is this concept, renamed for executive audiences.
+
 ## Tooling implications
 
 This mapping is tractable via APIs (Claude via Anthropic, ChatGPT via OpenAI with web search, Perplexity via its API, Gemini via Google AI Studio, Google via Custom Search). The paper's own methodology in §4.1 is essentially a recipe for a citation-mapping tool.
@@ -61,10 +68,12 @@ Direct specification for `overviews.progrowth.services`. The AI Overview tool sh
 ## Sources citing this page
 
 - [[geo-how-to-dominate-ai-search]] — §6 "The Imperative for Principled GEO Methodologies and Services", pillar 1
+- [[new-front-door-to-the-internet]] — McKinsey's 4-move framework, move #1 "robust diagnostic"
 
 ## Links
 
 - [[generative-engine-optimization]] — the operating system this pillar belongs to
 - [[brand-earned-social-taxonomy]] — the classification applied during mapping
 - [[earned-media-bias]] — the pattern mapping operationalizes
-- [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]] — per-engine maps are needed for each
+- [[brand-strength-ai-visibility-gap]] — the diagnostic output that quantifies a client's gap
+- [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]], [[google-ai-overview]] — per-engine maps are needed for each

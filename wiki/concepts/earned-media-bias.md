@@ -4,13 +4,14 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - geo-how-to-dominate-ai-search
+  - new-front-door-to-the-internet
 tags: [geo, ai-search, progrowth, seo-strategy, ai-visibility]
 aliases: [earned-bias, ai-earned-preference, third-party-authority-bias]
 ---
 
 # Earned-Media Bias (in AI Search)
 
-The empirical pattern that AI search engines systematically and overwhelmingly favor **Earned** media (third-party editorial, review, and independent authority sources) over **Brand-owned** and **Social** (community/UGC) content — in stark contrast to [[google-search]]'s balanced mix. The single most consequential finding in [[geo-how-to-dominate-ai-search]].
+The empirical pattern that AI search engines systematically and overwhelmingly favor **Earned** media (third-party editorial, review, and independent authority sources) over **Brand-owned** and **Social** (community/UGC) content — in stark contrast to [[google-search]]'s balanced mix. The single most consequential finding in [[geo-how-to-dominate-ai-search]], independently reinforced by McKinsey in [[new-front-door-to-the-internet]].
 
 ## The empirical pattern
 
@@ -50,13 +51,27 @@ A brand must **shift focus from creating owned content to systematically earning
 - [[perplexity]]: still earned-dominant, but with meaningful Social (17–24%) and slightly more Brand — video reviews and retail pages work here.
 - [[gemini]]: weakest version of the bias — brand-owned depth does surface.
 
+## Vertical-level nuance (McKinsey AIO data)
+
+[[new-front-door-to-the-internet]] adds vertical granularity for [[google-ai-overview]] specifically. Same earned-dominant pattern, but the *form* of earned media varies dramatically by category:
+
+| Vertical | Dominant earned form | Share |
+|---|---|---|
+| Consumer packaged goods | Affiliate blogs | 50% |
+| E-commerce | Affiliate blogs | **80%** |
+| Financial services | Affiliate blogs + news | 50% + 15% |
+| Telecommunications | UGC (Reddit/forums) + News | 45% + 20% |
+
+Key McKinsey finding reinforcing the bias: **brand-owned sites comprise only 5–10% of AI-cited sources** in most categories. Consistent with the academic data but measured against a wholly different taxonomy (see [[brand-earned-social-taxonomy]]).
+
 ## ProGrowth relevance
 
 This is the empirical foundation for repositioning ProGrowth's SEO offering into a GEO offering. For clients currently over-investing in owned content and under-investing in PR/earned media, the data is a direct ROI argument for reallocation. Also directly informs the measurement model for `overviews.progrowth.services`.
 
 ## Sources citing this page
 
-- [[geo-how-to-dominate-ai-search]] — establishes the empirical pattern
+- [[geo-how-to-dominate-ai-search]] — establishes the empirical pattern with Brand/Earned/Social taxonomy
+- [[new-front-door-to-the-internet]] — reinforces with vertical-level data for Google AI Overview; brand-owned sites only 5–10% of cited sources
 
 ## Links
 
@@ -64,4 +79,6 @@ This is the empirical foundation for repositioning ProGrowth's SEO offering into
 - [[brand-earned-social-taxonomy]] — the classification producing these percentages
 - [[e-e-a-t]] — the trust framework earned media is proxy for
 - [[big-brand-bias]] — a related but distinct AI search bias
+- [[brand-strength-ai-visibility-gap]] — downstream implication: brand size doesn't compensate
+- [[google-ai-overview]] — engine where McKinsey's affiliate-heavy variant is most visible
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]] — per-engine severity

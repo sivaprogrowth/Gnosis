@@ -4,6 +4,7 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - geo-how-to-dominate-ai-search
+  - new-front-door-to-the-internet
 tags: [geo, ai-search, taxonomy, progrowth]
 aliases: [media-type-classification, source-type-taxonomy, bes-taxonomy]
 ---
@@ -33,6 +34,26 @@ The taxonomy is explicitly acknowledged as a **constructed framework**, not obje
 
 Alternative taxonomies (News Media / Professional Review / User Review / E-commerce / Corporate) would yield different percentages. The paper argues the **relative trends between engines are more robust than the absolute figures**.
 
+## Contrast: McKinsey's more granular taxonomy
+
+[[new-front-door-to-the-internet]] uses a different, **six-category taxonomy** when analyzing Google AI Overview source mix:
+
+1. **Affiliate blogs** (dominant in CPG/e-commerce AIO output)
+2. **User-generated content** (dominant in telecommunications)
+3. **News and media**
+4. **Brand and retailer**
+5. **Academic and market research**
+6. **Other** (Google, Wikipedia)
+
+Key reconciliation challenge: **"affiliate blogs"** does not cleanly map to Chen et al.'s Brand/Earned/Social scheme. Affiliates are arguably:
+
+- **Brand-adjacent** (monetized via commissions from brands they review → conflict of interest).
+- **Earned-functional** (operate editorially; AI cites them like review sites).
+
+Both taxonomies give the same headline signal — brand-owned content is under-represented — but the finer-grained McKinsey scheme is more actionable for tactical decisions (e.g., "where should PR budget go? affiliate-publisher outreach is a distinct category from mainstream news coverage").
+
+**Practical recommendation**: use Chen et al.'s 3-bucket taxonomy for executive communication and cross-engine comparison; use McKinsey's 6-bucket taxonomy for tactical content-strategy budget allocation.
+
 ## Why this taxonomy matters for GEO
 
 - Operational clarity: teams can classify their marketing surface area into these three buckets and measure their mix.
@@ -45,10 +66,12 @@ Useful as the default source-type framework for `overviews.progrowth.services` t
 
 ## Sources citing this page
 
-- [[geo-how-to-dominate-ai-search]] — the taxonomy is used throughout the paper's methodology
+- [[geo-how-to-dominate-ai-search]] — introduces the 3-tier Brand/Earned/Social taxonomy
+- [[new-front-door-to-the-internet]] — uses a 6-category alternative (affiliate/UGC/news/brand/academic/other) that complements the 3-tier scheme
 
 ## Links
 
 - [[earned-media-bias]] — the finding that uses this taxonomy
 - [[generative-engine-optimization]] — the strategic framework built on these categories
 - [[big-brand-bias]] — a distinct bias detected via this same taxonomy
+- [[google-ai-overview]] — engine where McKinsey's 6-category taxonomy is most actionable

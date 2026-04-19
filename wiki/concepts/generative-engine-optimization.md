@@ -4,6 +4,7 @@ created: 2026-04-19
 updated: 2026-04-19
 sources:
   - geo-how-to-dominate-ai-search
+  - new-front-door-to-the-internet
 tags: [geo, ai-search, progrowth, seo-strategy, ai-visibility]
 aliases: [geo, ai-seo, generative-seo, ai-search-optimization]
 ---
@@ -46,13 +47,31 @@ Proposed by Chen et al. as a continuous managed practice:
 
 GEO does not replace SEO; it **layers on top**. Technical SEO foundations (crawlability, site speed, schema) are prerequisites for GEO — AI agents can't cite content they can't parse. But *winning* in AI search requires investment in earned media and justification content that most SEO budgets have historically deprioritized.
 
+## McKinsey's complementary 4-move framework
+
+[[new-front-door-to-the-internet]] offers a parallel (executive-oriented) framework that maps closely onto Chen et al.'s academic version:
+
+1. **Undertake a robust diagnostic** — benchmark GEO performance; map key sources driving results. Maps to [[citation-network-mapping]].
+2. **Adjust content investments** across owned / third-party / communities — for CPG and financial services, 65%+ of AI sources are publishers/UGC/affiliates, so owned-content budgets should reallocate accordingly.
+3. **Optimize content to surface in AI** — strengthen credibility, improve structure (clear headings, precise language), ensure both owned and third-party content is LLM-optimized. Maps to [[justification-attributes]] + [[api-able-brand]].
+4. **Invest in GEO as a core capability** — establish AI as a strategic priority, stand up a cross-functional team (marketing + SEO + CX), define GEO-specific KPIs, update tech infrastructure.
+
+## Market context (McKinsey projections)
+
+- **$750 billion in US revenue will funnel through AI-powered search by 2028.**
+- ~50% of Google searches already have AI summaries ([[google-ai-overview]]); >75% projected by 2028.
+- Unprepared brands face **20–50% decline in traffic** from traditional search.
+- Only **16% of brands systematically track AI search performance** today — the capability gap is the opportunity.
+- GEO performance of even industry leaders may **lag SEO by 20–50%**.
+
 ## ProGrowth relevance
 
-GEO is the emerging service category this paper argues for. Directly relevant to ProGrowth's positioning: the [[big-brand-bias]] finding also validates the strategic case for challenger-brand clients investing in deep-niche authority. Paper also cites ktau.ai as a GEO-focused platform — competitor/reference point to track.
+GEO is the emerging service category both sources argue for. Directly relevant to ProGrowth's positioning: the [[big-brand-bias]] finding and the [[brand-strength-ai-visibility-gap]] finding both validate the strategic case for challenger-brand clients investing in deep-niche authority. The McKinsey 16%-tracking stat is a strong cold-outreach hook: *"Only 16% of your competitors measure what we measure."* Chen et al. also references ktau.ai as a GEO-focused platform — competitor/reference point.
 
 ## Sources citing this page
 
-- [[geo-how-to-dominate-ai-search]] — introduces and develops the GEO framework
+- [[geo-how-to-dominate-ai-search]] — introduces and develops the academic GEO framework (4 imperatives + 5 pillars)
+- [[new-front-door-to-the-internet]] — McKinsey's parallel executive framework (4 moves) with market projections
 
 ## Links
 
@@ -62,4 +81,7 @@ GEO is the emerging service category this paper argues for. Directly relevant to
 - [[e-e-a-t]] — the trust framework AI operationalizes
 - [[big-brand-bias]] — the asymmetric challenge for niche brands
 - [[citation-network-mapping]] — the competitive-intelligence pillar
+- [[ai-search-decision-journey]] — GEO must cover all journey stages, not just awareness
+- [[brand-strength-ai-visibility-gap]] — empirical proof that GEO investment can leapfrog incumbents
+- [[google-ai-overview]] — the AI surface with largest reach in McKinsey's analysis
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]] — engines GEO targets

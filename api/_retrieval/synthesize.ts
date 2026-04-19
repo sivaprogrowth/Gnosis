@@ -22,10 +22,11 @@ const MODEL_SONNET = "claude-sonnet-4-6"
 // Sonnet path: no extended thinking, compact response.
 const MAX_TOKENS_SONNET = 1536
 
-// Opus path: reserve headroom for thinking + answer.
-// max_tokens must exceed thinking.budget_tokens per Anthropic's spec.
-const OPUS_THINKING_BUDGET = 4096
+// Opus path: adaptive thinking. max_tokens caps the combined output
+// (thinking tokens + visible answer tokens). The model decides how many
+// thinking tokens to spend based on difficulty, biased by output_config.effort.
 const MAX_TOKENS_OPUS = 8192
+const OPUS_EFFORT: "low" | "medium" | "high" = "medium"
 
 const SCHEMA_INSTRUCTIONS = `You are the Gnosis wiki assistant.
 
@@ -122,17 +123,26 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
     },
   ]
 
-  const requestParams: MessageCreateParamsNonStreaming = {
+  const baseParams: MessageCreateParamsNonStreaming = {
     model: modelId,
     max_tokens: model === "opus" ? MAX_TOKENS_OPUS : MAX_TOKENS_SONNET,
     system: systemBlocks,
     messages: input.messages,
-    // Extended thinking on Opus gives the user a visible reasoning trace.
-    // Sonnet path stays lean — no thinking block.
-    ...(model === "opus" && {
-      thinking: { type: "enabled" as const, budget_tokens: OPUS_THINKING_BUDGET },
-    }),
   }
+
+  // Claude 4.x models use the *adaptive* thinking API: the model decides how
+  // many thinking tokens to spend based on question difficulty, biased by
+  // output_config.effort. The older 3.x "enabled + budget_tokens" shape is
+  // rejected by Opus 4.x with a 400. Sonnet path keeps no thinking config.
+  // Typed as `unknown` → cast because SDK 0.90.x predates the adaptive shape.
+  const requestParams =
+    model === "opus"
+      ? ({
+          ...baseParams,
+          thinking: { type: "adaptive" },
+          output_config: { effort: OPUS_EFFORT },
+        } as unknown as MessageCreateParamsNonStreaming)
+      : baseParams
 
   const stream = await client.messages.stream(requestParams)
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npx quartz build",
+  "buildCommand": "node scripts/generate-dataview.cjs && npx quartz build",
   "outputDirectory": "public",
   "framework": null,
   "cleanUrls": true,

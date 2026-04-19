@@ -47,12 +47,12 @@ The meta-entry: this wiki itself, along with its public demo surface at `gnosis-
 ## Sources citing this page
 
 - [[siva-cotipalli]] — founder, builder
-- [[]] — the parent company
+- [[progrowth]] — the parent company
 
 ## Links
 
 - [[siva-cotipalli]] — the operator behind it
-- [[]] — the company it represents
+- [[progrowth]] — the company it represents
 - [[farzapedia-pattern]] — the inspiration
 - [[ai-overview-tool]] — sibling project (both productize different slices)
 - [[claude]] — the agent that maintains it

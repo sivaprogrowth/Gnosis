@@ -14,9 +14,9 @@ Personalized financial news and content platform for investors and traders. Leve
 
 ## Why it's in this wiki
 
-[[siva-cotipalli]] was **Head of Marketing** from April 2023 to April 2024 (~1 year). His most recent in-house marketing leadership role before going full-time on [[]].
+[[siva-cotipalli]] was **Head of Marketing** from April 2023 to April 2024 (~1 year). His most recent in-house marketing leadership role before going full-time on [[progrowth]].
 
 ## Links
 
 - [[siva-cotipalli]] — Head of Marketing, 2023–2024
-- [[]] — the fractional-marketing firm Siva built after CityFALCON
+- [[progrowth]] — the fractional-marketing firm Siva built after CityFALCON

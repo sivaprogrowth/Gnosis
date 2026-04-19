@@ -8,7 +8,7 @@
 set -euo pipefail
 
 WIKI_SRC="${WIKI_SRC:-$HOME/Projects/gnosis/wiki}"
-SITE_DST="${SITE_DST:-$HOME/Projects/gnosis-site/content}"
+SITE_DST="${SITE_DST:-$HOME/Projects/gnosis-main/content}"
 
 if [[ ! -d "$WIKI_SRC" ]]; then
   echo "ERROR: wiki source not found at $WIKI_SRC" >&2
@@ -23,11 +23,11 @@ find "$SITE_DST" -mindepth 1 \
   ! -name '.gitkeep' \
   -delete 2>/dev/null || true
 
-echo "→ Copying wiki/{sources,entities,concepts}/ into content/..."
-for sub in sources entities concepts; do
+echo "→ Copying wiki/{sources,entities,concepts,people,companies,projects,inspiration}/ into content/..."
+for sub in sources entities concepts people companies projects inspiration; do
   if [[ -d "$WIKI_SRC/$sub" ]]; then
     mkdir -p "$SITE_DST/$sub"
-    # copy all .md files (skip .gitkeep)
+    # copy all .md files (skip .gitkeep and any auto-generated index.md — we regenerate those)
     find "$WIKI_SRC/$sub" -maxdepth 1 -type f -name '*.md' -exec cp {} "$SITE_DST/$sub/" \;
   fi
 done
@@ -43,9 +43,10 @@ for f in $(find "$SITE_DST" -type f -name '*.md'); do
   ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
 done
 
-echo "→ Stripping ProGrowth tag from frontmatter..."
+echo "→ Stripping ProGrowth tag from frontmatter (preserving [[wiki-links]])..."
+# Perl with lookaround so we don't mangle `[[progrowth]]` wiki-links
 for f in $(find "$SITE_DST" -type f -name '*.md'); do
-  sed -i.bak -E 's/, progrowth//g; s/progrowth, //g; s/\[progrowth\]/[]/g' "$f" && rm -f "$f.bak"
+  perl -i -pe 's/, progrowth(?![-\w])//g; s/progrowth, //g; s/(?<!\[)\[progrowth\](?!\])/[]/g' "$f"
 done
 
 echo "→ Final check: any files still mentioning ProGrowth?"
@@ -60,3 +61,6 @@ fi
 
 COUNT=$(find "$SITE_DST" -type f -name '*.md' | wc -l | tr -d ' ')
 echo "✓ Synced $COUNT markdown files to $SITE_DST"
+
+echo "→ Generating dataview tables and charts..."
+node "$(dirname "$0")/generate-dataview.cjs"

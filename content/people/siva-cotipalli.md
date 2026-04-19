@@ -6,7 +6,7 @@ sources:
   - raw/pdfs/linkedin-siva-cotipalli.pdf
 tags: [person, founder, author, owner-of-wiki]
 role: Founder, Fractional CMO
-company: "[[]]"
+company: "[[progrowth]]"
 based-in: Bengaluru, India + Keller, TX (Dallas–Fort Worth metro)
 linkedin: https://www.linkedin.com/in/sivacotipalli
 email: siva@progrowth.services
@@ -14,13 +14,13 @@ email: siva@progrowth.services
 
 # Siva Cotipalli
 
-Founder of [[]]. This wiki belongs to Siva — every other person, company, and concept here is mapped in relation to him.
+Founder of [[progrowth]]. This wiki belongs to Siva — every other person, company, and concept here is mapped in relation to him.
 
 B2B fractional CMO and AI marketing operator with 15+ years across SaaS, fintech, e-commerce, and machine-learning startups. Track record includes scaling a fintech SaaS from $0 → $20M ARR in 24 months, 125% pipeline lift for a $50M AI software company, and $5M → $45M growth for an e-commerce brand.
 
 ## Positioning
 
-Siva's wedge against incumbents like [[marketri]] is an **AI-native, embedded-operator** model: [[]] doesn't just advise, it *runs* the marketing stack — automation, AI-assisted content, programmatic SEO/GEO ([[generative-engine-optimization]]), paid media, and analytics — with its own toolchain ([[ai-overview-tool]], Matomo, Bigin, DataForSEO, Ahrefs).
+Siva's wedge against incumbents like [[marketri]] is an **AI-native, embedded-operator** model: [[progrowth]] doesn't just advise, it *runs* the marketing stack — automation, AI-assisted content, programmatic SEO/GEO ([[generative-engine-optimization]]), paid media, and analytics — with its own toolchain ([[ai-overview-tool]], Matomo, Bigin, DataForSEO, Ahrefs).
 
 The bet: as AI search erodes traditional channels (see [[earned-media-bias]], [[brand-strength-ai-visibility-gap]]), fractional CMOs who can *operate* an AI-first marketing system will beat generalist advisors.
 
@@ -28,8 +28,8 @@ The bet: as AI search erodes traditional channels (see [[earned-media-bias]], [[
 
 | Role | Company | Period |
 |------|---------|--------|
-| Founder & Director | [[]] (Progrowth Technologies Inc, Keller TX) | Jul 2024 – Present |
-| Director | [[]] (India entity, Bengaluru) | Sep 2023 – Present |
+| Founder & Director | [[progrowth]] (Progrowth Technologies Inc, Keller TX) | Jul 2024 – Present |
+| Director | [[progrowth]] (India entity, Bengaluru) | Sep 2023 – Present |
 | Director | [[yogyabano]] — AI skilling for blue-collar workers | Mar 2024 – Present |
 | Head of Marketing | [[cityfalcon]] — personalized financial-news NLP/voice | Apr 2023 – Apr 2024 |
 | Digital & Content Strategist | [[reverie-language-technologies]] | Nov 2021 – Apr 2023 |
@@ -75,7 +75,7 @@ When generating content in Siva's voice, follow these patterns:
 
 ## Current active initiatives
 
-- [[]] — fractional marketing services
+- [[progrowth]] — fractional marketing services
 - [[ai-overview-tool]] — AI visibility index SaaS for clients
 - [[gnosis-hackathon]] — this wiki
 - [[yogyabano]] — AI skilling director role
@@ -92,7 +92,7 @@ AI search ([[generative-engine-optimization]]), LLM-maintained knowledge systems
 
 ## Links
 
-- [[]] — the company
+- [[progrowth]] — the company
 - [[ai-overview-tool]] — the SaaS he's building
 - [[farzapedia-pattern]] — inspiration for the Gnosis wiki design
 - [[generative-engine-optimization]] — his primary research focus

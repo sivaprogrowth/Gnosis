@@ -13,8 +13,8 @@ An 8-page LinkedIn profile export for [[siva-cotipalli]] (the owner of this wiki
 
 ## Key claims
 
-- **Current identity**: "Trusted B2B Fractional Executive | AI Agents in Marketing | $25M+ ARR Growth" — Bengaluru-based, Founder of [[]] (Progrowth Technologies Inc, Keller TX).
-- **Career shape**: 15+ years spanning Infosys → Oracle India → [[dhanax]] (own startup) → Project Sammaan (Quicksand) → [[goodmoney]] (fintech) → [[ntwist]] (ML COO) → political-org digital head → independent consulting → [[reverie-language-technologies]] → [[cityfalcon]] → [[yogyabano]] → [[]].
+- **Current identity**: "Trusted B2B Fractional Executive | AI Agents in Marketing | $25M+ ARR Growth" — Bengaluru-based, Founder of [[progrowth]] (Progrowth Technologies Inc, Keller TX).
+- **Career shape**: 15+ years spanning Infosys → Oracle India → [[dhanax]] (own startup) → Project Sammaan (Quicksand) → [[goodmoney]] (fintech) → [[ntwist]] (ML COO) → political-org digital head → independent consulting → [[reverie-language-technologies]] → [[cityfalcon]] → [[yogyabano]] → [[progrowth]].
 - **Named growth results**: $0→$20M ARR in 24 months (fintech SaaS), 125% pipeline lift for $50M AI software company, $5M→$45M for an e-commerce brand, 3× ARR for a legacy-to-SaaS transformation.
 - **Education**: [[bits-pilani]] (BE Mechanical), [[iim-kozhikode]] (MBA Finance & Tech), [[lse]] ([[chevening-scholarship|Chevening Gurukul]]).
 - **Credentials / honors**: TEDIndia Fellow 2009, Chevening Gurukul Scholar 2012, BITSAA 30 under 30 (2009), Karmaveer Puraskaar, Pepsi-MTV Youth Icon Nominee 2008.
@@ -24,7 +24,7 @@ An 8-page LinkedIn profile export for [[siva-cotipalli]] (the owner of this wiki
 
 People: [[siva-cotipalli]].
 
-Companies and institutions: [[]], [[yogyabano]], [[cityfalcon]], [[reverie-language-technologies]], [[ntwist]], [[goodmoney]], [[dhanax]], [[bits-pilani]], [[iim-kozhikode]], [[lse]], [[chevening-scholarship]].
+Companies and institutions: [[progrowth]], [[yogyabano]], [[cityfalcon]], [[reverie-language-technologies]], [[ntwist]], [[goodmoney]], [[dhanax]], [[bits-pilani]], [[iim-kozhikode]], [[lse]], [[chevening-scholarship]].
 
 Concepts: [[generative-engine-optimization]] (via ProGrowth's AI-marketing practice), ABM, Fractional CMO, HubSpot implementation, AI agents in marketing.
 
@@ -36,5 +36,5 @@ Concepts: [[generative-engine-optimization]] (via ProGrowth's AI-marketing pract
 ## Links
 
 - [[siva-cotipalli]] — the person
-- [[]] — his current company
+- [[progrowth]] — his current company
 - [[linkedin-phani-sama]] — the paired profile ingest (his contact Phani)

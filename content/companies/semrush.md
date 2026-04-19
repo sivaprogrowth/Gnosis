@@ -27,7 +27,7 @@ For ProGrowth's [[ai-overview-tool]], Semrush's AIVI is the **closest public ref
 - [[claude]], [[perplexity]], [[gemini]] (standalone chatbot) — major coverage gap.
 - Non-English verticals at depth.
 - Fractional/embedded-services integration (they're pure SaaS, not services).
-- Niche B2B verticals (credit unions, insurance, professional services — [[]]'s ICP).
+- Niche B2B verticals (credit unions, insurance, professional services — [[progrowth]]'s ICP).
 
 These are exactly the differentiation levers for [[ai-overview-tool]].
 
@@ -39,6 +39,6 @@ These are exactly the differentiation levers for [[ai-overview-tool]].
 
 - [[semrush-ai-visibility-index]] — their AI search product
 - [[ai-overview-tool]] — ProGrowth's counterpart
-- [[]] — competes on services + niche verticals
+- [[progrowth]] — competes on services + niche verticals
 - [[elena-verna]] — Semrush's distribution partner
 - [[generative-engine-optimization]] — the market category Semrush is entering

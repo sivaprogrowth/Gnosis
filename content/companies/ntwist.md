@@ -14,9 +14,9 @@ Machine-learning startup helping enterprises automate business processes with AI
 
 ## Why it's in this wiki
 
-[[siva-cotipalli]] was **COO** from Aug 2016 to Jul 2017 (~1 year). Scope: scaled company from ideation to revenue, ran engineering/research/data-science/design/QA, managed finance/legal/HR, daily scrum, hiring — full operational ownership. Siva's earliest exposure to AI/ML startup operations, a decade before [[]]'s AI-marketing practice.
+[[siva-cotipalli]] was **COO** from Aug 2016 to Jul 2017 (~1 year). Scope: scaled company from ideation to revenue, ran engineering/research/data-science/design/QA, managed finance/legal/HR, daily scrum, hiring — full operational ownership. Siva's earliest exposure to AI/ML startup operations, a decade before [[progrowth]]'s AI-marketing practice.
 
 ## Links
 
 - [[siva-cotipalli]] — COO, 2016–2017
-- [[]] — where the AI-first operator instincts eventually landed
+- [[progrowth]] — where the AI-first operator instincts eventually landed

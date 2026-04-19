@@ -17,7 +17,7 @@ Indian growth-stage investment firm. Notable LP in the Indian venture ecosystem.
 
 [[phani-sama]] has been an **Advisor since June 2021** (~4+ years) — a post-[[redbus]]-exit role that anchors his presence in Indian VC circles.
 
-Relevant for [[]] only as a network-awareness node: if a ProGrowth client is raising growth-stage India capital, Phani's WestBridge relationship is one path worth remembering.
+Relevant for [[progrowth]] only as a network-awareness node: if a ProGrowth client is raising growth-stage India capital, Phani's WestBridge relationship is one path worth remembering.
 
 ## Links
 

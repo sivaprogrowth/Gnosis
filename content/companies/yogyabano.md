@@ -15,7 +15,7 @@ AI-assisted skilling platform for vocational jobs — edtech for blue-collar wor
 
 ## Why it's in this wiki
 
-[[siva-cotipalli]] is a **Director since March 2024** — a current active side role alongside [[]].
+[[siva-cotipalli]] is a **Director since March 2024** — a current active side role alongside [[progrowth]].
 
 Mission-adjacent to [[phani-sama]]'s [[deshpande-skilling]] chairmanship — both are Indian skilling plays, YogyaBano AI-tutor-driven and Deshpande Skilling foundation-backed. Natural conversation starter if Siva re-engages Phani.
 
@@ -23,4 +23,4 @@ Mission-adjacent to [[phani-sama]]'s [[deshpande-skilling]] chairmanship — bot
 
 - [[siva-cotipalli]] — Director
 - [[deshpande-skilling]] — Phani's parallel skilling play (potential advisor angle)
-- [[]] — Siva's primary company (YogyaBano is a parallel role)
+- [[progrowth]] — Siva's primary company (YogyaBano is a parallel role)

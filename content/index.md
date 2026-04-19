@@ -8,6 +8,8 @@ A personal knowledge base where an LLM acts as a disciplined wiki maintainer. Dr
 
 > *"The tedious part of a knowledge base is not the reading or thinking — it's the bookkeeping. Humans abandon wikis because maintenance grows faster than value. LLMs don't."*
 
+➡ **[Open the Dashboard](dashboard)** — live tables and charts computed from page frontmatter on every build.
+
 ## What's in this wiki
 
 Three AI-search sources ingested so far, producing 19 cross-linked pages:

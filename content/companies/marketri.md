@@ -9,7 +9,7 @@ website: https://marketri.com
 
 # Marketri
 
-A fractional marketing firm and direct competitor to [[]] in the fractional-CMO / outsourced-marketing category.
+A fractional marketing firm and direct competitor to [[progrowth]] in the fractional-CMO / outsourced-marketing category.
 
 ## Why they're in this wiki
 
@@ -43,11 +43,11 @@ Six identified vulnerabilities including:
 
 ## Sources citing this page
 
-- [[]] — Marketri is one of their primary competitors
+- [[progrowth]] — Marketri is one of their primary competitors
 
 ## Links
 
-- [[]] — the challenger positioning against Marketri
+- [[progrowth]] — the challenger positioning against Marketri
 - [[big-brand-bias]] — why market-share doesn't predict AI visibility
 - [[earned-media-bias]] — the lever ProGrowth pulls to outrank Marketri on AI
 - [[brand-strength-ai-visibility-gap]] — empirical argument for challenger investment

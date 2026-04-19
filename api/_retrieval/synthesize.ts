@@ -61,13 +61,16 @@ export function assembleContext(topK: TopKPage[], index: PageIndex): AssembledPa
 }
 
 function formatPageForPrompt(p: AssembledPage): string {
+  // Note: we deliberately do NOT include the rerank's whySelected reasoning
+  // here. That field is LLM-generated and varies slightly per call, which
+  // busts Anthropic's prompt cache on repeat queries. The synthesis model
+  // can judge relevance from the page body alone.
   const meta: string[] = [`type: ${p.type}`]
   if (p.tags.length) meta.push(`tags: [${p.tags.join(", ")}]`)
   if (p.aliases.length) meta.push(`aliases: [${p.aliases.join(", ")}]`)
   if (p.emotionControlled?.length) meta.push(`emotion: [${p.emotionControlled.join(", ")}]`)
   const metaLine = meta.join("  ")
-  const why = p.whySelected ? `(selected because: ${p.whySelected})` : ""
-  return [`===== PAGE: ${p.slug} =====`, metaLine, why, "", p.body.trim()].join("\n")
+  return [`===== PAGE: ${p.slug} =====`, metaLine, "", p.body.trim()].join("\n")
 }
 
 function formatParsedForPrompt(parsed: ParsedQuery): string {

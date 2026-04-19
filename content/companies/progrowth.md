@@ -4,10 +4,12 @@ created: 2026-04-19T00:00:00.000Z
 updated: 2026-04-19T00:00:00.000Z
 sources:
   - raw/pdfs/linkedin-siva-cotipalli.pdf
+  - raw/articles/2026-04-19-The AI-Native Services Playbook.md
 tags:
   - company
   - fractional-marketing
   - client-of-interest
+  - ains
 website: 'https://progrowth.services'
 founded-by: '[[siva-cotipalli]]'
 headquartered: 'Keller, TX'
@@ -16,7 +18,7 @@ headquartered: 'Keller, TX'
 # ProGrowth
 
 <!-- GNOSIS:WIDGET:TOP:START -->
-<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#14b8a6"></span>company</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>9</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>12</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>1</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">company</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">fractional-marketing</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">client-of-interest</span></span></div>
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#14b8a6"></span>company</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>14</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>18</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>2</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">company</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">fractional-marketing</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">client-of-interest</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">ains</span></span></div>
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
@@ -54,7 +56,7 @@ Three structural shifts converge in ProGrowth's favor:
 - vs [[semrush]] — Semrush ships tools; ProGrowth ships *outcomes*. Complementary rather than competitive for now.
 - vs generalist fractional firms — ProGrowth is AI-native by default.
 
-## Current focus (April 2026)
+# Current focus (April 2026)
 
 - AI-search visibility tooling ([[ai-overview-tool]]) — productizing what the team does manually for clients
 - Content marketing operation — programmatic SEO for ProGrowth-owned properties, establishing thought leadership in GEO category
@@ -64,6 +66,11 @@ Three structural shifts converge in ProGrowth's favor:
 
 - [[gnosis-hackathon]] — ProGrowth's hackathon project
 - [[linkedin-siva-cotipalli]] — Siva's LinkedIn profile (founder-of-record)
+- [[ai-native-services-playbook]] — frames ProGrowth as an AINS company
+- [[ai-native-services]] — the category page
+- [[mirage-pmf]] — the diagnostic ProGrowth should run against itself
+- [[north-star-product-metric]] — the metric framework ProGrowth should adopt
+- [[outcome-based-pricing]] — the pricing-model target
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

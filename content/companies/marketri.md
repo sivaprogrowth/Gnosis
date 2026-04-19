@@ -2,18 +2,20 @@
 type: company
 created: 2026-04-19T00:00:00.000Z
 updated: 2026-04-19T00:00:00.000Z
-sources: []
+sources:
+  - raw/articles/2026-04-19-The AI-Native Services Playbook.md
 tags:
   - company
   - competitor
   - fractional-marketing
+  - non-ains
 website: 'https://marketri.com'
 ---
 
 # Marketri
 
 <!-- GNOSIS:WIDGET:TOP:START -->
-<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#14b8a6"></span>company</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>5</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>3</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">company</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">competitor</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">fractional-marketing</span></span></div>
+<div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;padding:.6rem .85rem;margin:.5rem 0 1rem;border:1px solid var(--lightgray,#e2e8f0);border-radius:10px;background:var(--light,#f8fafc)"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600"><span style="display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:#14b8a6"></span>company</span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🔗</span><strong>8</strong><span style="opacity:.7">outbound</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📥</span><strong>6</strong><span style="opacity:.7">backlinks</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">📚</span><strong>1</strong><span style="opacity:.7">sources</span></span><span style="display:inline-flex;align-items:center;gap:.25rem;font-size:.8rem;color:currentColor;opacity:.85"><span style="opacity:.7">🕓</span><strong></strong><span style="opacity:.7">updated Sun Apr 19</span></span><span style="display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap"><span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">company</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">competitor</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">fractional-marketing</span> <span style="background:var(--lightgray,#e2e8f0);color:currentColor;padding:.1rem .45rem;border-radius:999px;font-size:.75rem">non-ains</span></span></div>
 <!-- GNOSIS:WIDGET:TOP:END -->
 
 
@@ -49,9 +51,18 @@ Six identified vulnerabilities including:
 5. **ROI/pricing transparency gap** — opaque positioning vs fractional buyers who increasingly want specifics.
 6. **Limited B2B-specific playbooks** — fractional marketing is broader than their content acknowledges.
 
+## AI-leverage vulnerability (per [[ai-native-services-playbook]])
+
+Marketri is a **traditional services firm, not an [[ai-native-services|AI-Native Services]] company**. By the Emergence Capital playbook's categorization, this is a structural ceiling: Marketri's margins, revenue per employee, and scaling mechanics will look like a legacy fractional-marketing firm — not an AINS.
+
+This isn't a neutral observation. The playbook's [[mirage-pmf]] failure mode only applies to companies *claiming* to be AI-native. Marketri isn't claiming it, so they can't be exposed by the diagnostic — but they also can't access the margin expansion AINS economics enable. ProGrowth's competitive wedge depends on actually *being* AINS (not just positioning as such); Marketri's ceiling is baked in.
+
+**Concrete angle for ProGrowth pitch decks:** show the ARR/FTE and gross-margin trajectories side-by-side. Any prospect evaluating ProGrowth vs. Marketri should be asking each of them: *what's your north-star product metric, and how is it trending?*
+
 ## Sources citing this page
 
 - [[progrowth]] — Marketri is one of their primary competitors
+- [[ai-native-services-playbook]] — frames Marketri as a traditional (non-AINS) services firm
 
 <!-- GNOSIS:WIDGET:BOTTOM:START -->
 ## Gnosis context

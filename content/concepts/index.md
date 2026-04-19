@@ -6,11 +6,12 @@ title: "Concepts"
 
 # Concepts
 
-10 concepts indexed, computed live from `wiki/concepts/*.md` frontmatter.
+14 concepts indexed, computed live from `wiki/concepts/*.md` frontmatter.
 
 | Name | Tags | Source count | Last updated |
 |------|------|--------------|--------------|
 | [AI Search Decision Journey](ai-search-decision-journey) | `geo` `ai-search` `consumer-behavior` | 1 | 2026-04-19 |
+| [AI-Native Services (AINS)](ai-native-services) | `ains` `business-model` `ai-services` | 1 | 2026-04-19 |
 | [Big Brand Bias](big-brand-bias) | `geo` `ai-search` `niche-brands` | 2 | 2026-04-19 |
 | [Brand / Earned / Social Taxonomy](brand-earned-social-taxonomy) | `geo` `ai-search` `taxonomy` | 2 | 2026-04-19 |
 | [Brand Strength ≠ AI Visibility Gap](brand-strength-ai-visibility-gap) | `geo` `ai-search` `challenger-brands` | 2 | 2026-04-19 |
@@ -19,4 +20,7 @@ title: "Concepts"
 | [Earned-Media Bias (in AI Search)](earned-media-bias) | `geo` `ai-search` `seo-strategy` | 2 | 2026-04-19 |
 | [Generative Engine Optimization (GEO)](generative-engine-optimization) | `geo` `ai-search` `seo-strategy` | 2 | 2026-04-19 |
 | [Justification Attributes](justification-attributes) | `geo` `ai-search` `content-strategy` | 1 | 2026-04-19 |
+| [Mirage PMF](mirage-pmf) | `ains` `product-market-fit` `failure-mode` | 1 | 2026-04-19 |
+| [North Star Product Metric (for AINS)](north-star-product-metric) | `ains` `metrics` `product-management` | 1 | 2026-04-19 |
+| [Outcome-Based Pricing](outcome-based-pricing) | `ains` `pricing` `business-model` | 1 | 2026-04-19 |
 | [The API-able Brand](api-able-brand) | `geo` `ai-search` `technical-seo` | 1 | 2026-04-19 |

@@ -380,12 +380,51 @@
     line-height: 1.55;
     word-wrap: break-word;
 
+    // --- blocks ---
     p {
       margin: 0;
 
       & + p {
         margin-top: 0.6rem;
       }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0.9rem 0 0.4rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: inherit;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h1 {
+      font-size: 1.3rem;
+    }
+    h2 {
+      font-size: 1.18rem;
+    }
+    h3 {
+      font-size: 1.06rem;
+    }
+    h4 {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    h5,
+    h6 {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--darkgray);
     }
 
     ul,
@@ -398,11 +437,105 @@
       margin-top: 0.25rem;
     }
 
+    li > p {
+      margin: 0;
+    }
+
+    blockquote {
+      margin: 0.6rem 0;
+      padding: 0.2rem 0 0.2rem 0.85rem;
+      border-left: 3px solid var(--secondary);
+      color: var(--darkgray);
+      font-style: italic;
+
+      p {
+        margin: 0.3rem 0;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--lightgray);
+      margin: 0.8rem 0;
+    }
+
+    pre {
+      margin: 0.6rem 0;
+      padding: 0.7rem 0.85rem;
+      background: rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--lightgray);
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.85em;
+      line-height: 1.45;
+
+      code {
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        font-size: inherit;
+        font-family: var(--codeFont, "IBM Plex Mono", "SFMono-Regular", Menlo, monospace);
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0.7rem 0;
+      font-size: 0.88rem;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      overflow-x: auto;
+
+      th,
+      td {
+        padding: 0.4rem 0.65rem;
+        border: 1px solid var(--lightgray);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: rgba(0, 0, 0, 0.05);
+        font-weight: 600;
+      }
+
+      tr:nth-child(even) td {
+        background: rgba(0, 0, 0, 0.02);
+      }
+    }
+
+    // --- inline ---
     code {
       background: rgba(0, 0, 0, 0.08);
       padding: 0.1em 0.35em;
       border-radius: 4px;
       font-size: 0.88em;
+      font-family: var(--codeFont, "IBM Plex Mono", "SFMono-Regular", Menlo, monospace);
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    del {
+      text-decoration: line-through;
+      opacity: 0.75;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 0, 0, 0.2);
+      text-underline-offset: 2px;
+
+      &:hover {
+        text-decoration-color: currentColor;
+      }
     }
 
     a.gnosis-chat-page-citation {
@@ -417,6 +550,26 @@
       &:hover {
         background: rgba(0, 0, 0, 0.18);
       }
+    }
+  }
+
+  // user bubble: tighter palette adjustments for readability on dark background
+  .gnosis-chat-page-msg-user .gnosis-chat-page-bubble {
+    code,
+    pre {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.18);
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(255, 255, 255, 0.5);
+    }
+
+    blockquote {
+      border-left-color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.85);
     }
   }
 

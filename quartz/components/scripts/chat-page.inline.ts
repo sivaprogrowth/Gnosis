@@ -73,7 +73,23 @@ function saveHistory(msgs: Msg[]): void {
   }
 }
 
-// ---- markdown-ish rendering (matches widget behavior) ----
+// ---- markdown rendering ----
+//
+// A small but reasonably complete renderer. Supports:
+//   - ATX headings (# … ######)
+//   - Fenced code blocks (```lang … ```)
+//   - Blockquotes (recursive)
+//   - Horizontal rules (---, ***, ___)
+//   - Unordered lists (-, *, +) and ordered lists (1. 2. …) with flat items
+//   - GFM pipe tables (optional alignment ignored)
+//   - Paragraphs with soft line breaks → <br>
+//   - Inline: [[wiki-link]], [text](url), `code`, **bold**, *italic*, __bold__,
+//     _italic_, ~~strike~~
+//
+// Everything is HTML-escaped before markdown tags are substituted, so
+// assistant content can't inject scripts.
+
+const INLINE_CODE_PLACEHOLDER = "\uE000" // private-use area; very unlikely to collide
 
 function escapeHtml(s: string): string {
   return s
@@ -84,47 +100,266 @@ function escapeHtml(s: string): string {
     .replace(/'/g, "&#39;")
 }
 
-function renderInline(s: string): string {
-  let out = escapeHtml(s)
-  // [[slug]] → citation anchor
-  out = out.replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_m, slug, label) => {
+function renderInline(src: string): string {
+  // 1. Pull out inline code spans first so their contents aren't mangled by
+  //    bold/italic/link rules. Restored verbatim at the end.
+  const codeSpans: string[] = []
+  let text = src.replace(/`+([^`][^`]*?[^`]|[^`])`+/g, (_m, inner) => {
+    codeSpans.push(`<code>${escapeHtml(String(inner))}</code>`)
+    return INLINE_CODE_PLACEHOLDER + (codeSpans.length - 1) + INLINE_CODE_PLACEHOLDER
+  })
+
+  // 2. Escape the rest.
+  text = escapeHtml(text)
+
+  // 3. Wiki-links: [[slug]] or [[slug|label]]
+  text = text.replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_m, slug, label) => {
     const cleanSlug = String(slug).replace(/^\//, "")
-    const href = "/" + cleanSlug
-    const text = label || cleanSlug.split("/").pop()
-    return `<a href="${href}" class="gnosis-chat-page-citation" data-slug="${escapeHtml(cleanSlug)}">${escapeHtml(String(text))}</a>`
+    const visible = label || cleanSlug.split("/").pop() || cleanSlug
+    return `<a href="/${cleanSlug}" class="gnosis-chat-page-citation" data-slug="${cleanSlug}">${visible}</a>`
   })
-  out = out.replace(/\[([^\]]+?)\]\(([^)]+?)\)/g, (_m, text, url) => {
-    const safeUrl = String(url).replace(/"/g, "%22")
-    return `<a href="${safeUrl}" target="_blank" rel="noopener">${text}</a>`
+
+  // 4. Standard markdown links [text](url "title"?)
+  text = text.replace(
+    /\[([^\]]+?)\]\(([^\s)]+)(?:\s+&quot;[^)]*&quot;)?\)/g,
+    (_m, linkText, url) => {
+      const safeUrl = String(url).replace(/"/g, "%22")
+      const external = /^(https?:)?\/\//.test(url)
+      const attrs = external ? ' target="_blank" rel="noopener"' : ""
+      return `<a href="${safeUrl}"${attrs}>${linkText}</a>`
+    },
+  )
+
+  // 5. Bare autolinks <http://…>
+  text = text.replace(/&lt;(https?:\/\/[^\s&]+)&gt;/g, (_m, url) => {
+    return `<a href="${url}" target="_blank" rel="noopener">${url}</a>`
   })
-  out = out.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>")
-  out = out.replace(/`([^`]+?)`/g, "<code>$1</code>")
-  out = out.replace(/(^|[\s(])\*([^\s*][^*]*?)\*(?=[\s.,;:!?)]|$)/g, "$1<em>$2</em>")
-  return out
+
+  // 6. Strikethrough ~~…~~
+  text = text.replace(/~~(.+?)~~/g, "<del>$1</del>")
+
+  // 7. Bold: **…** and __…__  (before italic, since ** contains *)
+  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+  text = text.replace(/__(.+?)__/g, "<strong>$1</strong>")
+
+  // 8. Italic: *…* and _…_  (avoid matching mid-word)
+  text = text.replace(/(^|[^*\w])\*(?!\s)([^*\n]+?)(?<!\s)\*(?=[^*\w]|$)/g, "$1<em>$2</em>")
+  text = text.replace(/(^|[^_\w])_(?!\s)([^_\n]+?)(?<!\s)_(?=[^_\w]|$)/g, "$1<em>$2</em>")
+
+  // 9. Soft line breaks within a paragraph → <br>
+  text = text.replace(/\n/g, "<br>")
+
+  // 10. Restore code spans.
+  text = text.replace(
+    new RegExp(`${INLINE_CODE_PLACEHOLDER}(\\d+)${INLINE_CODE_PLACEHOLDER}`, "g"),
+    (_m, idx) => codeSpans[Number(idx)],
+  )
+
+  return text
 }
 
-function renderMarkdown(s: string): string {
-  const blocks = s.split(/\n\n+/)
-  return blocks
-    .map((block) => {
-      const lines = block.split("\n")
-      if (lines.every((l) => /^\s*[-*]\s+/.test(l))) {
-        const items = lines
-          .map((l) => l.replace(/^\s*[-*]\s+/, ""))
-          .map((l) => `<li>${renderInline(l)}</li>`)
-          .join("")
-        return `<ul>${items}</ul>`
+// ---- block-level parsing helpers ----
+
+const BLOCK_FENCE = /^```(\w*)\s*$/
+const BLOCK_FENCE_END = /^```\s*$/
+const BLOCK_HEADING = /^(#{1,6})\s+(.+?)\s*#*\s*$/
+const BLOCK_HR = /^\s*(?:-\s*){3,}$|^\s*(?:\*\s*){3,}$|^\s*(?:_\s*){3,}$/
+const BLOCK_BLOCKQUOTE = /^\s*>\s?/
+const LIST_UNORDERED = /^(\s*)[-*+]\s+(.*)$/
+const LIST_ORDERED = /^(\s*)\d+\.\s+(.*)$/
+const TABLE_SEPARATOR = /^\s*\|?\s*:?-+:?(?:\s*\|\s*:?-+:?)+\s*\|?\s*$/
+
+function isListLine(line: string): boolean {
+  return LIST_UNORDERED.test(line) || LIST_ORDERED.test(line)
+}
+
+function renderList(lines: string[], ordered: boolean): string {
+  const tag = ordered ? "ol" : "ul"
+  const items: string[] = []
+  let buf: string[] = []
+
+  const flush = () => {
+    if (buf.length) {
+      items.push(`<li>${renderInline(buf.join("\n").trim())}</li>`)
+      buf = []
+    }
+  }
+
+  const stripper = ordered ? LIST_ORDERED : LIST_UNORDERED
+
+  for (const line of lines) {
+    const m = line.match(stripper)
+    if (m) {
+      flush()
+      buf.push(m[2])
+    } else if (line.trim()) {
+      // continuation line (possibly indented)
+      buf.push(line.trim())
+    } else {
+      // blank line inside a list — preserve as paragraph break within item
+      buf.push("")
+    }
+  }
+  flush()
+  return `<${tag}>${items.join("")}</${tag}>`
+}
+
+function renderTable(lines: string[]): string {
+  const parseRow = (line: string): string[] => {
+    const trimmed = line.replace(/^\s*\|/, "").replace(/\|\s*$/, "")
+    return trimmed.split("|").map((c) => c.trim())
+  }
+  const header = parseRow(lines[0])
+  const body = lines.slice(1).map(parseRow)
+  const thead =
+    "<thead><tr>" + header.map((c) => `<th>${renderInline(c)}</th>`).join("") + "</tr></thead>"
+  const tbody =
+    "<tbody>" +
+    body
+      .map((r) => "<tr>" + r.map((c) => `<td>${renderInline(c)}</td>`).join("") + "</tr>")
+      .join("") +
+    "</tbody>"
+  return `<table>${thead}${tbody}</table>`
+}
+
+function renderMarkdown(src: string): string {
+  // Normalize line endings; split into lines.
+  const lines = src.replace(/\r\n?/g, "\n").split("\n")
+  const out: string[] = []
+  let i = 0
+
+  while (i < lines.length) {
+    const line = lines[i]
+
+    // Skip blank lines at block boundaries.
+    if (!line.trim()) {
+      i++
+      continue
+    }
+
+    // Fenced code block.
+    const fence = line.match(BLOCK_FENCE)
+    if (fence) {
+      const lang = fence[1]
+      const codeLines: string[] = []
+      i++
+      while (i < lines.length && !BLOCK_FENCE_END.test(lines[i])) {
+        codeLines.push(lines[i])
+        i++
       }
-      if (lines.every((l) => /^\s*\d+\.\s+/.test(l))) {
-        const items = lines
-          .map((l) => l.replace(/^\s*\d+\.\s+/, ""))
-          .map((l) => `<li>${renderInline(l)}</li>`)
-          .join("")
-        return `<ol>${items}</ol>`
+      if (i < lines.length) i++ // consume closing ```
+      const classAttr = lang ? ` class="language-${escapeHtml(lang)}"` : ""
+      out.push(`<pre><code${classAttr}>${escapeHtml(codeLines.join("\n"))}</code></pre>`)
+      continue
+    }
+
+    // ATX heading.
+    const heading = line.match(BLOCK_HEADING)
+    if (heading) {
+      const level = heading[1].length
+      out.push(`<h${level}>${renderInline(heading[2])}</h${level}>`)
+      i++
+      continue
+    }
+
+    // Horizontal rule.
+    if (BLOCK_HR.test(line)) {
+      out.push("<hr>")
+      i++
+      continue
+    }
+
+    // Blockquote (greedy: consume all `> …` lines, render contents recursively).
+    if (BLOCK_BLOCKQUOTE.test(line)) {
+      const quoted: string[] = []
+      while (i < lines.length && (BLOCK_BLOCKQUOTE.test(lines[i]) || !lines[i].trim())) {
+        if (!lines[i].trim()) {
+          // blank line ends the blockquote unless followed by another `> `
+          const next = lines[i + 1]
+          if (!next || !BLOCK_BLOCKQUOTE.test(next)) break
+          quoted.push("")
+        } else {
+          quoted.push(lines[i].replace(BLOCK_BLOCKQUOTE, ""))
+        }
+        i++
       }
-      return `<p>${renderInline(lines.join(" "))}</p>`
-    })
-    .join("")
+      out.push(`<blockquote>${renderMarkdown(quoted.join("\n"))}</blockquote>`)
+      continue
+    }
+
+    // GFM table — current line has `|` AND next line is a separator row.
+    if (line.includes("|") && i + 1 < lines.length && TABLE_SEPARATOR.test(lines[i + 1])) {
+      const tableLines: string[] = [line]
+      i += 2 // header + separator consumed
+      while (i < lines.length && lines[i].includes("|") && lines[i].trim()) {
+        tableLines.push(lines[i])
+        i++
+      }
+      out.push(renderTable(tableLines))
+      continue
+    }
+
+    // List block (unordered or ordered). Keep taking list/continuation lines
+    // until a clearly-non-list line (or blank line that isn't followed by a
+    // list line) breaks the block.
+    if (isListLine(line)) {
+      const ordered = LIST_ORDERED.test(line)
+      const listLines: string[] = [line]
+      i++
+      while (i < lines.length) {
+        const cur = lines[i]
+        if (isListLine(cur)) {
+          // Stop if a different list type appears (nested-list parsing is out
+          // of scope for the MVP renderer; the other type becomes its own block).
+          if (ordered !== LIST_ORDERED.test(cur)) break
+          listLines.push(cur)
+          i++
+        } else if (cur.trim() && /^\s+\S/.test(cur)) {
+          // indented continuation of the current item
+          listLines.push(cur)
+          i++
+        } else if (!cur.trim()) {
+          // blank: peek ahead — if next non-blank is a same-kind list line,
+          // include the blank; otherwise break.
+          const next = lines[i + 1]
+          if (next && isListLine(next) && ordered === LIST_ORDERED.test(next)) {
+            listLines.push("")
+            i++
+          } else {
+            break
+          }
+        } else {
+          break
+        }
+      }
+      out.push(renderList(listLines, ordered))
+      continue
+    }
+
+    // Paragraph: collect until blank line or a new block start.
+    const paraLines: string[] = [line]
+    i++
+    while (i < lines.length && lines[i].trim() && !isBlockStart(lines, i)) {
+      paraLines.push(lines[i])
+      i++
+    }
+    out.push(`<p>${renderInline(paraLines.join("\n"))}</p>`)
+  }
+
+  return out.join("")
+}
+
+function isBlockStart(lines: string[], i: number): boolean {
+  const line = lines[i]
+  if (BLOCK_FENCE.test(line)) return true
+  if (BLOCK_HEADING.test(line)) return true
+  if (BLOCK_HR.test(line)) return true
+  if (BLOCK_BLOCKQUOTE.test(line)) return true
+  if (isListLine(line)) return true
+  if (line.includes("|") && i + 1 < lines.length && TABLE_SEPARATOR.test(lines[i + 1])) {
+    return true
+  }
+  return false
 }
 
 // ---- DOM helpers ----

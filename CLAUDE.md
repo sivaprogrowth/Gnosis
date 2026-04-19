@@ -92,7 +92,33 @@ When the user asks a question:
 4. Synthesize an answer with inline citations: `[[page]]` links for wiki refs, `(raw/pdfs/paper.pdf)` for raw refs.
 5. If the answer represents meaningful synthesis (a comparison, an argument, a new connection), offer to file it at `wiki/queries/<slug>.md`. If the user agrees, write the page, add to `index.md`, log it.
 
-### 4.3 Lint
+### 4.3 Drain the article inbox
+
+When the user says "drain the article inbox" (or "drain the inbox"):
+
+1. **Scan** `raw/articles/*.md` (skip `README.md` and `_template.md`) and find every file whose YAML frontmatter contains `tags: [..., inbox, ...]` or `tags:\n  - inbox`.
+2. **Summarize each in one line** — what the article argues, not what it's "about". Include the source domain and a 3-5 word hook of the key claim. Example: *"Emergence Capital (emcap.com) — coins 'Mirage PMF' for AINS companies where revenue growth masks lack of real AI leverage."*
+3. **Recommend a triage class for each** — one of:
+   - **A) Full ingest** — the 9-step §4.1 workflow. Recommend when the article introduces named concepts, adjacent to existing wiki topics, high-signal for the user's work. Note expected page touch count (e.g., "~10 pages").
+   - **B) Skim ingest** — source page only + inline links to existing concepts, no new concept pages. Recommend when the article rehashes known material with minor additions.
+   - **C) Queue** — change tag from `inbox` to `queued`. Not today, but worth keeping teed up.
+   - **D) Dismiss** — change tag from `inbox` to `dismissed`. Keep the raw file, but don't ingest.
+4. **Wait for the user** to pick per article. Don't batch-ingest without explicit instructions.
+5. **Execute each chosen action**. For A/B: run the full (or trimmed) ingest workflow, replace the `inbox` tag with `ingested` on the raw file. For C/D: update the tag only; no wiki changes.
+6. **Summarize in chat** what happened: N fully ingested, M skimmed, K queued, J dismissed.
+7. **Append one log entry** covering the batch (not one per article).
+
+The tag transitions are your state machine:
+
+```
+inbox → ingested   (A or B)
+inbox → queued     (C — stays in raw/articles/ as backlog)
+inbox → dismissed  (D — raw file kept, no wiki action)
+```
+
+`Home.md`'s `LIST FROM #inbox` Dataview query surfaces the backlog count in Obsidian so the user can see when a drain is due.
+
+### 4.4 Lint
 
 When the user says "lint the wiki" or "/lint":
 

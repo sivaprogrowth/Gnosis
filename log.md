@@ -81,3 +81,22 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 - New §9 Publication Pipeline: briefly documents the sync-wiki.sh → generate-dataview.cjs → Vercel flow so future-Claude knows the projection at gnosis-main exists and regenerates on every build.
 - New §10 Operating Modes: captures Interactive (default) vs Compact ("just do it") modes — reflects Siva's observed pattern of trimming scope per-task.
 - File grew from 158 to 271 lines. No behaviors changed; just made the implicit explicit.
+
+## [2026-04-19 23:00] ingest | AI-Native Services Playbook (Emergence Capital, Spring 2026)
+
+- First drain-inbox ingest under the new §4.3 workflow. One article in inbox, user chose A (full ingest).
+- Source: 9-section playbook from Emergence Capital defining the AI-Native Services (AINS) business model — a category that didn't exist before 2023. Named companies: Mechanical Orchard, Harper, Hanover Park, Crosby Legal, Pace, Strala, Prosper AI.
+- Wrote 5 new wiki pages: 1 source ([[ai-native-services-playbook]]) + 4 concepts ([[ai-native-services]], [[mirage-pmf]], [[north-star-product-metric]], [[outcome-based-pricing]]).
+- Updated 2 existing pages: [[progrowth]] (new "ProGrowth as an AINS company" section with Mirage PMF diagnostic, candidate north-star metrics, pricing transition roadmap, ICP validation), [[marketri]] (new AI-leverage vulnerability section framing Marketri as a traditional/non-AINS firm with structural margin ceiling).
+- Created 1 page that was previously referenced-but-missing: [[ai-overview-tool]] — healed ~15 broken wiki-links. Frames the tool as ProGrowth's Palantir-pattern product-layer leave-behind on top of its AINS services layer.
+- Skipped dedicated entity pages for the 7 named AINS example companies (Mechanical Orchard, Harper, Hanover Park, Crosby Legal, Pace, Strala, Prosper AI) and Emergence Capital the publisher — per the compounding-over-breadth rule in CLAUDE.md §4.1 step 5. Each is mentioned once; none cross-connects to anything else in the wiki currently. Inline mentions only. Can be promoted later if activated.
+- No contradictions flagged. The AINS framework compounds cleanly with existing GEO/AI-search content — [[mirage-pmf]] and [[brand-strength-ai-visibility-gap]] are analogous "looks-like-X-but-isn't" failure modes in different domains; cross-referenced.
+- index.md: Sources section gained 1 row (ai-native-services-playbook); Concepts section gained 4 rows (ai-native-services, mirage-pmf, north-star-product-metric, outcome-based-pricing); ai-overview-tool row updated.
+- Raw file tag transition: `[inbox, unread]` → `[ingested]` per §4.3 state machine. The Home.md Dataview Orphans query will now show 0 inbox items.
+
+## [2026-04-19 23:30] schema | Ingest cadence established (Task #21)
+
+- Default ingest rhythm: **weekly Sunday drain** (aligned with existing Weekly Review ritual) plus a mid-week **≥ 5 inbox items** backstop and on-demand drains before client meetings.
+- Documented as a "Cadence" subsection under `CLAUDE.md` §4.3 (drain-the-article-inbox workflow). Soft default, not a hard deadline — skip a week without guilt if no clips accumulated; run twice in a day if a research burst warrants.
+- Surfaced inbox status on `Home.md` with a Dataview table (file.ctime + domain) showing every article currently tagged `inbox`. After the AINS Playbook ingest, the table returns zero rows — confirmation the state machine works.
+- No other schema or workflow changes.

@@ -123,6 +123,16 @@ inbox → dismissed  (D — raw file kept, no wiki action)
 
 `Home.md`'s `LIST FROM #inbox` Dataview query surfaces the backlog count in Obsidian so the user can see when a drain is due.
 
+#### Cadence
+
+The default rhythm is:
+
+- **Weekly drain — Sunday**, anchored to the existing Weekly Review ritual in `~/Documents/Weekly Reviews/`.
+- **Mid-week backstop — ≥ 5 items in inbox** triggers an earlier drain regardless of day. This prevents pre-sprint clipping bursts from overflowing.
+- **On-demand — before any client meeting or strategy session that needs the knowledge.** The wiki only earns its keep if the information is current when you need it.
+
+This cadence is a default, not a hard rule. Skip a week without guilt; run twice in a day if a research burst warrants it. The forcing function is Sunday plus the ≥5 backstop — not a deadline.
+
 ### 4.4 Slide deck generation
 
 When the user asks for slides on a topic (e.g., "give me a 10-slide deck on Mirage PMF for a client meeting"):

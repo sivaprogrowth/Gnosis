@@ -9,6 +9,19 @@ Personal LLM wiki. This page uses **live Dataview queries** — tables rebuild e
 
 > If you see raw ```dataview blocks instead of rendered tables, the Dataview plugin is disabled. Enable it in Settings → Community plugins.
 
+## Inbox status
+
+Articles clipped via the Obsidian Web Clipper awaiting ingest. Default drain cadence: **Sunday** (part of the Weekly Review). Mid-week backstop: **≥ 5 items** triggers an earlier drain. See `CLAUDE.md` §4.3.
+
+```dataview
+TABLE file.ctime AS "Clipped", domain
+FROM "raw/articles"
+WHERE contains(tags, "inbox")
+SORT file.ctime ASC
+```
+
+To drain: open a Claude session in `~/Projects/gnosis/` and say **"drain the article inbox"**.
+
 ## Quick stats
 
 Total pages by type:

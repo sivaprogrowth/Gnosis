@@ -48,9 +48,9 @@ Concepts: [[generative-engine-optimization]] (via ProGrowth's AI-marketing pract
 
 ### Pages citing this source
 
-<svg width="520" height="106" viewBox="0 0 520 106" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;margin:1rem 0" role="img" aria-label="Bar chart"><g><text x="0" y="22" font-size=".85rem" fill="currentColor">company</text><rect x="220" y="5" width="240.0" height="26" rx="4" fill="#14b8a6"><title>company: 10</title></rect><text x="466" y="22" font-size=".85rem" fill="currentColor" opacity=".75">10</text></g><g><text x="0" y="54" font-size=".85rem" fill="currentColor">person</text><rect x="220" y="37" width="24.0" height="26" rx="4" fill="#ec4899"><title>person: 1</title></rect><text x="250" y="54" font-size=".85rem" fill="currentColor" opacity=".75">1</text></g><g><text x="0" y="86" font-size=".85rem" fill="currentColor">source</text><rect x="220" y="69" width="24.0" height="26" rx="4" fill="#6366f1"><title>source: 1</title></rect><text x="250" y="86" font-size=".85rem" fill="currentColor" opacity=".75">1</text></g></svg>
+<svg width="520" height="106" viewBox="0 0 520 106" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;margin:1rem 0" role="img" aria-label="Bar chart"><g><text x="0" y="22" font-size=".85rem" fill="currentColor">company</text><rect x="220" y="5" width="240.0" height="26" rx="4" fill="#14b8a6"><title>company: 11</title></rect><text x="466" y="22" font-size=".85rem" fill="currentColor" opacity=".75">11</text></g><g><text x="0" y="54" font-size=".85rem" fill="currentColor">person</text><rect x="220" y="37" width="21.8" height="26" rx="4" fill="#ec4899"><title>person: 1</title></rect><text x="247.8181818181818" y="54" font-size=".85rem" fill="currentColor" opacity=".75">1</text></g><g><text x="0" y="86" font-size=".85rem" fill="currentColor">source</text><rect x="220" y="69" width="21.8" height="26" rx="4" fill="#6366f1"><title>source: 1</title></rect><text x="247.8181818181818" y="86" font-size=".85rem" fill="currentColor" opacity=".75">1</text></g></svg>
 
-**12 pages** cite this source across 3 types.
+**13 pages** cite this source across 3 types.
 <!-- GNOSIS:WIDGET:BOTTOM:END -->
 
 ## Links

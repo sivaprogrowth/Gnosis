@@ -6,7 +6,7 @@ title: "Concepts"
 
 # Concepts
 
-14 concepts indexed, computed live from `wiki/concepts/*.md` frontmatter.
+15 concepts indexed, computed live from `wiki/concepts/*.md` frontmatter.
 
 | Name | Tags | Source count | Last updated |
 |------|------|--------------|--------------|
@@ -18,6 +18,7 @@ title: "Concepts"
 | [Citation Network Mapping](citation-network-mapping) | `geo` `ai-search` `competitive-intelligence` | 2 | 2026-04-19 |
 | [E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)](e-e-a-t) | `geo` `seo` `trust-signals` | 1 | 2026-04-19 |
 | [Earned-Media Bias (in AI Search)](earned-media-bias) | `geo` `ai-search` `seo-strategy` | 2 | 2026-04-19 |
+| [From Retrieval to Agency](from-retrieval-to-agency) | `ai-search` `geo` `agents` | 1 | 2026-04-19 |
 | [Generative Engine Optimization (GEO)](generative-engine-optimization) | `geo` `ai-search` `seo-strategy` | 2 | 2026-04-19 |
 | [Justification Attributes](justification-attributes) | `geo` `ai-search` `content-strategy` | 1 | 2026-04-19 |
 | [Mirage PMF](mirage-pmf) | `ains` `product-market-fit` `failure-mode` | 1 | 2026-04-19 |

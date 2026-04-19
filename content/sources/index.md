@@ -11,9 +11,9 @@ title: "Sources"
 | Title | Authors | Published | Cited by |
 |-------|---------|-----------|----------|
 | [The AI-Native Services Playbook (Emergence Capital, Spring 2026)](ai-native-services-playbook) | Emergence Capital | 2026-04-19 | 0 |
-| [Generative Engine Optimization: How to Dominate AI Search](geo-how-to-dominate-ai-search) | Mahe Chen, Xiaoxuan Wang, Kaiwen Chen, Nick Koudas | 2025-09-10 | 16 |
+| [Generative Engine Optimization: How to Dominate AI Search](geo-how-to-dominate-ai-search) | Mahe Chen, Xiaoxuan Wang, Kaiwen Chen, Nick Koudas | 2025-09-10 | 17 |
 | [LinkedIn Profile — Phani Sama (Apr 2026 export)](linkedin-phani-sama) |  | 2026-04-19 | 11 |
-| [LinkedIn Profile — Siva Cotipalli (Apr 2026 export)](linkedin-siva-cotipalli) |  | 2026-04-19 | 12 |
+| [LinkedIn Profile — Siva Cotipalli (Apr 2026 export)](linkedin-siva-cotipalli) |  | 2026-04-19 | 13 |
 | [New Front Door to the Internet: Winning in the Age of AI Search](new-front-door-to-the-internet) | Elizabeth Silliman, Julien Boudet, Kelsey Robinson, Desirae Oppong, Nilay Shah | 2025-10 | 10 |
 | [Semrush AI Visibility Index (snapshot, April 2026)](semrush-ai-visibility-index) | Semrush | 2026-04 (m | 7 |
 

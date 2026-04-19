@@ -6,7 +6,7 @@ title: "Companies"
 
 # Companies and institutions
 
-19 organizations tracked, computed live from `wiki/companies/*.md` frontmatter.
+20 organizations tracked, computed live from `wiki/companies/*.md` frontmatter.
 
 | Name | Primary tag | Inbound links | Website |
 |------|-------------|---------------|---------|
@@ -14,14 +14,15 @@ title: "Companies"
 | [Chevening Scholarship](chevening-scholarship) | scholarship | 7 | [www.chevening.org](https://www.chevening.org) |
 | [CityFALCON](cityfalcon) | company | 3 | [www.cityfalcon.ai](https://www.cityfalcon.ai) |
 | [Deshpande Skilling](deshpande-skilling) | company | 5 | [detedu.org](https://detedu.org) |
-| [dhanaX](dhanax) | company | 3 | [www.dhanax.com](https://www.dhanax.com) |
+| [dhanaX](dhanax) | company | 4 | [www.dhanax.com](https://www.dhanax.com) |
+| [Goodmoney (Anitya Information Solutions Pvt Ltd)](goodmoney) | company | 3 | [www.goodmoney.in](https://www.goodmoney.in) |
 | [Government of Telangana](government-of-telangana) | government | 5 | [www.telangana.gov.in](https://www.telangana.gov.in) |
 | [IIM Kozhikode](iim-kozhikode) | institution | 3 | [www.iimk.ac.in](https://www.iimk.ac.in) |
 | [Kakatiya Sandbox](kakatiya-sandbox) | company | 6 |  |
 | [London School of Economics (LSE)](lse) | institution | 5 | [www.lse.ac.uk](https://www.lse.ac.uk) |
-| [Marketri](marketri) | company | 6 | [marketri.com](https://marketri.com) |
+| [Marketri](marketri) | company | 7 | [marketri.com](https://marketri.com) |
 | [NTWIST](ntwist) | company | 3 | [www.ntwist.com](https://www.ntwist.com) |
-| [ProGrowth](progrowth) | company | 18 | [progrowth.services](https://progrowth.services) |
+| [ProGrowth](progrowth) | company | 20 | [progrowth.services](https://progrowth.services) |
 | [redBus](redbus) | company | 4 | [www.redbus.in](https://www.redbus.in) |
 | [Reverie Language Technologies](reverie-language-technologies) | company | 3 |  |
 | [Semrush](semrush) | company | 3 | [semrush.com](https://semrush.com) |

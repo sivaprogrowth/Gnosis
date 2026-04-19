@@ -1,0 +1,453 @@
+@use "../../styles/variables.scss" as *;
+
+.gnosis-chat-page {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  background: var(--light);
+  font-family: var(--bodyFont);
+  color: var(--dark);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  // ---------- left sidebar: parsed query + retrieved pages ----------
+  .gnosis-chat-page-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem 1rem;
+    border-right: 1px solid var(--lightgray);
+    overflow-y: auto;
+    background: var(--light);
+  }
+
+  .gnosis-chat-page-sidebar-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+
+    strong {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--darkgray);
+    }
+
+    .gnosis-chat-page-sidebar-subtitle {
+      font-size: 0.78rem;
+      color: var(--gray);
+      line-height: 1.35;
+    }
+  }
+
+  .gnosis-chat-page-placeholder {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  // ----- parsed query chips -----
+  .gnosis-chat-page-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .gnosis-chat-page-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.25;
+    background: var(--highlight);
+    color: var(--dark);
+    border: 1px solid var(--lightgray);
+  }
+
+  .gnosis-chat-page-chip-intent {
+    background: var(--secondary);
+    color: var(--light);
+    border-color: transparent;
+    text-transform: capitalize;
+  }
+
+  .gnosis-chat-page-chip-topic {
+    font-weight: 600;
+  }
+
+  .gnosis-chat-page-chip-entity {
+    background: var(--tertiary);
+    color: var(--light);
+    border-color: transparent;
+  }
+
+  .gnosis-chat-page-chip-emotion,
+  .gnosis-chat-page-chip-aesthetic {
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  // ----- retrieved pages list -----
+  .gnosis-chat-page-retrieved-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .gnosis-chat-page-retrieved-card {
+    border: 1px solid var(--lightgray);
+    border-radius: 10px;
+    background: var(--light);
+    transition:
+      border-color 0.12s ease,
+      background 0.12s ease,
+      transform 0.12s ease;
+
+    &.is-highlighted {
+      border-color: var(--secondary);
+      background: var(--highlight);
+      transform: translateY(-1px);
+    }
+
+    &:hover {
+      border-color: var(--secondary);
+    }
+  }
+
+  .gnosis-chat-page-retrieved-link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .gnosis-chat-page-retrieved-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .gnosis-chat-page-retrieved-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.3rem;
+    border-radius: 999px;
+    background: var(--secondary);
+    color: var(--light);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .gnosis-chat-page-retrieved-type {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .gnosis-chat-page-retrieved-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .gnosis-chat-page-retrieved-why {
+    font-size: 0.78rem;
+    color: var(--darkgray);
+    line-height: 1.4;
+  }
+
+  // ---------- right main: header / messages / input ----------
+  .gnosis-chat-page-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .gnosis-chat-page-header {
+    padding: 1rem 1.5rem 0.85rem;
+    border-bottom: 1px solid var(--lightgray);
+
+    .gnosis-chat-page-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      strong {
+        font-size: 1.1rem;
+        color: var(--dark);
+      }
+
+      .gnosis-chat-page-subtitle {
+        font-size: 0.82rem;
+        color: var(--gray);
+        line-height: 1.4;
+      }
+    }
+  }
+
+  // ----- messages -----
+  .gnosis-chat-page-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .gnosis-chat-page-empty {
+    color: var(--darkgray);
+    font-size: 0.95rem;
+    max-width: 42rem;
+
+    p {
+      margin: 0 0 0.9rem 0;
+      line-height: 1.55;
+    }
+  }
+
+  .gnosis-chat-page-suggestions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .gnosis-chat-page-suggestion {
+    text-align: left;
+    background: var(--highlight);
+    border: 1px solid var(--lightgray);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition:
+      background 0.1s ease,
+      border-color 0.1s ease;
+
+    &:hover {
+      background: var(--lightgray);
+      border-color: var(--secondary);
+    }
+  }
+
+  // ----- bubbles -----
+  .gnosis-chat-page-msg {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .gnosis-chat-page-msg-user {
+    justify-content: flex-end;
+
+    .gnosis-chat-page-bubble {
+      background: var(--secondary);
+      color: var(--light);
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  .gnosis-chat-page-msg-assistant {
+    justify-content: flex-start;
+
+    .gnosis-chat-page-bubble {
+      background: var(--highlight);
+      color: var(--dark);
+      border-bottom-left-radius: 4px;
+    }
+  }
+
+  .gnosis-chat-page-bubble {
+    max-width: min(48rem, 78%);
+    padding: 0.75rem 0.95rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    word-wrap: break-word;
+
+    p {
+      margin: 0;
+
+      & + p {
+        margin-top: 0.6rem;
+      }
+    }
+
+    ul,
+    ol {
+      margin: 0.5rem 0;
+      padding-left: 1.3rem;
+    }
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.08);
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+
+    a.gnosis-chat-page-citation {
+      color: inherit;
+      background: rgba(0, 0, 0, 0.08);
+      padding: 0.05em 0.3em;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.1s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.18);
+      }
+    }
+  }
+
+  // ----- streaming dots -----
+  .gnosis-chat-page-dots {
+    display: inline-flex;
+    gap: 3px;
+
+    span {
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: gnosis-chat-page-pulse 1.2s infinite ease-in-out;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  @keyframes gnosis-chat-page-pulse {
+    0%,
+    60%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.9);
+    }
+    30% {
+      opacity: 0.9;
+      transform: scale(1.15);
+    }
+  }
+
+  // ----- input form -----
+  .gnosis-chat-page-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem 1.1rem;
+    border-top: 1px solid var(--lightgray);
+    background: var(--light);
+  }
+
+  .gnosis-chat-page-input {
+    flex: 1;
+    resize: none;
+    border: 1px solid var(--lightgray);
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    outline: none;
+    max-height: 160px;
+
+    &:focus {
+      border-color: var(--secondary);
+    }
+  }
+
+  .gnosis-chat-page-send {
+    background: var(--secondary);
+    color: var(--light);
+    border: none;
+    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.1s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ---------- hide the surrounding Quartz chrome on /chat ----------
+// The page-level body class Quartz adds isn't reliable across versions, so we
+// scope this to "only apply when a gnosis-chat-page element exists in the DOM".
+body:has(#gnosis-chat-page) {
+  overflow: hidden;
+
+  // keep the chat page above everything else
+  .chat-widget,
+  .gnosis-chat,
+  .page > .sidebar,
+  .page > .center,
+  .page > header,
+  .page > footer,
+  header,
+  footer {
+    display: none !important;
+  }
+}
+
+// ---------- mobile: stack sidebar below the chat ----------
+@media (max-width: 820px) {
+  .gnosis-chat-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    .gnosis-chat-page-sidebar {
+      max-height: 40vh;
+      border-right: none;
+      border-bottom: 1px solid var(--lightgray);
+    }
+
+    .gnosis-chat-page-suggestions {
+      grid-template-columns: 1fr;
+    }
+  }
+}

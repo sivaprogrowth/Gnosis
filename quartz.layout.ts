@@ -5,10 +5,10 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [Component.ChatWidget()],
+  afterBody: [Component.Chat(), Component.ChatWidget()],
   footer: Component.Footer({
     links: {
-      "ProGrowth": "https://progrowth.services",
+      ProGrowth: "https://progrowth.services",
       "Built with Quartz": "https://quartz.jzhao.xyz",
     },
   }),

@@ -27,11 +27,16 @@ A personal knowledge base where an LLM acts as a disciplined wiki maintainer. Dr
 
 ## What's in this wiki
 
-Three AI-search sources ingested so far, producing 19 cross-linked pages:
+**72 cross-linked pages** across 8 categories, ingested from 7 primary sources spanning AI-search research, AI-native services strategy, narrative craft, and Siva's professional network:
 
-- **Sources** — three-layer summary of each raw document.
-- **Entities** — AI engines (ChatGPT, Claude, Perplexity, Gemini, Google AI Overview), tools, organizations.
-- **Concepts** — the frameworks, findings, and ideas that the sources surface. Where the synthesis lives.
+- **Sources** *(7)* — three-layer summary of each raw document.
+- **Concepts** *(21)* — the frameworks, findings, and ideas the sources surface. Where the synthesis lives.
+- **Entities** *(7)* — AI engines (ChatGPT, Claude, Perplexity, Gemini, Google AI Overview), tools, products.
+- **Companies** *(20)* — organizations, institutions, scholarships in Siva's network.
+- **People** *(3)* — individuals mapped in relation to Siva.
+- **Projects** *(4)* — active initiatives.
+- **Inspiration** *(4)* — verbatim quotes flagged as portable design references.
+- **Queries** *(6)* — filed answers to non-trivial cross-source questions (including weekly syntheses + a quarterly reading-pattern mirror).
 
 Click the **graph** in the right sidebar to see how pages connect.
 
@@ -42,7 +47,9 @@ Ask the wiki directly. The assistant answers using only what's in these pages, a
 **Good demo questions to try:**
 
 - *"What's the difference between ChatGPT and Claude in AI search behavior?"*
-- *"Why doesn't my brand-owned content show up in AI search?"*
+- *"What does 'Mirage PMF' mean for an AI-native services company?"*
+- *"How does Will Storr's Sacred Flaw Approach apply to brand positioning?"*
+- *"Show me where Dillard, Manu Joseph, and Vedic aparigraha all rhyme on austerity as intelligence."*
 - *"Show me the contradiction between Chen et al. and McKinsey on big brand bias."*
 - *"Give me a 5-bullet summary of the Generative Engine Optimization framework."*
 
@@ -51,19 +58,44 @@ Open the chat widget (bottom-right of any page) to begin.
 ## Browse the wiki
 
 ### Sources
+
+**AI search + strategy:**
 - [[sources/geo-how-to-dominate-ai-search|GEO: How to Dominate AI Search]] — Chen et al. (U of Toronto, Sep 2025). The foundational academic paper.
 - [[sources/new-front-door-to-the-internet|New Front Door to the Internet]] — McKinsey (Oct 2025). Business-oriented companion with the $750B projection.
 - [[sources/semrush-ai-visibility-index|Semrush AI Visibility Index]] — interactive tool snapshot (April 2026).
+- [[sources/ai-native-services-playbook|AI-Native Services Playbook]] — Emergence Capital (Spring 2026). Coins *Mirage PMF*; defines the AINS business model.
+
+**Narrative + persuasion:**
+- [[sources/book-the-science-of-storytelling|The Science of Storytelling]] — Will Storr (2019). Neuroscience-grounded account of why story works on the human brain.
+
+**Network:**
+- [[sources/linkedin-siva-cotipalli|Siva's LinkedIn]] + [[sources/linkedin-phani-sama|Phani Sama's LinkedIn]] — career graph + shared-credential network (BITS, Chevening, Telangana).
 
 ### Key concepts
-- [[concepts/generative-engine-optimization|Generative Engine Optimization (GEO)]] — the central framework.
+
+**AI search + AINS:**
+- [[concepts/generative-engine-optimization|Generative Engine Optimization (GEO)]] — the central AI-search framework.
 - [[concepts/earned-media-bias|Earned-Media Bias]] — the core empirical finding.
 - [[concepts/big-brand-bias|Big Brand Bias]] — with a reconciled contradiction inline.
-- [[concepts/justification-attributes|Justification Attributes]] — content tactics.
-- [[concepts/api-able-brand|The API-able Brand]] — technical tactics.
+- [[concepts/mirage-pmf|Mirage PMF]] — the revenue-growth illusion in AI-native services.
+- [[concepts/ai-native-services|AI-Native Services (AINS)]] — the parent business-model category.
+
+**Narrative + persuasion:**
+- [[concepts/controlled-hallucination|Controlled Hallucination]] — brain-as-reality-model. Foundation of why story works (and why brand works).
+- [[concepts/sacred-flaw-approach|Sacred Flaw Approach]] — Storr's character-first method, applied to brand and founder positioning.
+- [[concepts/connect-and-dominate|Connect and Dominate]] — the two-axis status drive behind B2B buying and brand voice.
+- [[concepts/wants-vs-needs|Wants vs Needs]] — the multidimensional-buyer engine of consultative work.
+- [[concepts/theory-of-control|Theory of Control]] — how character (and customer behaviour) generates plot.
+- [[concepts/information-gap-curiosity|Information-Gap Curiosity]] — Loewenstein's mechanism behind every hook and subject line.
 
 ### Engines
 - [[entities/chatgpt|ChatGPT]], [[entities/claude|Claude]], [[entities/perplexity|Perplexity]], [[entities/gemini|Gemini]], [[entities/google-ai-overview|Google AI Overview]], [[entities/google-search|Google Search]] — all with engine-specific behavior from the sources.
+
+### Queries — cross-source synthesis
+
+- [[queries/synthesis-2026-W22|Weekly synthesis — 2026-W22]] — first under the new collision-hunt workflow; caught the Dillard ↔ Manu Joseph ↔ Vedic *aparigraha* cross-domain rhyme.
+- [[queries/reading-mirror-2026-Q2|Reading-pattern mirror — 2026-Q2]] — candid quarterly mirror: 55% of the quarter's reading on solitary-craft discipline, 0% on stated-goal domains.
+- [[queries/how-chen-and-mckinsey-disagree-on-big-brand-bias|Chen et al. vs McKinsey on Big Brand Bias]] — reconciliation of an apparent contradiction across two sources.
 
 ### Siva's network (LinkedIn-ingested, Apr 2026)
 

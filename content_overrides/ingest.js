@@ -2,7 +2,11 @@
 // Two-phase flow: submit URL → SSE through fetch/synth/compounding → ready
 // frame → user confirms or cancels → SSE through write/commit → done frame.
 
+// Single try/catch around the whole IIFE so a missing element doesn't kill
+// the entire page silently — we'll see the actual error in console.
+try {
 (() => {
+  console.log("[ingest] script start")
   const $ = (sel) => document.querySelector(sel)
   const form = $("#ing-url-form")
   const urlInput = $("#ing-url")
@@ -16,6 +20,7 @@
   const pdfSubmit = $("#ing-pdf-submit")
   const tabs = document.querySelectorAll(".ing-tab")
   const panels = document.querySelectorAll(".ing-tab-panel")
+  console.log("[ingest] selectors resolved — form:", !!form, "pdfForm:", !!pdfForm, "tabs:", tabs.length, "panels:", panels.length)
   const progressSection = $("#ing-progress")
   const stagesList = $("#ing-stages")
   const logEl = $("#ing-log")
@@ -226,8 +231,13 @@
     })
   }
 
-  // -------- PDF picker + drop zone --------
+  // -------- PDF picker + drop zone (skip whole block if PDF form isn't in DOM) --------
+  if (!pdfForm) {
+    console.warn("[ingest] PDF form not found in DOM — skipping PDF wiring. Hard-refresh the page to get the latest HTML.")
+  }
+
   function setChosenPdf(file) {
+    if (!pdfChosen || !pdfSubmit) return
     if (!file) {
       pendingPdf = null
       pdfChosen.hidden = true
@@ -261,37 +271,43 @@
     reader.readAsDataURL(file)
   }
 
-  pdfPickBtn.addEventListener("click", (e) => {
-    e.preventDefault()
-    pdfInput.click()
-  })
-  pdfDrop.addEventListener("click", (e) => {
-    // Click anywhere on the dropzone opens the picker (but not the pick button — it has its own handler)
-    if (e.target === pdfPickBtn) return
-    pdfInput.click()
-  })
-  pdfInput.addEventListener("change", () => {
-    const file = pdfInput.files && pdfInput.files[0]
-    if (file) setChosenPdf(file)
-  })
-  ;["dragenter", "dragover"].forEach((evt) => {
-    pdfDrop.addEventListener(evt, (e) => {
+  if (pdfPickBtn) {
+    pdfPickBtn.addEventListener("click", (e) => {
       e.preventDefault()
-      pdfDrop.classList.add("dragover")
+      pdfInput?.click()
     })
-  })
-  ;["dragleave", "drop"].forEach((evt) => {
-    pdfDrop.addEventListener(evt, (e) => {
-      e.preventDefault()
-      pdfDrop.classList.remove("dragover")
+  }
+  if (pdfDrop) {
+    pdfDrop.addEventListener("click", (e) => {
+      if (e.target === pdfPickBtn) return
+      pdfInput?.click()
     })
-  })
-  pdfDrop.addEventListener("drop", (e) => {
-    const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]
-    if (file) setChosenPdf(file)
-  })
+    ;["dragenter", "dragover"].forEach((evt) => {
+      pdfDrop.addEventListener(evt, (e) => {
+        e.preventDefault()
+        pdfDrop.classList.add("dragover")
+      })
+    })
+    ;["dragleave", "drop"].forEach((evt) => {
+      pdfDrop.addEventListener(evt, (e) => {
+        e.preventDefault()
+        pdfDrop.classList.remove("dragover")
+      })
+    })
+    pdfDrop.addEventListener("drop", (e) => {
+      const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]
+      if (file) setChosenPdf(file)
+    })
+  }
+  if (pdfInput) {
+    pdfInput.addEventListener("change", () => {
+      const file = pdfInput.files && pdfInput.files[0]
+      if (file) setChosenPdf(file)
+    })
+  }
 
   // -------- PDF submit --------
+  if (pdfForm) {
   pdfForm.addEventListener("submit", async (e) => {
     e.preventDefault()
     showError("")
@@ -331,6 +347,7 @@
       formSection.style.opacity = "1"
     }
   })
+  } // end if (pdfForm)
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault()
@@ -473,4 +490,9 @@
       // Silent — recovery is best-effort
     }
   })()
+
+  console.log("[ingest] setup complete")
 })()
+} catch (err) {
+  console.error("[ingest] FATAL during script init:", err)
+}

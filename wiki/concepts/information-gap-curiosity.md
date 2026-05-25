@@ -53,3 +53,7 @@ The skilled version names the *territory* of the gap without resolving it: "We r
 - [[book-the-science-of-storytelling]] — full account of Loewenstein's four routes
 - [[controlled-hallucination]] — the gap is detected inside the model the brain has assembled
 - [[justification-attributes]] — a structured way to *close* gaps for AI consumption (the inverse problem)
+
+## Mentions
+
+- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

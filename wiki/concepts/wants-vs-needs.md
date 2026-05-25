@@ -65,3 +65,7 @@ The wants-vs-needs frame is a cousin of jobs-to-be-done, but more dramatic. JTBD
 - [[theory-of-control]] — the want is internally consistent with the current theory; the need usually isn't
 - [[sacred-flaw-approach]] — the sacred flaw is what prevents the character from seeing the need
 - [[mirage-pmf]] — adjacent failure mode: a metric (revenue) that looks like the want is being satisfied while the underlying need (real AI leverage) goes unaddressed
+
+## Mentions
+
+- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

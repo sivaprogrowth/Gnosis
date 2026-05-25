@@ -17,4 +17,6 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 ## Mentions
 
+
+- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

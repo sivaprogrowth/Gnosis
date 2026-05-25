@@ -54,3 +54,7 @@ The theory of control generates the *want* — what the protagonist (or buyer) c
 - [[sacred-flaw-approach]] — Storr's method for *deriving* the theory from a flawed foundational belief
 - [[wants-vs-needs]] — the gap between what the theory wants and what the protagonist needs
 - [[controlled-hallucination]] — the theory of control is the action layer of the hallucinated model
+
+## Mentions
+
+- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

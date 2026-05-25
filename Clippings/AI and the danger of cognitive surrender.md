@@ -1,13 +1,20 @@
 ---
-title: "AI and the danger of cognitive surrender"
-source: "https://www.economist.com/business/2026/04/30/ai-and-the-danger-of-cognitive-surrender"
+title: AI and the danger of cognitive surrender
+source: >-
+  https://www.economist.com/business/2026/04/30/ai-and-the-danger-of-cognitive-surrender
 author:
-  - "[[The Economist]]"
-published: 2026-04-30
-created: 2026-05-25
-description: "Artificial intelligence can lead to \"cognitive surrender\" where people stop thinking critically and rely too heavily on AI systems, even when they provide wrong answers. | Business"
+  - '[[The Economist]]'
+published: 2026-04-30T00:00:00.000Z
+created: 2026-05-25T00:00:00.000Z
+description: >-
+  Artificial intelligence can lead to "cognitive surrender" where people stop
+  thinking critically and rely too heavily on AI systems, even when they provide
+  wrong answers. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: b11db7fd-1b24-462d-96df-718710a3cbca
+gnosis_ingested_at: '2026-05-25T18:17:38.670Z'
 ---
 ## How much should managers let bots do the thinking?
 

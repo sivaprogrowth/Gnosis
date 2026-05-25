@@ -48,3 +48,7 @@ The "brand-in-the-customer's-head" is not a description of the company — it is
 - [[information-gap-curiosity]] — the mechanism that pulls the hallucination forward
 - [[theory-of-control]] — every character (and customer) operates inside their own hallucination
 - [[earned-media-bias]] — practical consequence: third-party inputs weigh heavily in model assembly
+
+## Mentions
+
+- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

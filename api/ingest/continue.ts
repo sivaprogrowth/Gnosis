@@ -61,6 +61,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.flush?.()
   }
 
+  // Heartbeat to survive edge idle timeouts during the GitHub commit step
+  const heartbeat = setInterval(() => {
+    res.write(": ping\n\n")
+    // @ts-expect-error node typings don't always expose flush
+    res.flush?.()
+  }, 15_000)
+
   try {
     await runCommit(jobId, send)
   } catch (err: unknown) {
@@ -69,6 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await markJobFailed(jobId, msg).catch(() => {})
     send({ stage: "error", message: msg, data: { jobId } })
   } finally {
+    clearInterval(heartbeat)
     res.write("data: [DONE]\n\n")
     res.end()
   }

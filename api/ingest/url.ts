@@ -57,6 +57,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.flush?.()
   }
 
+  // Heartbeat: SSE comment lines (start with ':') keep the edge connection
+  // alive during long Anthropic calls (synthesize can take 60-90s). Without
+  // this the browser silently loses the connection and never sees the `ready`
+  // frame even though the server completes.
+  const heartbeat = setInterval(() => {
+    res.write(": ping\n\n")
+    // @ts-expect-error node typings don't always expose flush
+    res.flush?.()
+  }, 15_000)
+
   let jobId: string | null = null
   try {
     const result = await runDiscoveryFromUrl(url, session.email, (frame) => {
@@ -74,6 +84,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (jobId) await markJobFailed(jobId, msg).catch(() => {})
     send({ stage: "error", message: msg, data: { jobId } })
   } finally {
+    clearInterval(heartbeat)
     res.write("data: [DONE]\n\n")
     res.end()
   }

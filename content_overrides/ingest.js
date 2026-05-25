@@ -299,4 +299,28 @@
     try { await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" }) } catch {}
     location.href = "/login"
   })
+
+  // On page load, check for an in-flight job (e.g. user lost SSE connection
+  // during a long synthesize call but the server finished). If one is found,
+  // jump straight to the confirm screen so the user can proceed or cancel.
+  ;(async function recoverPending() {
+    try {
+      const res = await fetch("/api/ingest/latest-pending", { credentials: "same-origin" })
+      if (!res.ok) return
+      const data = await res.json()
+      if (!data.pending) return
+      currentJobId = data.pending.jobId
+      progressSection.hidden = false
+      setStage("fetching", "done", "Recovered from previous session")
+      setStage("fetched", "done", "Source fetched earlier")
+      setStage("synthesizing", "done", "Synthesis completed earlier")
+      setStage("synthesized", "done")
+      setStage("compounding", "done", "Compounding bar applied earlier")
+      setStage("ready", "active", "Awaiting your confirmation")
+      renderConfirmation(data.pending)
+      formSection.style.opacity = "0.6"
+    } catch (e) {
+      // Silent — recovery is best-effort
+    }
+  })()
 })()

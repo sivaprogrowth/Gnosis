@@ -205,16 +205,23 @@
   }
 
   // -------- Tab switching --------
+  console.log("[ingest] booted — tabs:", tabs.length, "panels:", panels.length)
   for (const tab of tabs) {
-    tab.addEventListener("click", () => {
+    tab.addEventListener("click", (e) => {
+      e.preventDefault()
       const which = tab.dataset.tab
+      console.log("[ingest] tab click →", which)
       for (const t of tabs) {
         const active = t.dataset.tab === which
         t.classList.toggle("active", active)
         t.setAttribute("aria-selected", active ? "true" : "false")
       }
       for (const p of panels) {
-        p.hidden = p.dataset.panel !== which
+        const shouldHide = p.dataset.panel !== which
+        p.hidden = shouldHide
+        // Belt-and-suspenders: some Quartz CSS rules can override the [hidden]
+        // attribute. Set display directly to guarantee the panel actually hides.
+        p.style.display = shouldHide ? "none" : ""
       }
     })
   }

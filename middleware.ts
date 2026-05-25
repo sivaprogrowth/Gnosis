@@ -54,6 +54,13 @@ export default async function middleware(req: Request): Promise<Response> {
     return fetch(req)
   }
 
+  // 1b. Vercel cron endpoints — let through so the handler can verify the
+  //     bearer token against CRON_SECRET. Without this the cookie-based
+  //     session check below would 401 every scheduled invocation.
+  if (pathname === "/api/ingest/job" && url.searchParams.get("cron")) {
+    return fetch(req)
+  }
+
   // 2. Login page (and its assets — handled by extension check below)
   if (pathname === "/login" || pathname === "/login.html" || pathname === "/login/") {
     return fetch(req)

@@ -47,3 +47,7 @@ Perplexity is the most "SEO-like" of the AI engines — diverse citations, conte
 - [[google-search]] — Perplexity is closest to Google in Social inclusivity
 - [[earned-media-bias]] — Perplexity still exhibits this, but least extremely
 - [[big-brand-bias]] — Perplexity shows strongest version in cola vertical (~67.9%)
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

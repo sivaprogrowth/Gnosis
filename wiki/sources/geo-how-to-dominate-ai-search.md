@@ -49,3 +49,7 @@ Empirical comparative study of AI search engines ([[chatgpt]], [[claude]], [[per
 - [[generative-engine-optimization]] — the central framework this paper proposes
 - [[earned-media-bias]] — the central empirical finding
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]] — engine-specific behavior pages
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

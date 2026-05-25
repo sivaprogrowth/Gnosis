@@ -47,3 +47,7 @@ Most visible AI engine for B2B/consumer audiences alike. For ProGrowth's [[gener
 - [[google-search]] — balanced baseline
 - [[earned-media-bias]] — the pattern this engine exemplifies most
 - [[big-brand-bias]] — GPT shows strong version of this bias
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

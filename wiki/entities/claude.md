@@ -45,3 +45,7 @@ Smaller audience but influential (enterprise / developer-leaning). Worth trackin
 - [[google-search]] — balanced baseline
 - [[earned-media-bias]] — Claude exemplifies this with English stability
 - [[e-e-a-t]] — Claude's domain set tracks E-E-A-T signals closely
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

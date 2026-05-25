@@ -79,3 +79,7 @@ See the `## ProGrowth relevance` section on [[progrowth]] for specific operation
 - [[progrowth]] — the wiki's canonical AINS example
 - [[marketri]] — traditional fractional-marketing firm; non-AI-native counter-example
 - [[ai-overview-tool]] — ProGrowth's product-layer complement to its AINS services layer
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

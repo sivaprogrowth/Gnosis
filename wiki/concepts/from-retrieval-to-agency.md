@@ -63,3 +63,7 @@ It's also the forward-looking angle that **distinguishes ProGrowth's [[ai-native
 - [[geo-how-to-dominate-ai-search]] — primary source
 - [[progrowth]] — the wiki's canonical challenger-market operator
 - [[ai-overview-tool]] — ProGrowth's agent-readiness diagnostic product
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

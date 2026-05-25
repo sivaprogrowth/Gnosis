@@ -60,3 +60,7 @@ McKinsey uses a **different, more granular source taxonomy** than Chen et al.: a
 - [[citation-network-mapping]] — McKinsey's "robust diagnostic" is this pillar in practice
 - [[big-brand-bias]] — McKinsey's data adds important nuance / counterpoint
 - [[brand-earned-social-taxonomy]] — methodological contrast noted
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

@@ -85,3 +85,7 @@ GEO is the emerging service category both sources argue for. Directly relevant t
 - [[brand-strength-ai-visibility-gap]] — empirical proof that GEO investment can leapfrog incumbents
 - [[google-ai-overview]] — the AI surface with largest reach in McKinsey's analysis
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]] — engines GEO targets
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

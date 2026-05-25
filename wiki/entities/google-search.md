@@ -45,3 +45,7 @@ Baseline for every client — still where most pipeline comes from. The strategi
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]] — AI search engines that diverge from Google's mix
 - [[earned-media-bias]] — defined relative to Google's balanced baseline
 - [[brand-earned-social-taxonomy]] — the classification framework
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

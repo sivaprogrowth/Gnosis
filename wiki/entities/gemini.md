@@ -45,3 +45,7 @@ For clients with strong owned content (long-form pillar pages, detailed product 
 - [[google-search]] — Gemini closest to Google in spirit (brand-forward, broad)
 - [[api-able-brand]] — Gemini rewards this strategy most
 - [[earned-media-bias]] — present but weakest on Gemini
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

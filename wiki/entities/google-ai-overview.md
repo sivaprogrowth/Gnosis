@@ -75,3 +75,7 @@ AIO is the AI surface with the largest total addressable reach (appears in half 
 - [[chatgpt]], [[claude]], [[perplexity]] — contrasting AI surfaces with different source mixes
 - [[earned-media-bias]] — AIO exemplifies the affiliate-heavy variant of this
 - [[citation-network-mapping]] — AIO is a mandatory engine to include in any GEO audit
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

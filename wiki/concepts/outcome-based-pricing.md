@@ -84,3 +84,7 @@ The [[mirage-pmf]] test and outcome-based pricing are connected: labor-based pri
 - [[ai-native-services-playbook]] — the source
 - [[progrowth]] — the wiki's canonical AINS pricing-evolution target
 - [[ai-overview-tool]] — the "Palantir pattern" recurring-revenue leave-behind
+
+## Mentions
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

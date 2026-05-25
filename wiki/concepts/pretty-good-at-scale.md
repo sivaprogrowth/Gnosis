@@ -17,4 +17,6 @@ Core SaaStr insight with a distinct, quotable name: high-volume acceptable-quali
 
 ## Mentions
 
+
+- [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]
 - [[saastr-ai-agent-playbook-for-gtm|AI Agent Playbook]]

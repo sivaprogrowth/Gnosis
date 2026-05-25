@@ -1,13 +1,18 @@
 ---
-title: "AI super-apps are remaking China’s internet"
-source: "https://www.economist.com/business/2026/05/17/ai-super-apps-are-remaking-chinas-internet"
+title: AI super-apps are remaking China’s internet
+source: >-
+  https://www.economist.com/business/2026/05/17/ai-super-apps-are-remaking-chinas-internet
 author:
-  - "[[The Economist]]"
-published: 2026-05-18
-created: 2026-05-25
-description: "Welcome to the agentic era | Business"
+  - '[[The Economist]]'
+published: 2026-05-18T00:00:00.000Z
+created: 2026-05-25T00:00:00.000Z
+description: Welcome to the agentic era | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: e3f98470-29a6-425b-9537-6386b1b87ae9
+gnosis_commit_sha: 67f64eb96d400a2aa7e0b8f9353c48b048035d6c
+gnosis_ingested_at: '2026-05-25T18:17:41.432Z'
 ---
 ## Welcome to the agentic era
 

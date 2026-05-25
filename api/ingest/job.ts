@@ -23,9 +23,28 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
+import { deleteFiles, triggerVercelRebuild } from "../_ingest/githubPush.js"
+
+// One-shot admin op: paths from the duplicate AI Agent Playbook ingest
+// whose source page got overwritten but entity stubs remained orphaned.
+// Triggered via POST { action: "cleanup-orphans" } on this endpoint so
+// we don't burn a separate serverless function slot (Vercel's per-deploy
+// function limit is tight on the current plan).
+const AGENT_PLAYBOOK_ORPHANS = [
+  "wiki/companies/saastr.md",
+  "wiki/companies/intercom.md",
+  "wiki/people/jason-lemkin.md",
+  "wiki/concepts/forward-deployed-engineer.md",
+  "wiki/concepts/hyper-segmentation.md",
+  "wiki/concepts/copy-your-best-human-framework.md",
+  "wiki/concepts/ai-native-organisation.md",
+  "wiki/concepts/ai-sdr.md",
+  "wiki/concepts/model-context-protocol.md",
+  "wiki/concepts/90-10-buy-vs-build.md",
+]
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== "GET") {
+  if (req.method !== "GET" && req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" })
     return
   }
@@ -36,6 +55,42 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const session = sessionToken ? verifySessionToken(sessionToken) : null
   if (!session) {
     res.status(401).json({ error: "Unauthorized" })
+    return
+  }
+
+  // POST dispatch for one-shot admin actions (orphan cleanup). We piggyback
+  // on this endpoint instead of a dedicated /api/admin/* to avoid bumping
+  // the deployed-function count over the plan limit. Action is hardcoded
+  // so this is not a generic delete RPC.
+  if (req.method === "POST") {
+    const body = (req.body || {}) as { action?: unknown }
+    if (body.action === "cleanup-orphans") {
+      try {
+        const result = await deleteFiles(
+          AGENT_PLAYBOOK_ORPHANS,
+          `Cleanup: remove orphan entity pages from duplicate AI Agent Playbook ingest
+
+The first ingest (commit 41be41c5) created 10 entity stub pages. The second
+ingest (commit 1124da3c) overwrote the source page but left these entity
+pages orphaned — no source references them. Removing.`,
+        )
+        triggerVercelRebuild("orphan cleanup").catch((e) =>
+          console.warn(`[ingest/job] rebuild trigger failed:`, e instanceof Error ? e.message : e),
+        )
+        res.status(200).json({
+          ok: true,
+          deleted: AGENT_PLAYBOOK_ORPHANS.length,
+          commit: { sha: result.sha, url: result.commitUrl, files: result.files },
+        })
+        return
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : String(err)
+        console.error("[ingest/job cleanup-orphans] error:", msg)
+        res.status(500).json({ error: msg })
+        return
+      }
+    }
+    res.status(400).json({ error: "Unknown POST action" })
     return
   }
 

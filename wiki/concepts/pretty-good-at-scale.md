@@ -20,6 +20,8 @@ Core SaaStr insight with a distinct, quotable name: high-volume acceptable-quali
 
 
 
+
+- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

@@ -22,3 +22,7 @@ Useful as context: Phani's YGL status plus Siva's own TEDIndia Fellowship (2009)
 
 - [[phani-sama]] — Young Global Leader (2019 class)
 - [[siva-cotipalli]] — parallel: TEDIndia Fellow (2009)
+
+## Mentions
+
+- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

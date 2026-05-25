@@ -87,4 +87,6 @@ The [[mirage-pmf]] test and outcome-based pricing are connected: labor-based pri
 
 ## Mentions
 
+
+- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

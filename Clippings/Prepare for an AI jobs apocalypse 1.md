@@ -1,13 +1,19 @@
 ---
-title: "Prepare for an AI jobs apocalypse"
-source: "https://www.economist.com/leaders/2026/05/14/prepare-for-an-ai-jobs-apocalypse"
+title: Prepare for an AI jobs apocalypse
+source: 'https://www.economist.com/leaders/2026/05/14/prepare-for-an-ai-jobs-apocalypse'
 author:
-  - "[[The Economist]]"
-published: 2026-05-14
-created: 2026-05-25
-description: "Artificial intelligence's rapid advancement raises concerns about job displacement, though employment remains high. Governments consider responses from slowing AI adoption to redistribution policies. | Leaders"
+  - '[[The Economist]]'
+published: 2026-05-14T00:00:00.000Z
+created: 2026-05-25T00:00:00.000Z
+description: >-
+  Artificial intelligence's rapid advancement raises concerns about job
+  displacement, though employment remains high. Governments consider responses
+  from slowing AI adoption to redistribution policies. | Leaders
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 8fb62c0b-6075-48a8-8f07-4d3d399ede7b
+gnosis_ingested_at: '2026-05-25T18:21:49.605Z'
 ---
 ## It is not here yet. But governments should lay a safety-net
 

@@ -18,5 +18,7 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 ## Mentions
 
 
+
+- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

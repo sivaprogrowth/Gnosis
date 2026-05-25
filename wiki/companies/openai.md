@@ -18,5 +18,7 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 ## Mentions
 
 
+
+- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

@@ -591,16 +591,18 @@ Alphabetize within each section. Keep summaries tight (<80 chars).
 
 ## 9. Publication Pipeline (read-only context)
 
-The canonical wiki at `~/Projects/gnosis/` is the source of truth. A public projection lives at `~/Projects/gnosis-main/` (deployed to `gnosis-main.vercel.app`). You normally do not touch the projection — it regenerates itself:
+The canonical wiki at `~/Projects/gnosis/` is the source of truth. A public projection lives at `~/Projects/gnosis-main/` (deployed to `gnosis-main.vercel.app`). You normally do not touch the projection — it regenerates itself on every build:
 
-1. `scripts/sync-wiki.sh` in `~/Projects/gnosis-main/` copies every `wiki/<folder>/*.md` into `content/<folder>/` and strips any `## ... ProGrowth ...` H2 section.
-2. `scripts/generate-dataview.cjs` reads the synced content, regenerates `content/dashboard.md` and `content/{people,companies,sources,concepts}/index.md` with live tables + inline SVG charts, and injects per-page widget blocks (stats strip, table auto-charts, Gnosis-context bottom widget).
-3. Vercel's `buildCommand` runs the generator then `npx quartz build`, publishing to `gnosis-main.vercel.app`.
-4. A `/chat` route and `/api/ask` serverless function (6-stage retrieval pipeline) also live in the projection; they read the same `content/` files. `content/chat.md` and `content/index.md` are hand-maintained in the projection and **preserved** by `sync-wiki.sh`'s clear step.
+1. **`scripts/build-content.cjs`** in `~/Projects/gnosis-main/` reads from `$WIKI_SRC` (default `~/Projects/gnosis/wiki/`), copies the eight vault subfolders (`sources/`, `entities/`, `concepts/`, `people/`, `companies/`, `projects/`, `inspiration/`, `queries/`) into `content/`, strips any `## … ProGrowth …` H2 section via the shared `scripts/strip-progrowth-sections.sh`, and overlays the hand-maintained pages in `content_overrides/` (`index.md`, `chat.md`) on top.
+2. **`scripts/generate-dataview.cjs`** reads the populated `content/`, regenerates `content/dashboard.md` and `content/{people,companies,sources,concepts}/index.md` with live tables + inline SVG charts, and injects per-page widget blocks (stats strip, table auto-charts, Gnosis-context bottom widget).
+3. **`npx quartz build`** consumes the now-finished `content/` and publishes the static site.
+4. A `/chat` route and `/api/ask` serverless function (6-stage retrieval pipeline) also live in the projection; they read the same `content/` files at request time.
 
-For a typical ingest workflow this means: edit canonical → run `bash ~/Projects/gnosis-main/scripts/sync-wiki.sh` → run `vercel --prod --yes` from `~/Projects/gnosis-main/`. The canonical wiki is untouched by the projection.
+`content/` is **gitignored** in the projection — it's regenerated on every build from the live vault. Hand-maintained pages live in `content_overrides/` and are committed there. This means edits to canonical wiki pages flow to the public site without a separate sync step: edit → `npm run build` in the projection → `vercel --prod --yes`.
 
-If you ever need to *change how the public site looks* (dashboard composition, widget content, chart styles), edit the generator, not the canonical pages.
+**Legacy fallback:** `scripts/sync-wiki.sh` in the projection still exists as a backup mechanism. It does the same copy + strip work as `build-content.cjs`, kept for cases where the build script is broken or the projection needs to be populated without running the full Quartz build. Both scripts share `strip-progrowth-sections.sh` — keep the stripper as the single source of truth for the H2/frontmatter rules.
+
+If you ever need to *change how the public site looks* (dashboard composition, widget content, chart styles), edit the generator (`generate-dataview.cjs`), not the canonical pages.
 
 ## 10. Operating Modes
 

@@ -12,7 +12,7 @@ tags:
 gnosis_ingested: true
 gnosis_job_id: 98bc4181-7d7f-4004-9576-f05194c93ef6
 gnosis_commit_sha: 36501d7661b0c19001b8b9328bddec57c5b26db5
-gnosis_ingested_at: '2026-05-25T18:17:42.944Z'
+gnosis_ingested_at: '2026-05-25T18:18:22.362Z'
 ---
 ## But its users are burning through quadrillions of tokens a month
 

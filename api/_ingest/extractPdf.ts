@@ -74,7 +74,15 @@ export async function extractPdf(
   const wordCount = markdown.split(/\s+/).filter(Boolean).length
 
   const fileBaseName = filename.replace(/\.pdf$/i, "").replace(/[-_]+/g, " ").trim()
-  const title = metaTitle || fileBaseName || "Untitled PDF"
+  // Many PDFs ship junk in /Info Title: "(anonymous)", "Microsoft Word - X.docx",
+  // "untitled", empty whitespace, etc. Prefer the filename when the meta title
+  // matches one of these well-known sentinels.
+  const titleIsJunk =
+    !metaTitle ||
+    /^\(?(anonymous|untitled|null|none|unknown)\)?$/i.test(metaTitle) ||
+    /^microsoft word\s*-/i.test(metaTitle) ||
+    metaTitle.length < 3
+  const title = titleIsJunk ? fileBaseName || "Untitled PDF" : metaTitle
 
   return {
     markdown,

@@ -164,7 +164,18 @@ Produce the structured output now via the synthesize_source tool.`
 
   const result = block.input as SynthesizeResult
   if (!result.sourcePage || !result.suggestedSlug) {
-    throw new Error("Synthesize tool_use returned malformed result")
+    throw new Error("Synthesize tool_use returned malformed result (missing sourcePage or suggestedSlug)")
+  }
+  // Anthropic's tool_use schema enforcement is best-effort — sometimes the
+  // model returns scalar or undefined where the schema says array. Normalise
+  // here so downstream code can assume the shapes are correct.
+  if (!Array.isArray(result.takeaways)) {
+    console.warn(`[synthesize] takeaways wasn't an array (got ${typeof result.takeaways}); coercing to []`)
+    result.takeaways = []
+  }
+  if (!Array.isArray(result.surfacedEntities)) {
+    console.warn(`[synthesize] surfacedEntities wasn't an array (got ${typeof result.surfacedEntities}); coercing to []`)
+    result.surfacedEntities = []
   }
   // Hard cap on slug length even if the model ignored the schema hint
   result.suggestedSlug = result.suggestedSlug.slice(0, 60)

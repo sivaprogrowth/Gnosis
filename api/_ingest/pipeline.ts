@@ -125,7 +125,7 @@ export async function runDiscoveryFromUrl(
   const filter = await compoundingFilter({
     candidates: synth.surfacedEntities,
     existingPages,
-    sourceSummary: synth.takeaways.join(" "),
+    sourceSummary: (synth.takeaways || []).join(" "),
   })
 
   await supabase
@@ -246,7 +246,7 @@ export async function runDiscoveryFromPdf(
   const filter = await compoundingFilter({
     candidates: synth.surfacedEntities,
     existingPages,
-    sourceSummary: synth.takeaways.join(" "),
+    sourceSummary: (synth.takeaways || []).join(" "),
   })
 
   await supabase

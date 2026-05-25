@@ -83,6 +83,7 @@
     for (const card of grid.querySelectorAll(".lib-card")) {
       card.addEventListener("click", () => {
         const id = Number(card.dataset.id)
+        console.log("[library] card click → openBook", id)
         openBook(id, /*push*/ true)
       })
     }
@@ -104,15 +105,19 @@
   }
 
   async function openBook(id, push) {
+    console.log("[library] openBook", id, "books.length =", books.length)
     const book = books.find((b) => b.id === id)
     if (!book) {
+      console.warn("[library] book not found for id", id)
       showError(`Book ${id} not found in current library snapshot. Refresh the page.`)
       return
     }
+    console.log("[library] showing detail for", book.title)
     showError("")
 
     grid.hidden = true
     detail.hidden = false
+    detail.scrollIntoView({ block: "start" })
     $("#lib-title").textContent = book.title
     document.title = `${book.title} — Gnosis Book Library`
 

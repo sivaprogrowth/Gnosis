@@ -91,8 +91,8 @@
   function showGrid() {
     grid.hidden = false
     detail.hidden = true
-    document.title = "Library — Gnosis"
-    $("#lib-title").textContent = "Library"
+    document.title = "Book Library — Gnosis"
+    $("#lib-title").textContent = "Book Library"
     renderGrid()
   }
 
@@ -114,7 +114,7 @@
     grid.hidden = true
     detail.hidden = false
     $("#lib-title").textContent = book.title
-    document.title = `${book.title} — Gnosis Library`
+    document.title = `${book.title} — Gnosis Book Library`
 
     $("#lib-cover").src = book.cover_image_url || ""
     $("#lib-cover").alt = book.title
@@ -258,7 +258,7 @@
     try {
       const res = await fetch("/api/library/books", { credentials: "same-origin" })
       if (res.status === 401) {
-        location.href = "/login?next=/library"
+        location.href = "/login?next=" + encodeURIComponent("/library" + location.search)
         return
       }
       if (!res.ok) {

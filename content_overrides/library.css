@@ -5,11 +5,28 @@
  * Same hide-Quartz-chrome trick as login.css, plus a sidebar + main grid shell
  * mirroring the Stitch mockup aesthetic. */
 
-body :is(.sidebar, #quartz-body > .left, #quartz-body > .right, footer) { display: none !important; }
+/* Hide every piece of Quartz chrome around the page. The Library page is a
+ * full-bleed app, not a wiki article, so we nuke the breadcrumb, page header,
+ * meta tags, byline, backlinks panel, sidebars and footer. */
+body :is(
+  .sidebar,
+  #quartz-body > .left,
+  #quartz-body > .right,
+  .breadcrumb-container,
+  .page-header,
+  .content-meta,
+  .popover-hint,
+  .byline,
+  footer
+) { display: none !important; }
+
 #quartz-body { grid-template-columns: 1fr !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
-article { max-width: none !important; margin: 0 !important; padding: 0 !important; }
-article > h1, article > #toc-content { display: none !important; }
+article, .page > article { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+article > h1,
+article > #toc-content,
+article > .tags { display: none !important; }
 body { margin: 0 !important; }
+.page { padding: 0 !important; }
 
 /* -------- shell layout -------- */
 

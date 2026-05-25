@@ -25,6 +25,8 @@ A personal knowledge base where an LLM acts as a disciplined wiki maintainer. Dr
 
 ➡ **[Open the Dashboard](dashboard)** — live tables and charts computed from page frontmatter on every build.
 
+📚 **[Open the Book Library](/library)** — browse every book in your Readwise library, drill down to highlights, and queue books for the next drain pass.
+
 ## What's in this wiki
 
 **72 cross-linked pages** across 8 categories, ingested from 7 primary sources spanning AI-search research, AI-native services strategy, narrative craft, and Siva's professional network:

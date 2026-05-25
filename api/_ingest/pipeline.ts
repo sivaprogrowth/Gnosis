@@ -16,7 +16,8 @@
 import { supabase } from "../_auth/supabase.js"
 import { getPageIndex } from "../_retrieval/pageIndex.js"
 import { compoundingFilter, type CompoundingFilterResult } from "./compoundingFilter.js"
-import { fetchUrl, type FetchedDocument } from "./fetchUrl.js"
+import { extractPdf } from "./extractPdf.js"
+import { fetchUrl } from "./fetchUrl.js"
 import { commitFiles, triggerVercelRebuild, type CommitResult } from "./githubPush.js"
 import { synthesize, type SynthesizeResult } from "./synthesize.js"
 
@@ -43,7 +44,6 @@ interface DiscoveryResult {
   jobId: string
   synth: SynthesizeResult
   filter: CompoundingFilterResult
-  sourceDoc: FetchedDocument
 }
 
 /**
@@ -158,7 +158,128 @@ export async function runDiscoveryFromUrl(
     },
   })
 
-  return { jobId, synth, filter, sourceDoc: doc }
+  return { jobId, synth, filter }
+}
+
+/**
+ * Phase A but for an uploaded PDF instead of a URL fetch. Same downstream
+ * shape — synthesize, compoundingFilter, awaiting_user — so Phase B
+ * (`runCommit`) works unchanged.
+ */
+export async function runDiscoveryFromPdf(
+  pdfBytes: Uint8Array,
+  filename: string,
+  requestedBy: string,
+  onFrame: FrameHandler,
+): Promise<DiscoveryResult> {
+  const { data: job, error: jobErr } = await supabase
+    .from("gnosis_ingest_jobs")
+    .insert({
+      source_type: "pdf",
+      source_filename: filename,
+      status: "fetching",
+      requested_by: requestedBy,
+    })
+    .select("id")
+    .single()
+  if (jobErr || !job) throw new Error(`Could not create ingest job: ${jobErr?.message}`)
+  const jobId = job.id
+
+  onFrame({
+    stage: "fetching",
+    message: `Reading ${filename} (${(pdfBytes.byteLength / 1024).toFixed(0)} KB)`,
+    data: { jobId },
+  })
+
+  const extracted = await extractPdf(pdfBytes, filename)
+
+  await supabase
+    .from("gnosis_ingest_jobs")
+    .update({
+      status: "discussing",
+      raw_markdown: extracted.markdown,
+      source_title: extracted.title,
+    })
+    .eq("id", jobId)
+
+  onFrame({
+    stage: "fetched",
+    message: `Extracted ${extracted.wordCount} words across ${extracted.pageCount} page${extracted.pageCount === 1 ? "" : "s"}`,
+    data: {
+      title: extracted.title,
+      pageCount: extracted.pageCount,
+      wordCount: extracted.wordCount,
+      author: extracted.author,
+    },
+  })
+
+  // Synthesize — same call as the URL path but `sourceUrl` is null (PDF has no
+  // canonical URL). synthesize.ts already accepts string for sourceUrl; we
+  // pass a `pdf:` pseudo-URL so the source page frontmatter has a stable
+  // identifier without claiming a fictitious http URL.
+  onFrame({ stage: "synthesizing", message: "Synthesizing source page + takeaways…" })
+  const pseudoUrl = `pdf://${filename}`
+  const synth = await synthesize({
+    rawMarkdown: extracted.markdown,
+    title: extracted.title,
+    sourceDomain: "pdf-upload",
+    sourceUrl: pseudoUrl,
+    byline: extracted.author,
+    publishedTime: null,
+  })
+  onFrame({
+    stage: "synthesized",
+    message: `Synthesized ${synth.takeaways.length} takeaways and surfaced ${synth.surfacedEntities.length} entities`,
+    data: { takeaways: synth.takeaways, slug: synth.suggestedSlug },
+  })
+
+  onFrame({
+    stage: "compounding",
+    message: "Applying compounding bar to surfaced entities…",
+  })
+  const index = getPageIndex()
+  const existingPages = index.pages.map((p) => ({
+    slug: p.slug,
+    type: p.type,
+    title: p.title,
+  }))
+  const filter = await compoundingFilter({
+    candidates: synth.surfacedEntities,
+    existingPages,
+    sourceSummary: synth.takeaways.join(" "),
+  })
+
+  await supabase
+    .from("gnosis_ingest_jobs")
+    .update({
+      status: "awaiting_user",
+      takeaways: synth.takeaways,
+      surfaced_entities: {
+        promote: filter.promote,
+        inline: filter.inline,
+        suggestedSlug: synth.suggestedSlug,
+        sourcePage: synth.sourcePage,
+        sourceTitle: extracted.title,
+      },
+    })
+    .eq("id", jobId)
+
+  onFrame({
+    stage: "ready",
+    message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page`,
+    data: {
+      jobId,
+      sourceTitle: extracted.title,
+      sourceUrl: pseudoUrl,
+      sourceDomain: "pdf-upload",
+      suggestedSlug: synth.suggestedSlug,
+      takeaways: synth.takeaways,
+      promote: filter.promote,
+      inline: filter.inline,
+    },
+  })
+
+  return { jobId, synth, filter }
 }
 
 /**

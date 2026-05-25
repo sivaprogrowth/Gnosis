@@ -42,6 +42,73 @@
   color: var(--gray);
 }
 
+/* -------- tab switcher (URL vs PDF) -------- */
+
+.ing-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--lightgray);
+  margin-bottom: 1rem;
+}
+.ing-tab {
+  padding: 0.55rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: -1px;
+}
+.ing-tab:hover { color: var(--darkgray); }
+.ing-tab.active {
+  color: var(--dark);
+  border-bottom-color: var(--secondary);
+  font-weight: 600;
+}
+
+.ing-tab-panel { display: flex; flex-direction: column; gap: 0.5rem; }
+
+/* -------- PDF dropzone -------- */
+
+.ing-drop {
+  border: 2px dashed var(--lightgray);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: rgba(0,0,0,0.015);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+.ing-drop:hover { border-color: var(--gray); }
+.ing-drop.dragover {
+  border-color: var(--secondary);
+  background: rgba(99, 102, 241, 0.05);
+}
+.ing-drop-prompt {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--darkgray);
+}
+.ing-link {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+.ing-pdf-chosen {
+  margin: 0.75rem 0 0;
+  padding: 0.5rem 0.75rem;
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #047857;
+}
+
 /* -------- progress timeline -------- */
 
 .ing-progress {

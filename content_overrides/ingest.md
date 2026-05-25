@@ -23,17 +23,32 @@ hide: ["toc", "graph", "explorer", "backlinks", "title", "tags", "breadcrumb", "
 <main class="lib-main">
 <header class="lib-header">
 <div>
-<h1>Ingest a URL</h1>
-<p class="lib-sub">Paste a URL. The pipeline fetches it, drafts a source page, surfaces entities, and commits to wiki-archive after you confirm.</p>
+<h1>Ingest a URL or PDF</h1>
+<p class="lib-sub">Paste a URL, or drop a PDF. The pipeline drafts a source page, surfaces entities, and commits to wiki-archive after you confirm.</p>
 </div>
 </header>
 <section class="ing-form" id="ing-form">
-<form id="ing-url-form">
+<div class="ing-tabs" role="tablist">
+<button type="button" class="ing-tab active" data-tab="url" role="tab" aria-selected="true">URL</button>
+<button type="button" class="ing-tab" data-tab="pdf" role="tab" aria-selected="false">PDF upload</button>
+</div>
+<form id="ing-url-form" class="ing-tab-panel" data-panel="url">
 <label for="ing-url">URL</label>
-<input id="ing-url" type="url" required placeholder="https://paulgraham.com/lies.html" autocomplete="off" />
+<input id="ing-url" type="url" placeholder="https://paulgraham.com/lies.html" autocomplete="off" />
 <button type="submit" id="ing-submit" class="lib-btn">Start ingest</button>
 </form>
-<p class="ing-hint">PDF upload arrives in Phase 4. For now, only HTTP(S) URLs.</p>
+<form id="ing-pdf-form" class="ing-tab-panel" data-panel="pdf" hidden>
+<label>PDF file</label>
+<div id="ing-drop" class="ing-drop">
+<input id="ing-pdf-input" type="file" accept="application/pdf,.pdf" hidden />
+<div class="ing-drop-inner">
+<p class="ing-drop-prompt">Drop a PDF here or <button type="button" id="ing-pdf-pick" class="ing-link">choose file</button></p>
+<p class="ing-hint">Max ~3.5 MB. Scanned/image-only PDFs aren't supported (OCR comes later).</p>
+<p id="ing-pdf-chosen" class="ing-pdf-chosen" hidden></p>
+</div>
+</div>
+<button type="submit" id="ing-pdf-submit" class="lib-btn" disabled>Start ingest</button>
+</form>
 </section>
 <section class="ing-progress" id="ing-progress" hidden>
 <h2>Pipeline</h2>

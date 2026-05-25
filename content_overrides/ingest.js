@@ -8,6 +8,14 @@
   const urlInput = $("#ing-url")
   const submitBtn = $("#ing-submit")
   const formSection = $("#ing-form")
+  const pdfForm = $("#ing-pdf-form")
+  const pdfInput = $("#ing-pdf-input")
+  const pdfPickBtn = $("#ing-pdf-pick")
+  const pdfDrop = $("#ing-drop")
+  const pdfChosen = $("#ing-pdf-chosen")
+  const pdfSubmit = $("#ing-pdf-submit")
+  const tabs = document.querySelectorAll(".ing-tab")
+  const panels = document.querySelectorAll(".ing-tab-panel")
   const progressSection = $("#ing-progress")
   const stagesList = $("#ing-stages")
   const logEl = $("#ing-log")
@@ -40,6 +48,7 @@
   let currentJobId = null
   let currentJobPayload = null // last `ready` frame data
   let currentStages = [] // ordered list of stage keys we've added
+  let pendingPdf = null // { filename, contentBase64 } once a file is chosen
 
   function showError(msg) {
     errEl.textContent = msg || ""
@@ -195,6 +204,127 @@
     resultSection.hidden = false
   }
 
+  // -------- Tab switching --------
+  for (const tab of tabs) {
+    tab.addEventListener("click", () => {
+      const which = tab.dataset.tab
+      for (const t of tabs) {
+        const active = t.dataset.tab === which
+        t.classList.toggle("active", active)
+        t.setAttribute("aria-selected", active ? "true" : "false")
+      }
+      for (const p of panels) {
+        p.hidden = p.dataset.panel !== which
+      }
+    })
+  }
+
+  // -------- PDF picker + drop zone --------
+  function setChosenPdf(file) {
+    if (!file) {
+      pendingPdf = null
+      pdfChosen.hidden = true
+      pdfChosen.textContent = ""
+      pdfSubmit.disabled = true
+      return
+    }
+    if (file.type && file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+      showError("That doesn't look like a PDF file.")
+      return
+    }
+    if (file.size > 3.5 * 1024 * 1024) {
+      showError(`File is ${(file.size / 1024 / 1024).toFixed(2)}MB — max is 3.5MB. Try a smaller PDF.`)
+      return
+    }
+    showError("")
+    pdfChosen.hidden = false
+    pdfChosen.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(0)} KB)`
+    pdfSubmit.disabled = false
+    const reader = new FileReader()
+    reader.onload = () => {
+      const dataUrl = String(reader.result || "")
+      const base64 = dataUrl.replace(/^data:application\/pdf;base64,/, "")
+      pendingPdf = { filename: file.name, contentBase64: base64 }
+    }
+    reader.onerror = () => {
+      showError("Couldn't read the file. Try again.")
+      pendingPdf = null
+      pdfSubmit.disabled = true
+    }
+    reader.readAsDataURL(file)
+  }
+
+  pdfPickBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    pdfInput.click()
+  })
+  pdfDrop.addEventListener("click", (e) => {
+    // Click anywhere on the dropzone opens the picker (but not the pick button — it has its own handler)
+    if (e.target === pdfPickBtn) return
+    pdfInput.click()
+  })
+  pdfInput.addEventListener("change", () => {
+    const file = pdfInput.files && pdfInput.files[0]
+    if (file) setChosenPdf(file)
+  })
+  ;["dragenter", "dragover"].forEach((evt) => {
+    pdfDrop.addEventListener(evt, (e) => {
+      e.preventDefault()
+      pdfDrop.classList.add("dragover")
+    })
+  })
+  ;["dragleave", "drop"].forEach((evt) => {
+    pdfDrop.addEventListener(evt, (e) => {
+      e.preventDefault()
+      pdfDrop.classList.remove("dragover")
+    })
+  })
+  pdfDrop.addEventListener("drop", (e) => {
+    const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]
+    if (file) setChosenPdf(file)
+  })
+
+  // -------- PDF submit --------
+  pdfForm.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    showError("")
+    if (!pendingPdf) {
+      showError("Choose a PDF first.")
+      return
+    }
+    formSection.style.opacity = "0.6"
+    pdfSubmit.disabled = true
+    pdfSubmit.textContent = "Running…"
+    progressSection.hidden = false
+    confirmSection.hidden = true
+    resultSection.hidden = true
+    resetStages()
+
+    try {
+      await consumeSse("/api/ingest/pdf", pendingPdf, (frame) => {
+        if (frame.stage === "fetching" && frame.data && frame.data.jobId) {
+          currentJobId = frame.data.jobId
+        }
+        setStage(frame.stage, frame.stage === "error" ? "error" : (frame.stage.endsWith("ing") || frame.stage === "ready" ? "active" : "done"), frame.message)
+        if (frame.stage === "ready" && frame.data) {
+          setStage("ready", "active", frame.message)
+          renderConfirmation(frame.data)
+        }
+        if (frame.stage === "error") {
+          showError(frame.message)
+          pdfSubmit.disabled = false
+          pdfSubmit.textContent = "Start ingest"
+          formSection.style.opacity = "1"
+        }
+      })
+    } catch (e) {
+      showError(`Ingest failed: ${e.message}`)
+      pdfSubmit.disabled = false
+      pdfSubmit.textContent = "Start ingest"
+      formSection.style.opacity = "1"
+    }
+  })
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault()
     showError("")
@@ -297,7 +427,11 @@
     formSection.style.opacity = "1"
     submitBtn.disabled = false
     submitBtn.textContent = "Start ingest"
+    pdfSubmit.disabled = true
+    pdfSubmit.textContent = "Start ingest"
     urlInput.value = ""
+    pdfInput.value = ""
+    setChosenPdf(null)
     urlInput.focus()
     currentJobId = null
     currentJobPayload = null

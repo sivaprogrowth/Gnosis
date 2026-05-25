@@ -1,136 +1,82 @@
 /**
- * pipeline.ts — orchestrates the ingest flow across two SSE endpoints.
+ * pipeline.ts — orchestrates the ingest flow.
  *
- * Phase A (url.ts / pdf.ts entry):
- *   fetching → fetched → synthesizing → synthesized → compounding → ready (awaiting user)
+ * The discovery phase (fetch → synthesize → compoundingFilter) is invoked
+ * via `waitUntil` from /api/ingest/url and /api/ingest/pdf and writes its
+ * progress directly to public.gnosis_ingest_jobs (status + progress_message).
+ * The frontend polls /api/ingest/job for the current state.
  *
- * Phase B (continue.ts resume after user confirms):
- *   writing → committing → committed → done
- *
- * Frames are emitted via an `onFrame` callback the caller turns into SSE
- * `data: {...}` lines. Job state is persisted to public.gnosis_ingest_jobs
- * between phases so the user's "Proceed" click in the browser can hit a
- * different function instance than the one that ran discovery.
+ * The commit phase still uses SSE in /api/ingest/continue because it's fast
+ * (~2-5s) and the SSE disconnect bug doesn't trigger on short windows.
  */
 
 import { supabase } from "../_auth/supabase.js"
 import { getPageIndex } from "../_retrieval/pageIndex.js"
-import { compoundingFilter, type CompoundingFilterResult } from "./compoundingFilter.js"
+import { compoundingFilter } from "./compoundingFilter.js"
 import { extractPdf } from "./extractPdf.js"
 import { fetchUrl } from "./fetchUrl.js"
 import { commitFiles, triggerVercelRebuild, type CommitResult } from "./githubPush.js"
-import { synthesize, type SynthesizeResult } from "./synthesize.js"
+import { synthesize } from "./synthesize.js"
 
 export interface PipelineFrame {
-  stage:
-    | "fetching"
-    | "fetched"
-    | "synthesizing"
-    | "synthesized"
-    | "compounding"
-    | "ready"
-    | "writing"
-    | "committing"
-    | "committed"
-    | "done"
-    | "error"
+  stage: string
   message?: string
   data?: unknown
 }
-
 export type FrameHandler = (frame: PipelineFrame) => void
 
-interface DiscoveryResult {
-  jobId: string
-  synth: SynthesizeResult
-  filter: CompoundingFilterResult
+async function updateJob(
+  jobId: string,
+  patch: Record<string, unknown>,
+): Promise<void> {
+  const { error } = await supabase
+    .from("gnosis_ingest_jobs")
+    .update(patch)
+    .eq("id", jobId)
+  if (error) console.warn(`[pipeline] could not update job ${jobId}:`, error.message)
 }
 
-/**
- * Phase A — fetch + synthesize + compounding filter, persist as a
- * gnosis_ingest_jobs row with status='awaiting_user'. Returns the discovery
- * payload so the SSE endpoint can flush a final `ready` frame containing
- * everything the UI needs to render the confirmation screen.
- */
-export async function runDiscoveryFromUrl(
-  url: string,
-  requestedBy: string,
-  onFrame: FrameHandler,
-): Promise<DiscoveryResult> {
-  // 1. Create the job row up-front so we have an id to surface on errors
-  const { data: job, error: jobErr } = await supabase
-    .from("gnosis_ingest_jobs")
-    .insert({
-      source_type: "url",
-      source_url: url,
+/** Phase A — URL: fetch → synthesize → compoundingFilter → awaiting_user. */
+export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<void> {
+  try {
+    await updateJob(jobId, {
       status: "fetching",
-      requested_by: requestedBy,
+      progress_message: `Fetching ${url}`,
     })
-    .select("id")
-    .single()
-  if (jobErr || !job) throw new Error(`Could not create ingest job: ${jobErr?.message}`)
-  const jobId = job.id
 
-  onFrame({ stage: "fetching", message: `Fetching ${url}`, data: { jobId } })
-
-  // 2. Fetch + extract
-  const doc = await fetchUrl(url)
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({
+    const doc = await fetchUrl(url)
+    await updateJob(jobId, {
       status: "discussing",
       raw_markdown: doc.markdown,
       source_title: doc.title,
+      progress_message: `Extracted ${doc.wordCount} words from ${doc.sourceDomain}. Synthesizing…`,
     })
-    .eq("id", jobId)
 
-  onFrame({
-    stage: "fetched",
-    message: `Extracted ${doc.wordCount} words from ${doc.sourceDomain}`,
-    data: {
+    const synth = await synthesize({
+      rawMarkdown: doc.markdown,
       title: doc.title,
-      domain: doc.sourceDomain,
-      wordCount: doc.wordCount,
+      sourceDomain: doc.sourceDomain,
+      sourceUrl: url,
       byline: doc.byline,
-    },
-  })
+      publishedTime: doc.publishedTime,
+    })
+    await updateJob(jobId, {
+      progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
+    })
 
-  // 3. Synthesize
-  onFrame({ stage: "synthesizing", message: "Synthesizing source page + takeaways…" })
-  const synth = await synthesize({
-    rawMarkdown: doc.markdown,
-    title: doc.title,
-    sourceDomain: doc.sourceDomain,
-    sourceUrl: url,
-    byline: doc.byline,
-    publishedTime: doc.publishedTime,
-  })
-  onFrame({
-    stage: "synthesized",
-    message: `Synthesized ${synth.takeaways.length} takeaways and surfaced ${synth.surfacedEntities.length} entities`,
-    data: { takeaways: synth.takeaways, slug: synth.suggestedSlug },
-  })
+    const index = getPageIndex()
+    const existingPages = index.pages.map((p) => ({
+      slug: p.slug,
+      type: p.type,
+      title: p.title,
+    }))
+    const filter = await compoundingFilter({
+      candidates: synth.surfacedEntities,
+      existingPages,
+      sourceSummary: (synth.takeaways || []).join(" "),
+    })
 
-  // 4. Compounding filter
-  onFrame({
-    stage: "compounding",
-    message: "Applying compounding bar to surfaced entities…",
-  })
-  const index = getPageIndex()
-  const existingPages = index.pages.map((p) => ({
-    slug: p.slug,
-    type: p.type,
-    title: p.title,
-  }))
-  const filter = await compoundingFilter({
-    candidates: synth.surfacedEntities,
-    existingPages,
-    sourceSummary: (synth.takeaways || []).join(" "),
-  })
-
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({
+    await updateJob(jobId, {
       status: "awaiting_user",
       takeaways: synth.takeaways,
       surfaced_entities: {
@@ -140,118 +86,65 @@ export async function runDiscoveryFromUrl(
         sourcePage: synth.sourcePage,
         sourceTitle: doc.title,
       },
+      progress_message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page.`,
     })
-    .eq("id", jobId)
-
-  onFrame({
-    stage: "ready",
-    message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page`,
-    data: {
-      jobId,
-      sourceTitle: doc.title,
-      sourceUrl: url,
-      sourceDomain: doc.sourceDomain,
-      suggestedSlug: synth.suggestedSlug,
-      takeaways: synth.takeaways,
-      promote: filter.promote,
-      inline: filter.inline,
-    },
-  })
-
-  return { jobId, synth, filter }
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error(`[pipeline] discovery failed for job ${jobId}:`, msg)
+    await updateJob(jobId, {
+      status: "failed",
+      error_message: msg,
+      progress_message: `Failed: ${msg}`,
+    })
+  }
 }
 
-/**
- * Phase A but for an uploaded PDF instead of a URL fetch. Same downstream
- * shape — synthesize, compoundingFilter, awaiting_user — so Phase B
- * (`runCommit`) works unchanged.
- */
+/** Phase A — PDF: same downstream as URL after extractPdf. */
 export async function runDiscoveryFromPdf(
   pdfBytes: Uint8Array,
   filename: string,
-  requestedBy: string,
-  onFrame: FrameHandler,
-): Promise<DiscoveryResult> {
-  const { data: job, error: jobErr } = await supabase
-    .from("gnosis_ingest_jobs")
-    .insert({
-      source_type: "pdf",
-      source_filename: filename,
+  jobId: string,
+): Promise<void> {
+  try {
+    await updateJob(jobId, {
       status: "fetching",
-      requested_by: requestedBy,
+      progress_message: `Reading ${filename} (${(pdfBytes.byteLength / 1024).toFixed(0)} KB)`,
     })
-    .select("id")
-    .single()
-  if (jobErr || !job) throw new Error(`Could not create ingest job: ${jobErr?.message}`)
-  const jobId = job.id
 
-  onFrame({
-    stage: "fetching",
-    message: `Reading ${filename} (${(pdfBytes.byteLength / 1024).toFixed(0)} KB)`,
-    data: { jobId },
-  })
-
-  const extracted = await extractPdf(pdfBytes, filename)
-
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({
+    const extracted = await extractPdf(pdfBytes, filename)
+    await updateJob(jobId, {
       status: "discussing",
       raw_markdown: extracted.markdown,
       source_title: extracted.title,
+      progress_message: `Extracted ${extracted.wordCount} words across ${extracted.pageCount} pages. Synthesizing…`,
     })
-    .eq("id", jobId)
 
-  onFrame({
-    stage: "fetched",
-    message: `Extracted ${extracted.wordCount} words across ${extracted.pageCount} page${extracted.pageCount === 1 ? "" : "s"}`,
-    data: {
+    const pseudoUrl = `pdf://${filename}`
+    const synth = await synthesize({
+      rawMarkdown: extracted.markdown,
       title: extracted.title,
-      pageCount: extracted.pageCount,
-      wordCount: extracted.wordCount,
-      author: extracted.author,
-    },
-  })
+      sourceDomain: "pdf-upload",
+      sourceUrl: pseudoUrl,
+      byline: extracted.author,
+      publishedTime: null,
+    })
+    await updateJob(jobId, {
+      progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
+    })
 
-  // Synthesize — same call as the URL path but `sourceUrl` is null (PDF has no
-  // canonical URL). synthesize.ts already accepts string for sourceUrl; we
-  // pass a `pdf:` pseudo-URL so the source page frontmatter has a stable
-  // identifier without claiming a fictitious http URL.
-  onFrame({ stage: "synthesizing", message: "Synthesizing source page + takeaways…" })
-  const pseudoUrl = `pdf://${filename}`
-  const synth = await synthesize({
-    rawMarkdown: extracted.markdown,
-    title: extracted.title,
-    sourceDomain: "pdf-upload",
-    sourceUrl: pseudoUrl,
-    byline: extracted.author,
-    publishedTime: null,
-  })
-  onFrame({
-    stage: "synthesized",
-    message: `Synthesized ${synth.takeaways.length} takeaways and surfaced ${synth.surfacedEntities.length} entities`,
-    data: { takeaways: synth.takeaways, slug: synth.suggestedSlug },
-  })
+    const index = getPageIndex()
+    const existingPages = index.pages.map((p) => ({
+      slug: p.slug,
+      type: p.type,
+      title: p.title,
+    }))
+    const filter = await compoundingFilter({
+      candidates: synth.surfacedEntities,
+      existingPages,
+      sourceSummary: (synth.takeaways || []).join(" "),
+    })
 
-  onFrame({
-    stage: "compounding",
-    message: "Applying compounding bar to surfaced entities…",
-  })
-  const index = getPageIndex()
-  const existingPages = index.pages.map((p) => ({
-    slug: p.slug,
-    type: p.type,
-    title: p.title,
-  }))
-  const filter = await compoundingFilter({
-    candidates: synth.surfacedEntities,
-    existingPages,
-    sourceSummary: (synth.takeaways || []).join(" "),
-  })
-
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({
+    await updateJob(jobId, {
       status: "awaiting_user",
       takeaways: synth.takeaways,
       surfaced_entities: {
@@ -261,36 +154,24 @@ export async function runDiscoveryFromPdf(
         sourcePage: synth.sourcePage,
         sourceTitle: extracted.title,
       },
+      progress_message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page.`,
     })
-    .eq("id", jobId)
-
-  onFrame({
-    stage: "ready",
-    message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page`,
-    data: {
-      jobId,
-      sourceTitle: extracted.title,
-      sourceUrl: pseudoUrl,
-      sourceDomain: "pdf-upload",
-      suggestedSlug: synth.suggestedSlug,
-      takeaways: synth.takeaways,
-      promote: filter.promote,
-      inline: filter.inline,
-    },
-  })
-
-  return { jobId, synth, filter }
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error(`[pipeline] PDF discovery failed for job ${jobId}:`, msg)
+    await updateJob(jobId, {
+      status: "failed",
+      error_message: msg,
+      progress_message: `Failed: ${msg}`,
+    })
+  }
 }
 
-/**
- * Phase B — load job, generate entity-page stubs for promoted candidates,
- * commit everything to wiki-archive in one commit, finalize the job row.
- */
+/** Phase B — load awaiting_user job, write entity stubs, commit, trigger rebuild. */
 export async function runCommit(
   jobId: string,
   onFrame: FrameHandler,
 ): Promise<CommitResult> {
-  // 1. Load job
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
     .select("id, source_url, source_title, surfaced_entities, status")
@@ -309,21 +190,15 @@ export async function runCommit(
     sourceTitle: string
   }
 
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({ status: "synthesizing", user_decision: "proceed" })
-    .eq("id", jobId)
+  await updateJob(jobId, { status: "synthesizing", user_decision: "proceed" })
 
   onFrame({ stage: "writing", message: "Generating entity stubs…" })
 
-  // 2. Build the file list — source page + entity stubs
   const files: Array<{ path: string; content: string }> = []
-
   files.push({
     path: `wiki/sources/${surfaced.suggestedSlug}.md`,
     content: surfaced.sourcePage,
   })
-
   for (const entity of surfaced.promote) {
     const entityType =
       entity.type === "person"
@@ -331,10 +206,10 @@ export async function runCommit(
         : entity.type === "company"
           ? "companies"
           : entity.type === "book"
-            ? "sources" // books still go under sources/
+            ? "sources"
             : entity.type === "tool"
               ? "entities"
-              : "concepts" // concept | framework default
+              : "concepts"
     const path = `wiki/${entityType}/${entity.suggestedSlug}.md`
     const content = buildEntityStub(entity, surfaced.sourceTitle, surfaced.suggestedSlug)
     files.push({ path, content })
@@ -346,7 +221,6 @@ export async function runCommit(
     data: { fileCount: files.length, paths: files.map((f) => f.path) },
   })
 
-  // 3. Push
   const commitMessage = [
     `Ingest: ${surfaced.sourceTitle}`,
     "",
@@ -357,14 +231,11 @@ export async function runCommit(
 
   const result = await commitFiles(files, commitMessage)
 
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({
-      status: "done",
-      commit_sha: result.sha,
-      committed_files: result.files,
-    })
-    .eq("id", jobId)
+  await updateJob(jobId, {
+    status: "done",
+    commit_sha: result.sha,
+    committed_files: result.files,
+  })
 
   onFrame({
     stage: "committed",
@@ -372,12 +243,6 @@ export async function runCommit(
     data: { sha: result.sha, commitUrl: result.commitUrl, files: result.files },
   })
 
-  // Trigger Vercel rebuild by pushing an empty commit to main. The build
-  // pipeline pulls wiki-archive at build time, so without this the new pages
-  // would sit in the wiki-archive branch but never appear on the live site
-  // until the next manual deploy. Fire-and-forget: a trigger failure should
-  // not break the user-facing ingest (the commit has already succeeded; the
-  // user can always manually redeploy).
   triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
     .then((triggerSha) =>
       console.log(`[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`),
@@ -436,18 +301,18 @@ ${entity.rationale}
 `
 }
 
-/** Mark a job failed so the UI can recover. */
 export async function markJobFailed(jobId: string, message: string): Promise<void> {
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({ status: "failed", error_message: message })
-    .eq("id", jobId)
+  await updateJob(jobId, {
+    status: "failed",
+    error_message: message,
+    progress_message: `Failed: ${message}`,
+  })
 }
 
-/** Mark a job cancelled (user clicked Cancel on the confirm screen). */
 export async function markJobCancelled(jobId: string): Promise<void> {
-  await supabase
-    .from("gnosis_ingest_jobs")
-    .update({ status: "cancelled", user_decision: "cancel" })
-    .eq("id", jobId)
+  await updateJob(jobId, {
+    status: "cancelled",
+    user_decision: "cancel",
+    progress_message: "Cancelled by user.",
+  })
 }

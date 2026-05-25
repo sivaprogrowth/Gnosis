@@ -1,9 +1,13 @@
 // ingest.js — drives the /ingest page.
-// Two-phase flow: submit URL → SSE through fetch/synth/compounding → ready
-// frame → user confirms or cancels → SSE through write/commit → done frame.
+//
+// Discovery phase (URL fetch / PDF extract → synthesize → compoundingFilter)
+// uses polling: POST returns {jobId} immediately, frontend polls
+// /api/ingest/job every 2s until status='awaiting_user' or 'failed'. This
+// replaces SSE streaming, which dropped connections on long synthesize calls.
+//
+// Commit phase still uses SSE because it's fast (~2-5s) and the SSE
+// disconnect bug doesn't trigger on short windows.
 
-// Single try/catch around the whole IIFE so a missing element doesn't kill
-// the entire page silently — we'll see the actual error in console.
 try {
 (() => {
   console.log("[ingest] script start")
@@ -36,24 +40,24 @@ try {
   const errEl = $("#ing-error")
   const logoutLink = $("#logout-link")
 
-  // Stage ordering for the timeline. We add steps dynamically as frames come in.
-  const STAGE_LABELS = {
-    fetching: "Fetching URL",
-    fetched: "Fetched",
-    synthesizing: "Synthesizing source page + entities",
-    synthesized: "Synthesized",
-    compounding: "Applying compounding bar",
-    ready: "Awaiting confirmation",
-    writing: "Generating entity stubs",
-    committing: "Committing to wiki-archive",
-    committed: "Committed",
-    done: "Done",
+  // status -> { stage key, label }
+  const STATUS_STAGE = {
+    queued: { stage: "queued", label: "Queued" },
+    fetching: { stage: "fetching", label: "Fetching" },
+    discussing: { stage: "synthesizing", label: "Synthesizing source page + entities" },
+    awaiting_user: { stage: "ready", label: "Awaiting confirmation" },
+    synthesizing: { stage: "writing", label: "Generating entity stubs" },
+    committing: { stage: "committing", label: "Committing to wiki-archive" },
+    done: { stage: "done", label: "Done" },
+    failed: { stage: "error", label: "Failed" },
+    cancelled: { stage: "cancelled", label: "Cancelled" },
   }
 
   let currentJobId = null
-  let currentJobPayload = null // last `ready` frame data
-  let currentStages = [] // ordered list of stage keys we've added
-  let pendingPdf = null // { filename, contentBase64 } once a file is chosen
+  let currentJobPayload = null
+  let currentStages = []
+  let pendingPdf = null
+  let pollAbort = null
 
   function showError(msg) {
     errEl.textContent = msg || ""
@@ -70,24 +74,22 @@ try {
   }
 
   function setStage(stageKey, status, message) {
-    // status: 'active' | 'done' | 'error'
-    if (!STAGE_LABELS[stageKey]) return
+    if (!stageKey) return
     let li = stagesList.querySelector(`li[data-stage="${stageKey}"]`)
     if (!li) {
       li = document.createElement("li")
       li.dataset.stage = stageKey
-      li.textContent = STAGE_LABELS[stageKey]
+      li.textContent = label(stageKey)
       stagesList.appendChild(li)
       currentStages.push(stageKey)
     }
-    // Mark all prior stages done
     if (status === "active" || status === "done") {
       for (const key of currentStages) {
         const el = stagesList.querySelector(`li[data-stage="${key}"]`)
+        if (!el) continue
         if (key === stageKey) {
           el.className = status
         } else if (el.className !== "error") {
-          // Only mark non-final stages done if a later one is active/done.
           el.className = currentStages.indexOf(key) < currentStages.indexOf(stageKey) ? "done" : el.className
         }
       }
@@ -101,53 +103,101 @@ try {
     }
   }
 
+  function label(stageKey) {
+    const known = {
+      queued: "Queued",
+      fetching: "Fetching",
+      synthesizing: "Synthesizing source page + entities",
+      ready: "Awaiting confirmation",
+      writing: "Generating entity stubs",
+      committing: "Committing to wiki-archive",
+      committed: "Committed",
+      done: "Done",
+      error: "Failed",
+      cancelled: "Cancelled",
+    }
+    return known[stageKey] || stageKey
+  }
+
   function resetStages() {
     stagesList.innerHTML = ""
     logEl.textContent = ""
     currentStages = []
   }
 
-  /**
-   * Consume an SSE stream from `path` POSTed with `body`. Calls `onFrame` for
-   * each parsed `data: {...}` frame. Resolves when `[DONE]` arrives.
-   */
-  async function consumeSse(path, body, onFrame) {
-    const res = await fetch(path, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "same-origin",
-      body: JSON.stringify(body),
-    })
-    if (res.status === 401) {
-      location.href = "/login?next=" + encodeURIComponent("/ingest")
-      throw new Error("Session expired")
-    }
-    if (!res.ok || !res.body) {
-      const errBody = await res.text().catch(() => "")
-      throw new Error(`HTTP ${res.status}: ${errBody.slice(0, 200) || res.statusText}`)
-    }
-    const reader = res.body.getReader()
-    const decoder = new TextDecoder("utf-8")
-    let buf = ""
-    while (true) {
-      const { value, done } = await reader.read()
-      if (done) break
-      buf += decoder.decode(value, { stream: true })
-      let idx
-      while ((idx = buf.indexOf("\n\n")) !== -1) {
-        const block = buf.slice(0, idx).trim()
-        buf = buf.slice(idx + 2)
-        if (!block.startsWith("data:")) continue
-        const payload = block.slice(5).trim()
-        if (payload === "[DONE]") return
-        try {
-          const frame = JSON.parse(payload)
-          onFrame(frame)
-        } catch {
-          // ignore malformed frames
+  // -------- Polling for discovery state --------
+  // Polls /api/ingest/job?id=<jobId> every intervalMs until status reaches
+  // a terminal state (awaiting_user / failed / done / cancelled) OR the
+  // shouldStop predicate returns true. Returns the final job state.
+  async function pollJob(jobId, intervalMs = 2000) {
+    pollAbort = { stopped: false }
+    const myToken = pollAbort
+    while (!myToken.stopped) {
+      let job
+      try {
+        const res = await fetch(`/api/ingest/job?id=${encodeURIComponent(jobId)}`, {
+          credentials: "same-origin",
+        })
+        if (res.status === 401) {
+          location.href = "/login?next=" + encodeURIComponent("/ingest")
+          throw new Error("Session expired")
         }
+        if (!res.ok) {
+          const errBody = await res.json().catch(() => ({}))
+          throw new Error(errBody.error || `HTTP ${res.status}`)
+        }
+        job = await res.json()
+      } catch (e) {
+        // Transient network errors: keep polling. Show only if it persists.
+        console.warn("[ingest] poll error:", e.message)
+        await sleep(intervalMs)
+        continue
       }
+
+      // Update UI based on status
+      const stageInfo = STATUS_STAGE[job.status]
+      if (stageInfo) {
+        const isTerminal =
+          job.status === "awaiting_user" ||
+          job.status === "done" ||
+          job.status === "failed" ||
+          job.status === "cancelled"
+        const stageStatus = job.status === "failed" ? "error" : (isTerminal ? "done" : "active")
+        setStage(stageInfo.stage, stageStatus, job.progressMessage || stageInfo.label)
+      }
+
+      if (job.status === "failed") {
+        showError(job.errorMessage || job.progressMessage || "Ingest failed")
+        return job
+      }
+      if (job.status === "cancelled") {
+        return job
+      }
+      if (job.status === "awaiting_user" && job.ready) {
+        setStage("ready", "active", job.progressMessage)
+        renderConfirmation({
+          jobId: job.jobId,
+          sourceTitle: job.sourceTitle,
+          sourceUrl: job.sourceUrl,
+          sourceDomain: job.ready.sourceDomain,
+          suggestedSlug: job.ready.suggestedSlug,
+          takeaways: job.ready.takeaways,
+          promote: job.ready.promote,
+          inline: job.ready.inline,
+        })
+        return job
+      }
+      if (job.status === "done") {
+        return job
+      }
+
+      await sleep(intervalMs)
     }
+    return null
+  }
+
+  function sleep(ms) {
+    return new Promise((r) => setTimeout(r, ms))
   }
 
   function renderConfirmation(payload) {
@@ -156,7 +206,7 @@ try {
       <strong>${escapeHtml(payload.sourceTitle)}</strong><br/>
       <span class="lib-sub small">${escapeHtml(payload.sourceDomain)} · slug <code>${escapeHtml(payload.suggestedSlug)}</code></span>
     `
-    takeawaysEl.innerHTML = payload.takeaways
+    takeawaysEl.innerHTML = (payload.takeaways || [])
       .map((t) => `<li>${escapeHtml(t)}</li>`)
       .join("")
 
@@ -209,6 +259,46 @@ try {
     resultSection.hidden = false
   }
 
+  // -------- SSE for the commit phase (fast, no disconnect risk) --------
+  async function consumeSse(path, body, onFrame) {
+    const res = await fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify(body),
+    })
+    if (res.status === 401) {
+      location.href = "/login?next=" + encodeURIComponent("/ingest")
+      throw new Error("Session expired")
+    }
+    if (!res.ok || !res.body) {
+      const errBody = await res.text().catch(() => "")
+      throw new Error(`HTTP ${res.status}: ${errBody.slice(0, 200) || res.statusText}`)
+    }
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder("utf-8")
+    let buf = ""
+    while (true) {
+      const { value, done } = await reader.read()
+      if (done) break
+      buf += decoder.decode(value, { stream: true })
+      let idx
+      while ((idx = buf.indexOf("\n\n")) !== -1) {
+        const block = buf.slice(0, idx).trim()
+        buf = buf.slice(idx + 2)
+        if (!block.startsWith("data:")) continue
+        const payload = block.slice(5).trim()
+        if (payload === "[DONE]") return
+        try {
+          const frame = JSON.parse(payload)
+          onFrame(frame)
+        } catch {
+          // ignore
+        }
+      }
+    }
+  }
+
   // -------- Tab switching --------
   console.log("[ingest] booted — tabs:", tabs.length, "panels:", panels.length, "formSection:", !!formSection)
   for (const tab of tabs) {
@@ -216,27 +306,19 @@ try {
       e.preventDefault()
       const which = tab.dataset.tab
       console.log("[ingest] tab click →", which)
-      // Update active tab styling
       for (const t of tabs) {
         const active = t.dataset.tab === which
         t.classList.toggle("active", active)
         t.setAttribute("aria-selected", active ? "true" : "false")
       }
-      // Switch the visible panel via data-active on the parent — CSS in
-      // ingest.css uses :not([data-active="X"]) to hide the inactive panel.
-      // Doesn't depend on [hidden] attribute or inline display style cascade.
       if (formSection) formSection.dataset.active = which
     })
   }
-  // Strip the legacy `hidden` attribute since the data-active CSS now drives
-  // visibility — leaving both in place can confuse a future maintainer.
-  for (const p of panels) {
-    p.removeAttribute("hidden")
-  }
+  for (const p of panels) p.removeAttribute("hidden")
 
-  // -------- PDF picker + drop zone (skip whole block if PDF form isn't in DOM) --------
+  // -------- PDF picker + drop zone --------
   if (!pdfForm) {
-    console.warn("[ingest] PDF form not found in DOM — skipping PDF wiring. Hard-refresh the page to get the latest HTML.")
+    console.warn("[ingest] PDF form not found in DOM — skipping PDF wiring.")
   }
 
   function setChosenPdf(file) {
@@ -309,88 +391,74 @@ try {
     })
   }
 
-  // -------- PDF submit --------
-  if (pdfForm) {
-  pdfForm.addEventListener("submit", async (e) => {
-    e.preventDefault()
-    showError("")
-    if (!pendingPdf) {
-      showError("Choose a PDF first.")
-      return
-    }
+  // -------- Start an ingest (URL or PDF) via POST + poll --------
+  async function startIngest(endpoint, body, submitBtnEl, submitBtnLabel) {
     formSection.style.opacity = "0.6"
-    pdfSubmit.disabled = true
-    pdfSubmit.textContent = "Running…"
+    submitBtnEl.disabled = true
+    submitBtnEl.textContent = "Running…"
     progressSection.hidden = false
     confirmSection.hidden = true
     resultSection.hidden = true
     resetStages()
+    showError("")
 
     try {
-      await consumeSse("/api/ingest/pdf", pendingPdf, (frame) => {
-        if (frame.stage === "fetching" && frame.data && frame.data.jobId) {
-          currentJobId = frame.data.jobId
-        }
-        setStage(frame.stage, frame.stage === "error" ? "error" : (frame.stage.endsWith("ing") || frame.stage === "ready" ? "active" : "done"), frame.message)
-        if (frame.stage === "ready" && frame.data) {
-          setStage("ready", "active", frame.message)
-          renderConfirmation(frame.data)
-        }
-        if (frame.stage === "error") {
-          showError(frame.message)
-          pdfSubmit.disabled = false
-          pdfSubmit.textContent = "Start ingest"
-          formSection.style.opacity = "1"
-        }
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify(body),
       })
+      if (res.status === 401) {
+        location.href = "/login?next=" + encodeURIComponent("/ingest")
+        return
+      }
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}))
+        throw new Error(errBody.error || `HTTP ${res.status}`)
+      }
+      const { jobId } = await res.json()
+      currentJobId = jobId
+      setStage("queued", "done", "Queued")
+      setStage("fetching", "active", "Starting…")
+
+      const job = await pollJob(jobId)
+      if (!job) return // aborted
+      if (job.status === "failed") {
+        submitBtnEl.disabled = false
+        submitBtnEl.textContent = submitBtnLabel
+        formSection.style.opacity = "1"
+      }
+      // For awaiting_user / done: confirm screen is rendered inside pollJob.
+      // The form stays semi-transparent to discourage starting another ingest
+      // while one is awaiting confirmation.
     } catch (e) {
       showError(`Ingest failed: ${e.message}`)
-      pdfSubmit.disabled = false
-      pdfSubmit.textContent = "Start ingest"
+      submitBtnEl.disabled = false
+      submitBtnEl.textContent = submitBtnLabel
       formSection.style.opacity = "1"
     }
-  })
-  } // end if (pdfForm)
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault()
-    showError("")
     const url = urlInput.value.trim()
     if (!url) return
-
-    formSection.style.opacity = "0.6"
-    submitBtn.disabled = true
-    submitBtn.textContent = "Running…"
-    progressSection.hidden = false
-    confirmSection.hidden = true
-    resultSection.hidden = true
-    resetStages()
-
-    try {
-      await consumeSse("/api/ingest/url", { url }, (frame) => {
-        if (frame.stage === "fetching" && frame.data && frame.data.jobId) {
-          currentJobId = frame.data.jobId
-        }
-        setStage(frame.stage, frame.stage === "error" ? "error" : (frame.stage.endsWith("ing") || frame.stage === "ready" ? "active" : "done"), frame.message)
-        if (frame.stage === "ready" && frame.data) {
-          setStage("ready", "active", frame.message)
-          renderConfirmation(frame.data)
-        }
-        if (frame.stage === "error") {
-          showError(frame.message)
-          submitBtn.disabled = false
-          submitBtn.textContent = "Start ingest"
-          formSection.style.opacity = "1"
-        }
-      })
-    } catch (e) {
-      showError(`Ingest failed: ${e.message}`)
-      submitBtn.disabled = false
-      submitBtn.textContent = "Start ingest"
-      formSection.style.opacity = "1"
-    }
+    await startIngest("/api/ingest/url", { url }, submitBtn, "Start ingest")
   })
 
+  if (pdfForm) {
+    pdfForm.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      if (!pendingPdf) {
+        showError("Choose a PDF first.")
+        return
+      }
+      await startIngest("/api/ingest/pdf", pendingPdf, pdfSubmit, "Start ingest")
+    })
+  }
+
+  // -------- Proceed (SSE; fast commit) --------
   proceedBtn.addEventListener("click", async () => {
     if (!currentJobId) return
     proceedBtn.disabled = true
@@ -443,6 +511,10 @@ try {
     formSection.style.opacity = "1"
     submitBtn.disabled = false
     submitBtn.textContent = "Start ingest"
+    if (pdfSubmit) {
+      pdfSubmit.disabled = !pendingPdf
+      pdfSubmit.textContent = "Start ingest"
+    }
     cancelBtn.disabled = false
     proceedBtn.disabled = false
     currentJobId = null
@@ -454,10 +526,12 @@ try {
     formSection.style.opacity = "1"
     submitBtn.disabled = false
     submitBtn.textContent = "Start ingest"
-    pdfSubmit.disabled = true
-    pdfSubmit.textContent = "Start ingest"
+    if (pdfSubmit) {
+      pdfSubmit.disabled = true
+      pdfSubmit.textContent = "Start ingest"
+    }
     urlInput.value = ""
-    pdfInput.value = ""
+    if (pdfInput) pdfInput.value = ""
     setChosenPdf(null)
     urlInput.focus()
     currentJobId = null
@@ -470,9 +544,7 @@ try {
     location.href = "/login"
   })
 
-  // On page load, check for an in-flight job (e.g. user lost SSE connection
-  // during a long synthesize call but the server finished). If one is found,
-  // jump straight to the confirm screen so the user can proceed or cancel.
+  // On page load, check for an in-flight job and resume into the confirm screen
   ;(async function recoverPending() {
     try {
       const res = await fetch("/api/ingest/latest-pending", { credentials: "same-origin" })
@@ -482,15 +554,12 @@ try {
       currentJobId = data.pending.jobId
       progressSection.hidden = false
       setStage("fetching", "done", "Recovered from previous session")
-      setStage("fetched", "done", "Source fetched earlier")
       setStage("synthesizing", "done", "Synthesis completed earlier")
-      setStage("synthesized", "done")
-      setStage("compounding", "done", "Compounding bar applied earlier")
       setStage("ready", "active", "Awaiting your confirmation")
       renderConfirmation(data.pending)
       formSection.style.opacity = "0.6"
     } catch (e) {
-      // Silent — recovery is best-effort
+      // best-effort
     }
   })()
 

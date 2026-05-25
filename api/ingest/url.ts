@@ -1,25 +1,26 @@
 /**
- * POST /api/ingest/url — Phase A of the URL ingest pipeline.
+ * POST /api/ingest/url — start a URL ingest.
  *
  * Body: { url: string }
- * Response: SSE stream of pipeline frames. Final frame is `ready` with
- *           the data the UI needs to render the confirmation screen.
+ * Response (202): { jobId: string }
  *
- * 401 if unauthenticated.
+ * Returns immediately with the job id. Discovery (fetch → synthesize →
+ * compoundingFilter) runs in the background via `waitUntil`, which keeps the
+ * function instance alive after the response is sent. The frontend polls
+ * /api/ingest/job?id=<jobId> for progress and final state.
  *
- * Vercel default function timeout (300s) is plenty — typical run is
- * fetch (~2s) + synthesize (~10s) + compoundingFilter (~5s) = ~17s.
+ * Why polling instead of SSE: long synthesize calls (60-180s) reliably drop
+ * SSE connections on the edge network even with a 15s heartbeat. Polling
+ * doesn't depend on a persistent connection.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
-import { markJobFailed, runDiscoveryFromUrl } from "../_ingest/pipeline.js"
+import { supabase } from "../_auth/supabase.js"
+import { runDiscoveryFromUrl } from "../_ingest/pipeline.js"
 
 export const config = {
-  // 300s is Vercel's current default ceiling. Long articles (7k+ words) push
-  // synthesize+compounding past 60s on Sonnet, so the previous 60 cap was
-  // killing legitimate runs silently — function killed mid-synth, no exception,
-  // job row stuck in 'discussing'.
   maxDuration: 300,
 }
 
@@ -45,47 +46,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  // --- SSE setup ---
-  res.setHeader("Content-Type", "text/event-stream; charset=utf-8")
-  res.setHeader("Cache-Control", "no-cache, no-transform")
-  res.setHeader("X-Accel-Buffering", "no")
-  res.flushHeaders?.()
-
-  const send = (obj: unknown) => {
-    res.write(`data: ${JSON.stringify(obj)}\n\n`)
-    // @ts-expect-error node typings don't always expose flush
-    res.flush?.()
-  }
-
-  // Heartbeat: SSE comment lines (start with ':') keep the edge connection
-  // alive during long Anthropic calls (synthesize can take 60-90s). Without
-  // this the browser silently loses the connection and never sees the `ready`
-  // frame even though the server completes.
-  const heartbeat = setInterval(() => {
-    res.write(": ping\n\n")
-    // @ts-expect-error node typings don't always expose flush
-    res.flush?.()
-  }, 15_000)
-
-  let jobId: string | null = null
-  try {
-    const result = await runDiscoveryFromUrl(url, session.email, (frame) => {
-      // Capture jobId from the first fetching frame so we can mark failed on error
-      if (frame.stage === "fetching" && frame.data && typeof frame.data === "object") {
-        const d = frame.data as { jobId?: string }
-        if (d.jobId) jobId = d.jobId
-      }
-      send(frame)
+  const { data: job, error: jobErr } = await supabase
+    .from("gnosis_ingest_jobs")
+    .insert({
+      source_type: "url",
+      source_url: url,
+      status: "queued",
+      progress_message: "Queued",
+      requested_by: session.email,
     })
-    send({ stage: "done", message: "Awaiting your confirmation.", data: { jobId: result.jobId } })
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err)
-    console.error(`[ingest/url] error (job=${jobId}):`, msg)
-    if (jobId) await markJobFailed(jobId, msg).catch(() => {})
-    send({ stage: "error", message: msg, data: { jobId } })
-  } finally {
-    clearInterval(heartbeat)
-    res.write("data: [DONE]\n\n")
-    res.end()
+    .select("id")
+    .single()
+  if (jobErr || !job) {
+    console.error("[ingest/url] could not create job:", jobErr)
+    res.status(500).json({ error: `Could not create ingest job: ${jobErr?.message}` })
+    return
   }
+
+  // Fire pipeline in the background; waitUntil keeps the function alive
+  // after we return the 202 response.
+  waitUntil(runDiscoveryFromUrl(url, job.id))
+
+  res.status(202).json({ jobId: job.id })
 }

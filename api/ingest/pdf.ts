@@ -1,30 +1,27 @@
 /**
- * POST /api/ingest/pdf — Phase A of the PDF ingest pipeline.
+ * POST /api/ingest/pdf — start a PDF ingest.
  *
  * Body: { filename: string, contentBase64: string }
- * Response: SSE stream of pipeline frames. Same shape as /api/ingest/url.
+ * Response (202): { jobId: string }
  *
- * Why JSON+base64 instead of multipart: multipart parsing in Vercel Node
- * functions requires bodyParser:false + busboy/formidable; base64 in a JSON
- * body uses the default parser and is dead simple on both ends. The cost
- * is ~33% size inflation. Vercel default body limit is 4.5MB which leaves
- * ~3MB usable PDF — fine for blog posts, short essays, and academic papers
- * up to ~40 pages. Larger PDFs we can route via Vercel Blob in v2.
+ * Same pattern as /api/ingest/url: return jobId immediately, run discovery
+ * in the background, frontend polls /api/ingest/job for state.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
-import { markJobFailed, runDiscoveryFromPdf } from "../_ingest/pipeline.js"
+import { supabase } from "../_auth/supabase.js"
+import { runDiscoveryFromPdf } from "../_ingest/pipeline.js"
 
 export const config = {
   maxDuration: 300,
   api: {
-    // Allow larger JSON bodies so a base64 PDF up to ~4MB fits
     bodyParser: { sizeLimit: "5mb" },
   },
 }
 
-const MAX_PDF_BYTES = 3.5 * 1024 * 1024 // ~3.5MB pdf → ~4.7MB base64
+const MAX_PDF_BYTES = 3.5 * 1024 * 1024
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -58,7 +55,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  // Strip data: URL prefix if the client sent the full data URL
   const cleaned = contentBase64.replace(/^data:application\/pdf;base64,/, "")
   let bytes: Buffer
   try {
@@ -78,43 +74,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  // --- SSE setup ---
-  res.setHeader("Content-Type", "text/event-stream; charset=utf-8")
-  res.setHeader("Cache-Control", "no-cache, no-transform")
-  res.setHeader("X-Accel-Buffering", "no")
-  res.flushHeaders?.()
-
-  const send = (obj: unknown) => {
-    res.write(`data: ${JSON.stringify(obj)}\n\n`)
-    // @ts-expect-error node typings don't always expose flush
-    res.flush?.()
-  }
-
-  const heartbeat = setInterval(() => {
-    res.write(": ping\n\n")
-    // @ts-expect-error node typings don't always expose flush
-    res.flush?.()
-  }, 15_000)
-
-  let jobId: string | null = null
-  try {
-    const uint8 = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength)
-    const result = await runDiscoveryFromPdf(uint8, filename, session.email, (frame) => {
-      if (frame.stage === "fetching" && frame.data && typeof frame.data === "object") {
-        const d = frame.data as { jobId?: string }
-        if (d.jobId) jobId = d.jobId
-      }
-      send(frame)
+  const { data: job, error: jobErr } = await supabase
+    .from("gnosis_ingest_jobs")
+    .insert({
+      source_type: "pdf",
+      source_filename: filename,
+      status: "queued",
+      progress_message: "Queued",
+      requested_by: session.email,
     })
-    send({ stage: "done", message: "Awaiting your confirmation.", data: { jobId: result.jobId } })
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err)
-    console.error(`[ingest/pdf] error (job=${jobId}):`, msg)
-    if (jobId) await markJobFailed(jobId, msg).catch(() => {})
-    send({ stage: "error", message: msg, data: { jobId } })
-  } finally {
-    clearInterval(heartbeat)
-    res.write("data: [DONE]\n\n")
-    res.end()
+    .select("id")
+    .single()
+  if (jobErr || !job) {
+    console.error("[ingest/pdf] could not create job:", jobErr)
+    res.status(500).json({ error: `Could not create ingest job: ${jobErr?.message}` })
+    return
   }
+
+  const uint8 = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  waitUntil(runDiscoveryFromPdf(uint8, filename, job.id))
+
+  res.status(202).json({ jobId: job.id })
 }

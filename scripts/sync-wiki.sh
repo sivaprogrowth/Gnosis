@@ -36,22 +36,8 @@ for sub in sources entities concepts people companies projects inspiration queri
   fi
 done
 
-echo "→ Stripping any H2 section whose heading contains 'ProGrowth'..."
-for f in $(find "$SITE_DST" -type f -name '*.md'); do
-  # Drop lines from any "## ... ProGrowth ..." header until the next "## " header or EOF.
-  # Handles: "## ProGrowth relevance", "## Strategic significance for ProGrowth", etc.
-  awk '
-    /^## .*ProGrowth/ { skip=1; next }
-    skip && /^## / { skip=0 }
-    !skip { print }
-  ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
-done
-
-echo "→ Stripping ProGrowth tag from frontmatter (preserving [[wiki-links]])..."
-# Perl with lookaround so we don't mangle `[[progrowth]]` wiki-links
-for f in $(find "$SITE_DST" -type f -name '*.md'); do
-  perl -i -pe 's/, progrowth(?![-\w])//g; s/progrowth, //g; s/(?<!\[)\[progrowth\](?!\])/[]/g' "$f"
-done
+echo "→ Stripping ProGrowth H2 sections + frontmatter tags..."
+"$(dirname "$0")/strip-progrowth-sections.sh" "$SITE_DST"
 
 echo "→ Final check: any files still mentioning ProGrowth?"
 LEAKS=$(grep -l "ProGrowth\|progrowth" "$SITE_DST"/**/*.md 2>/dev/null || true)

@@ -1,13 +1,18 @@
 ---
-title: "Google is dethroning OpenAI as the king of consumer AI"
-source: "https://www.economist.com/business/2026/05/20/google-is-dethroning-openai-as-the-king-of-consumer-ai"
+title: Google is dethroning OpenAI as the king of consumer AI
+source: >-
+  https://www.economist.com/business/2026/05/20/google-is-dethroning-openai-as-the-king-of-consumer-ai
 author:
-  - "[[The Economist]]"
-published: 2026-05-21
-created: 2026-05-25
-description: "But its users are burning through quadrillions of tokens a month | Business"
+  - '[[The Economist]]'
+published: 2026-05-21T00:00:00.000Z
+created: 2026-05-25T00:00:00.000Z
+description: But its users are burning through quadrillions of tokens a month | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 98bc4181-7d7f-4004-9576-f05194c93ef6
+gnosis_commit_sha: 36501d7661b0c19001b8b9328bddec57c5b26db5
+gnosis_ingested_at: '2026-05-25T18:17:42.944Z'
 ---
 ## But its users are burning through quadrillions of tokens a month
 

@@ -17,7 +17,7 @@ import { supabase } from "../_auth/supabase.js"
 import { getPageIndex } from "../_retrieval/pageIndex.js"
 import { compoundingFilter, type CompoundingFilterResult } from "./compoundingFilter.js"
 import { fetchUrl, type FetchedDocument } from "./fetchUrl.js"
-import { commitFiles, type CommitResult } from "./githubPush.js"
+import { commitFiles, triggerVercelRebuild, type CommitResult } from "./githubPush.js"
 import { synthesize, type SynthesizeResult } from "./synthesize.js"
 
 export interface PipelineFrame {
@@ -251,7 +251,25 @@ export async function runCommit(
     data: { sha: result.sha, commitUrl: result.commitUrl, files: result.files },
   })
 
-  onFrame({ stage: "done", message: "Ingest complete.", data: { jobId, sha: result.sha } })
+  // Trigger Vercel rebuild by pushing an empty commit to main. The build
+  // pipeline pulls wiki-archive at build time, so without this the new pages
+  // would sit in the wiki-archive branch but never appear on the live site
+  // until the next manual deploy. Fire-and-forget: a trigger failure should
+  // not break the user-facing ingest (the commit has already succeeded; the
+  // user can always manually redeploy).
+  triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
+    .then((triggerSha) =>
+      console.log(`[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`),
+    )
+    .catch((e) =>
+      console.warn(`[ingest] rebuild trigger failed:`, e instanceof Error ? e.message : e),
+    )
+
+  onFrame({
+    stage: "done",
+    message: "Ingest complete. Site rebuild triggered.",
+    data: { jobId, sha: result.sha, rebuildTriggered: true },
+  })
 
   return result
 }

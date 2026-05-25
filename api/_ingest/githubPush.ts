@@ -132,3 +132,60 @@ export async function commitFiles(
     })),
   }
 }
+
+/**
+ * Push an empty trigger commit to `main` to make Vercel rebuild and surface
+ * the latest wiki-archive contents on the live site.
+ *
+ * The build pipeline (scripts/build-content.cjs) pulls wiki-archive at build
+ * time, so a commit to wiki-archive alone doesn't trigger a rebuild — only
+ * main pushes do. This is the cheapest workaround that needs no extra env
+ * vars or Vercel Deploy Hook URL: reuse GITHUB_TOKEN, create an empty commit
+ * on main with a clear "Auto-rebuild for ingest" message so the history is
+ * grep-able and revertable.
+ */
+export async function triggerVercelRebuild(reason: string): Promise<string> {
+  const gh = octokit()
+
+  // 1. Latest commit on main
+  const { data: ref } = await gh.git.getRef({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    ref: "heads/main",
+  })
+  const parentSha = ref.object.sha
+  const { data: parentCommit } = await gh.git.getCommit({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    commit_sha: parentSha,
+  })
+
+  // 2. Empty commit (re-use the parent's tree)
+  const { data: newCommit } = await gh.git.createCommit({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    message: `Auto-rebuild: ${reason}\n\nEmpty commit to trigger Vercel rebuild — picks up latest wiki-archive content via scripts/build-content.cjs.`,
+    tree: parentCommit.tree.sha,
+    parents: [parentSha],
+    author: {
+      name: AUTHOR_NAME,
+      email: AUTHOR_EMAIL,
+      date: new Date().toISOString(),
+    },
+    committer: {
+      name: AUTHOR_NAME,
+      email: AUTHOR_EMAIL,
+      date: new Date().toISOString(),
+    },
+  })
+
+  await gh.git.updateRef({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    ref: "heads/main",
+    sha: newCommit.sha,
+    force: false,
+  })
+
+  return newCommit.sha
+}

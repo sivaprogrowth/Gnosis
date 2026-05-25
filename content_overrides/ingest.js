@@ -176,16 +176,21 @@
     confirmSection.hidden = false
   }
 
+  let pendingRebuildTriggered = false
+
   function renderResult(payload) {
     const sha = payload.sha || ""
     const commitUrl = payload.commitUrl || ""
     const files = payload.files || []
+    const rebuildMsg = pendingRebuildTriggered
+      ? `<p class="lib-sub">✅ Site rebuild was triggered automatically — the new pages will appear on <a href="/">gnosis.progrowth.services</a> in ~60s.</p>`
+      : `<p class="lib-sub">⚠️ No deploy hook configured — the new pages won't appear on <a href="/">gnosis.progrowth.services</a> until the next manual <code>vercel deploy --prod</code>.</p>`
     resultBody.innerHTML = `
       <p>Committed <a href="${escapeHtml(commitUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(sha.slice(0, 7))}</code></a> to <code>wiki-archive</code>:</p>
       <ul>
         ${files.map((f) => `<li><a href="${escapeHtml(f.blobUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(f.path)}</code></a></li>`).join("")}
       </ul>
-      <p class="lib-sub">The page will appear on <a href="/" target="_blank">gnosis.progrowth.services</a> after the next Vercel deploy (auto-triggered by the commit).</p>
+      ${rebuildMsg}
     `
     resultSection.hidden = false
   }
@@ -238,9 +243,13 @@
 
     try {
       let lastCommitFrame = null
+      pendingRebuildTriggered = false
       await consumeSse("/api/ingest/continue", { job_id: currentJobId, decision: "proceed" }, (frame) => {
         if (frame.stage === "committed" && frame.data) {
           lastCommitFrame = frame.data
+        }
+        if (frame.stage === "done" && frame.data && frame.data.rebuildTriggered) {
+          pendingRebuildTriggered = true
         }
         setStage(frame.stage, frame.stage === "error" ? "error" : (frame.stage.endsWith("ing") ? "active" : "done"), frame.message)
         if (frame.stage === "error") {

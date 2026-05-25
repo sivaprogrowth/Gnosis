@@ -70,6 +70,12 @@
 
 .ing-tab-panel { display: flex; flex-direction: column; gap: 0.5rem; }
 
+/* Bulletproof panel visibility — data-active on the parent form section
+ * drives visibility regardless of [hidden] attribute or inline style cascade
+ * issues. This is what the JS actually toggles. */
+.ing-form:not([data-active="url"]) form[data-panel="url"] { display: none !important; }
+.ing-form:not([data-active="pdf"]) form[data-panel="pdf"] { display: none !important; }
+
 /* -------- PDF dropzone -------- */
 
 .ing-drop {

@@ -210,25 +210,28 @@ try {
   }
 
   // -------- Tab switching --------
-  console.log("[ingest] booted — tabs:", tabs.length, "panels:", panels.length)
+  console.log("[ingest] booted — tabs:", tabs.length, "panels:", panels.length, "formSection:", !!formSection)
   for (const tab of tabs) {
     tab.addEventListener("click", (e) => {
       e.preventDefault()
       const which = tab.dataset.tab
       console.log("[ingest] tab click →", which)
+      // Update active tab styling
       for (const t of tabs) {
         const active = t.dataset.tab === which
         t.classList.toggle("active", active)
         t.setAttribute("aria-selected", active ? "true" : "false")
       }
-      for (const p of panels) {
-        const shouldHide = p.dataset.panel !== which
-        p.hidden = shouldHide
-        // Belt-and-suspenders: some Quartz CSS rules can override the [hidden]
-        // attribute. Set display directly to guarantee the panel actually hides.
-        p.style.display = shouldHide ? "none" : ""
-      }
+      // Switch the visible panel via data-active on the parent — CSS in
+      // ingest.css uses :not([data-active="X"]) to hide the inactive panel.
+      // Doesn't depend on [hidden] attribute or inline display style cascade.
+      if (formSection) formSection.dataset.active = which
     })
+  }
+  // Strip the legacy `hidden` attribute since the data-active CSS now drives
+  // visibility — leaving both in place can confuse a future maintainer.
+  for (const p of panels) {
+    p.removeAttribute("hidden")
   }
 
   // -------- PDF picker + drop zone (skip whole block if PDF form isn't in DOM) --------

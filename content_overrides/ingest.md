@@ -27,7 +27,7 @@ hide: ["toc", "graph", "explorer", "backlinks", "title", "tags", "breadcrumb", "
 <p class="lib-sub">Paste a URL, or drop a PDF. The pipeline drafts a source page, surfaces entities, and commits to wiki-archive after you confirm.</p>
 </div>
 </header>
-<section class="ing-form" id="ing-form">
+<section class="ing-form" id="ing-form" data-active="url">
 <div class="ing-tabs" role="tablist">
 <button type="button" class="ing-tab active" data-tab="url" role="tab" aria-selected="true">URL</button>
 <button type="button" class="ing-tab" data-tab="pdf" role="tab" aria-selected="false">PDF upload</button>

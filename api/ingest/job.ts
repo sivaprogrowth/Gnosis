@@ -39,22 +39,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Vercel cron dispatch. Vercel sends GET requests with
   // `Authorization: Bearer ${CRON_SECRET}` for scheduled jobs. We carve out a
   // cron path *before* the regular session check so the cron doesn't need a
-  // user cookie.
+  // user cookie. Returns 202 immediately and runs the actual work via
+  // waitUntil — sequential synth+commit per clipping takes 60-90s each, far
+  // longer than Vercel middleware's ~25s invocation cap.
   if (req.method === "GET" && req.query.cron === "ingest-clippings") {
     const expected = `Bearer ${process.env.CRON_SECRET || ""}`
     if (!process.env.CRON_SECRET || req.headers.authorization !== expected) {
       res.status(401).json({ error: "Unauthorized cron" })
       return
     }
-    try {
-      const summary = await processClippingsCron()
-      console.log(`[cron] ingest-clippings:`, JSON.stringify(summary))
-      res.status(200).json(summary)
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err)
-      console.error(`[cron] ingest-clippings failed:`, msg)
-      res.status(500).json({ error: msg })
-    }
+    waitUntil(
+      processClippingsCron()
+        .then((summary) => console.log("[cron] ingest-clippings done:", JSON.stringify(summary)))
+        .catch((err) => console.error("[cron] ingest-clippings failed:", err instanceof Error ? err.message : err)),
+    )
+    res.status(202).json({ started: true, message: "Cron started in background; check /api/ingest/job?id=… or git history for results." })
     return
   }
 

@@ -134,6 +134,30 @@ export async function commitFiles(
 }
 
 /**
+ * Fetch the current text content of a file on wiki-archive. Returns null
+ * if the path doesn't exist (404). Throws on other errors so the caller
+ * can decide whether to retry.
+ */
+export async function getFileContent(path: string): Promise<string | null> {
+  const gh = octokit()
+  try {
+    const { data } = await gh.repos.getContent({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path,
+      ref: BRANCH,
+    })
+    if (Array.isArray(data) || data.type !== "file") return null
+    // GitHub's getContent returns base64 with embedded newlines
+    return Buffer.from(data.content, "base64").toString("utf8")
+  } catch (err) {
+    const e = err as { status?: number; message?: string }
+    if (e.status === 404) return null
+    throw err
+  }
+}
+
+/**
  * Delete a set of files from wiki-archive in a single commit. Used to clean
  * up orphans left behind by duplicate ingests where the source page was
  * overwritten but the entity stubs from the older run remained.

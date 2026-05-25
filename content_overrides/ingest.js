@@ -247,13 +247,23 @@ try {
     const sha = payload.sha || ""
     const commitUrl = payload.commitUrl || ""
     const files = payload.files || []
+    const backlinkPaths = new Set(payload.backlinkPaths || [])
+    const backlinksUpdated = payload.backlinksUpdated || 0
+    const newPageCount = payload.newPageCount || files.length - backlinksUpdated
     const rebuildMsg = pendingRebuildTriggered
       ? `<p class="lib-sub">✅ Site rebuild was triggered automatically — the new pages will appear on <a href="/">gnosis.progrowth.services</a> in ~60s.</p>`
       : `<p class="lib-sub">⚠️ No deploy hook configured — the new pages won't appear on <a href="/">gnosis.progrowth.services</a> until the next manual <code>vercel deploy --prod</code>.</p>`
+    const backlinkHeadline = backlinksUpdated > 0
+      ? ` + ${backlinksUpdated} existing page${backlinksUpdated === 1 ? "" : "s"} updated with new backlinks`
+      : ""
     resultBody.innerHTML = `
-      <p>Committed <a href="${escapeHtml(commitUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(sha.slice(0, 7))}</code></a> to <code>wiki-archive</code>:</p>
+      <p>Committed <a href="${escapeHtml(commitUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(sha.slice(0, 7))}</code></a> to <code>wiki-archive</code>: ${newPageCount} new page${newPageCount === 1 ? "" : "s"}${escapeHtml(backlinkHeadline)}.</p>
       <ul>
-        ${files.map((f) => `<li><a href="${escapeHtml(f.blobUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(f.path)}</code></a></li>`).join("")}
+        ${files.map((f) => {
+          const isBacklink = backlinkPaths.has(f.path)
+          const badge = isBacklink ? ' <span class="lib-badge warn">updated</span>' : ""
+          return `<li><a href="${escapeHtml(f.blobUrl)}" target="_blank" rel="noopener"><code>${escapeHtml(f.path)}</code></a>${badge}</li>`
+        }).join("")}
       </ul>
       ${rebuildMsg}
     `

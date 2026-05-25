@@ -15,7 +15,7 @@ import { getPageIndex } from "../_retrieval/pageIndex.js"
 import { compoundingFilter } from "./compoundingFilter.js"
 import { extractPdf } from "./extractPdf.js"
 import { fetchUrl } from "./fetchUrl.js"
-import { commitFiles, triggerVercelRebuild, type CommitResult } from "./githubPush.js"
+import { commitFiles, getFileContent, triggerVercelRebuild, type CommitResult } from "./githubPush.js"
 import { synthesize } from "./synthesize.js"
 
 export interface PipelineFrame {
@@ -241,19 +241,40 @@ export async function runCommit(
     files.push({ path, content })
   }
 
+  // Backlink updates: scan the new source page for [[wiki-link]] markers and,
+  // for each one that resolves to an existing wiki page, append a new entry
+  // to that page's ## Mentions section. All updates land in the same atomic
+  // commit, so the wiki stays consistent.
+  const newlyCreatedSlugs = new Set<string>([
+    surfaced.suggestedSlug,
+    ...surfaced.promote.map((e) => e.suggestedSlug),
+  ])
+  const backlinkUpdates = await collectBacklinkUpdates({
+    sourcePage: surfaced.sourcePage,
+    newSourceSlug: surfaced.suggestedSlug,
+    newSourceTitle: surfaced.sourceTitle,
+    newlyCreatedSlugs,
+  })
+  for (const update of backlinkUpdates) {
+    files.push({ path: update.path, content: update.content })
+  }
+
   onFrame({
     stage: "committing",
-    message: `Committing ${files.length} file(s) to wiki-archive…`,
-    data: { fileCount: files.length, paths: files.map((f) => f.path) },
+    message: `Committing ${files.length} file(s) to wiki-archive… (${backlinkUpdates.length} backlink update${backlinkUpdates.length === 1 ? "" : "s"})`,
+    data: { fileCount: files.length, paths: files.map((f) => f.path), backlinkUpdates: backlinkUpdates.length },
   })
 
   const commitMessage = [
     `Ingest: ${surfaced.sourceTitle}`,
     "",
     `Source: ${job.source_url}`,
-    `New pages: ${files.length} (1 source + ${surfaced.promote.length} entity stub${surfaced.promote.length === 1 ? "" : "s"})`,
+    `New pages: ${1 + surfaced.promote.length} (1 source + ${surfaced.promote.length} entity stub${surfaced.promote.length === 1 ? "" : "s"})`,
+    backlinkUpdates.length > 0
+      ? `Backlinks updated: ${backlinkUpdates.length} existing page${backlinkUpdates.length === 1 ? "" : "s"}`
+      : "",
     `Ingested via gnosis.progrowth.services (job ${jobId})`,
-  ].join("\n")
+  ].filter(Boolean).join("\n")
 
   const result = await commitFiles(files, commitMessage)
 
@@ -266,7 +287,14 @@ export async function runCommit(
   onFrame({
     stage: "committed",
     message: `Committed ${result.sha.slice(0, 7)} — ${files.length} file(s)`,
-    data: { sha: result.sha, commitUrl: result.commitUrl, files: result.files },
+    data: {
+      sha: result.sha,
+      commitUrl: result.commitUrl,
+      files: result.files,
+      backlinksUpdated: backlinkUpdates.length,
+      newPageCount: 1 + surfaced.promote.length,
+      backlinkPaths: backlinkUpdates.map((u) => u.path),
+    },
   })
 
   triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
@@ -325,6 +353,130 @@ ${entity.rationale}
 
 - [[${sourceSlug}|${sourceTitle}]]
 `
+}
+
+interface BacklinkUpdate {
+  path: string
+  content: string
+  targetSlug: string
+}
+
+/**
+ * Scan the new source page for [[wiki-link]] markers, resolve each to an
+ * existing wiki page (by exact slug OR unambiguous basename), fetch that
+ * page's current content from wiki-archive, append the new source to its
+ * ## Mentions section. Returns the updated file contents ready to commit.
+ *
+ * Skips:
+ *   - Self-links
+ *   - Links to pages being created in the same commit (newlyCreatedSlugs)
+ *   - Ambiguous bare-name links (e.g. [[brand-age]] when two pages share
+ *     that basename)
+ *   - Pages whose current content already references the new source
+ */
+async function collectBacklinkUpdates(args: {
+  sourcePage: string
+  newSourceSlug: string
+  newSourceTitle: string
+  newlyCreatedSlugs: Set<string>
+}): Promise<BacklinkUpdate[]> {
+  // Extract every [[slug]] or [[slug|display]] from the source page
+  const linkRe = /\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g
+  const linkedRaw = new Set<string>()
+  let m: RegExpExecArray | null
+  while ((m = linkRe.exec(args.sourcePage)) !== null) {
+    linkedRaw.add(m[1].trim())
+  }
+  if (linkedRaw.size === 0) return []
+
+  const index = getPageIndex()
+  const fullSlugToPage = new Map<string, { slug: string; title: string }>()
+  const bareToFullSlugs = new Map<string, string[]>()
+  for (const p of index.pages) {
+    fullSlugToPage.set(p.slug, { slug: p.slug, title: p.title })
+    const bare = p.slug.includes("/") ? p.slug.split("/").pop()! : p.slug
+    const existing = bareToFullSlugs.get(bare) ?? []
+    existing.push(p.slug)
+    bareToFullSlugs.set(bare, existing)
+  }
+
+  // Resolve each linked slug to a wiki-archive path
+  const targets = new Map<string, { wikiPath: string; title: string }>()
+  for (const linkSlug of linkedRaw) {
+    if (linkSlug === args.newSourceSlug) continue
+    if (args.newlyCreatedSlugs.has(linkSlug)) continue
+    let resolved: { slug: string; title: string } | null = null
+    if (fullSlugToPage.has(linkSlug)) {
+      resolved = fullSlugToPage.get(linkSlug)!
+    } else {
+      const candidates = bareToFullSlugs.get(linkSlug) ?? []
+      if (candidates.length === 1) {
+        resolved = fullSlugToPage.get(candidates[0]) ?? null
+      }
+      // candidates.length > 1 → ambiguous; skip
+    }
+    if (!resolved) continue
+    if (args.newlyCreatedSlugs.has(resolved.slug)) continue
+    targets.set(resolved.slug, {
+      wikiPath: `wiki/${resolved.slug}.md`,
+      title: resolved.title,
+    })
+  }
+
+  const updates: BacklinkUpdate[] = []
+  for (const [slug, target] of targets) {
+    let current: string | null
+    try {
+      current = await getFileContent(target.wikiPath)
+    } catch (err) {
+      console.warn(`[pipeline] backlink: could not fetch ${target.wikiPath}:`, err instanceof Error ? err.message : err)
+      continue
+    }
+    if (current === null) {
+      // Page exists in our local index but not on wiki-archive — possibly a
+      // newly-renamed page or a sync gap. Skip rather than create a stub.
+      continue
+    }
+    // Already mentions the new source? skip
+    const already = new RegExp(`\\[\\[${escapeRegex(args.newSourceSlug)}(\\||\\]\\])`).test(current)
+    if (already) continue
+
+    const updated = appendMention(current, args.newSourceSlug, args.newSourceTitle)
+    if (updated !== current) {
+      updates.push({ path: target.wikiPath, content: updated, targetSlug: slug })
+    }
+  }
+  return updates
+}
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+/**
+ * Append a new bullet to a page's ## Mentions section. If the section
+ * doesn't exist, append one at the end. Idempotent on duplicate sources
+ * (caller already checks for that).
+ */
+function appendMention(
+  content: string,
+  sourceSlug: string,
+  sourceTitle: string,
+): string {
+  const bullet = `- [[${sourceSlug}|${sourceTitle}]]`
+
+  const headingRe = /^##\s+Mentions\s*$/m
+  const headingMatch = headingRe.exec(content)
+  if (headingMatch) {
+    const insertAt = headingMatch.index + headingMatch[0].length
+    const before = content.slice(0, insertAt)
+    const after = content.slice(insertAt).replace(/^\n+/, "")
+    return `${before}\n\n${bullet}\n${after}`
+  }
+
+  // No Mentions section — append one at end with the right separator
+  const sep = content.endsWith("\n\n") ? "" : content.endsWith("\n") ? "\n" : "\n\n"
+  return `${content}${sep}## Mentions\n\n${bullet}\n`
 }
 
 export async function markJobFailed(jobId: string, message: string): Promise<void> {

@@ -16,6 +16,11 @@ try {
   const urlInput = $("#ing-url")
   const submitBtn = $("#ing-submit")
   const formSection = $("#ing-form")
+  const clippingForm = $("#ing-clipping-form")
+  const clippingTitleInput = $("#ing-clipping-title")
+  const clippingSourceUrlInput = $("#ing-clipping-source-url")
+  const clippingMarkdownInput = $("#ing-clipping-markdown")
+  const clippingSubmit = $("#ing-clipping-submit")
   const pdfForm = $("#ing-pdf-form")
   const pdfInput = $("#ing-pdf-input")
   const pdfPickBtn = $("#ing-pdf-pick")
@@ -511,6 +516,29 @@ try {
     await startIngest("/api/ingest/url", { url }, submitBtn, "Start ingest")
   })
 
+  // -------- Clipping form submit --------
+  if (clippingForm) {
+    clippingForm.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      const title = clippingTitleInput.value.trim()
+      const sourceUrl = clippingSourceUrlInput.value.trim()
+      const markdown = clippingMarkdownInput.value
+      if (!title) {
+        showError("Title required for a clipping.")
+        clippingTitleInput.focus()
+        return
+      }
+      if (markdown.trim().length < 200) {
+        showError(`Paste at least 200 characters of content (currently ${markdown.trim().length}).`)
+        clippingMarkdownInput.focus()
+        return
+      }
+      const body = { markdown, title }
+      if (sourceUrl) body.sourceUrl = sourceUrl
+      await startIngest("/api/ingest/url", body, clippingSubmit, "Start ingest")
+    })
+  }
+
   if (pdfForm) {
     pdfForm.addEventListener("submit", async (e) => {
       e.preventDefault()
@@ -642,6 +670,10 @@ try {
       pdfSubmit.disabled = !pendingPdf
       pdfSubmit.textContent = "Start ingest"
     }
+    if (clippingSubmit) {
+      clippingSubmit.disabled = false
+      clippingSubmit.textContent = "Start ingest"
+    }
     cancelBtn.disabled = false
     proceedBtn.disabled = false
     currentJobId = null
@@ -657,9 +689,16 @@ try {
       pdfSubmit.disabled = true
       pdfSubmit.textContent = "Start ingest"
     }
+    if (clippingSubmit) {
+      clippingSubmit.disabled = false
+      clippingSubmit.textContent = "Start ingest"
+    }
     urlInput.value = ""
     if (pdfInput) pdfInput.value = ""
     setChosenPdf(null)
+    if (clippingTitleInput) clippingTitleInput.value = ""
+    if (clippingSourceUrlInput) clippingSourceUrlInput.value = ""
+    if (clippingMarkdownInput) clippingMarkdownInput.value = ""
     urlInput.focus()
     currentJobId = null
     currentJobPayload = null

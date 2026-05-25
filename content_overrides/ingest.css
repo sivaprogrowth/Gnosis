@@ -32,7 +32,30 @@
   background: var(--light);
   color: var(--dark);
 }
-.ing-form input[type="url"]:focus { outline: none; border-color: var(--secondary); }
+.ing-form input[type="url"]:focus,
+.ing-form input[type="text"]:focus,
+.ing-form textarea:focus { outline: none; border-color: var(--secondary); }
+
+.ing-form input[type="text"] {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--light);
+  color: var(--dark);
+}
+
+.ing-form textarea {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  background: var(--light);
+  color: var(--dark);
+  font-family: var(--bodyFont, system-ui, sans-serif);
+  resize: vertical;
+  min-height: 220px;
+}
 
 .ing-form button { margin-top: 0.5rem; align-self: flex-start; min-width: 180px; }
 

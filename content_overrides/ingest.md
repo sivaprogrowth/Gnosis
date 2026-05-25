@@ -31,11 +31,22 @@ hide: ["toc", "graph", "explorer", "backlinks", "title", "tags", "breadcrumb", "
 <div class="ing-tabs" role="tablist">
 <button type="button" class="ing-tab active" data-tab="url" role="tab" aria-selected="true">URL</button>
 <button type="button" class="ing-tab" data-tab="pdf" role="tab" aria-selected="false">PDF upload</button>
+<button type="button" class="ing-tab" data-tab="clipping" role="tab" aria-selected="false">Clipping</button>
 </div>
 <form id="ing-url-form" class="ing-tab-panel" data-panel="url">
 <label for="ing-url">URL</label>
 <input id="ing-url" type="url" placeholder="https://paulgraham.com/lies.html" autocomplete="off" />
 <button type="submit" id="ing-submit" class="lib-btn">Start ingest</button>
+</form>
+<form id="ing-clipping-form" class="ing-tab-panel" data-panel="clipping" hidden>
+<label for="ing-clipping-title">Title</label>
+<input id="ing-clipping-title" type="text" placeholder='e.g. "Lies We Tell Kids"' autocomplete="off" />
+<label for="ing-clipping-source-url">Source URL (optional)</label>
+<input id="ing-clipping-source-url" type="url" placeholder="https://… (helps with backlinks; can be omitted)" autocomplete="off" />
+<label for="ing-clipping-markdown">Markdown content</label>
+<textarea id="ing-clipping-markdown" rows="14" placeholder="Paste the article content as markdown. Web Clipper output from Obsidian works directly — clip the article, copy the markdown content from your vault file, paste here."></textarea>
+<button type="submit" id="ing-clipping-submit" class="lib-btn">Start ingest</button>
+<p class="ing-hint">For paywalled or JS-heavy pages the URL fetcher can't reach. Paste pre-extracted markdown (e.g. from Obsidian Web Clipper). Min 200 characters.</p>
 </form>
 <form id="ing-pdf-form" class="ing-tab-panel" data-panel="pdf" hidden>
 <label>PDF file</label>

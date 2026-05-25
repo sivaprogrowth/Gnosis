@@ -88,7 +88,9 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
   const sourceUrl =
     job.source_type === "url"
       ? job.source_url || ""
-      : `pdf://${job.source_filename || "unknown.pdf"}`
+      : job.source_type === "pdf"
+        ? `pdf://${job.source_filename || "unknown.pdf"}`
+        : job.source_url || "clipping://pasted"
   const sourceDomain =
     job.source_type === "url"
       ? (() => {
@@ -98,7 +100,17 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
             return job.source_url || ""
           }
         })()
-      : "pdf-upload"
+      : job.source_type === "pdf"
+        ? "pdf-upload"
+        : job.source_url
+          ? (() => {
+              try {
+                return new URL(job.source_url).hostname
+              } catch {
+                return "clipping"
+              }
+            })()
+          : "clipping"
 
   const synth = await synthesize({
     rawMarkdown: job.raw_markdown,

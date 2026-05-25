@@ -76,6 +76,15 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
     surfaced_entities: null,
   })
 
+  // Build the existing-pages index once; pass to both synthesize (for
+  // interlinking) and compoundingFilter (for the compounding decision).
+  const index = getPageIndex()
+  const existingPages = index.pages.map((p) => ({
+    slug: p.slug,
+    type: p.type,
+    title: p.title,
+  }))
+
   const sourceUrl =
     job.source_type === "url"
       ? job.source_url || ""
@@ -98,17 +107,12 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
     sourceUrl,
     byline: null,
     publishedTime: null,
+    existingPages,
   })
   await updateJob(jobId, {
     progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
   })
 
-  const index = getPageIndex()
-  const existingPages = index.pages.map((p) => ({
-    slug: p.slug,
-    type: p.type,
-    title: p.title,
-  }))
   const filter = await compoundingFilter({
     candidates: synth.surfacedEntities,
     existingPages,

@@ -42,6 +42,12 @@ export interface SynthesizeResult {
   suggestedSlug: string
 }
 
+export interface ExistingPageSummary {
+  slug: string
+  type: string
+  title: string
+}
+
 export interface SynthesizeInput {
   /** Full fetched-article markdown */
   rawMarkdown: string
@@ -55,6 +61,13 @@ export interface SynthesizeInput {
   byline: string | null
   /** Published time from fetchUrl, if any (ISO-ish string) */
   publishedTime: string | null
+  /**
+   * Existing wiki pages, passed so the LLM can use exact slugs for concepts
+   * the wiki already knows about. Without this the model invents slugs
+   * (e.g. [[the-brand-age]] instead of the existing [[brand-age]]),
+   * producing broken links and missing Quartz backlinks.
+   */
+  existingPages?: ExistingPageSummary[]
 }
 
 const SYSTEM_PROMPT = `You are the synthesis pass in a personal LLM wiki ingest pipeline.
@@ -75,6 +88,9 @@ You are given a raw article (fetched from the web) and must produce:
 
 4. \`suggestedSlug\` — kebab-case, ASCII-only, max 60 chars. Used as the filename.
 
+**Interlinking rule — critical:**
+You will receive a list of pages that ALREADY exist in the wiki. Whenever you mention any of those concepts/people/companies/tools in the source page body (Abstract, TL;DR, Key claims, Key passages, Related) AND in surfacedEntities[].name, you MUST use the existing page's exact slug as the [[wiki-link]] target. For example, if "Brand Age" already exists at \`concepts/brand-age\`, write \`[[brand-age]]\` or \`[[brand-age|the brand age]]\` — NEVER \`[[the-brand-age]]\` or \`[[Brand Age]]\`. Wrong slugs produce broken links and miss the wiki's compounding effect. If a concept is NOT in the existing list, invent a new kebab-case slug as before.
+
 Voice: third-person, neutral. Preserve technical terms verbatim. Don't editorialise. Never invent facts; if the article doesn't give you the published date or author, leave the frontmatter value as null.`
 
 export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResult> {
@@ -89,6 +105,18 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
       `\n\n[... article truncated at ${MAX_INPUT_CHARS} chars; full length was ${input.rawMarkdown.length}]`
     : input.rawMarkdown
 
+  // Existing pages list for the interlinking rule. Compact format: slug — title (type).
+  // Cap at ~150 pages to keep prompt size sane; if the wiki grows past that we
+  // can switch to filtering by relevance/recency.
+  const existingPages = input.existingPages ?? []
+  const pageList = existingPages
+    .slice(0, 150)
+    .map((p) => `- [[${p.slug}]] — ${p.title} (${p.type})`)
+    .join("\n")
+  const pageListSection = pageList
+    ? `--- EXISTING WIKI PAGES (use these exact slugs in [[wiki-link]] markers) ---\n\n${pageList}\n\n--- END EXISTING WIKI PAGES ---\n\n`
+    : ""
+
   const userPrompt = `Source URL: ${input.sourceUrl}
 Source domain: ${input.sourceDomain}
 Fetched title: ${input.title}
@@ -96,7 +124,7 @@ Fetched byline: ${input.byline ?? "(none)"}
 Fetched published: ${input.publishedTime ?? "(none)"}
 Article length: ${input.rawMarkdown.length} chars${truncated ? " (truncated for synth)" : ""}
 
---- RAW ARTICLE MARKDOWN BELOW ---
+${pageListSection}--- RAW ARTICLE MARKDOWN BELOW ---
 
 ${body}
 

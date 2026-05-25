@@ -619,6 +619,32 @@ async function ingestOneClipping(args: {
     return { filename, status: "skipped", reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}` }
   }
 
+  // In-flight guard: skip if another cron pass (or web ingest) is currently
+  // processing the same source. Without this, concurrent cron invocations
+  // can both pass the `done`-status dedup, both run synth+commit, and end up
+  // overwriting each other with orphan entity pages left in the wiki.
+  // The `discussing`/`synthesizing` states cover the active window from
+  // synthesize start through commit.
+  const inFlightQuery = supabase
+    .from("gnosis_ingest_jobs")
+    .select("id, status")
+    .in("status", ["queued", "fetching", "discussing", "synthesizing", "committing"])
+    .or(
+      sourceUrl
+        ? `source_url.eq.${sourceUrl},source_title.eq.${title}`
+        : `source_title.eq.${title}`,
+    )
+    .order("created_at", { ascending: false })
+    .limit(1)
+  const { data: inFlight } = await inFlightQuery.maybeSingle()
+  if (inFlight) {
+    return {
+      filename,
+      status: "skipped",
+      reason: `another ingest is already in-flight for this source (job ${inFlight.id.slice(0, 8)}, status=${inFlight.status})`,
+    }
+  }
+
   // Create the job row with raw_markdown pre-filled
   const { data: job, error: jobErr } = await supabase
     .from("gnosis_ingest_jobs")

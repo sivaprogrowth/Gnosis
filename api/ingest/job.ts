@@ -24,7 +24,15 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
+import { deleteFiles, triggerVercelRebuild } from "../_ingest/githubPush.js"
 import { processClippingsCron, runSynthesisStandalone } from "../_ingest/pipeline.js"
+
+// One-shot orphan from the race-condition double-ingest of "AI and the
+// danger of cognitive surrender". Both passes committed to the same source
+// slug; the later pass overwrote the source page but didn't promote
+// Steven Shaw (the author) as an entity, so the first pass's
+// wiki/people/steven-shaw.md is now unreferenced.
+const COGNITIVE_SURRENDER_ORPHANS = ["wiki/people/steven-shaw.md"]
 
 export const config = {
   maxDuration: 300,
@@ -64,6 +72,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!session) {
     res.status(401).json({ error: "Unauthorized" })
     return
+  }
+
+  // POST {action: "cleanup-cognitive-surrender-orphans"} — one-shot cleanup.
+  // Will be removed after one successful run.
+  if (req.method === "POST") {
+    const peekBody = (req.body || {}) as { action?: unknown }
+    if (peekBody.action === "cleanup-cognitive-surrender-orphans") {
+      try {
+        const result = await deleteFiles(
+          COGNITIVE_SURRENDER_ORPHANS,
+          `Cleanup: remove orphan entity page from cognitive-surrender duplicate ingest
+
+The cron race condition caused two ingests of the same Economist article.
+The later commit (cd2ef66) overwrote the source page but didn't promote
+Steven Shaw — the earlier commit's (5102d99) wiki/people/steven-shaw.md
+is unreferenced. Removing.`,
+        )
+        triggerVercelRebuild("cognitive-surrender orphan cleanup").catch(() => {})
+        res.status(200).json({ ok: true, deleted: COGNITIVE_SURRENDER_ORPHANS.length, commit: { sha: result.sha, url: result.commitUrl } })
+        return
+      } catch (err: unknown) {
+        res.status(500).json({ error: err instanceof Error ? err.message : String(err) })
+        return
+      }
+    }
   }
 
   // POST {action: "regenerate", jobId} re-runs synthesize+compoundingFilter

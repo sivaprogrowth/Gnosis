@@ -16,7 +16,7 @@
  */
 
 import { Readability } from "@mozilla/readability"
-import { JSDOM } from "jsdom"
+import { parseHTML } from "linkedom"
 import TurndownService from "turndown"
 
 const FETCH_TIMEOUT_MS = 15_000
@@ -83,9 +83,17 @@ export async function fetchUrl(url: string): Promise<FetchedDocument> {
   const html = await res.text()
   if (!html.trim()) throw new Error(`Empty response body from ${url}`)
 
-  // Parse + readability
-  const dom = new JSDOM(html, { url })
-  const reader = new Readability(dom.window.document)
+  // Parse + readability. linkedom over jsdom because jsdom fails to init in
+  // Vercel's serverless runtime (it needs Node internals not exposed there).
+  // Readability is happy with any DOM that quacks like the spec.
+  const { document } = parseHTML(html)
+  // Set base href so relative links resolve correctly during readability's parse
+  if (!document.querySelector("base")) {
+    const base = document.createElement("base")
+    base.setAttribute("href", url)
+    document.head?.appendChild(base)
+  }
+  const reader = new Readability(document as unknown as Document)
   const article = reader.parse()
 
   const td = makeTurndown()
@@ -103,9 +111,9 @@ export async function fetchUrl(url: string): Promise<FetchedDocument> {
     excerpt = article.excerpt ?? null
   } else {
     // Fallback: whole-document turndown (readability bailed)
-    markdown = td.turndown(dom.window.document.body?.innerHTML ?? html)
+    markdown = td.turndown(document.body?.innerHTML ?? html)
     title =
-      dom.window.document.querySelector("title")?.textContent?.trim() ||
+      document.querySelector("title")?.textContent?.trim() ||
       parsedUrl.hostname
   }
 

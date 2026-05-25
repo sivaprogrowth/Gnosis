@@ -16,7 +16,11 @@ import { verifySessionToken } from "../_auth/auth.js"
 import { markJobFailed, runDiscoveryFromUrl } from "../_ingest/pipeline.js"
 
 export const config = {
-  maxDuration: 60, // generous cap; real runs are ~20s
+  // 300s is Vercel's current default ceiling. Long articles (7k+ words) push
+  // synthesize+compounding past 60s on Sonnet, so the previous 60 cap was
+  // killing legitimate runs silently — function killed mid-synth, no exception,
+  // job row stuck in 'discussing'.
+  maxDuration: 300,
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

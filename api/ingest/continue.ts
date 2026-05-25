@@ -13,7 +13,7 @@ import { verifySessionToken } from "../_auth/auth.js"
 import { markJobCancelled, markJobFailed, runCommit } from "../_ingest/pipeline.js"
 
 export const config = {
-  maxDuration: 60,
+  maxDuration: 300,
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

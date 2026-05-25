@@ -18,6 +18,10 @@ import type { Tool } from "@anthropic-ai/sdk/resources/messages"
 
 const MODEL_ID = "claude-sonnet-4-6"
 const MAX_TOKENS = 8000
+// Sonnet 4.6 handles 200k input fine, but the *output* slows down on very
+// large outputs. Cap the article body at this many chars before sending so
+// the model never spends >45s on generation. ~40k chars ≈ 10k tokens of input.
+const MAX_INPUT_CHARS = 40_000
 
 export interface SynthesizedEntity {
   name: string
@@ -79,15 +83,22 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
 
   const client = new Anthropic({ apiKey })
 
+  const truncated = input.rawMarkdown.length > MAX_INPUT_CHARS
+  const body = truncated
+    ? input.rawMarkdown.slice(0, MAX_INPUT_CHARS) +
+      `\n\n[... article truncated at ${MAX_INPUT_CHARS} chars; full length was ${input.rawMarkdown.length}]`
+    : input.rawMarkdown
+
   const userPrompt = `Source URL: ${input.sourceUrl}
 Source domain: ${input.sourceDomain}
 Fetched title: ${input.title}
 Fetched byline: ${input.byline ?? "(none)"}
 Fetched published: ${input.publishedTime ?? "(none)"}
+Article length: ${input.rawMarkdown.length} chars${truncated ? " (truncated for synth)" : ""}
 
 --- RAW ARTICLE MARKDOWN BELOW ---
 
-${input.rawMarkdown}
+${body}
 
 --- END RAW ARTICLE ---
 

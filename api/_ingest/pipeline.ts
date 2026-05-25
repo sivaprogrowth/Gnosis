@@ -36,6 +36,99 @@ async function updateJob(
   if (error) console.warn(`[pipeline] could not update job ${jobId}:`, error.message)
 }
 
+/**
+ * Run just the synthesize + compoundingFilter steps on a job whose
+ * raw_markdown is already populated. Used by both:
+ *   - the initial discovery from URL/PDF (after fetching)
+ *   - the regenerate action (re-running synth on existing content)
+ *
+ * Updates `status`, `progress_message`, `takeaways`, `surfaced_entities`
+ * in place. Sets status to `awaiting_user` on success.
+ */
+export async function runSynthesisStandalone(jobId: string): Promise<void> {
+  try {
+    await runSynthesisOnly(jobId)
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error(`[pipeline] standalone synthesis failed for job ${jobId}:`, msg)
+    await updateJob(jobId, {
+      status: "failed",
+      error_message: msg,
+      progress_message: `Synthesis failed: ${msg}`,
+    })
+  }
+}
+
+export async function runSynthesisOnly(jobId: string): Promise<void> {
+  const { data: job, error: loadErr } = await supabase
+    .from("gnosis_ingest_jobs")
+    .select("source_type, source_url, source_filename, source_title, raw_markdown")
+    .eq("id", jobId)
+    .single()
+  if (loadErr || !job) throw new Error(`Job ${jobId} not found: ${loadErr?.message}`)
+  if (!job.raw_markdown) throw new Error(`Job ${jobId} has no raw_markdown to synthesize`)
+
+  await updateJob(jobId, {
+    status: "discussing",
+    progress_message: "Synthesizing source page + entities…",
+    // Clear stale outputs so the UI doesn't briefly show old data on regenerate
+    takeaways: null,
+    surfaced_entities: null,
+  })
+
+  const sourceUrl =
+    job.source_type === "url"
+      ? job.source_url || ""
+      : `pdf://${job.source_filename || "unknown.pdf"}`
+  const sourceDomain =
+    job.source_type === "url"
+      ? (() => {
+          try {
+            return new URL(job.source_url || "").hostname
+          } catch {
+            return job.source_url || ""
+          }
+        })()
+      : "pdf-upload"
+
+  const synth = await synthesize({
+    rawMarkdown: job.raw_markdown,
+    title: job.source_title || "Untitled",
+    sourceDomain,
+    sourceUrl,
+    byline: null,
+    publishedTime: null,
+  })
+  await updateJob(jobId, {
+    progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
+  })
+
+  const index = getPageIndex()
+  const existingPages = index.pages.map((p) => ({
+    slug: p.slug,
+    type: p.type,
+    title: p.title,
+  }))
+  const filter = await compoundingFilter({
+    candidates: synth.surfacedEntities,
+    existingPages,
+    sourceSummary: (synth.takeaways || []).join(" "),
+  })
+
+  await updateJob(jobId, {
+    status: "awaiting_user",
+    takeaways: synth.takeaways,
+    surfaced_entities: {
+      promote: filter.promote,
+      inline: filter.inline,
+      suggestedSlug: synth.suggestedSlug,
+      sourcePage: synth.sourcePage,
+      sourceTitle: job.source_title || "Untitled",
+    },
+    progress_message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page.`,
+  })
+}
+
 /** Phase A — URL: fetch → synthesize → compoundingFilter → awaiting_user. */
 export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<void> {
   try {
@@ -52,42 +145,7 @@ export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<v
       progress_message: `Extracted ${doc.wordCount} words from ${doc.sourceDomain}. Synthesizing…`,
     })
 
-    const synth = await synthesize({
-      rawMarkdown: doc.markdown,
-      title: doc.title,
-      sourceDomain: doc.sourceDomain,
-      sourceUrl: url,
-      byline: doc.byline,
-      publishedTime: doc.publishedTime,
-    })
-    await updateJob(jobId, {
-      progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
-    })
-
-    const index = getPageIndex()
-    const existingPages = index.pages.map((p) => ({
-      slug: p.slug,
-      type: p.type,
-      title: p.title,
-    }))
-    const filter = await compoundingFilter({
-      candidates: synth.surfacedEntities,
-      existingPages,
-      sourceSummary: (synth.takeaways || []).join(" "),
-    })
-
-    await updateJob(jobId, {
-      status: "awaiting_user",
-      takeaways: synth.takeaways,
-      surfaced_entities: {
-        promote: filter.promote,
-        inline: filter.inline,
-        suggestedSlug: synth.suggestedSlug,
-        sourcePage: synth.sourcePage,
-        sourceTitle: doc.title,
-      },
-      progress_message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page.`,
-    })
+    await runSynthesisOnly(jobId)
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error(`[pipeline] discovery failed for job ${jobId}:`, msg)
@@ -119,43 +177,7 @@ export async function runDiscoveryFromPdf(
       progress_message: `Extracted ${extracted.wordCount} words across ${extracted.pageCount} pages. Synthesizing…`,
     })
 
-    const pseudoUrl = `pdf://${filename}`
-    const synth = await synthesize({
-      rawMarkdown: extracted.markdown,
-      title: extracted.title,
-      sourceDomain: "pdf-upload",
-      sourceUrl: pseudoUrl,
-      byline: extracted.author,
-      publishedTime: null,
-    })
-    await updateJob(jobId, {
-      progress_message: `Synthesized ${synth.takeaways.length} takeaways and ${synth.surfacedEntities.length} entities. Applying compounding bar…`,
-    })
-
-    const index = getPageIndex()
-    const existingPages = index.pages.map((p) => ({
-      slug: p.slug,
-      type: p.type,
-      title: p.title,
-    }))
-    const filter = await compoundingFilter({
-      candidates: synth.surfacedEntities,
-      existingPages,
-      sourceSummary: (synth.takeaways || []).join(" "),
-    })
-
-    await updateJob(jobId, {
-      status: "awaiting_user",
-      takeaways: synth.takeaways,
-      surfaced_entities: {
-        promote: filter.promote,
-        inline: filter.inline,
-        suggestedSlug: synth.suggestedSlug,
-        sourcePage: synth.sourcePage,
-        sourceTitle: extracted.title,
-      },
-      progress_message: `Ready to commit: ${filter.promote.length} new entity pages + 1 source page.`,
-    })
+    await runSynthesisOnly(jobId)
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error(`[pipeline] PDF discovery failed for job ${jobId}:`, msg)

@@ -34,6 +34,7 @@ try {
   const entitiesEl = $("#ing-entities")
   const proceedBtn = $("#ing-proceed")
   const cancelBtn = $("#ing-cancel")
+  const regenerateBtn = $("#ing-regenerate")
   const resultSection = $("#ing-result")
   const resultBody = $("#ing-result-body")
   const resetBtn = $("#ing-reset")
@@ -564,6 +565,51 @@ try {
       proceedBtn.textContent = "Proceed and commit"
     }
   })
+
+  // -------- Regenerate (re-run synth on same raw_markdown) --------
+  if (regenerateBtn) {
+    regenerateBtn.addEventListener("click", async () => {
+      if (!currentJobId) return
+      regenerateBtn.disabled = true
+      proceedBtn.disabled = true
+      cancelBtn.disabled = true
+      regenerateBtn.textContent = "Regenerating…"
+      showError("")
+
+      try {
+        const res = await fetch("/api/ingest/job", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({ action: "regenerate", jobId: currentJobId }),
+        })
+        if (res.status === 401) {
+          location.href = "/login?next=" + encodeURIComponent("/ingest")
+          return
+        }
+        if (!res.ok) {
+          const errBody = await res.json().catch(() => ({}))
+          throw new Error(errBody.error || `HTTP ${res.status}`)
+        }
+        // Hide confirm, surface progress, resume polling. The synth step is
+        // already running in the background via waitUntil.
+        confirmSection.hidden = true
+        progressSection.hidden = false
+        setStage("synthesizing", "active", "Re-synthesizing on the same source…")
+
+        const job = await pollJob(currentJobId)
+        if (!job) return
+        // pollJob already calls renderConfirmation when status hits awaiting_user.
+      } catch (e) {
+        showError(`Regenerate failed: ${e.message}`)
+      } finally {
+        regenerateBtn.disabled = false
+        proceedBtn.disabled = false
+        cancelBtn.disabled = false
+        regenerateBtn.textContent = "Regenerate"
+      }
+    })
+  }
 
   cancelBtn.addEventListener("click", async () => {
     if (!currentJobId) return

@@ -21,11 +21,17 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
+import { runSynthesisStandalone } from "../_ingest/pipeline.js"
+
+export const config = {
+  maxDuration: 300,
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== "GET") {
+  if (req.method !== "GET" && req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" })
     return
   }
@@ -36,6 +42,54 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const session = sessionToken ? verifySessionToken(sessionToken) : null
   if (!session) {
     res.status(401).json({ error: "Unauthorized" })
+    return
+  }
+
+  // POST {action: "regenerate", jobId} re-runs synthesize+compoundingFilter
+  // on an existing awaiting_user job. Doesn't re-fetch the URL or
+  // re-extract the PDF — operates on the persisted raw_markdown.
+  if (req.method === "POST") {
+    const body = (req.body || {}) as { action?: unknown; jobId?: unknown }
+    if (body.action !== "regenerate") {
+      res.status(400).json({ error: "Unknown POST action" })
+      return
+    }
+    const jobId = typeof body.jobId === "string" ? body.jobId : ""
+    if (!jobId) {
+      res.status(400).json({ error: "jobId required" })
+      return
+    }
+    const { data: job, error: loadErr } = await supabase
+      .from("gnosis_ingest_jobs")
+      .select("id, status, requested_by, raw_markdown")
+      .eq("id", jobId)
+      .maybeSingle()
+    if (loadErr) {
+      res.status(500).json({ error: loadErr.message })
+      return
+    }
+    if (!job) {
+      res.status(404).json({ error: "Job not found" })
+      return
+    }
+    if (job.requested_by !== session.email) {
+      res.status(403).json({ error: "Forbidden" })
+      return
+    }
+    if (job.status !== "awaiting_user") {
+      res.status(409).json({
+        error: `Job status is ${job.status}; only awaiting_user jobs can be regenerated.`,
+      })
+      return
+    }
+    if (!job.raw_markdown) {
+      res.status(409).json({
+        error: "Job has no stored raw_markdown to re-synthesize from.",
+      })
+      return
+    }
+    waitUntil(runSynthesisStandalone(jobId))
+    res.status(202).json({ jobId, status: "discussing" })
     return
   }
 

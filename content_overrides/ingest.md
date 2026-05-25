@@ -64,8 +64,10 @@ hide: ["toc", "graph", "explorer", "backlinks", "title", "tags", "breadcrumb", "
 <div class="ing-entities" id="ing-entities"></div>
 <div class="ing-actions">
 <button type="button" id="ing-proceed" class="lib-btn">Proceed and commit</button>
+<button type="button" id="ing-regenerate" class="lib-btn lib-btn-ghost">Regenerate</button>
 <button type="button" id="ing-cancel" class="lib-btn lib-btn-ghost">Cancel</button>
 </div>
+<p class="ing-hint">Regenerate re-runs synthesis on the same source (no re-fetch). Useful if takeaways feel weak or entity choices look off.</p>
 </section>
 <section class="ing-result" id="ing-result" hidden>
 <h2>Committed</h2>

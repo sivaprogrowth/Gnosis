@@ -1,19 +1,19 @@
 ---
 type: concept
-title: cognitive surrender
+title: Cognitive Surrender
 tags: [ingested]
 sources: [ai-and-the-danger-of-cognitive-surrender]
 ---
 
-# cognitive surrender
+# Cognitive Surrender
 
 _Stub page created automatically during ingest of [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]._
 
-This is the central, named concept of the source being ingested — a well-defined psychological/behavioral framework with a specific coinage (Shaw & Nave). It is directly adjacent to existing pages like Agentic AI, From Retrieval to Agency, Pretty Good at Scale, and AI-Native Services, all of which touch on human-AI collaboration dynamics. Multiple existing pages would plausibly cite or link to it.
+This is a well-defined, named concept directly relevant to multiple existing pages (Agentic AI, AI-Native Services, From Retrieval to Agency, Pretty Good at Scale, Controlled Hallucination) — all of which deal with AI reliance and delegation. It would naturally be cited from those pages and from any future AI-cognition or AI-risk discussions.
 
 ## Why this earned its own page
 
-This is the central, named concept of the source being ingested — a well-defined psychological/behavioral framework with a specific coinage (Shaw & Nave). It is directly adjacent to existing pages like Agentic AI, From Retrieval to Agency, Pretty Good at Scale, and AI-Native Services, all of which touch on human-AI collaboration dynamics. Multiple existing pages would plausibly cite or link to it.
+This is a well-defined, named concept directly relevant to multiple existing pages (Agentic AI, AI-Native Services, From Retrieval to Agency, Pretty Good at Scale, Controlled Hallucination) — all of which deal with AI reliance and delegation. It would naturally be cited from those pages and from any future AI-cognition or AI-risk discussions.
 
 ## Mentions
 

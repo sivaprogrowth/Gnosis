@@ -13,8 +13,8 @@ description: >-
 tags:
   - clippings
 gnosis_ingested: true
-gnosis_job_id: b11db7fd-1b24-462d-96df-718710a3cbca
-gnosis_ingested_at: '2026-05-25T18:17:38.670Z'
+gnosis_job_id: 359c917c-2d18-4ffd-a265-1b3f2c2f5b8b
+gnosis_ingested_at: '2026-05-25T18:18:18.282Z'
 ---
 ## How much should managers let bots do the thinking?
 

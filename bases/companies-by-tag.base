@@ -1,0 +1,11 @@
+filters:
+  type == "company"
+views:
+  - type: table
+    name: Companies grouped by tag
+    order:
+      - file.name
+    groupBy:
+      property: tags
+      direction: ASC
+    limit: 10

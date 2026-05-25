@@ -1,0 +1,57 @@
+{
+  "books_processed": [
+    {
+      "id": 60698251,
+      "slug": "book-the-science-of-storytelling",
+      "drained": "2026-05-25T09:30:00+05:30",
+      "class": "A"
+    }
+  ],
+  "synthesis_briefs": [
+    {
+      "week_iso": "2026-W22",
+      "filed_to": "wiki/queries/synthesis-2026-W22.md",
+      "created": "2026-05-25T09:55:00+05:30"
+    }
+  ],
+  "resurface_log": [
+    {
+      "work_context": "ai-overview-tool",
+      "highlights_offered": [484913034, 851140403, 784932248, 895203571, 851140319, 484914884],
+      "created": "2026-05-25T10:20:00+05:30"
+    },
+    {
+      "work_context": "kog-bid-bonds-outreach",
+      "highlights_offered": [549212289, 784929650, 784929654, 484916161, 833038103, 851140320, 828796360],
+      "created": "2026-05-25T10:20:00+05:30"
+    },
+    {
+      "work_context": "progrowth-fractional-marketing-seo",
+      "highlights_offered": [851140393, 484914953, 484916346, 833038103, 720503582, 634179550, 851140388],
+      "created": "2026-05-25T10:20:00+05:30"
+    }
+  ],
+  "outputs_drafted": [
+    {
+      "topic": "Mirage PMF — the AINS revenue-growth trap",
+      "draft_path": "raw/notes/drafts/mirage-pmf-linkedin-2026-05-25.md",
+      "created": "2026-05-25T11:05:00+05:30"
+    }
+  ],
+  "feed_triage_runs": [
+    {
+      "created": "2026-05-25T10:50:00+05:30",
+      "promoted": 1,
+      "skimmed": 1,
+      "archived": 1,
+      "deleted": 1
+    }
+  ],
+  "mirror_runs": [
+    {
+      "period_iso": "2026-Q2",
+      "filed_to": "wiki/queries/reading-mirror-2026-Q2.md",
+      "created": "2026-05-25T11:30:00+05:30"
+    }
+  ]
+}

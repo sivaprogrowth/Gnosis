@@ -1,0 +1,14 @@
+filters:
+  type == "person"
+views:
+  - type: table
+    name: People
+    order:
+      - file.name
+      - role
+      - company
+      - based-in
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC

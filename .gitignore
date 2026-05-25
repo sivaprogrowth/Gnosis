@@ -11,3 +11,7 @@ slides/dist/
 *.swp
 *.swo
 .vscode/
+
+# Python bytecode caches from scripts/*.py runs
+__pycache__/
+*.pyc

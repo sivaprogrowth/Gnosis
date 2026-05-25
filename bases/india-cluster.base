@@ -1,0 +1,19 @@
+filters:
+  and:
+    - type != null
+    - or:
+        - tags.contains("india")
+        - tags.contains("telangana")
+        - tags.contains("shared-connection")
+views:
+  - type: table
+    name: India / Telangana cluster
+    order:
+      - file.name
+      - type
+      - tags
+    sort:
+      - property: type
+        direction: ASC
+      - property: file.name
+        direction: ASC

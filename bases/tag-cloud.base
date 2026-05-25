@@ -1,0 +1,11 @@
+filters:
+  type != null
+views:
+  - type: table
+    name: Tags by usage
+    order:
+      - file.name
+    groupBy:
+      property: tags
+      direction: ASC
+    limit: 20

@@ -63,6 +63,8 @@ For competitive positioning against [[marketri]] and other traditional fractiona
 ## Sources citing this page
 
 - [[ai-native-services-playbook]] — where the term was coined (Spring 2026)
+- [[resurface-ai-overview-tool-2026-05-25]] — applies the framing to the aioverviews multi-tenant migration
+- [[resurface-progrowth-fractional-marketing-seo-2026-05-25]] — adopts the framing as the pillar piece's central argument
 
 ## Links
 

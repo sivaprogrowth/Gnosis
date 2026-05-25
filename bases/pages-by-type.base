@@ -1,0 +1,9 @@
+filters: type != null
+views:
+  - type: table
+    name: Pages by type
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name

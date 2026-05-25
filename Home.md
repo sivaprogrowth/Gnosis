@@ -5,20 +5,15 @@ tags: [home, dashboard]
 
 # Gnosis — Home
 
-Personal LLM wiki. This page uses **live Dataview queries** — tables rebuild every time you open them from the current state of the vault.
+Personal LLM wiki. This page uses **live Bases views** (Obsidian core feature) — embedded `.base` files in `bases/` rebuild every time you open them from the current state of the vault.
 
-> If you see raw ```dataview blocks instead of rendered tables, the Dataview plugin is disabled. Enable it in Settings → Community plugins.
+> If you see raw `![[bases/...]]` syntax instead of rendered tables, you're viewing the file outside Obsidian or the Bases core plugin is disabled. Open in Obsidian with the Bases core plugin enabled.
 
 ## Inbox status
 
 Articles clipped via the Obsidian Web Clipper awaiting ingest. Default drain cadence: **Sunday** (part of the Weekly Review). Mid-week backstop: **≥ 5 items** triggers an earlier drain. See `CLAUDE.md` §4.3.
 
-```dataview
-TABLE file.ctime AS "Clipped", domain
-FROM "raw/articles"
-WHERE contains(tags, "inbox")
-SORT file.ctime ASC
-```
+![[bases/inbox.base]]
 
 To drain: open a Claude session in `~/Projects/gnosis/` and say **"drain the article inbox"**.
 
@@ -26,123 +21,55 @@ To drain: open a Claude session in `~/Projects/gnosis/` and say **"drain the art
 
 Total pages by type:
 
-```dataview
-TABLE length(rows) AS "Pages"
-FROM ""
-WHERE type
-GROUP BY type
-SORT length(rows) DESC
-```
+![[bases/pages-by-type.base]]
 
 ## People in Siva's network
 
-```dataview
-TABLE role, company, based-in, file.mtime AS "Last edited"
-FROM ""
-WHERE type = "person"
-SORT file.name ASC
-```
+![[bases/people.base]]
 
 ## Companies and institutions
 
-```dataview
-TABLE website, join(tags, ", ") AS "Tags", length(file.inlinks) AS "Inbound"
-FROM ""
-WHERE type = "company"
-SORT length(file.inlinks) DESC
-```
+![[bases/companies.base]]
 
 ## Sources, most recently ingested first
 
-```dataview
-TABLE authors, published, length(file.inlinks) AS "Cited by"
-FROM ""
-WHERE type = "source"
-SORT published DESC, file.mtime DESC
-```
+![[bases/sources.base]]
 
 ## Concepts, by inbound-link density
 
-```dataview
-TABLE join(tags, ", ") AS "Tags", length(file.outlinks) AS "Out", length(file.inlinks) AS "In"
-FROM ""
-WHERE type = "concept"
-SORT length(file.inlinks) DESC
-```
+![[bases/concepts.base]]
 
 ## AI engines and search products
 
-```dataview
-TABLE join(tags, ", ") AS "Tags", length(file.inlinks) AS "Inbound"
-FROM ""
-WHERE type = "entity"
-SORT length(file.inlinks) DESC
-```
+![[bases/entities.base]]
 
 ## Recently updated across the whole vault
 
-```dataview
-TABLE type, join(tags, ", ") AS "Tags", file.mtime AS "Updated"
-FROM ""
-WHERE type
-SORT file.mtime DESC
-LIMIT 12
-```
+![[bases/recently-updated.base]]
 
 ## Orphans — pages with no inbound links
 
 Candidates for better cross-referencing.
 
-```dataview
-LIST
-FROM ""
-WHERE type AND length(file.inlinks) = 0
-SORT file.name ASC
-```
+![[bases/orphans.base]]
 
 ## Siva's orbit — anything tagged siva / progrowth / founder
 
-```dataview
-LIST file.link
-FROM #siva OR #progrowth OR #founder
-SORT type ASC, file.name ASC
-```
+![[bases/sivas-orbit.base]]
 
 ## Companies grouped by primary tag
 
-```dataview
-TABLE length(rows) AS "Pages", rows.file.link AS "Companies"
-FROM ""
-WHERE type = "company"
-FLATTEN tags AS tag
-WHERE tag != "company"
-GROUP BY tag
-SORT length(rows) DESC
-LIMIT 10
-```
+![[bases/companies-by-tag.base]]
 
 ## India / Telangana cluster — cross-type
 
 Reveals who's geographically / institutionally clustered.
 
-```dataview
-TABLE type, join(tags, ", ") AS "Tags"
-FROM ""
-WHERE type AND (contains(tags, "india") OR contains(tags, "telangana") OR contains(tags, "shared-connection"))
-SORT type ASC, file.name ASC
-```
+![[bases/india-cluster.base]]
 
 ## Tag-cloud-ish: tags ranked by usage
 
-```dataview
-TABLE length(rows) AS "Pages"
-FROM ""
-WHERE type
-FLATTEN tags AS tag
-GROUP BY tag
-SORT length(rows) DESC
-LIMIT 20
-```
+![[bases/tag-cloud.base]]
 
 ## Navigation
 

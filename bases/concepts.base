@@ -1,0 +1,13 @@
+filters:
+  type == "concept"
+views:
+  - type: table
+    name: Concepts
+    order:
+      - file.name
+      - tags
+      - file.links
+      - file.backlinks
+    sort:
+      - property: file.backlinks
+        direction: DESC

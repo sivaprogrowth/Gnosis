@@ -1,0 +1,12 @@
+filters:
+  type == "entity"
+views:
+  - type: table
+    name: Entities
+    order:
+      - file.name
+      - tags
+      - file.backlinks
+    sort:
+      - property: file.backlinks
+        direction: DESC

@@ -5,16 +5,22 @@ Produces a report (does not auto-apply fixes). Exits 0 regardless of
 findings so it can be used in CI without blocking.
 
 Usage:
-    python3 scripts/lint-wiki.py
+    python3 scripts/lint-wiki.py                # report only (default)
+    python3 scripts/lint-wiki.py --in-obsidian  # also open the first flagged page in Obsidian
 """
 
 from __future__ import annotations
 
+import argparse
 import os
 import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
+
+# Local helper for the --in-obsidian flag; imported lazily so default runs
+# don't require OBSIDIAN_API_KEY to be set.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
@@ -95,12 +101,28 @@ def report_section(title: str, items: list[str]) -> str:
     return head + "\n" + "\n".join(f"- {it}" for it in items) + "\n"
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Lint the Gnosis canonical wiki for drift (CLAUDE.md §4.5).",
+    )
+    parser.add_argument(
+        "--in-obsidian",
+        action="store_true",
+        help="After printing the report, open the highest-priority flagged page "
+             "in the running Obsidian app via the Local REST API. Requires "
+             "OBSIDIAN_API_KEY set and Obsidian running.",
+    )
+    args = parser.parse_args(argv)
+
     pages = wiki_pages()
     all_slugs = set(pages.keys())
     print(f"Gnosis wiki lint report — {len(pages)} pages across {len(set(p['folder'] for p in pages.values()))} folders.")
     print(f"Source: {WIKI}")
     print()
+
+    # Tracks pages worth jumping to with --in-obsidian, in priority order.
+    # Highest priority first: undefined-link sources → orphans → stubs.
+    flagged: list[tuple[str, str, str]] = []  # (priority_label, rel_path, why)
 
     # Build inbound-link map: who links to each page?
     inbound: dict[str, list[str]] = defaultdict(list)
@@ -125,6 +147,8 @@ def main() -> int:
         "Orphans (pages with zero inbound [[links]])",
         [f"`{pages[s]['rel_path']}` ({pages[s]['type']})" for s in orphans],
     ))
+    for s in orphans:
+        flagged.append(("orphan", pages[s]["rel_path"], "zero inbound [[links]]"))
 
     # Stubs
     stubs = sorted(
@@ -135,6 +159,8 @@ def main() -> int:
         f"Stubs (under {STUB_WORD_THRESHOLD} words)",
         [f"`{pages[s]['rel_path']}` — {pages[s]['word_count']} words" for s in stubs],
     ))
+    for s in stubs:
+        flagged.append(("stub", pages[s]["rel_path"], f"only {pages[s]['word_count']} words"))
 
     # Undefined wiki-links
     undefined_grouped = sorted(undefined, key=lambda x: (x[1], x[0]))
@@ -142,6 +168,11 @@ def main() -> int:
         "Undefined wiki-links (targets that don't resolve)",
         [f"`{src}` → `[[{target}]]`" for src, target in undefined_grouped],
     ))
+    # Highest priority: open the *source* of the broken link (where the fix lives).
+    # Insert at the front so undefined-link sources beat orphans/stubs.
+    for src, target in undefined_grouped:
+        if src in pages:
+            flagged.insert(0, ("undefined-link", pages[src]["rel_path"], f"links to missing [[{target}]]"))
 
     # Index drift — pages not in index.md
     index_text = INDEX.read_text(encoding="utf-8") if INDEX.exists() else ""
@@ -235,6 +266,36 @@ def main() -> int:
 
     for s in sections:
         print(s)
+
+    # --in-obsidian: open the highest-priority flagged page in Obsidian.
+    if args.in_obsidian:
+        if not flagged:
+            print("\n--in-obsidian: nothing to open (wiki is clean).")
+            return 0
+
+        # Import lazily so default runs work even without OBSIDIAN_API_KEY.
+        try:
+            from obsidian import ObsidianClient, ObsidianError
+        except ImportError as e:
+            print(f"\n--in-obsidian: failed to import scripts/obsidian.py: {e}", file=sys.stderr)
+            return 0
+
+        label, rel_path, why = flagged[0]
+        # Vault-relative path: strip the leading `wiki/` so the REST API resolves
+        # it against the vault root (Obsidian sees `wiki/` as a top-level folder).
+        vault_path = rel_path
+
+        try:
+            client = ObsidianClient.from_env()
+            client.open(vault_path)
+            print(f"\n--in-obsidian: opened `{vault_path}` in Obsidian "
+                  f"({label}: {why}).")
+            if len(flagged) > 1:
+                print(f"  ({len(flagged) - 1} more flagged page(s) — fix this one, re-run to advance.)")
+        except ObsidianError as e:
+            print(f"\n--in-obsidian: could not open in Obsidian — {e}", file=sys.stderr)
+            print(f"  (highest-priority flagged page was `{vault_path}`: {label} — {why})",
+                  file=sys.stderr)
 
     return 0
 

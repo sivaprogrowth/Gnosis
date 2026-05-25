@@ -1,0 +1,10 @@
+filters:
+  and:
+    - type != null
+    - file.backlinks.isEmpty()
+views:
+  - type: list
+    name: Orphans
+    sort:
+      - property: file.name
+        direction: ASC

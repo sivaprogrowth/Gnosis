@@ -73,6 +73,7 @@ Even though the AI Overview Tool is SaaS (not AINS), AINS playbook principles st
 - [[semrush-ai-visibility-index]] — the tool's nearest public reference
 - [[semrush]] — parent of the reference product
 - [[ai-native-services-playbook]] — frames the product-as-leave-behind pattern
+- [[resurface-ai-overview-tool-2026-05-25]] — work-anchored highlight set for the multi-tenant migration push
 
 ## Links
 

@@ -26,7 +26,9 @@ At the start of every session in this directory:
 ├── README.md       # user-facing intro
 ├── index.md        # content catalog (you maintain)
 ├── log.md          # chronological activity log (you append)
-├── Home.md         # OPTIONAL: Obsidian Dataview dashboard at vault root
+├── Now.md          # current week's work + 12-week-year theme (hand-maintained, updated Sundays)
+├── Home.md         # OPTIONAL: Obsidian Bases dashboard at vault root (embeds bases/*.base)
+├── bases/          # Obsidian Bases views (.base files) — replaces the legacy Dataview blocks
 ├── .obsidian/      # LOCAL ONLY (gitignored): per-machine vault config
 ├── raw/            # IMMUTABLE source documents — you only read
 │   ├── articles/   #   web articles (.md from Web Clipper or fetched)
@@ -121,7 +123,7 @@ inbox → queued     (C — stays in raw/articles/ as backlog)
 inbox → dismissed  (D — raw file kept, no wiki action)
 ```
 
-`Home.md`'s `LIST FROM #inbox` Dataview query surfaces the backlog count in Obsidian so the user can see when a drain is due.
+`Home.md`'s embedded `bases/inbox.base` view surfaces the inbox backlog in Obsidian so the user can see when a drain is due.
 
 #### Cadence
 
@@ -160,6 +162,292 @@ Produce a report (do not auto-apply fixes). Check for:
 - **Log gaps** — ingests that didn't produce log entries.
 
 Suggest specific fixes; ask before making them.
+
+### 4.6 Drain the Readwise inbox (book ingest)
+
+When the user says "drain Readwise" (or "drain the Readwise inbox"):
+
+1. **List books** — call the Readwise MCP (`mcp__readwise__*`) to enumerate books. Diff against `raw/notes/readwise-state.json` `books_processed[].id` to find books with no entry. Sort by most recent activity. (For state outside a Claude session, `scripts/readwise-state.py` prints the same pending count.)
+2. **Summarize each in one line** — title, author, highlight count, date added. Optionally pull 2–3 representative highlights to ground the recommendation. Example: *"The Creative Act — Rick Rubin (138 highlights, added 2024-03-12) — taste-as-craft and the silent practice of choosing what's true."*
+3. **Recommend a triage class for each** — one of:
+   - **A) Full book ingest** — the §4.1 9-step workflow, scaled for books. Recommend when the book introduces named frameworks, has heavy marginalia, or sits adjacent to active project work. Note expected page touch count.
+   - **B) Skim ingest** — book source page only with the strongest 5–10 highlights inline; no concept-page promotion. Recommend for narrative non-fiction with thin conceptual payload, or rereads where the wiki already covers the framework.
+   - **C) Queue** — record-only; revisit on a later drain. No wiki writes.
+   - **D) Dismiss** — record-only so it stops surfacing; no wiki writes.
+4. **Wait for the user** to pick per book. Don't batch-ingest without explicit instructions.
+5. **Execute each chosen action:**
+   - **A) Full ingest:** call Readwise to pull all highlights for the book. Write `wiki/sources/book-<slug>.md` with frontmatter (`type: source`, `subtype: book`, `authors:`, `published:`, `isbn:` if known, `readwise_book_id:`), a one-paragraph abstract, **highlights grouped by chapter/location** with the user's marginalia preserved verbatim as block quotes, distilled key claims, and `[[wiki-links]]` to surfaced entities / concepts / people. Then run the §4.1 step-5 cross-reference pass on referenced pages. **Compounding rule applies** — only promote a mentioned author / framework to its own page if another wiki page would plausibly cite it.
+   - **A) Standout-highlight inspiration pages:** during the drain, flag 1–3 highlights per book as inspiration-worthy (use sparingly — this is the Farzapedia pattern, not a quote dump). For each flagged highlight, create `wiki/inspiration/<slug>.md` with the verbatim quote, attribution back to the `book-<slug>.md` page, and a `## Links` section. Do not paraphrase the user's marginalia — preserve voice.
+   - **B) Skim ingest:** write only `wiki/sources/book-<slug>.md` with the top 5–10 highlights and a thin abstract. Do not create or update concept/entity pages.
+   - **C) Queue / D) Dismiss:** record-only; no wiki writes.
+6. **Update `index.md`** — add the new book source page row, plus any new entity/concept/inspiration pages created in A.
+7. **Append one log entry** covering the batch (not one per book), e.g. `## [2026-05-25 14:30] ingest | drained Readwise — 2 full, 1 skim, 3 queued, 1 dismissed`.
+8. **Record in `readwise-state.json`** — append an entry to `books_processed` for **every** book touched (A, B, C, *and* D) so dedupe holds across all four paths:
+   ```json
+   {"id": <readwise_book_id>, "slug": "<book-slug>", "drained": "<iso8601>", "class": "A" | "B" | "C" | "D"}
+   ```
+
+The state transitions are your state machine — kept in `readwise-state.json` instead of file tags because the source-of-truth lives in Readwise, not the local filesystem:
+
+```
+unprocessed → drained (class A)   book source page + concept pages + optional inspiration pages
+unprocessed → drained (class B)   book source page only
+unprocessed → drained (class C)   record only; revisit later
+unprocessed → drained (class D)   record only; never re-surface
+```
+
+A second "drain Readwise" run will skip every book whose `id` already appears in `books_processed[]`, regardless of class.
+
+#### Cadence
+
+There's no fixed rhythm — books finish irregularly. Reasonable triggers:
+
+- **A book just hit "finished" in Readwise** — drain while the highlights are still warm.
+- **Monthly sweep alongside the Sunday Weekly Review** — catch anything that synced quietly.
+- **Before drafting an output that should cite a recently-read book** — pairs with §4.9.
+
+Skip months without guilt; the dedupe in `books_processed[]` means a backlog drains cleanly whenever you return to it.
+
+### 4.7 Weekly synthesis brief
+
+When the user says "weekly synthesis" / "synthesis brief" / runs the Sunday Weekly Review:
+
+1. **Pull the week's highlights** — call the Readwise MCP with `highlighted_at_gt=<7 days ago>` (and/or `updated_gt`) to collect every highlight created or annotated in the last seven days, across **both books and Reader articles**. Use `response_fields` including `text`, `note`, `book_title`, `book_author`, `book_category`, `highlighted_at`.
+2. **Cluster by theme** — group the highlights into 3–6 clusters using your own judgement. **Do not pre-define categories.** Let the clusters fall out of what the user actually marked this week — they're a more honest signal than any predetermined taxonomy. One-sentence label per cluster.
+3. **Hunt for collisions** — *this is the unique-to-this-MCP move; run it every week as a standing instruction, not as a one-off.* Explicitly look for three kinds of friction:
+   - **Direct contradictions** — two highlights from the last 7 days that disagree on the same claim. Quote both, name the disagreement.
+   - **Cross-domain rhymes** — a marketing / business / craft highlight from this week that rhymes with a Vedic, philosophical, or older-tradition framework you've highlighted previously. (Use Readwise full-text search across older highlights *and* check `wiki/concepts/` for matching pages.) **This is the standing instruction** — the agent looks for this every week, even when nothing nominally connects the two domains. The collision-hunt earns its keep here: highlights are inert one-document-at-a-time, but a Storr observation about *theory of control* may rhyme with a passage in *The Bhagavad Gita* on detachment, and that rhyme is the brief's most valuable output.
+   - **Wiki-impact strengthens / undermines** — a highlight from this week that strengthens or undermines a claim already in `wiki/concepts/`. List the concept page, list the claim, list the highlight, and state the direction.
+4. **File the brief as a query page** at `wiki/queries/synthesis-<YYYY-Www>.md` (e.g. `synthesis-2026-W21.md`, ISO-week format). Structure:
+   ```
+   ## Clusters this week
+   <3-6 one-sentence cluster labels, each with 2-4 representative highlights as block quotes>
+
+   ## Collisions and tensions
+   <every collision found in step 3 — direct contradictions, cross-domain rhymes, and wiki-impact items>
+
+   ## What this week added to the wiki
+   <links to existing wiki/concepts/*.md that this week's highlights strengthen or extend>
+
+   ## What this week contradicted
+   <links to existing wiki/concepts/*.md that this week's highlights weaken or qualify>
+   ```
+   If a section is empty for the week, write `_none._` — don't omit the section. The 4-section shape is the contract; week-to-week variance lives in the content.
+5. **Offer to fan out** — for each item in **Collisions and tensions** or **What this week contradicted**, offer to update the relevant `wiki/concepts/*.md` page with a `## Contradictions` section per §8. Don't auto-write; ask per item.
+6. **Record in `readwise-state.json`** — append to `synthesis_briefs`:
+   ```json
+   {"week_iso": "2026-W21", "filed_to": "wiki/queries/synthesis-2026-W21.md", "created": "<iso8601>"}
+   ```
+7. **Append one log entry** — `## [YYYY-MM-DD HH:MM] query | weekly synthesis brief — N highlights across M clusters, K collisions`.
+
+**Why this earns the MCP's keep.** Highlights are inert one-document-at-a-time. Daily Review surfaces them randomly. The cluster pass plus the standing collision-hunt is the single feature that turns a passive highlight store into a synthesis loop — *the agent does the connection-making the user wouldn't notice unaided.* If a brief produces zero collisions, write `_none found this week._` and move on; the absence is data. If a brief produces a collision the user wouldn't have caught reading the highlights individually, the workflow has paid for itself.
+
+#### Cadence
+
+- **Sunday Weekly Review** is the default. Run it as part of the existing ritual.
+- Skip weeks with fewer than 5 new highlights — there's not enough material to cluster honestly. Note the skip in the next brief's intro line so the longitudinal signal stays clean.
+- **Don't backfill.** A synthesis brief is about *this week's reading*, not catch-up; if you missed three weeks, run one brief over the last 7 days and let the older highlights surface naturally via the §4.8 resurface workflow.
+
+### 4.8 Resurface for current work
+
+When the user says one of:
+
+- **"resurface for `<work-context>`"** — e.g. *"resurface for the KOG positioning piece"*, *"resurface for the marketri overtake plan"*. The work is named explicitly.
+- **"what should I revisit for this week's work"** / **"resurface for this week"** — the agent reads `Now.md` and runs the workflow **once per active item** listed there.
+
+This workflow replaces Readwise Daily Review's spaced-repetition / random surfacing with **context-triggered relevance** — the highlight you should see today is the one that's about *this week's actual work*, not the one the SR algorithm happened to schedule.
+
+1. **Read the work context** — either explicit (from the prompt) or pulled from `Now.md`'s "This week" list. For each item: if a `wiki/projects/<slug>.md` page exists, read it too so the resurface is anchored to the project's known shape (active client, stage, blockers).
+   - **Guard:** if `Now.md`'s `updated:` frontmatter is more than 14 days behind today, stop and ask the user to refresh it before running. Resurfacing against stale context produces stale results.
+2. **Hybrid Readwise query** — call `mcp__readwise__readwise_search_highlights` with all three signals (the MCP supports both vector search and field-targeted full-text queries in one call):
+   - **vector_search_term** — the work's topic in the user's words.
+   - **full_text_queries** — `field_name: highlight_tags` for tag overlap, `field_name: document_author` for known-relevant authors, `field_name: highlight_plaintext` for must-have terms.
+3. **Re-rank the top ~20 candidates against the specific work context.** Return **5–8 most-applicable** — explicitly not most-recent, not most-highlighted, not most-vector-similar. Most-applicable means: would quoting this highlight *change* what the user is currently writing / building / pitching? If yes, keep it. If it just feels related, drop it.
+4. **Present each highlight as:**
+   ```
+   > "<verbatim quote>" — <author>, <book>
+   **Why this matters for <work>:** <one line — what specifically changes if you act on this>
+   ```
+   Where the "why this matters" line is the work the agent earns — not a generic gloss. If a highlight maps to an existing `wiki/concepts/*.md` page, drop the `[[wiki-link]]` into the hook so the connection compounds.
+5. **Honest empty result is acceptable.** If nothing crosses the applicability threshold, write: *"No highlights crossed the applicability threshold for `<work>`. The Readwise library doesn't have material this work can borrow from yet."* This is data — it tells the user where to read next. Fabricating relevance is the failure mode to avoid.
+6. **Offer to file the curated set** as `wiki/queries/resurface-<work-slug>-<YYYY-MM-DD>.md`. Ask before writing — many resurfaces are operational (consumed once, then discarded). File when the curation itself is worth keeping (e.g., the user accepts ≥4 of the 5–8 hooks; the resurface is for a project that recurs; the user explicitly says "file this"). When filing, write the same five-item-per-highlight block plus a one-paragraph framing intro tying the set to the work.
+7. **Record in `readwise-state.json`** — append to `resurface_log`:
+   ```json
+   {"work_context": "<slug>", "highlights_offered": [<readwise_highlight_ids>], "created": "<iso8601>"}
+   ```
+   Even when no file is created, the log entry tracks that the resurface was run. Lets the §4.11 reading-pattern mirror see which work items are pulling on the library.
+8. **No log entry** for the resurface itself unless a query page was filed. Resurface-without-file is operational; `log.md` is for state-changing events.
+
+**Why this beats Readwise Daily Review.** Daily Review optimizes for **retention** via spaced repetition — it's good for memorizing material. Resurfacing for current work optimizes for **application** — it pulls the right page out of your library at the moment you can use it. The two solve different problems; both can run, but the resurfacing pass is what makes the highlight library *load-bearing* for the work, rather than a museum.
+
+**When `Now.md` drives the workflow** (the "for this week's work" trigger), present results **one work item at a time** with a brief pause between items. A user reviewing 3 items × 6 hooks each is reading 18 highlights — too many to absorb in one block. Chunking by item lets the user act on cluster A's hooks before seeing cluster B.
+
+#### Cadence
+
+- **Ad-hoc** when starting a new piece of work — say "resurface for `<this thing I'm about to do>`" *before* you start drafting / building.
+- **Sunday-tied** when running the §4.7 weekly synthesis — the synthesis identifies *what came in*; this workflow surfaces *what's already there that you should re-use*. Natural pairing.
+- **Not daily** — daily resurfacing crosses back into the noise pattern Daily Review already occupies. The whole point is that the workflow is *triggered*, not scheduled.
+
+### 4.9 Draft from highlights
+
+When the user says **"draft `<output-type>` on `<topic>` from highlights"** — e.g. *"draft a LinkedIn post on Mirage PMF from highlights"*, *"draft the opening of the fractional-marketing pillar on niche discipline from highlights"*, *"draft a cold-email opener for the KOG sequence from highlights"*.
+
+**The point of this workflow is not "AI writing assistance."** It is the inverse: the output must carry the highlights and the user's marginalia rather than generic filler. This is the workflow that earns the "human-tone, not AI-generated" bar ProGrowth content holds itself to.
+
+1. **Identify the output shape.** Parse the trigger for `<output-type>` (LinkedIn post / blog section / cold-email opener / pitch slide / one-page memo / talk outline / etc.) and `<topic>`. Output types have different length and structure conventions:
+   - **LinkedIn post** — 120–300 words; one core claim; 1 quoted highlight max; conversational voice.
+   - **Blog section** — 400–900 words; 2–4 highlights woven in; sub-headings if useful.
+   - **Cold-email opener** — 40–80 words; *referenced* highlight (not quoted at length); see §4.8 resurface candidates for the KOG outreach as a worked example.
+   - **Pitch slide / one-page memo** — bulleted; 1–2 highlights as supporting quotes with attribution.
+   - **Talk outline** — claim-skeleton + 3–5 supporting highlights to load into the talk.
+   If the trigger is ambiguous, ask once for the output shape, then proceed.
+2. **Gather raw material.** Call `mcp__readwise__readwise_search_highlights` with `vector_search_term` matching the topic, plus `full_text_queries` if the topic has a known author or named-framework anchor. Request `response_fields` including `text`, `note`, `book_title`, `book_author`, `highlight_tags`. **The `note` field is the load-bearing signal** — that's the marginalia, the "why I marked this." Pull ~20 candidates, then re-rank for applicability to the *specific* output (most-applicable, not most-similar — same rule as §4.8 step 3).
+3. **Cross-reference into the wiki.** For each surviving candidate highlight, scan `wiki/concepts/*.md` and `wiki/sources/*.md` for matching pages. Note any concept pages the topic touches — the draft should `[[wiki-link]]` to them when the connection is real. This is the compounding move: outputs cite the wiki, the wiki accumulates outputs in its "Sources citing this page" list, the next draft on a related topic finds the prior draft via that backlink.
+4. **Draft with the hard voice rule.** **Preserve the user's voice; quote real highlights.** Specifically:
+   - **Quote 2–4 highlights verbatim** (LinkedIn-post outputs may use only 1) with attribution. Verbatim means *exactly the text from Readwise* — apostrophe and dash style is the user's, not yours. The §4.6 lesson holds: never paraphrase a quote under an author's name.
+   - **Marginalia is connective tissue, not paraphrase fodder.** If a highlight has a `note` attached, the note is the user's reading of it. Lift the note's language directly into the draft as the linking sentence between highlights — *do not rewrite it.* Quote the marginalia inline if the voice is strong enough (`"<your own note>" — Siva's reading of the passage`).
+   - **No generic-filler sentences.** Sentences like "in today's fast-moving landscape," "more than ever," "the question we need to ask is" — anything that could appear in any AI-generated draft on any topic — get stripped. If the sentence isn't doing work specific to this topic and these highlights, it doesn't ship.
+   - **Embed `[[wiki-links]]` where the draft cites a concept the wiki already covers.** Don't strip them at the end; let the output carry the graph.
+5. **Honest empty-result rule.** If fewer than 2 highlights survive re-ranking for applicability — and the user hasn't authored marginalia on the topic — say so plainly: *"No highlights cross the applicability threshold for `<topic>`. The Readwise library doesn't have material this output can borrow from yet."* Fabricating a draft from thin material is the failure mode this rule prevents.
+6. **Marginalia-absent fallback.** If candidate highlights are dense on the topic but **none have user notes attached**, the workflow degrades gracefully:
+   - The act of *marking* a highlight is itself a signal (the user thought this was worth saving) — proceed with the verbatim quotes, but flag the absence: *"This draft is built from your highlights but you haven't added marginalia on this topic yet — the voice is mine inferring yours from the surrounding wiki vocabulary."*
+   - Pull voice from `wiki/concepts/*.md` pages on the topic (which the user has accepted as expressing their position). The concept pages are voice-of-record when marginalia is missing.
+   - This fallback is honest, not silent. Don't pretend marginalia is there when it isn't.
+7. **Present the draft inline + save to file.** Save at `raw/notes/drafts/<topic-slug>-<YYYY-MM-DD>.md`. **Tracked by default** (so drafts compound across devices and the user can find them later); the user can `.gitignore` the folder if drafts should stay local-only. Frontmatter:
+   ```yaml
+   ---
+   type: draft
+   output_type: <linkedin-post | blog-section | cold-email-opener | ...>
+   topic: <verbatim from trigger>
+   created: <YYYY-MM-DD>
+   updated: <YYYY-MM-DD>
+   highlights_used: [<readwise_highlight_ids>]
+   wiki_concepts_referenced: [<wiki-page-slugs>]
+   ---
+   ```
+   Iterations on the same day update the same file in place. A genuinely-different variant gets `-v2` suffix.
+8. **Record in `readwise-state.json`** — append to `outputs_drafted`:
+   ```json
+   {"topic": "<verbatim topic>", "draft_path": "raw/notes/drafts/<slug>.md", "created": "<iso8601>"}
+   ```
+9. **Log one entry per session** (not per iteration). When the user starts on a fresh topic, append `## [YYYY-MM-DD HH:MM] query | drafted <output-type> on <topic> from highlights — N quotes, M wiki concepts cited`. Iterations on the same topic in the same session don't earn new log entries.
+
+**Why this matters.** Most "AI-assisted writing" produces drafts that are competent and generic — exactly the failure mode ProGrowth's content has to avoid. The §4.9 workflow inverts the relationship: highlights are the *evidence*, marginalia is the *voice*, the wiki is the *graph*, and the AI's job is the connective scaffolding around all three. If the draft could have been written without ever opening Readwise or the wiki, the workflow has failed at its job. The draft passes the bar when a friend reading it says *"this sounds like you read X, then Y, and then connected them in a way that's specifically yours"* — that's exactly what should be true, because it is.
+
+#### Cadence
+
+- **Triggered, not scheduled.** Drafts happen when a specific output is being made — a LinkedIn post, a blog section, an email, a slide. Don't run §4.9 as a daily habit; run it as a writing tool.
+- **Pairs naturally with §4.8 resurface.** When working on a piece, run §4.8 first to surface relevant highlights for the *work*, then §4.9 to draft *from* those highlights. The two workflows compose — resurface prepares the material, draft produces the output.
+- **Multiple drafts per topic are normal.** Running §4.9 three times in one session to iterate on a LinkedIn post is the expected pattern. Each iteration updates the same file; only the first iteration produces a log entry.
+
+### 4.10 Triage the Reader inbox
+
+When the user says **"triage Reader"** / **"triage the inbox"** / **"drain Reader"**:
+
+This is the **Readwise Reader** app (read-it-later) — *not* the article inbox in `raw/articles/`. The Reader triage is **upstream** to §4.3: Class-A items in this workflow become `tags: [inbox]` files in `raw/articles/` that §4.3 picks up on the next Sunday drain.
+
+1. **List the pile** — call `mcp__readwise__reader_list_documents` for **both** the `new` (read-later inbox, `triage_status: new`) and `feed` (RSS subscriptions) locations. Pull `id`, `title`, `url`, `source`, `word_count`, `created_at`. Count each location separately; large `feed` queues need different treatment than the smaller, more deliberate `new` location (see Cadence below).
+2. **Summarize one line per item** — title, source domain, length (in minutes-to-read = `word_count / 225`), date saved. Group by location: present `new` items first, then `feed` items. Don't paginate beyond ~20 items per chunk — at higher volume, batching is mandatory or the user can't make per-item picks honestly.
+3. **Recommend a triage class for each** — one of:
+   - **A) Promote to `raw/articles/` for full ingest.** High-signal, adjacent to current wiki / `Now.md` work, or surfaces a named concept the wiki doesn't yet cover. Use this for items worth the §4.1 9-step ingest treatment.
+   - **B) Skim now.** Surface the article's key claim (2–4 sentences) inline in chat, then archive in Reader. **Don't persist to `raw/`** — this is the "I just want to know what they said" path. Recommend for category recaps, news pieces, and item-of-the-week posts that don't introduce new claims.
+   - **C) Archive.** Move the item out of `new`/`feed` but keep it in Reader. No wiki action. Recommend when the item might be useful later but isn't actionable now (reference material, future-product research).
+   - **D) Delete.** Guilt-pile clearance. Item is in the inbox because past-you was optimistic, present-you doesn't believe in it anymore. The whole point of this workflow is to make this an easy, no-shame click.
+4. **Wait for the user** to pick per item. **Do not batch-act.** Group decisions of the same class are fine (e.g., user says "all the Substack newsletter posts from this week → C archive") — but the class still has to be named per item or per explicit group.
+5. **Execute each chosen action:**
+   - **A) Promote:** call `mcp__readwise__reader_get_document_details` to fetch the full content. Write to `raw/articles/<slug>.md` with frontmatter that §4.3 will recognize:
+     ```yaml
+     ---
+     type: article
+     title: <verbatim from Reader>
+     url: <original URL>
+     source: <domain>
+     reader_id: <Reader document id>
+     saved: <YYYY-MM-DD>
+     word_count: <int>
+     tags: [inbox]
+     ---
+     ```
+     Then move the Reader document to `archive` (via `mcp__readwise__reader_move_documents`) so it doesn't re-surface on the next triage. **Don't ingest the article in this workflow** — §4.3 handles the ingest on the next Sunday drain. The hand-off is the point.
+   - **B) Skim:** read the article via `reader_get_document_details`, write 2–4 sentence summary inline in chat with attribution. Then call `reader_move_documents` to move to `archive`. No file written.
+   - **C) Archive:** call `reader_move_documents` to move to `archive`. Done.
+   - **D) Delete:** Reader's API supports removal — use `reader_move_documents` to the appropriate trash/delete location (Reader's deletion semantics vary; consult the MCP tool's current behavior). If true deletion isn't available, archiving with a `deleted` tag is the documented fallback.
+6. **Summarize the batch in chat** — *"N promoted, M skimmed, K archived, J deleted. Promoted items will be picked up by the next §4.3 article drain."* Keep it terse; the per-item work is done.
+7. **Append one log entry** covering the batch — `## [YYYY-MM-DD HH:MM] query | triaged Reader — N promoted, M skimmed, K archived, J deleted`.
+8. **Record in `readwise-state.json`** — append to `feed_triage_runs`:
+   ```json
+   {"created": "<iso8601>", "promoted": <N>, "skimmed": <M>, "archived": <K>, "deleted": <J>}
+   ```
+   The counts are the longitudinal signal — if `promoted` is climbing while `deleted` is flat, the read-it-later filter at the *source* (what you save) is too loose. The §4.11 reading-pattern mirror reads these counts.
+
+**Why this matters.** The failure mode of every read-it-later app is the guilt pile. Items accumulate faster than they get read; the inbox becomes a museum of optimism past. Triage on a regular cadence keeps **intake deliberate** — every item that survives a triage was actively chosen, not passively deferred. The `D` class is load-bearing: if there's no easy way to delete-without-guilt, the workflow degrades to "skim everything anyway" which is what Daily Review was supposed to fix.
+
+**Hand-off to §4.3.** Class-A items leave Reader and enter `raw/articles/` with `tags: [inbox]`. The next Sunday article drain picks them up automatically — you don't re-decide what to do with them. This is the chain: Reader (intake) → §4.10 (triage) → `raw/articles/` (queue) → §4.3 (ingest decision) → `wiki/` (synthesis). Each step has its own job; none of them is "decide everything at once."
+
+#### Cadence
+
+The two locations have different rhythms:
+
+- **`new` (inbox)** — drain whenever it exceeds ~10 items, or on the Sunday Weekly Review by default. The inbox represents *deliberate* saves (the user clipped something on purpose); over-accumulation here is the symptom of postponing decisions, not of over-subscribing.
+- **`feed` (RSS)** — drain on a longer rhythm (every 2–4 weeks) because feeds accumulate by subscription, not by deliberate choice. The triage *here* is partly about un-subscribing from feeds where the D-class rate exceeds 80% — that's a signal the subscription itself is the noise, not any given item.
+- **Before a synthesis brief (§4.7)** — running a triage first ensures the week's highlights are over actually-chosen material, not over noise you didn't have the patience to delete.
+
+### 4.11 Reading-pattern mirror
+
+When the user says **"reading mirror"** / **"what am I actually reading"** / runs the quarterly review.
+
+This is the only workflow in the §4.6–§4.10 family that asks a question the user does not want to hear: *what you said you'd focus on this quarter vs. what you actually fed your brain.* The output is a **candid mirror — not a celebratory summary.** Mirrors that conclude *"great mix of reading this quarter!"* have failed their job. If the quarter's reading was genuinely well-calibrated, the mirror should still surface what *didn't* show up, what's narrowing, and what overlaps across nominally unrelated reads. A mirror that surfaces no friction is suspect.
+
+1. **Pull the last 13 weeks of Readwise activity** — the quarterly window. Multiple calls:
+   - `mcp__readwise__readwise_list_highlights` with `highlighted_at_gt = <13 weeks ago>` for every highlight in the window. Group by `book_id` to derive per-source highlight counts.
+   - `mcp__readwise__reader_list_documents` with `updated_after = <13 weeks ago>` for Reader articles read (look for non-null `first_opened_at` and `last_opened_at` within the window).
+   - From the accumulated `readwise-state.json`: which §4.6 book ingests, §4.10 Reader triages, §4.7 synthesis briefs, §4.8 resurfaces, §4.9 drafts happened in the window.
+2. **Categorize by topic / vertical / author. Build a small frequency map** — book titles by author, articles by source domain, highlights by category. **Don't pre-define the categories** — let them emerge from the actual data. Typically 5–9 emergent categories per quarter.
+3. **Cross-reference against goals.** Read the user's goal system from at least three places:
+   - **Active projects:** every `wiki/projects/*.md` page that was current during the window.
+   - **`Now.md`** — the 12-week-year theme line and the "This week" items that were active during the window (use git history on `Now.md` if multi-week reconstruction is needed).
+   - **External goal artifacts** if the user maintains them — Harada Method goal sheets, OKRs, quarterly planning docs. Read them via Obsidian MCP if they're in the vault, or ask the user to summarize if they're elsewhere. The §4.11 spec doesn't require any *specific* goal system, but cross-reference against *some* explicit goal artifact — without that, the mirror has nothing to mirror against.
+4. **Produce the candid mirror** — for each of the four surfaces below, write 1–3 specific observations. Be willing to be wrong; the mirror is the user's prompt to push back, not the agent's verdict.
+   - **Over-indexing** — topics that consumed disproportionate read time relative to their goal priority. *"You read 4 books on storytelling craft this quarter but no books on the quantitative side of [active project], even though it's the harder leg of your goal."*
+   - **Verticals stopped feeding** — categories you used to read that have gone silent. *"You used to read regularly on [topic] through Q1; nothing in the last 13 weeks. Intentional, or drift?"* The drift question matters because the answer determines whether the silence is **strategic narrowing** (you decided this is no longer useful) or **passive drift** (you just stopped, without ever deciding).
+   - **Narrowing** — drift toward a smaller author/source set. If the previous quarter had 8 distinct authors with ≥3 highlights and this quarter has 4, name the contraction. Narrowing is *neutral* on its face — sometimes deep is right, sometimes it's an echo chamber — but the agent's job is to surface the pattern, not judge it.
+   - **Surprising overlap** — themes that recurred across nominally unrelated reads. This is the quarterly counterpart to §4.7's collision-hunt — at week-scale you catch which highlights collide; at quarter-scale you catch which *themes* keep showing up across unrelated material. If the same conceptual move appeared in 3+ unrelated books or articles, it's a candidate emergent pattern worth a `wiki/concepts/` page (or strengthening an existing one).
+5. **File as a query page** at `wiki/queries/reading-mirror-<YYYY>-Q<n>.md` (calendar quarter — `Q1` covers Jan-Mar, `Q2` Apr-Jun, `Q3` Jul-Sep, `Q4` Oct-Dec). If the user runs 12-week-year cycles instead of calendar quarters, allow `reading-mirror-<YYYY>-cycle-<n>.md`. Structure:
+   ```
+   ## Period
+   <window dates, # books touched, # articles read, # highlights added>
+
+   ## Frequency map
+   <emergent categories with counts>
+
+   ## Goal cross-reference
+   <what was on the goal list this quarter, lifted from Now.md / wiki/projects/*.md / external goal artifacts>
+
+   ## Over-indexing
+   ## Verticals stopped feeding
+   ## Narrowing
+   ## Surprising overlap
+
+   ## Open question
+   <one question for the next quarter's reading diet — not a prescription>
+   ```
+6. **End with a question, not a prescription.** Step 4's findings expose patterns; step 6 is the user's prompt to decide what (if anything) to change next quarter. The agent does not say *"you should read more X."* The agent asks *"given the over-indexing on X and silence on Y, what reading would you want to bias toward next quarter?"* The mirror is diagnostic; the prescription is the user's.
+7. **Record in `readwise-state.json`** — append to `mirror_runs`:
+   ```json
+   {"period_iso": "2026-Q2", "filed_to": "wiki/queries/reading-mirror-2026-Q2.md", "created": "<iso8601>"}
+   ```
+8. **Append one log entry** — `## [YYYY-MM-DD HH:MM] query | reading-pattern mirror — <period> — N books, M articles, K highlights, J emergent categories`.
+
+**Why this matters.** Reading is a leading indicator of work. What you fed your brain last quarter shapes what you can do this quarter; what you feed it this quarter shapes the work two quarters out. The mirror catches drift *before* it propagates into output — the narrowing you notice in Q2's reading will show up as narrowing in Q4's writing if uncaught. The §4.11 workflow exists because the user is the only person who can spot calibration mistakes in their own reading diet, and they can't spot them without the data laid out honestly.
+
+The mirror is also the only workflow with a **truth-telling bias built into the spec** — every other workflow (§4.6–§4.10) is operationally neutral. §4.11 is explicitly tasked with surfacing uncomfortable findings. If the mirror's tone drifts toward "great quarter, well done" over time, that drift is itself a finding worth noting on the next run.
+
+#### Cadence
+
+- **Quarterly** (calendar quarters) is the default — anchored to the natural reflection points around Jan/Apr/Jul/Oct.
+- **Pairs with the 12 Week Year review** if the user runs that cycle — the reading mirror is the input layer to the broader 12-week reflection, since reading shapes capacity.
+- **Skip a quarter without guilt** if the user wasn't tracking goals or reading was minimal — but log the skip in `mirror_runs` with a one-line reason, so the longitudinal signal stays clean. The `scripts/readwise-state.py` reporter's "days since last mirror" line is the nag.
+- **Don't run more often than quarterly** — the patterns the mirror catches need at least 8–13 weeks of data to be visible. Monthly mirrors collapse into noise.
 
 ## 5. Page Conventions
 
@@ -321,3 +609,32 @@ If you ever need to *change how the public site looks* (dashboard composition, w
 **Compact ("just do it").** If the user says something like "just do what's required", "trim the unnecessary ones", or "don't over-explain", drop the discussion step and produce the minimum-viable set of pages. Use your best judgment on which entities earn dedicated pages under the compounding rule. Still produce the log entry.
 
 The mode is set per-task by the user's phrasing, not by a global setting. Switch back to interactive on the next ingest unless the user carries the compact instruction forward.
+
+## 11. Obsidian MCP Tool Preference
+
+When operating inside `~/Projects/gnosis/`, prefer the Obsidian MCP tools (`mcp__obsidian__*`) over filesystem `Read`/`Grep`/`Write`/`Edit` for vault work. The MCP server reads the live Obsidian vault — it sees unsaved edits, respects the index, and triggers re-indexing on writes. Filesystem operations only see what's on disk and bypass Obsidian's awareness.
+
+### Prefer MCP for
+
+- **Reading a vault page** — `mcp__obsidian__vault_read` over `Read`. Returns the live buffer including unsaved changes.
+- **Listing vault contents** — `mcp__obsidian__vault_list` over `ls`/`Glob`.
+- **Full-text search** — `mcp__obsidian__search_simple` (substring) or `mcp__obsidian__search_query` (Dataview-style filters) over `Grep`.
+- **Backlinks / inbound links** — `mcp__obsidian__search_simple` querying for `[[page-slug]]` is the canonical way; the linking pages are the backlinks. Use this when maintaining `## Sources citing this page` sections (§5.3).
+- **Tag enumeration** — `mcp__obsidian__tag_list` over grepping frontmatter.
+- **Writing or patching pages** — `mcp__obsidian__vault_write` / `vault_patch` / `vault_append` over `Write` / `Edit`. These trigger Obsidian's re-index immediately; raw filesystem writes don't.
+- **Moving or deleting** — `mcp__obsidian__vault_move` / `vault_delete`. They preserve Obsidian's link integrity where possible.
+- **Document structure before patching** — `mcp__obsidian__vault_get_document_map` to see headings/sections.
+- **Opening a page in the Obsidian UI** — `mcp__obsidian__open_file` (e.g., after a lint flag, to let the user fix in-app).
+
+### Fall back to filesystem `Read`/`Grep`/`Bash` when
+
+- The Obsidian app isn't running and the MCP server is unreachable. Surface this to the user — don't silently degrade and don't pretend the writes hit a live vault.
+- You're touching `raw/`. The user owns `raw/` (§1) and Obsidian's index is incidental there. Filesystem `Read` is the correct tool.
+- You need shell-only operations: `git log`/`blame` on a page, `find` by mtime, bulk regex across hundreds of files where MCP search would be slower, or running `scripts/*.py`/`scripts/*.sh`.
+- You're touching the projection at `~/Projects/gnosis-main/` — that's outside the canonical vault entirely (§9), and MCP doesn't see it.
+
+### Never via either path
+
+- Do not write to `raw/` (§1).
+- Do not edit auto-generated widget blocks in the projection (§8). Edit the generator instead.
+- Do not use MCP writes as a shortcut to bypass the §4.1 ingest workflow — the workflow (discuss → write source page → update referenced pages → cross-reference → index → log) is independent of the tool used to make the writes.

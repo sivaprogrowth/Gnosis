@@ -1,0 +1,13 @@
+filters:
+  type == "company"
+views:
+  - type: table
+    name: Companies
+    order:
+      - file.name
+      - website
+      - tags
+      - file.backlinks
+    sort:
+      - property: file.backlinks
+        direction: DESC

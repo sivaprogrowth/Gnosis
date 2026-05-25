@@ -1,0 +1,13 @@
+filters:
+  or:
+    - tags.contains("siva")
+    - tags.contains("progrowth")
+    - tags.contains("founder")
+views:
+  - type: list
+    name: Siva's orbit
+    sort:
+      - property: type
+        direction: ASC
+      - property: file.name
+        direction: ASC

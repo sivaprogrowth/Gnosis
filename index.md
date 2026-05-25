@@ -9,6 +9,7 @@ See `CLAUDE.md` §7 for the format.
 | Page | Summary | Updated |
 |------|---------|---------|
 | [[ai-native-services-playbook]] | Emergence Capital (Spring 2026) — 9-section playbook defining the AI-Native Services (AINS) business model. Coins Mirage PMF. | 2026-04-19 |
+| [[book-the-science-of-storytelling]] | Will Storr (2019) — neuroscience-grounded synthesis of why story works on the human brain. Source for the Sacred Flaw Approach, controlled hallucination, connect-and-dominate, wants-vs-needs framings. | 2026-05-25 |
 | [[geo-how-to-dominate-ai-search]] | Chen et al. (U of Toronto, Sep 2025) — empirical comparison of AI search vs Google; establishes the GEO framework. | 2026-04-19 |
 | [[linkedin-phani-sama]] | LinkedIn profile export — Phani Sama (Apr 2026), founder of redBus and Siva's contact. | 2026-04-19 |
 | [[linkedin-siva-cotipalli]] | LinkedIn profile export — Siva Cotipalli (Apr 2026), owner of this wiki. | 2026-04-19 |
@@ -70,12 +71,17 @@ People, companies, books, products, places — the concrete nouns in Siva's worl
 |------|---------|---------|
 | [[ai-overview-tool]] | ProGrowth's AI-visibility SaaS (overviews.progrowth.services); Palantir-pattern leave-behind product. | 2026-04-19 |
 | [[gnosis-hackathon]] | This wiki + its public demo at gnosis-site.vercel.app. | 2026-04-19 |
+| [[kog-bid-bonds-outreach]] | ProGrowth's cold-outreach campaign for KOG — bid bond / surety platform targeting bonded contractors. Ready to send. | 2026-05-25 |
+| [[progrowth-fractional-marketing-seo]] | 6–9-month strategy to overtake Marketri on "fractional marketing." Pillar + cluster architecture; first pillar piece drafting this week. | 2026-05-25 |
 
 ### Inspiration
 
 | Page | Summary | Updated |
 |------|---------|---------|
 | [[farzapedia-pattern]] | Farza's tweet on maintaining a personal LLM-native knowledge base; design inspiration for Gnosis. | 2026-04-19 |
+| [[reward-systems-spike-in-pursuit]] | Storr quote: dopamine spikes in the pursuit, not the achievement — neuroscience under every honest goal system. | 2026-05-25 |
+| [[story-is-tribal-propaganda-and-its-cure]] | Storr's sharpest one-liner on the dual function of narrative. | 2026-05-25 |
+| [[the-job-of-the-plot-is-to-plot-against-the-protagonist]] | Storr's tightest statement of the book's thesis. Portable into customer-engagement and self-development framings. | 2026-05-25 |
 
 ## Concepts
 
@@ -90,14 +96,20 @@ Ideas, frameworks, theories.
 | [[brand-earned-social-taxonomy]] | Chen et al.'s 3-tier classification; compared with McKinsey's 6-category alternative. | 2026-04-19 |
 | [[brand-strength-ai-visibility-gap]] | Market share does not predict AI share-of-voice; symmetric risk/opportunity for leaders and challengers. | 2026-04-19 |
 | [[citation-network-mapping]] | Continuous per-engine competitive intelligence; only 16% of CMOs currently track this. | 2026-04-19 |
+| [[connect-and-dominate]] | Storr's two-axis status drive — humans simultaneously seek tribal connection and intra-tribal rank. Applies to B2B buying and brand voice. | 2026-05-25 |
+| [[controlled-hallucination]] | Storr's foundational claim — perception is a brain-constructed model; story works by hijacking the model-builder. | 2026-05-25 |
 | [[e-e-a-t]] | Experience/Expertise/Authoritativeness/Trustworthiness — now direct inputs to AI recommendations. | 2026-04-19 |
 | [[earned-media-bias]] | AI engines systematically favor third-party editorial; reinforced with McKinsey AIO vertical data. | 2026-04-19 |
 | [[from-retrieval-to-agency]] | Chen et al.'s argument that AI search is shifting users from retrieving info to delegating actions. | 2026-04-19 |
 | [[generative-engine-optimization]] | Framework for AI search visibility; now spans Chen et al.'s 4+5 framework and McKinsey's 4 moves. | 2026-04-19 |
+| [[information-gap-curiosity]] | Loewenstein's four routes to triggering curiosity; the mechanism behind every effective hook and subject line. | 2026-05-25 |
 | [[justification-attributes]] | Machine-extractable "reasons why" content — tables, bolded value props, pros/cons — that AI cites. | 2026-04-19 |
 | [[mirage-pmf]] | Emergence Capital's term for AINS revenue growth that masks lack of real AI leverage. Diagnostic tests. | 2026-04-19 |
 | [[north-star-product-metric]] | Single number that captures how much of the work AI is actually doing (e.g. Crosby's HURT). | 2026-04-19 |
 | [[outcome-based-pricing]] | AINS's natural pricing model — pay for the result, not the inputs. Project vs credits-based implementations. | 2026-04-19 |
+| [[sacred-flaw-approach]] | Storr's headline character-first method — derive everything from one foundational flawed belief. Brand/founder-positioning lens. | 2026-05-25 |
+| [[theory-of-control]] | Every character (and buyer) carries a learned model of how to control the world. Cracks at the ignition point. | 2026-05-25 |
+| [[wants-vs-needs]] | Multidimensional buyers want X and need anti-X. The gap is where consultative leverage lives. | 2026-05-25 |
 
 ## Queries
 
@@ -106,3 +118,8 @@ Filed answers to non-trivial questions.
 | Page | Summary | Updated |
 |------|---------|---------|
 | [[how-chen-and-mckinsey-disagree-on-big-brand-bias]] | Reconciles Chen et al.'s Big Brand Bias with McKinsey's Brand-Strength/AI-Visibility Gap — different prompt distributions, non-overlapping claims. | 2026-04-19 |
+| [[synthesis-2026-W22]] | First weekly synthesis brief (§4.7). Cross-domain rhyme: Dillard + Manu Joseph + Vedic *aparigraha*. Strengthens connect-and-dominate, theory-of-control, reward-systems-spike-in-pursuit. | 2026-05-25 |
+| [[resurface-ai-overview-tool-2026-05-25]] | 6 hooks for the multi-tenant migration — Lawson on multi-tenancy, T2d3 platform-vs-solution trap, Levine on shipping, Chopra's two-failure framing, T2d3 ICP-per-tenant, Dunford on positioning. | 2026-05-25 |
+| [[resurface-kog-bid-bonds-outreach-2026-05-25]] | 7 tactical hooks for the bonded-contractor outreach campaign — Roberge subject-line tactic, Aaron Ross plain-text + one-CTA rules, Vajre pain-recognition, Dib niche discipline, T2d3 multi-persona, Fitzpatrick on cold-approach expectations. | 2026-05-25 |
+| [[resurface-progrowth-fractional-marketing-seo-2026-05-25]] | 7 hooks for the marketri-overtake pillar — T2d3 topic-cluster, Dunford challenger style, Vajre thought-leader-not-best-practices, Dib niche discipline, Isenberg SEO 2.0, BoringMarketer 8k→80k proof, T2d3 reference-piece success metric. | 2026-05-25 |
+| [[reading-mirror-2026-Q2]] | First quarterly reading-pattern mirror (§4.11). 579 highlights / 8 books / 13 weeks. Load-bearing finding: 0 reading on stated-goal domains (AI/SaaS, B2B marketing, surety); 55% on solitary-craft discipline. Confirms Vedic *aparigraha* overlap at quarter-scale. | 2026-05-25 |

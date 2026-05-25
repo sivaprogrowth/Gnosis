@@ -1,0 +1,15 @@
+filters:
+  type == "source"
+views:
+  - type: table
+    name: Sources
+    order:
+      - file.name
+      - authors
+      - published
+      - file.backlinks
+    sort:
+      - property: published
+        direction: DESC
+      - property: file.mtime
+        direction: DESC

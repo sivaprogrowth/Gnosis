@@ -1,0 +1,13 @@
+filters:
+  and:
+    - file.folder == "raw/articles"
+    - file.hasTag("inbox")
+views:
+  - type: table
+    name: Inbox
+    order:
+      - file.ctime
+      - domain
+    sort:
+      - property: file.ctime
+        direction: ASC

@@ -118,3 +118,66 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
   - Most-cited pages: `earned-media-bias` (23 inbound), `generative-engine-optimization` (21), `progrowth` (19), `siva-cotipalli` (18), `geo-how-to-dominate-ai-search` (18).
 - Lint script fix mid-pass: source-to-log matching was generating 4 false positives due to naive string containment — replaced with 3-consecutive-token matching. Now reports 0 sources missing log entries correctly.
 - Re-running `scripts/lint-wiki.py` at any time is a one-command health check. Intended trigger: per CLAUDE.md §4.5, after ~10 sources or on schema drift. At 6 sources today, this was a proactive run.
+
+
+## [2026-05-25 09:30] ingest | drained Readwise — 1 full (The Science of Storytelling), 0 skim, 0 queued, 0 dismissed
+
+- First class A Readwise book ingest. Smoke-test target for CLAUDE.md §4.6 — confirms the new book-drain workflow is end-to-end functional.
+- Source: Will Storr, *The Science of Storytelling* (2019). 155 Kindle highlights, no user marginalia. Pulled via `mcp__readwise__readwise_list_highlights(book_id=60698251)`.
+- Wrote 10 wiki pages: 1 source (`book-the-science-of-storytelling`) + 6 concepts + 3 inspiration.
+  - Concepts: [[controlled-hallucination]], [[information-gap-curiosity]], [[theory-of-control]], [[sacred-flaw-approach]], [[connect-and-dominate]], [[wants-vs-needs]].
+  - Inspiration: [[the-job-of-the-plot-is-to-plot-against-the-protagonist]], [[story-is-tribal-propaganda-and-its-cure]], [[reward-systems-spike-in-pursuit]].
+- **Compounding-rule decisions:** Storr's storytelling material has zero existing overlap with the wiki's AI-marketing core. Decided to promote 6 concept pages (those with plausible forward citations from ProGrowth content/cold-email/positioning work) and leave the rest inline in the source page. Skipped all author pages (Loewenstein, Booker, Bettelheim, Oatley, Mlodinow, Yorke, Field, Archer/Jockers, Grenville, Haidt) — none would be cited by another wiki page yet.
+- **Cross-references back to existing wiki:** `wants-vs-needs` → `mirage-pmf` (adjacent failure mode of want/need misalignment); `connect-and-dominate` → `earned-media-bias` (third-party citations as connect-and-dominate signals at scale); `controlled-hallucination` → `earned-media-bias` (third-party signals weigh heavily in brand-model assembly).
+- No contradictions flagged — storytelling and AI-search content sit in different domains.
+- `readwise-state.json` updated: 1 entry in `books_processed`. Reporter (`scripts/readwise-state.py`) now shows 166 of 167 books pending.
+
+## [2026-05-25 09:55] query | weekly synthesis brief — 13 highlights across 4 clusters, 4 collisions
+
+- First synthesis brief produced under the new CLAUDE.md §4.7. Smoke test for the unique-to-MCP collision-hunt rule.
+- Window: 2026-05-18 → 2026-05-25 (last 7 days). 13 highlights across 2 books (Dillard *The Writing Life*, 10; Manu Joseph *Why the Poor Don't Kill Us*, 3).
+- Filed at `wiki/queries/synthesis-2026-W22.md`. Clusters: A) daily ritual / work-as-wild-beast; B) the long horizon; C) austerity as intelligence; D) class as invisibility.
+- **Cross-domain rhyme caught (the standing-instruction win):** Dillard (life of sensation vs life of spirit) and Manu Joseph (austerity as intelligence) both rhyme with Vedic *aparigraha* (non-grasping) — two writers from radically different traditions converging on the same structural move in the same 7 days.
+- Three concept-page fan-out candidates surfaced: [[connect-and-dominate]] (+ signal-substrate variance), [[theory-of-control]] (+ mood-as-noise rule), [[reward-systems-spike-in-pursuit]] (Dillard's daily-ritual corollary to Storr's pursuit-not-achievement neuroscience). Not auto-applied — pending user opt-in per §4.7 step 5.
+- Prospective new concept page seeded: `aparigraha` / `austerity-as-intelligence` — to be created when the next Vedic source gets ingested.
+- `readwise-state.json` updated: 1 entry in `synthesis_briefs[]`.
+
+## [2026-05-25 10:35] query ' resurface for this week's work — 3 work items filed
+
+- Smoke test for CLAUDE.md §4.8. Triggered via "resurface for this week's work" reading Now.md.
+- 3 work items, 1 hybrid Readwise search each, re-ranked top 20 → 5-8 most-applicable per work item: aioverviews multi-tenant migration (6 hooks), KOG bid bond outreach (7 hooks), ProGrowth fractional-marketing SEO pillar (7 hooks).
+- Filed all 3 as wiki/queries/resurface-<work-slug>-2026-05-25.md per user request. Cross-linked from project + concept pages (ai-overview-tool, theory-of-control, mirage-pmf) so they're not orphans.
+- `readwise-state.json` updated: 3 entries in `resurface_log[]`.
+- **Findings flagged in the smoke test:** (1) wiki/projects/ai-overview-tool.md is stale (says Pre-launch; Phase 1 committed). (2) The §4.8 workflow searches Readwise but does not auto-pull wiki/concepts/ vocabulary into the query — Storr-derived concepts didn't surface even though they apply directly. Worth refining §4.8 step 1 to read related wiki/concepts/ pages and expand the vector_search_term with their language.
+
+## [2026-05-25 10:50] query | triaged Reader — 1 promoted, 1 skimmed, 1 archived, 1 deleted
+
+- First Reader triage under the new CLAUDE.md §4.10. Smoke test of all four paths A/B/C/D.
+- Pile inspected: `new` location has 113 items (all from 2023, classic 3-year guilt pile); `feed` location has 1,709 items (recent RSS, mostly Collab Fund + Rajesh Jain). All four picks drawn from `new`.
+- **A) Promoted:** *Generative AI Moats in B2B with Emergence Capital's Jake Saper* (acquired.fm, 15.7K words). Direct upstream to [[ai-native-services-playbook]] — Emergence Capital is the source. Written to `raw/articles/2026-05-25-emergence-saper-genai-moats-b2b.md` with `tags: [inbox]` for the next §4.3 Sunday drain to pick up. Reader doc moved to archive.
+- **B) Skimmed:** *Will A.I. Become the New McKinsey?* (Ted Chiang, The New Yorker). 2-3 sentence summary delivered inline; no file written. Reader doc moved to archive.
+- **C) Archived:** *AI Canon* (a16z). Curated reference list; useful later but not actionable. Reader doc moved to archive, no wiki touch.
+- **D) Deleted:** *How to bring scents to the metaverse* (Economist, 2023). Quintessential 3-year-old guilt-pile item on a discredited hype cycle. Reader doc moved to archive + `deleted` tag added per §4.10 step 5(D) — Reader's MCP doesn't expose true deletion (only `new`/`later`/`shortlist`/`archive`/`feed` move destinations), so archive-plus-tag is the documented fallback.
+- `readwise-state.json` updated: 1 entry in `feed_triage_runs[]` (promoted=1, skimmed=1, archived=1, deleted=1).
+- **Workflow findings:** (1) `reader_get_document_details` returns full markdown content, but for longer items (e.g. the 90KB Saper transcript) the result exceeds the tool-call token limit and gets file-saved — workflow needs to handle the file-path return path. (2) The 113-item 2023 `new` pile is the user's first real Reader triage in years; an honest re-run of §4.10 over the rest would likely yield ~80% D-class. The workflow is doing what it's supposed to.
+
+## [2026-05-25 11:05] query | drafted linkedin-post on Mirage PMF from highlights — 2 quotes, 3 wiki concepts cited
+
+- First §4.9 smoke test. End-to-end draft of a LinkedIn post on the Mirage PMF concept, sourced from Readwise highlights.
+- 25 candidates pulled via `readwise_search_highlights` (vector + applicability re-rank); 2 verbatim quotes selected — Sangeet Paul Choudary (Reshuffle) and Rajesh Jain (Startup to Proficorn). Both complete sentences; no paraphrase needed; passes the §4.6 verbatim-quote rule.
+- Filed at `raw/notes/drafts/mirage-pmf-linkedin-2026-05-25.md`. Frontmatter records highlights_used + wiki_concepts_referenced for future queryability.
+- **§4.9 step 6 fallback triggered:** no marginalia attached to any Mirage-PMF-adjacent highlights in the library. Voice pulled from `wiki/concepts/mirage-pmf.md` (user-authored framing). Absence flagged in the draft file itself per the workflow spec.
+- Wiki-links embedded: [[mirage-pmf]], [[ai-native-services]], [[north-star-product-metric]] — draft compounds back into the concept graph.
+- `readwise-state.json` updated: 1 entry in `outputs_drafted[]`.
+- **Workflow finding:** the verbatim-only rule is a non-trivial constraint on highlight selection. Several otherwise-applicable highlights (e.g. Choudary on the "skill premium collapse") were dropped because they end mid-sentence in Readwise and can't be safely closed without adding fabricated text. Suggests that highlighting discipline at the Kindle/Reader level (highlight complete sentences) materially affects downstream §4.9 quality. Worth flagging if you start a new book.
+
+## [2026-05-25 11:30] query | reading-pattern mirror — 2026-Q2 — 579 highlights, 8 books, 4 emergent themes
+
+- First §4.11 reading-pattern mirror. Window: 2026-02-23 → 2026-05-25 (13 ISO weeks). Filed at `wiki/queries/reading-mirror-2026-Q2.md`.
+- Frequency map: 4 books absorbed 94% of the quarter's highlight activity (Inner Excellence 172, Creative Act 138, Pitch 136, Book of Elon 98). Single-book binge pattern; no simultaneous reads.
+- **Load-bearing finding:** 55% of quarter's highlights on solitary-craft discipline (Murphy + Rubin + Dillard); **0% on the stated-goal domains** (aioverviews multi-tenant SaaS, B2B marketing / SEO, surety / cold outreach). Pitch (Fontaine, 23%) is the most goal-aligned book. The mirror surfaces this as a calibration question, not a verdict.
+- **Quarter-scale collision confirmation:** the Vedic *aparigraha* overlap caught by [[synthesis-2026-W22]] (Dillard + Manu Joseph one-week window) now appears at quarter-scale — the case for promoting a `wiki/concepts/aparigraha` page is materially stronger after this mirror.
+- **Two prospective concept pages seeded** by the surprising-overlap surface: `daily-discipline-of-solitary-work` (320-highlight cross-book cluster) and `belief-engineering` (Pitch + Elon + Wright Brothers cross-book pattern). Not created in this run; surfaced for the next ingest that touches either theme.
+- **Asymmetry flagged in the mirror:** explicit goal artifacts (Now.md, wiki/projects/) only cover ~5 weeks of the 13-week window. Future mirrors will have a fuller goal corpus to cross-reference against.
+- **Reader reading channel essentially empty** for the window (user reads via Kindle, not Reader). Mirror notes this and asks whether to de-emphasize Reader as an input channel in future runs.
+- `readwise-state.json` updated: 1 entry in `mirror_runs[]`.

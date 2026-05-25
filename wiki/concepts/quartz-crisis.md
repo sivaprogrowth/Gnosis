@@ -17,4 +17,6 @@ A well-defined historical event/concept central to the source's argument about b
 
 ## Mentions
 
+
+- [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]
 - [[the-brand-age-paul-graham|The Brand Age]]

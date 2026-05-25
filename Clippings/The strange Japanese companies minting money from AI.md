@@ -1,13 +1,20 @@
 ---
-title: "The strange Japanese companies minting money from AI"
-source: "https://www.economist.com/business/2026/05/14/the-strange-japanese-companies-minting-money-from-ai"
+title: The strange Japanese companies minting money from AI
+source: >-
+  https://www.economist.com/business/2026/05/14/the-strange-japanese-companies-minting-money-from-ai
 author:
-  - "[[The Economist]]"
-published: 2026-05-14
-created: 2026-05-25
-description: "Japanese firms like Ajinomoto, Toto and Hoya have become unlikely winners in the AI boom, supplying specialised materials for semiconductor manufacturing. | Business"
+  - '[[The Economist]]'
+published: 2026-05-14T00:00:00.000Z
+created: 2026-05-25T00:00:00.000Z
+description: >-
+  Japanese firms like Ajinomoto, Toto and Hoya have become unlikely winners in
+  the AI boom, supplying specialised materials for semiconductor manufacturing.
+  | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ce8208bb-0c5d-4fa8-b47d-0369a419be2b
+gnosis_ingested_at: '2026-05-25T18:23:03.129Z'
 ---
 ## What the creator of MSG and the world’s biggest toilet-maker have in common
 

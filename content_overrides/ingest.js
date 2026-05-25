@@ -413,6 +413,24 @@ try {
         location.href = "/login?next=" + encodeURIComponent("/ingest")
         return
       }
+      // 409 Conflict: this source was already ingested. Offer to re-ingest.
+      if (res.status === 409) {
+        const conflict = await res.json().catch(() => ({}))
+        const ex = conflict.existing || {}
+        const when = ex.createdAt ? new Date(ex.createdAt).toLocaleString() : "earlier"
+        const shaShort = ex.commitSha ? ex.commitSha.slice(0, 7) : "(unknown)"
+        const confirmMsg = `This source was already ingested ${when} as "${ex.sourceTitle || "(untitled)"}" (commit ${shaShort}).\n\nRe-ingest anyway? This will overwrite the existing source page.`
+        if (!window.confirm(confirmMsg)) {
+          // User cancelled — reset the form so they can pick a different source
+          submitBtnEl.disabled = false
+          submitBtnEl.textContent = submitBtnLabel
+          formSection.style.opacity = "1"
+          progressSection.hidden = true
+          return
+        }
+        // Re-submit with force=true
+        return await startIngest(endpoint, { ...body, force: true }, submitBtnEl, submitBtnLabel)
+      }
       if (!res.ok) {
         const errBody = await res.json().catch(() => ({}))
         throw new Error(errBody.error || `HTTP ${res.status}`)

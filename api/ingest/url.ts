@@ -39,11 +39,43 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const body = (req.body || {}) as { url?: unknown }
+  const body = (req.body || {}) as { url?: unknown; force?: unknown }
   const url = typeof body.url === "string" ? body.url.trim() : ""
+  const force = body.force === true
   if (!url) {
     res.status(400).json({ error: "url (string) required in body" })
     return
+  }
+
+  // Duplicate guard: bail if this URL was already ingested (status=done).
+  // Caller can pass force:true to re-ingest, which will overwrite the source
+  // page. Earlier we hit this case silently and lost 10 entity pages.
+  if (!force) {
+    const { data: existing, error: dupErr } = await supabase
+      .from("gnosis_ingest_jobs")
+      .select("id, commit_sha, source_title, created_at")
+      .eq("source_url", url)
+      .eq("status", "done")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle()
+    if (dupErr) console.warn("[ingest/url] dedup check error:", dupErr.message)
+    if (existing) {
+      res.status(409).json({
+        error: "Already ingested",
+        existing: {
+          jobId: existing.id,
+          commitSha: existing.commit_sha,
+          commitUrl: existing.commit_sha
+            ? `https://github.com/sivaprogrowth/Gnosis/commit/${existing.commit_sha}`
+            : null,
+          sourceTitle: existing.source_title,
+          createdAt: existing.created_at,
+        },
+        hint: "Re-submit with { force: true } to ingest again (will overwrite the existing source page).",
+      })
+      return
+    }
   }
 
   const { data: job, error: jobErr } = await supabase

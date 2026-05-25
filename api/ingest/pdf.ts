@@ -38,9 +38,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const body = (req.body || {}) as { filename?: unknown; contentBase64?: unknown }
+  const body = (req.body || {}) as { filename?: unknown; contentBase64?: unknown; force?: unknown }
   const filename = typeof body.filename === "string" ? body.filename.trim() : ""
   const contentBase64 = typeof body.contentBase64 === "string" ? body.contentBase64 : ""
+  const force = body.force === true
 
   if (!filename) {
     res.status(400).json({ error: "filename required" })
@@ -72,6 +73,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: `PDF is ${(bytes.byteLength / 1024 / 1024).toFixed(1)}MB — max ${(MAX_PDF_BYTES / 1024 / 1024).toFixed(1)}MB. Larger files will arrive in v2 (Vercel Blob).`,
     })
     return
+  }
+
+  // Duplicate guard: bail if this filename was already ingested. The filename
+  // isn't as strong a signal as a URL (two different PDFs could share a name)
+  // but it's the only stable identifier we have for PDF uploads.
+  if (!force) {
+    const { data: existing, error: dupErr } = await supabase
+      .from("gnosis_ingest_jobs")
+      .select("id, commit_sha, source_title, created_at")
+      .eq("source_filename", filename)
+      .eq("status", "done")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle()
+    if (dupErr) console.warn("[ingest/pdf] dedup check error:", dupErr.message)
+    if (existing) {
+      res.status(409).json({
+        error: "Already ingested",
+        existing: {
+          jobId: existing.id,
+          commitSha: existing.commit_sha,
+          commitUrl: existing.commit_sha
+            ? `https://github.com/sivaprogrowth/Gnosis/commit/${existing.commit_sha}`
+            : null,
+          sourceTitle: existing.source_title,
+          createdAt: existing.created_at,
+        },
+        hint: "Re-submit with { force: true } to ingest again (will overwrite the existing source page).",
+      })
+      return
+    }
   }
 
   const { data: job, error: jobErr } = await supabase

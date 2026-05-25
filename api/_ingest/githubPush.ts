@@ -134,6 +134,74 @@ export async function commitFiles(
 }
 
 /**
+ * Delete a set of files from wiki-archive in a single commit. Used to clean
+ * up orphans left behind by duplicate ingests where the source page was
+ * overwritten but the entity stubs from the older run remained.
+ *
+ * Octokit's git/createTree accepts `sha: null` for a path to remove that
+ * file from the new tree. Same atomic-commit shape as commitFiles().
+ */
+export async function deleteFiles(
+  paths: string[],
+  message: string,
+): Promise<CommitResult> {
+  if (paths.length === 0) throw new Error("deleteFiles called with zero paths")
+
+  const gh = octokit()
+
+  const { data: ref } = await gh.git.getRef({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    ref: `heads/${BRANCH}`,
+  })
+  const parentSha = ref.object.sha
+  const { data: parentCommit } = await gh.git.getCommit({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    commit_sha: parentSha,
+  })
+
+  const { data: newTree } = await gh.git.createTree({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    base_tree: parentCommit.tree.sha,
+    tree: paths.map((p) => ({
+      path: p,
+      mode: "100644",
+      type: "blob",
+      sha: null, // remove
+    })),
+  })
+
+  const { data: newCommit } = await gh.git.createCommit({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    message,
+    tree: newTree.sha,
+    parents: [parentSha],
+    author: { name: AUTHOR_NAME, email: AUTHOR_EMAIL, date: new Date().toISOString() },
+    committer: { name: AUTHOR_NAME, email: AUTHOR_EMAIL, date: new Date().toISOString() },
+  })
+
+  await gh.git.updateRef({
+    owner: REPO_OWNER,
+    repo: REPO_NAME,
+    ref: `heads/${BRANCH}`,
+    sha: newCommit.sha,
+    force: false,
+  })
+
+  return {
+    sha: newCommit.sha,
+    commitUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}/commit/${newCommit.sha}`,
+    files: paths.map((p) => ({
+      path: p,
+      blobUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/${BRANCH}/${p}`,
+    })),
+  }
+}
+
+/**
  * Push an empty trigger commit to `main` to make Vercel rebuild and surface
  * the latest wiki-archive contents on the live site.
  *

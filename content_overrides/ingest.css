@@ -1,0 +1,211 @@
+/* ingest.css — styles specific to the /ingest page. Layered on top of
+ * library.css which provides the shell + sidebar + base button styles. */
+
+.lib-header h1 { font-size: 1.85rem; }
+
+.ing-form {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.ing-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ing-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--darkgray);
+}
+
+.ing-form input[type="url"] {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--light);
+  color: var(--dark);
+}
+.ing-form input[type="url"]:focus { outline: none; border-color: var(--secondary); }
+
+.ing-form button { margin-top: 0.5rem; align-self: flex-start; min-width: 180px; }
+
+.ing-hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+/* -------- progress timeline -------- */
+
+.ing-progress {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.ing-progress h2 { margin: 0 0 0.75rem; font-size: 1.1rem; font-weight: 600; }
+
+.ing-stages {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.ing-stages li {
+  padding: 0.5rem 0 0.5rem 1.75rem;
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--gray);
+  border-left: 2px solid var(--lightgray);
+  margin-left: 0.55rem;
+}
+.ing-stages li::before {
+  content: "";
+  position: absolute;
+  left: -0.45rem;
+  top: 0.7rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--lightgray);
+  border: 2px solid var(--light);
+  box-sizing: content-box;
+}
+.ing-stages li.active {
+  color: var(--dark);
+  font-weight: 600;
+}
+.ing-stages li.active::before {
+  background: var(--secondary);
+  animation: ing-pulse 1.2s ease-in-out infinite;
+}
+.ing-stages li.done {
+  color: var(--darkgray);
+}
+.ing-stages li.done::before {
+  background: #10b981;
+}
+.ing-stages li.error {
+  color: #b91c1c;
+}
+.ing-stages li.error::before {
+  background: #dc2626;
+}
+
+@keyframes ing-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4), 0 0 0 2px var(--light); }
+  50% { box-shadow: 0 0 0 6px rgba(99, 102, 241, 0), 0 0 0 2px var(--light); }
+}
+
+.ing-log {
+  background: rgba(0,0,0,0.02);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--codeFont, monospace);
+  font-size: 0.78rem;
+  color: var(--darkgray);
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* -------- confirm / commit screen -------- */
+
+.ing-confirm, .ing-result {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.ing-confirm h2, .ing-result h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.ing-confirm h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+}
+
+.ing-summary {
+  background: rgba(0,0,0,0.025);
+  border-radius: 6px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--darkgray);
+}
+.ing-summary strong { color: var(--dark); }
+
+.ing-takeaways { margin: 0; padding-left: 1.25rem; }
+.ing-takeaways li { margin: 0.35rem 0; font-size: 0.95rem; }
+
+.ing-entities { display: grid; gap: 0.55rem; }
+.ing-entity {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+.ing-entity-name { font-weight: 600; }
+.ing-entity-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+  background: var(--lightgray);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+.ing-entity-rationale {
+  color: var(--darkgray);
+  font-size: 0.83rem;
+}
+.ing-entity-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ing-entity-badge.promote { background: rgba(16, 185, 129, 0.12); color: #047857; }
+.ing-entity-badge.inline { background: var(--lightgray); color: var(--darkgray); }
+
+.ing-actions { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
+.lib-btn-ghost {
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--lightgray);
+}
+.lib-btn-ghost:hover { background: rgba(0,0,0,0.02); color: var(--dark); }
+
+#ing-result-body a { color: var(--secondary); text-decoration: none; }
+#ing-result-body a:hover { text-decoration: underline; }
+#ing-result-body code {
+  background: rgba(0,0,0,0.05);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+}

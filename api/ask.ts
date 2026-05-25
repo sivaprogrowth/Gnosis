@@ -27,10 +27,21 @@ import { selectCandidates } from "./_retrieval/candidates.js"
 import { rerank } from "./_retrieval/rerank.js"
 import { assembleContext, synthesize } from "./_retrieval/synthesize.js"
 import { getPageIndex } from "./_retrieval/pageIndex.js"
+import { verifySessionToken } from "./_auth/auth.js"
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" })
+    return
+  }
+
+  // Auth gate — Edge Middleware also blocks unauthenticated /api/ask requests,
+  // but enforce defence-in-depth here too in case middleware is bypassed.
+  const cookieHeader = req.headers.cookie || ""
+  const sessionMatch = cookieHeader.match(/(?:^|; )session=([^;]+)/)
+  const sessionToken = sessionMatch?.[1]
+  if (!sessionToken || !verifySessionToken(sessionToken)) {
+    res.status(401).json({ error: "Unauthorized" })
     return
   }
 

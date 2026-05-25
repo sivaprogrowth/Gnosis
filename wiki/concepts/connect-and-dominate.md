@@ -56,3 +56,7 @@ If connect-and-dominate is the constructive drive, **humiliation** — the publi
 - [[theory-of-control]] — every buyer's theory of control includes a model of what status moves work in their org
 - [[wants-vs-needs]] — buyers often *want* the dominate signal but *need* the connect anchor (or vice versa)
 - [[earned-media-bias]] — third-party citations are connect-and-dominate signals at scale (the tribe says you matter)
+
+## Mentions
+
+- [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

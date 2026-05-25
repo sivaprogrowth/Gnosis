@@ -50,4 +50,6 @@ Most visible AI engine for B2B/consumer audiences alike. For ProGrowth's [[gener
 
 ## Mentions
 
+
+- [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

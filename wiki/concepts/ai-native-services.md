@@ -82,4 +82,6 @@ See the `## ProGrowth relevance` section on [[progrowth]] for specific operation
 
 ## Mentions
 
+
+- [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

@@ -18,5 +18,7 @@ Core SaaStr insight with a distinct, quotable name: high-volume acceptable-quali
 ## Mentions
 
 
+
+- [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]
 - [[saastr-ai-agent-playbook-for-gtm|AI Agent Playbook]]

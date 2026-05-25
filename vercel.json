@@ -9,5 +9,11 @@
     "api/ask.ts": {
       "maxDuration": 60
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/ingest/job?cron=ingest-clippings",
+      "schedule": "0 5 * * *"
+    }
+  ]
 }

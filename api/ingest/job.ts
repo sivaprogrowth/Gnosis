@@ -24,7 +24,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
-import { runSynthesisStandalone } from "../_ingest/pipeline.js"
+import { processClippingsCron, runSynthesisStandalone } from "../_ingest/pipeline.js"
 
 export const config = {
   maxDuration: 300,
@@ -33,6 +33,28 @@ export const config = {
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET" && req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" })
+    return
+  }
+
+  // Vercel cron dispatch. Vercel sends GET requests with
+  // `Authorization: Bearer ${CRON_SECRET}` for scheduled jobs. We carve out a
+  // cron path *before* the regular session check so the cron doesn't need a
+  // user cookie.
+  if (req.method === "GET" && req.query.cron === "ingest-clippings") {
+    const expected = `Bearer ${process.env.CRON_SECRET || ""}`
+    if (!process.env.CRON_SECRET || req.headers.authorization !== expected) {
+      res.status(401).json({ error: "Unauthorized cron" })
+      return
+    }
+    try {
+      const summary = await processClippingsCron()
+      console.log(`[cron] ingest-clippings:`, JSON.stringify(summary))
+      res.status(200).json(summary)
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error(`[cron] ingest-clippings failed:`, msg)
+      res.status(500).json({ error: msg })
+    }
     return
   }
 

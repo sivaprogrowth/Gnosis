@@ -133,6 +133,43 @@ export async function commitFiles(
   }
 }
 
+export interface RepoFileSummary {
+  name: string
+  path: string
+  sha: string
+  size: number
+}
+
+/**
+ * List files immediately under a directory on wiki-archive. Returns the
+ * shallow contents — does not recurse into subdirectories. Used by the
+ * daily clippings cron to find new Clippings/*.md files.
+ */
+export async function listFilesInDirectory(dirPath: string): Promise<RepoFileSummary[]> {
+  const gh = octokit()
+  try {
+    const { data } = await gh.repos.getContent({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path: dirPath,
+      ref: BRANCH,
+    })
+    if (!Array.isArray(data)) return []
+    return data
+      .filter((entry) => entry.type === "file")
+      .map((entry) => ({
+        name: entry.name,
+        path: entry.path,
+        sha: entry.sha,
+        size: entry.size,
+      }))
+  } catch (err) {
+    const e = err as { status?: number }
+    if (e.status === 404) return []
+    throw err
+  }
+}
+
 /**
  * Fetch the current text content of a file on wiki-archive. Returns null
  * if the path doesn't exist (404). Throws on other errors so the caller

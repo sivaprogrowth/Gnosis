@@ -1,0 +1,81 @@
+/* login.css — styles for the Gnosis /login page.
+ * Loaded via <link rel="stylesheet" href="/login.css"> from
+ * content_overrides/login.md so Quartz's Description plugin doesn't grab
+ * the inline <style> text and stuff it into <meta name="description">. */
+
+/* Strip Quartz chrome for the login page — minimal centered form */
+body :is(.sidebar, #quartz-body > .left, #quartz-body > .right, footer) { display: none !important; }
+#quartz-body { grid-template-columns: 1fr !important; }
+article { max-width: 420px !important; margin: 6rem auto !important; }
+article > h1, article > #toc-content { display: none !important; }
+
+.login-card {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.login-card h2 { margin: 0 0 0.25rem; font-size: 1.4rem; }
+.login-card .sub { color: var(--gray); margin: 0 0 1.25rem; font-size: 0.9rem; }
+.login-card label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--darkgray);
+}
+.login-card input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--light);
+  color: var(--dark);
+  box-sizing: border-box;
+}
+.login-card input:focus { outline: none; border-color: var(--secondary); }
+.login-card input.code {
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-family: var(--codeFont, monospace);
+  font-size: 1.5rem;
+  padding: 0.85rem;
+}
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-card button:disabled { background: var(--gray); cursor: not-allowed; }
+.login-card .alt {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: transparent;
+  color: var(--gray);
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-align: center;
+}
+.login-card .alt:hover { color: var(--darkgray); }
+.login-card .err {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-radius: 6px;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+.login-card .ok { color: var(--darkgray); font-size: 0.9rem; margin: 0 0 0.75rem; }

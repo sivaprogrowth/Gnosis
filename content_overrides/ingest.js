@@ -321,6 +321,12 @@ try {
     console.warn("[ingest] PDF form not found in DOM — skipping PDF wiring.")
   }
 
+  // Threshold above which we use Vercel Blob direct upload instead of
+  // inlining the file as base64 in the POST body. Stays below Vercel's
+  // 4.5MB function body limit (3MB PDF ≈ 4MB base64).
+  const BLOB_UPLOAD_THRESHOLD = 3 * 1024 * 1024
+  const MAX_PDF_SIZE = 50 * 1024 * 1024
+
   function setChosenPdf(file) {
     if (!pdfChosen || !pdfSubmit) return
     if (!file) {
@@ -334,26 +340,55 @@ try {
       showError("That doesn't look like a PDF file.")
       return
     }
-    if (file.size > 3.5 * 1024 * 1024) {
-      showError(`File is ${(file.size / 1024 / 1024).toFixed(2)}MB — max is 3.5MB. Try a smaller PDF.`)
+    if (file.size > MAX_PDF_SIZE) {
+      showError(`File is ${(file.size / 1024 / 1024).toFixed(2)}MB — max is ${(MAX_PDF_SIZE / 1024 / 1024).toFixed(0)}MB.`)
       return
     }
     showError("")
     pdfChosen.hidden = false
-    pdfChosen.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(0)} KB)`
+    const sizeStr = file.size >= 1024 * 1024
+      ? `${(file.size / 1024 / 1024).toFixed(1)} MB`
+      : `${(file.size / 1024).toFixed(0)} KB`
+    const flow = file.size > BLOB_UPLOAD_THRESHOLD ? " — uses Blob upload" : ""
+    pdfChosen.textContent = `Selected: ${file.name} (${sizeStr})${flow}`
     pdfSubmit.disabled = false
-    const reader = new FileReader()
-    reader.onload = () => {
-      const dataUrl = String(reader.result || "")
-      const base64 = dataUrl.replace(/^data:application\/pdf;base64,/, "")
-      pendingPdf = { filename: file.name, contentBase64: base64 }
+
+    if (file.size > BLOB_UPLOAD_THRESHOLD) {
+      // Defer the actual upload to submit-time. We just hold a ref to the File.
+      pendingPdf = { file, large: true }
+    } else {
+      const reader = new FileReader()
+      reader.onload = () => {
+        const dataUrl = String(reader.result || "")
+        const base64 = dataUrl.replace(/^data:application\/pdf;base64,/, "")
+        pendingPdf = { filename: file.name, contentBase64: base64 }
+      }
+      reader.onerror = () => {
+        showError("Couldn't read the file. Try again.")
+        pendingPdf = null
+        pdfSubmit.disabled = true
+      }
+      reader.readAsDataURL(file)
     }
-    reader.onerror = () => {
-      showError("Couldn't read the file. Try again.")
-      pendingPdf = null
-      pdfSubmit.disabled = true
+  }
+
+  // Upload a large PDF directly to Vercel Blob via @vercel/blob/client.
+  // The client SDK posts the handshake to our /api/ingest/pdf endpoint
+  // (where handleUpload returns a signed token) and PUTs the file directly
+  // to Blob. Returns the public blob URL we then send back to /api/ingest/pdf
+  // to actually start the ingest pipeline.
+  async function uploadPdfToBlob(file) {
+    // Dynamic ESM import — keeps the script lean for users who only paste URLs.
+    const mod = await import("https://esm.sh/@vercel/blob@2.4.0/client")
+    if (!mod || typeof mod.upload !== "function") {
+      throw new Error("Could not load @vercel/blob/client")
     }
-    reader.readAsDataURL(file)
+    const blob = await mod.upload(file.name, file, {
+      access: "public",
+      handleUploadUrl: "/api/ingest/pdf",
+      contentType: "application/pdf",
+    })
+    return blob.url
   }
 
   if (pdfPickBtn) {
@@ -472,7 +507,25 @@ try {
         showError("Choose a PDF first.")
         return
       }
-      await startIngest("/api/ingest/pdf", pendingPdf, pdfSubmit, "Start ingest")
+      // Small file: existing base64 path. Large file: upload to Blob first.
+      let body
+      if (pendingPdf.large) {
+        pdfSubmit.disabled = true
+        pdfSubmit.textContent = "Uploading…"
+        showError("")
+        try {
+          const blobUrl = await uploadPdfToBlob(pendingPdf.file)
+          body = { filename: pendingPdf.file.name, blobUrl }
+        } catch (err) {
+          showError(`Blob upload failed: ${err.message}`)
+          pdfSubmit.disabled = false
+          pdfSubmit.textContent = "Start ingest"
+          return
+        }
+      } else {
+        body = { filename: pendingPdf.filename, contentBase64: pendingPdf.contentBase64 }
+      }
+      await startIngest("/api/ingest/pdf", body, pdfSubmit, "Start ingest")
     })
   }
 

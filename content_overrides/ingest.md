@@ -43,7 +43,7 @@ hide: ["toc", "graph", "explorer", "backlinks", "title", "tags", "breadcrumb", "
 <input id="ing-pdf-input" type="file" accept="application/pdf,.pdf" hidden />
 <div class="ing-drop-inner">
 <p class="ing-drop-prompt">Drop a PDF here or <button type="button" id="ing-pdf-pick" class="ing-link">choose file</button></p>
-<p class="ing-hint">Max ~3.5 MB. Scanned/image-only PDFs aren't supported (OCR comes later).</p>
+<p class="ing-hint">Max 50 MB. Files over ~3 MB upload via Vercel Blob (direct browser → storage; no extra setup). Scanned/image-only PDFs aren't supported (OCR comes later).</p>
 <p id="ing-pdf-chosen" class="ing-pdf-chosen" hidden></p>
 </div>
 </div>

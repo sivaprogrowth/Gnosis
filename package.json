@@ -47,6 +47,7 @@
     "@octokit/rest": "^22.0.1",
     "@supabase/supabase-js": "^2.106.1",
     "@tweenjs/tween.js": "^25.0.0",
+    "@vercel/blob": "^2.4.0",
     "@vercel/functions": "^3.6.0",
     "@vercel/node": "^5.7.11",
     "ansi-truncate": "^1.4.0",

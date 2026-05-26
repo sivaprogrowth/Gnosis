@@ -17,4 +17,6 @@ Well-known essayist and Y Combinator co-founder whose ideas (e.g., 'Follow the P
 
 ## Mentions
 
+
+- [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]
 - [[the-brand-age-paul-graham|The Brand Age]]

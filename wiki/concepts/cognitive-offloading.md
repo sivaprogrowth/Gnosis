@@ -18,5 +18,7 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 ## Mentions
 
 
+
+- [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]
 - [[ppv-pillars-pipelines-vaults-productivity-review|PPV (Pillars, Pipelines and Vaults) — Productivity System Review]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

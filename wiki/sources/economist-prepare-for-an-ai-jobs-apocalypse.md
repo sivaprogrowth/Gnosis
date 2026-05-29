@@ -63,3 +63,7 @@ This *Economist* leader argues that while AI-driven mass unemployment has not ye
 - [[Luddites]]
 - [[Partial nationalisation]]
 - [[AI rentier economy]]
+
+## Mentions
+
+- [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]

@@ -1,13 +1,20 @@
 ---
-title: "Franchising has quietly made countless Americans rich"
-source: "https://www.economist.com/business/2026/05/24/franchising-has-quietly-made-countless-americans-rich"
+title: Franchising has quietly made countless Americans rich
+source: >-
+  https://www.economist.com/business/2026/05/24/franchising-has-quietly-made-countless-americans-rich
 author:
-  - "[[The Economist]]"
-published: 2026-05-25
-created: 2026-05-27
-description: "Greg Flynn built a franchise empire worth over $1bn from eight Applebee's restaurants, exemplifying how franchising has become a path to wealth for entrepreneurs across America. | Business"
+  - '[[The Economist]]'
+published: 2026-05-25T00:00:00.000Z
+created: 2026-05-27T00:00:00.000Z
+description: >-
+  Greg Flynn built a franchise empire worth over $1bn from eight Applebee's
+  restaurants, exemplifying how franchising has become a path to wealth for
+  entrepreneurs across America. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: fe9403db-4381-457b-9eec-8a082f375d93
+gnosis_ingested_at: '2026-05-29T05:52:28.206Z'
 ---
 ## In the age of AI, running a McDonald’s may soon look a lot more appealing
 

@@ -57,4 +57,6 @@ The theory of control generates the *want* — what the protagonist (or buyer) c
 
 ## Mentions
 
+
+- [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

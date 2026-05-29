@@ -22,6 +22,8 @@ Core SaaStr insight with a distinct, quotable name: high-volume acceptable-quali
 
 
 
+
+- [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]
 - [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

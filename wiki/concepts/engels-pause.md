@@ -17,4 +17,6 @@ A well-defined named historical economic concept used as a structural analogy fo
 
 ## Mentions
 
+
+- [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

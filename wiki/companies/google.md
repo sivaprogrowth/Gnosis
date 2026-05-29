@@ -17,4 +17,6 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 ## Mentions
 
+
+- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

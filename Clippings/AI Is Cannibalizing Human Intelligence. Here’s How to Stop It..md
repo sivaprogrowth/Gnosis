@@ -1,13 +1,20 @@
 ---
-title: "AI Is Cannibalizing Human Intelligence. Here’s How to Stop It."
-source: "https://www.wsj.com/tech/ai/is-ai-smarter-than-humans-cyborg-956e0f0e?mod=itp_wsj"
+title: AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.
+source: >-
+  https://www.wsj.com/tech/ai/is-ai-smarter-than-humans-cyborg-956e0f0e?mod=itp_wsj
 author:
-  - "[[Vivienne Ming]]"
-published: 2026-04-24
-created: 2026-05-29
-description: "As a neuroscientist, I conducted research into artificial versus human intelligence. The results surprised me—and suggest we’ve been worrying over the wrong things."
+  - '[[Vivienne Ming]]'
+published: 2026-04-24T00:00:00.000Z
+created: 2026-05-29T00:00:00.000Z
+description: >-
+  As a neuroscientist, I conducted research into artificial versus human
+  intelligence. The results surprised me—and suggest we’ve been worrying over
+  the wrong things.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: c99f8f30-5ee2-4617-9b05-1fbc4ab17e9e
+gnosis_ingested_at: '2026-05-29T05:51:10.819Z'
 ---
 ![A human hand and a robot hand on a computer keyboard, symbolizing AI and human intelligence.](https://images.wsj.net/im-19130781?width=700&size=1.501&pixel_ratio=3)
 

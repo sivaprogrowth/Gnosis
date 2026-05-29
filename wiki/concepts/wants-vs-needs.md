@@ -68,4 +68,6 @@ The wants-vs-needs frame is a cousin of jobs-to-be-done, but more dramatic. JTBD
 
 ## Mentions
 
+
+- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

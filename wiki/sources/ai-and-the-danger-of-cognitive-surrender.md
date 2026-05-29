@@ -62,3 +62,7 @@ This *Economist* article examines how AI-assisted work risks moving beyond usefu
 - Louisa Dahmani
 - Véronique Bohbot
 - Mark LaCour
+
+## Mentions
+
+- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]

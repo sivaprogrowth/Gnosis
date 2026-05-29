@@ -17,4 +17,6 @@ This is a well-defined, named concept directly relevant to multiple existing pag
 
 ## Mentions
 
+
+- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

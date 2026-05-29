@@ -56,4 +56,6 @@ The skilled version names the *territory* of the gap without resolving it: "We r
 
 ## Mentions
 
+
+- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

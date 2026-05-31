@@ -24,6 +24,8 @@ import {
 } from "./githubPush.js"
 import matter from "gray-matter"
 import { synthesize } from "./synthesize.js"
+import { listReaderDocs, updateReaderDoc, readerTagKeys, type ReaderDocument } from "./reader.js"
+import TurndownService from "turndown"
 
 export interface PipelineFrame {
   stage: string
@@ -32,14 +34,8 @@ export interface PipelineFrame {
 }
 export type FrameHandler = (frame: PipelineFrame) => void
 
-async function updateJob(
-  jobId: string,
-  patch: Record<string, unknown>,
-): Promise<void> {
-  const { error } = await supabase
-    .from("gnosis_ingest_jobs")
-    .update(patch)
-    .eq("id", jobId)
+async function updateJob(jobId: string, patch: Record<string, unknown>): Promise<void> {
+  const { error } = await supabase.from("gnosis_ingest_jobs").update(patch).eq("id", jobId)
   if (error) console.warn(`[pipeline] could not update job ${jobId}:`, error.message)
 }
 
@@ -291,7 +287,11 @@ export async function runCommit(
   onFrame({
     stage: "committing",
     message: `Committing ${files.length} file(s) to wiki-archive… (${backlinkUpdates.length} backlink update${backlinkUpdates.length === 1 ? "" : "s"})`,
-    data: { fileCount: files.length, paths: files.map((f) => f.path), backlinkUpdates: backlinkUpdates.length },
+    data: {
+      fileCount: files.length,
+      paths: files.map((f) => f.path),
+      backlinkUpdates: backlinkUpdates.length,
+    },
   })
 
   const commitMessage = [
@@ -303,7 +303,9 @@ export async function runCommit(
       ? `Backlinks updated: ${backlinkUpdates.length} existing page${backlinkUpdates.length === 1 ? "" : "s"}`
       : "",
     `Ingested via gnosis.progrowth.services (job ${jobId})`,
-  ].filter(Boolean).join("\n")
+  ]
+    .filter(Boolean)
+    .join("\n")
 
   const result = await commitFiles(files, commitMessage)
 
@@ -328,7 +330,9 @@ export async function runCommit(
 
   triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
     .then((triggerSha) =>
-      console.log(`[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`),
+      console.log(
+        `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
+      ),
     )
     .catch((e) =>
       console.warn(`[ingest] rebuild trigger failed:`, e instanceof Error ? e.message : e),
@@ -458,7 +462,10 @@ async function collectBacklinkUpdates(args: {
     try {
       current = await getFileContent(target.wikiPath)
     } catch (err) {
-      console.warn(`[pipeline] backlink: could not fetch ${target.wikiPath}:`, err instanceof Error ? err.message : err)
+      console.warn(
+        `[pipeline] backlink: could not fetch ${target.wikiPath}:`,
+        err instanceof Error ? err.message : err,
+      )
       continue
     }
     if (current === null) {
@@ -487,11 +494,7 @@ function escapeRegex(s: string): string {
  * doesn't exist, append one at the end. Idempotent on duplicate sources
  * (caller already checks for that).
  */
-function appendMention(
-  content: string,
-  sourceSlug: string,
-  sourceTitle: string,
-): string {
+function appendMention(content: string, sourceSlug: string, sourceTitle: string): string {
   const bullet = `- [[${sourceSlug}|${sourceTitle}]]`
 
   const headingRe = /^##\s+Mentions\s*$/m
@@ -548,14 +551,22 @@ export async function processClippingsCron(): Promise<CronSummary> {
   const mdFiles = files.filter((f) => f.name.toLowerCase().endsWith(".md"))
 
   const summary: CronSummary = { scanned: mdFiles.length, candidates: 0, processed: 0, results: [] }
-  const candidates: Array<{ file: { path: string; name: string }; raw: string; parsed: matter.GrayMatterFile<string> }> = []
+  const candidates: Array<{
+    file: { path: string; name: string }
+    raw: string
+    parsed: matter.GrayMatterFile<string>
+  }> = []
 
   for (const f of mdFiles) {
     let raw: string | null
     try {
       raw = await getFileContent(f.path)
     } catch (e) {
-      summary.results.push({ filename: f.name, status: "failed", reason: `read failed: ${e instanceof Error ? e.message : e}` })
+      summary.results.push({
+        filename: f.name,
+        status: "failed",
+        reason: `read failed: ${e instanceof Error ? e.message : e}`,
+      })
       continue
     }
     if (!raw) continue
@@ -587,9 +598,10 @@ async function ingestOneClipping(args: {
   const body = args.parsed.content.trim()
 
   // Title: prefer frontmatter title, fall back to filename without .md
-  const title = typeof frontmatter.title === "string" && frontmatter.title.trim()
-    ? frontmatter.title.trim()
-    : filename.replace(/\.md$/i, "")
+  const title =
+    typeof frontmatter.title === "string" && frontmatter.title.trim()
+      ? frontmatter.title.trim()
+      : filename.replace(/\.md$/i, "")
   // Source URL: Obsidian Web Clipper writes `source` (string URL)
   const sourceUrl =
     typeof frontmatter.source === "string" && frontmatter.source.trim()
@@ -616,7 +628,11 @@ async function ingestOneClipping(args: {
   if (dup) {
     // Already ingested previously by some other path — just mark this clipping done so we stop re-checking
     await markClippingProcessed(args.file.path, args.parsed, dup.id, dup.commit_sha)
-    return { filename, status: "skipped", reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}` }
+    return {
+      filename,
+      status: "skipped",
+      reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}`,
+    }
   }
 
   // In-flight guard: skip if another cron pass (or web ingest) is currently
@@ -732,6 +748,257 @@ async function markClippingProcessed(
   } catch (e) {
     console.warn(`[cron] could not mark ${path} processed:`, e instanceof Error ? e.message : e)
   }
+}
+
+// ============================================================================
+// Readwise Reader auto-ingest cron
+// ============================================================================
+//
+// Trigger: the user tags a Reader document `gnosis` (from the mobile share
+// sheet, desktop, anywhere). The hourly cron pulls every document still
+// carrying that tag, ingests each through the same synth+commit pipeline as
+// the web /ingest UI, then removes the trigger tag and archives the doc so it
+// drops out of the pending set. Because we query by `?tag=gnosis`, the scan is
+// naturally bounded to *unprocessed* items — no growing backlog to filter.
+//
+// No per-run count cap (the user asked for uncapped). Instead the cron drains
+// up to a wall-clock budget, then job.ts self-re-triggers the next wave until
+// the pending set is empty (a wave counter backstops runaway recursion).
+
+const READER_TRIGGER_TAG = "gnosis"
+const READER_DONE_TAG = "gnosis-done"
+const READER_ERROR_TAG = "gnosis-error"
+/** Leave ~60s headroom under the 300s maxDuration for the in-flight ingest. */
+const READER_TIME_BUDGET_MS = 240_000
+/** Reader's html_content shorter than this triggers the source-URL refetch. */
+const READER_HTML_MIN_CHARS = 400
+
+export interface ReaderCronSummary extends CronSummary {
+  /** Pending docs not attempted this wave (deadline hit). >0 ⇒ self-chain. */
+  remaining: number
+}
+
+let readerTurndown: TurndownService | null = null
+function htmlToMarkdown(html: string): string {
+  if (!readerTurndown) {
+    readerTurndown = new TurndownService({
+      headingStyle: "atx",
+      codeBlockStyle: "fenced",
+      bulletListMarker: "-",
+      emDelimiter: "_",
+    })
+    readerTurndown.remove(["script", "style", "noscript", "iframe"])
+  }
+  return readerTurndown
+    .turndown(html)
+    .replace(/\n{3,}/g, "\n\n")
+    .trim()
+}
+
+/**
+ * Resolve a Reader doc to clean markdown.
+ *   (A) Reader's own cleaned html_content — works for paywalled / email /
+ *       app-only saves that a re-fetch could never reach.
+ *   (B) Fallback: re-fetch source_url through the same fetchUrl() the web
+ *       /ingest path uses, for docs whose html_content came back thin/empty.
+ * Throws if neither yields usable content.
+ */
+async function resolveReaderMarkdown(
+  doc: ReaderDocument,
+): Promise<{ markdown: string; via: "html_content" | "source_url" }> {
+  const html = doc.html_content?.trim() ?? ""
+  if (html.length >= READER_HTML_MIN_CHARS) {
+    const md = htmlToMarkdown(html)
+    if (md.length >= 200) return { markdown: md, via: "html_content" }
+  }
+  if (doc.source_url) {
+    const fetched = await fetchUrl(doc.source_url)
+    return { markdown: fetched.markdown, via: "source_url" }
+  }
+  throw new Error(
+    `no usable content — html_content ${html.length} chars and no source_url to re-fetch`,
+  )
+}
+
+/**
+ * Daily/hourly-cron entry: list every Reader doc tagged `gnosis`, ingest each
+ * one through synth+commit, retag + archive on success. Drains until the
+ * `deadline` wall-clock is hit; returns `remaining` so the caller can decide
+ * whether to fire another wave.
+ */
+export async function processReaderCron(
+  deadline: number = Date.now() + READER_TIME_BUDGET_MS,
+): Promise<ReaderCronSummary> {
+  let pending: ReaderDocument[]
+  try {
+    pending = await listReaderDocs({
+      tag: READER_TRIGGER_TAG,
+      withHtmlContent: true,
+    })
+  } catch (e) {
+    console.error("[cron reader] list failed:", e instanceof Error ? e.message : e)
+    return { scanned: 0, candidates: 0, processed: 0, results: [], remaining: 0 }
+  }
+
+  // Skip highlights/notes (they're also "documents" but have a parent_id) and
+  // any doc already archived with the done/error marker still lingering.
+  const docs = pending.filter(
+    (d) =>
+      !d.parent_id &&
+      d.category !== "highlight" &&
+      d.category !== "note" &&
+      !readerTagKeys(d).includes(READER_DONE_TAG),
+  )
+
+  const summary: ReaderCronSummary = {
+    scanned: pending.length,
+    candidates: docs.length,
+    processed: 0,
+    results: [],
+    remaining: 0,
+  }
+
+  for (let i = 0; i < docs.length; i++) {
+    if (Date.now() >= deadline) {
+      summary.remaining = docs.length - i
+      break
+    }
+    const result = await ingestOneReaderDoc(docs[i])
+    summary.results.push(result)
+    if (result.status === "ingested") summary.processed++
+  }
+
+  return summary
+}
+
+async function ingestOneReaderDoc(doc: ReaderDocument): Promise<CronClippingResult> {
+  const filename = doc.title || doc.source_url || `reader:${doc.id}`
+  const title = (doc.title && doc.title.trim()) || doc.source_url || `Reader ${doc.id}`
+  const sourceUrl = doc.source_url && doc.source_url.trim() ? doc.source_url.trim() : null
+
+  // Dedup: already ingested by any path (web UI, clippings, a prior wave)?
+  const { data: dup } = await supabase
+    .from("gnosis_ingest_jobs")
+    .select("id, commit_sha")
+    .eq("status", "done")
+    .or(
+      sourceUrl
+        ? `source_url.eq.${sourceUrl},source_title.eq.${title}`
+        : `source_title.eq.${title}`,
+    )
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle()
+  if (dup) {
+    // Clear the trigger tag so it stops re-surfacing, but don't re-ingest.
+    await markReaderDone(doc).catch(() => {})
+    return {
+      filename,
+      status: "skipped",
+      reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}`,
+    }
+  }
+
+  // In-flight guard: another wave or a web ingest mid-flight on this source.
+  const { data: inFlight } = await supabase
+    .from("gnosis_ingest_jobs")
+    .select("id, status")
+    .in("status", ["queued", "fetching", "discussing", "synthesizing", "committing"])
+    .or(
+      sourceUrl
+        ? `source_url.eq.${sourceUrl},source_title.eq.${title}`
+        : `source_title.eq.${title}`,
+    )
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle()
+  if (inFlight) {
+    return {
+      filename,
+      status: "skipped",
+      reason: `another ingest is already in-flight (job ${inFlight.id.slice(0, 8)}, status=${inFlight.status})`,
+    }
+  }
+
+  // Acquire content (Reader html_content → source_url fallback).
+  let markdown: string
+  try {
+    const resolved = await resolveReaderMarkdown(doc)
+    markdown = resolved.markdown
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    await markReaderError(doc).catch(() => {})
+    return { filename, status: "failed", reason: `content fetch failed: ${msg}` }
+  }
+  if (markdown.trim().length < 200) {
+    await markReaderError(doc).catch(() => {})
+    return {
+      filename,
+      status: "failed",
+      reason: `body too short (${markdown.trim().length} chars)`,
+    }
+  }
+
+  // Create the job row with raw_markdown pre-filled.
+  const { data: job, error: jobErr } = await supabase
+    .from("gnosis_ingest_jobs")
+    .insert({
+      source_type: "reader",
+      source_url: sourceUrl,
+      source_title: title,
+      raw_markdown: markdown,
+      status: "discussing",
+      progress_message: `[cron reader] Synthesizing ${title}`,
+      requested_by: SYSTEM_USER_EMAIL,
+    })
+    .select("id")
+    .single()
+  if (jobErr || !job) {
+    return { filename, status: "failed", reason: `job insert: ${jobErr?.message}` }
+  }
+  const jobId = job.id
+
+  try {
+    await runSynthesisOnly(jobId)
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    await markJobFailed(jobId, msg).catch(() => {})
+    await markReaderError(doc).catch(() => {})
+    return { filename, status: "failed", jobId, reason: `synth failed: ${msg}` }
+  }
+
+  try {
+    const result = await runCommit(jobId, (frame) => {
+      if (frame.message) console.log(`[cron reader ${title}] ${frame.stage}: ${frame.message}`)
+    })
+    // Only after a clean commit do we retire the doc from the pending set.
+    await markReaderDone(doc).catch((e) =>
+      console.warn(
+        `[cron reader] commit ok but retag failed for ${doc.id}:`,
+        e instanceof Error ? e.message : e,
+      ),
+    )
+    return { filename, status: "ingested", jobId, commitSha: result.sha }
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    await markJobFailed(jobId, msg).catch(() => {})
+    await markReaderError(doc).catch(() => {})
+    return { filename, status: "failed", jobId, reason: `commit failed: ${msg}` }
+  }
+}
+
+/** Retire a successfully-ingested doc: drop the trigger tag, add done, archive. */
+async function markReaderDone(doc: ReaderDocument): Promise<void> {
+  const tags = readerTagKeys(doc).filter((t) => t !== READER_TRIGGER_TAG && t !== READER_ERROR_TAG)
+  if (!tags.includes(READER_DONE_TAG)) tags.push(READER_DONE_TAG)
+  await updateReaderDoc(doc.id, { tags, location: "archive" })
+}
+
+/** Mark a failed doc: drop the trigger tag (so it leaves the pending set), add error. */
+async function markReaderError(doc: ReaderDocument): Promise<void> {
+  const tags = readerTagKeys(doc).filter((t) => t !== READER_TRIGGER_TAG && t !== READER_DONE_TAG)
+  if (!tags.includes(READER_ERROR_TAG)) tags.push(READER_ERROR_TAG)
+  await updateReaderDoc(doc.id, { tags })
 }
 
 // ============================================================================

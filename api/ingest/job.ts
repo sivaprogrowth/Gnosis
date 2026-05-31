@@ -24,7 +24,11 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
-import { processClippingsCron, runSynthesisStandalone } from "../_ingest/pipeline.js"
+import {
+  processClippingsCron,
+  processReaderCron,
+  runSynthesisStandalone,
+} from "../_ingest/pipeline.js"
 
 export const config = {
   maxDuration: 300,
@@ -51,9 +55,70 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     waitUntil(
       processClippingsCron()
         .then((summary) => console.log("[cron] ingest-clippings done:", JSON.stringify(summary)))
-        .catch((err) => console.error("[cron] ingest-clippings failed:", err instanceof Error ? err.message : err)),
+        .catch((err) =>
+          console.error(
+            "[cron] ingest-clippings failed:",
+            err instanceof Error ? err.message : err,
+          ),
+        ),
     )
-    res.status(202).json({ started: true, message: "Cron started in background; check /api/ingest/job?id=… or git history for results." })
+    res
+      .status(202)
+      .json({
+        started: true,
+        message:
+          "Cron started in background; check /api/ingest/job?id=… or git history for results.",
+      })
+    return
+  }
+
+  // Reader auto-ingest cron. Same dispatch shape as ingest-clippings, plus
+  // self-chaining: when a wave hits its time budget with docs still pending,
+  // it re-invokes this same endpoint so the next wave continues draining. This
+  // is how we get uncapped throughput on a 300s-bounded function. A `wave`
+  // counter backstops runaway recursion (e.g. a doc that keeps failing without
+  // shedding its trigger tag — though markReaderError should prevent that).
+  if (req.method === "GET" && req.query.cron === "ingest-reader") {
+    const expected = `Bearer ${process.env.CRON_SECRET || ""}`
+    if (!process.env.CRON_SECRET || req.headers.authorization !== expected) {
+      res.status(401).json({ error: "Unauthorized cron" })
+      return
+    }
+    const waveRaw = Array.isArray(req.query.wave) ? req.query.wave[0] : req.query.wave
+    const wave = Math.max(0, Number(waveRaw) || 0)
+    const MAX_WAVES = 50 // backstop; a real burst empties long before this
+    waitUntil(
+      processReaderCron()
+        .then(async (summary) => {
+          console.log(`[cron] ingest-reader wave ${wave} done:`, JSON.stringify(summary))
+          // Self-chain only if this wave made progress AND work remains.
+          if (summary.remaining > 0 && summary.processed > 0 && wave < MAX_WAVES) {
+            const proto = (req.headers["x-forwarded-proto"] as string) || "https"
+            const host = req.headers.host
+            const nextUrl = `${proto}://${host}/api/ingest/job?cron=ingest-reader&wave=${wave + 1}`
+            console.log(
+              `[cron] ingest-reader chaining wave ${wave + 1} (${summary.remaining} remaining)`,
+            )
+            await fetch(nextUrl, {
+              method: "GET",
+              headers: { Authorization: expected },
+            }).catch((e) =>
+              console.error(
+                "[cron] ingest-reader chain failed:",
+                e instanceof Error ? e.message : e,
+              ),
+            )
+          } else if (summary.remaining > 0) {
+            console.warn(
+              `[cron] ingest-reader stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${wave}) — next hourly run will resume`,
+            )
+          }
+        })
+        .catch((err) =>
+          console.error("[cron] ingest-reader failed:", err instanceof Error ? err.message : err),
+        ),
+    )
+    res.status(202).json({ started: true, wave, message: "Reader cron started in background." })
     return
   }
 
@@ -123,7 +188,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const { data, error } = await supabase
     .from("gnosis_ingest_jobs")
-    .select("id, status, progress_message, source_url, source_title, source_filename, takeaways, surfaced_entities, error_message, commit_sha, committed_files, requested_by")
+    .select(
+      "id, status, progress_message, source_url, source_title, source_filename, takeaways, surfaced_entities, error_message, commit_sha, committed_files, requested_by",
+    )
     .eq("id", id)
     .maybeSingle()
 

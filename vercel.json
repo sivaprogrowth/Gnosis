@@ -17,7 +17,7 @@
     },
     {
       "path": "/api/ingest/job?cron=ingest-reader",
-      "schedule": "0 6 * * *"
+      "schedule": "30 16 * * *"
     }
   ]
 }

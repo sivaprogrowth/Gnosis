@@ -25,6 +25,7 @@ import {
 import matter from "gray-matter"
 import { synthesize } from "./synthesize.js"
 import { listReaderDocs, updateReaderDoc, readerTagKeys, type ReaderDocument } from "./reader.js"
+import { syncToLifeSystem } from "./lifeSystemSync.js"
 import TurndownService from "turndown"
 
 export interface PipelineFrame {
@@ -222,7 +223,7 @@ export async function runCommit(
 ): Promise<CommitResult> {
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
-    .select("id, source_url, source_title, surfaced_entities, status")
+    .select("id, source_url, source_title, surfaced_entities, status, takeaways")
     .eq("id", jobId)
     .single()
   if (loadErr || !job) throw new Error(`Job ${jobId} not found: ${loadErr?.message}`)
@@ -314,6 +315,15 @@ export async function runCommit(
     commit_sha: result.sha,
     committed_files: result.files,
   })
+
+  // Fire-and-forget: sync article to life-system for Learning section
+  syncToLifeSystem({
+    title:     surfaced.sourceTitle,
+    url:       job.source_url ?? null,
+    takeaways: Array.isArray(job.takeaways) ? (job.takeaways as string[]) : [],
+    theme:     null,
+    docSlug:   `sources/${surfaced.suggestedSlug}`,
+  }).catch(() => {/* already logged inside syncToLifeSystem */})
 
   onFrame({
     stage: "committed",

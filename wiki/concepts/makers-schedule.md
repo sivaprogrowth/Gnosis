@@ -17,4 +17,6 @@ A well-defined, named framework that is widely referenced in productivity and st
 
 ## Mentions
 
+
+- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]

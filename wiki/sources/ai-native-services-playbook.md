@@ -57,3 +57,7 @@ ProGrowth is structurally an AINS company — fractional CMO + AI marketing + au
 - [[outcome-based-pricing]] — the pricing model the playbook argues for
 - [[progrowth]] — the wiki's canonical AINS example
 - [[marketri]] — the non-AI-native counter-example
+
+## Mentions
+
+- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

@@ -17,4 +17,6 @@ The direct counterpart to Maker's Schedule — the two concepts are inseparable 
 
 ## Mentions
 
+
+- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]

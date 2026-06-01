@@ -48,4 +48,6 @@ Smaller audience but influential (enterprise / developer-leaning). Worth trackin
 
 ## Mentions
 
+
+- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

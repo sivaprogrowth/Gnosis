@@ -74,3 +74,7 @@ This playbook documents SaaStr's real-world deployment of 20+ AI agents across e
 - [[Claude (Anthropic)]]
 - [[Revenue Operations]]
 - [[SDR Displacement]]
+
+## Mentions
+
+- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

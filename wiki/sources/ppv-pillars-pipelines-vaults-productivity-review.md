@@ -49,3 +49,7 @@ This article reviews PPV (Pillars, Pipelines and Vaults), a productivity and lif
 - [[life-operating-system]]
 - [[august-bradley]]
 - [[productivity-frameworks]]
+
+## Mentions
+
+- [[ppv-pillars-pipelines-vaults-productivity-review|PPV (Pillars, Pipelines and Vaults) — Productivity System Review]]

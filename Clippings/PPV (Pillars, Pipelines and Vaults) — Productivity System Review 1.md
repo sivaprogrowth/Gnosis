@@ -1,13 +1,19 @@
 ---
-title: "PPV (Pillars, Pipelines and Vaults) — Productivity System Review"
-source: "https://effectivefaith.medium.com/ppv-pillars-pipelines-and-vaults-productivity-system-review-4665ae6ca06a"
+title: 'PPV (Pillars, Pipelines and Vaults) — Productivity System Review'
+source: >-
+  https://effectivefaith.medium.com/ppv-pillars-pipelines-and-vaults-productivity-system-review-4665ae6ca06a
 author:
-  - "[[Effective Faith]]"
-published: 2025-01-21
-created: 2026-06-02
-description: "Four years ago August Bradley burst onto the YouTube screen and took the Notion (& productivity) community by storm. In a short space of tim"
+  - '[[Effective Faith]]'
+published: 2025-01-21T00:00:00.000Z
+created: 2026-06-02T00:00:00.000Z
+description: >-
+  Four years ago August Bradley burst onto the YouTube screen and took the
+  Notion (& productivity) community by storm. In a short space of tim
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 9a6954db-4534-461b-a187-fce974b7b7d3
+gnosis_ingested_at: '2026-06-03T05:57:56.240Z'
 ---
 Four years ago August Bradley burst onto the YouTube screen and took the Notion (& productivity) community by storm. In a short space of time he unleashed an plethora of videos providing viewers with a detailed and step by step guide to a new system that he called PPV. BUT — was this worth the hype? I have to say — I love the idea behind the name of this system. Every system under the sun focusses on the bog standard Projects, Areas and such and such. PPV is original in this regard and so I love this. So here it is. PPV (Pillars, Pipelines and Vaults) — Productivity System Review.
 

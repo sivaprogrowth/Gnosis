@@ -61,3 +61,7 @@ Written by Natalia Quintero, head of Every Consulting, this article diagnoses wh
 - AI champions
 - Prompt libraries
 - Implementation wave
+
+## Mentions
+
+- [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

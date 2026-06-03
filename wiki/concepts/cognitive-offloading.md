@@ -21,6 +21,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]

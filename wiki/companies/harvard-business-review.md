@@ -1,0 +1,20 @@
+---
+type: company
+title: Harvard Business Review
+tags: [ingested]
+sources: [hbr-ai-experimentation-to-ai-transformation]
+---
+
+# Harvard Business Review
+
+_Stub page created automatically during ingest of [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]._
+
+HBR is a major publisher of management frameworks the wiki clearly tracks (e.g., multiple concept pages map to HBR-style practitioner thinking). It is likely to be cited as a source entity across multiple future ingests, and the wiki already tracks publishers/institutions like LSE, WEF, and Y Combinator.
+
+## Why this earned its own page
+
+HBR is a major publisher of management frameworks the wiki clearly tracks (e.g., multiple concept pages map to HBR-style practitioner thinking). It is likely to be cited as a source entity across multiple future ingests, and the wiki already tracks publishers/institutions like LSE, WEF, and Y Combinator.
+
+## Mentions
+
+- [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

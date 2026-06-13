@@ -18,6 +18,7 @@
 import Anthropic from "@anthropic-ai/sdk"
 import type { Tool } from "@anthropic-ai/sdk/resources/messages"
 import type { SynthesizedEntity } from "./synthesize.js"
+import { logAiUsage } from "../_lib/aiUsage.js"
 
 const MODEL_ID = "claude-sonnet-4-6"
 const MAX_TOKENS = 2000
@@ -143,6 +144,7 @@ Decide promote vs inline for each candidate. Emit the structured decision via th
     tool_choice: { type: "tool", name: "compounding_decision" },
     messages: [{ role: "user", content: userPrompt }],
   })
+  await logAiUsage("ingest:compounding_filter", MODEL_ID, response.usage)
 
   const block = response.content.find((b) => b.type === "tool_use")
   if (!block || block.type !== "tool_use") {

@@ -15,6 +15,7 @@
 
 import Anthropic from "@anthropic-ai/sdk"
 import type { Tool } from "@anthropic-ai/sdk/resources/messages"
+import { logAiUsage } from "../_lib/aiUsage.js"
 
 const MODEL_ID = "claude-sonnet-4-6"
 const MAX_TOKENS = 8000
@@ -182,6 +183,7 @@ Produce the structured output now via the synthesize_source tool.`
     tool_choice: { type: "tool", name: "synthesize_source" },
     messages: [{ role: "user", content: userPrompt }],
   })
+  await logAiUsage("ingest:synthesize", MODEL_ID, response.usage)
 
   const block = response.content.find((b) => b.type === "tool_use")
   if (!block || block.type !== "tool_use") {

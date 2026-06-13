@@ -15,6 +15,7 @@ import type {
   TextBlockParam,
 } from "@anthropic-ai/sdk/resources"
 import type { AssembledPage, PageIndex, ParsedQuery, SynthesisModel, TopKPage } from "./types.js"
+import { logAiUsage } from "../_lib/aiUsage.js"
 
 const MODEL_OPUS = "claude-opus-4-7"
 const MODEL_SONNET = "claude-sonnet-4-6"
@@ -166,6 +167,7 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
   }
 
   const final = await stream.finalMessage()
+  await logAiUsage("ask:synthesize", modelId, final.usage)
   return {
     model,
     modelId,

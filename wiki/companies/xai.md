@@ -1,0 +1,20 @@
+---
+type: company
+title: xAI
+tags: [ingested]
+sources: [spacex-ipo-data-centers-in-space]
+---
+
+# xAI
+
+_Stub page created automatically during ingest of [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]._
+
+Elon Musk's AI company with significant financial footprint ($5.1B R&D) and direct relevance to existing AI concepts (Agentic AI, AI transformation). Multiple existing pages on AI companies (Anthropic, OpenAI, ByteDance) make this a natural peer.
+
+## Why this earned its own page
+
+Elon Musk's AI company with significant financial footprint ($5.1B R&D) and direct relevance to existing AI concepts (Agentic AI, AI transformation). Multiple existing pages on AI companies (Anthropic, OpenAI, ByteDance) make this a natural peer.
+
+## Mentions
+
+- [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

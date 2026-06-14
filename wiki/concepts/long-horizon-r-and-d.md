@@ -17,4 +17,6 @@ A named cultural/strategic concept (articulated by a named analyst) describing a
 
 ## Mentions
 
+
+- [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]

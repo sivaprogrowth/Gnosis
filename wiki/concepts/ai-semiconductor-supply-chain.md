@@ -17,4 +17,6 @@ A broad but well-defined framework concept that would serve as the hub page tyin
 
 ## Mentions
 
+
+- [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]

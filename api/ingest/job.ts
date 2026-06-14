@@ -52,9 +52,39 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       res.status(401).json({ error: "Unauthorized cron" })
       return
     }
+    const clipWaveRaw = Array.isArray(req.query.wave) ? req.query.wave[0] : req.query.wave
+    const clipWave = Math.max(0, Number(clipWaveRaw) || 0)
+    const MAX_CLIP_WAVES = 50 // backstop; a real backlog drains long before this
     waitUntil(
       processClippingsCron()
-        .then((summary) => console.log("[cron] ingest-clippings done:", JSON.stringify(summary)))
+        .then(async (summary) => {
+          console.log(
+            `[cron] ingest-clippings wave ${clipWave} done:`,
+            JSON.stringify(summary),
+          )
+          // Self-chain only if this wave made progress AND work remains.
+          if (summary.remaining > 0 && summary.processed > 0 && clipWave < MAX_CLIP_WAVES) {
+            const proto = (req.headers["x-forwarded-proto"] as string) || "https"
+            const host = req.headers.host
+            const nextUrl = `${proto}://${host}/api/ingest/job?cron=ingest-clippings&wave=${clipWave + 1}`
+            console.log(
+              `[cron] ingest-clippings chaining wave ${clipWave + 1} (${summary.remaining} remaining)`,
+            )
+            await fetch(nextUrl, {
+              method: "GET",
+              headers: { Authorization: expected },
+            }).catch((e) =>
+              console.error(
+                "[cron] ingest-clippings chain failed:",
+                e instanceof Error ? e.message : e,
+              ),
+            )
+          } else if (summary.remaining > 0) {
+            console.warn(
+              `[cron] ingest-clippings stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${clipWave}) — next daily run will resume`,
+            )
+          }
+        })
         .catch((err) =>
           console.error(
             "[cron] ingest-clippings failed:",
@@ -62,13 +92,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           ),
         ),
     )
-    res
-      .status(202)
-      .json({
-        started: true,
-        message:
-          "Cron started in background; check /api/ingest/job?id=… or git history for results.",
-      })
+    res.status(202).json({
+      started: true,
+      wave: clipWave,
+      message: "Cron started in background; check git history for results.",
+    })
     return
   }
 

@@ -526,7 +526,8 @@ function appendMention(content: string, sourceSlug: string, sourceTitle: string)
 // ============================================================================
 
 const CLIPPINGS_DIR = "Clippings"
-const MAX_CLIPPINGS_PER_RUN = 3 // sequential synthesize+commit can take ~2 min each
+const MAX_CLIPPINGS_PER_RUN = 6 // per-wave ceiling; the time budget below is the real guard
+const CLIPPINGS_TIME_BUDGET_MS = 240_000 // stop starting new clips ~60s before the 300s function limit
 const SYSTEM_USER_EMAIL = "siva@progrowth.services"
 
 export interface CronClippingResult {
@@ -553,14 +554,22 @@ export interface CronSummary {
  * limit forces sequential synth+commit and each takes ~90s. Remaining
  * clippings get picked up next run.
  */
-export async function processClippingsCron(): Promise<CronSummary> {
+export async function processClippingsCron(
+  deadline: number = Date.now() + CLIPPINGS_TIME_BUDGET_MS,
+): Promise<CronSummary & { remaining: number }> {
   const files = await listFilesInDirectory(CLIPPINGS_DIR).catch((e) => {
     console.error(`[cron] could not list ${CLIPPINGS_DIR}:`, e instanceof Error ? e.message : e)
     return []
   })
   const mdFiles = files.filter((f) => f.name.toLowerCase().endsWith(".md"))
 
-  const summary: CronSummary = { scanned: mdFiles.length, candidates: 0, processed: 0, results: [] }
+  const summary: CronSummary & { remaining: number } = {
+    scanned: mdFiles.length,
+    candidates: 0,
+    processed: 0,
+    results: [],
+    remaining: 0,
+  }
   const candidates: Array<{
     file: { path: string; name: string }
     raw: string
@@ -589,11 +598,21 @@ export async function processClippingsCron(): Promise<CronSummary> {
   }
   summary.candidates = candidates.length
 
-  for (const cand of candidates.slice(0, MAX_CLIPPINGS_PER_RUN)) {
-    const result = await ingestOneClipping(cand)
+  // Process up to MAX_CLIPPINGS_PER_RUN, but stop starting new ones once the
+  // time budget is spent so the function never gets killed mid-synth (which
+  // would strand a job in `discussing` and wedge that clip via the in-flight
+  // guard). `remaining` = candidates we didn't attempt this wave, so the
+  // caller can self-chain another wave to drain the rest.
+  const batch = candidates.slice(0, MAX_CLIPPINGS_PER_RUN)
+  let attempted = 0
+  for (let i = 0; i < batch.length; i++) {
+    if (Date.now() >= deadline) break
+    const result = await ingestOneClipping(batch[i])
     summary.results.push(result)
     if (result.status === "ingested") summary.processed++
+    attempted = i + 1
   }
+  summary.remaining = candidates.length - attempted
 
   return summary
 }

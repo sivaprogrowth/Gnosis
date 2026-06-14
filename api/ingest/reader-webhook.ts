@@ -43,24 +43,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  // Vercel parses JSON bodies, but be defensive if a raw string arrives.
+  // Vercel parses JSON bodies, but be defensive if a raw string/Buffer arrives.
   let body: ReaderWebhookBody
   try {
-    body = (typeof req.body === "string" ? JSON.parse(req.body) : req.body) || {}
+    const raw = req.body
+    body =
+      (typeof raw === "string"
+        ? JSON.parse(raw)
+        : Buffer.isBuffer(raw)
+          ? JSON.parse(raw.toString("utf8"))
+          : raw) || {}
   } catch {
     // Malformed body — still 200 so a test ping doesn't block webhook creation.
     res.status(200).json({ ok: true, ignored: "unparseable body" })
     return
   }
 
-  const expected = process.env.READER_WEBHOOK_SECRET
+  const expected = (process.env.READER_WEBHOOK_SECRET || "").trim()
+  const provided = typeof body.secret === "string" ? body.secret.trim() : ""
   const eventType = typeof body.event_type === "string" ? body.event_type : ""
   const docId = typeof body.id === "string" ? body.id : ""
 
   // Acknowledge anything we won't act on with 200 (test pings, unverified
   // callers, highlight events, missing id). Never reveal whether the secret
   // matched; just don't ingest.
-  const verified = Boolean(expected) && body.secret === expected
+  const verified = expected.length > 0 && provided === expected
   const isReaderDocEvent = eventType.startsWith("reader.")
   if (!verified || !isReaderDocEvent || !docId) {
     res.status(200).json({
@@ -71,6 +78,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         : !isReaderDocEvent
           ? `ignored event ${eventType || "(none)"}`
           : "missing document id",
+      // TEMP diagnostic — lengths/flags only, no secret values. Remove after wiring confirmed.
+      _debug: {
+        bodyType: typeof req.body,
+        hasExpected: expected.length > 0,
+        expectedLen: expected.length,
+        providedLen: provided.length,
+        match: provided === expected,
+      },
     })
     return
   }

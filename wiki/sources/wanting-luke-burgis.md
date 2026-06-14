@@ -1,6 +1,6 @@
 ---
 type: source
-title: Wanting: The Power of Mimetic Desire in Everyday Life
+title: "Wanting: The Power of Mimetic Desire in Everyday Life"
 tags: [ingested]
 sources: [how-to-know-what-you-really-want-mimetic-desire]
 ---

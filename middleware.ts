@@ -61,6 +61,13 @@ export default async function middleware(req: Request): Promise<Response> {
     return fetch(req)
   }
 
+  // 1c. Readwise Reader webhook — external POSTs carry their own 32-char secret
+  //     in the body, which the handler verifies. Bypass the cookie session
+  //     check (Readwise has no session) and let the handler authenticate.
+  if (pathname === "/api/ingest/reader-webhook") {
+    return fetch(req)
+  }
+
   // 2. Login page (and its assets — handled by extension check below)
   if (pathname === "/login" || pathname === "/login.html" || pathname === "/login/") {
     return fetch(req)

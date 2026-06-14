@@ -78,14 +78,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         : !isReaderDocEvent
           ? `ignored event ${eventType || "(none)"}`
           : "missing document id",
-      // TEMP diagnostic — lengths/flags only, no secret values. Remove after wiring confirmed.
-      _debug: {
-        bodyType: typeof req.body,
-        hasExpected: expected.length > 0,
-        expectedLen: expected.length,
-        providedLen: provided.length,
-        match: provided === expected,
-      },
     })
     return
   }

@@ -357,6 +357,16 @@ export async function runCommit(
   return result
 }
 
+/**
+ * YAML-safe double-quoted scalar. JSON string escaping is a valid subset of
+ * YAML's double-quoted style, so this safely handles colons, quotes, and
+ * backslashes in free-text values (e.g. an entity named "Wanting: The Power
+ * of Mimetic Desire") that would otherwise break js-yaml at build time.
+ */
+function yamlString(s: string): string {
+  return JSON.stringify(s)
+}
+
 function buildEntityStub(
   entity: { name: string; type: string; suggestedSlug: string; rationale: string },
   sourceTitle: string,
@@ -377,9 +387,9 @@ function buildEntityStub(
 
   return `---
 type: ${fmType}
-title: ${entity.name}
+title: ${yamlString(entity.name)}
 tags: [ingested]
-sources: [${sourceSlug}]
+sources: [${yamlString(sourceSlug)}]
 ---
 
 # ${entity.name}

@@ -31,3 +31,7 @@ Useful for:
 - [[sacred-flaw-approach]] — Storr's larger frame: the meaningful pursuit is one that requires giving up a sacred flaw
 - [[synthesis-2026-W22]] — Dillard's daily-practice rule ("you must visit it every day") is the operational corollary of the Storr line
 - [[reading-mirror-2026-Q2]] — anchor for the quarter's dominant emergent theme ("the discipline of solitary work over time"), a 320-highlight cross-book cluster
+
+## Mentions
+
+- [[how-to-know-what-you-really-want-mimetic-desire|How to know what you really want]]

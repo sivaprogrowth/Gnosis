@@ -69,5 +69,7 @@ The wants-vs-needs frame is a cousin of jobs-to-be-done, but more dramatic. JTBD
 ## Mentions
 
 
+
+- [[how-to-know-what-you-really-want-mimetic-desire|How to know what you really want]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

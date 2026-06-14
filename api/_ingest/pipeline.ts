@@ -983,6 +983,9 @@ async function ingestOneReaderDoc(doc: ReaderDocument): Promise<CronClippingResu
     .select("id")
     .single()
   if (jobErr || !job) {
+    // Retag so a persistent insert failure surfaces as gnosis-error instead of
+    // silently re-failing every cron run with the doc stuck bare-tagged.
+    await markReaderError(doc).catch(() => {})
     return { filename, status: "failed", reason: `job insert: ${jobErr?.message}` }
   }
   const jobId = job.id

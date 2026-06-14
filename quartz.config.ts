@@ -69,7 +69,11 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" }),
+      // Latex/KaTeX disabled: remark-math treats `$...$` as inline math, which
+      // mangled dollar amounts in article content (e.g. "$4.8M in pipeline and
+      // $2.4M in revenue" rendered as italic math). No wiki page uses real
+      // LaTeX. Re-add Plugin.Latex({ renderEngine: "katex" }) here if that ever
+      // changes — and escape `$` as `\$` in synth output to avoid the conflict.
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [

@@ -49,5 +49,7 @@ Smaller audience but influential (enterprise / developer-leaning). Worth trackin
 ## Mentions
 
 
+
+- [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

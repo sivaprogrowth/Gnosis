@@ -51,4 +51,6 @@ The "brand-in-the-customer's-head" is not a description of the company — it is
 
 ## Mentions
 
+
+- [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]

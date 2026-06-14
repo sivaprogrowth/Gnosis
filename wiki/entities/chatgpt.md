@@ -55,6 +55,8 @@ Most visible AI engine for B2B/consumer audiences alike. For ProGrowth's [[gener
 
 
 
+
+- [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

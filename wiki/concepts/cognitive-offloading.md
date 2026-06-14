@@ -22,6 +22,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]

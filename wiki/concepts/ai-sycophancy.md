@@ -17,4 +17,6 @@ A named, well-defined failure mode of AI systems with clear adjacency to Cogniti
 
 ## Mentions
 
+
+- [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]

@@ -112,6 +112,27 @@ export async function listReaderDocs(opts: {
 }
 
 /**
+ * Fetch a single Reader document by id, with its cleaned html_content inline.
+ * Used by the realtime webhook path: the webhook payload carries the document
+ * id + tags but `content` is null, so we re-fetch to get usable content (and
+ * the freshest tag set) before ingesting. Returns null if not found.
+ */
+export async function getReaderDocById(
+  id: string,
+  withHtmlContent = true,
+): Promise<ReaderDocument | null> {
+  const params = new URLSearchParams()
+  params.set("id", id)
+  if (withHtmlContent) params.set("withHtmlContent", "true")
+  const res = await readerFetch(`${READER_BASE}/list/?${params.toString()}`, { method: "GET" })
+  if (!res.ok) {
+    throw new Error(`Reader LIST by id ${res.status}: ${await res.text()}`)
+  }
+  const page = (await res.json()) as ListResponse
+  return page.results[0] ?? null
+}
+
+/**
  * Update a Reader document. Used to archive + retag after ingest.
  *
  * NOTE: `tags` REPLACES the document's entire tag set (Reader has no

@@ -24,7 +24,13 @@ import {
 } from "./githubPush.js"
 import matter from "gray-matter"
 import { synthesize } from "./synthesize.js"
-import { listReaderDocs, updateReaderDoc, readerTagKeys, type ReaderDocument } from "./reader.js"
+import {
+  listReaderDocs,
+  getReaderDocById,
+  updateReaderDoc,
+  readerTagKeys,
+  type ReaderDocument,
+} from "./reader.js"
 import { syncToLifeSystem } from "./lifeSystemSync.js"
 import TurndownService from "turndown"
 
@@ -1027,6 +1033,48 @@ async function ingestOneReaderDoc(doc: ReaderDocument): Promise<CronClippingResu
     await markReaderError(doc).catch(() => {})
     return { filename, status: "failed", jobId, reason: `commit failed: ${msg}` }
   }
+}
+
+/**
+ * Realtime webhook entry: ingest a single Reader doc by id, triggered by a
+ * Readwise `reader.document.tags_updated` (or document.created) webhook the
+ * moment the user tags it `gnosis`. Re-fetches the doc by id to get fresh tags
+ * + html_content (the webhook payload omits content), applies the same
+ * eligibility filter as the cron, then reuses `ingestOneReaderDoc` — whose
+ * dedup + in-flight guard make it safe to run alongside the daily cron without
+ * double-ingesting. Returns a result describing what happened (for logging).
+ */
+export async function ingestReaderWebhookDoc(docId: string): Promise<CronClippingResult> {
+  let doc: ReaderDocument | null
+  try {
+    doc = await getReaderDocById(docId, true)
+  } catch (e) {
+    return {
+      filename: `reader:${docId}`,
+      status: "failed",
+      reason: `fetch by id failed: ${e instanceof Error ? e.message : e}`,
+    }
+  }
+  if (!doc) {
+    return { filename: `reader:${docId}`, status: "skipped", reason: "document not found" }
+  }
+  const label = doc.title || doc.source_url || `reader:${docId}`
+
+  // Same eligibility gate as processReaderCron: real article, tagged gnosis,
+  // not already retired. Keeps the webhook from acting on highlights, notes,
+  // untag events, or docs a prior run already finished.
+  if (doc.parent_id || doc.category === "highlight" || doc.category === "note") {
+    return { filename: label, status: "skipped", reason: "not an ingestable document" }
+  }
+  const tags = readerTagKeys(doc)
+  if (!tags.includes(READER_TRIGGER_TAG)) {
+    return { filename: label, status: "skipped", reason: "gnosis tag not present" }
+  }
+  if (tags.includes(READER_DONE_TAG)) {
+    return { filename: label, status: "skipped", reason: "already gnosis-done" }
+  }
+
+  return ingestOneReaderDoc(doc)
 }
 
 /** Retire a successfully-ingested doc: drop the trigger tag, add done, archive. */

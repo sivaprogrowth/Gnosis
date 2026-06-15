@@ -1,13 +1,20 @@
 ---
-title: "How artificial intelligence got better at building itself"
-source: "https://www.economist.com/science-and-technology/2026/06/07/how-artificial-intelligence-got-better-at-building-itself"
+title: How artificial intelligence got better at building itself
+source: >-
+  https://www.economist.com/science-and-technology/2026/06/07/how-artificial-intelligence-got-better-at-building-itself
 author:
-  - "[[The Economist]]"
-published: 2026-06-07
-created: 2026-06-14
-description: "Anthropic's Claude chatbot has become indispensable for coders worldwide, with the company calling for a pause in frontier AI development amid fears of recursive self-improvement. | Science & technology"
+  - '[[The Economist]]'
+published: 2026-06-07T00:00:00.000Z
+created: 2026-06-14T00:00:00.000Z
+description: >-
+  Anthropic's Claude chatbot has become indispensable for coders worldwide, with
+  the company calling for a pause in frontier AI development amid fears of
+  recursive self-improvement. | Science & technology
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 8cf8167c-68d5-45b9-bac0-5086d4e88342
+gnosis_ingested_at: '2026-06-15T05:03:30.964Z'
 ---
 ## What does “recursive self-improvement” mean for the technology?
 

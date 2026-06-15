@@ -19,6 +19,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
 - [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

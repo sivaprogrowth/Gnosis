@@ -25,6 +25,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

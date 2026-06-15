@@ -17,4 +17,6 @@ Well-defined sub-concept adjacent to the existing Agentic AI page, and directly 
 
 ## Mentions
 
+
+- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

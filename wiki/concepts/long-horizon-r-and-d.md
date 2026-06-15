@@ -18,5 +18,7 @@ A named cultural/strategic concept (articulated by a named analyst) describing a
 ## Mentions
 
 
+
+- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]

@@ -23,6 +23,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

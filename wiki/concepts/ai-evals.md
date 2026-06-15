@@ -17,4 +17,6 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 ## Mentions
 
+
+- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

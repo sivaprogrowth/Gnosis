@@ -1,13 +1,18 @@
 ---
-title: "Avoiding Death on the Yellow Brick Road"
-source: "https://x.com/joeschmidtiv/status/2059642470334677472"
+title: Avoiding Death on the Yellow Brick Road
+source: 'https://x.com/joeschmidtiv/status/2059642470334677472'
 author:
-  - "[[@joeschmidtiv]]"
-published: 2026-05-27
-created: 2026-05-28
-description: "Why The App Layer Isn't Dead The question I keep getting from founders and prospective employees: is there any AI application layer left to ..."
+  - '[[@joeschmidtiv]]'
+published: 2026-05-27T00:00:00.000Z
+created: 2026-05-28T00:00:00.000Z
+description: >-
+  Why The App Layer Isn't Dead The question I keep getting from founders and
+  prospective employees: is there any AI application layer left to ...
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 10aa089a-65f7-4e4d-9bcc-ca841e51fae0
+gnosis_ingested_at: '2026-06-15T05:02:01.849Z'
 ---
 ![Image](https://pbs.twimg.com/media/HJTLs5-bYAA662h?format=jpg&name=large)
 

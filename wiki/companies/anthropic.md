@@ -21,6 +21,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

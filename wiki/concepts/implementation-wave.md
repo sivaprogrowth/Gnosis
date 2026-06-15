@@ -18,5 +18,7 @@ Named, well-defined phase in a three-stage enterprise AI adoption model. The wik
 ## Mentions
 
 
+
+- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

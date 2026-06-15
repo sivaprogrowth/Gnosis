@@ -88,5 +88,7 @@ The [[mirage-pmf]] test and outcome-based pricing are connected: labor-based pri
 ## Mentions
 
 
+
+- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

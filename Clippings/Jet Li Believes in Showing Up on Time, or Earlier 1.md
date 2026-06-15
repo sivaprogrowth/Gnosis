@@ -1,13 +1,18 @@
 ---
-title: "Jet Li Believes in Showing Up on Time, or Earlier"
-source: "https://www.nytimes.com/2026/04/25/movies/jet-li-beyond-life-death.html"
+title: 'Jet Li Believes in Showing Up on Time, or Earlier'
+source: 'https://www.nytimes.com/2026/04/25/movies/jet-li-beyond-life-death.html'
 author:
-  - "[[Elisabeth Vincentelli]]"
-published: 2026-04-25
-created: 2026-05-28
-description: "“If you tell me eight o’clock,” the film and martial arts star said, “I will be there 10 or 15 minutes before and wait.”"
+  - '[[Elisabeth Vincentelli]]'
+published: 2026-04-25T00:00:00.000Z
+created: 2026-05-28T00:00:00.000Z
+description: >-
+  “If you tell me eight o’clock,” the film and martial arts star said, “I will
+  be there 10 or 15 minutes before and wait.”
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: c14ad24b-9489-4f53-9cad-c8783518018b
+gnosis_ingested_at: '2026-06-15T05:04:15.001Z'
 ---
 In his new memoir, “Beyond Life and Death,” Jet Li describes being sent to the Beijing Sports and Exercise School when he was 8, in 1971. He could have ended up in the swimming section, say, or the soccer one. Instead it was martial arts, and film history was changed.
 

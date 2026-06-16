@@ -17,4 +17,6 @@ A foundational AI concept directly linked to recursive self-improvement, fast ta
 
 ## Mentions
 
+
+- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

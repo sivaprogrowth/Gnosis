@@ -17,4 +17,6 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 ## Mentions
 
+
+- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

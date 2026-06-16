@@ -1,13 +1,19 @@
 ---
-title: "Three Reasons AI Is Now More Reliable Than Ever"
-source: "https://www.wsj.com/tech/ai/ai-model-reliability-hallucinations-a3bc0497?mod=author_content_page_1_pos_4"
+title: Three Reasons AI Is Now More Reliable Than Ever
+source: >-
+  https://www.wsj.com/tech/ai/ai-model-reliability-hallucinations-a3bc0497?mod=author_content_page_1_pos_4
 author:
-  - "[[Christopher Mims]]"
-published: 2026-04-17
-created: 2026-06-10
-description: "By their nature, AI models hallucinate and generate inconsistent answers—so why are they suddenly useful enough to get real work done?"
+  - '[[Christopher Mims]]'
+published: 2026-04-17T00:00:00.000Z
+created: 2026-06-10T00:00:00.000Z
+description: >-
+  By their nature, AI models hallucinate and generate inconsistent answers—so
+  why are they suddenly useful enough to get real work done?
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 3cea38a6-662b-43ac-8efa-7fb1fb66c684
+gnosis_ingested_at: '2026-06-16T05:02:48.557Z'
 ---
 ![Illustration of a robot arm writing on a paper filled with binary code, highlighting errors in red.](https://images.wsj.net/im-43065308?width=700&size=1.501&pixel_ratio=3)
 

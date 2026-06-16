@@ -17,4 +17,6 @@ A well-defined technical concept in AI training that underpins safe synthetic da
 
 ## Mentions
 
+
+- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

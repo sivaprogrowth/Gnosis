@@ -17,4 +17,6 @@ Sits at the intersection of agentic-ai, ai-native-services, and outcome-based-pr
 
 ## Mentions
 
+
+- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

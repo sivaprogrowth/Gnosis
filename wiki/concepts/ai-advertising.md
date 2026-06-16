@@ -17,4 +17,6 @@ Google's strategy of inserting ads into AI Search responses is a distinct, named
 
 ## Mentions
 
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

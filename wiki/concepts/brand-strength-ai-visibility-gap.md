@@ -77,3 +77,7 @@ This is the *empirical proof* for ProGrowth's challenger-brand positioning. A Pr
 - [[earned-media-bias]] — key driver of the gap
 - [[citation-network-mapping]] — how a brand diagnoses its own gap
 - [[semrush-ai-visibility-index]] — a public tool making gaps visible for many brands monthly
+
+## Mentions
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

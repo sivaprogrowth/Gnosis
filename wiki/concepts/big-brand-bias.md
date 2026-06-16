@@ -82,3 +82,7 @@ Directly applicable to **challenger/fractional marketing clients** who compete a
 - [[generative-engine-optimization]] — strategic response framework
 - [[justification-attributes]] — niche brands need explicit use-case claims to differentiate
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]] — engine-level severity
+
+## Mentions
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

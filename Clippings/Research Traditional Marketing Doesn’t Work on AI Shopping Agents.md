@@ -1,13 +1,31 @@
 ---
-title: "Research: Traditional Marketing Doesn’t Work on AI Shopping Agents"
-source: "https://hbr.org/2026/05/research-traditional-marketing-doesnt-work-on-ai-shopping-agents?tpcc=orgsocial_edit"
+title: 'Research: Traditional Marketing Doesn’t Work on AI Shopping Agents'
+source: >-
+  https://hbr.org/2026/05/research-traditional-marketing-doesnt-work-on-ai-shopping-agents?tpcc=orgsocial_edit
 author:
-  - "[[Jafar Sabbah and Oguz A. Acar]]"
-published: 2026-05-12
-created: 2026-06-10
-description: "AI shopping agents are rapidly becoming a meaningful share of online “shoppers.” New research shows that many classic e-commerce persuasion tactics built for human psychology—scarcity, countdown timers, strike-through pricing, vouchers, and bundles—do not reliably influence AI agents and can even reduce selection depending on the model and product category. In thousands of simulated shopping rounds across four leading models and four common product categories, only star ratings consistently increased choice in the expected direction, while price reliably decreased it; other cues produced unstable, model-specific effects, with more advanced reasoning models often appearing skeptical of overt persuasion. The implication for marketers is clear: Treat AI models as distinct segments, prioritize fundamentals like competitive pricing and authentic reviews, and invest in a testing infrastructure that continuously measures how different agents respond as models and prompts evolve."
+  - '[[Jafar Sabbah and Oguz A. Acar]]'
+published: 2026-05-12T00:00:00.000Z
+created: 2026-06-10T00:00:00.000Z
+description: >-
+  AI shopping agents are rapidly becoming a meaningful share of online
+  “shoppers.” New research shows that many classic e-commerce persuasion tactics
+  built for human psychology—scarcity, countdown timers, strike-through pricing,
+  vouchers, and bundles—do not reliably influence AI agents and can even reduce
+  selection depending on the model and product category. In thousands of
+  simulated shopping rounds across four leading models and four common product
+  categories, only star ratings consistently increased choice in the expected
+  direction, while price reliably decreased it; other cues produced unstable,
+  model-specific effects, with more advanced reasoning models often appearing
+  skeptical of overt persuasion. The implication for marketers is clear: Treat
+  AI models as distinct segments, prioritize fundamentals like competitive
+  pricing and authentic reviews, and invest in a testing infrastructure that
+  continuously measures how different agents respond as models and prompts
+  evolve.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 91487db7-3792-4546-a59e-fc433a382eda
+gnosis_ingested_at: '2026-06-16T05:01:34.474Z'
 ---
 ## Summary.
 

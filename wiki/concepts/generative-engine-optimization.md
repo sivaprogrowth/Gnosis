@@ -88,4 +88,6 @@ GEO is the emerging service category both sources argue for. Directly relevant t
 
 ## Mentions
 
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

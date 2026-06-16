@@ -69,3 +69,7 @@ Directly informs ProGrowth client strategy: GEO investments must cover *all thre
 - [[earned-media-bias]] — decision-stage content must exist on earned sources
 - [[justification-attributes]] — decision stage especially rewards clear comparison content
 - [[google-ai-overview]] — where decision-stage AI responses increasingly appear
+
+## Mentions
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

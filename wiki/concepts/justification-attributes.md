@@ -68,3 +68,7 @@ Direct input to ProGrowth's content strategy deliverables and any GEO audit tool
 - [[api-able-brand]] — the technical/schema complement
 - [[earned-media-bias]] — the content must exist on earned sites too, not only owned
 - [[big-brand-bias]] — strong justification attributes are how niche brands overcome this
+
+## Mentions
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

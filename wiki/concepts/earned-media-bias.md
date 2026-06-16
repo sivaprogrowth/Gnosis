@@ -82,3 +82,7 @@ This is the empirical foundation for repositioning ProGrowth's SEO offering into
 - [[brand-strength-ai-visibility-gap]] — downstream implication: brand size doesn't compensate
 - [[google-ai-overview]] — engine where McKinsey's affiliate-heavy variant is most visible
 - [[chatgpt]], [[claude]], [[perplexity]], [[gemini]], [[google-search]] — per-engine severity
+
+## Mentions
+
+- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

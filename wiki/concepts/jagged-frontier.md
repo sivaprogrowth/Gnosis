@@ -17,4 +17,6 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 ## Mentions
 
+
+- [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

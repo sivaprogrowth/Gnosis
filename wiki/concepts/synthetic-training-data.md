@@ -18,5 +18,7 @@ A named, well-defined ML concept with broad applicability across AI topics alrea
 ## Mentions
 
 
+
+- [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

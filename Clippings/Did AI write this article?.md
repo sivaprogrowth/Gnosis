@@ -1,13 +1,19 @@
 ---
-title: "Did AI write this article?"
-source: "https://www.economist.com/graphic-detail/2026/06/16/did-ai-write-this-article"
+title: Did AI write this article?
+source: 'https://www.economist.com/graphic-detail/2026/06/16/did-ai-write-this-article'
 author:
-  - "[[The Economist]]"
-published: 2026-06-16
-created: 2026-06-17
-description: "Artificial intelligence tools have increased content creation across books, lawsuits, academic papers, apps and music, raising concerns about quality and market saturation. | Graphic detail"
+  - '[[The Economist]]'
+published: 2026-06-16T00:00:00.000Z
+created: 2026-06-17T00:00:00.000Z
+description: >-
+  Artificial intelligence tools have increased content creation across books,
+  lawsuits, academic papers, apps and music, raising concerns about quality and
+  market saturation. | Graphic detail
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 46f82fc6-fd9b-4157-9d9b-badb8a347380
+gnosis_ingested_at: '2026-06-17T05:01:42.047Z'
 ---
 ## We track how artificial intelligence is changing five fields
 

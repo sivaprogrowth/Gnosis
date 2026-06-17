@@ -26,6 +26,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

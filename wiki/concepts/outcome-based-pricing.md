@@ -89,6 +89,8 @@ The [[mirage-pmf]] test and outcome-based pricing are connected: labor-based pri
 
 
 
+
+- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

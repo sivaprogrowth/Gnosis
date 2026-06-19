@@ -17,4 +17,6 @@ Salesforce's named AI agent product with specific metrics (72% open rates on gho
 
 ## Mentions
 
+
+- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
 - [[saastr-ai-agent-playbook-for-gtm|AI Agent Playbook]]

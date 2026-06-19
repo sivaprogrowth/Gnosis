@@ -17,4 +17,6 @@ The wiki already tracks agentic-ai, agentic-inference, ai-native-services, and f
 
 ## Mentions
 
+
+- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

@@ -1,13 +1,19 @@
 ---
-title: "Fear of the SaaSpocalypse is tormenting techland"
-source: "https://www.economist.com/business/2026/06/10/fear-of-the-saaspocalypse-is-tormenting-techland"
+title: Fear of the SaaSpocalypse is tormenting techland
+source: >-
+  https://www.economist.com/business/2026/06/10/fear-of-the-saaspocalypse-is-tormenting-techland
 author:
-  - "[[The Economist]]"
-published: 2026-06-10
-created: 2026-06-18
-description: "Artificial intelligence threatens the software-as-a-service industry through AI labs, startups, DIY development and internal disruption efforts. | Business"
+  - '[[The Economist]]'
+published: 2026-06-10T00:00:00.000Z
+created: 2026-06-18T00:00:00.000Z
+description: >-
+  Artificial intelligence threatens the software-as-a-service industry through
+  AI labs, startups, DIY development and internal disruption efforts. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 6959b238-b900-4df4-92af-2a98eeab19c3
+gnosis_ingested_at: '2026-06-19T05:02:15.576Z'
 ---
 ## Software once ate the world. Now it is in danger of eating itself
 

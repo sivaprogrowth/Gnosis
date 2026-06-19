@@ -74,3 +74,7 @@ For competitive positioning against [[marketri]] and other traditional fractiona
 - [[outcome-based-pricing]] — one of the structural fixes that forces honest margins
 - [[brand-strength-ai-visibility-gap]] — companion failure pattern in a different domain
 - [[progrowth]] — the wiki's canonical AINS self-diagnosis target
+
+## Mentions
+
+- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

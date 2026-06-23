@@ -68,6 +68,14 @@ export default async function middleware(req: Request): Promise<Response> {
     return fetch(req)
   }
 
+  // 1d. Life-system bidirectional endpoints — external POSTs from
+  //     progrowth-life-system carry a Bearer LIFE_SYSTEM_SECRET that each
+  //     handler verifies. Bypass the cookie session (no session on those
+  //     server-to-server calls) and let the handler authenticate.
+  if (pathname === "/api/ingest/from-life" || pathname === "/api/search") {
+    return fetch(req)
+  }
+
   // 2. Login page (and its assets — handled by extension check below)
   if (pathname === "/login" || pathname === "/login.html" || pathname === "/login/") {
     return fetch(req)

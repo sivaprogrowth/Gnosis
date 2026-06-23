@@ -102,3 +102,7 @@ ProGrowth's downmarket focus (mid-market B2B — credit unions, insurance, profe
 - [[marketri]] — primary competitor
 - [[semrush]] — tool-vendor reference point
 - [[generative-engine-optimization]] — the market category ProGrowth serves
+
+## Mentions
+
+- [[e2e-test-note-gnosis-bidirectional|E2E Test Note — Gnosis Bidirectional]]

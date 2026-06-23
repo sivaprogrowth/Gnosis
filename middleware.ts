@@ -69,11 +69,21 @@ export default async function middleware(req: Request): Promise<Response> {
   }
 
   // 1d. Life-system bidirectional endpoints — external POSTs from
-  //     progrowth-life-system carry a Bearer LIFE_SYSTEM_SECRET that each
-  //     handler verifies. Bypass the cookie session (no session on those
-  //     server-to-server calls) and let the handler authenticate.
+  //     progrowth-life-system carry a Bearer LIFE_SYSTEM_SECRET. Verify it at
+  //     the edge: valid → pass through to the handler; invalid → 401 directly
+  //     (returning fetch(req) for a request the handler would 401 trips the
+  //     edge runtime, so we reject here instead of re-fetching).
   if (pathname === "/api/ingest/from-life" || pathname === "/api/search") {
-    return fetch(req)
+    const auth = req.headers.get("authorization") || ""
+    const m = auth.match(/^Bearer\s+(.+)$/i)
+    const expected = (process.env.LIFE_SYSTEM_SECRET || "").trim()
+    if (expected && m && m[1].trim() === expected) {
+      return fetch(req)
+    }
+    return new Response(JSON.stringify({ error: "unauthorized" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    })
   }
 
   // 2. Login page (and its assets — handled by extension check below)

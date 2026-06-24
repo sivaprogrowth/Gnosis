@@ -1,24 +1,20 @@
 ---
 type: person
-title: Paul Graham
+title: "Paul Graham"
 tags: [ingested]
-sources: [the-brand-age-paul-graham]
+sources: ["do-things-that-dont-scale"]
 ---
 
 # Paul Graham
 
-_Stub page created automatically during ingest of [[the-brand-age-paul-graham|The Brand Age]]._
+_Stub page created automatically during ingest of [[do-things-that-dont-scale|Do Things that Don't Scale]]._
 
-Well-known essayist and Y Combinator co-founder whose ideas (e.g., 'Follow the Problems') are the primary lens of this source. Similar author/thinker entities already have pages (Elena Verna, Phani Sama, Siva Cotipalli), and his frameworks will likely be cited by future concept pages.
+Already has a wiki page (concept/people/paul-graham). Confirmed promote.
 
 ## Why this earned its own page
 
-Well-known essayist and Y Combinator co-founder whose ideas (e.g., 'Follow the Problems') are the primary lens of this source. Similar author/thinker entities already have pages (Elena Verna, Phani Sama, Siva Cotipalli), and his frameworks will likely be cited by future concept pages.
+Already has a wiki page (concept/people/paul-graham). Confirmed promote.
 
 ## Mentions
 
-
-
-- [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]
-- [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]
-- [[the-brand-age-paul-graham|The Brand Age]]
+- [[do-things-that-dont-scale|Do Things that Don't Scale]]

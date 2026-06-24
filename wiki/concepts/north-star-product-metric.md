@@ -77,3 +77,7 @@ Choosing one makes the [[mirage-pmf]] diagnostic actionable. Without one, ProGro
 - [[outcome-based-pricing]] — a related structural move that forces honest margins
 - [[progrowth]] — the wiki's canonical AINS that should pick one
 - [[citation-network-mapping]] — the analogous "ongoing-instrumentation" concept in the AI-search domain
+
+## Mentions
+
+- [[do-things-that-dont-scale|Do Things that Don't Scale]]

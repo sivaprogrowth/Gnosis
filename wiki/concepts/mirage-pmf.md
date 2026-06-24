@@ -77,4 +77,6 @@ For competitive positioning against [[marketri]] and other traditional fractiona
 
 ## Mentions
 
+
+- [[do-things-that-dont-scale|Do Things that Don't Scale]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

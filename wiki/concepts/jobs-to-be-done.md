@@ -17,4 +17,6 @@ A well-established named framework (not invented here) that the wiki would cite 
 
 ## Mentions
 
+
+- [[do-things-that-dont-scale|Do Things that Don't Scale]]
 - [[saastr-ai-agent-playbook-for-gtm|AI Agent Playbook]]

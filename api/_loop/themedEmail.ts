@@ -352,7 +352,7 @@ export async function runThemedEmail(opts: { dry?: boolean } = {}): Promise<Task
   const system = fillTemplate({
     current_date: isoDate(now),
     research_window:
-      "articles added during the last 7 days as the primary material, with older Gnosis articles allowed as supporting context (ingestion dates are given per article)",
+      "the ENTIRE Gnosis corpus, every article regardless of ingestion date — recency is not a selection criterion; choose whichever articles produce the strongest, most meaningful theme (ingestion dates are given per article for context only)",
     audience:
       "Siva Cotipalli — founder of ProGrowth (AI marketing for financial services) and ProElevate; reads across AI, marketing, startups, economics, and older philosophical traditions; wants connections he would not have made himself",
     voice:

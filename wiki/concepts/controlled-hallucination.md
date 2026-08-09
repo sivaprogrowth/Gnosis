@@ -54,6 +54,8 @@ The "brand-in-the-customer's-head" is not a description of the company — it is
 
 
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]

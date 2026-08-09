@@ -64,3 +64,7 @@ For fractional CMO / service firm clients, E-E-A-T is harder to demonstrate than
 - [[generative-engine-optimization]] — E-E-A-T is the #1 leverage point in GEO
 - [[justification-attributes]] — justification content gains credibility from E-E-A-T
 - [[big-brand-bias]] — weaker E-E-A-T is part of why niche brands struggle
+
+## Mentions
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

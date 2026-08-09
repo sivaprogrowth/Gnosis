@@ -25,6 +25,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

@@ -73,20 +73,11 @@ export default async function middleware(req: Request): Promise<Response> {
   //     the edge: valid → pass through to the handler; invalid → 401 directly
   //     (returning fetch(req) for a request the handler would 401 trips the
   //     edge runtime, so we reject here instead of re-fetching).
-  if (
-    pathname === "/api/ingest/from-life" ||
-    pathname === "/api/search" ||
-    pathname === "/api/resurface" ||
-    pathname === "/api/loop"
-  ) {
+  if (pathname === "/api/ingest/from-life" || pathname === "/api/search") {
     const auth = req.headers.get("authorization") || ""
     const m = auth.match(/^Bearer\s+(.+)$/i)
     const expected = (process.env.LIFE_SYSTEM_SECRET || "").trim()
-    // /api/loop also accepts CRON_SECRET so Vercel/GH-Actions scheduling
-    // stays possible; the handler re-verifies either way.
-    const cron = (process.env.CRON_SECRET || "").trim()
-    const token = m?.[1]?.trim()
-    if (token && ((expected && token === expected) || (pathname === "/api/loop" && cron && token === cron))) {
+    if (expected && m && m[1].trim() === expected) {
       return fetch(req)
     }
     return new Response(JSON.stringify({ error: "unauthorized" }), {
@@ -142,5 +133,10 @@ export default async function middleware(req: Request): Promise<Response> {
 }
 
 export const config = {
-  matcher: "/((?!_next/static|_next/image|favicon.ico).*)",
+  // api/loop and api/resurface are EXCLUDED from the middleware entirely:
+  // both do their own Bearer auth, and their synchronous LLM work runs up to
+  // 300s — far past the edge middleware's ~25s cap, which 504s any request
+  // proxied through `return fetch(req)`. Bypassing the matcher sends the
+  // request straight to the function, whose own maxDuration applies.
+  matcher: "/((?!_next/static|_next/image|favicon.ico|api/loop|api/resurface).*)",
 }

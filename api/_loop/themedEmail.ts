@@ -2,16 +2,14 @@
  * themedEmail.ts — Sunday-evening themed connection email.
  *
  * Modelled on Readwise's "Themed Connections" Saturday email: one theme,
- * a one-line summary, then quote blocks with attribution. Ours is drawn from
- * the week's OWN loop output — the synthesis brief and resurface pages filed
- * that morning — so the theme reflects what this week's reading actually
- * collided on, not a random sample.
- *
- * Fallback ladder (the email should arrive every Sunday, honestly labelled):
- *   1. synthesis + resurface pages filed this ISO week (the normal case);
- *   2. neither filed (skipped week) → theme the week's raw Readwise
- *      highlights directly, Readwise-style;
- *   3. no highlights either → a short "quiet week" note, no fabrication.
+ * a one-line summary, then quote blocks with attribution — but drawn from the
+ * GNOSIS ARTICLE CORPUS, not Readwise books. The primary material every week
+ * is the wiki's ingested source pages (their TL;DR / Key claims / Key
+ * passages — the Key passages are verbatim quotes from the original
+ * articles), plus whatever the loop filed this week (synthesis brief,
+ * resurface pages) to bias the theme toward what this week's reading was
+ * pulling on. Previously sent themes are passed in so consecutive Sundays
+ * don't repeat a theme.
  *
  * Sends via the same Brevo SMTP transport as the login OTP (verified sender
  * "Gnosis" <siva@progrowth.services>).
@@ -19,7 +17,7 @@
 
 import nodemailer from "nodemailer"
 import { getFileContent } from "../_ingest/githubPush.js"
-import { fetchHighlights } from "./readwise.js"
+import { getPageIndex } from "../_retrieval/pageIndex.js"
 import { loopLLM } from "./llm.js"
 import { isoWeekLabel } from "./wiki.js"
 import { recordRun, lastRun } from "./state.js"
@@ -37,27 +35,36 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-const SYSTEM = `You are composing a weekly "Themed Connection" email for a personal knowledge system (Gnosis), in the style of Readwise's Themed Connections: pick ONE theme that runs through the provided material, then curate 3-5 quotes that develop it.
+const SYSTEM = `You are composing the weekly "Themed Connection" email for Gnosis, the user's personal wiki of INGESTED ARTICLES. Your job: find ONE non-obvious theme that runs across SEVERAL different articles in the corpus, then curate 4-6 quotes that develop it.
 
-Input is the week's synthesis brief and resurface pages (or, in fallback mode, raw reading highlights). Prefer the collision/tension material — the theme is strongest where sources rub against each other.
+You receive:
+- THE ARTICLE CORPUS: every source page's TL;DR, Key claims, and Key passages. The Key passages are verbatim quotes from the original articles — your quote pool.
+- THIS WEEK'S LOOP OUTPUT (when present): the synthesis brief and resurface pages filed this morning. When present, let them steer the theme toward what this week's reading collided on.
+- PREVIOUSLY SENT THEMES: do not repeat these or near-synonyms of them.
+
+What makes a GOOD theme (in order of preference):
+1. A tension — two articles that disagree, or an idea one article celebrates and another undercuts. Name the friction in the summary.
+2. A cross-domain thread — the same conceptual move appearing in articles from unrelated domains (e.g. an AI-labor-market paper and a startup essay both arguing that scale advantages are inverting).
+3. A build — several articles that each add a layer to one idea.
+A BAD theme restates one article's own thesis with quotes only from that article, or picks something so broad ("AI is changing work") that any quote fits. Quotes must span at least 3 DIFFERENT articles.
 
 Return STRICT JSON (no markdown fence, no commentary):
 {
   "emoji": "one emoji fitting the theme",
-  "title": "Theme Name In Title Case, 2-4 words",
-  "summary": "one sentence: what this theme examines, in the style 'examines choosing a narrow, risky path shaped by deep values to face fear and claim lasting freedom' — no leading capital, it follows 'Today's review, X,'",
+  "title": "Theme Name In Title Case, 2-5 words",
+  "summary": "one-to-two sentences: what this theme examines and where the articles pull against each other. MUST start with a lowercase verb (examines/traces/asks/follows...) because it renders after 'This week's theme, X,' — e.g. 'examines how brand behaves when the buyer is a model; Graham argues..., the agent research finds...'",
   "quotes": [
     {
-      "quote": "verbatim quote or highlight text (trim with … if over ~60 words)",
-      "source": "Book/Article title",
-      "author": "Author name or null",
-      "slug": "wiki page slug like sources/foo or concepts/bar when the quote maps to a provided [[slug]], else null",
-      "hook": "one line: why this matters for the user's current work, ONLY when the input material states it (resurface hooks); else null"
+      "quote": "verbatim quote from a Key passages section (trim with … if over ~70 words)",
+      "source": "Article title",
+      "author": "Author or publication, or null",
+      "slug": "the article's slug exactly as given, e.g. sources/foo",
+      "hook": "one line connecting THIS quote to the theme's argument — what it adds or contradicts; when a resurface page supplied a why-this-matters line for the user's current work, prefer that"
     }
   ]
 }
 
-Rules: quotes verbatim — punctuation belongs to the original. 3-5 quotes, ordered so they build the theme. Use only slugs present in the input. Never fabricate a hook the material doesn't support.`
+Rules: quotes verbatim — punctuation belongs to the original; never quote a TL;DR bullet as if it were article text (Key passages only). 4-6 quotes across ≥3 articles, ordered so they build an argument, tension first when there is one. Use only slugs present in the corpus. Every hook must say something specific; delete a quote before writing a generic hook for it.`
 
 interface ThemeJson {
   emoji: string
@@ -98,39 +105,52 @@ export async function runThemedEmail(opts: { dry?: boolean } = {}): Promise<Task
     if (body) resurfaceBodies.push(body)
   }
 
-  let mode: "loop" | "highlights" | "quiet" = "loop"
-  let material = [
-    synthesis ? `--- SYNTHESIS BRIEF ---\n${synthesis}` : "",
-    ...resurfaceBodies.map((b, i) => `--- RESURFACE PAGE ${i + 1} ---\n${b}`),
+  // --- The article corpus: every ingested source page's distilled sections.
+  // Key passages are verbatim article quotes — the email's quote pool.
+  const index = getPageIndex()
+  const articles = index.pages
+    .filter((p) => p.slug.startsWith("sources/"))
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      tldr: extractSection(p.body, "TL;DR"),
+      claims: extractSection(p.body, "Key claims"),
+      passages: extractSection(p.body, "Key passages"),
+    }))
+    // Pages with no distilled sections (LinkedIn profiles, hand-made stubs)
+    // have nothing quotable — leave them out.
+    .filter((a) => a.passages || a.claims)
+
+  const mode: "articles" | "quiet" = articles.length >= 3 ? "articles" : "quiet"
+
+  // Previously sent themes, so Sundays don't repeat.
+  const { data: pastRuns } = await supabase
+    .from("gnosis_loop_runs")
+    .select("detail")
+    .eq("kind", "themed_email")
+    .order("created_at", { ascending: false })
+    .limit(12)
+  const pastThemes = (pastRuns ?? [])
+    .map((r) => (r.detail as { title?: string } | null)?.title)
+    .filter(Boolean) as string[]
+
+  const material = [
+    synthesis
+      ? `--- THIS WEEK'S SYNTHESIS BRIEF (steer the theme toward this) ---\n${synthesis}`
+      : "",
+    ...resurfaceBodies.map((b, i) => `--- THIS WEEK'S RESURFACE PAGE ${i + 1} ---\n${b}`),
+    `--- THE ARTICLE CORPUS (${articles.length} ingested articles) ---\n${articles
+      .map(
+        (a) =>
+          `### [[${a.slug}]] ${a.title}\nTL;DR: ${a.tldr ?? "(none)"}\nKey claims: ${a.claims ?? "(none)"}\nKey passages:\n${a.passages ?? "(none)"}`,
+      )
+      .join("\n\n")}`,
+    pastThemes.length
+      ? `--- PREVIOUSLY SENT THEMES (do not repeat) ---\n${pastThemes.join("; ")}`
+      : "",
   ]
     .filter(Boolean)
     .join("\n\n")
-
-  if (!material) {
-    // No brief this week — theme recent highlights instead, the way Readwise
-    // Themed Connections draws on the whole library rather than one week.
-    const highlights = await fetchHighlights({
-      since: new Date(now.getTime() - 90 * 86_400_000).toISOString(),
-    })
-    const recent = highlights
-      .sort((a, b) => Date.parse(b.highlightedAt ?? "0") - Date.parse(a.highlightedAt ?? "0"))
-      .slice(0, 80)
-    if (recent.length >= 3) {
-      mode = "highlights"
-      material = `--- RECENT HIGHLIGHTS, LAST 90 DAYS (no synthesis brief was filed this week — find the strongest theme ACROSS these) ---\n${JSON.stringify(
-        recent.map((h) => ({
-          text: h.text.slice(0, 600),
-          note: h.note,
-          title: h.title,
-          author: h.author,
-        })),
-        null,
-        1,
-      )}`
-    } else {
-      mode = "quiet"
-    }
-  }
 
   // --- Compose ------------------------------------------------------------
   let theme: ThemeJson | null = null
@@ -156,7 +176,7 @@ export async function runThemedEmail(opts: { dry?: boolean } = {}): Promise<Task
     ? `${theme.emoji} ${theme.title}: Your Gnosis Themed Connection`
     : `Gnosis — a quiet week (${week})`
   const html = theme
-    ? renderHtml(theme, dateLabel, week, mode, synthesis !== null)
+    ? renderHtml(theme, dateLabel, week, synthesis !== null)
     : renderQuietHtml(dateLabel, week)
 
   if (opts.dry) {
@@ -186,10 +206,18 @@ export async function runThemedEmail(opts: { dry?: boolean } = {}): Promise<Task
 
   return {
     digests: [
-      `🪽 **Hermes** — themed connection email sent: **${theme ? `${theme.emoji} ${theme.title}` : "quiet week"}** (${theme?.quotes.length ?? 0} quotes, from ${mode === "loop" ? "this week's synthesis/resurface" : mode === "highlights" ? "raw highlights — no brief this week" : "nothing"}).`,
+      `🪽 **Hermes** — themed connection email sent: **${theme ? `${theme.emoji} ${theme.title}` : "quiet week"}** (${theme?.quotes.length ?? 0} quotes across the article corpus${synthesis ? ", steered by this week's synthesis" : ""}).`,
     ],
     filed: [],
   }
+}
+
+/** Body of a `## <heading>` section, or null. */
+function extractSection(body: string, heading: string): string | null {
+  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  const m = body.match(new RegExp(`##\\s+${escaped}[^\\n]*\\n([\\s\\S]*?)(?=\\n##\\s|$)`))
+  const text = m?.[1]?.trim()
+  return text ? text.slice(0, 2200) : null
 }
 
 // --------------------------------------------------------------------------
@@ -198,13 +226,7 @@ function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
 }
 
-function renderHtml(
-  t: ThemeJson,
-  dateLabel: string,
-  week: string,
-  mode: string,
-  hasSynthesis: boolean,
-): string {
+function renderHtml(t: ThemeJson, dateLabel: string, week: string, hasSynthesis: boolean): string {
   const quoteBlocks = t.quotes
     .map((q) => {
       const attribution = q.author ? `${esc(q.source)} by ${esc(q.author)}` : esc(q.source)
@@ -225,10 +247,9 @@ function renderHtml(
     })
     .join("\n")
 
-  const sourceNote =
-    mode === "highlights"
-      ? `<p style="font-size:13px;color:#6b7280;">No synthesis brief was filed this week, so this theme is drawn from your recent highlights.</p>`
-      : ""
+  const sourceNote = hasSynthesis
+    ? ""
+    : `<p style="font-size:13px;color:#6b7280;">No synthesis brief was filed this week, so this theme is drawn from the full article corpus.</p>`
   const briefLink = hasSynthesis
     ? `<p style="font-size:14px;"><a href="${SITE}/queries/synthesis-${week}" style="color:#2563eb;text-decoration:none;">Read the full synthesis brief →</a></p>`
     : ""
@@ -238,7 +259,7 @@ function renderHtml(
   <p style="font-size:20px;font-weight:700;margin:0 0 2px;color:#111827;">gnosis.</p>
   <p style="font-size:13px;color:#6b7280;margin:0 0 24px;">${dateLabel}</p>
 
-  <p style="font-size:15px;line-height:1.6;color:#1f2937;">Hey Siva, welcome to your Gnosis Themed Connection. Each Sunday evening, this email pulls one theme out of the week's synthesis and resurface work — the thread your own reading was pulling on.</p>
+  <p style="font-size:15px;line-height:1.6;color:#1f2937;">Hey Siva, welcome to your Gnosis Themed Connection. Each Sunday evening, this email finds one thread running through the articles in your wiki — steered by the week's synthesis when there is one.</p>
 
   <p style="font-size:15px;line-height:1.6;color:#1f2937;">This week's theme, <strong>${esc(t.emoji)} ${esc(t.title)}</strong>, ${esc(t.summary)}</p>
   ${sourceNote}

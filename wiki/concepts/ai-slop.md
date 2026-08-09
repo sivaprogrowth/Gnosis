@@ -18,5 +18,4 @@ Well-defined named concept (The Economist's 2025 word of the year) describing th
 ## Mentions
 
 
-- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]

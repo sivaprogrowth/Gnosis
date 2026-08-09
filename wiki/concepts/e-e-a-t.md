@@ -67,4 +67,3 @@ For fractional CMO / service firm clients, E-E-A-T is harder to demonstrate than
 
 ## Mentions
 
-- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

@@ -155,8 +155,16 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
   })
 }
 
-/** Phase A — URL: fetch → synthesize → compoundingFilter → awaiting_user. */
-export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<void> {
+/**
+ * Phase A — URL: fetch → synthesize → compoundingFilter → awaiting_user.
+ *
+ * Never throws: a failure is recorded on the job row instead. Returns whether
+ * the job reached `awaiting_user`, so auto-commit callers can stop rather than
+ * calling runCommit on a job that already failed — doing that raises a
+ * "status is failed, expected awaiting_user" assertion whose message then
+ * overwrites the real cause on the row.
+ */
+export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<boolean> {
   try {
     await updateJob(jobId, {
       status: "fetching",
@@ -172,6 +180,7 @@ export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<v
     })
 
     await runSynthesisOnly(jobId)
+    return true
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error(`[pipeline] discovery failed for job ${jobId}:`, msg)
@@ -180,15 +189,19 @@ export async function runDiscoveryFromUrl(url: string, jobId: string): Promise<v
       error_message: msg,
       progress_message: `Failed: ${msg}`,
     })
+    return false
   }
 }
 
-/** Phase A — PDF: same downstream as URL after extractPdf. */
+/**
+ * Phase A — PDF: same downstream as URL after extractPdf.
+ * Same contract as runDiscoveryFromUrl: never throws, returns success.
+ */
 export async function runDiscoveryFromPdf(
   pdfBytes: Uint8Array,
   filename: string,
   jobId: string,
-): Promise<void> {
+): Promise<boolean> {
   try {
     await updateJob(jobId, {
       status: "fetching",
@@ -204,6 +217,7 @@ export async function runDiscoveryFromPdf(
     })
 
     await runSynthesisOnly(jobId)
+    return true
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error(`[pipeline] PDF discovery failed for job ${jobId}:`, msg)
@@ -212,6 +226,7 @@ export async function runDiscoveryFromPdf(
       error_message: msg,
       progress_message: `Failed: ${msg}`,
     })
+    return false
   }
 }
 
@@ -324,12 +339,14 @@ export async function runCommit(
 
   // Fire-and-forget: sync article to life-system for Learning section
   syncToLifeSystem({
-    title:     surfaced.sourceTitle,
-    url:       job.source_url ?? null,
+    title: surfaced.sourceTitle,
+    url: job.source_url ?? null,
     takeaways: Array.isArray(job.takeaways) ? (job.takeaways as string[]) : [],
-    theme:     null,
-    docSlug:   `sources/${surfaced.suggestedSlug}`,
-  }).catch(() => {/* already logged inside syncToLifeSystem */})
+    theme: null,
+    docSlug: `sources/${surfaced.suggestedSlug}`,
+  }).catch(() => {
+    /* already logged inside syncToLifeSystem */
+  })
 
   onFrame({
     stage: "committed",
@@ -1093,7 +1110,25 @@ async function markReaderError(doc: ReaderDocument): Promise<void> {
 
 // ============================================================================
 
+/**
+ * Record a failure on a job. If the row already carries an error_message, keep
+ * it: the first error is the root cause, and anything raised afterwards while
+ * unwinding (e.g. runCommit's status assertion) is a symptom that would
+ * otherwise bury it.
+ */
 export async function markJobFailed(jobId: string, message: string): Promise<void> {
+  const { data: existing } = await supabase
+    .from("gnosis_ingest_jobs")
+    .select("error_message")
+    .eq("id", jobId)
+    .maybeSingle()
+  if (existing?.error_message) {
+    console.warn(
+      `[pipeline] job ${jobId} already failed with "${existing.error_message}"; not overwriting with "${message}"`,
+    )
+    await updateJob(jobId, { status: "failed" })
+    return
+  }
   await updateJob(jobId, {
     status: "failed",
     error_message: message,

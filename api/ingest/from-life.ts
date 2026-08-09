@@ -16,7 +16,12 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { waitUntil } from "@vercel/functions"
 import { supabase } from "../_auth/supabase.js"
-import { runDiscoveryFromUrl, runSynthesisOnly, runCommit, markJobFailed } from "../_ingest/pipeline.js"
+import {
+  runDiscoveryFromUrl,
+  runSynthesisOnly,
+  runCommit,
+  markJobFailed,
+} from "../_ingest/pipeline.js"
 
 export const config = { maxDuration: 300 }
 
@@ -44,7 +49,12 @@ async function autoCommit(jobId: string): Promise<void> {
 /** Fetch a URL → synthesize → commit (the bot "share a link" path). */
 async function autoCommitFromUrl(jobId: string, url: string): Promise<void> {
   try {
-    await runDiscoveryFromUrl(url, jobId) // fetch → extract → synthesize → awaiting_user
+    // runDiscoveryFromUrl records its own failure on the job row and returns
+    // false. Committing anyway would throw a status assertion whose message
+    // replaces the real cause, which is how every URL-path failure ended up
+    // reported as "status is failed, expected awaiting_user".
+    const discovered = await runDiscoveryFromUrl(url, jobId)
+    if (!discovered) return
     await runCommit(jobId, () => {}) // commit wiki files + fire syncToLifeSystem
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)

@@ -1,18 +1,24 @@
 /**
  * fetchUrl.ts — pull a URL, extract the main article, return clean markdown.
  *
- * Three-stage pipeline:
- *   1. fetch with a 15s timeout + a real browser UA (some sites 403 the default
- *      undici UA)
- *   2. parse the HTML with jsdom; run @mozilla/readability to strip nav/ads/etc
- *   3. convert the extracted HTML to markdown with turndown
+ * Two-tier strategy:
  *
- * Falls back to a full-page turndown if readability fails (some pages —
- * GitHub READMEs, MDX-rendered docs — don't fit readability's article heuristic
- * but still produce useful markdown when we just convert everything).
+ *   Tier 1 (direct) — fetch with a 15s timeout + a real browser UA, parse with
+ *   linkedom, run @mozilla/readability to strip nav/ads/etc, convert to
+ *   markdown with turndown. Falls back to a full-page turndown if readability
+ *   bails (GitHub READMEs, MDX docs) but still produces useful markdown.
  *
- * Errors are thrown with a one-line message — the pipeline catches and turns
- * them into an SSE `error` frame so the user sees them.
+ *   Tier 2 (reader proxy) — a plain server-side fetch cannot get past bot
+ *   management (Cloudflare Turnstile, PerimeterX, Incapsula). Those sites
+ *   answer with a 403 or a 200 "Just a moment…" interstitial, and no amount of
+ *   header spoofing helps because the challenge needs a real JS runtime.
+ *   When tier 1 comes back blocked, challenged, or suspiciously thin, we retry
+ *   through r.jina.ai, which renders the page in a headless browser and
+ *   returns markdown. Free and keyless; set JINA_API_KEY for higher rate
+ *   limits if we ever need them.
+ *
+ * Errors are thrown with a one-line message that names BOTH failures, so the
+ * job row records why each tier gave up rather than just the last one.
  */
 
 import { Readability } from "@mozilla/readability"
@@ -20,8 +26,32 @@ import { parseHTML } from "linkedom"
 import TurndownService from "turndown"
 
 const FETCH_TIMEOUT_MS = 15_000
+/** The proxy renders JS, so it is legitimately slower than a raw fetch. */
+const PROXY_TIMEOUT_MS = 45_000
+const READER_PROXY_BASE = "https://r.jina.ai/"
+/** Below this, whatever we extracted is a paywall stub or an app shell. */
+const MIN_WORDS = 30
+
 const USER_AGENT =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+/**
+ * Fingerprints of bot-management interstitials. Matched against the <title>
+ * and the first few KB of HTML only — never the article body — so a page that
+ * merely writes *about* Cloudflare isn't mistaken for a challenge.
+ */
+const CHALLENGE_MARKERS = [
+  "just a moment",
+  "attention required",
+  "checking your browser",
+  "verifying you are human",
+  "enable javascript and cookies to continue",
+  "challenges.cloudflare.com",
+  "cf-browser-verification",
+  "_incapsula_resource",
+  "perimeterx",
+  "px-captcha",
+]
 
 export interface FetchedDocument {
   markdown: string
@@ -32,6 +62,9 @@ export interface FetchedDocument {
   excerpt: string | null
   wordCount: number
 }
+
+/** Tier-1 outcome: usable document, or a reason to escalate to the proxy. */
+type DirectAttempt = { ok: true; doc: FetchedDocument } | { ok: false; reason: string }
 
 function makeTurndown(): TurndownService {
   const td = new TurndownService({
@@ -45,17 +78,17 @@ function makeTurndown(): TurndownService {
   return td
 }
 
-export async function fetchUrl(url: string): Promise<FetchedDocument> {
-  let parsedUrl: URL
-  try {
-    parsedUrl = new URL(url)
-  } catch {
-    throw new Error(`Invalid URL: ${url}`)
-  }
-  if (!/^https?:$/.test(parsedUrl.protocol)) {
-    throw new Error(`Only http/https URLs are supported (got ${parsedUrl.protocol})`)
-  }
+function countWords(markdown: string): number {
+  return markdown.split(/\s+/).filter(Boolean).length
+}
 
+function looksLikeChallenge(title: string, html: string): boolean {
+  const haystack = `${title}\n${html.slice(0, 4096)}`.toLowerCase()
+  return CHALLENGE_MARKERS.some((marker) => haystack.includes(marker))
+}
+
+/** Tier 1 — direct fetch + readability. Returns a reason instead of throwing. */
+async function tryDirectFetch(url: string, parsedUrl: URL): Promise<DirectAttempt> {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
 
@@ -71,17 +104,17 @@ export async function fetchUrl(url: string): Promise<FetchedDocument> {
     })
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e)
-    throw new Error(`Fetch failed for ${url}: ${msg}`)
+    return { ok: false, reason: `direct fetch failed (${msg})` }
   } finally {
     clearTimeout(timer)
   }
 
   if (!res.ok) {
-    throw new Error(`Fetch returned HTTP ${res.status} for ${url}`)
+    return { ok: false, reason: `direct fetch returned HTTP ${res.status}` }
   }
 
   const html = await res.text()
-  if (!html.trim()) throw new Error(`Empty response body from ${url}`)
+  if (!html.trim()) return { ok: false, reason: "direct fetch returned an empty body" }
 
   // Parse + readability. linkedom over jsdom because jsdom fails to init in
   // Vercel's serverless runtime (it needs Node internals not exposed there).
@@ -112,27 +145,128 @@ export async function fetchUrl(url: string): Promise<FetchedDocument> {
   } else {
     // Fallback: whole-document turndown (readability bailed)
     markdown = td.turndown(document.body?.innerHTML ?? html)
-    title =
-      document.querySelector("title")?.textContent?.trim() ||
-      parsedUrl.hostname
+    title = document.querySelector("title")?.textContent?.trim() || parsedUrl.hostname
+  }
+
+  // A challenge page answers 200 with a tiny "Just a moment…" body, so the
+  // status code alone doesn't catch it.
+  if (looksLikeChallenge(title, html)) {
+    return { ok: false, reason: "direct fetch hit a bot-protection interstitial" }
   }
 
   markdown = markdown.replace(/\n{3,}/g, "\n\n").trim()
-  const wordCount = markdown.split(/\s+/).filter(Boolean).length
+  const wordCount = countWords(markdown)
+  if (wordCount < MIN_WORDS) {
+    return { ok: false, reason: `direct fetch extracted only ${wordCount} words` }
+  }
 
-  if (wordCount < 30) {
-    throw new Error(
-      `Extracted only ${wordCount} words from ${url} — page may be a paywall, app shell, or JS-rendered. Try the PDF route if you have one.`,
-    )
+  return {
+    ok: true,
+    doc: {
+      markdown,
+      title,
+      sourceDomain: parsedUrl.hostname,
+      byline,
+      publishedTime,
+      excerpt,
+      wordCount,
+    },
+  }
+}
+
+/**
+ * r.jina.ai answers with a small plain-text header block followed by the
+ * article:
+ *
+ *   Title: ...
+ *   URL Source: ...
+ *   Published Time: ...
+ *
+ *   Markdown Content:
+ *   <the article>
+ */
+function parseReaderProxyResponse(text: string, parsedUrl: URL): FetchedDocument {
+  const marker = "\nMarkdown Content:\n"
+  const idx = text.indexOf(marker)
+  const head = idx === -1 ? "" : text.slice(0, idx)
+  const field = (name: string): string | null => {
+    const m = head.match(new RegExp(`^${name}:\\s*(.+)$`, "m"))
+    return m?.[1]?.trim() || null
+  }
+
+  const markdown = (idx === -1 ? text : text.slice(idx + marker.length))
+    .replace(/\n{3,}/g, "\n\n")
+    .trim()
+  const wordCount = countWords(markdown)
+  if (wordCount < MIN_WORDS) {
+    throw new Error(`reader proxy extracted only ${wordCount} words`)
   }
 
   return {
     markdown,
-    title,
+    title: field("Title") || parsedUrl.hostname,
     sourceDomain: parsedUrl.hostname,
-    byline,
-    publishedTime,
-    excerpt,
+    byline: field("Author"),
+    publishedTime: field("Published Time"),
+    excerpt: null,
     wordCount,
+  }
+}
+
+/** Tier 2 — render through r.jina.ai and take its markdown. */
+async function fetchViaReaderProxy(url: string, parsedUrl: URL): Promise<FetchedDocument> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), PROXY_TIMEOUT_MS)
+
+  const headers: Record<string, string> = { Accept: "text/plain" }
+  const key = (process.env.JINA_API_KEY || "").trim()
+  if (key) headers.Authorization = `Bearer ${key}`
+
+  let res: Response
+  try {
+    res = await fetch(READER_PROXY_BASE + url, {
+      headers,
+      redirect: "follow",
+      signal: controller.signal,
+    })
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    throw new Error(`reader proxy request failed (${msg})`)
+  } finally {
+    clearTimeout(timer)
+  }
+
+  if (!res.ok) throw new Error(`reader proxy returned HTTP ${res.status}`)
+  const text = await res.text()
+  if (!text.trim()) throw new Error("reader proxy returned an empty body")
+
+  return parseReaderProxyResponse(text, parsedUrl)
+}
+
+export async function fetchUrl(url: string): Promise<FetchedDocument> {
+  let parsedUrl: URL
+  try {
+    parsedUrl = new URL(url)
+  } catch {
+    throw new Error(`Invalid URL: ${url}`)
+  }
+  if (!/^https?:$/.test(parsedUrl.protocol)) {
+    throw new Error(`Only http/https URLs are supported (got ${parsedUrl.protocol})`)
+  }
+
+  const direct = await tryDirectFetch(url, parsedUrl)
+  if (direct.ok) return direct.doc
+
+  console.warn(`[fetchUrl] ${url}: ${direct.reason} — retrying via reader proxy`)
+  try {
+    const doc = await fetchViaReaderProxy(url, parsedUrl)
+    console.info(`[fetchUrl] ${url}: reader proxy recovered ${doc.wordCount} words`)
+    return doc
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    throw new Error(
+      `Could not extract ${url} — ${direct.reason}, and the reader proxy fallback also failed: ${msg}. ` +
+        `The page may be hard-paywalled; try the PDF route or paste the text as a clipping.`,
+    )
   }
 }

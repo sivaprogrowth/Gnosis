@@ -12,7 +12,7 @@
 import { supabase } from "../_auth/supabase.js"
 
 export async function recordRun(
-  kind: "synthesis" | "resurface" | "nudges" | "mirror",
+  kind: "synthesis" | "resurface" | "nudges" | "mirror" | "themed_email",
   period: string | null,
   filedTo: string | null,
   detail?: Record<string, unknown>,

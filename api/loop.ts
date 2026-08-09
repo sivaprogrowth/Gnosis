@@ -22,6 +22,7 @@ import { runSynthesis, type TaskResult } from "./_loop/synthesis.js"
 import { runResurface } from "./_loop/resurface.js"
 import { runNudges } from "./_loop/nudges.js"
 import { runMirror } from "./_loop/mirror.js"
+import { runThemedEmail } from "./_loop/themedEmail.js"
 
 export const config = { maxDuration: 300 }
 
@@ -40,6 +41,7 @@ const TASKS: Record<string, (opts: { dry?: boolean; force?: boolean }) => Promis
   resurface: (o) => runResurface(o),
   nudges: (o) => runNudges(o),
   mirror: (o) => runMirror(o),
+  themed_email: (o) => runThemedEmail(o),
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

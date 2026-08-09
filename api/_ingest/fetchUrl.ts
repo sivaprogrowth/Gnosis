@@ -53,6 +53,52 @@ const CHALLENGE_MARKERS = [
   "px-captcha",
 ]
 
+/**
+ * Unambiguous subscription-wall copy. Deliberately excludes bare "subscribe"
+ * and "sign in", which appear on plenty of open pages (newsletter boxes, nav
+ * bars) and would produce false positives.
+ */
+const PAYWALL_MARKERS = [
+  "subscribenow",
+  "subscribe now",
+  "already a subscriber",
+  "continue reading",
+  "subscriber-only",
+  "for subscribers",
+  "free trial",
+  "register to continue",
+  "sign in to read",
+  "create a free account",
+  "this article is for",
+]
+/** Full articles run long; a preview does not. Above this we never flag. */
+const PAYWALL_WORD_CEILING = 1500
+/** Two independent hits — one stray phrase shouldn't reject a real article. */
+const PAYWALL_MARKER_THRESHOLD = 2
+
+/**
+ * Detect a subscription-wall preview: the lede plus navigation, with the body
+ * withheld. Both tiers fetch anonymously — the subscription lives in Siva's
+ * browser, not in a serverless function — so a paid Economist/WSJ article
+ * comes back as a stub that clears the 30-word floor and looks like success.
+ * Left unchecked that commits a near-empty page into the wiki (it did once:
+ * `sources/how-to-spot-ai-writing-economist-2026`, removed 2026-08-09).
+ *
+ * Calibrated against real output: Economist previews run ~890 words with 5+
+ * marker hits; a full open article (paulgraham.com/ds.html) runs 4,368 words
+ * with none of these markers.
+ */
+function looksPaywalled(markdown: string, wordCount: number): boolean {
+  if (wordCount >= PAYWALL_WORD_CEILING) return false
+  const haystack = markdown.toLowerCase()
+  let hits = 0
+  for (const marker of PAYWALL_MARKERS) {
+    if (haystack.includes(marker)) hits++
+    if (hits >= PAYWALL_MARKER_THRESHOLD) return true
+  }
+  return false
+}
+
 export interface FetchedDocument {
   markdown: string
   title: string
@@ -65,6 +111,16 @@ export interface FetchedDocument {
 
 /** Tier-1 outcome: usable document, or a reason to escalate to the proxy. */
 type DirectAttempt = { ok: true; doc: FetchedDocument } | { ok: false; reason: string }
+
+/**
+ * Both tiers hit a subscription wall. Distinct from a generic extraction
+ * failure because the remedy is different — no amount of retrying helps, the
+ * page has to be captured from a logged-in browser — so `fetchUrl` surfaces
+ * this message verbatim instead of wrapping it in the two-tier summary.
+ */
+export class PaywallError extends Error {
+  readonly name = "PaywallError"
+}
 
 function makeTurndown(): TurndownService {
   const td = new TurndownService({
@@ -159,6 +215,10 @@ async function tryDirectFetch(url: string, parsedUrl: URL): Promise<DirectAttemp
   if (wordCount < MIN_WORDS) {
     return { ok: false, reason: `direct fetch extracted only ${wordCount} words` }
   }
+  // Escalate rather than reject: the proxy occasionally gets more of the body.
+  if (looksPaywalled(markdown, wordCount)) {
+    return { ok: false, reason: `direct fetch returned a paywall preview (${wordCount} words)` }
+  }
 
   return {
     ok: true,
@@ -200,6 +260,14 @@ function parseReaderProxyResponse(text: string, parsedUrl: URL): FetchedDocument
   const wordCount = countWords(markdown)
   if (wordCount < MIN_WORDS) {
     throw new Error(`reader proxy extracted only ${wordCount} words`)
+  }
+  if (looksPaywalled(markdown, wordCount)) {
+    throw new PaywallError(
+      `${parsedUrl.hostname} returned a paywall preview (${wordCount} words of lede + navigation). ` +
+        `Both fetch tiers are anonymous — a subscription lives in your browser, not in this ` +
+        `function, so it can't apply here. Save the page with the Obsidian Web Clipper, or tag ` +
+        `it \`gnosis\` in Readwise Reader; both capture it from your logged-in browser.`,
+    )
   }
 
   return {
@@ -263,6 +331,8 @@ export async function fetchUrl(url: string): Promise<FetchedDocument> {
     console.info(`[fetchUrl] ${url}: reader proxy recovered ${doc.wordCount} words`)
     return doc
   } catch (e) {
+    // A paywall diagnosis is already specific and actionable — don't bury it.
+    if (e instanceof PaywallError) throw e
     const msg = e instanceof Error ? e.message : String(e)
     throw new Error(
       `Could not extract ${url} — ${direct.reason}, and the reader proxy fallback also failed: ${msg}. ` +

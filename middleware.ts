@@ -73,11 +73,20 @@ export default async function middleware(req: Request): Promise<Response> {
   //     the edge: valid → pass through to the handler; invalid → 401 directly
   //     (returning fetch(req) for a request the handler would 401 trips the
   //     edge runtime, so we reject here instead of re-fetching).
-  if (pathname === "/api/ingest/from-life" || pathname === "/api/search") {
+  if (
+    pathname === "/api/ingest/from-life" ||
+    pathname === "/api/search" ||
+    pathname === "/api/resurface" ||
+    pathname === "/api/loop"
+  ) {
     const auth = req.headers.get("authorization") || ""
     const m = auth.match(/^Bearer\s+(.+)$/i)
     const expected = (process.env.LIFE_SYSTEM_SECRET || "").trim()
-    if (expected && m && m[1].trim() === expected) {
+    // /api/loop also accepts CRON_SECRET so Vercel/GH-Actions scheduling
+    // stays possible; the handler re-verifies either way.
+    const cron = (process.env.CRON_SECRET || "").trim()
+    const token = m?.[1]?.trim()
+    if (token && ((expected && token === expected) || (pathname === "/api/loop" && cron && token === cron))) {
       return fetch(req)
     }
     return new Response(JSON.stringify({ error: "unauthorized" }), {

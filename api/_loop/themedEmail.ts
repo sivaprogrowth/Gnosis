@@ -356,7 +356,7 @@ export async function runThemedEmail(opts: { dry?: boolean } = {}): Promise<Task
     audience:
       "Siva Cotipalli — founder of ProGrowth (AI marketing for financial services) and ProElevate; reads across AI, marketing, startups, economics, and older philosophical traditions; wants connections he would not have made himself",
     voice:
-      "clear, direct, intellectually honest; concrete over abstract; no hype, no filler, no generic inspiration",
+      "simple and easy to understand — write like you're explaining to a smart friend over coffee, not writing an academic essay. Short sentences. Plain words over clever ones (say 'the company decided who could use AI' not 'the firm was rationing cognitive access'). One idea per paragraph. Concrete examples over abstractions. No hype, no filler, no generic inspiration. The ideas can be deep; the language must stay simple",
     target_words: "700-1,000 words",
     previous_editions: pastThemes.length ? pastThemes.join("; ") : "none provided",
   })

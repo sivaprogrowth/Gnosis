@@ -30,19 +30,30 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).json({ error: "method not allowed" })
     return
   }
-  const body = (req.body || {}) as { query?: unknown; q?: unknown; limit?: unknown; secret?: unknown }
+  const body = (req.body || {}) as {
+    query?: unknown
+    q?: unknown
+    limit?: unknown
+    secret?: unknown
+    include_content?: unknown
+  }
   if (!authorized(req, body.secret)) {
     res.status(401).json({ error: "unauthorized" })
     return
   }
 
   const query =
-    typeof body.query === "string" ? body.query.trim() : typeof body.q === "string" ? body.q.trim() : ""
+    typeof body.query === "string"
+      ? body.query.trim()
+      : typeof body.q === "string"
+        ? body.q.trim()
+        : ""
   if (!query) {
     res.status(400).json({ error: "query is required" })
     return
   }
-  const limit = typeof body.limit === "number" && body.limit > 0 ? Math.min(Math.floor(body.limit), 20) : 8
+  const limit =
+    typeof body.limit === "number" && body.limit > 0 ? Math.min(Math.floor(body.limit), 20) : 8
 
   try {
     const index = getPageIndex()
@@ -57,9 +68,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       aesthetic: [],
       timeScope: "any",
     }
+    // include_content: attach trimmed page bodies for the top hits so a
+    // tool-using LLM caller (the life-system bot's ask-gnosis tool) can
+    // answer content questions, not just point at slugs. Capped to keep the
+    // payload inside a sane tool-result budget.
+    const includeContent = body.include_content === true
     const results = selectCandidates(parsed, index)
       .slice(0, limit)
-      .map((c) => ({ slug: c.slug, title: c.title, type: c.type, score: c.score, preview: c.preview }))
+      .map((c, i) => ({
+        slug: c.slug,
+        title: c.title,
+        type: c.type,
+        score: c.score,
+        preview: c.preview,
+        ...(includeContent && i < 5
+          ? { content: (index.bySlug.get(c.slug)?.body ?? "").slice(0, 3500) }
+          : {}),
+      }))
 
     res.setHeader("Cache-Control", "no-store")
     res.status(200).json({ ok: true, query, results })

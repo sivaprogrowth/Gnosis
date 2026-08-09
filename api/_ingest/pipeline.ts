@@ -361,15 +361,23 @@ export async function runCommit(
     },
   })
 
+  // If this fails the pages are still safely on wiki-archive, but the live
+  // site never picks them up — the ingest looks successful and the article is
+  // invisible. Record it on the job so the staleness is discoverable instead
+  // of living only in a function log nobody reads.
   triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
     .then((triggerSha) =>
       console.log(
         `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
       ),
     )
-    .catch((e) =>
-      console.warn(`[ingest] rebuild trigger failed:`, e instanceof Error ? e.message : e),
-    )
+    .catch(async (e) => {
+      const msg = e instanceof Error ? e.message : String(e)
+      console.error(`[ingest] rebuild trigger failed for job ${jobId}:`, msg)
+      await updateJob(jobId, {
+        progress_message: `Committed, but the site rebuild could not be triggered (${msg}). Pages are on wiki-archive; push any commit to main to publish them.`,
+      }).catch(() => {})
+    })
 
   onFrame({
     stage: "done",

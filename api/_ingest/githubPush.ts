@@ -46,10 +46,7 @@ function octokit(): Octokit {
  * Commit `files` to wiki-archive as a single commit with `message`.
  * Returns the new commit SHA + web URLs for the commit and each blob.
  */
-export async function commitFiles(
-  files: FileToCommit[],
-  message: string,
-): Promise<CommitResult> {
+export async function commitFiles(files: FileToCommit[], message: string): Promise<CommitResult> {
   if (files.length === 0) throw new Error("commitFiles called with zero files")
 
   const gh = octokit()
@@ -202,10 +199,7 @@ export async function getFileContent(path: string): Promise<string | null> {
  * Octokit's git/createTree accepts `sha: null` for a path to remove that
  * file from the new tree. Same atomic-commit shape as commitFiles().
  */
-export async function deleteFiles(
-  paths: string[],
-  message: string,
-): Promise<CommitResult> {
+export async function deleteFiles(paths: string[], message: string): Promise<CommitResult> {
   if (paths.length === 0) throw new Error("deleteFiles called with zero paths")
 
   const gh = octokit()
@@ -272,49 +266,81 @@ export async function deleteFiles(
  * vars or Vercel Deploy Hook URL: reuse GITHUB_TOKEN, create an empty commit
  * on main with a clear "Auto-rebuild for ingest" message so the history is
  * grep-able and revertable.
+ *
+ * Read-modify-write on a shared ref, so it races: two ingests finishing close
+ * together both read the same parent and the loser's updateRef is rejected as
+ * a non-fast-forward. That ingest's pages then sit on wiki-archive with no
+ * rebuild — committed but invisible on the live site. Hence the retry: re-read
+ * the head and rebuild the empty commit on the new parent.
  */
+const REBUILD_MAX_ATTEMPTS = 4
+
+function isFastForwardConflict(err: unknown): boolean {
+  const status = (err as { status?: number })?.status
+  const msg = err instanceof Error ? err.message.toLowerCase() : ""
+  // GitHub answers 422 "Update is not a fast forward" when we lost the race.
+  return status === 422 || status === 409 || msg.includes("fast forward")
+}
+
 export async function triggerVercelRebuild(reason: string): Promise<string> {
   const gh = octokit()
 
-  // 1. Latest commit on main
-  const { data: ref } = await gh.git.getRef({
-    owner: REPO_OWNER,
-    repo: REPO_NAME,
-    ref: "heads/main",
-  })
-  const parentSha = ref.object.sha
-  const { data: parentCommit } = await gh.git.getCommit({
-    owner: REPO_OWNER,
-    repo: REPO_NAME,
-    commit_sha: parentSha,
-  })
+  let lastErr: unknown
+  for (let attempt = 1; attempt <= REBUILD_MAX_ATTEMPTS; attempt++) {
+    // 1. Latest commit on main — re-read every attempt; on a retry the head
+    //    has moved, which is precisely why the previous attempt failed.
+    const { data: ref } = await gh.git.getRef({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      ref: "heads/main",
+    })
+    const parentSha = ref.object.sha
+    const { data: parentCommit } = await gh.git.getCommit({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      commit_sha: parentSha,
+    })
 
-  // 2. Empty commit (re-use the parent's tree)
-  const { data: newCommit } = await gh.git.createCommit({
-    owner: REPO_OWNER,
-    repo: REPO_NAME,
-    message: `Auto-rebuild: ${reason}\n\nEmpty commit to trigger Vercel rebuild — picks up latest wiki-archive content via scripts/build-content.cjs.`,
-    tree: parentCommit.tree.sha,
-    parents: [parentSha],
-    author: {
-      name: AUTHOR_NAME,
-      email: AUTHOR_EMAIL,
-      date: new Date().toISOString(),
-    },
-    committer: {
-      name: AUTHOR_NAME,
-      email: AUTHOR_EMAIL,
-      date: new Date().toISOString(),
-    },
-  })
+    // 2. Empty commit (re-use the parent's tree)
+    const { data: newCommit } = await gh.git.createCommit({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      message: `Auto-rebuild: ${reason}\n\nEmpty commit to trigger Vercel rebuild — picks up latest wiki-archive content via scripts/build-content.cjs.`,
+      tree: parentCommit.tree.sha,
+      parents: [parentSha],
+      author: {
+        name: AUTHOR_NAME,
+        email: AUTHOR_EMAIL,
+        date: new Date().toISOString(),
+      },
+      committer: {
+        name: AUTHOR_NAME,
+        email: AUTHOR_EMAIL,
+        date: new Date().toISOString(),
+      },
+    })
 
-  await gh.git.updateRef({
-    owner: REPO_OWNER,
-    repo: REPO_NAME,
-    ref: "heads/main",
-    sha: newCommit.sha,
-    force: false,
-  })
+    try {
+      await gh.git.updateRef({
+        owner: REPO_OWNER,
+        repo: REPO_NAME,
+        ref: "heads/main",
+        sha: newCommit.sha,
+        force: false,
+      })
+      return newCommit.sha
+    } catch (err) {
+      lastErr = err
+      if (!isFastForwardConflict(err) || attempt === REBUILD_MAX_ATTEMPTS) throw err
+      const backoffMs = 500 * attempt
+      console.warn(
+        `[githubPush] rebuild trigger lost a race on heads/main (attempt ${attempt}/${REBUILD_MAX_ATTEMPTS}); retrying in ${backoffMs}ms`,
+      )
+      await new Promise((resolve) => setTimeout(resolve, backoffMs))
+    }
+  }
 
-  return newCommit.sha
+  throw lastErr instanceof Error
+    ? lastErr
+    : new Error(`Could not push rebuild trigger after ${REBUILD_MAX_ATTEMPTS} attempts`)
 }

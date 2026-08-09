@@ -44,9 +44,22 @@ const transporter = nodemailer.createTransport({
 })
 
 /**
- * Siva's synthesis-loop prompt, verbatim (2026-08-09). {{vars}} are filled at
- * run time by fillTemplate(). Do not tune wording here without asking — the
- * spec is his.
+ * LOCKED 2026-08-09 (git tag `themed-email-v1`).
+ *
+ * Siva's synthesis-loop prompt, verbatim. {{vars}} are filled at run time by
+ * fillTemplate(). Do NOT edit this template, the research_window, or the
+ * voice without asking him first — this configuration was approved after
+ * three rejected iterations, and the approved output is the email
+ * "Your brand can't persuade a machine" (2026-08-09).
+ *
+ * What each rejection taught, so it isn't re-litigated:
+ *   v1 themed Readwise BOOK highlights → "look at all the articles of
+ *      gnosis, not books" — the corpus is the wiki's source pages.
+ *   v2 restricted the window to the last 7 days → "don't just restrict to
+ *      last 7 days of corpus, look for meaningful themes" — recency is not
+ *      a selection criterion.
+ *   v3 wrote dense, clever prose → "write in a simple and easy to
+ *      understand way, not very complicated" — deep ideas, plain words.
  */
 const PROMPT_TEMPLATE = `## Objective
 

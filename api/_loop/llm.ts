@@ -23,12 +23,15 @@ export async function loopLLM(args: {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY is not set on the server")
   const client = new Anthropic({ apiKey })
 
-  const response = await client.messages.create({
+  // Stream + finalMessage: large max_tokens (deep thinking passes) trips the
+  // SDK's non-streaming timeout ceiling otherwise.
+  const stream = client.messages.stream({
     model: MODEL_ID,
     max_tokens: args.maxTokens ?? 8000,
     system: args.system,
     messages: [{ role: "user", content: args.user }],
   })
+  const response = await stream.finalMessage()
   await logAiUsage(args.callSite, MODEL_ID, response.usage)
 
   if (response.stop_reason === "refusal") {

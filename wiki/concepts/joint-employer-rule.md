@@ -17,4 +17,6 @@ A named, contested US regulatory concept that spans multiple administrations and
 
 ## Mentions
 
+
+- [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]

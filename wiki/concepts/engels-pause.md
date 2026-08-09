@@ -19,6 +19,8 @@ A well-defined named historical economic concept used as a structural analogy fo
 
 
 
+
+- [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
 - [[economist-franchising-made-americans-rich|Franchising has quietly made countless Americans rich]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

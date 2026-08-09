@@ -17,4 +17,6 @@ A specific dynamic (incumbents' AI products eroding their own legacy revenue) th
 
 ## Mentions
 
+
+- [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

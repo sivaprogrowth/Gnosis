@@ -18,5 +18,7 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 ## Mentions
 
 
+
+- [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

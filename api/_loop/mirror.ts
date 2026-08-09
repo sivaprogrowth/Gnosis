@@ -146,7 +146,7 @@ ${body}
     `**Open question for next quarter:**`,
     openQ.split("\n").slice(0, 3).join("\n"),
     ``,
-    `Full mirror: https://gnosis.progrowth.services/wiki/queries/reading-mirror-${period}`,
+    `Full mirror: https://gnosis.progrowth.services/queries/reading-mirror-${period}`,
   ].join("\n")
 
   if (opts.dry) return { digests: [digest], filed: [path] }

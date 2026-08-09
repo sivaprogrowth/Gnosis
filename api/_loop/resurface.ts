@@ -219,7 +219,7 @@ ${r.body}
         ``,
         firstHooks(r.body, 2),
         ``,
-        `Full set: https://gnosis.progrowth.services/wiki/queries/resurface-${ctx.slug}-${today}`,
+        `Full set: https://gnosis.progrowth.services/queries/resurface-${ctx.slug}-${today}`,
       ].join("\n")
 
       if (opts.dry) {

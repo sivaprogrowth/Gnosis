@@ -105,7 +105,7 @@ export async function runNudges(opts: { dry?: boolean } = {}): Promise<TaskResul
     )
     lines.push(``, `**${p.title}** _(read ${STAGES[p.stage - 1]}+ days ago)_`)
     for (const t of chosen) lines.push(`- ${t}`)
-    if (p.slug) lines.push(`https://gnosis.progrowth.services/wiki/sources/${p.slug}`)
+    if (p.slug) lines.push(`https://gnosis.progrowth.services/sources/${p.slug}`)
   }
 
   if (!opts.dry) {

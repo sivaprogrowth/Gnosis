@@ -94,6 +94,51 @@ You will receive a list of pages that ALREADY exist in the wiki. Whenever you me
 
 Voice: third-person, neutral. Preserve technical terms verbatim. Don't editorialise. Never invent facts; if the article doesn't give you the published date or author, leave the frontmatter value as null.`
 
+/**
+ * Normalise whatever the model put in `takeaways` into a string array.
+ *
+ * The model intermittently returns the bullets as a single newline-delimited
+ * string ("- foo\n- bar") instead of an array. The schema says `type: array`
+ * with `minItems: 3`, but that's advisory: this tool isn't `strict` (Sonnet
+ * 4.6 doesn't support strict tool use), and array-length constraints aren't
+ * enforced even when it is. The previous code discarded any non-array, which
+ * is how two ingests on 2026-08-09 committed source pages with zero takeaways
+ * and pushed empty bullet lists to the life-system Learning feed — data the
+ * model had actually produced. Salvage it instead of dropping it.
+ */
+function coerceTakeaways(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value.filter((v): v is string => typeof v === "string" && v.trim() !== "")
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim()
+    // Sometimes it's a JSON array that just didn't get parsed as one.
+    if (trimmed.startsWith("[")) {
+      try {
+        const parsed: unknown = JSON.parse(trimmed)
+        if (Array.isArray(parsed)) return coerceTakeaways(parsed)
+      } catch {
+        /* fall through to line splitting */
+      }
+    }
+    // Otherwise it's a bullet list: strip "- ", "* ", "• ", "1. ", "2) ".
+    const lines = trimmed
+      .split("\n")
+      .map((line) => line.replace(/^\s*(?:[-*•]|\d+[.)])\s+/, "").trim())
+      .filter(Boolean)
+    if (lines.length) {
+      console.warn(
+        `[synthesize] takeaways came back as a string; recovered ${lines.length} bullets`,
+      )
+      return lines
+    }
+  }
+
+  console.warn(`[synthesize] takeaways unusable (got ${typeof value}); using []`)
+  return []
+}
+
 export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResult> {
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY is not set on the server")
@@ -141,7 +186,8 @@ Produce the structured output now via the synthesize_source tool.`
       properties: {
         sourcePage: {
           type: "string",
-          description: "Full markdown with YAML frontmatter, ready to write to wiki/sources/<slug>.md",
+          description:
+            "Full markdown with YAML frontmatter, ready to write to wiki/sources/<slug>.md",
         },
         takeaways: {
           type: "array",
@@ -194,17 +240,18 @@ Produce the structured output now via the synthesize_source tool.`
 
   const result = block.input as SynthesizeResult
   if (!result.sourcePage || !result.suggestedSlug) {
-    throw new Error("Synthesize tool_use returned malformed result (missing sourcePage or suggestedSlug)")
+    throw new Error(
+      "Synthesize tool_use returned malformed result (missing sourcePage or suggestedSlug)",
+    )
   }
   // Anthropic's tool_use schema enforcement is best-effort — sometimes the
   // model returns scalar or undefined where the schema says array. Normalise
   // here so downstream code can assume the shapes are correct.
-  if (!Array.isArray(result.takeaways)) {
-    console.warn(`[synthesize] takeaways wasn't an array (got ${typeof result.takeaways}); coercing to []`)
-    result.takeaways = []
-  }
+  result.takeaways = coerceTakeaways(result.takeaways)
   if (!Array.isArray(result.surfacedEntities)) {
-    console.warn(`[synthesize] surfacedEntities wasn't an array (got ${typeof result.surfacedEntities}); coercing to []`)
+    console.warn(
+      `[synthesize] surfacedEntities wasn't an array (got ${typeof result.surfacedEntities}); coercing to []`,
+    )
     result.surfacedEntities = []
   }
   // Hard cap on slug length even if the model ignored the schema hint

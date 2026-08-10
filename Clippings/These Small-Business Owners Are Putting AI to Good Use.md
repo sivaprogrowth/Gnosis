@@ -1,13 +1,19 @@
 ---
-title: "These Small-Business Owners Are Putting AI to Good Use"
-source: "https://www.wsj.com/tech/ai/these-small-business-owners-are-putting-ai-to-good-use-f790d5a9?mod=Searchresults&pos=3&page=1"
+title: These Small-Business Owners Are Putting AI to Good Use
+source: >-
+  https://www.wsj.com/tech/ai/these-small-business-owners-are-putting-ai-to-good-use-f790d5a9?mod=Searchresults&pos=3&page=1
 author:
-  - "[[Katherine Bindley]]"
-published: 2025-11-15
-created: 2026-08-09
-description: "Big companies have teams to guide tech strategy—smaller firms noodle until something works"
+  - '[[Katherine Bindley]]'
+published: 2025-11-15T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Big companies have teams to guide tech strategy—smaller firms noodle until
+  something works
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: eba5e772-e2f3-48a9-ba1e-245fbafea924
+gnosis_ingested_at: '2026-08-10T08:27:43.315Z'
 ---
 ![Interior of Heritage Bikes, a bike shop with a counter, multiple bicycles, and customers.](https://images.wsj.net/im-80400045?width=700&size=1.538&pixel_ratio=3)
 

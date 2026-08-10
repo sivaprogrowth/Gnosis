@@ -42,6 +42,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]

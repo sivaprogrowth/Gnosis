@@ -24,6 +24,8 @@ A widely-used, well-defined concept that the wiki clearly tracks (adjacent to Jo
 
 
 
+
+- [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]

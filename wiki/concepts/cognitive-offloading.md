@@ -33,6 +33,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]

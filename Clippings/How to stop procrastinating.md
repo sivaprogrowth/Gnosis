@@ -1,13 +1,20 @@
 ---
-title: "How to stop procrastinating"
-source: "https://www.economist.com/science-and-technology/2026/07/31/how-to-stop-procrastinating"
+title: How to stop procrastinating
+source: >-
+  https://www.economist.com/science-and-technology/2026/07/31/how-to-stop-procrastinating
 author:
-  - "[[The Economist]]"
-published: 2026-08-01
-created: 2026-08-09
-description: "Research shows procrastination costs people thousands in earnings and harms mental health, but mental exercises, physical training and better habits may help reduce it. | Science & technology"
+  - '[[The Economist]]'
+published: 2026-08-01T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Research shows procrastination costs people thousands in earnings and harms
+  mental health, but mental exercises, physical training and better habits may
+  help reduce it. | Science & technology
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ff76ffd3-01d1-4ed6-9a9c-f65bc4188572
+gnosis_ingested_at: '2026-08-10T08:09:12.155Z'
 ---
 ## Thwarting the thief of time
 

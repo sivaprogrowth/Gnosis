@@ -17,4 +17,6 @@ Major tech/space company with multiple sub-topics (Starlink, Starship, orbital c
 
 ## Mentions
 
+
+- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

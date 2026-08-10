@@ -2,19 +2,19 @@
 type: entity
 title: "Claude"
 tags: [ingested]
-sources: ["ai-writing-improvement-humans-must-edit"]
+sources: ["anthropic-commercial-success-government-conflict-2026"]
 ---
 
 # Claude
 
-_Stub page created automatically during ingest of [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]._
+_Stub page created automatically during ingest of [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]._
 
-Already has an existing wiki page (entity/entities/claude). Referenced as one of four LLMs in The Economist's stylometric study.
+Already has an existing wiki page (entity/entities/claude). Referenced directly in this source.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/claude). Referenced as one of four LLMs in The Economist's stylometric study.
+Already has an existing wiki page (entity/entities/claude). Referenced directly in this source.
 
 ## Mentions
 
-- [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
+- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

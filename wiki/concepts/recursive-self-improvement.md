@@ -18,5 +18,7 @@ This is the central framework of the source and a well-defined AI safety/capabil
 ## Mentions
 
 
+
+- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

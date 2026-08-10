@@ -1,13 +1,20 @@
 ---
-title: "Anthropic’s astonishing commercial success makes it a target"
-source: "https://www.economist.com/briefing/2026/06/18/anthropics-astonishing-commercial-success-makes-it-a-target"
+title: Anthropic’s astonishing commercial success makes it a target
+source: >-
+  https://www.economist.com/briefing/2026/06/18/anthropics-astonishing-commercial-success-makes-it-a-target
 author:
-  - "[[The Economist]]"
-published: 2026-06-18
-created: 2026-08-09
-description: "Dario Amodei's Anthropic clashes with Donald Trump's administration over AI model restrictions, highlighting tensions between tech firms and government control. | Briefing"
+  - '[[The Economist]]'
+published: 2026-06-18T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Dario Amodei's Anthropic clashes with Donald Trump's administration over AI
+  model restrictions, highlighting tensions between tech firms and government
+  control. | Briefing
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: a95b7a03-2114-43e2-be39-ad9f7940a20a
+gnosis_ingested_at: '2026-08-10T07:56:05.698Z'
 ---
 ## The cultlike firm is battling with the government for control of superpowered AI
 

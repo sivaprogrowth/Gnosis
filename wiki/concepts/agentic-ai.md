@@ -32,6 +32,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

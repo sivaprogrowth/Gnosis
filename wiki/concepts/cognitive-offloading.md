@@ -26,6 +26,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]

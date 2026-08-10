@@ -1,14 +1,32 @@
 ---
-title: "AI Is Changing How Customers Choose Your Business"
-source: "https://hbr.org/2026/07/ai-is-changing-how-customers-choose-your-business"
+title: AI Is Changing How Customers Choose Your Business
+source: 'https://hbr.org/2026/07/ai-is-changing-how-customers-choose-your-business'
 author:
-  - "[[Graham Kenny]]"
-  - "[[Ganna Pogrebna]]"
-published: 2026-07-06
-created: 2026-08-09
-description: "As AI increasingly mediates how customers research, evaluate, and choose suppliers, competitive advantage is shifting from direct customer understanding to managing AI-shaped interactions. Drawing on the experiences of three small-to-medium sized businesses they worked with, the authors show how firms can adapt. A manufacturer improved sales efficiency by screening AI-generated inquiries before investing engineering time in quotations. A boutique hotel learned to monitor how AI tools described its business and revised public content to improve accuracy and differentiation. A B2B software company replaced periodic customer reviews with continuous monitoring of customer feedback and AI-generated market perceptions. Across all three cases, the lesson is that firms must treat AI as a new intermediary in the customer relationship. Winning companies will not necessarily spend the most on technology; they will build systems for continuously listening, interpreting signals, and adapting strategy in markets where both customers and the information they rely on are increasingly AI-mediated."
+  - '[[Graham Kenny]]'
+  - '[[Ganna Pogrebna]]'
+published: 2026-07-06T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  As AI increasingly mediates how customers research, evaluate, and choose
+  suppliers, competitive advantage is shifting from direct customer
+  understanding to managing AI-shaped interactions. Drawing on the experiences
+  of three small-to-medium sized businesses they worked with, the authors show
+  how firms can adapt. A manufacturer improved sales efficiency by screening
+  AI-generated inquiries before investing engineering time in quotations. A
+  boutique hotel learned to monitor how AI tools described its business and
+  revised public content to improve accuracy and differentiation. A B2B software
+  company replaced periodic customer reviews with continuous monitoring of
+  customer feedback and AI-generated market perceptions. Across all three cases,
+  the lesson is that firms must treat AI as a new intermediary in the customer
+  relationship. Winning companies will not necessarily spend the most on
+  technology; they will build systems for continuously listening, interpreting
+  signals, and adapting strategy in markets where both customers and the
+  information they rely on are increasingly AI-mediated.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ed22f621-27d6-42f1-8ccd-2e100b6de9e5
+gnosis_ingested_at: '2026-08-10T05:02:31.847Z'
 ---
 ## Summary.
 

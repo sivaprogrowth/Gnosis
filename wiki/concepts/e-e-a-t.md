@@ -67,3 +67,6 @@ For fractional CMO / service firm clients, E-E-A-T is harder to demonstrate than
 
 ## Mentions
 
+
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]

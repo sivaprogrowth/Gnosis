@@ -85,4 +85,6 @@ This is the empirical foundation for repositioning ProGrowth's SEO offering into
 
 ## Mentions
 
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

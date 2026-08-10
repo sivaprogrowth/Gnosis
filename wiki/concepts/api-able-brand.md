@@ -68,3 +68,7 @@ Defines the technical audit scope for GEO engagements. Every ProGrowth GEO audit
 - [[justification-attributes]] — the content-layer complement
 - [[gemini]] — engine that most rewards this strategy
 - [[earned-media-bias]] — API-ability alone is insufficient against this
+
+## Mentions
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]

@@ -18,5 +18,7 @@ HBR is a major publisher of management frameworks the wiki clearly tracks (e.g.,
 ## Mentions
 
 
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

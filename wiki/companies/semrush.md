@@ -42,3 +42,7 @@ These are exactly the differentiation levers for [[ai-overview-tool]].
 - [[progrowth]] — competes on services + niche verticals
 - [[elena-verna]] — Semrush's distribution partner
 - [[generative-engine-optimization]] — the market category Semrush is entering
+
+## Mentions
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]

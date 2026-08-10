@@ -17,4 +17,6 @@ A well-defined, emerging AI concept that sits at the intersection of multiple ex
 
 ## Mentions
 
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

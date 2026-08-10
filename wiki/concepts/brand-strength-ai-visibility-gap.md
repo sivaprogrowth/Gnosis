@@ -80,4 +80,6 @@ This is the *empirical proof* for ProGrowth's challenger-brand positioning. A Pr
 
 ## Mentions
 
+
+- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

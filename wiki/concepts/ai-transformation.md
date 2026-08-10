@@ -21,6 +21,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]

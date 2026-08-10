@@ -18,5 +18,7 @@ A distinct architectural concept (agents operating above SaaS verticals) that co
 ## Mentions
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

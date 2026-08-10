@@ -40,6 +40,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]

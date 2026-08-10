@@ -19,6 +19,8 @@ A well-defined economic concept central to the paper's argument about AI enablin
 
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

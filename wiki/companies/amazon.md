@@ -17,4 +17,6 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 ## Mentions
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

@@ -41,6 +41,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]

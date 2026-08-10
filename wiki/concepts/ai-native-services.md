@@ -83,5 +83,7 @@ See the `## ProGrowth relevance` section on [[progrowth]] for specific operation
 ## Mentions
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

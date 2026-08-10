@@ -1,13 +1,19 @@
 ---
-title: "These AI-Native Companies Have Tiny Staffs and Fewer Bosses"
-source: "https://www.wsj.com/tech/ai/ai-companies-staffing-c9029343?mod=Searchresults&pos=2&page=1"
+title: These AI-Native Companies Have Tiny Staffs and Fewer Bosses
+source: >-
+  https://www.wsj.com/tech/ai/ai-companies-staffing-c9029343?mod=Searchresults&pos=2&page=1
 author:
-  - "[[Lindsay Ellis]]"
-published: 2026-07-20
-created: 2026-08-09
-description: "Firms built from the get-go around AI are operating much leaner and flatter than earlier startups. Is this American corporations’ future?"
+  - '[[Lindsay Ellis]]'
+published: 2026-07-20T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Firms built from the get-go around AI are operating much leaner and flatter
+  than earlier startups. Is this American corporations’ future?
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: d0b96168-ec4b-42ca-a6af-0a454e1a4505
+gnosis_ingested_at: '2026-08-10T08:23:00.367Z'
 ---
 ![Illustration of a human silhouette surrounded by a network of smaller, connected human figures.](https://images.wsj.net/im-38685531?width=700&size=1.501&pixel_ratio=3)
 

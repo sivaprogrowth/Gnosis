@@ -19,6 +19,8 @@ Y Combinator is a major institution in the startup world, co-founded by Paul Gra
 
 
 
+
+- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]
 - [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]

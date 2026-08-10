@@ -17,4 +17,6 @@ A widely-used, well-defined concept that the wiki clearly tracks (adjacent to Jo
 
 ## Mentions
 
+
+- [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

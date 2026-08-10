@@ -18,5 +18,7 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 ## Mentions
 
 
+
+- [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

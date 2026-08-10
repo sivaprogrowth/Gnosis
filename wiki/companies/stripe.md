@@ -17,4 +17,6 @@ Well-known company tracked in the wiki's company collection; the Collison instal
 
 ## Mentions
 
+
+- [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

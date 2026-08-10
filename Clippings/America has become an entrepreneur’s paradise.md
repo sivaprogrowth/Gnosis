@@ -1,13 +1,19 @@
 ---
-title: "America has become an entrepreneur’s paradise"
-source: "https://www.economist.com/business/2026/07/27/america-has-become-an-entrepreneurs-paradise?utm_campaign=a.io&utm_medium=audio.podcast.np&utm_source=editorspicks&utm_content=discovery.content.anonymous.tr_shownotes_na-na_article&utm_term=sa.listeners"
+title: America has become an entrepreneur’s paradise
+source: >-
+  https://www.economist.com/business/2026/07/27/america-has-become-an-entrepreneurs-paradise?utm_campaign=a.io&utm_medium=audio.podcast.np&utm_source=editorspicks&utm_content=discovery.content.anonymous.tr_shownotes_na-na_article&utm_term=sa.listeners
 author:
-  - "[[The Economist]]"
-published: 2026-07-27
-created: 2026-08-09
-description: "Etsy-sellers and small-town accountants are enjoying the fruits of AI | Business"
+  - '[[The Economist]]'
+published: 2026-07-27T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Etsy-sellers and small-town accountants are enjoying the fruits of AI |
+  Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: e4187219-56a7-4e2b-b4fa-ec3c544462db
+gnosis_ingested_at: '2026-08-10T07:54:20.623Z'
 ---
 ## Etsy-sellers and small-town accountants are enjoying the fruits of AI
 

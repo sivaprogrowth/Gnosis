@@ -568,7 +568,14 @@ function appendMention(content: string, sourceSlug: string, sourceTitle: string)
 
 const CLIPPINGS_DIR = "Clippings"
 const MAX_CLIPPINGS_PER_RUN = 6 // per-wave ceiling; the time budget below is the real guard
-const CLIPPINGS_TIME_BUDGET_MS = 240_000 // stop starting new clips ~60s before the 300s function limit
+// Stop STARTING new clips with a full clip's worth of headroom under the 300s
+// function limit. 240_000 was too generous: on 2026-08-10 two clips took 137s
+// and 67s, so a third was allowed to start at 204s, needed ~90s more, and the
+// invocation was killed past 300s. That stranded its job in `discussing` (which
+// wedges the clip via the in-flight guard) AND skipped the self-chain below, so
+// 16 further clippings sat undrained. The gate must leave room for the SLOWEST
+// observed clip (~140s), not the average.
+const CLIPPINGS_TIME_BUDGET_MS = 150_000
 const SYSTEM_USER_EMAIL = "siva@progrowth.services"
 
 export interface CronClippingResult {
@@ -838,8 +845,13 @@ async function markClippingProcessed(
 const READER_TRIGGER_TAG = "gnosis"
 const READER_DONE_TAG = "gnosis-done"
 const READER_ERROR_TAG = "gnosis-error"
-/** Leave ~60s headroom under the 300s maxDuration for the in-flight ingest. */
-const READER_TIME_BUDGET_MS = 240_000
+/**
+ * Leave a full doc's worth of headroom under the 300s maxDuration. Matches
+ * CLIPPINGS_TIME_BUDGET_MS: the gate only decides whether to START another
+ * doc, so it has to cover the slowest one (~140s), not the average. See the
+ * comment on CLIPPINGS_TIME_BUDGET_MS for what the 240s version cost.
+ */
+const READER_TIME_BUDGET_MS = 150_000
 /** Reader's html_content shorter than this triggers the source-URL refetch. */
 const READER_HTML_MIN_CHARS = 400
 

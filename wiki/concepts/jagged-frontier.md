@@ -22,6 +22,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]

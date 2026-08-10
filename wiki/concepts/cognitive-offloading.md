@@ -30,6 +30,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[how-to-stop-procrastinating|How to stop procrastinating]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]

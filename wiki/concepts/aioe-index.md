@@ -17,4 +17,6 @@ A named, well-defined measurement framework already adjacent to existing pages l
 
 ## Mentions
 
+
+- [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

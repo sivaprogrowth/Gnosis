@@ -17,4 +17,6 @@ A distinct architectural concept (agents operating above SaaS verticals) that co
 
 ## Mentions
 
+
+- [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

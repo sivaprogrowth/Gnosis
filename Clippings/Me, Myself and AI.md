@@ -1,13 +1,17 @@
 ---
-title: "Me, Myself and AI"
-source: "https://www.wsj.com/opinion/me-myself-and-ai-d09b4220?mod=Searchresults&pos=4&page=1"
+title: 'Me, Myself and AI'
+source: >-
+  https://www.wsj.com/opinion/me-myself-and-ai-d09b4220?mod=Searchresults&pos=4&page=1
 author:
-  - "[[Liya Palagashvili]]"
-published: 2026-07-02
-created: 2026-08-09
-description: "AI makes it easier for entrepreneurs to set up solo shops."
+  - '[[Liya Palagashvili]]'
+published: 2026-07-02T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: AI makes it easier for entrepreneurs to set up solo shops.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 1f1a1674-fcc6-41d7-9394-5d15cbf62c36
+gnosis_ingested_at: '2026-08-10T08:17:25.243Z'
 ---
 ![image](https://opinion-images.wsj.net/im-95261360/?size=1.5)
 

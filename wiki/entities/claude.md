@@ -2,19 +2,19 @@
 type: entity
 title: "Claude"
 tags: [ingested]
-sources: ["ai-changing-how-customers-choose-your-business"]
+sources: ["ai-writing-improvement-humans-must-edit"]
 ---
 
 # Claude
 
-_Stub page created automatically during ingest of [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]._
+_Stub page created automatically during ingest of [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]._
 
-Already has an existing wiki page (entity/entities/claude). Named as one of the audit tools used by case-study firms.
+Already has an existing wiki page (entity/entities/claude). Referenced as one of four LLMs in The Economist's stylometric study.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/claude). Named as one of the audit tools used by case-study firms.
+Already has an existing wiki page (entity/entities/claude). Referenced as one of four LLMs in The Economist's stylometric study.
 
 ## Mentions
 
-- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
+- [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]

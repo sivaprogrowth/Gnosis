@@ -19,6 +19,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

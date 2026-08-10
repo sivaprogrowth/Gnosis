@@ -1,13 +1,20 @@
 ---
-title: "AI is getting better at writing. Humans must get better at editing"
-source: "https://www.economist.com/leaders/2026/07/30/ai-is-getting-better-at-writing-humans-must-get-better-at-editing"
+title: AI is getting better at writing. Humans must get better at editing
+source: >-
+  https://www.economist.com/leaders/2026/07/30/ai-is-getting-better-at-writing-humans-must-get-better-at-editing
 author:
-  - "[[The Economist]]"
-published: 2026-07-30
-created: 2026-08-09
-description: "The Economist investigates how artificial intelligence writing is improving and offers editing tips for refining AI-generated prose to make it more human-like. | Leaders"
+  - '[[The Economist]]'
+published: 2026-07-30T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  The Economist investigates how artificial intelligence writing is improving
+  and offers editing tips for refining AI-generated prose to make it more
+  human-like. | Leaders
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: bc9a51a3-a058-4fe3-917d-e731c514d721
+gnosis_ingested_at: '2026-08-10T05:03:39.396Z'
 ---
 ## Our investigation suggests how
 

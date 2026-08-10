@@ -18,4 +18,6 @@ Well-defined named concept (The Economist's 2025 word of the year) describing th
 ## Mentions
 
 
+
+- [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]

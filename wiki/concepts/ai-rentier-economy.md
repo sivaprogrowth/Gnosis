@@ -17,4 +17,6 @@ A distinct, named scenario concept about structural income concentration in an A
 
 ## Mentions
 
+
+- [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]
 - [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]

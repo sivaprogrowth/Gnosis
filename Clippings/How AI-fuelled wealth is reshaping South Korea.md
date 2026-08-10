@@ -1,13 +1,20 @@
 ---
-title: "How AI-fuelled wealth is reshaping South Korea"
-source: "https://www.economist.com/asia/2026/08/04/how-ai-fuelled-wealth-is-reshaping-south-korea"
+title: How AI-fuelled wealth is reshaping South Korea
+source: >-
+  https://www.economist.com/asia/2026/08/04/how-ai-fuelled-wealth-is-reshaping-south-korea
 author:
-  - "[[The Economist]]"
-published: 2026-08-04
-created: 2026-08-09
-description: "South Korea's semiconductor firms Samsung Electronics and SK Hynix reap massive AI-driven profits, sparking debates over wealth distribution and policy responses. | Asia"
+  - '[[The Economist]]'
+published: 2026-08-04T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  South Korea's semiconductor firms Samsung Electronics and SK Hynix reap
+  massive AI-driven profits, sparking debates over wealth distribution and
+  policy responses. | Asia
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 6240ea82-7394-4821-aa19-87d92118a12c
+gnosis_ingested_at: '2026-08-10T08:06:35.851Z'
 ---
 ## Leaders must decide how to manage a big windfall
 

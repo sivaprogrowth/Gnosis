@@ -1,13 +1,19 @@
 ---
-title: "The Rise of Million-Dollar Companies With Just One Employee"
-source: "https://www.wsj.com/tech/ai/the-rise-of-million-dollar-companies-with-just-one-employee-f36a77c1?mod=Searchresults&pos=1&page=1"
+title: The Rise of Million-Dollar Companies With Just One Employee
+source: >-
+  https://www.wsj.com/tech/ai/the-rise-of-million-dollar-companies-with-just-one-employee-f36a77c1?mod=Searchresults&pos=1&page=1
 author:
-  - "[[Te-Ping Chen]]"
-published: 2026-07-30
-created: 2026-08-09
-description: "AI tools make it easier for founders to get started alone, and many stay that way as they grow"
+  - '[[Te-Ping Chen]]'
+published: 2026-07-30T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  AI tools make it easier for founders to get started alone, and many stay that
+  way as they grow
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 20d1dbbd-3647-46d3-b7c4-b4282dfdcc52
+gnosis_ingested_at: '2026-08-10T08:20:50.394Z'
 ---
 ## AI tools make it easier for founders to get started alone, and many stay that way as they grow
 

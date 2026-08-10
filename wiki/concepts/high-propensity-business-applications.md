@@ -17,4 +17,6 @@ A specific Census Bureau metric with a precise definition (applications likely t
 
 ## Mentions
 
+
+- [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]

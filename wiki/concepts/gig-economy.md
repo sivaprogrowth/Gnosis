@@ -22,6 +22,8 @@ A widely-used, well-defined concept that the wiki clearly tracks (adjacent to Jo
 
 
 
+
+- [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]

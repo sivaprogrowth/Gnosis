@@ -1,13 +1,20 @@
 ---
-title: "Smartphones and AI are remaking rural India"
-source: "https://www.economist.com/asia/2026/06/23/smartphones-and-ai-are-remaking-rural-india"
+title: Smartphones and AI are remaking rural India
+source: >-
+  https://www.economist.com/asia/2026/06/23/smartphones-and-ai-are-remaking-rural-india
 author:
-  - "[[The Economist]]"
-published: 2026-06-23
-created: 2026-08-09
-description: "India approaches 1bn internet users as smartphones transform rural villages, with AI chatbots revolutionising education but raising concerns about screen addiction. | Asia"
+  - '[[The Economist]]'
+published: 2026-06-23T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  India approaches 1bn internet users as smartphones transform rural villages,
+  with AI chatbots revolutionising education but raising concerns about screen
+  addiction. | Asia
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: c96b8cdf-9e21-4c65-9df3-19f8519f83c1
+gnosis_ingested_at: '2026-08-10T08:18:30.766Z'
 ---
 ## Villages have fallen in love with short-form videos and chatbots
 

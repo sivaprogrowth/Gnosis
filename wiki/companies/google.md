@@ -24,6 +24,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

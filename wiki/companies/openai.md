@@ -37,6 +37,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]

@@ -17,4 +17,6 @@ A named, well-defined policy framework proposal with growing traction in future-
 
 ## Mentions
 
+
+- [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

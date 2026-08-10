@@ -1,13 +1,20 @@
 ---
-title: "Can America retrain workers before AI leaves them behind?"
-source: "https://www.economist.com/united-states/2026/08/02/can-america-retrain-workers-before-ai-leaves-them-behind"
+title: Can America retrain workers before AI leaves them behind?
+source: >-
+  https://www.economist.com/united-states/2026/08/02/can-america-retrain-workers-before-ai-leaves-them-behind
 author:
-  - "[[The Economist]]"
-published: 2026-08-02
-created: 2026-08-09
-description: "America's workforce training system struggles to prepare workers for AI-driven job displacement, with limited federal programmes and fragmented retraining options. | United States"
+  - '[[The Economist]]'
+published: 2026-08-02T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  America's workforce training system struggles to prepare workers for AI-driven
+  job displacement, with limited federal programmes and fragmented retraining
+  options. | United States
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: f2436dca-11b6-4a0f-a22e-d9ac2e387d93
+gnosis_ingested_at: '2026-08-10T07:57:27.887Z'
 ---
 ## Success will require investing in employees as seriously as America invests in chips
 

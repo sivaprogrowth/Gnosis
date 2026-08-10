@@ -30,6 +30,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]

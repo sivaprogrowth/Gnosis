@@ -18,5 +18,7 @@ A foundational AI concept directly linked to recursive self-improvement, fast ta
 ## Mentions
 
 
+
+- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

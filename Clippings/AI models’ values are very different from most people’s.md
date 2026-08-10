@@ -1,13 +1,20 @@
 ---
-title: "AI models’ values are very different from most people’s"
-source: "https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples"
+title: AI models’ values are very different from most people’s
+source: >-
+  https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples
 author:
-  - "[[The Economist]]"
-published: 2026-06-25
-created: 2026-08-09
-description: "AI models from different countries reflect distinct cultural and political biases, with Western models leaning secular and liberal while Chinese ones promote state values. | Briefing"
+  - '[[The Economist]]'
+published: 2026-06-25T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  AI models from different countries reflect distinct cultural and political
+  biases, with Western models leaning secular and liberal while Chinese ones
+  promote state values. | Briefing
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 7438ccf9-5e9e-4d9e-9f60-de7d27d0b6e9
+gnosis_ingested_at: '2026-08-10T07:52:55.658Z'
 ---
 ## They are more secular and more liberal—unless they’re made in China
 

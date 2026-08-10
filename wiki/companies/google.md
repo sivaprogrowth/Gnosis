@@ -22,6 +22,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

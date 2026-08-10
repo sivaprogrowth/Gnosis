@@ -17,4 +17,6 @@ A canonical, named technique in AI/ML with broad applicability. Adjacent to exis
 
 ## Mentions
 
+
+- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

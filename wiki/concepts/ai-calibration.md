@@ -17,4 +17,6 @@ A well-defined, reusable concept (model knowing its own knowledge limits) that i
 
 ## Mentions
 
+
+- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

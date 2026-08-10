@@ -39,6 +39,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

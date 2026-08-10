@@ -1,13 +1,19 @@
 ---
-title: "The rise of vibe lawyering"
-source: "https://www.economist.com/business/2026/06/29/the-rise-of-vibe-lawyering"
+title: The rise of vibe lawyering
+source: 'https://www.economist.com/business/2026/06/29/the-rise-of-vibe-lawyering'
 author:
-  - "[[The Economist]]"
-published: 2026-06-29
-created: 2026-08-09
-description: "Self-representing litigants increasingly use AI chatbots for legal advice, leading to fabricated case citations and frivolous lawsuits in courts across Britain, America and Canada. | Business"
+  - '[[The Economist]]'
+published: 2026-06-29T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Self-representing litigants increasingly use AI chatbots for legal advice,
+  leading to fabricated case citations and frivolous lawsuits in courts across
+  Britain, America and Canada. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 6507468e-9bba-4c56-ba43-4e1237d99387
+gnosis_ingested_at: '2026-08-10T08:21:50.628Z'
 ---
 ## AI is emboldening people to represent themselves in court. The results are mixed
 

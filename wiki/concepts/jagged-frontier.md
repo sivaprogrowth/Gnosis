@@ -25,6 +25,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]

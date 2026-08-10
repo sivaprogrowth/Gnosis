@@ -20,6 +20,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

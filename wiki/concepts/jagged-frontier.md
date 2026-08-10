@@ -23,6 +23,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]

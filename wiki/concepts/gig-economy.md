@@ -21,6 +21,8 @@ A widely-used, well-defined concept that the wiki clearly tracks (adjacent to Jo
 
 
 
+
+- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]

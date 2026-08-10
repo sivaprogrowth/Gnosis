@@ -31,6 +31,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[how-to-stop-procrastinating|How to stop procrastinating]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]

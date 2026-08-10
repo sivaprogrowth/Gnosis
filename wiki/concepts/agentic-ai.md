@@ -38,6 +38,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

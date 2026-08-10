@@ -1,13 +1,20 @@
 ---
-title: "Teaching AI how people work is fraught with problems"
-source: "https://www.economist.com/business/2026/06/25/teaching-ai-how-people-work-is-fraught-with-problems"
+title: Teaching AI how people work is fraught with problems
+source: >-
+  https://www.economist.com/business/2026/06/25/teaching-ai-how-people-work-is-fraught-with-problems
 author:
-  - "[[The Economist]]"
-published: 2026-06-25
-created: 2026-08-09
-description: "Companies are using artificial intelligence to capture workers' tacit knowledge through data analysis, video monitoring and expert evaluation systems. | Business"
+  - '[[The Economist]]'
+published: 2026-06-25T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Companies are using artificial intelligence to capture workers' tacit
+  knowledge through data analysis, video monitoring and expert evaluation
+  systems. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 81137020-a5c7-426e-9c21-92921914634d
+gnosis_ingested_at: '2026-08-10T08:19:35.112Z'
 ---
 ## Tacit knowledge is vital to many jobs
 

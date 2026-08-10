@@ -17,4 +17,6 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 
 ## Mentions
 
+
+- [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

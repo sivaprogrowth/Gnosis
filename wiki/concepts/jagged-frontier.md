@@ -21,6 +21,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

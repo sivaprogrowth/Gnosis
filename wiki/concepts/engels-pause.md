@@ -23,6 +23,8 @@ A well-defined named historical economic concept used as a structural analogy fo
 
 
 
+
+- [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]
 - [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]

@@ -29,3 +29,7 @@ Siva was recognized as **BITSAA 30 under 30** in 2009.
 - [[siva-cotipalli]] — Mechanical Engineering alumnus
 - [[phani-sama]] — EEE alumnus, class of 2002
 - [[chevening-scholarship]] — second shared credential between the two
+
+## Mentions
+
+- [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

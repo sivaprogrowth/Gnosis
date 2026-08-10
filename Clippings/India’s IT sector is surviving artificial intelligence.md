@@ -1,13 +1,20 @@
 ---
-title: "India’s IT sector is surviving artificial intelligence"
-source: "https://www.economist.com/finance-and-economics/2026/08/06/indias-it-sector-is-surviving-artificial-intelligence"
+title: India’s IT sector is surviving artificial intelligence
+source: >-
+  https://www.economist.com/finance-and-economics/2026/08/06/indias-it-sector-is-surviving-artificial-intelligence
 author:
-  - "[[The Economist]]"
-published: 2026-08-06
-created: 2026-08-09
-description: "Artificial intelligence reshapes India's technology sector, driving shifts from outsourcing to in-house operations while creating demand for AI-skilled workers. | Finance & economics"
+  - '[[The Economist]]'
+published: 2026-08-06T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Artificial intelligence reshapes India's technology sector, driving shifts
+  from outsourcing to in-house operations while creating demand for AI-skilled
+  workers. | Finance & economics
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 5aa9b989-35e4-412c-8f2a-d13d7d310e87
+gnosis_ingested_at: '2026-08-10T08:10:29.365Z'
 ---
 ## Though the technology is making life still harder for many graduates
 

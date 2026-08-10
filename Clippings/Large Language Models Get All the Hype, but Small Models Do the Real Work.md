@@ -1,13 +1,19 @@
 ---
-title: "Large Language Models Get All the Hype, but Small Models Do the Real Work"
-source: "https://www.wsj.com/tech/ai/large-language-models-get-all-the-hype-but-small-models-do-the-real-work-225d3145?mod=Searchresults&pos=10&page=1"
+title: 'Large Language Models Get All the Hype, but Small Models Do the Real Work'
+source: >-
+  https://www.wsj.com/tech/ai/large-language-models-get-all-the-hype-but-small-models-do-the-real-work-225d3145?mod=Searchresults&pos=10&page=1
 author:
-  - "[[Christopher Mims]]"
-published: 2025-10-31
-created: 2026-08-09
-description: "For many tasks in corporate America, it’s not the biggest and smartest AI models, but the smaller, more simplistic ones that are winning the day"
+  - '[[Christopher Mims]]'
+published: 2025-10-31T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  For many tasks in corporate America, it’s not the biggest and smartest AI
+  models, but the smaller, more simplistic ones that are winning the day
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 320ba379-1aac-4841-b99d-1c7fcfa19401
+gnosis_ingested_at: '2026-08-10T08:12:02.150Z'
 ---
 ![Animated illustration of a robot head moving down a conveyor belt, then a lightbulb moving down the conveyor belt.](https://images.wsj.net/im-17071498?width=700&size=1.501&pixel_ratio=3)
 

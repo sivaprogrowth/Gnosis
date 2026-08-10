@@ -2,19 +2,19 @@
 type: entity
 title: "GPT-5"
 tags: [ingested]
-sources: ["traditional-marketing-doesnt-work-on-ai-shopping-agents"]
+sources: ["small-language-models-do-the-real-work"]
 ---
 
 # GPT-5
 
-_Stub page created automatically during ingest of [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]._
+_Stub page created automatically during ingest of [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]._
 
-The wiki already tracks individual model entities (ChatGPT, Claude, Gemini, Qwen, Doubao, etc.). GPT-5 is a named, distinct OpenAI model that will be referenced across multiple future sources and sits alongside existing model pages.
+Already has a wiki page (entity/entities/gpt-5). Cited here with specific cost data ($3.44/M tokens) used as the frontier-model cost benchmark. Confirms existing page is justified.
 
 ## Why this earned its own page
 
-The wiki already tracks individual model entities (ChatGPT, Claude, Gemini, Qwen, Doubao, etc.). GPT-5 is a named, distinct OpenAI model that will be referenced across multiple future sources and sits alongside existing model pages.
+Already has a wiki page (entity/entities/gpt-5). Cited here with specific cost data ($3.44/M tokens) used as the frontier-model cost benchmark. Confirms existing page is justified.
 
 ## Mentions
 
-- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

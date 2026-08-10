@@ -18,5 +18,7 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 ## Mentions
 
 
+
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

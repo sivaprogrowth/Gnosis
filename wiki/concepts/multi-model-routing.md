@@ -18,5 +18,7 @@ Sits at the intersection of agentic-ai, ai-native-services, and outcome-based-pr
 ## Mentions
 
 
+
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

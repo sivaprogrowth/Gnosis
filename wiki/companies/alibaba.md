@@ -18,5 +18,7 @@ Major tech giant that would be naturally cited alongside existing pages on AI-na
 ## Mentions
 
 
+
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

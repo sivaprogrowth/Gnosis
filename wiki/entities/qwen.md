@@ -2,19 +2,19 @@
 type: entity
 title: "Qwen"
 tags: [ingested]
-sources: ["ai-models-values-world-values-survey"]
+sources: ["small-language-models-do-the-real-work"]
 ---
 
 # Qwen
 
-_Stub page created automatically during ingest of [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]._
+_Stub page created automatically during ingest of [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]._
 
-Already exists as entity/entities/qwen — promote confirmed (page exists, no new page needed). Actually this is already in the wiki. Flagging as promote to note it already exists and should be cross-linked.
+Already has a wiki page (entity/entities/qwen). Promoting to confirm it earns its own page — it's cited here as Airbnb's SLM of choice and already tracked in the wiki.
 
 ## Why this earned its own page
 
-Already exists as entity/entities/qwen — promote confirmed (page exists, no new page needed). Actually this is already in the wiki. Flagging as promote to note it already exists and should be cross-linked.
+Already has a wiki page (entity/entities/qwen). Promoting to confirm it earns its own page — it's cited here as Airbnb's SLM of choice and already tracked in the wiki.
 
 ## Mentions
 
-- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

@@ -17,4 +17,6 @@ A well-defined technical concept that is central to discussions of DeepSeek, Qwe
 
 ## Mentions
 
+
+- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]

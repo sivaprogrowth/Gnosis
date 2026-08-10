@@ -69,4 +69,6 @@ For fractional CMO / service firm clients, E-E-A-T is harder to demonstrate than
 
 
 
+
+- [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]
 - [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]

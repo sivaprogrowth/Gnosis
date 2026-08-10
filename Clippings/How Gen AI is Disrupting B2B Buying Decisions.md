@@ -1,15 +1,29 @@
 ---
-title: "How Gen AI is Disrupting B2B Buying Decisions"
-source: "https://hbr.org/2026/06/how-gen-ai-is-disrupting-b2b-buying-decisions"
+title: How Gen AI is Disrupting B2B Buying Decisions
+source: 'https://hbr.org/2026/06/how-gen-ai-is-disrupting-b2b-buying-decisions'
 author:
-  - "[[Amit Joshi]]"
-  - "[[Ivy Buche]]"
-  - "[[Caroline Schwaer]]"
-published: 2026-06-12
-created: 2026-08-09
-description: "Generative AI is fundamentally changing B2B buying behavior by shifting discovery, evaluation, and recommendation into AI-mediated environments that companies neither own nor fully understand. In industries such as pharmaceuticals, manufacturing, and banking, AI assistants and procurement systems are increasingly determining which vendors, products, and claims surface during decision-making—often overriding traditional sales, marketing, and relationship-based advantages. To compete effectively, organizations must redesign their go-to-market strategies around “generative readiness,” coordinating cross-functional narratives, creating machine-readable content, strengthening credibility signals, and continuously auditing how AI systems represent their brands."
+  - '[[Amit Joshi]]'
+  - '[[Ivy Buche]]'
+  - '[[Caroline Schwaer]]'
+published: 2026-06-12T00:00:00.000Z
+created: 2026-08-09T00:00:00.000Z
+description: >-
+  Generative AI is fundamentally changing B2B buying behavior by shifting
+  discovery, evaluation, and recommendation into AI-mediated environments that
+  companies neither own nor fully understand. In industries such as
+  pharmaceuticals, manufacturing, and banking, AI assistants and procurement
+  systems are increasingly determining which vendors, products, and claims
+  surface during decision-making—often overriding traditional sales, marketing,
+  and relationship-based advantages. To compete effectively, organizations must
+  redesign their go-to-market strategies around “generative readiness,”
+  coordinating cross-functional narratives, creating machine-readable content,
+  strengthening credibility signals, and continuously auditing how AI systems
+  represent their brands.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 08ef31f6-83bf-4a04-937a-141aab932bc8
+gnosis_ingested_at: '2026-08-10T08:08:10.505Z'
 ---
 ## Summary.
 

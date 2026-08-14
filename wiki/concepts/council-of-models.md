@@ -17,4 +17,6 @@ A well-defined, named architectural pattern for multi-provider AI cross-checking
 
 ## Mentions
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

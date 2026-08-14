@@ -1,14 +1,19 @@
 ---
-title: "Stop Prompting AI. Start Directing It"
-source: "https://sloanreview.mit.edu/article/stop-prompting-ai-start-directing-it/"
+title: Stop Prompting AI. Start Directing It
+source: 'https://sloanreview.mit.edu/article/stop-prompting-ai-start-directing-it/'
 author:
-  - "[[Jennifer Sloan]]"
-  - "[[Vern L. Glaser]]"
-published: 2026-08-05
-created: 2026-08-13
-description: "Carefully directing GenAI agents can result in more original insights than engaging with LLMs via prompting."
+  - '[[Jennifer Sloan]]'
+  - '[[Vern L. Glaser]]'
+published: 2026-08-05T00:00:00.000Z
+created: 2026-08-13T00:00:00.000Z
+description: >-
+  Carefully directing GenAI agents can result in more original insights than
+  engaging with LLMs via prompting.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ab8f3f76-9056-4bd5-b5e0-68af90a2f302
+gnosis_ingested_at: '2026-08-14T05:01:19.075Z'
 ---
 ![](https://sloanreview.mit.edu/wp-content/uploads/2026/07/2026FALL_Sloan-1290x860-1.jpg)
 

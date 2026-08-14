@@ -27,6 +27,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]

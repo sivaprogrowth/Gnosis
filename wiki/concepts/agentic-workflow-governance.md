@@ -17,4 +17,6 @@ A distinct, well-defined concept (per-use-case guardrails, compliance control pl
 
 ## Mentions
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

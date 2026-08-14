@@ -22,6 +22,8 @@ A distinct, well-defined framework (human-AI collaboration as genuine sparring p
 
 
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]

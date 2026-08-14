@@ -17,4 +17,6 @@ Graham's explicit prescriptive principle and the essay's practical takeaway. It 
 
 ## Mentions
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[the-brand-age-paul-graham|The Brand Age]]

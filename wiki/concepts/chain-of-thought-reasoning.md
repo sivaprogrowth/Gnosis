@@ -19,6 +19,8 @@ A canonical, named technique in AI/ML with broad applicability. Adjacent to exis
 
 
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

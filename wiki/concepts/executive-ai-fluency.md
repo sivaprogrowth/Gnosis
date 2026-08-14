@@ -18,5 +18,7 @@ Named first step in a five-step enterprise AI framework; distinct enough to stan
 ## Mentions
 
 
+
+- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

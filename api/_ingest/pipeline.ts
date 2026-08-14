@@ -365,24 +365,36 @@ export async function runCommit(
   // site never picks them up — the ingest looks successful and the article is
   // invisible. Record it on the job so the staleness is discoverable instead
   // of living only in a function log nobody reads.
-  triggerVercelRebuild(`ingest of "${surfaced.sourceTitle}" (job ${jobId})`)
-    .then((triggerSha) =>
-      console.log(
-        `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
-      ),
+  //
+  // This MUST be awaited. Left as a dangling promise it dies with the function
+  // teardown — and so does the .catch that records the staleness, so the job
+  // reads `done` with a clean message while the site never rebuilds. That is
+  // exactly what happened to both 2026-08-14 clipping ingests: pages on
+  // wiki-archive, last Auto-rebuild commit on main four days stale, nothing on
+  // the job row to say so. The extra ~1s per ingest buys an honest status.
+  let rebuildTriggered = false
+  try {
+    const triggerSha = await triggerVercelRebuild(
+      `ingest of "${surfaced.sourceTitle}" (job ${jobId})`,
     )
-    .catch(async (e) => {
-      const msg = e instanceof Error ? e.message : String(e)
-      console.error(`[ingest] rebuild trigger failed for job ${jobId}:`, msg)
-      await updateJob(jobId, {
-        progress_message: `Committed, but the site rebuild could not be triggered (${msg}). Pages are on wiki-archive; push any commit to main to publish them.`,
-      }).catch(() => {})
-    })
+    rebuildTriggered = true
+    console.log(
+      `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
+    )
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    console.error(`[ingest] rebuild trigger failed for job ${jobId}:`, msg)
+    await updateJob(jobId, {
+      progress_message: `Committed, but the site rebuild could not be triggered (${msg}). Pages are on wiki-archive; push any commit to main to publish them.`,
+    }).catch(() => {})
+  }
 
   onFrame({
     stage: "done",
-    message: "Ingest complete. Site rebuild triggered.",
-    data: { jobId, sha: result.sha, rebuildTriggered: true },
+    message: rebuildTriggered
+      ? "Ingest complete. Site rebuild triggered."
+      : "Ingest complete, but the site rebuild could not be triggered — pages are on wiki-archive and will not appear on the live site until a commit lands on main.",
+    data: { jobId, sha: result.sha, rebuildTriggered },
   })
 
   return result
@@ -692,7 +704,7 @@ async function ingestOneClipping(args: {
   // Dedup against gnosis_ingest_jobs.done with same source_url OR same title
   const dupQuery = supabase
     .from("gnosis_ingest_jobs")
-    .select("id, commit_sha")
+    .select("id, commit_sha, committed_files")
     .eq("status", "done")
     .or(
       sourceUrl
@@ -703,13 +715,31 @@ async function ingestOneClipping(args: {
     .limit(1)
   const { data: dup } = await dupQuery.maybeSingle()
   if (dup) {
-    // Already ingested previously by some other path — just mark this clipping done so we stop re-checking
-    await markClippingProcessed(args.file.path, args.parsed, dup.id, dup.commit_sha)
-    return {
-      filename,
-      status: "skipped",
-      reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}`,
+    // A `done` row is NOT proof the wiki still holds the page. A bad ingest
+    // (paywall preview, truncated fetch) gets committed, then hand-deleted,
+    // and the row stays `done` forever. Stamping this clipping against such a
+    // row hides it from every future cron run — permanently, because the scan
+    // above skips anything already carrying `gnosis_ingested: true`. That is
+    // how the 2026-07-30 Economist "How to spot AI writing" re-clip was
+    // silently swallowed on 2026-08-14 against job 0f177c05, whose page had
+    // been deleted in c70fdf1 five days earlier.
+    //
+    // So verify the source page the dup job claims to have written is still on
+    // wiki-archive. If it's gone, fall through and ingest for real.
+    const sourcePath = sourcePagePathOf(dup.committed_files)
+    const stillOnWiki = sourcePath !== null && (await getFileContent(sourcePath)) !== null
+    if (stillOnWiki) {
+      await markClippingProcessed(args.file.path, args.parsed, dup.id, dup.commit_sha)
+      return {
+        filename,
+        status: "skipped",
+        reason: `already ingested as commit ${dup.commit_sha?.slice(0, 7)}`,
+      }
     }
+    console.warn(
+      `[cron ${filename}] dedupe matched done job ${dup.id.slice(0, 8)} but its source page ` +
+        `${sourcePath ?? "(no source page recorded)"} is no longer on wiki-archive — re-ingesting`,
+    )
   }
 
   // In-flight guard: skip if another cron pass (or web ingest) is currently
@@ -785,6 +815,24 @@ async function ingestOneClipping(args: {
     await markJobFailed(jobId, msg).catch(() => {})
     return { filename, status: "failed", jobId, reason: `commit failed: ${msg}` }
   }
+}
+
+/**
+ * Pull the `wiki/sources/*.md` path out of a job's `committed_files` blob.
+ * Every successful ingest writes exactly one source page; entity stubs and
+ * backlink updates are the rest. Returns null when the shape is unexpected or
+ * no source page was recorded (older rows predate `committed_files`).
+ */
+function sourcePagePathOf(committedFiles: unknown): string | null {
+  if (!Array.isArray(committedFiles)) return null
+  for (const entry of committedFiles) {
+    const path =
+      entry && typeof entry === "object" && typeof (entry as { path?: unknown }).path === "string"
+        ? (entry as { path: string }).path
+        : null
+    if (path && path.startsWith("wiki/sources/")) return path
+  }
+  return null
 }
 
 /**

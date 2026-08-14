@@ -11,10 +11,6 @@ description: >-
   language models. | Culture
 tags:
   - clippings
-gnosis_ingested: true
-gnosis_job_id: 0f177c05-6828-43e3-9321-6ba243a59db0
-gnosis_commit_sha: ed58d8fb7fd79c2c34c9c4e1a5c063104e0af5da
-gnosis_ingested_at: '2026-08-14T16:07:34.178Z'
 ---
 ## Large language models like long words and em-dashes—or do they?
 

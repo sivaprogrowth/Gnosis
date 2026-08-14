@@ -1,13 +1,20 @@
 ---
-title: "How to spot AI writing"
-source: "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing"
+title: How to spot AI writing
+source: 'https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing'
 author:
-  - "[[The Economist]]"
-published: 2026-07-30
-created: 2026-08-14
-description: "The Economist analyses how artificial intelligence writing differs from human prose, examining vocabulary, punctuation and sentence structure across major language models. | Culture"
+  - '[[The Economist]]'
+published: 2026-07-30T00:00:00.000Z
+created: 2026-08-14T00:00:00.000Z
+description: >-
+  The Economist analyses how artificial intelligence writing differs from human
+  prose, examining vocabulary, punctuation and sentence structure across major
+  language models. | Culture
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 0f177c05-6828-43e3-9321-6ba243a59db0
+gnosis_commit_sha: ed58d8fb7fd79c2c34c9c4e1a5c063104e0af5da
+gnosis_ingested_at: '2026-08-14T16:07:34.178Z'
 ---
 ## Large language models like long words and em-dashes—or do they?
 

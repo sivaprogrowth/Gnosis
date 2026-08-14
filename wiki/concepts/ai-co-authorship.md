@@ -20,6 +20,8 @@ Distinct, well-defined emerging practice (transparent crediting of AI alongside 
 
 
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]

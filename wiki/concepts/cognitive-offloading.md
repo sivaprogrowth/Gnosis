@@ -35,6 +35,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]

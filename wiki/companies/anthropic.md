@@ -35,6 +35,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

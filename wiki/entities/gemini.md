@@ -2,19 +2,19 @@
 type: entity
 title: "Gemini"
 tags: [ingested]
-sources: ["ai-writing-improvement-humans-must-edit"]
+sources: ["how-to-spot-ai-writing-economist-2026"]
 ---
 
 # Gemini
 
-_Stub page created automatically during ingest of [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]._
+_Stub page created automatically during ingest of [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]._
 
-Already has an existing wiki page (entity/entities/gemini). Referenced as one of four LLMs in The Economist's stylometric study.
+Already has a wiki page (entity/entities/gemini). Confirm promote to link.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/gemini). Referenced as one of four LLMs in The Economist's stylometric study.
+Already has a wiki page (entity/entities/gemini). Confirm promote to link.
 
 ## Mentions
 
-- [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

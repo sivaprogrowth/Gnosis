@@ -17,4 +17,6 @@ Serves as the central case study in AI writing ethics in this source, and would 
 
 ## Mentions
 
+
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[why-ai-cant-replace-human-writing-livemint|Why AI can’t replace human writing—it’s about exercising one’s mind and that can’t be outsourced]]

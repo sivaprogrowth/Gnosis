@@ -2,19 +2,19 @@
 type: entity
 title: "Claude"
 tags: [ingested]
-sources: ["anthropic-commercial-success-government-conflict-2026"]
+sources: ["how-to-spot-ai-writing-economist-2026"]
 ---
 
 # Claude
 
-_Stub page created automatically during ingest of [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]._
+_Stub page created automatically during ingest of [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]._
 
-Already has an existing wiki page (entity/entities/claude). Referenced directly in this source.
+Already has a wiki page (entity/entities/claude). Confirm promote to link.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/claude). Referenced directly in this source.
+Already has a wiki page (entity/entities/claude). Confirm promote to link.
 
 ## Mentions
 
-- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
+- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "How to stop procrastinating"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-08-01
 source_url: https://www.economist.com/science-and-technology/2026/07/31/how-to-stop-procrastinating
 accessed: "2026-07-31"
 tags: [procrastination, behavioural-science, mental-health, self-regulation, productivity]

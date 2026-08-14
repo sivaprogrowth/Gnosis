@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Google is dethroning OpenAI as the king of consumer AI"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-05-21
 source_url: https://www.economist.com/business/2026/05/20/google-is-dethroning-openai-as-the-king-of-consumer-ai
 accessed: "2026-05-20"
 tags: [ai, consumer-ai, google, openai, llm-competition]

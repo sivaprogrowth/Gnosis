@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "How artificial intelligence got better at building itself"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-07
 source_url: https://www.economist.com/science-and-technology/2026/06/07/how-artificial-intelligence-got-better-at-building-itself
 accessed: 2026-06-07
 tags: [ai, recursive-self-improvement, ai-safety, llm, automation]

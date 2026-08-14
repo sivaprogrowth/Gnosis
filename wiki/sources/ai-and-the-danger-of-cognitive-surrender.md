@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "AI and the Danger of Cognitive Surrender"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-04-30
 source_url: https://www.economist.com/business/2026/04/30/ai-and-the-danger-of-cognitive-surrender
 accessed: "2026-04-30"
 tags: [ai, cognitive-offloading, management, critical-thinking, human-ai-collaboration]

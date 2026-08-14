@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "How to spot AI writing"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-07-30
 source_url: "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing"
 accessed: "2026-07-30"
 tags: [ai-writing, llm, stylometrics, ai-detection, linguistics]

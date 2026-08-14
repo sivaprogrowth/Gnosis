@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Anthropic's astonishing commercial success makes it a target"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-18
 source_url: "https://www.economist.com/briefing/2026/06/18/anthropics-astonishing-commercial-success-makes-it-a-target"
 accessed: "2026-06-18"
 tags: [ai-regulation, anthropic, ai-safety, ipo, national-security]

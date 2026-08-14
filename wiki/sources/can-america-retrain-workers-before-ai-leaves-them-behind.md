@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Can America retrain workers before AI leaves them behind?"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-08-02
 source_url: https://www.economist.com/united-states/2026/08/02/can-america-retrain-workers-before-ai-leaves-them-behind
 accessed: 2026-08-02
 tags: [ai-labor, workforce-retraining, automation, us-policy, future-of-work]

@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "PPV (Pillars, Pipelines and Vaults) — Productivity System Review"
-authors: []
-published: null
+authors:
+  - Effective Faith
+published: 2025-01-21
 source_url: https://effectivefaith.medium.com/ppv-pillars-pipelines-and-vaults-productivity-system-review-4665ae6ca06a
 accessed: null
 tags: [productivity, notion, personal-knowledge-management, life-os, systems-thinking]

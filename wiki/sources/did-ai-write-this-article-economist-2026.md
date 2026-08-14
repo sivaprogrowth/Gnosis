@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Did AI write this article?"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-16
 source_url: https://www.economist.com/graphic-detail/2026/06/16/did-ai-write-this-article
 accessed: 2026-06-16
 tags: [ai-generated-content, ai-slop, large-language-models, content-creation, vibe-coding]

@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "AI super-apps are remaking China's internet"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-05-18
 source_url: https://www.economist.com/business/2026/05/17/ai-super-apps-are-remaking-chinas-internet
 accessed: "2026-05-17"
 tags: [ai-super-apps, china-tech, agentic-ai, platform-competition, digital-economy]

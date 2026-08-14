@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Smartphones and AI are remaking rural India"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-23
 source_url: "https://www.economist.com/asia/2026/06/23/smartphones-and-ai-are-remaking-rural-india"
 accessed: "2026-06-23"
 tags: [rural-india, smartphones, ai-adoption, digital-divide, ed-tech]

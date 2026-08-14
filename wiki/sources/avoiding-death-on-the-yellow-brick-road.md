@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Avoiding Death on the Yellow Brick Road"
 authors: ["Joe Schmidt"]
-published: null
+published: 2026-05-27
 source_url: "https://x.com/joeschmidtiv/status/2059642470334677472"
 accessed: "2026-06-10"
 tags: ["ai-application-layer", "vertical-ai", "agentic-ai", "enterprise-software", "startup-strategy"]

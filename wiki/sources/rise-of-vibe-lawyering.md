@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "The rise of vibe lawyering"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-29
 source_url: https://www.economist.com/business/2026/06/29/the-rise-of-vibe-lawyering
 accessed: "2026-06-29"
 tags: [ai-legal, self-representation, hallucination, legal-tech, vibe-lawyering]

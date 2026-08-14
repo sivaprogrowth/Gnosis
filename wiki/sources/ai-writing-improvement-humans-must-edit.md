@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "AI is getting better at writing. Humans must get better at editing."
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-07-30
 source_url: https://www.economist.com/leaders/2026/07/30/ai-is-getting-better-at-writing-humans-must-get-better-at-editing
 accessed: "2026-07-30"
 tags: [ai-writing, editing, llm, content-quality, human-ai-collaboration]

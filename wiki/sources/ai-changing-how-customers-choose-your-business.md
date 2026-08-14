@@ -2,8 +2,10 @@
 type: source
 source_type: article
 title: "AI Is Changing How Customers Choose Your Business"
-authors: []
-published: null
+authors:
+  - Graham Kenny
+  - Ganna Pogrebna
+published: 2026-07-06
 source_url: "https://hbr.org/2026/07/ai-is-changing-how-customers-choose-your-business"
 accessed: "2026-07-01"
 tags: [ai-mediated-markets, customer-strategy, generative-engine-optimization, b2b-buying, sme]

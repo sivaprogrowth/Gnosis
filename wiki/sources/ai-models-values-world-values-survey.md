@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "AI models' values are very different from most people's"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-25
 source_url: https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples
 accessed: 2026-06-25
 tags: [ai-values, ai-alignment, ai-bias, large-language-models, geopolitics]

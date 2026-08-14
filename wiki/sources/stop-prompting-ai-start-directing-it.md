@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Stop Prompting AI. Start Directing It"
 authors: [J. Sloan, V.L. Glaser]
-published: null
+published: 2026-08-05
 source_url: https://sloanreview.mit.edu/article/stop-prompting-ai-start-directing-it/
 accessed: 2026-07-01
 tags: [agentic-ai, directing-intelligence, professional-practice, insight-discovery, ai-transformation]

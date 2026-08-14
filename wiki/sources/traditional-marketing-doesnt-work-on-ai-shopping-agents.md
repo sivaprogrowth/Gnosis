@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Research: Traditional Marketing Doesn't Work on AI Shopping Agents"
-authors: []
-published: null
+authors:
+  - Jafar Sabbah and Oguz A. Acar
+published: 2026-05-12
 source_url: https://hbr.org/2026/05/research-traditional-marketing-doesnt-work-on-ai-shopping-agents?tpcc=orgsocial_edit
 accessed: "2026-05-01"
 tags: [ai-agents, e-commerce, marketing, persuasion, agentic-ai]

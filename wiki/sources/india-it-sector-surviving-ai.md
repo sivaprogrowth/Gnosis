@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "India's IT sector is surviving artificial intelligence"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-08-06
 source_url: https://www.economist.com/finance-and-economics/2026/08/06/indias-it-sector-is-surviving-artificial-intelligence
 accessed: 2026-08-06
 tags: [india, it-outsourcing, ai-displacement, labour-market, gccs]

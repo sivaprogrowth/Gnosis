@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Franchising has quietly made countless Americans rich"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-05-25
 source_url: https://www.economist.com/business/2026/05/24/franchising-has-quietly-made-countless-americans-rich
 accessed: 2026-05-24
 tags: [franchising, business-models, entrepreneurship, labour-economics, private-equity]

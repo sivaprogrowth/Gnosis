@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Fear of the SaaSpocalypse is tormenting techland"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-10
 source_url: https://www.economist.com/business/2026/06/10/fear-of-the-saaspocalypse-is-tormenting-techland
 accessed: 2026-06-10
 tags: [saas, ai-disruption, software, enterprise-tech, agentic-ai]

@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Jet Li Believes in Showing Up on Time, or Earlier"
-authors: []
-published: null
+authors:
+  - Elisabeth Vincentelli
+published: 2026-04-25
 source_url: https://www.nytimes.com/2026/04/25/movies/jet-li-beyond-life-death.html
 accessed: 2026-04-25
 tags: [martial-arts, memoir, tibetan-buddhism, film, celebrity-profile]

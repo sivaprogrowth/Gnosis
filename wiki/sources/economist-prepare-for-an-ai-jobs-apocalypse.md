@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Prepare for an AI jobs apocalypse"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-05-14
 source_url: "https://www.economist.com/leaders/2026/05/14/prepare-for-an-ai-jobs-apocalypse"
 accessed: "2026-05-14"
 tags: [ai, labour-markets, policy, automation, political-economy]

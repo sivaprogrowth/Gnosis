@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "Teaching AI how people work is fraught with problems"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-06-25
 source_url: https://www.economist.com/business/2026/06/25/teaching-ai-how-people-work-is-fraught-with-problems
 accessed: 2026-06-25
 tags: [tacit-knowledge, ai-training, workplace-surveillance, knowledge-management, ai-transformation]

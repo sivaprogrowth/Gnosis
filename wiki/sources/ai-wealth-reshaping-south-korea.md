@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "How AI-fuelled wealth is reshaping South Korea"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-08-04
 source_url: "https://www.economist.com/asia/2026/08/04/how-ai-fuelled-wealth-is-reshaping-south-korea"
 accessed: "2026-08-04"
 tags: [south-korea, ai-economy, semiconductors, fiscal-policy, wealth-distribution]

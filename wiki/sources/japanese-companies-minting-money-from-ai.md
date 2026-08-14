@@ -2,8 +2,9 @@
 type: source
 source_type: article
 title: "The strange Japanese companies minting money from AI"
-authors: []
-published: null
+authors:
+  - The Economist
+published: 2026-05-14
 source_url: https://www.economist.com/business/2026/05/14/the-strange-japanese-companies-minting-money-from-ai
 accessed: "2026-05-14"
 tags: [japan, semiconductors, ai-supply-chain, materials, industrial]

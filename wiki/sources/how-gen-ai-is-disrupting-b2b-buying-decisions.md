@@ -2,8 +2,11 @@
 type: source
 source_type: article
 title: "How Gen AI is Disrupting B2B Buying Decisions"
-authors: []
-published: null
+authors:
+  - Amit Joshi
+  - Ivy Buche
+  - Caroline Schwaer
+published: 2026-06-12
 source_url: https://hbr.org/2026/06/how-gen-ai-is-disrupting-b2b-buying-decisions
 accessed: 2026-06-01
 tags: [b2b, generative-ai, go-to-market, geo, buying-behavior]

@@ -69,7 +69,10 @@ export async function runSynthesisStandalone(jobId: string): Promise<void> {
   }
 }
 
-export async function runSynthesisOnly(jobId: string): Promise<void> {
+export async function runSynthesisOnly(
+  jobId: string,
+  sourceMeta: SourceMeta = {},
+): Promise<void> {
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
     .select("source_type, source_url, source_filename, source_title, raw_markdown")
@@ -127,8 +130,8 @@ export async function runSynthesisOnly(jobId: string): Promise<void> {
     title: job.source_title || "Untitled",
     sourceDomain,
     sourceUrl,
-    byline: null,
-    publishedTime: null,
+    byline: sourceMeta.authors?.length ? sourceMeta.authors.join(", ") : null,
+    publishedTime: sourceMeta.published ?? null,
     existingPages,
   })
   await updateJob(jobId, {
@@ -241,6 +244,7 @@ export async function runCommit(
   jobId: string,
   onFrame: FrameHandler,
   extraFiles: Array<{ path: string; content: string }> = [],
+  sourceMeta: SourceMeta = {},
 ): Promise<CommitResult> {
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
@@ -267,7 +271,7 @@ export async function runCommit(
   const files: Array<{ path: string; content: string }> = []
   files.push({
     path: `wiki/sources/${surfaced.suggestedSlug}.md`,
-    content: surfaced.sourcePage,
+    content: applySourceMeta(surfaced.sourcePage, sourceMeta),
   })
   for (const entity of surfaced.promote) {
     const entityType =
@@ -787,8 +791,15 @@ async function ingestOneClipping(args: {
   }
   const jobId = job.id
 
+  // The clipping's own frontmatter is the authority on publication date and
+  // author — the body we hand the model has had it stripped, so the model
+  // can't recover either. Read it here and pass it down both legs: into
+  // synthesis so the model sees it, and into the commit so the emitted
+  // frontmatter is stamped deterministically regardless of what the model did.
+  const sourceMeta = sourceMetaFromClipping(args.parsed)
+
   try {
-    await runSynthesisOnly(jobId)
+    await runSynthesisOnly(jobId, sourceMeta)
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e)
     await markJobFailed(jobId, msg).catch(() => {})
@@ -808,6 +819,7 @@ async function ingestOneClipping(args: {
         if (frame.message) console.log(`[cron ${filename}] ${frame.stage}: ${frame.message}`)
       },
       [extraFile],
+      sourceMeta,
     )
     return { filename, status: "ingested", jobId, commitSha: result.sha }
   } catch (e) {
@@ -815,6 +827,81 @@ async function ingestOneClipping(args: {
     await markJobFailed(jobId, msg).catch(() => {})
     return { filename, status: "failed", jobId, reason: `commit failed: ${msg}` }
   }
+}
+
+/**
+ * Bibliographic metadata we know deterministically from the source (a
+ * clipping's frontmatter, a fetchUrl extraction) rather than from the model.
+ */
+export type SourceMeta = {
+  /** ISO date string, e.g. "2026-07-30". */
+  published?: string | null
+  /** Author names, already stripped of any `[[wiki-link]]` brackets. */
+  authors?: string[] | null
+}
+
+/**
+ * Overwrite `published` / `authors` in a generated source page's frontmatter
+ * with values we know for certain.
+ *
+ * The synthesis prompt tells the model to leave these null when the article
+ * body doesn't state them — which is almost always, because the body it reads
+ * has had the clipping's frontmatter stripped. The result was `published: null`
+ * on 34 of 56 source pages, which Quartz reports as `found invalid date "null"`
+ * and then silently backfills from file mtime, so every such page displayed its
+ * ingest date as its publication date.
+ *
+ * Doing this deterministically rather than by prompting is deliberate: a date
+ * we already hold should never depend on the model choosing to echo it back.
+ * Only overwrites when we actually have a value, so a page the model got right
+ * from the body is never clobbered with null.
+ */
+export function applySourceMeta(sourcePage: string, meta: SourceMeta): string {
+  if (!meta.published && !(meta.authors && meta.authors.length > 0)) return sourcePage
+
+  let parsed: matter.GrayMatterFile<string>
+  try {
+    parsed = matter(sourcePage)
+  } catch {
+    // Malformed frontmatter — leave the page untouched rather than risk
+    // mangling it. The Quartz build surfaces the problem either way.
+    return sourcePage
+  }
+
+  const data = { ...(parsed.data ?? {}) }
+  if (meta.published) data.published = meta.published
+  if (meta.authors && meta.authors.length > 0) data.authors = meta.authors
+  return matter.stringify(parsed.content, data)
+}
+
+/**
+ * Read bibliographic metadata off a clipping's own frontmatter. Obsidian Web
+ * Clipper writes `published` (a date) and `author` (a string or array, often
+ * carrying `[[wiki-link]]` brackets, e.g. `[[The Economist]]`).
+ */
+export function sourceMetaFromClipping(parsed: matter.GrayMatterFile<string>): SourceMeta {
+  const fm = parsed.data ?? {}
+
+  let published: string | null = null
+  if (fm.published instanceof Date && !Number.isNaN(fm.published.valueOf())) {
+    // js-yaml parses an unquoted `2026-07-30` into a Date.
+    published = fm.published.toISOString().slice(0, 10)
+  } else if (typeof fm.published === "string" && fm.published.trim()) {
+    const d = new Date(fm.published.trim())
+    published = Number.isNaN(d.valueOf()) ? null : d.toISOString().slice(0, 10)
+  }
+
+  const rawAuthors = Array.isArray(fm.author)
+    ? fm.author
+    : typeof fm.author === "string"
+      ? [fm.author]
+      : []
+  const authors = rawAuthors
+    .filter((a): a is string => typeof a === "string")
+    .map((a) => a.replace(/^\[\[|\]\]$/g, "").trim())
+    .filter(Boolean)
+
+  return { published, authors }
 }
 
 /**

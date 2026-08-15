@@ -19,6 +19,8 @@ An emerging pricing paradigm for AI-era software, directly contrasted with per-s
 
 
 
+
+- [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]

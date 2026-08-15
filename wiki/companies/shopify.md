@@ -18,5 +18,7 @@ Shopify is a major, well-known e-commerce platform cited here for substantive ni
 ## Mentions
 
 
+
+- [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]

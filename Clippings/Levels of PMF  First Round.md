@@ -1,12 +1,18 @@
 ---
-title: "Levels of PMF | First Round"
-source: "https://www.firstround.com/levels"
-author:
-published: 2024-04-08
-created: 2026-08-15
-description: "PMF Method from First Round is a free, intensive experience designed to help exceptional B2B founders increase their odds of finding extreme product-market fit. Read about the four levels of PMF in this preview of PMF Method content."
+title: Levels of PMF | First Round
+source: 'https://www.firstround.com/levels'
+author: null
+published: 2024-04-08T00:00:00.000Z
+created: 2026-08-15T00:00:00.000Z
+description: >-
+  PMF Method from First Round is a free, intensive experience designed to help
+  exceptional B2B founders increase their odds of finding extreme product-market
+  fit. Read about the four levels of PMF in this preview of PMF Method content.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 27dbbe84-c908-4de9-8136-87d429e7a23a
+gnosis_ingested_at: '2026-08-15T14:58:56.998Z'
 ---
 Most people describe finding product-market fit as an art, not a science. But when it comes to sales-led B2B startups, we’ve reverse engineered a method to increase the odds of unlocking it.  
   

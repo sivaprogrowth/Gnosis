@@ -20,6 +20,8 @@ A well-established named framework (not invented here) that the wiki would cite 
 
 
 
+
+- [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]
 - [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

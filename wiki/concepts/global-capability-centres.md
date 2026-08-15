@@ -17,4 +17,6 @@ Central structural concept in this article explaining the +1m worker growth stor
 
 ## Mentions
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

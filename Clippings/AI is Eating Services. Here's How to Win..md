@@ -1,13 +1,16 @@
 ---
-title: "AI is Eating Services. Here's How to Win."
-source: "https://lsip.substack.com/p/ai-is-eating-services-heres-how-to"
+title: AI is Eating Services. Here's How to Win.
+source: 'https://lsip.substack.com/p/ai-is-eating-services-heres-how-to'
 author:
-  - "[[Lightspeed India Partners]]"
-published: 2026-08-07
-created: 2026-08-15
-description: "Lessons on picking your model, selling outcomes and holding 60-70% margins."
+  - '[[Lightspeed India Partners]]'
+published: 2026-08-07T00:00:00.000Z
+created: 2026-08-15T00:00:00.000Z
+description: 'Lessons on picking your model, selling outcomes and holding 60-70% margins.'
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 80fe0d9d-7b8a-4288-aa3d-f0acea195b5e
+gnosis_ingested_at: '2026-08-15T15:07:43.517Z'
 ---
 I recently hosted a panel in Bangalore with **[Kishan P](https://www.linkedin.com/in/kishan-panpalia/)**,founding team, Pepper; **[Monica Jamwal](http://linkedin.com/in/monicajamwal?originalSubdomain=in)**, Chief Talent Services Officer, ANSR; and **[Karthik K](https://www.linkedin.com/in/karthikluru/),** Head of AI Implementation, Rocketlane, on building AI-led services companies, along with my colleague Rohil Bagga.
 

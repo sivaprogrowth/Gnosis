@@ -20,6 +20,8 @@ An emerging pricing paradigm for AI-era software, directly contrasted with per-s
 
 
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

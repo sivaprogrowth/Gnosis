@@ -17,4 +17,6 @@ Closely related to existing pages on agentic-ai, agentic-workflow-governance, ai
 
 ## Mentions
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

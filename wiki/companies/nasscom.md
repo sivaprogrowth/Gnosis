@@ -17,4 +17,6 @@ Primary industry body for Indian IT; cited as the authoritative source for emplo
 
 ## Mentions
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

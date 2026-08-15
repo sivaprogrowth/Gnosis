@@ -17,4 +17,6 @@ Major global IT firm (world's largest by headcount) cited as a bellwether for AI
 
 ## Mentions
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

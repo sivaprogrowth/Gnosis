@@ -17,4 +17,6 @@ A named, well-established concept in startup methodology, referenced explicitly 
 
 ## Mentions
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

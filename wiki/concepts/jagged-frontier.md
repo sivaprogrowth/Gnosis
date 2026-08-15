@@ -28,6 +28,8 @@ A named metaphor/framework for uneven AI capability progress that is already wid
 
 
 
+
+- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]

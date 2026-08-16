@@ -181,3 +181,5 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 - **Asymmetry flagged in the mirror:** explicit goal artifacts (Now.md, wiki/projects/) only cover ~5 weeks of the 13-week window. Future mirrors will have a fuller goal corpus to cross-reference against.
 - **Reader reading channel essentially empty** for the window (user reads via Kindle, not Reader). Mirror notes this and asks whether to de-emphasize Reader as an input channel in future runs.
 - `readwise-state.json` updated: 1 entry in `mirror_runs[]`.
+
+## [2026-08-16 03:31] query | weekly synthesis brief — 14 highlights, 1 sources (automated)

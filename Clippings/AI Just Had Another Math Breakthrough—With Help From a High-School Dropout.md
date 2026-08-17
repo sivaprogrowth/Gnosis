@@ -1,13 +1,19 @@
 ---
-title: "AI Just Had Another Math Breakthrough—With Help From a High-School Dropout"
-source: "https://www.wsj.com/tech/ai/ai-math-riemann-hypothesis-anthropic-openai-22f98a87?eafs_enabled=false"
+title: AI Just Had Another Math Breakthrough—With Help From a High-School Dropout
+source: >-
+  https://www.wsj.com/tech/ai/ai-math-riemann-hypothesis-anthropic-openai-22f98a87?eafs_enabled=false
 author:
-  - "[[Ben Cohen]]"
-published: 2026-08-15
-created: 2026-08-17
-description: "The world’s smartest AI models are now superhuman at math. They still respond to moral support and encouragement from mere humans."
+  - '[[Ben Cohen]]'
+published: 2026-08-15T00:00:00.000Z
+created: 2026-08-17T00:00:00.000Z
+description: >-
+  The world’s smartest AI models are now superhuman at math. They still respond
+  to moral support and encouragement from mere humans.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 4ad8d6de-5683-4767-810a-7388387b499b
+gnosis_ingested_at: '2026-08-17T05:03:12.811Z'
 ---
 ## The world’s smartest AI models are now superhuman at math. They still respond to moral support and encouragement from mere humans.
 

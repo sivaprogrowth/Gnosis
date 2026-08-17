@@ -2,19 +2,19 @@
 type: entity
 title: "Claude Code"
 tags: [ingested]
-sources: ["anthropic-commercial-success-government-conflict-2026"]
+sources: ["ai-math-riemann-hypothesis-claude-pep-talk"]
 ---
 
 # Claude Code
 
-_Stub page created automatically during ingest of [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]._
+_Stub page created automatically during ingest of [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]._
 
-Already has an existing wiki page (entity/entities/claude-code). This source adds new revenue-driver and agentic-AI-differentiator context.
+Already has an existing wiki page (entity/entities/claude-code). Confirm promotion — this source adds a significant new use case (frontier math research) that other pages would naturally cite alongside the existing Claude Code page.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/claude-code). This source adds new revenue-driver and agentic-AI-differentiator context.
+Already has an existing wiki page (entity/entities/claude-code). Confirm promotion — this source adds a significant new use case (frontier math research) that other pages would naturally cite alongside the existing Claude Code page.
 
 ## Mentions
 
-- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
+- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]

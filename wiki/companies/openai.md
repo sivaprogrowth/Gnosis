@@ -43,6 +43,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

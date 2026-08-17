@@ -45,6 +45,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]

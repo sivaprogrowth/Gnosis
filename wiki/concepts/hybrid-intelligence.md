@@ -23,6 +23,8 @@ A distinct, well-defined framework (human-AI collaboration as genuine sparring p
 
 
 
+
+- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]

@@ -1,13 +1,19 @@
 ---
-title: "A Breakdown of the Financial Advice That’s Flying All Over TikTok"
-source: "https://www.wsj.com/personal-finance/a-breakdown-of-the-financial-advice-thats-flying-all-over-tiktok-2c466e70?mod=hp_featst_pos5"
+title: A Breakdown of the Financial Advice That’s Flying All Over TikTok
+source: >-
+  https://www.wsj.com/personal-finance/a-breakdown-of-the-financial-advice-thats-flying-all-over-tiktok-2c466e70?mod=hp_featst_pos5
 author:
-  - "[[Elyse Goncalves]]"
-published: 2026-08-16
-created: 2026-08-17
-description: "We reviewed dozens of hours of influencer content, from stock pickers to financial educators"
+  - '[[Elyse Goncalves]]'
+published: 2026-08-16T00:00:00.000Z
+created: 2026-08-17T00:00:00.000Z
+description: >-
+  We reviewed dozens of hours of influencer content, from stock pickers to
+  financial educators
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: dea9772e-a83a-4f42-8684-33d137dcfd61
+gnosis_ingested_at: '2026-08-17T05:02:02.230Z'
 ---
 ![Illustration of a person with an emoji head with dollar signs on a yellow background taking a selfie.](https://images.wsj.net/im-19952565?width=700&size=1.501&pixel_ratio=3)
 

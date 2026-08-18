@@ -1,13 +1,19 @@
 ---
-title: "Why I Told My Chatbot to Stop Kissing Up to Me"
-source: "https://www.wsj.com/tech/ai/why-i-told-my-chatbot-to-stop-kissing-up-to-me-62cea3fa?mod=hp_lista_pos2"
+title: Why I Told My Chatbot to Stop Kissing Up to Me
+source: >-
+  https://www.wsj.com/tech/ai/why-i-told-my-chatbot-to-stop-kissing-up-to-me-62cea3fa?mod=hp_lista_pos2
 author:
-  - "[[Nicole Nguyen]]"
-published: 2026-08-16
-created: 2026-08-17
-description: "AI responses are often too agreeable, too enthusiastic and too dramatic. And it’s partially our fault."
+  - '[[Nicole Nguyen]]'
+published: 2026-08-16T00:00:00.000Z
+created: 2026-08-17T00:00:00.000Z
+description: >-
+  AI responses are often too agreeable, too enthusiastic and too dramatic. And
+  it’s partially our fault.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 9ec52219-358a-4240-90db-81b8a113bcee
+gnosis_ingested_at: '2026-08-18T05:01:36.172Z'
 ---
 AI writing seems off, and not just because of its reliance on “it’s not X, it’s Y” constructions or my beloved em dashes. It’s the saccharine cheeriness, affirming answers and incessant follow-up questions.
 

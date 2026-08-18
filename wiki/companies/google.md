@@ -26,6 +26,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

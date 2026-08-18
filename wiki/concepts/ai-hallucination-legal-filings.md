@@ -18,5 +18,7 @@ A specific, well-documented sub-phenomenon of AI hallucination that is distinct 
 ## Mentions
 
 
+
+- [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]

@@ -19,6 +19,6 @@ Closely related to existing pages on agentic-ai, agentic-workflow-governance, ai
 
 
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

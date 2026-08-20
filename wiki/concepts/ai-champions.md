@@ -2,7 +2,7 @@
 type: concept
 title: AI Champions
 tags: [ingested]
-sources: [company-wide-ai-implementation-five-steps]
+sources: []
 ---
 
 # AI Champions
@@ -20,5 +20,4 @@ Well-defined named role within enterprise AI adoption frameworks. Adjacent wiki 
 
 
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

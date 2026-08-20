@@ -2,7 +2,7 @@
 type: company
 title: Harvard Business Review
 tags: [ingested]
-sources: [hbr-ai-experimentation-to-ai-transformation]
+sources: []
 ---
 
 # Harvard Business Review
@@ -21,7 +21,7 @@ HBR is a major publisher of management frameworks the wiki clearly tracks (e.g.,
 
 
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]
 - [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

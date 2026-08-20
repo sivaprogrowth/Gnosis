@@ -2,7 +2,7 @@
 type: concept
 title: Executive AI Fluency
 tags: [ingested]
-sources: [company-wide-ai-implementation-five-steps]
+sources: []
 ---
 
 # Executive AI Fluency
@@ -23,7 +23,6 @@ Named first step in a five-step enterprise AI framework; distinct enough to stan
 
 
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]

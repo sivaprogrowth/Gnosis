@@ -18,5 +18,5 @@ This is the article's central coined term — a named, well-defined professional
 ## Mentions
 
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]

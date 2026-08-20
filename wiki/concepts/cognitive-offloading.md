@@ -2,7 +2,7 @@
 type: concept
 title: Cognitive Offloading
 tags: [ingested]
-sources: [ai-and-the-danger-of-cognitive-surrender]
+sources: []
 ---
 
 # Cognitive Offloading
@@ -39,7 +39,7 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

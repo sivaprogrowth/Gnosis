@@ -18,5 +18,7 @@ A named, well-established concept in startup methodology, referenced explicitly 
 ## Mentions
 
 
+
+- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

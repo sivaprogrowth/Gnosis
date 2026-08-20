@@ -47,6 +47,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

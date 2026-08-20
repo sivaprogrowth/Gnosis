@@ -22,6 +22,8 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 
 
 
+
+- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]

@@ -17,4 +17,6 @@ A well-defined strategic concept in B2B go-to-market that sits at the intersecti
 
 ## Mentions
 
+
+- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]

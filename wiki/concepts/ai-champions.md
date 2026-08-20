@@ -17,4 +17,6 @@ Well-defined named role within enterprise AI adoption frameworks. Adjacent wiki 
 
 ## Mentions
 
+
+- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

@@ -19,10 +19,14 @@ import { logAiUsage } from "../_lib/aiUsage.js"
 
 const MODEL_ID = "claude-sonnet-4-6"
 const MAX_TOKENS = 8000
-// Sonnet 4.6 handles 200k input fine, but the *output* slows down on very
-// large outputs. Cap the article body at this many chars before sending so
-// the model never spends >45s on generation. ~40k chars ≈ 10k tokens of input.
-const MAX_INPUT_CHARS = 40_000
+// Sonnet 4.6 handles 200k input fine. Generation time is driven by the
+// *output* (capped at MAX_TOKENS), not the input, so this cap only needs to be
+// low enough to keep prompt cost sane — not low enough to protect latency.
+// Raised 40k → 120k on 2026-08-20: report-length PDFs were being silently
+// clipped mid-document (a 16-page McKinsey report extracted to 47,817 chars,
+// so the model never saw its last two pages, losing the conclusion and one of
+// the four framework shifts). ~120k chars ≈ 30k tokens of input.
+const MAX_INPUT_CHARS = 120_000
 
 export interface SynthesizedEntity {
   name: string
@@ -150,6 +154,13 @@ export async function synthesize(input: SynthesizeInput): Promise<SynthesizeResu
     ? input.rawMarkdown.slice(0, MAX_INPUT_CHARS) +
       `\n\n[... article truncated at ${MAX_INPUT_CHARS} chars; full length was ${input.rawMarkdown.length}]`
     : input.rawMarkdown
+  if (truncated) {
+    // Truncation is otherwise invisible: the job still reports `done` and the
+    // page looks complete. Log it so a clipped source is greppable after the fact.
+    console.warn(
+      `[synthesize] TRUNCATED "${input.title}": ${input.rawMarkdown.length} chars -> ${MAX_INPUT_CHARS}. The tail of the document was not read.`,
+    )
+  }
 
   // Existing pages list for the interlinking rule. Compact format: slug — title (type).
   // Cap at ~150 pages to keep prompt size sane; if the wiki grows past that we

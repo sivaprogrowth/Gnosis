@@ -69,6 +69,49 @@ export async function runSynthesisStandalone(jobId: string): Promise<void> {
   }
 }
 
+/**
+ * The slug the most recent successful ingest of this same source used, if any.
+ *
+ * Source identity is the filename for PDFs and the URL otherwise — the same
+ * keys the /api/ingest/* dedupe guards use. Returns null when this is the
+ * first ingest of the source, which is the common case.
+ *
+ * Deliberately takes the MOST RECENT done job, not the earliest: if an old
+ * page was superseded and deleted, we want the slug that currently exists on
+ * wiki-archive, not the one that was cleaned up.
+ */
+async function findPriorSourceSlug(
+  jobId: string,
+  sourceType: string | null,
+  sourceUrl: string | null,
+  sourceFilename: string | null,
+): Promise<string | null> {
+  const isPdf = sourceType === "pdf"
+  const key = isPdf ? sourceFilename : sourceUrl
+  if (!key) return null
+
+  const { data, error } = await supabase
+    .from("gnosis_ingest_jobs")
+    .select("surfaced_entities")
+    .eq(isPdf ? "source_filename" : "source_url", key)
+    .eq("status", "done")
+    .neq("id", jobId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle()
+
+  if (error) {
+    // Non-fatal: fall back to the freshly suggested slug rather than blocking
+    // the ingest. Worst case we get the pre-fix forking behaviour.
+    console.warn(`[pipeline] prior-slug lookup failed for job ${jobId}:`, error.message)
+    return null
+  }
+
+  const prior = (data?.surfaced_entities ?? null) as { suggestedSlug?: unknown } | null
+  const slug = typeof prior?.suggestedSlug === "string" ? prior.suggestedSlug.trim() : ""
+  return slug || null
+}
+
 export async function runSynthesisOnly(
   jobId: string,
   sourceMeta: SourceMeta = {},
@@ -144,13 +187,26 @@ export async function runSynthesisOnly(
     sourceSummary: (synth.takeaways || []).join(" "),
   })
 
+  // Re-ingesting the same source must land on the SAME page. The slug is
+  // LLM-derived, so a re-run that sees different input (e.g. a raised input
+  // cap) invents a new slug and forks a second source page instead of
+  // overwriting the first. Pin to the slug the last successful ingest of this
+  // source used, if there is one.
+  const priorSlug = await findPriorSourceSlug(jobId, job.source_type, job.source_url, job.source_filename)
+  if (priorSlug && priorSlug !== synth.suggestedSlug) {
+    console.warn(
+      `[pipeline] job ${jobId}: reusing prior slug "${priorSlug}" instead of newly suggested "${synth.suggestedSlug}" so the re-ingest overwrites rather than forks.`,
+    )
+  }
+  const sourceSlug = priorSlug || synth.suggestedSlug
+
   await updateJob(jobId, {
     status: "awaiting_user",
     takeaways: synth.takeaways,
     surfaced_entities: {
       promote: filter.promote,
       inline: filter.inline,
-      suggestedSlug: synth.suggestedSlug,
+      suggestedSlug: sourceSlug,
       sourcePage: synth.sourcePage,
       sourceTitle: job.source_title || "Untitled",
     },

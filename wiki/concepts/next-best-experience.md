@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Next-best-experience"
+title: "Next-Best-Experience Program"
 tags: [ingested]
-sources: ["future-of-b2b-sales-with-ai-mckinsey-2026"]
+sources: ["future-of-b2b-sales-rewiring-playbooks-with-ai"]
 ---
 
-# Next-best-experience
+# Next-Best-Experience Program
 
-_Stub page created automatically during ingest of [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]._
+_Stub page created automatically during ingest of [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]._
 
-Named McKinsey framework with a concrete reported outcome (5–8% revenue uplift). Analogous to other named frameworks already in the wiki; would be cited by agentic-ai, impact-journeys, and ai-native-services pages.
+Already has an existing wiki page (concept/concepts/next-best-experience). This source adds quantified outcomes (5–8% revenue uplift, 20–30% lower cost-to-serve) worth linking.
 
 ## Why this earned its own page
 
-Named McKinsey framework with a concrete reported outcome (5–8% revenue uplift). Analogous to other named frameworks already in the wiki; would be cited by agentic-ai, impact-journeys, and ai-native-services pages.
+Already has an existing wiki page (concept/concepts/next-best-experience). This source adds quantified outcomes (5–8% revenue uplift, 20–30% lower cost-to-serve) worth linking.
 
 ## Mentions
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

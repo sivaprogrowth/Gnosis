@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Impact journeys"
+title: "Impact Journeys"
 tags: [ingested]
-sources: ["future-of-b2b-sales-with-ai-mckinsey-2026"]
+sources: ["future-of-b2b-sales-rewiring-playbooks-with-ai"]
 ---
 
-# Impact journeys
+# Impact Journeys
 
-_Stub page created automatically during ingest of [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]._
+_Stub page created automatically during ingest of [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]._
 
-A well-defined McKinsey framework (5 named end-to-end commercial workflows) central to this source and likely to be cited by existing pages on agentic-ai, ai-transformation, agentic-workflow-governance, and ai-native-services. Specific enough to merit its own reference page.
+Already has an existing wiki page (concept/concepts/impact-journeys). This source is the primary definition source for the concept.
 
 ## Why this earned its own page
 
-A well-defined McKinsey framework (5 named end-to-end commercial workflows) central to this source and likely to be cited by existing pages on agentic-ai, ai-transformation, agentic-workflow-governance, and ai-native-services. Specific enough to merit its own reference page.
+Already has an existing wiki page (concept/concepts/impact-journeys). This source is the primary definition source for the concept.
 
 ## Mentions
 
-- [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

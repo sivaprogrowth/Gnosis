@@ -22,6 +22,8 @@ Major incumbent referenced in the context of SaaS disruption, Agentforce (which 
 
 
 
+
+- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[future-of-b2b-sales-with-ai-mckinsey-2026|Future of B2B Sales with AI]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

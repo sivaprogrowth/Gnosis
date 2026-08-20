@@ -1,13 +1,19 @@
 ---
-title: "How to Outsmart AI When It’s Tracking Your Workday"
-source: "https://www.wsj.com/lifestyle/workplace/how-to-outsmart-ai-when-its-tracking-your-workday-3ad6907e?mod=hp_lead_pos9"
+title: How to Outsmart AI When It’s Tracking Your Workday
+source: >-
+  https://www.wsj.com/lifestyle/workplace/how-to-outsmart-ai-when-its-tracking-your-workday-3ad6907e?mod=hp_lead_pos9
 author:
-  - "[[Callum Borchers]]"
-published: 2026-08-20
-created: 2026-08-20
-description: "It takes a little gamesmanship to look your best in the era of employee surveillance"
+  - '[[Callum Borchers]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-20T00:00:00.000Z
+description: >-
+  It takes a little gamesmanship to look your best in the era of employee
+  surveillance
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 131b667a-358c-4a59-9419-b9d107df4eb8
+gnosis_ingested_at: '2026-08-20T05:03:35.479Z'
 ---
 What’s more important than being a good employee right now? *Looking* like a good employee in the eyes of AI productivity trackers that more managers are using to evaluate their teams.
 

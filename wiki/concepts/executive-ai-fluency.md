@@ -19,6 +19,8 @@ Named first step in a five-step enterprise AI framework; distinct enough to stan
 
 
 
+
+- [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

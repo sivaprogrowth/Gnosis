@@ -24,6 +24,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

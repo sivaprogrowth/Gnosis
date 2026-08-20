@@ -19,6 +19,8 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 
 
 
+
+- [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

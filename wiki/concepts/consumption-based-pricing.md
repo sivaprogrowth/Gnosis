@@ -23,6 +23,8 @@ An emerging pricing paradigm for AI-era software, directly contrasted with per-s
 
 
 
+
+- [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

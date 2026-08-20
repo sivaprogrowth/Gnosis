@@ -49,6 +49,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
 - [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]

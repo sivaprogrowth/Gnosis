@@ -18,4 +18,6 @@ McKinsey's recurring annual survey (~4,000 B2B buyers/sellers, 13 countries) tha
 ## Mentions
 
 
+
+- [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

@@ -1,14 +1,20 @@
 ---
-title: "Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families"
-source: "https://www.wsj.com/world/asia/asias-businesses-struggle-to-shake-off-the-sway-of-their-founding-families-0e7fc2e7?mod=hp_listc_pos2"
+title: Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families
+source: >-
+  https://www.wsj.com/world/asia/asias-businesses-struggle-to-shake-off-the-sway-of-their-founding-families-0e7fc2e7?mod=hp_listc_pos2
 author:
-  - "[[Tripti Lahiri]]"
-  - "[[Jon Emont]]"
-published: 2026-08-20
-created: 2026-08-20
-description: "A decision by the leader of Tata Sons shows the challenges of bringing corporate professionals into family companies"
+  - '[[Tripti Lahiri]]'
+  - '[[Jon Emont]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-20T00:00:00.000Z
+description: >-
+  A decision by the leader of Tata Sons shows the challenges of bringing
+  corporate professionals into family companies
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 73d77c20-d023-4730-8bb4-c8328388eb76
+gnosis_ingested_at: '2026-08-20T05:02:27.432Z'
 ---
 ![Natarajan Chandrasekaran, Chairman of Tata Sons, walks past a Tata Capital sign after the IPO listing ceremony.](https://images.wsj.net/im-91000554?width=700&size=1.711&pixel_ratio=3)
 

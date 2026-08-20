@@ -18,5 +18,7 @@ Major global IT firm (world's largest by headcount) cited as a bellwether for AI
 ## Mentions
 
 
+
+- [[asia-family-business-succession-tata-sons|Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

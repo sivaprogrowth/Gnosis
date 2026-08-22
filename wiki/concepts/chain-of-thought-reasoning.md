@@ -21,6 +21,8 @@ A canonical, named technique in AI/ML with broad applicability. Adjacent to exis
 
 
 
+
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

@@ -20,6 +20,8 @@ Elon Musk's AI company with significant financial footprint ($5.1B R&D) and dire
 
 
 
+
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]

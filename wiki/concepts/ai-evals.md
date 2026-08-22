@@ -22,6 +22,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]

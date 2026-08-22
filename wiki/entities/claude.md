@@ -2,19 +2,19 @@
 type: entity
 title: "Claude"
 tags: [ingested]
-sources: ["how-to-spot-ai-writing-economist-2026"]
+sources: ["could-ais-become-conscious-economist-2026"]
 ---
 
 # Claude
 
-_Stub page created automatically during ingest of [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]._
+_Stub page created automatically during ingest of [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]._
 
-Already has a wiki page (entity/entities/claude). Confirm promote to link.
+Claude already has a dedicated wiki page (entity/entities/claude). This is a direct match — promote to confirm linkage.
 
 ## Why this earned its own page
 
-Already has a wiki page (entity/entities/claude). Confirm promote to link.
+Claude already has a dedicated wiki page (entity/entities/claude). This is a direct match — promote to confirm linkage.
 
 ## Mentions
 
-- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

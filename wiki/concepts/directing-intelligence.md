@@ -18,5 +18,7 @@ This is the article's central coined term — a named, well-defined professional
 ## Mentions
 
 
+
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]

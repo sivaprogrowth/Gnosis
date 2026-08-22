@@ -1,13 +1,19 @@
 ---
-title: "Could AIs become conscious?"
-source: "https://www.economist.com/leaders/2026/08/20/could-ais-become-conscious"
+title: Could AIs become conscious?
+source: 'https://www.economist.com/leaders/2026/08/20/could-ais-become-conscious'
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "The debate over whether artificial intelligence systems deserve rights or recognition as conscious beings, and the potential dangers of granting such status to machines. | Leaders"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  The debate over whether artificial intelligence systems deserve rights or
+  recognition as conscious beings, and the potential dangers of granting such
+  status to machines. | Leaders
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: f607cdf7-036c-4ca5-91a3-d7cd3e6c630d
+gnosis_ingested_at: '2026-08-22T05:02:57.216Z'
 ---
 ## Even if they don’t, they might be treated as such—to humanity’s great cost
 

@@ -50,6 +50,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]

@@ -19,6 +19,8 @@ ByteDance already has a wiki page, and TikTok is a major platform appearing acro
 
 
 
+
+- [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[wsj-tiktok-financial-advice-breakdown-2026|A Breakdown of the Financial Advice That’s Flying All Over TikTok]]

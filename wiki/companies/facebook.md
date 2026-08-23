@@ -26,6 +26,8 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 
 
 
+
+- [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

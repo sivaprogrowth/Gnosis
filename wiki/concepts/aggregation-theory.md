@@ -22,6 +22,8 @@ A well-defined, named strategic framework associated with Ben Thompson that is f
 
 
 
+
+- [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[thinks-814-rajesh-jain|Thinks 814]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]

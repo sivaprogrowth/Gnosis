@@ -19,6 +19,8 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 
 
 
+
+- [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[wsj-tiktok-financial-advice-breakdown-2026|A Breakdown of the Financial Advice That’s Flying All Over TikTok]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

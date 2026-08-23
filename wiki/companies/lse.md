@@ -22,3 +22,7 @@ The London School of Economics and Political Science — UK social sciences univ
 - [[chevening-scholarship]] — the scholarship programme
 - [[bits-pilani]] — undergrad alma mater
 - [[iim-kozhikode]] — MBA alma mater
+
+## Mentions
+
+- [[british-white-collar-apprenticeships-skipping-college|British Kids Are Skipping Top Colleges for White-Collar Apprenticeships]]

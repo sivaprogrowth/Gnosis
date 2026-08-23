@@ -18,5 +18,7 @@ Named Lightspeed thesis (late 2024) that reframes the TAM from $300B SaaS to $2T
 ## Mentions
 
 
+
+- [[british-white-collar-apprenticeships-skipping-college|British Kids Are Skipping Top Colleges for White-Collar Apprenticeships]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

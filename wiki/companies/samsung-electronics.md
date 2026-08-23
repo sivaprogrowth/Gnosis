@@ -17,4 +17,6 @@ A globally tracked semiconductor and tech giant already adjacent to multiple wik
 
 ## Mentions
 
+
+- [[young-south-koreans-fractional-investing|Young South Koreans are embracing fractional investing]]
 - [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]

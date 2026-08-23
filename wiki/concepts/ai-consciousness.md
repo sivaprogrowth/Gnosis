@@ -17,4 +17,6 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 
 ## Mentions
 
+
+- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

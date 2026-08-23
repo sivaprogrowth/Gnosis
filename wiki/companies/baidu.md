@@ -17,4 +17,6 @@ China's first-era search monopoly; directly relevant to existing pages on Google
 
 ## Mentions
 
+
+- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

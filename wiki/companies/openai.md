@@ -47,6 +47,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]

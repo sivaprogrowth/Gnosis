@@ -18,5 +18,7 @@ A well-defined policy mechanism (per-sale export licences for frontier AI models
 ## Mentions
 
 
+
+- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

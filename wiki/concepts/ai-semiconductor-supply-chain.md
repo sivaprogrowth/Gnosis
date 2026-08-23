@@ -20,6 +20,8 @@ A broad but well-defined framework concept that would serve as the hub page tyin
 
 
 
+
+- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
 - [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

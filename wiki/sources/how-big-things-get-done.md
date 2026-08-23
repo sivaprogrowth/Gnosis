@@ -2,19 +2,19 @@
 type: source
 title: "How Big Things Get Done"
 tags: [ingested]
-sources: ["how-big-things-get-done-review-wsj-2023"]
+sources: ["economist-why-big-projects-go-wrong-2023"]
 ---
 
 # How Big Things Get Done
 
-_Stub page created automatically during ingest of [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]._
+_Stub page created automatically during ingest of [[economist-why-big-projects-go-wrong-2023|From high-speed rail to the Olympics, why do big projects go wrong?]]._
 
-The book is the source of multiple promoted concepts (reference-class forecasting, think slow act fast, modular project design). The wiki already tracks books as sources and entities (e.g., 'Wanting: The Power of Mimetic Desire'). This would be cited by the Flyvbjerg person page and by each derived concept page.
+Already has an existing wiki page (source/sources/how-big-things-get-done) and a WSJ review page (source/sources/how-big-things-get-done-review-wsj-2023). This new source is a third page that would cite the book directly — clearly earns its own entity page for cross-linking.
 
 ## Why this earned its own page
 
-The book is the source of multiple promoted concepts (reference-class forecasting, think slow act fast, modular project design). The wiki already tracks books as sources and entities (e.g., 'Wanting: The Power of Mimetic Desire'). This would be cited by the Flyvbjerg person page and by each derived concept page.
+Already has an existing wiki page (source/sources/how-big-things-get-done) and a WSJ review page (source/sources/how-big-things-get-done-review-wsj-2023). This new source is a third page that would cite the book directly — clearly earns its own entity page for cross-linking.
 
 ## Mentions
 
-- [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]
+- [[economist-why-big-projects-go-wrong-2023|From high-speed rail to the Olympics, why do big projects go wrong?]]

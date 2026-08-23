@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "reference-class forecasting"
+title: "Reference Class Forecasting"
 tags: [ingested]
-sources: ["how-big-things-get-done-review-wsj-2023"]
+sources: ["economist-why-big-projects-go-wrong-2023"]
 ---
 
-# reference-class forecasting
+# Reference Class Forecasting
 
-_Stub page created automatically during ingest of [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]._
+_Stub page created automatically during ingest of [[economist-why-big-projects-go-wrong-2023|From high-speed rail to the Olympics, why do big projects go wrong?]]._
 
-A well-defined, named forecasting method with direct applications across project planning, AI deployment, and investment estimation. Existing pages on planning fallacy, AI transformation, and productivity J-curve would naturally cite this. It is a reusable concept well beyond this single source.
+Already has an existing wiki page (concept/concepts/reference-class-forecasting). Confirmed promote — this source directly illustrates the technique.
 
 ## Why this earned its own page
 
-A well-defined, named forecasting method with direct applications across project planning, AI deployment, and investment estimation. Existing pages on planning fallacy, AI transformation, and productivity J-curve would naturally cite this. It is a reusable concept well beyond this single source.
+Already has an existing wiki page (concept/concepts/reference-class-forecasting). Confirmed promote — this source directly illustrates the technique.
 
 ## Mentions
 
-- [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]
+- [[economist-why-big-projects-go-wrong-2023|From high-speed rail to the Olympics, why do big projects go wrong?]]

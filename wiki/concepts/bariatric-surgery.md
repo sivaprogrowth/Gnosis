@@ -17,4 +17,6 @@ Well-defined medical procedure that serves as the pre-GLP-1 benchmark for weight
 
 ## Mentions
 
+
+- [[novo-nordisk-obesity-drug-lessons|Lessons from Novo Nordisk on the stampede for obesity drugs]]
 - [[glp-1-agonists-obesity-drug-revolution|A new class of drugs for weight loss could end obesity]]

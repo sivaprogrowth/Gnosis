@@ -23,6 +23,8 @@ Well-defined named concept (The Economist's 2025 word of the year) describing th
 
 
 
+
+- [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

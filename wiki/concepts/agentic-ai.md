@@ -62,6 +62,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[uses-and-abuses-of-hype|The uses and abuses of hype]]
 - [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

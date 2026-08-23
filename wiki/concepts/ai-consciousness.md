@@ -18,5 +18,7 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 ## Mentions
 
 
+
+- [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

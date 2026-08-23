@@ -17,4 +17,6 @@ A foundational cognitive science concept that sits adjacent to cognitive offload
 
 ## Mentions
 
+
+- [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
 - [[outsmart-your-brain-review-willingham|‘Outsmart Your Brain’ Review: You Too Can Be an ‘A’ Student]]

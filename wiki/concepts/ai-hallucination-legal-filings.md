@@ -23,6 +23,8 @@ A specific, well-documented sub-phenomenon of AI hallucination that is distinct 
 
 
 
+
+- [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]

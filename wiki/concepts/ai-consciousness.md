@@ -20,6 +20,8 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 
 
 
+
+- [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

@@ -2,19 +2,19 @@
 type: concept
 title: "planning fallacy"
 tags: [ingested]
-sources: ["how-big-things-get-done-review-wsj-2023"]
+sources: ["outsmart-your-brain-review-willingham"]
 ---
 
 # planning fallacy
 
-_Stub page created automatically during ingest of [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]._
+_Stub page created automatically during ingest of [[outsmart-your-brain-review-willingham|‘Outsmart Your Brain’ Review: You Too Can Be an ‘A’ Student]]._
 
-A canonical, widely-referenced cognitive bias (originally from Kahneman/Tversky) that is central to the megaproject failure literature and adjacent to multiple existing wiki concepts: cognitive offloading, cognitive surrender, AI transformation, productivity J-curve. Multiple existing pages would plausibly cite it.
+A well-defined named concept (Kahneman) relevant to procrastination (existing page) and productivity topics. Likely to recur across productivity, project-management, and decision-making sources the wiki tracks.
 
 ## Why this earned its own page
 
-A canonical, widely-referenced cognitive bias (originally from Kahneman/Tversky) that is central to the megaproject failure literature and adjacent to multiple existing wiki concepts: cognitive offloading, cognitive surrender, AI transformation, productivity J-curve. Multiple existing pages would plausibly cite it.
+A well-defined named concept (Kahneman) relevant to procrastination (existing page) and productivity topics. Likely to recur across productivity, project-management, and decision-making sources the wiki tracks.
 
 ## Mentions
 
-- [[how-big-things-get-done-review-wsj-2023|‘How Big Things Get Done’ Review: Staying on Track]]
+- [[outsmart-your-brain-review-willingham|‘Outsmart Your Brain’ Review: You Too Can Be an ‘A’ Student]]

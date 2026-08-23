@@ -17,4 +17,6 @@ The central topic of the source page and a well-defined, recurring concept. The 
 
 ## Mentions
 
+
+- [[outsmart-your-brain-review-willingham|‘Outsmart Your Brain’ Review: You Too Can Be an ‘A’ Student]]
 - [[how-to-stop-procrastinating|How to stop procrastinating]]

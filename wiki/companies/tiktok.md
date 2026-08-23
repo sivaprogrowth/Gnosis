@@ -17,4 +17,6 @@ ByteDance already has a wiki page, and TikTok is a major platform appearing acro
 
 ## Mentions
 
+
+- [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[wsj-tiktok-financial-advice-breakdown-2026|A Breakdown of the Financial Advice That’s Flying All Over TikTok]]

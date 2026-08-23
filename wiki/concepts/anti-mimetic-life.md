@@ -18,5 +18,7 @@ Burgis's named, well-defined practical framework for escaping unreflective imita
 ## Mentions
 
 
+
+- [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[jet-li-beyond-life-and-death-nyt-2026|Jet Li Believes in Showing Up on Time, or Earlier]]
 - [[how-to-know-what-you-really-want-mimetic-desire|How to know what you really want]]

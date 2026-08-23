@@ -52,6 +52,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]

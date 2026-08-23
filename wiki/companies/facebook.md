@@ -22,6 +22,8 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 
 
 
+
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]

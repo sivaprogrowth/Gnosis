@@ -29,6 +29,8 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 
 
 
+
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]

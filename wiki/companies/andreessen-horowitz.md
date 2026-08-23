@@ -20,6 +20,8 @@ The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Cap
 
 
 
+
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]
 - [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]

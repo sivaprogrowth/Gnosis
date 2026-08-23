@@ -20,6 +20,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]

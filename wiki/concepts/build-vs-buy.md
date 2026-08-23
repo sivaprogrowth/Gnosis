@@ -27,6 +27,8 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 
 
 
+
+- [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]

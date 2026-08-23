@@ -56,6 +56,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]

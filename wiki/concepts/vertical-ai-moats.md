@@ -2,21 +2,19 @@
 type: concept
 title: "Vertical AI Moats"
 tags: [ingested]
-sources: ["avoiding-death-on-the-yellow-brick-road"]
+sources: ["harvey-builds-ai-around-domain-expertise"]
 ---
 
 # Vertical AI Moats
 
-_Stub page created automatically during ingest of [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]._
+_Stub page created automatically during ingest of [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]._
 
-The wiki already tracks agentic-ai, agentic-inference, ai-native-services, and from-retrieval-to-agency — all pages that would naturally cite a dedicated page on what makes vertical AI defensible. This is a well-defined investment/strategy framework that will recur across many AI-application sources.
+Already exists as concept/concepts/vertical-ai-moats — this source adds strong supporting evidence (Harvey's practitioner-founded thesis, domain expertise as moat) and the page would naturally cite this source.
 
 ## Why this earned its own page
 
-The wiki already tracks agentic-ai, agentic-inference, ai-native-services, and from-retrieval-to-agency — all pages that would naturally cite a dedicated page on what makes vertical AI defensible. This is a well-defined investment/strategy framework that will recur across many AI-application sources.
+Already exists as concept/concepts/vertical-ai-moats — this source adds strong supporting evidence (Harvey's practitioner-founded thesis, domain expertise as moat) and the page would naturally cite this source.
 
 ## Mentions
 
-
-- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
-- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
+- [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]

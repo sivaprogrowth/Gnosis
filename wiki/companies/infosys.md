@@ -19,6 +19,8 @@ Second-largest Indian IT firm, cited alongside TCS as a key data point for post-
 
 
 
+
+- [[zoho-vembu-divorce-ip-transfer-dispute|In High Stakes Divorce Battle, Estranged Wife Of Indian Software Tycoon Claims He Transferred Ownership Without Telling Her]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

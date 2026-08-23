@@ -17,4 +17,6 @@ A well-defined, named strategic framework associated with Ben Thompson that is f
 
 ## Mentions
 
+
+- [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]
 - [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]

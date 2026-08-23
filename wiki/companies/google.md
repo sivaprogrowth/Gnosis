@@ -32,6 +32,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]
 - [[uses-and-abuses-of-hype|The uses and abuses of hype]]
 - [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]

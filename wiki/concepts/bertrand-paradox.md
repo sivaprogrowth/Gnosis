@@ -17,4 +17,6 @@ A well-defined economic principle central to the source's thesis; adjacent pages
 
 ## Mentions
 
+
+- [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]

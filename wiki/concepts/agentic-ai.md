@@ -66,6 +66,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

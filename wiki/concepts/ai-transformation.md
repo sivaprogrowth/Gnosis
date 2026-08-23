@@ -34,6 +34,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]

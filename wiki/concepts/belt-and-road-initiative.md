@@ -17,4 +17,6 @@ China's ~$1T infrastructure + surveillance export program is a recurring geopoli
 
 ## Mentions
 
+
+- [[india-g20-presidency-modi-win|India’s G20 presidency will be a win for Narendra Modi]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

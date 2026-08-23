@@ -55,6 +55,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]

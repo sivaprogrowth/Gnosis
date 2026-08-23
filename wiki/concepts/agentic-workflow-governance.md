@@ -21,6 +21,8 @@ A distinct, well-defined concept (per-use-case guardrails, compliance control pl
 
 
 
+
+- [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]

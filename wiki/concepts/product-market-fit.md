@@ -17,4 +17,6 @@ PMF is a foundational startup concept that will be referenced repeatedly across 
 
 ## Mentions
 
+
+- [[eric-ashman-founder-advisor-homepage|Eric Ashman]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

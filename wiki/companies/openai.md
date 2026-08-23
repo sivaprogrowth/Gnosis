@@ -50,6 +50,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

@@ -21,6 +21,8 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 
 
+
+- [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

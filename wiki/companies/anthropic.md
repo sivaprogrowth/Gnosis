@@ -44,6 +44,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]

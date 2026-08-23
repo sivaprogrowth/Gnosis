@@ -69,6 +69,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[grace-hopper-only-limits-imagination-interview|Naval History and Heritage Command]]
 - [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]

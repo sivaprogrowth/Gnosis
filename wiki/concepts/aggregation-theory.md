@@ -20,6 +20,8 @@ A well-defined, named strategic framework associated with Ben Thompson that is f
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]

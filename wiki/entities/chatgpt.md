@@ -2,19 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["ai-native-telco-radical-transformation"]
+sources: ["ai-boom-google-microsoft-power-concentration"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]._
+_Stub page created automatically during ingest of [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]._
 
-Already has a dedicated wiki page at entity/entities/chatgpt. This source cites it as an accelerant for customer service and marketing in telcos — standard cross-link.
+Already has an existing wiki page (entity/entities/chatgpt). Confirm promote — it is a primary entity discussed throughout the wiki.
 
 ## Why this earned its own page
 
-Already has a dedicated wiki page at entity/entities/chatgpt. This source cites it as an accelerant for customer service and marketing in telcos — standard cross-link.
+Already has an existing wiki page (entity/entities/chatgpt). Confirm promote — it is a primary entity discussed throughout the wiki.
 
 ## Mentions
 
-- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

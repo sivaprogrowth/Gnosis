@@ -62,6 +62,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]

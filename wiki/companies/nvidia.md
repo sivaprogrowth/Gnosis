@@ -24,6 +24,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

@@ -35,6 +35,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

@@ -38,6 +38,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

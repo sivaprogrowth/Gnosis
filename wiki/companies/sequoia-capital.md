@@ -19,6 +19,8 @@ A top-tier VC firm that the wiki already tracks similar entities for (Andreessen
 
 
 
+
+- [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]
 - [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]

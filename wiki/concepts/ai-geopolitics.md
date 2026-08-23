@@ -18,5 +18,7 @@ A well-defined recurring topic that multiple existing pages already touch on adj
 ## Mentions
 
 
+
+- [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]

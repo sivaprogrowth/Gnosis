@@ -17,4 +17,6 @@ A named VC firm that is the author/publisher of this source and backs multiple c
 
 ## Mentions
 
+
+- [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

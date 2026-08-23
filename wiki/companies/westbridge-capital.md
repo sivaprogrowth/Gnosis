@@ -23,3 +23,7 @@ Relevant for [[progrowth]] only as a network-awareness node: if a ProGrowth clie
 
 - [[phani-sama]] — Advisor
 - [[redbus]] — Phani's prior founder role that led to this advisory position
+
+## Mentions
+
+- [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]

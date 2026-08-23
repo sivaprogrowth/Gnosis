@@ -18,5 +18,7 @@ Primary industry body for Indian IT; cited as the authoritative source for emplo
 ## Mentions
 
 
+
+- [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

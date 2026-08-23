@@ -34,6 +34,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]
 - [[uses-and-abuses-of-hype|The uses and abuses of hype]]

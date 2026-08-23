@@ -2,19 +2,19 @@
 type: company
 title: "Nvidia"
 tags: [ingested]
-sources: ["economist-investors-generative-ai-chatgpt-boom-2023"]
+sources: ["fast-company-most-innovative-ai-companies-2023"]
 ---
 
 # Nvidia
 
-_Stub page created automatically during ingest of [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]._
+_Stub page created automatically during ingest of [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]._
 
-Already has an existing wiki page at concept/companies/nvidia. Confirmed promote.
+Already has a wiki page (concept/companies/nvidia). Confirmed promote — referenced across AI semiconductor supply chain, picks-and-shovels investing, and this source.
 
 ## Why this earned its own page
 
-Already has an existing wiki page at concept/companies/nvidia. Confirmed promote.
+Already has a wiki page (concept/companies/nvidia). Confirmed promote — referenced across AI semiconductor supply chain, picks-and-shovels investing, and this source.
 
 ## Mentions
 
-- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
+- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

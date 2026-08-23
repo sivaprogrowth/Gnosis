@@ -17,4 +17,6 @@ Adapters/Seekers/Innovators is a named, structured framework from McKinsey's 202
 
 ## Mentions
 
+
+- [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]

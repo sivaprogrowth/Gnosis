@@ -17,4 +17,6 @@ ABM governance (sales-led vs. joint) is a key analytical frame in this source an
 
 ## Mentions
 
+
+- [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]

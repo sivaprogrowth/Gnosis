@@ -17,4 +17,6 @@ Graham's named framework for the era where brand replaces function as the primar
 
 ## Mentions
 
+
+- [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]
 - [[the-brand-age-paul-graham|The Brand Age]]

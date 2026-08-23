@@ -2,19 +2,19 @@
 type: person
 title: "Narendra Modi"
 tags: [ingested]
-sources: ["india-g20-presidency-modi-win"]
+sources: ["india-transport-infrastructure-upgrade-2023"]
 ---
 
 # Narendra Modi
 
-_Stub page created automatically during ingest of [[india-g20-presidency-modi-win|India’s G20 presidency will be a win for Narendra Modi]]._
+_Stub page created automatically during ingest of [[india-transport-infrastructure-upgrade-2023|India is getting an eye-wateringly big transport upgrade]]._
 
-A sitting head of government whose decisions (G20 presidency, AI/tech policy, industrial policy) intersect with multiple existing wiki topics: AI geopolitics, techno-nationalism, Belt and Road, industrial policy, and India-adjacent sources. Likely to be cited by future pages on India's tech posture, global South dynamics, etc.
+Already has an existing wiki page (concept/people/narendra-modi). Promote confirmed — page exists and would naturally cite this source.
 
 ## Why this earned its own page
 
-A sitting head of government whose decisions (G20 presidency, AI/tech policy, industrial policy) intersect with multiple existing wiki topics: AI geopolitics, techno-nationalism, Belt and Road, industrial policy, and India-adjacent sources. Likely to be cited by future pages on India's tech posture, global South dynamics, etc.
+Already has an existing wiki page (concept/people/narendra-modi). Promote confirmed — page exists and would naturally cite this source.
 
 ## Mentions
 
-- [[india-g20-presidency-modi-win|India’s G20 presidency will be a win for Narendra Modi]]
+- [[india-transport-infrastructure-upgrade-2023|India is getting an eye-wateringly big transport upgrade]]

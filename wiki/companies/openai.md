@@ -58,6 +58,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[make-money-with-prompts-stable-diffusion-chatgpt|Make money out of thin air with prompts — Stable Diffusion, ChatGPT, etc]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]

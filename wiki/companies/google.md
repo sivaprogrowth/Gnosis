@@ -41,6 +41,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
 - [[thinks-814-rajesh-jain|Thinks 814]]
 - [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

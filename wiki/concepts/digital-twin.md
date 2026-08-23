@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Digital twin"
+title: "digital twin"
 tags: [ingested]
-sources: ["ai-native-telco-radical-transformation"]
+sources: ["wsj-beyond-smartphone-mwc-2023"]
 ---
 
-# Digital twin
+# digital twin
 
-_Stub page created automatically during ingest of [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]._
+_Stub page created automatically during ingest of [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]._
 
-A well-defined technical concept with broad applicability across AI infrastructure, telco, manufacturing, and industrial-policy topics already tracked in the wiki. Multiple adjacent pages (ai-transformation, self-healing networks, process-mining) would naturally cite it. Likely to recur across future sources.
+Already has a page: concept/concepts/digital-twin. This is a promote in the sense it already exists — confirming it should remain promoted. (Noting it already exists in the wiki.)
 
 ## Why this earned its own page
 
-A well-defined technical concept with broad applicability across AI infrastructure, telco, manufacturing, and industrial-policy topics already tracked in the wiki. Multiple adjacent pages (ai-transformation, self-healing networks, process-mining) would naturally cite it. Likely to recur across future sources.
+Already has a page: concept/concepts/digital-twin. This is a promote in the sense it already exists — confirming it should remain promoted. (Noting it already exists in the wiki.)
 
 ## Mentions
 
-- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
+- [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

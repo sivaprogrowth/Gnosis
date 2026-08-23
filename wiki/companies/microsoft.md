@@ -17,4 +17,6 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 ## Mentions
 
+
+- [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

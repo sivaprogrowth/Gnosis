@@ -67,6 +67,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[grace-hopper-only-limits-imagination-interview|Naval History and Heritage Command]]
 - [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]

@@ -42,6 +42,8 @@ A distinct, well-defined psychological/HCI concept that contrasts with Cognitive
 
 
 
+
+- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

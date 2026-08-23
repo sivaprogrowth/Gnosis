@@ -29,6 +29,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]

@@ -58,6 +58,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[british-white-collar-apprenticeships-skipping-college|British Kids Are Skipping Top Colleges for White-Collar Apprenticeships]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]

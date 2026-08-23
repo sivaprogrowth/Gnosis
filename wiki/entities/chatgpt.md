@@ -17,4 +17,6 @@ Already has a wiki page (entity/entities/chatgpt). Confirm promote to link.
 
 ## Mentions
 
+
+- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

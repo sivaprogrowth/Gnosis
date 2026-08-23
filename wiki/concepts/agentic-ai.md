@@ -65,6 +65,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]

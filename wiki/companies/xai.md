@@ -21,6 +21,8 @@ Elon Musk's AI company with significant financial footprint ($5.1B R&D) and dire
 
 
 
+
+- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

@@ -20,6 +20,8 @@ A well-defined recurring topic that multiple existing pages already touch on adj
 
 
 
+
+- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]

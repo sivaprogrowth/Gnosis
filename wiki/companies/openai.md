@@ -60,6 +60,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[make-money-with-prompts-stable-diffusion-chatgpt|Make money out of thin air with prompts — Stable Diffusion, ChatGPT, etc]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

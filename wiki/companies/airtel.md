@@ -18,5 +18,7 @@ Paired with Jio as the other major actor in the Indian mobile data price war. Th
 ## Mentions
 
 
+
+- [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]

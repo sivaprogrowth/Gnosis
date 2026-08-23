@@ -17,4 +17,6 @@ A foundational concept cited across multiple existing pages (initial coin offeri
 
 ## Mentions
 
+
+- [[munger-why-america-should-ban-crypto|Opinion | Why America Should Ban Crypto]]
 - [[what-is-central-bank-digital-currency-cbdc|What is central bank digital currency (CBDC)?]]

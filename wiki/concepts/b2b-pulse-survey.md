@@ -20,6 +20,8 @@ McKinsey's recurring annual survey (~4,000 B2B buyers/sellers, 13 countries) tha
 
 
 
+
+- [[terminus-abm-ad-fraud-rate-benchmark-2023|Terminus Maximizes Ad Spend for Marketers with Less Than 3% Fraud Rate]]
 - [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

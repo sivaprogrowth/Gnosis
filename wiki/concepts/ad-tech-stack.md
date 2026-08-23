@@ -17,4 +17,6 @@ The source discusses the layered ad-tech stack (publisher ad servers, ad exchang
 
 ## Mentions
 
+
+- [[terminus-abm-ad-fraud-rate-benchmark-2023|Terminus Maximizes Ad Spend for Marketers with Less Than 3% Fraud Rate]]
 - [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]

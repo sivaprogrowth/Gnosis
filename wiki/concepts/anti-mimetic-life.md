@@ -21,6 +21,8 @@ Burgis's named, well-defined practical framework for escaping unreflective imita
 
 
 
+
+- [[developing-a-worldview|Developing a Worldview]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]

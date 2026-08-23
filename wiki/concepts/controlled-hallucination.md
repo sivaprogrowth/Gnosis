@@ -58,6 +58,8 @@ The "brand-in-the-customer's-head" is not a description of the company — it is
 
 
 
+
+- [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[rise-of-vibe-lawyering|The rise of vibe lawyering]]

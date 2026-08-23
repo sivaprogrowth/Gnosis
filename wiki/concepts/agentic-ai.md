@@ -53,6 +53,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

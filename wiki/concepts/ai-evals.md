@@ -23,6 +23,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]

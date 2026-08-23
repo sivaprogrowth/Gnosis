@@ -22,6 +22,8 @@ A named, well-defined failure mode of AI systems with clear adjacency to Cogniti
 
 
 
+
+- [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]

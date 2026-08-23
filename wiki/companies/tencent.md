@@ -17,4 +17,6 @@ Conglomerate behind WeChat, a critical super-app platform for agentic AI integra
 
 ## Mentions
 
+
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

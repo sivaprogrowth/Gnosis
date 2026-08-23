@@ -18,5 +18,7 @@ A well-defined strategic concept (scarcity engineering to sustain asset-bubble d
 ## Mentions
 
 
+
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[the-brand-age-paul-graham|The Brand Age]]

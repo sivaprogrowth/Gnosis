@@ -19,5 +19,7 @@ Well-defined named role within enterprise AI adoption frameworks. Adjacent wiki 
 
 
 
+
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]

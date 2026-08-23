@@ -32,6 +32,8 @@ Distinct from 'AI Experimentation' and closely adjacent to existing pages like c
 
 
 
+
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

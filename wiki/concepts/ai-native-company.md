@@ -23,6 +23,8 @@ Closely related to existing pages on agentic-ai, agentic-workflow-governance, ai
 
 
 
+
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]

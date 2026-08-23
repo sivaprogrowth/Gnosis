@@ -17,4 +17,6 @@ Major Indian telecoms company whose price war fundamentally shaped AI/internet a
 
 ## Mentions
 
+
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[smartphones-ai-remaking-rural-india|Smartphones and AI are remaking rural India]]

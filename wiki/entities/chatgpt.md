@@ -2,21 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["how-to-spot-ai-writing-economist-2026"]
+sources: ["ai-native-telco-radical-transformation"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]._
+_Stub page created automatically during ingest of [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]._
 
-Already has a wiki page (entity/entities/chatgpt). Confirm promote to link.
+Already has a dedicated wiki page at entity/entities/chatgpt. This source cites it as an accelerant for customer service and marketing in telcos — standard cross-link.
 
 ## Why this earned its own page
 
-Already has a wiki page (entity/entities/chatgpt). Confirm promote to link.
+Already has a dedicated wiki page at entity/entities/chatgpt. This source cites it as an accelerant for customer service and marketing in telcos — standard cross-link.
 
 ## Mentions
 
-
-- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
-- [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

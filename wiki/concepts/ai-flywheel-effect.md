@@ -19,6 +19,8 @@ The self-reinforcing cycle of AI enthusiasm → usage → implementation → suc
 
 
 
+
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]

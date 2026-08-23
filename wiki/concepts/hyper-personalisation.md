@@ -2,19 +2,19 @@
 type: concept
 title: "Hyper-personalisation"
 tags: [ingested]
-sources: ["future-of-b2b-sales-rewiring-playbooks-with-ai"]
+sources: ["ai-native-telco-radical-transformation"]
 ---
 
 # Hyper-personalisation
 
-_Stub page created automatically during ingest of [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]._
+_Stub page created automatically during ingest of [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]._
 
-A recurring, well-defined concept in B2B/GTM AI discussions. Adjacent to ai-shopping-agents, ai-native-services, gtm-model-orchestration, and the source page itself. Likely to be referenced across multiple commercial AI pages.
+Already exists at concept/concepts/hyper-personalisation. This source adds telco-specific case study data (>10% churn reduction, 20% cross-sell uplift) that would extend the existing page.
 
 ## Why this earned its own page
 
-A recurring, well-defined concept in B2B/GTM AI discussions. Adjacent to ai-shopping-agents, ai-native-services, gtm-model-orchestration, and the source page itself. Likely to be referenced across multiple commercial AI pages.
+Already exists at concept/concepts/hyper-personalisation. This source adds telco-specific case study data (>10% churn reduction, 20% cross-sell uplift) that would extend the existing page.
 
 ## Mentions
 
-- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
+- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

@@ -17,4 +17,6 @@ The Ambani succession battle is the canonical Indian precedent for family-busine
 
 ## Mentions
 
+
+- [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]
 - [[asia-family-business-succession-tata-sons|Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families]]

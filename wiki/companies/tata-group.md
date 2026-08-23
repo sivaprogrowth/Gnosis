@@ -18,5 +18,7 @@ India's largest private conglomerate; already referenced via concept/companies/t
 ## Mentions
 
 
+
+- [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[asia-family-business-succession-tata-sons|Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families]]

@@ -2,19 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["fast-company-most-innovative-ai-companies-2023"]
+sources: ["economist-ai-labs-race-heats-up-2023"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]._
+_Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
 
-Already has a wiki page (entity/entities/chatgpt). Confirmed promote.
+Already exists as entity/entities/chatgpt — page exists and is central to this source.
 
 ## Why this earned its own page
 
-Already has a wiki page (entity/entities/chatgpt). Confirmed promote.
+Already exists as entity/entities/chatgpt — page exists and is central to this source.
 
 ## Mentions
 
-- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

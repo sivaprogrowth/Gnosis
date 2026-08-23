@@ -1,19 +1,19 @@
 ---
 type: company
-title: "Google DeepMind"
+title: "Baidu"
 tags: [ingested]
 sources: ["economist-ai-labs-race-heats-up-2023"]
 ---
 
-# Google DeepMind
+# Baidu
 
 _Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already exists as concept/companies/baidu — page exists and is cited in context of Chinese AI competition.
 
 ## Why this earned its own page
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already exists as concept/companies/baidu — page exists and is cited in context of Chinese AI competition.
 
 ## Mentions
 

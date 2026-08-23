@@ -2,19 +2,19 @@
 type: company
 title: "Anthropic"
 tags: [ingested]
-sources: ["rise-of-million-dollar-one-person-companies"]
+sources: ["economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Anthropic
 
-_Stub page created automatically during ingest of [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]._
+_Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
 
-Anthropic already has an existing wiki page (concept/companies/anthropic). Referenced here for usage-based pricing impact on solo founders, which connects to existing consumption-based pricing and outcome-based pricing pages.
+Already exists as concept/companies/anthropic — page exists.
 
 ## Why this earned its own page
 
-Anthropic already has an existing wiki page (concept/companies/anthropic). Referenced here for usage-based pricing impact on solo founders, which connects to existing consumption-based pricing and outcome-based pricing pages.
+Already exists as concept/companies/anthropic — page exists.
 
 ## Mentions
 
-- [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

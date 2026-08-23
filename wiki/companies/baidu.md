@@ -18,5 +18,7 @@ China's first-era search monopoly; directly relevant to existing pages on Google
 ## Mentions
 
 
+
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

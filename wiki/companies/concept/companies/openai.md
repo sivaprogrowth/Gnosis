@@ -2,19 +2,19 @@
 type: company
 title: "OpenAI"
 tags: [ingested]
-sources: ["fast-company-most-innovative-ai-companies-2023"]
+sources: ["economist-ai-labs-race-heats-up-2023"]
 ---
 
 # OpenAI
 
-_Stub page created automatically during ingest of [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]._
+_Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
 
-Already has a wiki page (concept/companies/openai). Confirm promote — top-ranked entity, cited across dozens of existing pages.
+Already exists as concept/companies/openai — this is a duplicate candidate; the page exists and would naturally be cited by this source.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/companies/openai). Confirm promote — top-ranked entity, cited across dozens of existing pages.
+Already exists as concept/companies/openai — this is a duplicate candidate; the page exists and would naturally be cited by this source.
 
 ## Mentions
 
-- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

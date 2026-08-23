@@ -63,6 +63,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[uses-and-abuses-of-hype|The uses and abuses of hype]]

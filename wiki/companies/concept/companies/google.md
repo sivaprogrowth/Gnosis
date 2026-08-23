@@ -1,19 +1,19 @@
 ---
 type: company
-title: "Google DeepMind"
+title: "Google"
 tags: [ingested]
 sources: ["economist-ai-labs-race-heats-up-2023"]
 ---
 
-# Google DeepMind
+# Google
 
 _Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already exists as concept/companies/google — page exists.
 
 ## Why this earned its own page
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already exists as concept/companies/google — page exists.
 
 ## Mentions
 

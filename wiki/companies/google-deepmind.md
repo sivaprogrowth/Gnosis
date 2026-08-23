@@ -23,6 +23,8 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 
 
+
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
 - [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]

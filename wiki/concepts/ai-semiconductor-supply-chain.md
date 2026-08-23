@@ -23,6 +23,8 @@ A broad but well-defined framework concept that would serve as the hub page tyin
 
 
 
+
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
 - [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

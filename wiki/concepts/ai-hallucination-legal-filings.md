@@ -21,6 +21,8 @@ A specific, well-documented sub-phenomenon of AI hallucination that is distinct 
 
 
 
+
+- [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]

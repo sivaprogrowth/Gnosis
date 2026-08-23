@@ -21,6 +21,8 @@ Distinct, well-defined emerging practice (transparent crediting of AI alongside 
 
 
 
+
+- [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]
 - [[ai-writing-improvement-humans-must-edit|AI is getting better at writing. Humans must get better at editing]]
 - [[did-ai-write-this-article-economist-2026|Did AI write this article?]]

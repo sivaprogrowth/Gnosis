@@ -24,6 +24,8 @@ Well-defined named concept (The Economist's 2025 word of the year) describing th
 
 
 
+
+- [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]

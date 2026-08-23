@@ -18,5 +18,7 @@ A well-defined, named concept that is the central subject of this source. Adjace
 ## Mentions
 
 
+
+- [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
 - [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]

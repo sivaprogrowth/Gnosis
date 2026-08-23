@@ -25,6 +25,8 @@ An emerging pricing paradigm for AI-era software, directly contrasted with per-s
 
 
 
+
+- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

@@ -52,6 +52,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]

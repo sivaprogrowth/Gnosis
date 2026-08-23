@@ -17,4 +17,6 @@ The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Cap
 
 ## Mentions
 
+
+- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

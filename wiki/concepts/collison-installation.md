@@ -17,4 +17,6 @@ A named, well-defined YC framework for aggressive early user acquisition. The wi
 
 ## Mentions
 
+
+- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

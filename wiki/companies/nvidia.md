@@ -17,4 +17,6 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 ## Mentions
 
+
+- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

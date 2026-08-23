@@ -85,6 +85,8 @@ See the `## ProGrowth relevance` section on [[progrowth]] for specific operation
 
 
 
+
+- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]

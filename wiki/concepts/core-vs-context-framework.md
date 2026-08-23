@@ -20,6 +20,8 @@ Named framework used to explain the structural shift from outsourcing to insourc
 
 
 
+
+- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
 - [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
 - [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]

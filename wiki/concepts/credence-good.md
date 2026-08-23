@@ -1,19 +1,19 @@
 ---
-type: person
-title: "Gary Marcus"
+type: concept
+title: "Credence Good"
 tags: [ingested]
 sources: ["ai-commodity-trap-up-the-stack-narayanan-kapur"]
 ---
 
-# Gary Marcus
+# Credence Good
 
 _Stub page created automatically during ingest of [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]._
 
-Already has an existing wiki page (concept/people/gary-marcus). Promote to confirm the existing page is in scope — this is a direct match.
+A named economics concept that explains lock-in dynamics in AI knowledge work; would naturally be cited by behavioral moats, switching costs, and AI-native services pages. Well-defined and reusable.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (concept/people/gary-marcus). Promote to confirm the existing page is in scope — this is a direct match.
+A named economics concept that explains lock-in dynamics in AI knowledge work; would naturally be cited by behavioral moats, switching costs, and AI-native services pages. Well-defined and reusable.
 
 ## Mentions
 

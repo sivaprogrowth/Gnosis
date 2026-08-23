@@ -17,4 +17,6 @@ The self-reinforcing cycle of AI enthusiasm → usage → implementation → suc
 
 ## Mentions
 
+
+- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]

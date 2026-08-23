@@ -17,4 +17,6 @@ Already has a page (concept/concepts/outcome-based-pricing). Promoting as a conf
 
 ## Mentions
 
+
+- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

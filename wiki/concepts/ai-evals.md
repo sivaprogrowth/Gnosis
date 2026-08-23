@@ -24,6 +24,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]

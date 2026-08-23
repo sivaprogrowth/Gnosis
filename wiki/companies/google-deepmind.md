@@ -25,6 +25,8 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 
 
+
+- [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

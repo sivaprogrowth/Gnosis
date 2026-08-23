@@ -23,6 +23,8 @@ A named, well-defined failure mode of AI systems with clear adjacency to Cogniti
 
 
 
+
+- [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]

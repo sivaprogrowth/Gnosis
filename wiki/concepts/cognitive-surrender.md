@@ -23,6 +23,8 @@ This is a well-defined, named concept directly relevant to multiple existing pag
 
 
 
+
+- [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
 - [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]

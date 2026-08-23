@@ -18,5 +18,7 @@ A novel, well-defined concept (skill erosion + personality attachment + credence
 ## Mentions
 
 
+
+- [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[ai-tourism-tiktok-herd-personalisation|Can AI save tourists from the TikTok herd?]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]

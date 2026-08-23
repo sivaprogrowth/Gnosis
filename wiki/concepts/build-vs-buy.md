@@ -26,6 +26,8 @@ Classic enterprise decision framework gaining renewed prominence in the AI era. 
 
 
 
+
+- [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
 - [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

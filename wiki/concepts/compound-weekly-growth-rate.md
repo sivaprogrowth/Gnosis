@@ -17,4 +17,6 @@ A named, quantifiable startup metric championed by Paul Graham (who already has 
 
 ## Mentions
 
+
+- [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

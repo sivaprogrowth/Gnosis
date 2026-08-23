@@ -2,19 +2,19 @@
 type: person
 title: "Paul Graham"
 tags: [ingested]
-sources: ["do-things-that-dont-scale"]
+sources: ["how-to-earn-a-billion-dollars"]
 ---
 
 # Paul Graham
 
-_Stub page created automatically during ingest of [[do-things-that-dont-scale|Do Things that Don't Scale]]._
+_Stub page created automatically during ingest of [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]._
 
-Already has a wiki page (concept/people/paul-graham). Confirmed promote.
+Already has an existing wiki page (concept/people/paul-graham). Promote confirms existing page.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/people/paul-graham). Confirmed promote.
+Already has an existing wiki page (concept/people/paul-graham). Promote confirms existing page.
 
 ## Mentions
 
-- [[do-things-that-dont-scale|Do Things that Don't Scale]]
+- [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]

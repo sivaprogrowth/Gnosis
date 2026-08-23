@@ -17,4 +17,6 @@ India's Account Aggregator is a distinct DPI layer enabling consented data shari
 
 ## Mentions
 
+
+- [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]

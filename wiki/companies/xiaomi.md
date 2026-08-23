@@ -17,4 +17,6 @@ Major Chinese consumer electronics and now EV company; referenced in context of 
 
 ## Mentions
 
+
+- [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

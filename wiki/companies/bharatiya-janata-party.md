@@ -17,4 +17,6 @@ India's ruling party is central to multiple existing wiki topics: ai-geopolitics
 
 ## Mentions
 
+
+- [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[india-bjp-most-important-party-mead|Opinion | India’s BJP Is the World’s Most Important Party]]

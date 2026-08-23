@@ -17,4 +17,6 @@ McKinsey is the authoring organisation of this source and is referenced across m
 
 ## Mentions
 
+
+- [[what-is-central-bank-digital-currency-cbdc|What is central bank digital currency (CBDC)?]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

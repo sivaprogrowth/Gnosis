@@ -18,5 +18,7 @@ A major multilateral institution that connects to existing wiki concepts includi
 ## Mentions
 
 
+
+- [[what-is-central-bank-digital-currency-cbdc|What is central bank digital currency (CBDC)?]]
 - [[india-boom-helping-the-poor-economist-2023|Is India’s boom helping the poor?]]
 - [[india-g20-presidency-modi-win|India’s G20 presidency will be a win for Narendra Modi]]

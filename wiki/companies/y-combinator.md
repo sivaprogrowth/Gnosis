@@ -22,6 +22,8 @@ Y Combinator is a major institution in the startup world, co-founded by Paul Gra
 
 
 
+
+- [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
 - [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

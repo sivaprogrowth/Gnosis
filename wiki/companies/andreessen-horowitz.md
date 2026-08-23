@@ -18,5 +18,7 @@ The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Cap
 ## Mentions
 
 
+
+- [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
 - [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]

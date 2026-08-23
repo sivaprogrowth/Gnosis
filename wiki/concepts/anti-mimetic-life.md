@@ -23,6 +23,8 @@ Burgis's named, well-defined practical framework for escaping unreflective imita
 
 
 
+
+- [[fs-brain-food-growing-old-feb-2023|Growing Old]]
 - [[lifes-work-jerry-seinfeld-hbr-2017|Jerry Seinfeld: Comedian, Innovator, Micromanager]]
 - [[developing-a-worldview|Developing a Worldview]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]

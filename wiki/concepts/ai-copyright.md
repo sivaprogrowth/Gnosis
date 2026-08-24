@@ -17,4 +17,6 @@ AI copyright — specifically the legal dispute over training data and generated
 
 ## Mentions
 
+
+- [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]

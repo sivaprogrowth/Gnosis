@@ -1,13 +1,19 @@
 ---
-title: "Can Reddit survive in the AI era?"
-source: "https://www.economist.com/business/2026/08/20/can-reddit-survive-in-the-ai-era"
+title: Can Reddit survive in the AI era?
+source: 'https://www.economist.com/business/2026/08/20/can-reddit-survive-in-the-ai-era'
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "Reddit faces challenges as users turn to AI chatbots, but the platform hopes its human-generated content will remain valuable for both data licensing and direct engagement. | Business"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Reddit faces challenges as users turn to AI chatbots, but the platform hopes
+  its human-generated content will remain valuable for both data licensing and
+  direct engagement. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 5a2a44e3-e874-40ed-9019-e08891a850c2
+gnosis_ingested_at: '2026-08-24T03:08:52.639Z'
 ---
 ## It wants more cash for its data—and more of people’s time
 

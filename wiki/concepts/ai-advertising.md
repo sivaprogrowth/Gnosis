@@ -19,6 +19,8 @@ Google's strategy of inserting ads into AI Search responses is a distinct, named
 
 
 
+
+- [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
 - [[google-dethroning-openai-consumer-ai|Google is dethroning OpenAI as the king of consumer AI]]

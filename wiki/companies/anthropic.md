@@ -45,6 +45,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

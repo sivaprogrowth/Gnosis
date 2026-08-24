@@ -17,4 +17,6 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 ## Mentions
 
+
+- [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

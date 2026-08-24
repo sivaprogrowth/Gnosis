@@ -1,13 +1,20 @@
 ---
-title: "How to measure returns on AI"
-source: "https://www.economist.com/business/2026/08/20/how-to-measure-returns-on-ai"
+title: How to measure returns on AI
+source: 'https://www.economist.com/business/2026/08/20/how-to-measure-returns-on-ai'
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "Companies are shifting from measuring AI usage to assessing returns on investment, but calculating meaningful outcomes proves challenging amid uncertainty. | Business"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Companies are shifting from measuring AI usage to assessing returns on
+  investment, but calculating meaningful outcomes proves challenging amid
+  uncertainty. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: fb099296-5337-49e8-8230-1576ed5a5110
+gnosis_commit_sha: 8fda2c9558d7fe1f89df3e33df16a12bc60dd427
+gnosis_ingested_at: '2026-08-24T03:12:32.256Z'
 ---
 ## From tokenmaxxing to something more normal
 

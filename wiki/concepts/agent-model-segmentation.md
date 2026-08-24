@@ -18,5 +18,7 @@ A novel, well-defined framework concept (treating each AI model as a distinct bu
 ## Mentions
 
 
+
+- [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]

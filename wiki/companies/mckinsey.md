@@ -19,6 +19,8 @@ McKinsey is the authoring organisation of this source and is referenced across m
 
 
 
+
+- [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
 - [[what-is-central-bank-digital-currency-cbdc|What is central bank digital currency (CBDC)?]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

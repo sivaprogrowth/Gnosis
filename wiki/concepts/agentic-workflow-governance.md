@@ -23,6 +23,8 @@ A distinct, well-defined concept (per-use-case guardrails, compliance control pl
 
 
 
+
+- [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]

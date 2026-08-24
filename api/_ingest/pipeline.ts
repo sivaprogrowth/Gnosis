@@ -301,6 +301,7 @@ export async function runCommit(
   onFrame: FrameHandler,
   extraFiles: Array<{ path: string; content: string }> = [],
   sourceMeta: SourceMeta = {},
+  opts: { deferRebuild?: boolean } = {},
 ): Promise<CommitResult> {
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
@@ -432,28 +433,41 @@ export async function runCommit(
   // exactly what happened to both 2026-08-14 clipping ingests: pages on
   // wiki-archive, last Auto-rebuild commit on main four days stale, nothing on
   // the job row to say so. The extra ~1s per ingest buys an honest status.
+  //
+  // Cron waves pass deferRebuild and trigger ONE rebuild for the whole wave
+  // instead of one per clipping. Per-clipping triggers spawned a fresh
+  // production deployment roughly every 70s — five in five minutes during the
+  // 2026-08-24 drain — and a wave that holds a waitUntil on a deployment which
+  // gets superseded two or three times mid-run is the race that kept killing
+  // the self-chain. The caller owns the trigger; see processClippingsCron.
   let rebuildTriggered = false
-  try {
-    const triggerSha = await triggerVercelRebuild(
-      `ingest of "${surfaced.sourceTitle}" (job ${jobId})`,
-    )
-    rebuildTriggered = true
-    console.log(
-      `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
-    )
-  } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e)
-    console.error(`[ingest] rebuild trigger failed for job ${jobId}:`, msg)
-    await updateJob(jobId, {
-      progress_message: `Committed, but the site rebuild could not be triggered (${msg}). Pages are on wiki-archive; push any commit to main to publish them.`,
-    }).catch(() => {})
+  if (opts.deferRebuild) {
+    console.log(`[ingest] rebuild deferred to end of cron wave (job ${jobId})`)
+  } else {
+    try {
+      const triggerSha = await triggerVercelRebuild(
+        `ingest of "${surfaced.sourceTitle}" (job ${jobId})`,
+      )
+      rebuildTriggered = true
+      console.log(
+        `[ingest] triggered Vercel rebuild via empty main commit ${triggerSha.slice(0, 7)}`,
+      )
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e)
+      console.error(`[ingest] rebuild trigger failed for job ${jobId}:`, msg)
+      await updateJob(jobId, {
+        progress_message: `Committed, but the site rebuild could not be triggered (${msg}). Pages are on wiki-archive; push any commit to main to publish them.`,
+      }).catch(() => {})
+    }
   }
 
   onFrame({
     stage: "done",
     message: rebuildTriggered
       ? "Ingest complete. Site rebuild triggered."
-      : "Ingest complete, but the site rebuild could not be triggered — pages are on wiki-archive and will not appear on the live site until a commit lands on main.",
+      : opts.deferRebuild
+        ? "Ingest complete. Site rebuild deferred to the end of the cron wave."
+        : "Ingest complete, but the site rebuild could not be triggered — pages are on wiki-archive and will not appear on the live site until a commit lands on main.",
     data: { jobId, sha: result.sha, rebuildTriggered },
   })
 
@@ -662,6 +676,8 @@ export interface CronSummary {
   scanned: number
   candidates: number
   processed: number
+  /** Files whose content could not be read this wave. >0 means `candidates` undercounts. */
+  readFailures: number
   results: CronClippingResult[]
 }
 
@@ -687,36 +703,66 @@ export async function processClippingsCron(
     scanned: mdFiles.length,
     candidates: 0,
     processed: 0,
+    readFailures: 0,
     results: [],
     remaining: 0,
   }
-  const candidates: Array<{
+  type Candidate = {
     file: { path: string; name: string }
     raw: string
     parsed: matter.GrayMatterFile<string>
-  }> = []
-
-  for (const f of mdFiles) {
-    let raw: string | null
-    try {
-      raw = await getFileContent(f.path)
-    } catch (e) {
-      summary.results.push({
-        filename: f.name,
-        status: "failed",
-        reason: `read failed: ${e instanceof Error ? e.message : e}`,
-      })
-      continue
-    }
-    if (!raw) continue
-    const parsed = matter(raw)
-    if (parsed.data && parsed.data.gnosis_ingested === true) {
-      summary.results.push({ filename: f.name, status: "skipped", reason: "already ingested" })
-      continue
-    }
-    candidates.push({ file: f, raw, parsed })
   }
+
+  // A clipping is "pending" by frontmatter, and the directory listing carries
+  // no content, so deciding that costs one GitHub fetch per file. Sequentially
+  // this was 56 round trips at the head of EVERY wave — slow, and it put the
+  // whole drain at the mercy of GitHub's secondary rate limits. Bounded
+  // concurrency keeps a wave's scan to a couple of seconds.
+  const SCAN_CONCURRENCY = 8
+  const slots: Array<Candidate | null> = new Array(mdFiles.length).fill(null)
+  let cursor = 0
+  let readFailures = 0
+
+  async function scanWorker(): Promise<void> {
+    for (;;) {
+      const i = cursor++
+      if (i >= mdFiles.length) return
+      const f = mdFiles[i]
+      try {
+        const raw = await getFileContent(f.path)
+        if (!raw) continue
+        const parsed = matter(raw)
+        if (parsed.data && parsed.data.gnosis_ingested === true) continue
+        slots[i] = { file: f, raw, parsed }
+      } catch (e) {
+        readFailures++
+        summary.results.push({
+          filename: f.name,
+          status: "failed",
+          reason: `read failed: ${e instanceof Error ? e.message : e}`,
+        })
+      }
+    }
+  }
+
+  await Promise.all(
+    Array.from({ length: Math.min(SCAN_CONCURRENCY, mdFiles.length) }, () => scanWorker()),
+  )
+
+  const candidates: Candidate[] = slots.filter((c): c is Candidate => c !== null)
   summary.candidates = candidates.length
+  summary.readFailures = readFailures
+
+  // A scan that could not read the files is NOT an empty queue, but both
+  // produce candidates.length === 0 — and with remaining === 0 the caller
+  // takes neither the chain branch nor the "stopping with N remaining" branch,
+  // so the drain ends in total silence. That is the signature of the waves
+  // that vanished without a trace before 2026-08-24. Say so loudly.
+  if (readFailures > 0) {
+    console.error(
+      `[cron] clippings scan had ${readFailures} unreadable file(s) of ${mdFiles.length} — the pending count below is a FLOOR, not the truth`,
+    )
+  }
 
   // Process up to MAX_CLIPPINGS_PER_RUN, but stop starting new ones once the
   // time budget is spent so the function never gets killed mid-synth (which
@@ -727,21 +773,41 @@ export async function processClippingsCron(
   let attempted = 0
   for (let i = 0; i < batch.length; i++) {
     if (Date.now() >= deadline) break
-    const result = await ingestOneClipping(batch[i])
+    const result = await ingestOneClipping(batch[i], { deferRebuild: true })
     summary.results.push(result)
     if (result.status === "ingested") summary.processed++
     attempted = i + 1
   }
   summary.remaining = candidates.length - attempted
 
+  // One rebuild for the whole wave, after the last commit has landed. Pages
+  // are already safe on wiki-archive at this point; without this they simply
+  // stay invisible on the live site, so a failure here is loud but not fatal.
+  if (summary.processed > 0) {
+    try {
+      const sha = await triggerVercelRebuild(
+        `clippings cron wave (${summary.processed} ingested)`,
+      )
+      console.log(`[cron] wave rebuild triggered via main commit ${sha.slice(0, 7)}`)
+    } catch (e) {
+      console.error(
+        `[cron] wave rebuild trigger FAILED — ${summary.processed} clipping(s) are committed to wiki-archive but will NOT appear on the live site until a commit lands on main:`,
+        e instanceof Error ? e.message : e,
+      )
+    }
+  }
+
   return summary
 }
 
-async function ingestOneClipping(args: {
-  file: { path: string; name: string }
-  raw: string
-  parsed: matter.GrayMatterFile<string>
-}): Promise<CronClippingResult> {
+async function ingestOneClipping(
+  args: {
+    file: { path: string; name: string }
+    raw: string
+    parsed: matter.GrayMatterFile<string>
+  },
+  opts: { deferRebuild?: boolean } = {},
+): Promise<CronClippingResult> {
   const filename = args.file.name
   const frontmatter = args.parsed.data ?? {}
   const body = args.parsed.content.trim()
@@ -876,6 +942,7 @@ async function ingestOneClipping(args: {
       },
       [extraFile],
       sourceMeta,
+      { deferRebuild: opts.deferRebuild },
     )
     return { filename, status: "ingested", jobId, commitSha: result.sha }
   } catch (e) {
@@ -1110,7 +1177,7 @@ export async function processReaderCron(
     })
   } catch (e) {
     console.error("[cron reader] list failed:", e instanceof Error ? e.message : e)
-    return { scanned: 0, candidates: 0, processed: 0, results: [], remaining: 0 }
+    return { scanned: 0, candidates: 0, processed: 0, readFailures: 0, results: [], remaining: 0 }
   }
 
   // Skip highlights/notes (they're also "documents" but have a parent_id) and
@@ -1127,6 +1194,7 @@ export async function processReaderCron(
     scanned: pending.length,
     candidates: docs.length,
     processed: 0,
+    readFailures: 0,
     results: [],
     remaining: 0,
   }

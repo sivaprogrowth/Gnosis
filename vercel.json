@@ -19,7 +19,7 @@
   "crons": [
     {
       "path": "/api/ingest/job?cron=ingest-clippings",
-      "schedule": "0 5 * * *"
+      "schedule": "0 5,15 * * *"
     },
     {
       "path": "/api/ingest/job?cron=ingest-reader",

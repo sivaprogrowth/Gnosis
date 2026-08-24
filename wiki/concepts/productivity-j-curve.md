@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Productivity J-Curve"
+title: "J-curve productivity effect"
 tags: [ingested]
-sources: ["ai-boom-lessons-from-history-economist-2023"]
+sources: ["how-to-measure-returns-on-ai"]
 ---
 
-# Productivity J-Curve
+# J-curve productivity effect
 
-_Stub page created automatically during ingest of [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]._
+_Stub page created automatically during ingest of [[how-to-measure-returns-on-ai|How to measure returns on AI]]._
 
-A named, well-defined hypothesis (Brynjolfsson, Rock, Syverson) directly relevant to multiple existing pages: concept/concepts/installation-period, concept/concepts/engels-pause, and the broader AI-transformation and AI-native-company cluster. Any page discussing AI's economic impact would naturally cite this model. It is distinct enough from Engels' Pause to warrant its own page.
+A page already exists at concept/concepts/productivity-j-curve — this candidate is the same concept confirmed empirically in manufacturing AI adoption. Should merge/cite into that existing page rather than create a duplicate; however since the slug matches an existing page, this is a promote decision to enrich that page.
 
 ## Why this earned its own page
 
-A named, well-defined hypothesis (Brynjolfsson, Rock, Syverson) directly relevant to multiple existing pages: concept/concepts/installation-period, concept/concepts/engels-pause, and the broader AI-transformation and AI-native-company cluster. Any page discussing AI's economic impact would naturally cite this model. It is distinct enough from Engels' Pause to warrant its own page.
+A page already exists at concept/concepts/productivity-j-curve — this candidate is the same concept confirmed empirically in manufacturing AI adoption. Should merge/cite into that existing page rather than create a duplicate; however since the slug matches an existing page, this is a promote decision to enrich that page.
 
 ## Mentions
 
-- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
+- [[how-to-measure-returns-on-ai|How to measure returns on AI]]

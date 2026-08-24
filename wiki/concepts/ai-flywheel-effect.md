@@ -22,6 +22,8 @@ The self-reinforcing cycle of AI enthusiasm → usage → implementation → suc
 
 
 
+
+- [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

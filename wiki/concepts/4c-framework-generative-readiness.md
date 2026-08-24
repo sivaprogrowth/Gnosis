@@ -17,4 +17,6 @@ A named, structured framework (Coordination, Citability, Credibility, Calibratio
 
 ## Mentions
 
+
+- [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]

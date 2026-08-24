@@ -76,6 +76,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

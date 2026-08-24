@@ -44,6 +44,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

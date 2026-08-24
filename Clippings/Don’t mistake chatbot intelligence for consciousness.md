@@ -1,13 +1,20 @@
 ---
-title: "Don’t mistake chatbot intelligence for consciousness"
-source: "https://www.economist.com/by-invitation/2026/08/20/dont-mistake-chatbot-intelligence-for-consciousness"
+title: Don’t mistake chatbot intelligence for consciousness
+source: >-
+  https://www.economist.com/by-invitation/2026/08/20/dont-mistake-chatbot-intelligence-for-consciousness
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "Susan Schneider explores the distinction between artificial intelligence and consciousness, examining biological AIs and neuromorphic systems beyond today's chatbots. | By Invitation"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Susan Schneider explores the distinction between artificial intelligence and
+  consciousness, examining biological AIs and neuromorphic systems beyond
+  today's chatbots. | By Invitation
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 396b4ecd-1953-4f48-8412-e222c5aed376
+gnosis_ingested_at: '2026-08-24T03:10:08.365Z'
 ---
 ## But a new superintelligence may be coming, and it would upend humanity’s hierarchy of moral concern, thinks Susan Schneider
 

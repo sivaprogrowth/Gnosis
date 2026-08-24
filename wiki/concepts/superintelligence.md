@@ -17,4 +17,6 @@ Already has a wiki page (concept/concepts/superintelligence). Confirmed existing
 
 ## Mentions
 
+
+- [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]

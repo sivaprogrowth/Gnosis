@@ -24,11 +24,55 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
+import { resolvePublicOrigin } from "../_lib/publicOrigin.js"
 import {
   processClippingsCron,
   processReaderCron,
   runSynthesisStandalone,
 } from "../_ingest/pipeline.js"
+
+/**
+ * Re-invoke this endpoint for the next drain wave.
+ *
+ * Returns true only when the next wave was actually accepted. Every non-2xx is
+ * reported as a failure: `fetch` resolves (it does not reject) on a 302 or a
+ * 401, so a chain being bounced by Deployment Protection or a stale secret
+ * would otherwise be indistinguishable from a healthy one — which is exactly
+ * how the clippings cron spent two weeks running a single wave a day while
+ * every job row read `done`.
+ *
+ * `redirect: "manual"` is load-bearing. Following the SSO redirect lands on a
+ * 200 HTML login page, so `r.ok` would be true and the bug would stay hidden.
+ */
+async function chainNextWave(
+  req: VercelRequest,
+  cron: string,
+  wave: number,
+  authorization: string,
+): Promise<boolean> {
+  const nextUrl = `${resolvePublicOrigin(req)}/api/ingest/job?cron=${cron}&wave=${wave}`
+  try {
+    const r = await fetch(nextUrl, {
+      method: "GET",
+      headers: { Authorization: authorization },
+      redirect: "manual",
+    })
+    if (!r.ok) {
+      console.error(
+        `[cron] ${cron} chain wave ${wave} REJECTED: ${r.status} ${r.headers.get("location") ?? ""} (${nextUrl}) — the rest of the queue will NOT drain this run`,
+      )
+      return false
+    }
+    console.log(`[cron] ${cron} chained wave ${wave}`)
+    return true
+  } catch (e) {
+    console.error(
+      `[cron] ${cron} chain wave ${wave} failed:`,
+      e instanceof Error ? e.message : e,
+    )
+    return false
+  }
+}
 
 export const config = {
   maxDuration: 300,
@@ -64,21 +108,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           )
           // Self-chain only if this wave made progress AND work remains.
           if (summary.remaining > 0 && summary.processed > 0 && clipWave < MAX_CLIP_WAVES) {
-            const proto = (req.headers["x-forwarded-proto"] as string) || "https"
-            const host = req.headers.host
-            const nextUrl = `${proto}://${host}/api/ingest/job?cron=ingest-clippings&wave=${clipWave + 1}`
             console.log(
               `[cron] ingest-clippings chaining wave ${clipWave + 1} (${summary.remaining} remaining)`,
             )
-            await fetch(nextUrl, {
-              method: "GET",
-              headers: { Authorization: expected },
-            }).catch((e) =>
-              console.error(
-                "[cron] ingest-clippings chain failed:",
-                e instanceof Error ? e.message : e,
-              ),
-            )
+            await chainNextWave(req, "ingest-clippings", clipWave + 1, expected)
           } else if (summary.remaining > 0) {
             console.warn(
               `[cron] ingest-clippings stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${clipWave}) — next daily run will resume`,
@@ -121,21 +154,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           console.log(`[cron] ingest-reader wave ${wave} done:`, JSON.stringify(summary))
           // Self-chain only if this wave made progress AND work remains.
           if (summary.remaining > 0 && summary.processed > 0 && wave < MAX_WAVES) {
-            const proto = (req.headers["x-forwarded-proto"] as string) || "https"
-            const host = req.headers.host
-            const nextUrl = `${proto}://${host}/api/ingest/job?cron=ingest-reader&wave=${wave + 1}`
             console.log(
               `[cron] ingest-reader chaining wave ${wave + 1} (${summary.remaining} remaining)`,
             )
-            await fetch(nextUrl, {
-              method: "GET",
-              headers: { Authorization: expected },
-            }).catch((e) =>
-              console.error(
-                "[cron] ingest-reader chain failed:",
-                e instanceof Error ? e.message : e,
-              ),
-            )
+            await chainNextWave(req, "ingest-reader", wave + 1, expected)
           } else if (summary.remaining > 0) {
             console.warn(
               `[cron] ingest-reader stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${wave}) — next hourly run will resume`,

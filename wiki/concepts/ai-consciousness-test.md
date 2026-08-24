@@ -17,4 +17,6 @@ A named, well-defined empirical test for AI consciousness developed by Schneider
 
 ## Mentions
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]

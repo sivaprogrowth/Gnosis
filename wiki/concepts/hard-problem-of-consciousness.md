@@ -17,4 +17,6 @@ A canonical, repeatedly referenced philosophical concept that underpins multiple
 
 ## Mentions
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]

@@ -25,4 +25,6 @@ The London School of Economics and Political Science — UK social sciences univ
 
 ## Mentions
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[british-white-collar-apprenticeships-skipping-college|British Kids Are Skipping Top Colleges for White-Collar Apprenticeships]]

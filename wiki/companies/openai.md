@@ -67,6 +67,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

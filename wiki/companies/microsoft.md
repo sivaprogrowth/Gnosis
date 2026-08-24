@@ -19,6 +19,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

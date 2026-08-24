@@ -20,6 +20,8 @@ A well-defined, reusable concept (model knowing its own knowledge limits) that i
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]

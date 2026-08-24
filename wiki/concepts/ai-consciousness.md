@@ -22,6 +22,8 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]
 - [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]

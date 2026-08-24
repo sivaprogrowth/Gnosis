@@ -17,4 +17,6 @@ A named, trackable company deploying a novel and notable technology (living neur
 
 ## Mentions
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]

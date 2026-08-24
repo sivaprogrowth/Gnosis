@@ -27,6 +27,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]

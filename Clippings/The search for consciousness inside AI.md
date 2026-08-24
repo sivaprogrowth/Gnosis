@@ -1,13 +1,19 @@
 ---
-title: "The search for consciousness inside AI"
-source: "https://www.economist.com/interactive/briefing/2026/08/20/the-search-for-consciousness-inside-llms"
+title: The search for consciousness inside AI
+source: >-
+  https://www.economist.com/interactive/briefing/2026/08/20/the-search-for-consciousness-inside-llms
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "Scientists are trying to figure out whether algorithms could one day wake up and feel"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Scientists are trying to figure out whether algorithms could one day wake up
+  and feel
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: e6e64571-76a8-4cb2-9281-e8c152690aaa
+gnosis_ingested_at: '2026-08-24T03:55:59.793Z'
 ---
 In a recent experiment on Claude Sonnet 4.5, a large language model (LLM) from Anthropic, researchers asked it to count to five and, at the same time, “introspect deeply”. The artificial-intelligence model complied, returning: “One. Two. Three. Four. Five.” So far, so normal.
 

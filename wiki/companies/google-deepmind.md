@@ -27,6 +27,8 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]
 - [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
 - [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]

@@ -77,6 +77,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

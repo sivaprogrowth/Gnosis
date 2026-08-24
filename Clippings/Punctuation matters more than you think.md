@@ -1,13 +1,20 @@
 ---
-title: "Punctuation matters more than you think"
-source: "https://www.economist.com/culture/2026/08/20/punctuation-matters-more-than-you-think"
+title: Punctuation matters more than you think
+source: >-
+  https://www.economist.com/culture/2026/08/20/punctuation-matters-more-than-you-think
 author:
-  - "[[The Economist]]"
-published: 2026-08-20
-created: 2026-08-21
-description: "Florence Hazrat explores how punctuation marks shaped religious texts, legal documents and literature from ancient Rome to the modern era in \"On the Mark\". | Culture"
+  - '[[The Economist]]'
+published: 2026-08-20T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Florence Hazrat explores how punctuation marks shaped religious texts, legal
+  documents and literature from ancient Rome to the modern era in "On the Mark".
+  | Culture
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: fb027be5-4aa3-4d5b-a358-cf13dd9180dd
+gnosis_ingested_at: '2026-08-24T03:13:20.199Z'
 ---
 ## A new book offers a dashing history of writers’ marks
 

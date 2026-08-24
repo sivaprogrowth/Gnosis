@@ -24,6 +24,8 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 
 
 
+
+- [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]

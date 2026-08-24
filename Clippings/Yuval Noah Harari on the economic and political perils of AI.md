@@ -1,13 +1,20 @@
 ---
-title: "Yuval Noah Harari on the economic and political perils of AI"
-source: "https://www.economist.com/business/2026/08/20/yuval-noah-harari-on-the-economic-and-political-perils-of-ai"
+title: Yuval Noah Harari on the economic and political perils of AI
+source: >-
+  https://www.economist.com/business/2026/08/20/yuval-noah-harari-on-the-economic-and-political-perils-of-ai
 author:
-  - "[[The Economist]]"
-published: 2026-08-21
-created: 2026-08-21
-description: "Yuval Noah Harari discusses how artificial intelligence could reshape trust in financial systems and warns of risks from AI impersonation and techno-despotism. | Business"
+  - '[[The Economist]]'
+published: 2026-08-21T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Yuval Noah Harari discusses how artificial intelligence could reshape trust in
+  financial systems and warns of risks from AI impersonation and
+  techno-despotism. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: e8269dae-019c-44a5-bc44-7e8544c243cb
+gnosis_ingested_at: '2026-08-24T03:58:26.323Z'
 ---
 ## Humanity must not entrust its lot to clever machines, the bestselling historian warns
 

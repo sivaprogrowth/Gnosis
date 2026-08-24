@@ -19,6 +19,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

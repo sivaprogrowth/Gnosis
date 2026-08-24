@@ -20,6 +20,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

@@ -28,6 +28,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]

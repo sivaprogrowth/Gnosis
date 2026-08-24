@@ -17,4 +17,6 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 ## Mentions
 
+
+- [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

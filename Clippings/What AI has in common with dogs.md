@@ -1,13 +1,19 @@
 ---
-title: "What AI has in common with dogs"
-source: "https://www.economist.com/culture/2026/08/17/what-ai-has-in-common-with-dogs"
+title: What AI has in common with dogs
+source: 'https://www.economist.com/culture/2026/08/17/what-ai-has-in-common-with-dogs'
 author:
-  - "[[The Economist]]"
-published: 2026-08-17
-created: 2026-08-21
-description: "Two new books examine how artificial intelligence will reshape society, comparing AI development to humanity's ancient domestication of wolves into dogs. | Culture"
+  - '[[The Economist]]'
+published: 2026-08-17T00:00:00.000Z
+created: 2026-08-21T00:00:00.000Z
+description: >-
+  Two new books examine how artificial intelligence will reshape society,
+  comparing AI development to humanity's ancient domestication of wolves into
+  dogs. | Culture
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 40ece618-507d-48f6-b56f-af2c8f60084e
+gnosis_ingested_at: '2026-08-24T03:57:18.678Z'
 ---
 ## Two new books ponder whether the technology will be tame or savage
 

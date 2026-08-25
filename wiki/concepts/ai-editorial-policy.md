@@ -17,4 +17,6 @@ This is a well-defined, recurring concept — how media organisations formally g
 
 ## Mentions
 
+
+- [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]

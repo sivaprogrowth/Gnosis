@@ -24,6 +24,8 @@ A distinct, well-defined concept (per-use-case guardrails, compliance control pl
 
 
 
+
+- [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]

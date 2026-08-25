@@ -1,13 +1,20 @@
 ---
-title: "The Emerging Role of Marketing Operations in AI Governance"
-source: "https://martechseries.com/mts-insights/guest-authors/the-emerging-role-of-marketing-operations-in-ai-governance/"
+title: The Emerging Role of Marketing Operations in AI Governance
+source: >-
+  https://martechseries.com/mts-insights/guest-authors/the-emerging-role-of-marketing-operations-in-ai-governance/
 author:
-  - "[[MTS Guest Author]]"
-published: 2026-08-04
-created: 2026-08-24
-description: "The next era of AI in marketing will not be defined solely by speed, automation, or content generation. It will be defined by marketers who can build trust."
+  - '[[MTS Guest Author]]'
+published: 2026-08-04T00:00:00.000Z
+created: 2026-08-24T00:00:00.000Z
+description: >-
+  The next era of AI in marketing will not be defined solely by speed,
+  automation, or content generation. It will be defined by marketers who can
+  build trust.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ed436ef3-6f7d-431d-b41e-df5ad0f00ef0
+gnosis_ingested_at: '2026-08-25T05:01:02.386Z'
 ---
 ![spot_img](https://martechseries.com/wp-content/uploads/2025/12/BlackNPsidebar.png)
 

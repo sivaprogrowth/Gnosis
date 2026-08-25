@@ -21,6 +21,8 @@ Well-defined named role within enterprise AI adoption frameworks. Adjacent wiki 
 
 
 
+
+- [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

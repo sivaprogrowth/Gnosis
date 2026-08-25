@@ -29,6 +29,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]

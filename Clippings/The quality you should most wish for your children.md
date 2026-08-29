@@ -1,13 +1,20 @@
 ---
-title: "The quality you should most wish for your children"
-source: "https://www.economist.com/business/2026/08/27/the-quality-you-should-most-wish-for-your-children"
+title: The quality you should most wish for your children
+source: >-
+  https://www.economist.com/business/2026/08/27/the-quality-you-should-most-wish-for-your-children
 author:
-  - "[[The Economist]]"
-published: 2026-08-27
-created: 2026-08-28
-description: "Deborah Cobb-Clark, an economist at the University of Sydney, examines how an internal locus of control affects career outcomes, parenting and organisational performance. | Business"
+  - '[[The Economist]]'
+published: 2026-08-27T00:00:00.000Z
+created: 2026-08-28T00:00:00.000Z
+description: >-
+  Deborah Cobb-Clark, an economist at the University of Sydney, examines how an
+  internal locus of control affects career outcomes, parenting and
+  organisational performance. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 8aa96c06-130a-4fd0-9fb6-19a83abce4e7
+gnosis_ingested_at: '2026-08-29T05:01:14.367Z'
 ---
 ## The benefits of having an internal locus of control
 

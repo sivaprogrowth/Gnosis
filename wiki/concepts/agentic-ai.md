@@ -81,6 +81,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[internal-locus-of-control-economist-2026|The quality you should most wish for your children]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]

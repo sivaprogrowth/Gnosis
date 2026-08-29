@@ -47,6 +47,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[writing-with-ai-oreilly|Writing with AI]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

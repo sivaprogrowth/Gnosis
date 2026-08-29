@@ -69,6 +69,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[writing-with-ai-oreilly|Writing with AI]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]

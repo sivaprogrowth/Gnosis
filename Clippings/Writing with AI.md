@@ -1,13 +1,16 @@
 ---
-title: "Writing with AI"
-source: "https://www.oreilly.com/radar/writing-with-ai/"
+title: Writing with AI
+source: 'https://www.oreilly.com/radar/writing-with-ai/'
 author:
-  - "[[Tim O’Reilly]]"
-published: 2026-08-27
-created: 2026-08-29
-description: "A contrarian view"
+  - '[[Tim O’Reilly]]'
+published: 2026-08-27T00:00:00.000Z
+created: 2026-08-29T00:00:00.000Z
+description: A contrarian view
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 5e1ad8d8-0ea8-4eea-bc08-6aaa22d6da48
+gnosis_ingested_at: '2026-08-29T15:02:10.726Z'
 ---
 A lot of professional writers say they never do it. And for writers who do, the consequences can be serious. Book contracts have been withdrawn. People have lost jobs.
 

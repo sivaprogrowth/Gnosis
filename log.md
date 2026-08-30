@@ -185,3 +185,5 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 ## [2026-08-16 03:31] query | weekly synthesis brief — 14 highlights, 1 sources (automated)
 
 ## [2026-08-23 03:31] query | weekly synthesis brief — 15 highlights, 1 sources (automated)
+
+## [2026-08-30 03:31] query | weekly synthesis brief — 21 highlights, 1 sources (automated)

@@ -18,5 +18,7 @@ Notable AI research nonprofit whose work on open-source LLMs is directly relevan
 ## Mentions
 
 
+
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

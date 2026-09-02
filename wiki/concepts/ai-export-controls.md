@@ -20,6 +20,8 @@ A well-defined policy mechanism (per-sale export licences for frontier AI models
 
 
 
+
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

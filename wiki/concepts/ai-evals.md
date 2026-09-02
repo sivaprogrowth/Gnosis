@@ -31,6 +31,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]

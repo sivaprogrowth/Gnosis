@@ -2,21 +2,19 @@
 type: concept
 title: "Superintelligence"
 tags: [ingested]
-sources: ["could-ais-become-conscious-economist-2026"]
+sources: ["humanity-not-ready-intelligence-explosion-marshall"]
 ---
 
 # Superintelligence
 
-_Stub page created automatically during ingest of [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]._
+_Stub page created automatically during ingest of [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]._
 
-Already has a wiki page (concept/concepts/superintelligence). Confirmed existing page — promote to link.
+Already has a wiki page at concept/concepts/superintelligence. This source contributes substantial new framing (co-existence, governance, irreversibility) that would naturally be cited from and to that page.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/concepts/superintelligence). Confirmed existing page — promote to link.
+Already has a wiki page at concept/concepts/superintelligence. This source contributes substantial new framing (co-existence, governance, irreversibility) that would naturally be cited from and to that page.
 
 ## Mentions
 
-
-- [[dont-mistake-chatbot-intelligence-for-consciousness|Don’t mistake chatbot intelligence for consciousness]]
-- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]

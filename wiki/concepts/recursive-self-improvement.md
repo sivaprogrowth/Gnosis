@@ -1,24 +1,20 @@
 ---
 type: concept
-title: "Recursive Self-Improvement"
+title: "Recursive Self-Improvement (RSI)"
 tags: [ingested]
-sources: ["how-ai-got-better-at-building-itself-economist-2026"]
+sources: ["humanity-not-ready-intelligence-explosion-marshall"]
 ---
 
-# Recursive Self-Improvement
+# Recursive Self-Improvement (RSI)
 
-_Stub page created automatically during ingest of [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]._
+_Stub page created automatically during ingest of [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]._
 
-This is the central framework of the source and a well-defined AI safety/capabilities concept that will be referenced by adjacent existing pages (Agentic AI, Long-horizon R&D, Superintelligence if promoted, AI Evals, CSET if promoted). Multiple existing pages on agentic inference, AI transformation, and AI evals would naturally cross-link to it.
+Already has a wiki page at concept/concepts/recursive-self-improvement. This source directly discusses RSI as the central risk, adding depth that would enrich the existing page.
 
 ## Why this earned its own page
 
-This is the central framework of the source and a well-defined AI safety/capabilities concept that will be referenced by adjacent existing pages (Agentic AI, Long-horizon R&D, Superintelligence if promoted, AI Evals, CSET if promoted). Multiple existing pages on agentic inference, AI transformation, and AI evals would naturally cross-link to it.
+Already has a wiki page at concept/concepts/recursive-self-improvement. This source directly discusses RSI as the central risk, adding depth that would enrich the existing page.
 
 ## Mentions
 
-
-
-- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
-- [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
-- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]

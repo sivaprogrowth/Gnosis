@@ -1,13 +1,20 @@
 ---
-title: "Humanity isn’t ready for the coming intelligence explosion"
-source: "https://www.economist.com/by-invitation/2026/06/15/humanity-isnt-ready-for-the-coming-intelligence-explosion"
+title: Humanity isn’t ready for the coming intelligence explosion
+source: >-
+  https://www.economist.com/by-invitation/2026/06/15/humanity-isnt-ready-for-the-coming-intelligence-explosion
 author:
-  - "[[The Economist]]"
-published: 2026-06-15
-created: 2026-09-01
-description: "Will Marshall argues that artificial intelligence poses existential risks requiring urgent US-China cooperation on safety frameworks before superintelligence emerges. | By Invitation"
+  - '[[The Economist]]'
+published: 2026-06-15T00:00:00.000Z
+created: 2026-09-01T00:00:00.000Z
+description: >-
+  Will Marshall argues that artificial intelligence poses existential risks
+  requiring urgent US-China cooperation on safety frameworks before
+  superintelligence emerges. | By Invitation
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 8919b669-d244-46b8-9e83-f71e963b1243
+gnosis_ingested_at: '2026-09-02T05:04:46.247Z'
 ---
 ## We must find a way to steward AI, then to live side by side with it, writes Will Marshall
 

@@ -49,6 +49,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[writing-with-ai-oreilly|Writing with AI]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]

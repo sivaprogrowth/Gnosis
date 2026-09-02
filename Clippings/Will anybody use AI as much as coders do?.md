@@ -1,13 +1,20 @@
 ---
-title: "Will anybody use AI as much as coders do?"
-source: "https://www.economist.com/business/2026/08/30/will-anybody-use-ai-as-much-as-coders-do"
+title: Will anybody use AI as much as coders do?
+source: >-
+  https://www.economist.com/business/2026/08/30/will-anybody-use-ai-as-much-as-coders-do
 author:
-  - "[[The Economist]]"
-published: 2026-08-30
-created: 2026-09-02
-description: "Software engineers in Silicon Valley increasingly use AI agents to write code by speaking instructions, but adoption in other white-collar professions faces structural barriers. | Business"
+  - '[[The Economist]]'
+published: 2026-08-30T00:00:00.000Z
+created: 2026-09-02T00:00:00.000Z
+description: >-
+  Software engineers in Silicon Valley increasingly use AI agents to write code
+  by speaking instructions, but adoption in other white-collar professions faces
+  structural barriers. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: a497959a-7256-47aa-9d93-d96842893530
+gnosis_ingested_at: '2026-09-02T15:02:03.735Z'
 ---
 ## The answer will have big implications for the investment boom
 

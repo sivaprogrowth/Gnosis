@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Forward-Deployed Engineer"
+title: "forward-deployed engineers"
 tags: [ingested]
-sources: ["ai-eating-services-how-to-win-lightspeed"]
+sources: ["ai-adoption-coding-vs-other-industries"]
 ---
 
-# Forward-Deployed Engineer
+# forward-deployed engineers
 
-_Stub page created automatically during ingest of [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]._
+_Stub page created automatically during ingest of [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]._
 
-Well-defined emerging role that combines customer-facing consulting with production engineering—central to the AI-native services thesis. Adjacent to existing concepts like ai-native-services, delivery-pod (inline here), org-flattening, and agentic-workflow-governance. Will plausibly be cited by multiple existing and future pages on AI workforce and services models.
+Already has a wiki page (concept/concepts/forward-deployed-engineer). Confirmed existing page.
 
 ## Why this earned its own page
 
-Well-defined emerging role that combines customer-facing consulting with production engineering—central to the AI-native services thesis. Adjacent to existing concepts like ai-native-services, delivery-pod (inline here), org-flattening, and agentic-workflow-governance. Will plausibly be cited by multiple existing and future pages on AI workforce and services models.
+Already has a wiki page (concept/concepts/forward-deployed-engineer). Confirmed existing page.
 
 ## Mentions
 
-- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
+- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]

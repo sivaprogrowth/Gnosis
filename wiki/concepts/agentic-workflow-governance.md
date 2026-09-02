@@ -25,6 +25,8 @@ A distinct, well-defined concept (per-use-case guardrails, compliance control pl
 
 
 
+
+- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]

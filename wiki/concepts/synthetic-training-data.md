@@ -1,25 +1,20 @@
 ---
 type: concept
-title: "Synthetic Training Data"
+title: "synthetic training data"
 tags: [ingested]
-sources: ["how-ai-got-better-at-building-itself-economist-2026"]
+sources: ["ai-adoption-coding-vs-other-industries"]
 ---
 
-# Synthetic Training Data
+# synthetic training data
 
-_Stub page created automatically during ingest of [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]._
+_Stub page created automatically during ingest of [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]._
 
-A named, well-defined ML concept with broad applicability across AI topics already in the wiki (Long-horizon R&D, AI Evals, Agentic AI, Recursive Self-Improvement). It is not a passing reference—it is a structural risk factor in RSI and will recur in future AI capability and safety sources.
+Already has a wiki page (concept/concepts/synthetic-training-data). Confirmed existing page.
 
 ## Why this earned its own page
 
-A named, well-defined ML concept with broad applicability across AI topics already in the wiki (Long-horizon R&D, AI Evals, Agentic AI, Recursive Self-Improvement). It is not a passing reference—it is a structural risk factor in RSI and will recur in future AI capability and safety sources.
+Already has a wiki page (concept/concepts/synthetic-training-data). Confirmed existing page.
 
 ## Mentions
 
-
-
-
-- [[did-ai-write-this-article-economist-2026|Did AI write this article?]]
-- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
-- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
+- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]

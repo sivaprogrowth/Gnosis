@@ -84,6 +84,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[internal-locus-of-control-economist-2026|The quality you should most wish for your children]]

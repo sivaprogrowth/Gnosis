@@ -72,6 +72,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[writing-with-ai-oreilly|Writing with AI]]

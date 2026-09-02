@@ -1,13 +1,20 @@
 ---
-title: "AI is changing religion and religions are trying to change AI"
-source: "https://www.economist.com/international/2026/08/27/ai-is-changing-religion-and-religions-are-trying-to-change-ai"
+title: AI is changing religion and religions are trying to change AI
+source: >-
+  https://www.economist.com/international/2026/08/27/ai-is-changing-religion-and-religions-are-trying-to-change-ai
 author:
-  - "[[The Economist]]"
-published: 2026-08-27
-created: 2026-08-29
-description: "Religious institutions and tech firms compete to influence AI development as chatbots increasingly provide spiritual guidance, raising concerns about secular bias in models. | International"
+  - '[[The Economist]]'
+published: 2026-08-27T00:00:00.000Z
+created: 2026-08-29T00:00:00.000Z
+description: >-
+  Religious institutions and tech firms compete to influence AI development as
+  chatbots increasingly provide spiritual guidance, raising concerns about
+  secular bias in models. | International
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 9ce75b8e-04c3-4fa8-882f-92a051525556
+gnosis_ingested_at: '2026-09-02T05:02:11.357Z'
 ---
 ## Will chatbots supplant the advice of imams and priests or help them spread the word?
 

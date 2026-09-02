@@ -48,6 +48,8 @@ Anthropic is the maker of Claude (existing page) and is referenced in AI-coding 
 
 
 
+
+- [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[writing-with-ai-oreilly|Writing with AI]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

@@ -25,6 +25,8 @@ Multiple existing pages touch adjacent topics: superintelligence, AI rights, AI 
 
 
 
+
+- [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]

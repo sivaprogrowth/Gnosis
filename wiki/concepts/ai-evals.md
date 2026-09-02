@@ -30,6 +30,8 @@ Structured evaluation frameworks for AI automation reliability are a recurring t
 
 
 
+
+- [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]

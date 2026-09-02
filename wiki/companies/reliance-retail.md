@@ -17,4 +17,6 @@ Already has a parent page (Reliance Industries). Reliance Retail is a distinct, 
 
 ## Mentions
 
+
+- [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]

@@ -20,6 +20,8 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 
 
 
+
+- [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[wsj-tiktok-financial-advice-breakdown-2026|A Breakdown of the Financial Advice That’s Flying All Over TikTok]]

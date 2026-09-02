@@ -21,6 +21,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

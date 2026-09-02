@@ -22,6 +22,8 @@ ByteDance already has a wiki page, and TikTok is a major platform appearing acro
 
 
 
+
+- [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

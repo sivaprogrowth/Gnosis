@@ -1,13 +1,19 @@
 ---
-title: "How Shein came crashing down"
-source: "https://www.economist.com/business/2026/08/24/how-shein-came-crashing-down"
+title: How Shein came crashing down
+source: 'https://www.economist.com/business/2026/08/24/how-shein-came-crashing-down'
 author:
-  - "[[The Economist]]"
-published: 2026-08-24
-created: 2026-08-29
-description: "Shein plans to list on the Hong Kong stock exchange at a $27bn valuation, down from $100bn in 2022, as the Chinese fast-fashion retailer faces mounting competition. | Business"
+  - '[[The Economist]]'
+published: 2026-08-24T00:00:00.000Z
+created: 2026-08-29T00:00:00.000Z
+description: >-
+  Shein plans to list on the Hong Kong stock exchange at a $27bn valuation, down
+  from $100bn in 2022, as the Chinese fast-fashion retailer faces mounting
+  competition. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: de6e714d-1181-4561-b102-e8975dcb10a0
+gnosis_ingested_at: '2026-09-02T05:03:17.760Z'
 ---
 ## The Chinese e-retailer is listing for a quarter of the $100bn at which it was once valued
 

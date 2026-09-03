@@ -1,13 +1,20 @@
 ---
-title: "An obituary for the Drexel generation"
-source: "https://www.economist.com/business/2026/08/26/an-obituary-for-the-drexel-generation"
+title: An obituary for the Drexel generation
+source: >-
+  https://www.economist.com/business/2026/08/26/an-obituary-for-the-drexel-generation
 author:
-  - "[[The Economist]]"
-published: 2026-08-26
-created: 2026-09-02
-description: "William Cohan's \"Money to Burn\" chronicles Apollo Global Management's rise from Drexel Burnham Lambert's collapse and Leon Black's succession drama involving Jeffrey Epstein. | Business"
+  - '[[The Economist]]'
+published: 2026-08-26T00:00:00.000Z
+created: 2026-09-02T00:00:00.000Z
+description: >-
+  William Cohan's "Money to Burn" chronicles Apollo Global Management's rise
+  from Drexel Burnham Lambert's collapse and Leon Black's succession drama
+  involving Jeffrey Epstein. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: ed1f18cb-1ecf-4e83-b923-adafa33b1575
+gnosis_ingested_at: '2026-09-03T15:02:06.145Z'
 ---
 ## A new book about Apollo offers a showcase of financial genius and human failure
 

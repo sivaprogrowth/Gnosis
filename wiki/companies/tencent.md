@@ -20,6 +20,8 @@ Conglomerate behind WeChat, a critical super-app platform for agentic AI integra
 
 
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

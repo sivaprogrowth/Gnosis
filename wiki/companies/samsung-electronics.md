@@ -20,6 +20,8 @@ A globally tracked semiconductor and tech giant already adjacent to multiple wik
 
 
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
 - [[young-south-koreans-fractional-investing|Young South Koreans are embracing fractional investing]]

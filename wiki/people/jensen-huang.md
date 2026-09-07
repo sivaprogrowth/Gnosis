@@ -2,19 +2,19 @@
 type: person
 title: "Jensen Huang"
 tags: [ingested]
-sources: ["nvidia-driving-ai-boom-economist-2026"]
+sources: ["nvidia-central-bank-of-ai"]
 ---
 
 # Jensen Huang
 
-_Stub page created automatically during ingest of [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]._
+_Stub page created automatically during ingest of [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]._
 
-Already has a wiki page (concept/people/jensen-huang). The source deepens the portrait with cult-CEO comparisons and cash-flow analysis.
+Already has an existing wiki page (concept/people/jensen-huang). Confirmed promote.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/people/jensen-huang). The source deepens the portrait with cult-CEO comparisons and cash-flow analysis.
+Already has an existing wiki page (concept/people/jensen-huang). Confirmed promote.
 
 ## Mentions
 
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]

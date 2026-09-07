@@ -21,6 +21,8 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 
 
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

@@ -18,5 +18,7 @@ The $150bn fund losing $60bn+ is a defining data point for the VC winter. It is 
 ## Mentions
 
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]
 - [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]

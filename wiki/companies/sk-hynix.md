@@ -18,5 +18,7 @@ A major semiconductor company central to AI infrastructure supply chain — the 
 ## Mentions
 
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]

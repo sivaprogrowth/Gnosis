@@ -17,4 +17,6 @@ No existing page, but Hugging Face is a major, well-known AI company that appear
 
 ## Mentions
 
+
+- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]

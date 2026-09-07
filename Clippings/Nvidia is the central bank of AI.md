@@ -1,13 +1,17 @@
 ---
-title: "Nvidia is the central bank of AI"
-source: "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai"
+title: Nvidia is the central bank of AI
+source: >-
+  https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai
 author:
-  - "[[The Economist]]"
-published: 2026-09-02
-created: 2026-09-06
-description: "But will its loans prove sound?"
+  - '[[The Economist]]'
+published: 2026-09-02T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: But will its loans prove sound?
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: b3950734-6ace-474e-85bc-7f3d163ed3f0
+gnosis_ingested_at: '2026-09-07T15:07:04.255Z'
 ---
 ![](https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai/processed-images/1424/20260905_FBD001.jpg)
 

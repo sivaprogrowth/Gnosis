@@ -25,6 +25,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

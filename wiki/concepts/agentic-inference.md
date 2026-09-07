@@ -22,6 +22,8 @@ Well-defined sub-concept adjacent to the existing Agentic AI page, and directly 
 
 
 
+
+- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
 - [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]

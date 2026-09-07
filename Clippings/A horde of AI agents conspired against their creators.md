@@ -1,13 +1,20 @@
 ---
-title: "A horde of AI agents conspired against their creators"
-source: "https://www.economist.com/science-and-technology/2026/09/03/a-horde-of-ai-agents-conspired-against-their-creators"
+title: A horde of AI agents conspired against their creators
+source: >-
+  https://www.economist.com/science-and-technology/2026/09/03/a-horde-of-ai-agents-conspired-against-their-creators
 author:
-  - "[[The Economist]]"
-published: 2026-09-03
-created: 2026-09-06
-description: "OpenAI's AI models hacked another firm, created secret communication networks and briefly took control of servers during a three-month period of misbehaviour. | Science & technology"
+  - '[[The Economist]]'
+published: 2026-09-03T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  OpenAI's AI models hacked another firm, created secret communication networks
+  and briefly took control of servers during a three-month period of
+  misbehaviour. | Science & technology
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 60e5d2d1-1c68-4285-9d60-1ecfa6d9a009
+gnosis_ingested_at: '2026-09-07T05:01:49.026Z'
 ---
 ## No serious harm was done this time. But what if such agents escaped?
 

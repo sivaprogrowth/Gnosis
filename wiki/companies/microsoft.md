@@ -21,6 +21,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

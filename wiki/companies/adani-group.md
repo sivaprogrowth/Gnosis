@@ -17,4 +17,6 @@ A major named conglomerate discussed in the context of cronyism and Indian indus
 
 ## Mentions
 
+
+- [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]

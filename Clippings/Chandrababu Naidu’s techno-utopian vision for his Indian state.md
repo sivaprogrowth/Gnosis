@@ -1,13 +1,20 @@
 ---
-title: "Chandrababu Naidu’s techno-utopian vision for his Indian state"
-source: "https://www.economist.com/asia/2026/09/03/chandrababu-naidus-techno-utopian-vision-for-his-indian-state"
+title: Chandrababu Naidu’s techno-utopian vision for his Indian state
+source: >-
+  https://www.economist.com/asia/2026/09/03/chandrababu-naidus-techno-utopian-vision-for-his-indian-state
 author:
-  - "[[The Economist]]"
-published: 2026-09-03
-created: 2026-09-06
-description: "Chandrababu Naidu, chief minister of Andhra Pradesh, builds Amaravati as India's biggest greenfield city to attract advanced manufacturing and quantum computing. | Asia"
+  - '[[The Economist]]'
+published: 2026-09-03T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Chandrababu Naidu, chief minister of Andhra Pradesh, builds Amaravati as
+  India's biggest greenfield city to attract advanced manufacturing and quantum
+  computing. | Asia
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: bb774546-c50a-4266-af4d-9ddcd59ec7a0
+gnosis_ingested_at: '2026-09-07T05:03:28.289Z'
 ---
 ## Has Andhra Pradesh’s tech-savvy chief minister bitten off more than he can chew?
 

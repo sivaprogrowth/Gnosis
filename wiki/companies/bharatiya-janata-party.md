@@ -18,5 +18,7 @@ India's ruling party is central to multiple existing wiki topics: ai-geopolitics
 ## Mentions
 
 
+
+- [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[india-bjp-most-important-party-mead|Opinion | India’s BJP Is the World’s Most Important Party]]

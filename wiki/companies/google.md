@@ -46,6 +46,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

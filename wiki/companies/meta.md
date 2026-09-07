@@ -21,6 +21,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]

@@ -17,4 +17,6 @@ Multiple existing pages discuss AI semiconductor supply chain, on-device AI, and
 
 ## Mentions
 
+
+- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

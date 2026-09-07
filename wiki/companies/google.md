@@ -47,6 +47,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
 - [[how-to-measure-returns-on-ai|How to measure returns on AI]]

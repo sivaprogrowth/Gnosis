@@ -74,6 +74,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]

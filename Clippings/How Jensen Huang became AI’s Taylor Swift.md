@@ -1,13 +1,17 @@
 ---
-title: "How Jensen Huang became AI’s Taylor Swift"
-source: "https://www.economist.com/interactive/1843/2026/09/03/how-jensen-huang-became-ais-taylor-swift"
+title: How Jensen Huang became AI’s Taylor Swift
+source: >-
+  https://www.economist.com/interactive/1843/2026/09/03/how-jensen-huang-became-ais-taylor-swift
 author:
-  - "[[The Economist]]"
-published: 2026-09-02
-created: 2026-09-06
-description: "When the Nvidia boss returns to his native Taiwan, things get a little weird"
+  - '[[The Economist]]'
+published: 2026-09-02T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: 'When the Nvidia boss returns to his native Taiwan, things get a little weird'
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: d15d0adb-bbaf-468c-afa3-4c616d3949ee
+gnosis_ingested_at: '2026-09-07T05:05:19.445Z'
 ---
 ![alt message](https://www.economist.com/interactive/1843/2026/09/03/how-jensen-huang-became-ais-taylor-swift/processed-images/1424/1843_20260821_1843_JENSEN_01.jpg)
 

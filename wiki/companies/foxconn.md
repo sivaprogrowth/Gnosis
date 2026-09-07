@@ -17,4 +17,6 @@ Foxconn is a globally significant supply-chain actor already tracked via pages o
 
 ## Mentions
 
+
+- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]

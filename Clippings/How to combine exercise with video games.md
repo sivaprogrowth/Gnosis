@@ -1,13 +1,20 @@
 ---
-title: "How to combine exercise with video games"
-source: "https://www.economist.com/science-and-technology/2026/08/28/how-to-combine-exercise-with-video-games"
+title: How to combine exercise with video games
+source: >-
+  https://www.economist.com/science-and-technology/2026/08/28/how-to-combine-exercise-with-video-games
 author:
-  - "[[The Economist]]"
-published: 2026-08-28
-created: 2026-09-06
-description: "Virtual-reality games can provide vigorous exercise equivalent to traditional workouts, with some titles reaching intensity levels comparable to football or boxing. | Science & technology"
+  - '[[The Economist]]'
+published: 2026-08-28T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Virtual-reality games can provide vigorous exercise equivalent to traditional
+  workouts, with some titles reaching intensity levels comparable to football or
+  boxing. | Science & technology
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 5b219e18-034b-4cd8-a08e-da495265c163
+gnosis_ingested_at: '2026-09-07T15:01:39.512Z'
 ---
 ## Warmed up and ready, player one
 

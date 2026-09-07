@@ -1,13 +1,20 @@
 ---
-title: "Neoclouds like CoreWeave are getting much bigger—and riskier"
-source: "https://www.economist.com/business/2026/09/03/neoclouds-like-coreweave-are-getting-much-bigger-and-riskier"
+title: Neoclouds like CoreWeave are getting much bigger—and riskier
+source: >-
+  https://www.economist.com/business/2026/09/03/neoclouds-like-coreweave-are-getting-much-bigger-and-riskier
 author:
-  - "[[The Economist]]"
-published: 2026-09-03
-created: 2026-09-06
-description: "Neoclouds such as CoreWeave buy AI chips and rent them out, growing rapidly but facing mounting debt and fierce competition from hyperscalers and new entrants. | Business"
+  - '[[The Economist]]'
+published: 2026-09-03T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Neoclouds such as CoreWeave buy AI chips and rent them out, growing rapidly
+  but facing mounting debt and fierce competition from hyperscalers and new
+  entrants. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 655448ed-272b-4d85-bea4-cc87cdd11e2f
+gnosis_ingested_at: '2026-09-07T15:03:58.420Z'
 ---
 ## The mountain of debt funding their expansion is growing rapidly
 

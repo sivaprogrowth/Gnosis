@@ -48,6 +48,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]

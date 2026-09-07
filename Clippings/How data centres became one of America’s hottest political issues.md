@@ -1,13 +1,20 @@
 ---
-title: "How data centres became one of America’s hottest political issues"
-source: "https://www.economist.com/united-states/2026/09/02/how-data-centres-became-one-of-americas-hottest-political-issues"
+title: How data centres became one of America’s hottest political issues
+source: >-
+  https://www.economist.com/united-states/2026/09/02/how-data-centres-became-one-of-americas-hottest-political-issues
 author:
-  - "[[The Economist]]"
-published: 2026-09-02
-created: 2026-09-06
-description: "Data centres powering America's artificial intelligence boom face growing opposition from communities concerned about electricity costs and local impact. | United States"
+  - '[[The Economist]]'
+published: 2026-09-02T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Data centres powering America's artificial intelligence boom face growing
+  opposition from communities concerned about electricity costs and local
+  impact. | United States
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 7760ea46-b7d5-4e38-b312-48e52be762de
+gnosis_ingested_at: '2026-09-07T05:06:54.293Z'
 ---
 ## Growing hatred of the facilities is reshaping the midterm elections
 

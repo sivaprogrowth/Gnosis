@@ -27,6 +27,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

@@ -23,6 +23,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

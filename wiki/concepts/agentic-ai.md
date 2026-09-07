@@ -86,6 +86,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]

@@ -23,6 +23,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]

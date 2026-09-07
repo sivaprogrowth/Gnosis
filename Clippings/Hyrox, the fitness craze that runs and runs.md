@@ -1,13 +1,20 @@
 ---
-title: "Hyrox, the fitness craze that runs and runs"
-source: "https://www.economist.com/culture/2026/09/01/hyrox-the-fitness-craze-that-runs-and-runs"
+title: 'Hyrox, the fitness craze that runs and runs'
+source: >-
+  https://www.economist.com/culture/2026/09/01/hyrox-the-fitness-craze-that-runs-and-runs
 author:
-  - "[[The Economist]]"
-published: 2026-09-01
-created: 2026-09-06
-description: "Hyrox combines running, rowing and strength exercises in a fitness race format that claims to be the world's fastest-growing mass-participation fitness concept. | Culture"
+  - '[[The Economist]]'
+published: 2026-09-01T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Hyrox combines running, rowing and strength exercises in a fitness race format
+  that claims to be the world's fastest-growing mass-participation fitness
+  concept. | Culture
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 80ab62cc-bd84-4e56-9e54-948d5504ed24
+gnosis_ingested_at: '2026-09-07T15:02:37.494Z'
 ---
 ## A gruelling mix of running and strength-training has people working up a sweat
 

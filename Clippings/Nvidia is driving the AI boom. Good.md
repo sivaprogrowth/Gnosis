@@ -1,13 +1,20 @@
 ---
-title: "Nvidia is driving the AI boom. Good"
-source: "https://www.economist.com/leaders/2026/09/03/nvidia-is-driving-the-ai-boom-good"
+title: Nvidia is driving the AI boom. Good
+source: >-
+  https://www.economist.com/leaders/2026/09/03/nvidia-is-driving-the-ai-boom-good
 author:
-  - "[[The Economist]]"
-published: 2026-09-03
-created: 2026-09-06
-description: "Nvidia's rise to become the world's most valuable company at $5.4trn has sparked debate over whether Jensen Huang is fuelling an AI boom or inflating a bubble. | Leaders"
+  - '[[The Economist]]'
+published: 2026-09-03T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Nvidia's rise to become the world's most valuable company at $5.4trn has
+  sparked debate over whether Jensen Huang is fuelling an AI boom or inflating a
+  bubble. | Leaders
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 109b7df7-c531-49fe-9f4a-e3e75a61ba56
+gnosis_ingested_at: '2026-09-07T15:05:23.606Z'
 ---
 ## The chipmaker’s enormous bets are how capitalism is supposed to work
 

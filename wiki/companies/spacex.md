@@ -19,6 +19,8 @@ Major tech/space company with multiple sub-topics (Starlink, Starship, orbital c
 
 
 
+
+- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
 - [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]

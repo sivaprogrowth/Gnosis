@@ -87,6 +87,8 @@ Core concept referenced across multiple existing pages (AI-Native Services, From
 
 
 
+
+- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]

@@ -77,6 +77,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]
 - [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]

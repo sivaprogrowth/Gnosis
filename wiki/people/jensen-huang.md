@@ -2,19 +2,19 @@
 type: person
 title: "Jensen Huang"
 tags: [ingested]
-sources: ["how-jensen-huang-became-ais-taylor-swift"]
+sources: ["nvidia-driving-ai-boom-economist-2026"]
 ---
 
 # Jensen Huang
 
-_Stub page created automatically during ingest of [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]._
+_Stub page created automatically during ingest of [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]._
 
-CEO of Nvidia, a company with its own wiki page. The source is a detailed profile of him, and he'd naturally be cited by pages on Nvidia, AI semiconductor supply chain, US–China chip export controls, sovereign AI, and AI geopolitics—all of which already have pages. Clearly a person the wiki tracks.
+Already has a wiki page (concept/people/jensen-huang). The source deepens the portrait with cult-CEO comparisons and cash-flow analysis.
 
 ## Why this earned its own page
 
-CEO of Nvidia, a company with its own wiki page. The source is a detailed profile of him, and he'd naturally be cited by pages on Nvidia, AI semiconductor supply chain, US–China chip export controls, sovereign AI, and AI geopolitics—all of which already have pages. Clearly a person the wiki tracks.
+Already has a wiki page (concept/people/jensen-huang). The source deepens the portrait with cult-CEO comparisons and cash-flow analysis.
 
 ## Mentions
 
-- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
+- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

@@ -18,5 +18,7 @@ TSMC is the world's most critical semiconductor manufacturer and is directly rel
 ## Mentions
 
 
+
+- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]

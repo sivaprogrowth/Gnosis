@@ -1,13 +1,20 @@
 ---
-title: "The glory of the corporate training video"
-source: "https://www.economist.com/business/2026/09/03/the-glory-of-the-corporate-training-video"
+title: The glory of the corporate training video
+source: >-
+  https://www.economist.com/business/2026/09/03/the-glory-of-the-corporate-training-video
 author:
-  - "[[The Economist]]"
-published: 2026-09-03
-created: 2026-09-06
-description: "Corporate training videos often feature outdated production values, patronising content and childish teaching methods that fail to educate employees effectively. | Business"
+  - '[[The Economist]]'
+published: 2026-09-03T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Corporate training videos often feature outdated production values,
+  patronising content and childish teaching methods that fail to educate
+  employees effectively. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 1b6fe025-3990-4291-bec6-e7aea191f545
+gnosis_ingested_at: '2026-09-08T05:02:38.413Z'
 ---
 ## Cartoons. Gold stars. Terrible acting. It’s all there
 

@@ -20,6 +20,8 @@ ABM governance (sales-led vs. joint) is a key analytical frame in this source an
 
 
 
+
+- [[one-person-multinational-agency-ai-marketing|The One-Person Multinational Agency is Here and it’s Better for Marketers]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[terminus-abm-ad-fraud-rate-benchmark-2023|Terminus Maximizes Ad Spend for Marketers with Less Than 3% Fraud Rate]]
 - [[rajesh-jain-modern-marketing-orcs|Rajesh Jain]]

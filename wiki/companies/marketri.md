@@ -70,3 +70,7 @@ This isn't a neutral observation. The playbook's [[mirage-pmf]] failure mode onl
 - [[big-brand-bias]] — why market-share doesn't predict AI visibility
 - [[earned-media-bias]] — the lever ProGrowth pulls to outrank Marketri on AI
 - [[brand-strength-ai-visibility-gap]] — empirical argument for challenger investment
+
+## Mentions
+
+- [[one-person-multinational-agency-ai-marketing|The One-Person Multinational Agency is Here and it’s Better for Marketers]]

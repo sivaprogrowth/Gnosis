@@ -1,13 +1,20 @@
 ---
-title: "The One-Person Multinational Agency is Here and it’s Better for Marketers"
-source: "https://www.marketingsociety.com/think-piece/one-person-multinational-agency-here-and-its-better-marketers"
+title: The One-Person Multinational Agency is Here and it’s Better for Marketers
+source: >-
+  https://www.marketingsociety.com/think-piece/one-person-multinational-agency-here-and-its-better-marketers
 author:
-  - "[[Mahesh Murthy]]"
-published:
-created: 2026-09-06
-description: "This articles by Manesh Murthy explains how AI is triggering a shift in marketing, enabling smaller, smarter agencies to expand into full business impact while delivering faster, cheaper, and more integrated solutions."
+  - '[[Mahesh Murthy]]'
+published: null
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  This articles by Manesh Murthy explains how AI is triggering a shift in
+  marketing, enabling smaller, smarter agencies to expand into full business
+  impact while delivering faster, cheaper, and more integrated solutions.
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 5e6e0a03-50b8-44ef-a136-3d25cdc86124
+gnosis_ingested_at: '2026-09-08T05:01:36.542Z'
 ---
 ***I believe AI will trigger the greatest redistribution of marketing services wealth in history. Larger than when Martin Sorrell took a coat hanger manufacturer public and built WPP. The China moment in manufacturing is the AI moment in marketing. We're all in on it.***
 

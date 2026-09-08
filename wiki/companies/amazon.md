@@ -27,6 +27,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]

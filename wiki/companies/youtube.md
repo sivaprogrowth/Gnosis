@@ -17,4 +17,6 @@ Major platform discussed in depth with specific monetisation data; referenced in
 
 ## Mentions
 
+
+- [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

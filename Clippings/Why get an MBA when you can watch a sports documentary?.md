@@ -1,13 +1,20 @@
 ---
-title: "Why get an MBA when you can watch a sports documentary?"
-source: "https://www.economist.com/business/2026/09/02/why-get-an-mba-when-you-can-watch-a-sports-documentary"
+title: Why get an MBA when you can watch a sports documentary?
+source: >-
+  https://www.economist.com/business/2026/09/02/why-get-an-mba-when-you-can-watch-a-sports-documentary
 author:
-  - "[[The Economist]]"
-published: 2026-09-02
-created: 2026-09-06
-description: "Sports documentaries on streaming platforms offer business lessons, with Josep Guardiola's management style at Manchester City providing insights into leadership and performance. | Business"
+  - '[[The Economist]]'
+published: 2026-09-02T00:00:00.000Z
+created: 2026-09-06T00:00:00.000Z
+description: >-
+  Sports documentaries on streaming platforms offer business lessons, with Josep
+  Guardiola's management style at Manchester City providing insights into
+  leadership and performance. | Business
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: cf056f69-3d19-4175-913d-8b8cb2dbbfea
+gnosis_ingested_at: '2026-09-08T05:04:09.117Z'
 ---
 ## Business schools are running out of management ideas, but dressing rooms are full of them
 

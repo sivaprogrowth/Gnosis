@@ -17,4 +17,6 @@ CoreWeave is the largest and most-discussed listed neocloud, already adjacent to
 
 ## Mentions
 
+
+- [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
 - [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]

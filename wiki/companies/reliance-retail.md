@@ -18,5 +18,7 @@ Already has a parent page (Reliance Industries). Reliance Retail is a distinct, 
 ## Mentions
 
 
+
+- [[jio-rise-ambani-feud-tech-titan-bureaucrat|Jio’s Rise Was Shaped by a Billionaire Family Feud, an American Tech Titan and a Bureaucrat]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]

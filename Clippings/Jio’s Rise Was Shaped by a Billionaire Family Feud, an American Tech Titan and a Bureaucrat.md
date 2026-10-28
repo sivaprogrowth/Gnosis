@@ -1,13 +1,19 @@
 ---
-title: "Jio’s Rise Was Shaped by a Billionaire Family Feud, an American Tech Titan and a Bureaucrat"
-source: "https://www.bloomberg.com/news/newsletters/2026-10-28/jio-s-unlikely-making-the-ambani-feud-steve-jobs-and-a-bureaucrat?srnd=undefined"
+title: >-
+  Jio’s Rise Was Shaped by a Billionaire Family Feud, an American Tech Titan and
+  a Bureaucrat
+source: >-
+  https://www.bloomberg.com/news/newsletters/2026-10-28/jio-s-unlikely-making-the-ambani-feud-steve-jobs-and-a-bureaucrat?srnd=undefined
 author:
-  - "[[Menaka Doshi]]"
-published: 2026-10-28
-created: 2026-10-28
-description: "The making, losing and remaking of an Ambani dream"
+  - '[[Menaka Doshi]]'
+published: 2026-10-28T00:00:00.000Z
+created: 2026-10-28T00:00:00.000Z
+description: 'The making, losing and remaking of an Ambani dream'
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 65787ca8-e6ae-4a65-ae1d-6bf0e015e960
+gnosis_ingested_at: '2026-10-28T15:01:31.363Z'
 ---
 ![The listing ceremony of Jio Platforms at the National Stock Exchange in Mumbai.](https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGDwYqVGvYjw/v0/2000x1089.webp)
 

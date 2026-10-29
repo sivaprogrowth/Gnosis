@@ -25,6 +25,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]

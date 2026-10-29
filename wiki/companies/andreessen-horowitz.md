@@ -23,6 +23,8 @@ The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Cap
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

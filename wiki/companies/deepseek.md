@@ -20,6 +20,8 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]

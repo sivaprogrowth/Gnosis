@@ -20,6 +20,8 @@ McKinsey is the authoring organisation of this source and is referenced across m
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
 - [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
 - [[what-is-central-bank-digital-currency-cbdc|What is central bank digital currency (CBDC)?]]

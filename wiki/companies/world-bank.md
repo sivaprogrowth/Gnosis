@@ -22,6 +22,8 @@ A major multilateral institution that connects to existing wiki concepts includi
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]

@@ -21,6 +21,8 @@ Major tech giant that would be naturally cited alongside existing pages on AI-na
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

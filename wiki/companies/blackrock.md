@@ -17,4 +17,6 @@ Named as a co-participant in the $500bn Nvidia data-centre initiative. BlackRock
 
 ## Mentions
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

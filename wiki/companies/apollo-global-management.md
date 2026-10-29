@@ -17,4 +17,6 @@ Central subject of the source article; a giant of modern finance whose model (in
 
 ## Mentions
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[obituary-drexel-generation-apollo|An obituary for the Drexel generation]]

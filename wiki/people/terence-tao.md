@@ -2,19 +2,19 @@
 type: person
 title: "Terence Tao"
 tags: [ingested]
-sources: ["ai-math-riemann-hypothesis-claude-pep-talk"]
+sources: ["commanding-heights-ai-economics-thesis"]
 ---
 
 # Terence Tao
 
-_Stub page created automatically during ingest of [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]._
+_Stub page created automatically during ingest of [[commanding-heights-ai-economics-thesis|The Commanding Heights]]._
 
-A highly prominent named figure (the 'Mozart of math') quoted on AI capabilities at OpenAI, directly adjacent to existing pages on Agentic AI, AI Evals, OpenAI, Claude, and long-horizon R&D. Multiple existing pages on AI frontier research would plausibly cite him, and the wiki already tracks similar prominent academics and thought leaders.
+Already has an existing wiki page (concept/people/terence-tao), so promote is appropriate — this source adds new context about his AI commentary that enriches that page.
 
 ## Why this earned its own page
 
-A highly prominent named figure (the 'Mozart of math') quoted on AI capabilities at OpenAI, directly adjacent to existing pages on Agentic AI, AI Evals, OpenAI, Claude, and long-horizon R&D. Multiple existing pages on AI frontier research would plausibly cite him, and the wiki already tracks similar prominent academics and thought leaders.
+Already has an existing wiki page (concept/people/terence-tao), so promote is appropriate — this source adds new context about his AI commentary that enriches that page.
 
 ## Mentions
 
-- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

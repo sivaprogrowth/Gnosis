@@ -19,6 +19,8 @@ A well-defined think-tank publishing influential AI autonomy benchmarks. The wik
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
 - [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]

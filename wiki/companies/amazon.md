@@ -28,6 +28,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

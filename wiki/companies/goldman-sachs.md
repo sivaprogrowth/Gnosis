@@ -17,4 +17,6 @@ A major financial institution that joined Nvidia's $500bn data-centre initiative
 
 ## Mentions
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

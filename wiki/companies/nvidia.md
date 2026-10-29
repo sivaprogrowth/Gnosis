@@ -32,6 +32,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

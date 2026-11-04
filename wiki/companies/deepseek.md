@@ -21,6 +21,8 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]

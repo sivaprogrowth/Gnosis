@@ -17,4 +17,6 @@ A concrete, named AI tool used by 40%+ of U.S. physicians processing 20M queries
 
 ## Mentions
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]

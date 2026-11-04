@@ -22,6 +22,8 @@ Elon Musk's AI company with significant financial footprint ($5.1B R&D) and dire
 
 
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
 - [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
 - [[how-to-spot-ai-writing-economist-2026|How to spot AI writing]]

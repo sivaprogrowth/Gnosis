@@ -17,4 +17,6 @@ A named Chinese AI lab central to the essay's US-China AI competition narrative.
 
 ## Mentions
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

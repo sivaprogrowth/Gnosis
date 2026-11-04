@@ -27,6 +27,8 @@ Major incumbent referenced in the context of SaaS disruption, Agentforce (which 
 
 
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]

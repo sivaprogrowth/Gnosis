@@ -17,4 +17,6 @@ Already has a wiki page (concept/companies/harvey). Confirmed existing page.
 
 ## Mentions
 
+
+- [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]

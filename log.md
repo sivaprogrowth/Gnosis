@@ -189,3 +189,8 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 ## [2026-08-30 03:31] query | weekly synthesis brief — 21 highlights, 1 sources (automated)
 
 ## [2026-10-01 04:01] query | reading-pattern mirror — 2026-Q3 — 4 sources, 154 highlights (automated)
+
+## [2026-11-09 20:30] ingest | newsletter ideas — FS Brain Food + James Clear 3-2-1 (3088 pages)
+
+- 542 issues from personal Gmail split into 3730 ideas and merged to 3088 unique one-idea pages; 23 promotional emails skipped.
+- Pages live in `wiki/concepts/` tagged `newsletter-idea`; quotes checked against the source emails; no new person or company stubs.

@@ -123,3 +123,40 @@ Filed answers to non-trivial questions.
 | [[resurface-kog-bid-bonds-outreach-2026-05-25]] | 7 tactical hooks for the bonded-contractor outreach campaign — Roberge subject-line tactic, Aaron Ross plain-text + one-CTA rules, Vajre pain-recognition, Dib niche discipline, T2d3 multi-persona, Fitzpatrick on cold-approach expectations. | 2026-05-25 |
 | [[resurface-progrowth-fractional-marketing-seo-2026-05-25]] | 7 hooks for the marketri-overtake pillar — T2d3 topic-cluster, Dunford challenger style, Vajre thought-leader-not-best-practices, Dib niche discipline, Isenberg SEO 2.0, BoringMarketer 8k→80k proof, T2d3 reference-piece success metric. | 2026-05-25 |
 | [[reading-mirror-2026-Q2]] | First quarterly reading-pattern mirror (§4.11). 579 highlights / 8 books / 13 weeks. Load-bearing finding: 0 reading on stated-goal domains (AI/SaaS, B2B marketing, surety); 55% on solitary-craft discipline. Confirms Vedic *aparigraha* overlap at quarter-scale. | 2026-05-25 |
+
+## Newsletter ideas
+
+3088 one-idea pages in `wiki/concepts/`, tagged `newsletter-idea`, from FS Brain Food (Dec 2023 onward) and James Clear 3-2-1 (Aug 2019 onward). Listed by theme tag rather than one row each.
+
+| Theme tag | Pages |
+|------|------|
+| habits-and-behavior-change | 236 |
+| discipline-and-effort | 220 |
+| simplicity-and-priorities | 185 |
+| relationships-and-friendship | 185 |
+| happiness-and-contentment | 168 |
+| identity-and-self-knowledge | 160 |
+| learning-and-reading | 151 |
+| mental-models-and-thinking | 149 |
+| creativity-and-craft | 143 |
+| failure-and-resilience | 141 |
+| success-and-ambition | 132 |
+| fear-and-courage | 122 |
+| focus-and-attention | 109 |
+| decision-making | 107 |
+| patience-and-compounding | 105 |
+| business-and-strategy | 101 |
+| career-and-work | 85 |
+| writing-and-communication | 70 |
+| ethics-and-character | 69 |
+| change-and-adaptation | 63 |
+| time-and-mortality | 63 |
+| risk-and-uncertainty | 63 |
+| ego-and-humility | 58 |
+| money-and-wealth | 46 |
+| leadership | 46 |
+| trust-and-reputation | 38 |
+| health-and-energy | 35 |
+| parenting-and-family | 18 |
+| society-and-history | 12 |
+| power-and-status | 8 |

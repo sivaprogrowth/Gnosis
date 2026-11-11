@@ -2,19 +2,19 @@
 type: person
 title: "Charlie Munger"
 tags: [ingested]
-sources: ["munger-why-america-should-ban-crypto"]
+sources: ["spectrum-of-financial-dependence-and-independence"]
 ---
 
 # Charlie Munger
 
-_Stub page created automatically during ingest of [[munger-why-america-should-ban-crypto|Opinion | Why America Should Ban Crypto]]._
+_Stub page created automatically during ingest of [[spectrum-of-financial-dependence-and-independence|The Spectrum of Financial Dependence and Independence]]._
 
-Munger is a named person of the same tier as other tracked investors/thinkers (Peter Thiel, Paul Graham, Ben Thompson, etc.). His views on crypto, value investing, and rationality are the kind the user would want to reference repeatedly across adjacent topics like cryptocurrency, VC Winter, and financial regulation.
+Already has an existing wiki page (concept/people/charlie-munger). Promote confirms the existing page would be cited by this source.
 
 ## Why this earned its own page
 
-Munger is a named person of the same tier as other tracked investors/thinkers (Peter Thiel, Paul Graham, Ben Thompson, etc.). His views on crypto, value investing, and rationality are the kind the user would want to reference repeatedly across adjacent topics like cryptocurrency, VC Winter, and financial regulation.
+Already has an existing wiki page (concept/people/charlie-munger). Promote confirms the existing page would be cited by this source.
 
 ## Mentions
 
-- [[munger-why-america-should-ban-crypto|Opinion | Why America Should Ban Crypto]]
+- [[spectrum-of-financial-dependence-and-independence|The Spectrum of Financial Dependence and Independence]]

@@ -33,6 +33,8 @@ Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a 
 
 
 
+
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]

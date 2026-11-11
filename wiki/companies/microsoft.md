@@ -31,6 +31,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

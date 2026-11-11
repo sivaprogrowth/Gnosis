@@ -54,6 +54,8 @@ Google is a central entity across multiple existing pages (Google Search, Google
 
 
 
+
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]

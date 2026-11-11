@@ -1,28 +1,20 @@
 ---
 type: concept
-title: "AI export controls"
+title: "export controls"
 tags: [ingested]
-sources: ["anthropic-commercial-success-government-conflict-2026"]
+sources: ["economist-nvidia-ai-boom-dominance-2023"]
 ---
 
-# AI export controls
+# export controls
 
-_Stub page created automatically during ingest of [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]._
+_Stub page created automatically during ingest of [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]._
 
-A well-defined policy mechanism (per-sale export licences for frontier AI models) that intersects with multiple tracked topics: AI semiconductor supply chain, AI policy, Anthropic, OpenAI. Likely to recur across future sources on AI governance.
+Already has an existing wiki page (concept/concepts/ai-export-controls). US restrictions on AI chip exports to China are a recurring theme across multiple existing sources on AI geopolitics and Nvidia.
 
 ## Why this earned its own page
 
-A well-defined policy mechanism (per-sale export licences for frontier AI models) that intersects with multiple tracked topics: AI semiconductor supply chain, AI policy, Anthropic, OpenAI. Likely to recur across future sources on AI governance.
+Already has an existing wiki page (concept/concepts/ai-export-controls). US restrictions on AI chip exports to China are a recurring theme across multiple existing sources on AI geopolitics and Nvidia.
 
 ## Mentions
 
-
-
-
-
-- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
-- [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
-- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
-- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
-- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]

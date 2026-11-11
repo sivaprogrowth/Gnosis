@@ -17,4 +17,6 @@ Nvidia's primary chip rival, referenced across multiple existing pages on AI sem
 
 ## Mentions
 
+
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]

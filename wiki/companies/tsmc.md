@@ -21,6 +21,8 @@ TSMC is the world's most critical semiconductor manufacturer and is directly rel
 
 
 
+
+- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

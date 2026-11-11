@@ -2,19 +2,19 @@
 type: person
 title: "Clayton Christensen"
 tags: [ingested]
-sources: ["why-get-mba-when-you-can-watch-sports-documentary"]
+sources: ["how-to-invest-in-artificial-intelligence-economist-2023"]
 ---
 
 # Clayton Christensen
 
-_Stub page created automatically during ingest of [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]._
+_Stub page created automatically during ingest of [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]._
 
-Named as a canonical 'famous business thinker' associated with Disruptive Innovation — a concept already in the wiki ecosystem (adjacent to aggregation theory, general-purpose technology, etc.). The wiki already has pages for Peter Drucker, Theodore Levitt, and other management thinkers. Christensen is similarly well-defined and likely to be cited again across business/strategy sources.
+Already has an existing wiki page (concept/people/clayton-christensen). Promote confirms the page exists and should be linked.
 
 ## Why this earned its own page
 
-Named as a canonical 'famous business thinker' associated with Disruptive Innovation — a concept already in the wiki ecosystem (adjacent to aggregation theory, general-purpose technology, etc.). The wiki already has pages for Peter Drucker, Theodore Levitt, and other management thinkers. Christensen is similarly well-defined and likely to be cited again across business/strategy sources.
+Already has an existing wiki page (concept/people/clayton-christensen). Promote confirms the page exists and should be linked.
 
 ## Mentions
 
-- [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
+- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]

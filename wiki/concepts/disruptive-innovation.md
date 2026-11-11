@@ -2,19 +2,19 @@
 type: concept
 title: "Disruptive Innovation"
 tags: [ingested]
-sources: ["why-get-mba-when-you-can-watch-sports-documentary"]
+sources: ["how-to-invest-in-artificial-intelligence-economist-2023"]
 ---
 
 # Disruptive Innovation
 
-_Stub page created automatically during ingest of [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]._
+_Stub page created automatically during ingest of [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]._
 
-A well-defined, widely-cited management framework (Christensen's). The wiki already promotes adjacent frameworks like Aggregation Theory, Jobs-to-be-Done, and General-Purpose Technology. Disruptive Innovation is canonical enough to be referenced repeatedly across business-strategy sources already present in the wiki.
+Already has an existing wiki page (concept/concepts/disruptive-innovation). The source applies it as a core analytical lens. Multiple adjacent pages (AI market concentration, incumbent vs startup dynamics, platform shifts) would cite it.
 
 ## Why this earned its own page
 
-A well-defined, widely-cited management framework (Christensen's). The wiki already promotes adjacent frameworks like Aggregation Theory, Jobs-to-be-Done, and General-Purpose Technology. Disruptive Innovation is canonical enough to be referenced repeatedly across business-strategy sources already present in the wiki.
+Already has an existing wiki page (concept/concepts/disruptive-innovation). The source applies it as a core analytical lens. Multiple adjacent pages (AI market concentration, incumbent vs startup dynamics, platform shifts) would cite it.
 
 ## Mentions
 
-- [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
+- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]

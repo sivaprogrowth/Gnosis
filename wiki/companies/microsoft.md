@@ -17,4 +17,6 @@ Already has a page at concept/companies/microsoft.
 
 ## Mentions
 
+
+- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

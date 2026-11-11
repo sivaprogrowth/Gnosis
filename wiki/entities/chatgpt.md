@@ -17,4 +17,6 @@ Already has an existing wiki page (entity/entities/chatgpt). Confirm promote —
 
 ## Mentions
 
+
+- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

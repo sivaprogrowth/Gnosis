@@ -17,4 +17,6 @@ The FTC appears in multiple adjacent topics already tracked: AI export controls,
 
 ## Mentions
 
+
+- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[google-doubleclick-antitrust-case-economist-2023|The case against Google hinges on an antitrust “mistake”]]

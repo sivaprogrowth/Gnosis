@@ -30,6 +30,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]

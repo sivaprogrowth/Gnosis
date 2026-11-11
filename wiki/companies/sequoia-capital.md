@@ -21,6 +21,8 @@ A top-tier VC firm that the wiki already tracks similar entities for (Andreessen
 
 
 
+
+- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]

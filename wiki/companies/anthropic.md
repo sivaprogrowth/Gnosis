@@ -17,4 +17,6 @@ Already has a page at concept/companies/anthropic.
 
 ## Mentions
 
+
+- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

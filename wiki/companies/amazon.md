@@ -32,6 +32,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
 - [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]

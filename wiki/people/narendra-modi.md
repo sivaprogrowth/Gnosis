@@ -2,19 +2,19 @@
 type: person
 title: "Narendra Modi"
 tags: [ingested]
-sources: ["india-transport-infrastructure-upgrade-2023"]
+sources: ["india-states-compete-for-investment-economist-2023"]
 ---
 
 # Narendra Modi
 
-_Stub page created automatically during ingest of [[india-transport-infrastructure-upgrade-2023|India is getting an eye-wateringly big transport upgrade]]._
+_Stub page created automatically during ingest of [[india-states-compete-for-investment-economist-2023|How India’s states compete for investment]]._
 
-Already has an existing wiki page (concept/people/narendra-modi). Promote confirmed — page exists and would naturally cite this source.
+Already has an existing wiki page (concept/people/narendra-modi). This source adds a specific origin story (Vibrant Gujarat 2003) that multiple existing pages on India topics would naturally cite.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (concept/people/narendra-modi). Promote confirmed — page exists and would naturally cite this source.
+Already has an existing wiki page (concept/people/narendra-modi). This source adds a specific origin story (Vibrant Gujarat 2003) that multiple existing pages on India topics would naturally cite.
 
 ## Mentions
 
-- [[india-transport-infrastructure-upgrade-2023|India is getting an eye-wateringly big transport upgrade]]
+- [[india-states-compete-for-investment-economist-2023|How India’s states compete for investment]]

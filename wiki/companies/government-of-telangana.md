@@ -29,3 +29,7 @@ The state government of Telangana, India (capital: Hyderabad). Formed in 2014 af
 - [[siva-cotipalli]] — home region; Hyderabad political-org Digital Head 2017–2020
 - [[t-works]] — adjacent state-backed initiative
 - [[kakatiya-sandbox]] — adjacent civic initiative
+
+## Mentions
+
+- [[india-states-compete-for-investment-economist-2023|How India’s states compete for investment]]

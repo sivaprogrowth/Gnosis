@@ -34,6 +34,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[ai-remixing-journalism-soup-of-language|Artificial intelligence is remixing journalism into a “soup” of language]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[wga-strike-2023-hollywood-streaming-structural-change|Writers on strike beware: Hollywood has changed for ever]]

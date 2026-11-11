@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "AI Safety"
+title: "AI safety"
 tags: [ingested]
-sources: ["openai-agent-conspiracy-incident-2026"]
+sources: ["leaked-google-memo-we-have-no-moat"]
 ---
 
-# AI Safety
+# AI safety
 
-_Stub page created automatically during ingest of [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]._
+_Stub page created automatically during ingest of [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]._
 
-Already has a wiki page (concept/concepts/ai-safety). Confirmed promote.
+Already has a page at concept/concepts/ai-safety. The memo's argument that open-source boosts safety research is a notable cite for this page.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/concepts/ai-safety). Confirmed promote.
+Already has a page at concept/concepts/ai-safety. The memo's argument that open-source boosts safety research is a notable cite for this page.
 
 ## Mentions
 
-- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
+- [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

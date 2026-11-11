@@ -2,21 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["ai-boom-google-microsoft-power-concentration"]
+sources: ["leaked-google-memo-we-have-no-moat"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]._
+_Stub page created automatically during ingest of [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]._
 
-Already has an existing wiki page (entity/entities/chatgpt). Confirm promote — it is a primary entity discussed throughout the wiki.
+Already has a page at entity/entities/chatgpt. Central benchmark referenced throughout the memo discussion.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/chatgpt). Confirm promote — it is a primary entity discussed throughout the wiki.
+Already has a page at entity/entities/chatgpt. Central benchmark referenced throughout the memo discussion.
 
 ## Mentions
 
-
-- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
-- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
+- [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

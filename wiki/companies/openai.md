@@ -18,5 +18,7 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 ## Mentions
 
 
+
+- [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

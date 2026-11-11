@@ -24,6 +24,8 @@ HBR is a major publisher of management frameworks the wiki clearly tracks (e.g.,
 
 
 
+
+- [[how-to-recruit-with-softer-skills-in-mind|How to recruit with softer skills in mind]]
 - [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
 - [[lifes-work-jerry-seinfeld-hbr-2017|Jerry Seinfeld: Comedian, Innovator, Micromanager]]
 - [[linkedin-everyone-succeeds-nobody-fails|Where everyone’s ‘thrilled to announce…’: LinkedIn is where everyone succeeds and nobody ever fails]]

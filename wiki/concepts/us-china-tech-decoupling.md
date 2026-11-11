@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "US–China Tech Decoupling"
+title: "US-China tech decoupling"
 tags: [ingested]
-sources: ["vc-winter-titans-tech-investing-strategies-2023"]
+sources: ["china-generative-ai-capabilities-economist-2023"]
 ---
 
-# US–China Tech Decoupling
+# US-China tech decoupling
 
-_Stub page created automatically during ingest of [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]._
+_Stub page created automatically during ingest of [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]._
 
-A named, well-defined geopolitical-economic concept with multiple adjacent wiki pages already tracking it (ai-geopolitics, ai-export-controls, china-initiative, techno-nationalism, belt-and-road-initiative, americas-ai-labs-threat-cheap-chinese-rivals source). Promotes naturally.
+Already has a wiki page at concept/concepts/us-china-tech-decoupling. This source is a primary substantive reference for that topic.
 
 ## Why this earned its own page
 
-A named, well-defined geopolitical-economic concept with multiple adjacent wiki pages already tracking it (ai-geopolitics, ai-export-controls, china-initiative, techno-nationalism, belt-and-road-initiative, americas-ai-labs-threat-cheap-chinese-rivals source). Promotes naturally.
+Already has a wiki page at concept/concepts/us-china-tech-decoupling. This source is a primary substantive reference for that topic.
 
 ## Mentions
 
-- [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

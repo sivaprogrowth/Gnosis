@@ -17,4 +17,6 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 
 ## Mentions
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

@@ -23,6 +23,8 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[ramp-aeo-experiment-ai-hidden-offer|Ramp, a $60B company, hid a secret offer on its...]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

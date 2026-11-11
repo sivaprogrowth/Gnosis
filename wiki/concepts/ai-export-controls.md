@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "export controls"
+title: "US export controls on AI chips"
 tags: [ingested]
-sources: ["economist-nvidia-ai-boom-dominance-2023"]
+sources: ["china-generative-ai-capabilities-economist-2023"]
 ---
 
-# export controls
+# US export controls on AI chips
 
-_Stub page created automatically during ingest of [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]._
+_Stub page created automatically during ingest of [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]._
 
-Already has an existing wiki page (concept/concepts/ai-export-controls). US restrictions on AI chip exports to China are a recurring theme across multiple existing sources on AI geopolitics and Nvidia.
+Already has a wiki page at concept/concepts/ai-export-controls. This source provides substantive detail on the 2022 controls and their impact on China.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (concept/concepts/ai-export-controls). US restrictions on AI chip exports to China are a recurring theme across multiple existing sources on AI geopolitics and Nvidia.
+Already has a wiki page at concept/concepts/ai-export-controls. This source provides substantive detail on the 2022 controls and their impact on China.
 
 ## Mentions
 
-- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

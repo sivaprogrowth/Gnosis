@@ -20,6 +20,8 @@ China's first-era search monopoly; directly relevant to existing pages on Google
 
 
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]

@@ -17,4 +17,6 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 ## Mentions
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "U.S.-China Competition"
+title: "AI arms race"
 tags: [ingested]
-sources: ["thinks-814-rajesh-jain"]
+sources: ["china-generative-ai-capabilities-economist-2023"]
 ---
 
-# U.S.-China Competition
+# AI arms race
 
-_Stub page created automatically during ingest of [[thinks-814-rajesh-jain|Thinks 814]]._
+_Stub page created automatically during ingest of [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]._
 
-A core strategic concept already implicitly tracked across existing pages (us-china-tech-decoupling, ai-geopolitics, techno-nationalism, belt-and-road-initiative, ai-export-controls, china-initiative). However, us-china-tech-decoupling already exists and covers much of this ground — this would be redundant. Demoting to inline on reflection.
+Maps to existing concept/concepts/us-china-competition page. This source is a primary example of the AI dimension of that competition.
 
 ## Why this earned its own page
 
-A core strategic concept already implicitly tracked across existing pages (us-china-tech-decoupling, ai-geopolitics, techno-nationalism, belt-and-road-initiative, ai-export-controls, china-initiative). However, us-china-tech-decoupling already exists and covers much of this ground — this would be redundant. Demoting to inline on reflection.
+Maps to existing concept/concepts/us-china-competition page. This source is a primary example of the AI dimension of that competition.
 
 ## Mentions
 
-- [[thinks-814-rajesh-jain|Thinks 814]]
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

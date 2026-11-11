@@ -19,6 +19,8 @@ Already has a page at concept/companies/google.
 
 
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

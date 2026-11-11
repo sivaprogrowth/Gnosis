@@ -22,6 +22,8 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 
 
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]

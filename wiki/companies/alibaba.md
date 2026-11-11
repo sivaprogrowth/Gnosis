@@ -23,6 +23,8 @@ Major tech giant that would be naturally cited alongside existing pages on AI-na
 
 
 
+
+- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]

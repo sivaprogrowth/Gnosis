@@ -24,6 +24,8 @@ ByteDance already has a wiki page, and TikTok is a major platform appearing acro
 
 
 
+
+- [[wga-strike-2023-hollywood-streaming-structural-change|Writers on strike beware: Hollywood has changed for ever]]
 - [[hyrox-fitness-craze-economist-2026|Hyrox, the fitness craze that runs and runs]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
 - [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]

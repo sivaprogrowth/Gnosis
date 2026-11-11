@@ -17,4 +17,6 @@ A major policy think-tank already implicitly adjacent to wiki pages tracking Mer
 
 ## Mentions
 
+
+- [[ai-supercharges-startups-no-employees-prototypes|No employees and prototypes within days: AI supercharges start-ups]]
 - [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]

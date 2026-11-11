@@ -1,12 +1,17 @@
 ---
-title: "No employees and prototypes within days: AI supercharges start-ups"
-source: "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed"
-author:
-published: 2026-11-11
-created: 2026-11-11
-description: "Founders can now use AI agents to handle almost any role, from marketing to building labs"
+title: 'No employees and prototypes within days: AI supercharges start-ups'
+source: 'https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed'
+author: null
+published: 2026-11-11T00:00:00.000Z
+created: 2026-11-11T00:00:00.000Z
+description: >-
+  Founders can now use AI agents to handle almost any role, from marketing to
+  building labs
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: fb3f6e28-f6d1-4ef2-a73e-92a5f5f15d5d
+gnosis_ingested_at: '2026-11-11T16:16:05.265Z'
 ---
 Founders can now use AI agents to handle almost any role, from marketing to building labs
 

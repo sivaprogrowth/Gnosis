@@ -30,6 +30,8 @@ Microsoft is a major tech company referenced across numerous existing wiki pages
 
 
 
+
+- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]

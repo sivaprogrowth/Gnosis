@@ -27,6 +27,8 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 
 
 
+
+- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]

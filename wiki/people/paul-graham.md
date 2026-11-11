@@ -2,19 +2,19 @@
 type: person
 title: "Paul Graham"
 tags: [ingested]
-sources: ["how-to-earn-a-billion-dollars"]
+sources: ["how-universities-should-prepare-founders"]
 ---
 
 # Paul Graham
 
-_Stub page created automatically during ingest of [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]._
+_Stub page created automatically during ingest of [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]._
 
-Already has an existing wiki page (concept/people/paul-graham). Promote confirms existing page.
+Already has an existing wiki page (concept/people/paul-graham). Confirm promotion — this source is a primary essay by him and multiple existing pages (Y Combinator, startup concepts) would naturally cite him.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (concept/people/paul-graham). Promote confirms existing page.
+Already has an existing wiki page (concept/people/paul-graham). Confirm promotion — this source is a primary essay by him and multiple existing pages (Y Combinator, startup concepts) would naturally cite him.
 
 ## Mentions
 
-- [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
+- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]

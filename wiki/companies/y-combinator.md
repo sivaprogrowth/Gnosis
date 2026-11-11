@@ -1,32 +1,20 @@
 ---
 type: company
-title: Y Combinator
+title: "Y Combinator"
 tags: [ingested]
-sources: [makers-schedule-manager-schedule-paul-graham]
+sources: ["how-universities-should-prepare-founders"]
 ---
 
 # Y Combinator
 
-_Stub page created automatically during ingest of [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]._
+_Stub page created automatically during ingest of [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]._
 
-Y Combinator is a major institution in the startup world, co-founded by Paul Graham who already has a wiki page. Multiple existing pages (Paul Graham, The Brand Age Paul Graham source, startup-adjacent concepts) would plausibly cite it. It is clearly a company the user tracks given the presence of Paul Graham's page.
+Already has an existing wiki page (concept/companies/y-combinator). Central to this essay and cited across many existing startup/founder pages.
 
 ## Why this earned its own page
 
-Y Combinator is a major institution in the startup world, co-founded by Paul Graham who already has a wiki page. Multiple existing pages (Paul Graham, The Brand Age Paul Graham source, startup-adjacent concepts) would plausibly cite it. It is clearly a company the user tracks given the presence of Paul Graham's page.
+Already has an existing wiki page (concept/companies/y-combinator). Central to this essay and cited across many existing startup/founder pages.
 
 ## Mentions
 
-
-
-
-
-
-
-- [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
-- [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
-- [[levels-of-pmf-first-round|Levels of PMF | First Round]]
-- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
-- [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
-- [[do-things-that-dont-scale|Do Things that Don't Scale]]
-- [[makers-schedule-manager-schedule-paul-graham|Maker's Schedule, Manager's Schedule]]
+- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]

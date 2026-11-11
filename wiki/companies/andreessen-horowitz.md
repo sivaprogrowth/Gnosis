@@ -24,6 +24,8 @@ The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Cap
 
 
 
+
+- [[ai-collapsed-cost-building-not-knowing-what-to-build|AI has collapsed the cost of building products, but not...]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]

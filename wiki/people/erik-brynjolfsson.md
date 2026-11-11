@@ -2,19 +2,19 @@
 type: person
 title: "Erik Brynjolfsson"
 tags: [ingested]
-sources: ["ai-workplace-call-centers-wsj-2023"]
+sources: ["job-safety-from-ai-economist-2023"]
 ---
 
 # Erik Brynjolfsson
 
-_Stub page created automatically during ingest of [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]._
+_Stub page created automatically during ingest of [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]._
 
-Already has an existing wiki page (concept/people/erik-brynjolfsson). This source adds another citation to his work on AI and labor restructuring.
+Already has an existing wiki page (concept/people/erik-brynjolfsson). Stanford economist whose AI productivity research is directly cited in multiple existing sources and adjacent to many AI-economics pages.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (concept/people/erik-brynjolfsson). This source adds another citation to his work on AI and labor restructuring.
+Already has an existing wiki page (concept/people/erik-brynjolfsson). Stanford economist whose AI productivity research is directly cited in multiple existing sources and adjacent to many AI-economics pages.
 
 ## Mentions
 
-- [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
+- [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

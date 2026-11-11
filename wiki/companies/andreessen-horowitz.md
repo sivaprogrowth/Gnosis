@@ -2,21 +2,19 @@
 type: company
 title: "Andreessen Horowitz"
 tags: [ingested]
-sources: ["who-owns-the-generative-ai-platform"]
+sources: ["job-safety-from-ai-economist-2023"]
 ---
 
 # Andreessen Horowitz
 
-_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
+_Stub page created automatically during ingest of [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]._
 
-Already has a page at concept/companies/andreessen-horowitz. No new page needed — will be mapped to existing.
+Already has an existing wiki page (concept/companies/andreessen-horowitz). Quoted on AI moats; already tracked across multiple venture-capital and AI-strategy sources.
 
 ## Why this earned its own page
 
-Already has a page at concept/companies/andreessen-horowitz. No new page needed — will be mapped to existing.
+Already has an existing wiki page (concept/companies/andreessen-horowitz). Quoted on AI moats; already tracked across multiple venture-capital and AI-strategy sources.
 
 ## Mentions
 
-
-- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
-- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
+- [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

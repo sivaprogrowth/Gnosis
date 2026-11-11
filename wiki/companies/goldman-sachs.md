@@ -2,21 +2,19 @@
 type: company
 title: "Goldman Sachs"
 tags: [ingested]
-sources: ["nvidia-driving-ai-boom-economist-2026"]
+sources: ["job-safety-from-ai-economist-2023"]
 ---
 
 # Goldman Sachs
 
-_Stub page created automatically during ingest of [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]._
+_Stub page created automatically during ingest of [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]._
 
-A major financial institution that joined Nvidia's $500bn data-centre initiative alongside BlackRock and Blackstone — a specific named actor in the AI infrastructure financing thesis. Multiple existing pages on AI infrastructure and financing touch on this space, and Goldman Sachs is a prominent enough institution that future sources on AI capital markets, sovereign wealth, and infrastructure will plausibly cite it.
+Already has an existing wiki page (concept/companies/goldman-sachs). Cited for AI GDP research; already tracked.
 
 ## Why this earned its own page
 
-A major financial institution that joined Nvidia's $500bn data-centre initiative alongside BlackRock and Blackstone — a specific named actor in the AI infrastructure financing thesis. Multiple existing pages on AI infrastructure and financing touch on this space, and Goldman Sachs is a prominent enough institution that future sources on AI capital markets, sovereign wealth, and infrastructure will plausibly cite it.
+Already has an existing wiki page (concept/companies/goldman-sachs). Cited for AI GDP research; already tracked.
 
 ## Mentions
 
-
-- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
+- [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

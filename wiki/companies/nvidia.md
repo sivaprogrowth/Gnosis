@@ -2,21 +2,19 @@
 type: company
 title: "Nvidia"
 tags: [ingested]
-sources: ["who-owns-the-generative-ai-platform"]
+sources: ["job-safety-from-ai-economist-2023"]
 ---
 
 # Nvidia
 
-_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
+_Stub page created automatically during ingest of [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]._
 
-Already has a page at concept/companies/nvidia.
+Already has an existing wiki page (concept/companies/nvidia). Identified as the biggest corporate winner from AI, frequently cited across AI economics and infrastructure topics already in the wiki.
 
 ## Why this earned its own page
 
-Already has a page at concept/companies/nvidia.
+Already has an existing wiki page (concept/companies/nvidia). Identified as the biggest corporate winner from AI, frequently cited across AI economics and infrastructure topics already in the wiki.
 
 ## Mentions
 
-
-- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
-- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
+- [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

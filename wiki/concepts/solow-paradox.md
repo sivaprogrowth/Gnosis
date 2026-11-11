@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Solow Paradox"
+title: "Productivity Paradox"
 tags: [ingested]
-sources: ["ai-boom-lessons-from-history-economist-2023"]
+sources: ["job-safety-from-ai-economist-2023"]
 ---
 
-# Solow Paradox
+# Productivity Paradox
 
-_Stub page created automatically during ingest of [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]._
+_Stub page created automatically during ingest of [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]._
 
-A canonical named economic observation ('computers everywhere except in the productivity statistics') that is a natural cross-reference anchor for General-Purpose Technology, Productivity J-Curve, Engels' Pause, and AI transformation pages. Well-defined, repeatedly cited in economics literature, and highly likely to be referenced across the wiki's AI-economics cluster.
+Already has an existing wiki page (concept/concepts/solow-paradox). The source page heavily features this concept and multiple adjacent AI-economics sources would naturally cite it.
 
 ## Why this earned its own page
 
-A canonical named economic observation ('computers everywhere except in the productivity statistics') that is a natural cross-reference anchor for General-Purpose Technology, Productivity J-Curve, Engels' Pause, and AI transformation pages. Well-defined, repeatedly cited in economics literature, and highly likely to be referenced across the wiki's AI-economics cluster.
+Already has an existing wiki page (concept/concepts/solow-paradox). The source page heavily features this concept and multiple adjacent AI-economics sources would naturally cite it.
 
 ## Mentions
 
-- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
+- [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

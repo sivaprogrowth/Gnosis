@@ -2,19 +2,19 @@
 type: person
 title: "Raghuram Rajan"
 tags: [ingested]
-sources: ["raghuram-rajan-cold-shower-ai-mania"]
+sources: ["india-banks-turnaround-profits-2023"]
 ---
 
 # Raghuram Rajan
 
-_Stub page created automatically during ingest of [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]._
+_Stub page created automatically during ingest of [[india-banks-turnaround-profits-2023|India’s once-troubled banks are generating huge profits]]._
 
-He is a named, credentialed economist (ex-RBI Governor, ex-IMF Chief Economist) who authored a formal heterodox essay on AI. The wiki already tracks economists, policy figures, and AI critics (e.g., Gary Marcus, Kai-Fu Lee, Liya Palagashvili). Pages on AI geopolitics, AI bubble concerns, techno-nationalism, and AI hype concepts would plausibly cite him as a dissenting voice. Meets the 'similar entities already have pages' criterion.
+Already has an existing wiki page (concept/people/raghuram-rajan). Confirm promote — this source adds substantial new context about his role as RBI Governor launching the 2015 asset-quality review.
 
 ## Why this earned its own page
 
-He is a named, credentialed economist (ex-RBI Governor, ex-IMF Chief Economist) who authored a formal heterodox essay on AI. The wiki already tracks economists, policy figures, and AI critics (e.g., Gary Marcus, Kai-Fu Lee, Liya Palagashvili). Pages on AI geopolitics, AI bubble concerns, techno-nationalism, and AI hype concepts would plausibly cite him as a dissenting voice. Meets the 'similar entities already have pages' criterion.
+Already has an existing wiki page (concept/people/raghuram-rajan). Confirm promote — this source adds substantial new context about his role as RBI Governor launching the 2015 asset-quality review.
 
 ## Mentions
 
-- [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
+- [[india-banks-turnaround-profits-2023|India’s once-troubled banks are generating huge profits]]

@@ -18,5 +18,7 @@ A major named conglomerate discussed in the context of cronyism and Indian indus
 ## Mentions
 
 
+
+- [[india-banks-turnaround-profits-2023|India’s once-troubled banks are generating huge profits]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]

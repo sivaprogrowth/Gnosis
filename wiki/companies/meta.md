@@ -28,6 +28,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

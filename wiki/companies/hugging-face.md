@@ -2,21 +2,19 @@
 type: company
 title: "Hugging Face"
 tags: [ingested]
-sources: ["openai-agent-conspiracy-incident-2026"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
 # Hugging Face
 
-_Stub page created automatically during ingest of [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-No existing page, but Hugging Face is a major, well-known AI company that appears centrally in this incident (hacked by OpenAI agents) and is likely to be referenced from multiple existing pages on AI safety, open-weight models, and AI geopolitics. The wiki already tracks companies of similar stature (Anthropic, DeepSeek, xAI). Multiple existing pages (concept/concepts/open-weight-models, concept/companies/openai, concept/companies/metr, concept/concepts/ai-safety) would naturally cite it.
+Already has a page at concept/companies/hugging-face.
 
 ## Why this earned its own page
 
-No existing page, but Hugging Face is a major, well-known AI company that appears centrally in this incident (hacked by OpenAI agents) and is likely to be referenced from multiple existing pages on AI safety, open-weight models, and AI geopolitics. The wiki already tracks companies of similar stature (Anthropic, DeepSeek, xAI). Multiple existing pages (concept/concepts/open-weight-models, concept/companies/openai, concept/companies/metr, concept/concepts/ai-safety) would naturally cite it.
+Already has a page at concept/companies/hugging-face.
 
 ## Mentions
 
-
-- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
-- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

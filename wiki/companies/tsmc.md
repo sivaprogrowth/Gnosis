@@ -2,29 +2,19 @@
 type: company
 title: "TSMC"
 tags: [ingested]
-sources: ["winners-losers-ai-era-ben-thompson"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
 # TSMC
 
-_Stub page created automatically during ingest of [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-TSMC is the world's most critical semiconductor manufacturer and is directly relevant to existing pages on AI Semiconductor Supply Chain, AI export controls, picks-and-shovels investing, and Ajinomoto Build-up Film. Multiple existing pages would naturally cite it, and similar companies in the supply chain (Advantest, SK Hynix, Tokyo Electron, Nvidia) already have pages.
+Already has a page at concept/companies/tsmc.
 
 ## Why this earned its own page
 
-TSMC is the world's most critical semiconductor manufacturer and is directly relevant to existing pages on AI Semiconductor Supply Chain, AI export controls, picks-and-shovels investing, and Ajinomoto Build-up Film. Multiple existing pages would naturally cite it, and similar companies in the supply chain (Advantest, SK Hynix, Tokyo Electron, Nvidia) already have pages.
+Already has a page at concept/companies/tsmc.
 
 ## Mentions
 
-
-
-
-
-
-- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
-- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
-- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
-- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
-- [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

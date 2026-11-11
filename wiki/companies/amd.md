@@ -2,21 +2,19 @@
 type: company
 title: "AMD"
 tags: [ingested]
-sources: ["nvidia-central-bank-of-ai"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
 # AMD
 
-_Stub page created automatically during ingest of [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-Nvidia's primary chip rival, referenced across multiple existing pages on AI semiconductor supply chain, compute scaling, and AI market concentration. Multiple adjacent pages (concept/companies/nvidia, concept/concepts/ai-semiconductor-supply-chain, concept/concepts/compute-scaling) would naturally cite AMD as the second-largest AI GPU supplier and competitive foil.
+Already has a page at concept/companies/amd.
 
 ## Why this earned its own page
 
-Nvidia's primary chip rival, referenced across multiple existing pages on AI semiconductor supply chain, compute scaling, and AI market concentration. Multiple adjacent pages (concept/companies/nvidia, concept/concepts/ai-semiconductor-supply-chain, concept/concepts/compute-scaling) would naturally cite AMD as the second-largest AI GPU supplier and competitive foil.
+Already has a page at concept/companies/amd.
 
 ## Mentions
 
-
-- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
-- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

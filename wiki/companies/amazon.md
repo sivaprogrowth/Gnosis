@@ -30,6 +30,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
 - [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]

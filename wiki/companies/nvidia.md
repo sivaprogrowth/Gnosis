@@ -2,53 +2,19 @@
 type: company
 title: "Nvidia"
 tags: [ingested]
-sources: ["small-language-models-do-the-real-work"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
 # Nvidia
 
-_Stub page created automatically during ingest of [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a major actor in AI semiconductor supply chain (already a wiki concept) and would be cited by ai-semiconductor-supply-chain, small-language-models, and agentic-ai pages. Fits the tracked-company pattern.
+Already has a page at concept/companies/nvidia.
 
 ## Why this earned its own page
 
-Co-authored a key paper cited in the source on SLMs and agentic AI. Nvidia is a major actor in AI semiconductor supply chain (already a wiki concept) and would be cited by ai-semiconductor-supply-chain, small-language-models, and agentic-ai pages. Fits the tracked-company pattern.
+Already has a page at concept/companies/nvidia.
 
 ## Mentions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]
-- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
-- [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
-- [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
-- [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]
-- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
-- [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
-- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
-- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
-- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
-- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
-- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
-- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
-- [[raghuram-rajan-cold-shower-ai-mania|Raghuram Rajan’s Post]]
-- [[winners-losers-ai-era-ben-thompson|Winners & Losers of the AI Era]]
-- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
-- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

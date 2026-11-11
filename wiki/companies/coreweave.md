@@ -2,21 +2,19 @@
 type: company
 title: "CoreWeave"
 tags: [ingested]
-sources: ["neoclouds-coreweave-bigger-riskier-2026"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
 # CoreWeave
 
-_Stub page created automatically during ingest of [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-CoreWeave is the largest and most-discussed listed neocloud, already adjacent to existing pages on Nvidia, hyperscalers, AI infrastructure, and sovereign AI. Multiple existing pages (Nvidia, OpenAI, Microsoft, AI factories, AI semiconductor supply chain) would plausibly cite it, and it is a named company the user clearly tracks given the depth of AI infrastructure coverage.
+Already has a page at concept/companies/coreweave. Central to AI infrastructure economics discussed across multiple existing sources.
 
 ## Why this earned its own page
 
-CoreWeave is the largest and most-discussed listed neocloud, already adjacent to existing pages on Nvidia, hyperscalers, AI infrastructure, and sovereign AI. Multiple existing pages (Nvidia, OpenAI, Microsoft, AI factories, AI semiconductor supply chain) would plausibly cite it, and it is a named company the user clearly tracks given the depth of AI infrastructure coverage.
+Already has a page at concept/companies/coreweave. Central to AI infrastructure economics discussed across multiple existing sources.
 
 ## Mentions
 
-
-- [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
-- [[neoclouds-coreweave-bigger-riskier-2026|Neoclouds like CoreWeave are getting much bigger—and riskier]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

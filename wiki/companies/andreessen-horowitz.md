@@ -1,36 +1,20 @@
 ---
 type: company
-title: "Andreessen Horowitz (a16z)"
+title: "Andreessen Horowitz"
 tags: [ingested]
-sources: ["avoiding-death-on-the-yellow-brick-road"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
-# Andreessen Horowitz (a16z)
+# Andreessen Horowitz
 
-_Stub page created automatically during ingest of [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Capital) and the user clearly tracks investors and firms. a16z is the source of the essay's investment thesis and will be cited by multiple AI application-layer pages in the wiki.
+Already has a page at concept/companies/andreessen-horowitz. No new page needed — will be mapped to existing.
 
 ## Why this earned its own page
 
-The wiki already tracks many VC-adjacent companies (Y Combinator, WestBridge Capital) and the user clearly tracks investors and firms. a16z is the source of the essay's investment thesis and will be cited by multiple AI application-layer pages in the wiki.
+Already has a page at concept/companies/andreessen-horowitz. No new page needed — will be mapped to existing.
 
 ## Mentions
 
-
-
-
-
-
-
-
-
-- [[ai-collapsed-cost-building-not-knowing-what-to-build|AI has collapsed the cost of building products, but not...]]
-- [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
-- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
-- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
-- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
-- [[vc-winter-titans-tech-investing-strategies-2023|How the titans of tech investing are staying warm over the VC winter]]
-- [[vc-rediscovers-old-ways-tech-slump-2023|The tech slump is encouraging venture capital to rediscover old ways]]
-- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
-- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

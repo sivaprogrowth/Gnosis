@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "MLOps"
+title: "MLops"
 tags: [ingested]
-sources: ["ai-native-telco-radical-transformation"]
+sources: ["who-owns-the-generative-ai-platform"]
 ---
 
-# MLOps
+# MLops
 
-_Stub page created automatically during ingest of [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]._
+_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
 
-A well-defined, widely-referenced framework for operationalising ML models. Adjacent pages like ai-transformation, model-fine-tuning, synthetic-training-data, and agentic-workflow-governance would all plausibly cite it. Not a one-off mention — it is framed as an operational necessity.
+Already has a page at concept/concepts/mlops.
 
 ## Why this earned its own page
 
-A well-defined, widely-referenced framework for operationalising ML models. Adjacent pages like ai-transformation, model-fine-tuning, synthetic-training-data, and agentic-workflow-governance would all plausibly cite it. Not a one-off mention — it is framed as an operational necessity.
+Already has a page at concept/concepts/mlops.
 
 ## Mentions
 
-- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
+- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

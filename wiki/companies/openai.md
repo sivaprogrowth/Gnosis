@@ -83,6 +83,8 @@ OpenAI is the maker of ChatGPT (existing page) and is referenced across AI-searc
 
 
 
+
+- [[ramp-aeo-experiment-ai-hidden-offer|Ramp, a $60B company, hid a secret offer on its...]]
 - [[ai-supercharges-startups-no-employees-prototypes|No employees and prototypes within days: AI supercharges start-ups]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

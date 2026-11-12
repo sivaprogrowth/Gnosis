@@ -1030,7 +1030,7 @@ export function sourceMetaFromReader(doc: {
   const authors =
     typeof doc.author === "string" && doc.author.trim()
       ? doc.author
-          .split(/\s*(?:,|;| and | & )\s*/i)
+          .split(/\s*(?:,|;| and )\s*/i) // not "&": organisations like "McKinsey & Company"
           .map((a) => a.replace(/\[\[|\]\]/g, "").trim())
           .filter(Boolean)
       : null

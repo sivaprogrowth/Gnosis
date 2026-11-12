@@ -2,19 +2,19 @@
 type: person
 title: "Andrew Ng"
 tags: [ingested]
-sources: ["lightspeed-ai-reading-list-may-2023"]
+sources: ["technology-skills-every-employee-should-have"]
 ---
 
 # Andrew Ng
 
-_Stub page created automatically during ingest of [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]._
+_Stub page created automatically during ingest of [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]._
 
-Prominent ML researcher, founder of DeepLearning.ai, publisher of The Batch. Multiple existing pages on AI education, AI safety, foundation models, and AI winters would naturally cite him. Similar tracked researchers (Yann LeCun, Ilya Sutskever, etc.) already have pages.
+Andrew Ng already has an existing wiki page (concept/people/andrew-ng), so this is a promote by existing-page match.
 
 ## Why this earned its own page
 
-Prominent ML researcher, founder of DeepLearning.ai, publisher of The Batch. Multiple existing pages on AI education, AI safety, foundation models, and AI winters would naturally cite him. Similar tracked researchers (Yann LeCun, Ilya Sutskever, etc.) already have pages.
+Andrew Ng already has an existing wiki page (concept/people/andrew-ng), so this is a promote by existing-page match.
 
 ## Mentions
 
-- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]

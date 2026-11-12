@@ -17,4 +17,6 @@ Andrew Ng's AI education platform that publishes The Batch newsletter, widely ci
 
 ## Mentions
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]

@@ -18,5 +18,7 @@ Multiple existing pages reference Hype Cycle and related forecasting concepts (c
 ## Mentions
 
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]

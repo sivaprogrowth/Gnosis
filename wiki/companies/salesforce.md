@@ -28,6 +28,8 @@ Major incumbent referenced in the context of SaaS disruption, Agentforce (which 
 
 
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]

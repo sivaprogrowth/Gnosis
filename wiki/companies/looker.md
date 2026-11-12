@@ -17,4 +17,6 @@ The primary detailed case study for all four PMF levels with real board-deck met
 
 ## Mentions
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

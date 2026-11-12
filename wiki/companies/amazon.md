@@ -37,6 +37,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]
 - [[short-guide-to-corporate-rituals|A short guide to corporate rituals]]

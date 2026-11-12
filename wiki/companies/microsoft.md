@@ -24,6 +24,8 @@ Already has a page at concept/companies/microsoft.
 
 
 
+
+- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

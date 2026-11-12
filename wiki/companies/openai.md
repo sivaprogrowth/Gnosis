@@ -26,6 +26,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 
 
+
+- [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]

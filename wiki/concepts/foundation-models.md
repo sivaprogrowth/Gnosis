@@ -17,4 +17,6 @@ Already has a wiki page at concept/concepts/foundation-models. This source is sq
 
 ## Mentions
 
+
+- [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

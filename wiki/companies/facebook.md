@@ -28,6 +28,8 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 
 
 
+
+- [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
 - [[how-tiktok-broke-social-media|How TikTok broke social media]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]

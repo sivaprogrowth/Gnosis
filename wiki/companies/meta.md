@@ -36,6 +36,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[ai-remixing-journalism-soup-of-language|Artificial intelligence is remixing journalism into a “soup” of language]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

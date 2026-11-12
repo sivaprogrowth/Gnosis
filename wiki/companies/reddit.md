@@ -19,6 +19,8 @@ Reddit is the central subject of the source and is highly likely to be cited by 
 
 
 
+
+- [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
 - [[overemployment-tech-workers-two-timing-employers|How to two-time your employer: a tech worker’s guide]]
 - [[ai-remixing-journalism-soup-of-language|Artificial intelligence is remixing journalism into a “soup” of language]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

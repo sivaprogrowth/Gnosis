@@ -23,6 +23,8 @@ McKinsey is the authoring organisation of this source and is referenced across m
 
 
 
+
+- [[next-wave-remote-work-offshoring-jobs-overseas|Next Wave of Remote Work Is About Outsourcing Jobs Overseas]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]

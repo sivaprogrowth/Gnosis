@@ -17,4 +17,6 @@ Remote work is the stated primary structural enabler of overemployment and is a 
 
 ## Mentions
 
+
+- [[next-wave-remote-work-offshoring-jobs-overseas|Next Wave of Remote Work Is About Outsourcing Jobs Overseas]]
 - [[overemployment-tech-workers-two-timing-employers|How to two-time your employer: a tech worker’s guide]]

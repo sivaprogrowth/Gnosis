@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "Developing a Worldview"
-authors: ["Casey Rosengren"]
+authors:
   - "Casey Rosengren"
 published: "2023-01-31"
 source_url: "https://every.to/no-small-plans/developing-a-worldview"

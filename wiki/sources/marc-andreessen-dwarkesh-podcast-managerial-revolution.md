@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution"
-authors: ["Dwarkesh Patel"]
+authors:
   - Dwarkesh Patel
   - Marc Andreessen
 published: "2023-02-01"

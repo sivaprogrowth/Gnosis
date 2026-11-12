@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "Make money out of thin air with prompts — Stable Diffusion, ChatGPT, etc"
-authors: ["Ramsri Goutham"]
+authors:
   - Rams Rigoutham
 published: "2023-03-05"
 source_url: https://ramsrigoutham.medium.com/make-money-out-of-thin-air-with-prompts-stable-diffusion-chatgpt-etc-4c886f018898

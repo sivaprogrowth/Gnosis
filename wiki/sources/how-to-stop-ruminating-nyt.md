@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "How to Stop Ruminating"
-authors: ["Hannah Seo"]
+authors:
   - Hannah Seo
 published: "2023-02-01"
 source_url: "https://www.nytimes.com/2023/02/01/well/mind/stop-rumination-worry.html"

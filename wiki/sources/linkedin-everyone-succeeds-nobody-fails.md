@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "Where everyone's 'thrilled to announce…': LinkedIn is where everyone succeeds and nobody ever fails"
-authors: ["ET CONTRIBUTORS"]
+authors:
   - "Papa CJ"
 published: "2026-08-08"
 source_url: "https://m.economictimes.com/opinion/et-commentary/where-everyones-thrilled-to-announce-linkedin-is-where-everyone-succeeds-and-nobody-ever-fails/articleshow/133056920.cms"

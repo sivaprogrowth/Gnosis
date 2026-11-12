@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "How to know what you really want"
-authors: ["Luke Burgis"]
+authors:
   - Luke Burgis
 published: "2021-12-15"
 source_url: https://psyche.co/guides/how-to-know-what-you-really-want-and-be-free-from-mimetic-desire

@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "Great leaders get organizations to bridge four important chasms"
-authors: ["Raghu Raman"]
+authors:
   - "Raghu Raman"
 published: "2023-03-06"
 source_url: "https://www.livemint.com/opinion/columns/great-leaders-get-organizations-to-bridge-four-important-chasms-11678122911635.html"

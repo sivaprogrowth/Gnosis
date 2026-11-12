@@ -24,6 +24,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]

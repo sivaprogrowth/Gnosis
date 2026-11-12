@@ -18,5 +18,7 @@ AI copyright — specifically the legal dispute over training data and generated
 ## Mentions
 
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
 - [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]

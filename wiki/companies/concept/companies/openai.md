@@ -2,19 +2,19 @@
 type: company
 title: "OpenAI"
 tags: [ingested]
-sources: ["economist-ai-labs-race-heats-up-2023"]
+sources: ["economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # OpenAI
 
-_Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
+_Stub page created automatically during ingest of [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]._
 
-Already exists as concept/companies/openai — this is a duplicate candidate; the page exists and would naturally be cited by this source.
+Already has a page at concept/companies/openai; this source would cite it naturally.
 
 ## Why this earned its own page
 
-Already exists as concept/companies/openai — this is a duplicate candidate; the page exists and would naturally be cited by this source.
+Already has a page at concept/companies/openai; this source would cite it naturally.
 
 ## Mentions
 
-- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

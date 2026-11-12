@@ -35,6 +35,8 @@ Central actor in the source; owns Facebook and Instagram both of which have exis
 
 
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[ai-remixing-journalism-soup-of-language|Artificial intelligence is remixing journalism into a “soup” of language]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

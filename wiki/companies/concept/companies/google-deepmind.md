@@ -2,19 +2,19 @@
 type: company
 title: "Google DeepMind"
 tags: [ingested]
-sources: ["economist-ai-labs-race-heats-up-2023"]
+sources: ["economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Google DeepMind
 
-_Stub page created automatically during ingest of [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]._
+_Stub page created automatically during ingest of [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]._
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already has a page at concept/companies/google-deepmind; Jonas Degrave's ChatGPT experiment is cited in this source.
 
 ## Why this earned its own page
 
-Already exists as concept/companies/google-deepmind — page exists and is directly relevant.
+Already has a page at concept/companies/google-deepmind; Jonas Degrave's ChatGPT experiment is cited in this source.
 
 ## Mentions
 
-- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

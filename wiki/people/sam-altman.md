@@ -17,4 +17,6 @@ CEO of OpenAI (already a major wiki company page). Multiple existing pages (Open
 
 ## Mentions
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

@@ -17,4 +17,6 @@ Already has adjacency with AI tools tracked in the wiki (ChatGPT, Claude, Gemini
 
 ## Mentions
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

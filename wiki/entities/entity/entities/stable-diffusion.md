@@ -2,19 +2,19 @@
 type: entity
 title: "Stable Diffusion"
 tags: [ingested]
-sources: ["make-money-with-prompts-stable-diffusion-chatgpt"]
+sources: ["economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Stable Diffusion
 
-_Stub page created automatically during ingest of [[make-money-with-prompts-stable-diffusion-chatgpt|Make money out of thin air with prompts — Stable Diffusion, ChatGPT, etc]]._
+_Stub page created automatically during ingest of [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]._
 
-A major, named AI image-generation model that the wiki would plausibly cite from multiple angles (AI content creation, open-weight models, AI advertising, generative AI monetisation). The wiki already tracks comparable AI model entities (Midjourney, DALL-E, GPT-4o, Claude, Gemini, DeepSeek, Mistral). Stable Diffusion is a distinct open-weight model with broad relevance across existing concept pages.
+Already has a page at entity/entities/stable-diffusion; this source cites its copyright case prominently.
 
 ## Why this earned its own page
 
-A major, named AI image-generation model that the wiki would plausibly cite from multiple angles (AI content creation, open-weight models, AI advertising, generative AI monetisation). The wiki already tracks comparable AI model entities (Midjourney, DALL-E, GPT-4o, Claude, Gemini, DeepSeek, Mistral). Stable Diffusion is a distinct open-weight model with broad relevance across existing concept pages.
+Already has a page at entity/entities/stable-diffusion; this source cites its copyright case prominently.
 
 ## Mentions
 
-- [[make-money-with-prompts-stable-diffusion-chatgpt|Make money out of thin air with prompts — Stable Diffusion, ChatGPT, etc]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

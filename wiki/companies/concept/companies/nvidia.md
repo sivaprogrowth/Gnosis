@@ -2,19 +2,19 @@
 type: company
 title: "Nvidia"
 tags: [ingested]
-sources: ["fast-company-most-innovative-ai-companies-2023"]
+sources: ["economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Nvidia
 
-_Stub page created automatically during ingest of [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]._
+_Stub page created automatically during ingest of [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]._
 
-Already has a wiki page (concept/companies/nvidia). Confirmed promote — referenced across AI semiconductor supply chain, picks-and-shovels investing, and this source.
+Already has a page at concept/companies/nvidia; cited as GPU manufacturer central to AI compute and as LLM trainer (Megatron).
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/companies/nvidia). Confirmed promote — referenced across AI semiconductor supply chain, picks-and-shovels investing, and this source.
+Already has a page at concept/companies/nvidia; cited as GPU manufacturer central to AI compute and as LLM trainer (Megatron).
 
 ## Mentions
 
-- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

@@ -36,6 +36,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]
 - [[short-guide-to-corporate-rituals|A short guide to corporate rituals]]
 - [[wga-strike-2023-hollywood-streaming-structural-change|Writers on strike beware: Hollywood has changed for ever]]

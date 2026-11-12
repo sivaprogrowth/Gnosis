@@ -21,6 +21,8 @@ Major tech/space company with multiple sub-topics (Starlink, Starship, orbital c
 
 
 
+
+- [[elon-musk-tesla-body-new-yorker-satire|Elon Musk’s New Frontier: Your Body | The New Yorker]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
 - [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]

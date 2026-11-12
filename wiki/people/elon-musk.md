@@ -2,19 +2,19 @@
 type: person
 title: "Elon Musk"
 tags: [ingested]
-sources: ["nvidia-driving-ai-boom-economist-2026"]
+sources: ["elon-musk-tesla-body-new-yorker-satire"]
 ---
 
 # Elon Musk
 
-_Stub page created automatically during ingest of [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]._
+_Stub page created automatically during ingest of [[elon-musk-tesla-body-new-yorker-satire|Elon Musk’s New Frontier: Your Body | The New Yorker]]._
 
-Already has a wiki page (concept/people/elon-musk). Compared directly to Jensen Huang as a cult-CEO archetype.
+Already has a wiki page at concept/people/elon-musk. Confirm promote to that existing page.
 
 ## Why this earned its own page
 
-Already has a wiki page (concept/people/elon-musk). Compared directly to Jensen Huang as a cult-CEO archetype.
+Already has a wiki page at concept/people/elon-musk. Confirm promote to that existing page.
 
 ## Mentions
 
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
+- [[elon-musk-tesla-body-new-yorker-satire|Elon Musk’s New Frontier: Your Body | The New Yorker]]

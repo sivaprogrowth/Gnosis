@@ -980,8 +980,6 @@ export type SourceMeta = {
  * from the body is never clobbered with null.
  */
 export function applySourceMeta(sourcePage: string, meta: SourceMeta): string {
-  if (!meta.published && !(meta.authors && meta.authors.length > 0)) return sourcePage
-
   let parsed: matter.GrayMatterFile<string>
   try {
     parsed = matter(sourcePage)
@@ -991,10 +989,53 @@ export function applySourceMeta(sourcePage: string, meta: SourceMeta): string {
     return sourcePage
   }
 
-  const data = { ...(parsed.data ?? {}) }
+  const data: Record<string, unknown> = { ...(parsed.data ?? {}) }
+  const hadNullPublished = data.published === null || data.published === "null" || data.published === ""
+  const hadEmptyAuthors =
+    data.authors === null || (Array.isArray(data.authors) && data.authors.length === 0)
+
+  // Never emit `published: null` / `authors: null`: Quartz reports the former as
+  // `found invalid date "null"` on every build. Drop the key so the date falls
+  // through to git, and let a known value (below) put it back.
+  if (hadNullPublished) delete data.published
+  if (hadEmptyAuthors) delete data.authors
   if (meta.published) data.published = meta.published
   if (meta.authors && meta.authors.length > 0) data.authors = meta.authors
-  return matter.stringify(parsed.content, data)
+
+  const changed =
+    hadNullPublished || hadEmptyAuthors || !!meta.published || !!(meta.authors && meta.authors.length)
+  return changed ? matter.stringify(parsed.content, data) : sourcePage
+}
+
+/**
+ * Bibliographic metadata from a Readwise Reader document. Reader resolves
+ * `published_date` and `author` from the page's own metadata at save time, so
+ * these are usually right where the stripped article body has nothing.
+ */
+export function sourceMetaFromReader(doc: {
+  published_date?: string | number | null
+  author?: string | null
+}): SourceMeta {
+  let published: string | null = null
+  const raw = doc.published_date
+  if (typeof raw === "number" && Number.isFinite(raw)) {
+    // Older Reader payloads carried epoch milliseconds.
+    const d = new Date(raw)
+    published = Number.isNaN(d.valueOf()) ? null : d.toISOString().slice(0, 10)
+  } else if (typeof raw === "string" && raw.trim()) {
+    const d = new Date(raw.trim())
+    published = Number.isNaN(d.valueOf()) ? null : d.toISOString().slice(0, 10)
+  }
+
+  const authors =
+    typeof doc.author === "string" && doc.author.trim()
+      ? doc.author
+          .split(/\s*(?:,|;| and | & )\s*/i)
+          .map((a) => a.replace(/\[\[|\]\]/g, "").trim())
+          .filter(Boolean)
+      : null
+
+  return { published, authors: authors && authors.length > 0 ? authors : null }
 }
 
 /**
@@ -1301,9 +1342,10 @@ async function ingestOneReaderDoc(doc: ReaderDocument): Promise<CronClippingResu
     return { filename, status: "failed", reason: `job insert: ${jobErr?.message}` }
   }
   const jobId = job.id
+  const sourceMeta = sourceMetaFromReader(doc)
 
   try {
-    await runSynthesisOnly(jobId)
+    await runSynthesisOnly(jobId, sourceMeta)
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e)
     await markJobFailed(jobId, msg).catch(() => {})
@@ -1312,9 +1354,14 @@ async function ingestOneReaderDoc(doc: ReaderDocument): Promise<CronClippingResu
   }
 
   try {
-    const result = await runCommit(jobId, (frame) => {
-      if (frame.message) console.log(`[cron reader ${title}] ${frame.stage}: ${frame.message}`)
-    })
+    const result = await runCommit(
+      jobId,
+      (frame) => {
+        if (frame.message) console.log(`[cron reader ${title}] ${frame.stage}: ${frame.message}`)
+      },
+      [],
+      sourceMeta,
+    )
     // Only after a clean commit do we retire the doc from the pending set.
     await markReaderDone(doc).catch((e) =>
       console.warn(

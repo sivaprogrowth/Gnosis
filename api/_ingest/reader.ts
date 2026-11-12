@@ -44,6 +44,7 @@ export interface ReaderDocument {
   parent_id: string | null
   saved_at: string | null
   created_at: string | null
+  published_date?: string | number | null // ISO datetime from Reader; older payloads used epoch ms
 }
 
 interface ListResponse {

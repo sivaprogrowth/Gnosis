@@ -15,6 +15,13 @@ const defaultOptions: Options = {
 // YYYY-MM-DD
 const iso8601DateOnlyRegex = /^\d{4}-\d{2}-\d{2}$/
 
+/** Frontmatter date value → MaybeDate, with null / "" / "null" meaning "absent". */
+function fmDate(v: unknown): MaybeDate {
+  if (v === null || v === undefined) return undefined
+  if (typeof v === "string" && (v.trim() === "" || v.trim().toLowerCase() === "null")) return undefined
+  return v as MaybeDate
+}
+
 function coerceDate(fp: string, d: any): Date {
   // check ISO8601 date-only format
   // we treat this one as local midnight as the normal
@@ -74,9 +81,12 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
                 created ||= st.birthtimeMs
                 modified ||= st.mtimeMs
               } else if (source === "frontmatter" && file.data.frontmatter) {
-                created ||= file.data.frontmatter.created as MaybeDate
-                modified ||= file.data.frontmatter.modified as MaybeDate
-                published ||= file.data.frontmatter.published as MaybeDate
+                // Ingested source pages carry `published: null` when the article's
+                // date is unknown. Treat null/empty as "not provided" so the next
+                // source in `priority` is consulted instead of warning on "null".
+                created ||= fmDate(file.data.frontmatter.created)
+                modified ||= fmDate(file.data.frontmatter.modified)
+                published ||= fmDate(file.data.frontmatter.published)
               } else if (source === "git" && repo) {
                 try {
                   const relativePath = path.relative(repositoryWorkdir, fullFp)
@@ -91,6 +101,10 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
                 }
               }
             }
+
+            // No publication date from any source: fall back to the last git
+            // modification (the ingest date) rather than the build timestamp.
+            published ||= modified
 
             file.data.dates = {
               created: coerceDate(fp, created),

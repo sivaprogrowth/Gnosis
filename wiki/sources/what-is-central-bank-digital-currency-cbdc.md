@@ -2,7 +2,7 @@
 type: source
 source_type: article
 title: "What is central bank digital currency (CBDC)?"
-authors: ["McKinsey", "Company"]
+authors: ["McKinsey & Company"]
 published: "2023-03-01"
 source_url: https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-central-bank-digital-currency-cbdc
 accessed: 2025-01-30

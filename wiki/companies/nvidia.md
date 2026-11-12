@@ -19,6 +19,8 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 
 
 
+
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

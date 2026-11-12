@@ -17,4 +17,6 @@ Google already has an existing wiki page (concept/companies/google). This is a p
 
 ## Mentions
 
+
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[how-to-avoid-bad-hires|How to avoid bad hires]]

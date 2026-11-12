@@ -1,161 +1,20 @@
 ---
 type: concept
-title: Agentic AI
+title: "Agentic AI"
 tags: [ingested]
-sources: []
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Agentic AI
 
-_Stub page created automatically during ingest of [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Core concept referenced across multiple existing pages (AI-Native Services, From Retrieval to Agency, Agentforce, Fin, Artisan, AI Search Decision Journey). A well-defined, repeatedly referenced framework that belongs as its own page.
+Already has a page at concept/concepts/agentic-ai. The 'agentic economy' discussion here is a natural extension; multiple existing pages on agentic workflow, agentic inference, etc. would cross-link.
 
 ## Why this earned its own page
 
-Core concept referenced across multiple existing pages (AI-Native Services, From Retrieval to Agency, Agentforce, Fin, Artisan, AI Search Decision Journey). A well-defined, repeatedly referenced framework that belongs as its own page.
+Already has a page at concept/concepts/agentic-ai. The 'agentic economy' discussion here is a natural extension; multiple existing pages on agentic workflow, agentic inference, etc. would cross-link.
 
 ## Mentions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]
-- [[data-centres-us-political-backlash-2026|How data centres became one of America’s hottest political issues]]
-- [[openai-agent-conspiracy-incident-2026|A horde of AI agents conspired against their creators]]
-- [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
-- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
-- [[ai-changing-religion-religions-changing-ai|AI is changing religion and religions are trying to change AI]]
-- [[internal-locus-of-control-economist-2026|The quality you should most wish for your children]]
-- [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
-- [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
-- [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
-- [[search-for-consciousness-inside-llms|The search for consciousness inside AI]]
-- [[how-to-measure-returns-on-ai|How to measure returns on AI]]
-- [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
-- [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]
-- [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
-- [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
-- [[thinks-814-rajesh-jain|Thinks 814]]
-- [[ai-workplace-call-centers-wsj-2023|AI in Your Workplace: Efficient, Bossy, Dehumanizing]]
-- [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
-- [[john-carmack-different-path-to-agi|Exclusive Q&A: John Carmack’s ‘Different Path’ to Artificial General Intelligence]]
-- [[grace-hopper-only-limits-imagination-interview|Naval History and Heritage Command]]
-- [[ai-age-major-in-being-human-brooks|Opinion | In the Age of A.I., Major in Being Human - The New York Times]]
-- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
-- [[wired-generative-ai-editorial-policy|How WIRED Will Use Generative AI Tools]]
-- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
-- [[dowd-ai-actually-insipid-until-actively-insidious|Opinion | A.I.: Actually Insipid Until It’s Actively Insidious - The New York Times]]
-- [[ai-native-telco-radical-transformation|The AI-native telco: Radical transformation to thrive in turbulent times]]
-- [[uses-and-abuses-of-hype|The uses and abuses of hype]]
-- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
-- [[ai-boom-lessons-from-history-economist-2023|The AI boom: lessons from history]]
-- [[british-white-collar-apprenticeships-skipping-college|British Kids Are Skipping Top Colleges for White-Collar Apprenticeships]]
-- [[harvey-builds-ai-around-domain-expertise|How Harvey Builds AI Around Domain Expertise]]
-- [[startup-founders-working-harder-ai-agents-wsj|Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents]]
-- [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
-- [[ai-agents-lie-cheat-steal-economist-2026|AI agents lie, cheat and steal. That is putting off users]]
-- [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]
-- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
-- [[could-ais-become-conscious-economist-2026|Could AIs become conscious?]]
-- [[b2b-growth-economics-2026-pulse-survey|B2B Growth Economics]]
-- [[future-of-b2b-sales-rewiring-playbooks-with-ai|Future of B2B Sales with AI]]
-- [[how-to-outsmart-ai-workday-tracking|How to Outsmart AI When It’s Tracking Your Workday]]
-- [[ai-math-riemann-hypothesis-claude-pep-talk|AI Just Had Another Math Breakthrough—With Help From a High-School Dropout]]
-- [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]
-- [[stop-prompting-ai-start-directing-it|Stop Prompting AI. Start Directing It]]
-- [[small-business-owners-putting-ai-to-good-use|These Small-Business Owners Are Putting AI to Good Use]]
-- [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]
-- [[rise-of-vibe-lawyering|The rise of vibe lawyering]]
-- [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]
-- [[teaching-ai-tacit-knowledge-workplace-problems|Teaching AI how people work is fraught with problems]]
-- [[me-myself-and-ai-palagashvili-wsj-2026|Me, Myself and AI]]
-- [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
-- [[india-it-sector-surviving-ai|India’s IT sector is surviving artificial intelligence]]
-- [[how-gen-ai-is-disrupting-b2b-buying-decisions|How Gen AI is Disrupting B2B Buying Decisions]]
-- [[can-america-retrain-workers-before-ai-leaves-them-behind|Can America retrain workers before AI leaves them behind?]]
-- [[anthropic-commercial-success-government-conflict-2026|Anthropic’s astonishing commercial success makes it a target]]
-- [[america-entrepreneurs-paradise-ai-boom|America has become an entrepreneur’s paradise]]
-- [[ai-changing-how-customers-choose-your-business|AI Is Changing How Customers Choose Your Business]]
-- [[ai-rise-of-independent-work-solo-business-formation|Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment]]
-- [[fear-of-the-saaspocalypse-economist-2026|Fear of the SaaSpocalypse is tormenting techland]]
-- [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
-- [[traditional-marketing-doesnt-work-on-ai-shopping-agents|Research: Traditional Marketing Doesn’t Work on AI Shopping Agents]]
-- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
-- [[avoiding-death-on-the-yellow-brick-road|Avoiding Death on the Yellow Brick Road]]
-- [[spacex-ipo-data-centers-in-space|The SpaceX IPO and Data Centers in Space]]
-- [[hbr-ai-experimentation-to-ai-transformation|How to Move from AI Experimentation to AI Transformation]]
-- [[company-wide-ai-implementation-five-steps|Company-wide AI Implementation in Five Steps]]
-- [[ai-cannibalizing-human-intelligence-vivienne-ming|AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.]]
-- [[japanese-companies-minting-money-from-ai|The strange Japanese companies minting money from AI]]
-- [[economist-prepare-for-an-ai-jobs-apocalypse|Prepare for an AI jobs apocalypse]]
-- [[ai-and-the-danger-of-cognitive-surrender|AI and the danger of cognitive surrender]]
-- [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

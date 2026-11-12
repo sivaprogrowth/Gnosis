@@ -2,21 +2,19 @@
 type: company
 title: "YouTube"
 tags: [ingested]
-sources: ["how-tiktok-broke-social-media"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # YouTube
 
-_Stub page created automatically during ingest of [[how-tiktok-broke-social-media|How TikTok broke social media]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Major platform discussed in depth with specific monetisation data; referenced in context of AI search, advertising, and social-media disruption topics already tracked in the wiki. Multiple existing pages would plausibly cite it.
+Already has pages at concept/companies/youtube and entity/entities/youtube. Used as canonical post-bubble killer-app example.
 
 ## Why this earned its own page
 
-Major platform discussed in depth with specific monetisation data; referenced in context of AI search, advertising, and social-media disruption topics already tracked in the wiki. Multiple existing pages would plausibly cite it.
+Already has pages at concept/companies/youtube and entity/entities/youtube. Used as canonical post-bubble killer-app example.
 
 ## Mentions
 
-
-- [[why-get-mba-when-you-can-watch-sports-documentary|Why get an MBA when you can watch a sports documentary?]]
-- [[how-tiktok-broke-social-media|How TikTok broke social media]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

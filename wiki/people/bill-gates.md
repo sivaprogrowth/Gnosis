@@ -2,19 +2,19 @@
 type: person
 title: "Bill Gates"
 tags: [ingested]
-sources: ["how-universities-should-prepare-founders"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Bill Gates
 
-_Stub page created automatically during ingest of [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Central figure in startup history; his Microsoft founding story is used as the primary empirical anchor in this essay. Would be cited by existing pages on Microsoft, entrepreneurship education, and liberal arts education.
+Already has a page at concept/people/bill-gates.
 
 ## Why this earned its own page
 
-Central figure in startup history; his Microsoft founding story is used as the primary empirical anchor in this essay. Would be cited by existing pages on Microsoft, entrepreneurship education, and liberal arts education.
+Already has a page at concept/people/bill-gates.
 
 ## Mentions
 
-- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

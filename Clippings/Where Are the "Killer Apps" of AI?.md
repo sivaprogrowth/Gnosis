@@ -1,13 +1,19 @@
 ---
-title: "Where Are the \"Killer Apps\" of AI?"
-source: "https://www.oreilly.com/radar/where-are-the-killer-apps-of-ai/"
+title: Where Are the "Killer Apps" of AI?
+source: 'https://www.oreilly.com/radar/where-are-the-killer-apps-of-ai/'
 author:
-  - "[[Tim O’Reilly]]"
-published: 2026-11-11
-created: 2026-11-12
-description: "Most of today’s AI entrepreneurs and their social media enthusiasts are young. AI is the first technology revolution they’ve lived through. They don’t remember"
+  - '[[Tim O’Reilly]]'
+published: 2026-11-11T00:00:00.000Z
+created: 2026-11-12T00:00:00.000Z
+description: >-
+  Most of today’s AI entrepreneurs and their social media enthusiasts are young.
+  AI is the first technology revolution they’ve lived through. They don’t
+  remember
 tags:
-  - "clippings"
+  - clippings
+gnosis_ingested: true
+gnosis_job_id: 9a418c82-0bb4-4e3c-8e35-346345a9e3cc
+gnosis_ingested_at: '2026-11-12T05:02:33.286Z'
 ---
 Most of today’s AI entrepreneurs and social media enthusiasts are young. AI is the first technology revolution they’ve lived through. They don’t remember how unbelievably exciting it was in the late 1970s to get your own computer, instead of struggling to get time on one of the vast machines chugging away in what used to be called “the glass house,” an air-conditioned room where from outside you could watch the nine-track tapes being accessed and the refrigerator-sized disk drives spinning. Input and output was on high-speed teletype printers (no screens) and magnetic tape (and before that on punch cards.) They also mostly don’t remember, as I do, writing assembly-language programs in which you moved data from one computer register to another, specified the arithmetic or logical operations to be performed on it, and then specified where to save the result.
 

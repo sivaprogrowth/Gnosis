@@ -2,19 +2,19 @@
 type: person
 title: "Carlota Perez"
 tags: [ingested]
-sources: ["ai-commodity-trap-up-the-stack-narayanan-kapur"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Carlota Perez
 
-_Stub page created automatically during ingest of [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Named economist with a distinct, citable framework (Installation Period / Deployment Period). Multiple existing pages on AI infrastructure economics, picks-and-shovels investing, and Engels' pause would naturally reference her work. Similar economists/theorists already have pages.
+Already has a page at concept/people/carlota-perez. Her installation/deployment framework is central to this article and cited in related AI-economics sources already in the wiki.
 
 ## Why this earned its own page
 
-Named economist with a distinct, citable framework (Installation Period / Deployment Period). Multiple existing pages on AI infrastructure economics, picks-and-shovels investing, and Engels' pause would naturally reference her work. Similar economists/theorists already have pages.
+Already has a page at concept/people/carlota-perez. Her installation/deployment framework is central to this article and cited in related AI-economics sources already in the wiki.
 
 ## Mentions
 
-- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

@@ -2,19 +2,19 @@
 type: concept
 title: "Installation Period"
 tags: [ingested]
-sources: ["ai-commodity-trap-up-the-stack-narayanan-kapur"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Installation Period
 
-_Stub page created automatically during ingest of [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Carlota Perez's Installation Period is a named, well-defined framework that would be cited by pages on picks-and-shovels investing, Engels' pause, AI semiconductor supply chain, and value-capture economics. Distinct enough to warrant its own page.
+Already has a page at concept/concepts/installation-period. This source is a direct application of Perez's installation/deployment cycle; multiple existing AI-economics and infrastructure pages would cite it.
 
 ## Why this earned its own page
 
-Carlota Perez's Installation Period is a named, well-defined framework that would be cited by pages on picks-and-shovels investing, Engels' pause, AI semiconductor supply chain, and value-capture economics. Distinct enough to warrant its own page.
+Already has a page at concept/concepts/installation-period. This source is a direct application of Perez's installation/deployment cycle; multiple existing AI-economics and infrastructure pages would cite it.
 
 ## Mentions
 
-- [[ai-commodity-trap-up-the-stack-narayanan-kapur|Up the Stack: How AI’s Escape From the Commodity Trap Risks Enterprise Lock-in]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

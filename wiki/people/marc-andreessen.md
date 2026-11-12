@@ -2,19 +2,19 @@
 type: person
 title: "Marc Andreessen"
 tags: [ingested]
-sources: ["marc-andreessen-dwarkesh-podcast-managerial-revolution"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Marc Andreessen
 
-_Stub page created automatically during ingest of [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Co-founder of a16z which already has a wiki page; primary subject of this source. Multiple existing pages (andreessen-horowitz, vc-winter, mega-fund-concentration, american-dynamism-fund, software-eats-the-world concepts) would naturally cite him. He is a named person in a category (tech investors/founders) the wiki clearly tracks.
+Already has a page at concept/people/marc-andreessen. Referenced here in AI platform-layer context consistent with existing coverage.
 
 ## Why this earned its own page
 
-Co-founder of a16z which already has a wiki page; primary subject of this source. Multiple existing pages (andreessen-horowitz, vc-winter, mega-fund-concentration, american-dynamism-fund, software-eats-the-world concepts) would naturally cite him. He is a named person in a category (tech investors/founders) the wiki clearly tracks.
+Already has a page at concept/people/marc-andreessen. Referenced here in AI platform-layer context consistent with existing coverage.
 
 ## Mentions
 
-- [[marc-andreessen-dwarkesh-podcast-managerial-revolution|Marc Andreessen - AI, Crypto, Regrets, Vulnerabilities, & Managerial Revolution]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

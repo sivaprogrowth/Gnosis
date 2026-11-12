@@ -2,19 +2,19 @@
 type: person
 title: "Steve Jobs"
 tags: [ingested]
-sources: ["how-universities-should-prepare-founders"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # Steve Jobs
 
-_Stub page created automatically during ingest of [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Iconic figure referenced across multiple adjacent topics in the wiki (Apple, design, startup culture, liberal arts). Likely to be cited by multiple existing and future pages on founders, design thinking, and liberal arts education.
+Already has a page at concept/people/steve-jobs.
 
 ## Why this earned its own page
 
-Iconic figure referenced across multiple adjacent topics in the wiki (Apple, design, startup culture, liberal arts). Likely to be cited by multiple existing and future pages on founders, design thinking, and liberal arts education.
+Already has a page at concept/people/steve-jobs.
 
 ## Mentions
 
-- [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

@@ -22,6 +22,8 @@ A top-tier VC firm that the wiki already tracks similar entities for (Andreessen
 
 
 
+
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]

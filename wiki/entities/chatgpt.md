@@ -2,23 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["harari-ai-hacked-operating-system-civilisation"]
+sources: ["where-are-the-killer-apps-of-ai"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]._
+_Stub page created automatically during ingest of [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]._
 
-Already has an existing wiki page (entity/entities/chatgpt). Central tool referenced across many AI sources.
+Already has a page at entity/entities/chatgpt. Central tool in this source.
 
 ## Why this earned its own page
 
-Already has an existing wiki page (entity/entities/chatgpt). Central tool referenced across many AI sources.
+Already has a page at entity/entities/chatgpt. Central tool in this source.
 
 ## Mentions
 
-
-
-- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
-- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
-- [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]
+- [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

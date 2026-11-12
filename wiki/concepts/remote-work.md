@@ -1,22 +1,20 @@
 ---
 type: concept
-title: "remote work"
+title: "remote-work"
 tags: [ingested]
-sources: ["overemployment-tech-workers-two-timing-employers"]
+sources: ["simon-kuper-wework-remote-work-experiment"]
 ---
 
-# remote work
+# remote-work
 
-_Stub page created automatically during ingest of [[overemployment-tech-workers-two-timing-employers|How to two-time your employer: a tech worker’s guide]]._
+_Stub page created automatically during ingest of [[simon-kuper-wework-remote-work-experiment|After 25 years working alone, I tried WeWork. Nothing could tempt me back | Financial Times]]._
 
-Remote work is the stated primary structural enabler of overemployment and is a topic adjacent to many existing wiki pages: gig economy, algorithmic management, workplace surveillance, portable benefits, joint-employer rule, no-poach clauses, and multiple AI-era work sources. It is a well-defined framework/phenomenon that would be cited by numerous existing pages and future ingest on labor markets and AI.
+remote-work already has an existing page (concept/concepts/remote-work). This source provides strong new evidence (25-year baseline, structural office density data) that enriches it. Confirmed promote as it already exists.
 
 ## Why this earned its own page
 
-Remote work is the stated primary structural enabler of overemployment and is a topic adjacent to many existing wiki pages: gig economy, algorithmic management, workplace surveillance, portable benefits, joint-employer rule, no-poach clauses, and multiple AI-era work sources. It is a well-defined framework/phenomenon that would be cited by numerous existing pages and future ingest on labor markets and AI.
+remote-work already has an existing page (concept/concepts/remote-work). This source provides strong new evidence (25-year baseline, structural office density data) that enriches it. Confirmed promote as it already exists.
 
 ## Mentions
 
-
-- [[next-wave-remote-work-offshoring-jobs-overseas|Next Wave of Remote Work Is About Outsourcing Jobs Overseas]]
-- [[overemployment-tech-workers-two-timing-employers|How to two-time your employer: a tech worker’s guide]]
+- [[simon-kuper-wework-remote-work-experiment|After 25 years working alone, I tried WeWork. Nothing could tempt me back | Financial Times]]

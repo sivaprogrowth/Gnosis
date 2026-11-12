@@ -2,21 +2,19 @@
 type: company
 title: "Google"
 tags: [ingested]
-sources: ["digital-2022-india"]
+sources: ["how-to-avoid-bad-hires"]
 ---
 
 # Google
 
-_Stub page created automatically during ingest of [[digital-2022-india|Digital 2022: India]]._
+_Stub page created automatically during ingest of [[how-to-avoid-bad-hires|How to avoid bad hires]]._
 
-Google already has a wiki page (concept/companies/google). Same situation as Meta — existing page covers this.
+Google already has an existing wiki page (concept/companies/google). This is a promote by default — it maps to an existing page.
 
 ## Why this earned its own page
 
-Google already has a wiki page (concept/companies/google). Same situation as Meta — existing page covers this.
+Google already has an existing wiki page (concept/companies/google). This is a promote by default — it maps to an existing page.
 
 ## Mentions
 
-
-- [[why-i-started-tigereye|Why I Started TigerEye]]
-- [[digital-2022-india|Digital 2022: India]]
+- [[how-to-avoid-bad-hires|How to avoid bad hires]]

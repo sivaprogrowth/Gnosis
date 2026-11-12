@@ -90,8 +90,9 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // CustomOgImages removed 2026-11-12: it fetched Google Fonts at build time and
+      // intermittently failed on Vercel ("fetch failed"), and the site is login-gated
+      // so social preview images are never shown anyway.
     ],
   },
 }

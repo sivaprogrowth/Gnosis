@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "In High Stakes Divorce Battle, Estranged Wife Of Indian Software Tycoon Claims He Transferred Ownership Without Telling Her"
-authors: []
-published: null
+authors: ["Luisa Kroll"]
+published: "2023-03-13"
 source_url: "https://www.forbes.com/sites/luisakroll/2023/03/13/zoho-srindhar-vembu-in-high-stakes-divorce-battle-estranged-wife-of-indian-software-tycoon-claims-he-transferred-ownership-without-telling-her/"
 accessed: "2025-01-01"
 tags: [zoho, divorce, corporate-governance, india-tech, community-property]

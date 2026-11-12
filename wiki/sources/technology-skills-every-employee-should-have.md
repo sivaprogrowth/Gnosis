@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The Technology Skills Every Employee Should Have Today"
-authors: []
-published: null
+authors: ["Seán Captain"]
+published: "2023-03-18"
 source_url: "https://www.wsj.com/articles/technology-skills-employees-should-have-fdc6c0ba"
 accessed: "2025-01-30"
 tags: [workplace-tech, digital-skills, productivity, ai-tools, data-literacy]

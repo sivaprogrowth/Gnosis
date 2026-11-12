@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Competition brings out the best in us: HUL CEO and MD"
-authors: []
-published: null
+authors: ["Gaurav Laghate", "Satish John"]
+published: "2023-02-16"
 source_url: https://www.livemint.com/companies/people/competition-brings-out-the-best-in-us-11676485816602.html
 accessed: 2025-01-31
 tags: [fmcg, india-business, consumer-goods, digital-transformation, marketing]

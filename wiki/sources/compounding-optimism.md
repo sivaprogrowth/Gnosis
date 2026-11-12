@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Compounding Optimism"
-authors: []
-published: null
+authors: ["Morgan Housel"]
+published: "2023-06-13"
 source_url: "https://collabfund.com/blog/compounding-optimism/"
 accessed: "2025-01-30"
 tags: ["optimism", "compounding", "innovation", "progress", "ideas"]

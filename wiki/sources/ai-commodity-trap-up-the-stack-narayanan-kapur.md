@@ -2,10 +2,10 @@
 type: source
 source_type: article
 title: "Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in"
-authors:
+authors: ["Arvind Narayanan"]
   - Arvind Narayanan
   - Akash Kapur
-published: null
+published: "2026-07-09"
 source_url: https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from
 accessed: 2025-07-15
 tags:

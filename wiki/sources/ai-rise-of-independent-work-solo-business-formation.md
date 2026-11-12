@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "Artificial Intelligence (AI) and the Rise of Independent Work: Early Evidence on Solo Business Formation and Self-Employment"
 authors: []
-published: null
 source_url: https://www.mercatus.org/research/research-papers/artificial-intelligence-ai-and-rise-independent-work-early-evidence-solo
 accessed: 2026-07-01
 tags: [ai-labor-markets, independent-work, self-employment, transaction-costs, gig-economy]

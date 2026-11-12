@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "British Kids Are Skipping Top Colleges for White-Collar Apprenticeships"
-authors: []
-published: null
+authors: ["Natasha Dangoor"]
+published: "2026-08-22"
 source_url: https://www.wsj.com/lifestyle/careers/british-kids-are-skipping-top-colleges-for-white-collar-apprenticeships-77a47f5c?st=3p1X7t
 accessed: 2025-07-14
 tags: [apprenticeships, higher-education, future-of-work, ai-displacement, uk-careers]

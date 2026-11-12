@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Who Owns the Generative AI Platform?"
-authors: []
-published: null
+authors: ["Matt Bornstein"]
+published: "2023-01-19"
 source_url: https://a16z.com/2023/01/19/who-owns-the-generative-ai-platform/
 accessed: 2025-01-19
 tags: [generative-ai, ai-infrastructure, market-structure, llm, platform-economics]

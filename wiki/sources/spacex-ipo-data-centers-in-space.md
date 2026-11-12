@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The SpaceX IPO and Data Centers in Space"
-authors: []
-published: null
+authors: ["Ben Thompson"]
+published: "2026-05-27"
 source_url: "https://stratechery.com/2026/the-spacex-ipo-and-data-centers-in-space/"
 accessed: "2026"
 tags: [spacex, ai-infrastructure, ipo, compute, satellite]

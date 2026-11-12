@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "How Universities Should Prepare Founders"
 authors: ["Paul Graham"]
-published: null
+published: "2026-08-25"
 source_url: "https://www.paulgraham.com/prepare.html"
 accessed: "2026-08-01"
 tags: ["startups", "education", "founder-development", "entrepreneurship", "university"]

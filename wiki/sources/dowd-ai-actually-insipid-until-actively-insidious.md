@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Opinion | A.I.: Actually Insipid Until It's Actively Insidious"
 authors: ["Maureen Dowd"]
-published: null
+published: "2023-01-28"
 source_url: https://www.nytimes.com/2023/01/28/opinion/chatgpt-ai-technology.html
 accessed: 2023-01-28
 tags: [ai, chatgpt, opinion, existential-risk, generative-ai]

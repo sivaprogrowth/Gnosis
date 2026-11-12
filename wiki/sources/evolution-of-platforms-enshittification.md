@@ -2,9 +2,9 @@
 type: source
 source_type: article
 title: "The evolution of platforms has spelt the descent of online tools"
-authors:
+authors: ["Jaspreet Bindra"]
   - "Jaspreet Bindra"
-published: null
+published: "2023-03-16"
 source_url: "https://www.livemint.com/opinion/columns/the-evolution-of-platforms-has-spelt-the-descent-of-online-tools-11678988146105.html"
 accessed: "2025-01-30"
 tags:

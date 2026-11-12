@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "How WIRED Will Use Generative AI Tools"
-authors: []
-published: null
+authors: ["By Gideon Lichfield"]
+published: "2023-03-02"
 source_url: https://www.wired.com/story/how-wired-will-use-generative-ai-tools/
 accessed: 2025-01-30
 tags: [generative-ai, editorial-policy, journalism, ai-governance, media]

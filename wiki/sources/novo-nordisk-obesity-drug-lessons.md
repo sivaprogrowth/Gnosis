@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Lessons from Novo Nordisk on the stampede for obesity drugs"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-03-02"
 source_url: https://www.economist.com/business/2023/03/02/lessons-from-novo-nordisk-on-the-stampede-for-obesity-drugs
 accessed: 2025-01-01
 tags: [obesity-drugs, pharma, competitive-strategy, glp-1, demand-shocks]

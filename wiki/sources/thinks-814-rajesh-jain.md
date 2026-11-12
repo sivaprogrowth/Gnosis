@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Thinks 814"
-authors: []
-published: null
+authors: ["Rajesh Jain"]
+published: "2023-03-25"
 source_url: https://rajeshjain.com/2023/03/25/thinks-814/
 accessed: 2025-03-25
 tags: [geopolitics, entrepreneurship, ai-content, design, leadership]

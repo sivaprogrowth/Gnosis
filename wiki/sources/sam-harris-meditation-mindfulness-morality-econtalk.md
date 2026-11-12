@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Sam Harris on Meditation, Mindfulness, and Morality"
-authors: []
-published: null
+authors: ["Econlib"]
+published: "2023-02-06"
 source_url: https://www.econtalk.org/sam-harris-on-meditation-mindfulness-and-morality/
 accessed: 2025-01-12
 tags: [meditation, mindfulness, podcasting, philosophy, neuroscience]

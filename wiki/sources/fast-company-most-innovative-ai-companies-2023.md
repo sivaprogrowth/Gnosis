@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The 10 most innovative companies in artificial intelligence of 2023"
-authors: []
-published: null
+authors: ["Max Ufberg"]
+published: "2023-03-02"
 source_url: https://www.fastcompany.com/90846670/most-innovative-companies-artificial-intelligence-2023
 accessed: 2025-01-01
 tags: [artificial-intelligence, generative-ai, innovation, machine-learning, startups]

@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "My Life System #11: Anger Management"
 authors: []
-published: null
 source_url: "https://mail.google.com/mail/u/1/#inbox/FMfcgzGrbRZzFCVCnpXQDdjjXjShRzMW"
 accessed: null
 tags: [anger-management, self-control, personal-development, reflection, life-system]

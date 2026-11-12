@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "America has become an entrepreneur's paradise"
 authors: []
-published: null
+published: "2026-07-27"
 source_url: "https://www.economist.com/business/2026/07/27/america-has-become-an-entrepreneurs-paradise"
 accessed: "2026-07-27"
 tags: [entrepreneurship, ai, small-business, self-employment, us-economy]

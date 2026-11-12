@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Apps you can't live without on Mac?"
-authors: []
-published: null
+authors: ["Jean Gatt"]
+published: "2023-03-02"
 source_url: https://www.producthunt.com/discussions/apps-you-can-t-live-without-on-mac
 accessed: 2025-01-30
 tags: [mac, productivity, tools, workflow, software]

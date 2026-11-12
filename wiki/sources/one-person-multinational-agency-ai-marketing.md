@@ -4,7 +4,6 @@ source_type: article
 title: The One-Person Multinational Agency is Here and it's Better for Marketers
 authors:
   - Mahesh Murthy
-published: null
 source_url: >-
   https://www.marketingsociety.com/think-piece/one-person-multinational-agency-here-and-its-better-marketers
 accessed: 2025-07-14T00:00:00.000Z

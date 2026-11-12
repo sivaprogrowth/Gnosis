@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "A goal isn't a mission"
-authors: []
-published: null
+authors: ["Theodore Kinni"]
+published: "2023-01-30"
 source_url: https://www.strategy-business.com/blog/A-goal-isnt-a-mission
 accessed: 2025-01-31
 tags: [strategy, organizational-mission, leadership, nasa, goal-setting]

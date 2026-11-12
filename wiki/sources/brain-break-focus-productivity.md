@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "How a Brain Break Can Increase Focus and Productivity"
 authors: ["A.C. Shilton"]
-published: null
+published: "2023-02-03"
 source_url: "https://www.nytimes.com/2023/02/03/well/mind/brain-break-focus-productivity.html"
 accessed: "2025-02-03"
 tags: ["productivity", "focus", "cognitive-science", "brain-breaks", "attention"]

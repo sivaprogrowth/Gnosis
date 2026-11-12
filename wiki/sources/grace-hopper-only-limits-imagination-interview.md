@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Only the Limits of Our Imagination: An Exclusive Interview with Rear Admiral Grace M. Hopper"
-authors: []
-published: null
+authors: ["Diane Hamblen"]
+published: "2020-11-13"
 source_url: https://www.history.navy.mil/research/library/bibliographies/hopper-grace-admiral-select-bibliography/only-limits-our-imagination-hopper.html
 accessed: 2025-01-30
 tags: [computing-history, grace-hopper, artificial-intelligence, microcomputers, naval-computing]

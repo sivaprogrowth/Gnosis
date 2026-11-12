@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "A Cold Shower for AI Mania"
 authors: ["Raghuram Rajan"]
-published: null
 source_url: "https://www.linkedin.com/posts/raghuram-rajan_a-cold-shower-for-ai-mania-activity-7465055917332410369-skWF"
 accessed: "2025-05-15"
 tags: ["ai-hype", "ai-economics", "technology-policy", "ai-geopolitics"]

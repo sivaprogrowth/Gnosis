@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The Spectrum of Financial Dependence and Independence"
-authors: []
-published: null
+authors: ["Collaborative Fund"]
+published: "2023-05-16"
 source_url: https://collabfund.com/blog/the-spectrum-of-financial-dependence-and-independence/
 accessed: 2025-01-30
 tags: [personal-finance, financial-independence, wealth, autonomy]

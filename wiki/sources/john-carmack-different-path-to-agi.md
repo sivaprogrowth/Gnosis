@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Exclusive Q&A: John Carmack's 'Different Path' to Artificial General Intelligence"
-authors: []
-published: null
+authors: ["Glenn Hunter"]
+published: "2023-02-02"
 source_url: https://dallasinnovates.com/exclusive-qa-john-carmacks-different-path-to-artificial-general-intelligence/
 accessed: 2025-01-30
 tags: [artificial-general-intelligence, machine-learning, deep-learning, independent-research, startups]

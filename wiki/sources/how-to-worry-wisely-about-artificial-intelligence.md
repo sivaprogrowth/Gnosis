@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "How to worry wisely about artificial intelligence"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-04-20"
 source_url: "https://www.economist.com/leaders/2023/04/20/how-to-worry-wisely-about-artificial-intelligence"
 accessed: "2025-01-30"
 tags: [artificial-intelligence, ai-regulation, llms, existential-risk, technology-policy]

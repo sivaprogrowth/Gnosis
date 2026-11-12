@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The business trend that unites Walmart and Tiffany & Co"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-05-02"
 source_url: https://www.economist.com/business/2023/05/02/the-business-trend-that-unites-walmart-and-tiffany-and-co
 accessed: 2025-01-01
 tags: [consumer-spending, retail, luxury, barbell-economy, income-inequality]

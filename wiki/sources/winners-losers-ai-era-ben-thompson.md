@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Winners & Losers of the AI Era"
-authors: []
-published: null
+authors: ["Patrick O'Shaughnessy"]
+published: "2026-08-18"
 source_url: https://colossus.com/episode/winners-losers-ai-era/
 accessed: 2026-08-01
 tags: [ai-geopolitics, ai-race, aggregation-theory, national-security, game-theory]

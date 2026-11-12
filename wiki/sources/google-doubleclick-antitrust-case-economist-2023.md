@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The case against Google hinges on an antitrust \"mistake\""
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-03-02"
 source_url: https://www.economist.com/finance-and-economics/2023/03/02/the-case-against-google-hinges-on-an-antitrust-mistake
 accessed: 2024-01-01
 tags: [antitrust, digital-advertising, tech-regulation, mergers, ad-tech]

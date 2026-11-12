@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "The AI Industry's Unusual Bet: Buy Compute for Years, Sell Intelligence by the Token"
 authors: ["Sridhar Ramaswamy"]
-published: null
 source_url: https://x.com/RamaswmySridhar/status/2115159261533929911
 accessed: "2026-10-27"
 tags: ["ai-economics", "compute", "risk-management", "business-model", "infrastructure"]

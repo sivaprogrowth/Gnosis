@@ -2,9 +2,9 @@
 type: source
 source_type: article
 title: "How to Avoid Bad Hires"
-authors:
+authors: ["nextbigwhat"]
   - "samanthalcc"
-published: null
+published: "2022-09-28"
 source_url: "https://nextbigwhat.com/how-to-avoid-bad-hires/"
 accessed: "2025-01-30"
 tags:

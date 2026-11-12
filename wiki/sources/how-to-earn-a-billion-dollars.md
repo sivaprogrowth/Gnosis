@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "How to Earn a Billion Dollars"
 authors: ["Paul Graham"]
-published: null
+published: "2026-06-14"
 source_url: "https://paulgraham.com/earn.html"
 accessed: "2026-06-01"
 tags: ["startups", "wealth-creation", "exponential-growth", "founder-advice", "entrepreneurship"]

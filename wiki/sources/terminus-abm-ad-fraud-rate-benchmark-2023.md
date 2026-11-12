@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Terminus Maximizes Ad Spend for Marketers with Less Than 3% Fraud Rate"
-authors: []
-published: null
+authors: ["Business Wire"]
+published: "2023-01-24"
 source_url: https://www.businesswire.com/news/home/20230124005388/en/Terminus-Maximizes-Ad-Spend-for-Marketers-with-Less-Than-3-Fraud-Rate
 accessed: 2025-01-24
 tags: [account-based-marketing, ad-fraud, b2b-advertising, digital-marketing]

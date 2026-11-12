@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "A new class of drugs for weight loss could end obesity"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-03-02"
 source_url: https://www.economist.com/briefing/2023/03/02/a-new-class-of-drugs-for-weight-loss-could-end-obesity
 accessed: "2025-01-01"
 tags:

@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Five books on the best approaches to being an investor"
-authors: []
-published: null
+authors: ["mint"]
+published: "2023-05-03"
 source_url: https://www.livemint.com/money/personal-finance/five-books-on-the-best-approaches-to-being-an-investor-11683100151252.html
 accessed: 2025-01-30
 tags: [investing, personal-finance, book-recommendations, value-investing, wealth-building]

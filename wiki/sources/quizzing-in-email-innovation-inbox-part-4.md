@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Quizzing in Email: An Innovation in the Inbox (Part 4)"
 authors: ["Rajesh Jain"]
-published: null
+published: "2023-03-18"
 source_url: https://rajeshjain.com/2023/03/18/quizzing-in-email-an-innovation-in-the-inbox-part-4/
 accessed: 2024-01-01
 tags: [email-innovation, gamification, amp-email, loyalty, engagement]

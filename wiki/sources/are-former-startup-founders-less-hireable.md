@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Are Former Startup Founders Less Hireable?"
-authors: []
-published: null
+authors: ["Harvard Business Review"]
+published: "2022-06-28"
 source_url: https://hbr.org/2022/06/are-former-startup-founders-less-hireable
 accessed: 2024-01-01
 tags: [hiring, entrepreneurship, recruiters, organizational-behavior, talent]

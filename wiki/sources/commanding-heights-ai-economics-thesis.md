@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "The Commanding Heights"
 authors: []
-published: null
 source_url: https://commanding-heights.com/
 accessed: 2026-10-23
 tags: [ai-economics, geopolitics, financial-markets, intelligence-diffusion, sovereign-ai]

@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Why Gödel, Escher, Bach is the most influential book in my life"
-authors: []
-published: null
+authors: ["Mark Johnson"]
+published: "2022-02-23"
 source_url: https://philosophygeek.medium.com/why-g%C3%B6del-escher-bach-is-the-most-influential-book-in-my-life-49d785a4e428
 accessed: 2025-01-30
 tags: [geb, philosophy, self-reference, complexity, epistemology]

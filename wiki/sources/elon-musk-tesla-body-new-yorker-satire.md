@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Elon Musk's New Frontier: Your Body"
-authors: []
-published: null
+authors: ["Megan Amram"]
+published: "2022-08-15"
 source_url: https://www.newyorker.com/magazine/2022/08/22/elon-musks-new-frontier-your-body
 accessed: "2025-08-22"
 tags: [satire, elon-musk, tech-culture, body-autonomy, parody]

@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Eric Ashman — Helping Founders Navigate Growth, Scaling and Building Value"
-authors: []
-published: null
+authors: ["Eric Ashman"]
+published: "2022-01-25"
 source_url: https://ericashman.com/
 accessed: 2025-01-30
 tags: [startup-strategy, venture-capital, founder-advisory, product-market-fit, scaling]

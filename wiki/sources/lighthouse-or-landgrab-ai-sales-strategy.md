@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Lighthouse or Landgrab? How to Pick Your AI Sales Strategy"
-authors: []
-published: null
+authors: ["Joe Schmidt IV", "Julian Marx"]
+published: "2026-07-27"
 source_url: https://www.a16z.news/p/lighthouse-or-landgrab-how-to-pick
 accessed: 2025-01-28
 tags: [ai-sales, gtm-strategy, enterprise-sales, saas, category-creation]

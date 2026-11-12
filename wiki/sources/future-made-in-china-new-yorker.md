@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "The Future, Made in China"
-authors: []
-published: null
+authors: ["Evan Osnos"]
+published: "2026-08-03"
 source_url: https://www.newyorker.com/magazine/2026/08/10/the-future-made-in-china
 accessed: "2026-08-10"
 tags: [china-us-rivalry, ai-geopolitics, industrial-policy, techno-nationalism, great-power-competition]

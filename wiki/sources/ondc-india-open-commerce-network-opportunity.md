@@ -4,7 +4,7 @@ source_type: article
 title: "Unpacking the $80+ billion ONDC opportunity: India's next startup catalyst"
 authors:
   - Susmit Patodia
-published: null
+published: "2023-03-09"
 source_url: https://www.antler.co/blog/ondc-landscape
 accessed: 2025-01-30
 tags:

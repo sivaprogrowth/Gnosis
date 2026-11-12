@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Bangalore places I like to eat at and order from"
 authors: ["Sahil K"]
-published: null
+published: "2022-09-03"
 source_url: https://sahilk.in/blog/bangalore-food-recommendations/
 accessed: 2025-01-31
 tags: [bangalore, food, restaurants, recommendations, india]

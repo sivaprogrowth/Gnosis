@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "After 25 years working alone, I tried WeWork. Nothing could tempt me back"
 authors: ["Simon Kuper"]
-published: null
+published: "2023-04-06"
 source_url: https://www.ft.com/content/ebf46c04-cb7c-4af7-bd3d-cf3543c00952
 accessed: 2025-01-01
 tags: [remote-work, coworking, productivity, office-design, work-culture]

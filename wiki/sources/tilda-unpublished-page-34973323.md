@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "Page is not published (Tilda Publishing internal link)"
 authors: []
-published: null
 source_url: https://tilda.cc/page/?pageid=34973323
 accessed: null
 tags: [error, unpublished, tilda]

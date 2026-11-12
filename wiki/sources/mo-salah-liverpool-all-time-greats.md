@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "How Liverpool FC star Mo Salah became 'one of the all-time greats'"
 authors: ["Nada Hesham"]
-published: null
+published: "2026-05-22"
 source_url: https://www.bbc.com/news/articles/cd0p3v7kn1mo
 accessed: 2025-07-10
 tags: [football, sports, biography, egypt, liverpool]

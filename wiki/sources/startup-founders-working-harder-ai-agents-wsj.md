@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Startup Founders Are Working Harder Than Ever to Keep Up With Their AI Agents"
-authors: []
-published: null
+authors: ["Katherine Bindley"]
+published: "2026-08-21"
 source_url: "https://www.wsj.com/tech/ai/ai-agents-startup-work-culture-fa10494d"
 accessed: "2025-01-31"
 tags: [agentic-ai, startup-culture, ai-agents, work-intensity, founders]

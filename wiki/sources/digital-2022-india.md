@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Digital 2022: India"
-authors: []
-published: null
+authors: ["Simon Kemp"]
+published: "2022-02-15"
 source_url: https://datareportal.com/reports/digital-2022-india
 accessed: 2024-01-01
 tags: [india, digital-adoption, internet, social-media, mobile]

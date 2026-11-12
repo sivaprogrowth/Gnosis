@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Why I Started TigerEye"
 authors: ["Tracy Young"]
-published: null
+published: "2022-09-08"
 source_url: "https://tracy.posthaven.com/why-i-started-tigereye"
 accessed: "2025-01-30"
 tags: ["founder-story", "women-in-tech", "enterprise-sales", "startups", "gender-equity"]

@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "E2E Test Note — Gnosis Bidirectional"
 authors: []
-published: null
 source_url: https://progrowth-life-web.vercel.app
 accessed: null
 tags: [e2e-test, gnosis, integration, ingest-pipeline]

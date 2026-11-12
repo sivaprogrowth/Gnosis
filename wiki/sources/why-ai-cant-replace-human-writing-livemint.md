@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Why AI can't replace human writing—it's about exercising one's mind and that can't be outsourced"
-authors: []
-published: null
+authors: ["Nandini Nair"]
+published: "2026-05-28"
 source_url: https://www.livemint.com/opinion/online-views/ai-writing-artificial-intelligence-commonwealth-prize-claude-chatgpt-writers-fiction-nonfiction-11779871589799.html
 accessed: 2026-05-27
 tags: [ai-writing, human-creativity, large-language-models, literary-criticism, education]

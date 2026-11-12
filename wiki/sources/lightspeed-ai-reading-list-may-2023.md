@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "What Lightspeed Is Reading, Listening To, And Thinking About AI"
-authors: []
-published: null
+authors: ["Lightspeed"]
+published: "2023-05-16"
 source_url: https://medium.com/lightspeed-venture-partners/what-lightspeed-is-reading-listening-and-thinking-about-ai-b30ad8d24eb6
 accessed: 2025-01-30
 tags: [ai, venture-capital, reading-list, generative-ai, strategy]

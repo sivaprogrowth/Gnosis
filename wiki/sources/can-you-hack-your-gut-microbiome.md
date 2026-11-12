@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Can you hack your gut microbiome?"
-authors: []
-published: null
+authors: ["Cristina Spano"]
+published: "2026-08-07"
 source_url: https://www.economist.com/science-and-technology/2026/08/07/can-you-hack-your-gut-microbiome
 accessed: "2026-08-07"
 tags: [gut-microbiome, microbiology, health, nutrition, science]

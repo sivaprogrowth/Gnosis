@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Ramp, a $60B company, hid a secret offer on its website that only AI could see"
-authors: []
-published: null
+authors: ["CrowdReply"]
+published: "2026-11-09"
 source_url: "https://x.com/crowdreply_io/status/2119809230861746556/?a=R1LCtoowwyc2trETzZo&s=12&rw_tt_thread=True"
 accessed: "2025-05-24"
 tags: [aeo, ai-search, llm-marketing, answer-engine-optimization, content-strategy]

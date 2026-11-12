@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Human Judgement Is the Most Powerful Technology in the AI Age"
-authors: []
-published: null
+authors: ["Halla Tómasdóttir"]
+published: "2026-10-16"
 source_url: "https://time.com/article/2026/10/16/human-judgement-is-the-most-powerful-technology-in-the-ai-age/"
 accessed: "2026-10-16"
 tags: [ai-governance, human-judgement, ai-warfare, dialogue, nuclear-weapons]

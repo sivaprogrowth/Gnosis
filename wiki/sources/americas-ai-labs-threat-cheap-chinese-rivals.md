@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "America's AI labs are under threat from cheap Chinese rivals"
 authors: []
-published: null
+published: "2026-07-21"
 source_url: https://www.economist.com/business/2026/07/21/americas-ai-labs-are-under-threat-from-cheap-chinese-rivals
 accessed: "2026-07-21"
 tags: [ai-competition, open-weight-models, frontier-ai, china-ai, ai-industry]

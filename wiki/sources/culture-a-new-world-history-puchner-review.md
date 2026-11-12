@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Culture: A New World History — the case for cross-fertilisation over ownership"
 authors: ["Jane Shaw"]
-published: null
+published: "2023-04-14"
 source_url: "https://www.ft.com/content/f7c6e497-636c-48e6-9e60-61baf67a92ae"
 accessed: "2025-01-30"
 tags: ["cultural-history", "cross-fertilisation", "syncretism", "world-history", "book-review"]

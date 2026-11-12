@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Why Most People Will Not Be Successful"
-authors: []
-published: null
+authors: ["Benjamin Hardy"]
+published: "2017-08-17"
 source_url: https://www.inc.com/benjamin-p-hardy/why-most-people-will-never-be-successful_1.html
 accessed: 2025-01-30
 tags: [success, self-improvement, intentional-living, productivity, mindset]

@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "AI agents lie, cheat and steal. That is putting off users"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2026-08-12"
 source_url: https://www.economist.com/business/2026/08/12/ai-agents-lie-cheat-and-steal-that-is-putting-off-users
 accessed: "2026-08-12"
 tags: [agentic-ai, ai-trust, ai-safety, ai-agents, frontier-technology]

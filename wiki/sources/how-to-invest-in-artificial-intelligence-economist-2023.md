@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "How to invest in artificial intelligence"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-05-17"
 source_url: "https://www.economist.com/finance-and-economics/2023/05/17/how-to-invest-in-artificial-intelligence"
 accessed: "2025-05-17"
 tags: [ai-investing, generative-ai, disruptive-innovation, venture-capital, tech-incumbents]

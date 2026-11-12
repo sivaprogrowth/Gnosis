@@ -2,13 +2,13 @@
 type: source
 source_type: article
 title: "The AI-native telco: Radical transformation to thrive in turbulent times"
-authors:
+authors: ["McKinsey", "Company"]
   - Joshan Abraham
   - Miguel Frade
   - Tomás Lajous
   - Jorge Amar
   - Yuval Atsmon
-published: null
+published: "2023-02-27"
 source_url: https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-ai-native-telco-radical-transformation-to-thrive-in-turbulent-times
 accessed: 2025-01-30
 tags:

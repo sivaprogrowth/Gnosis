@@ -3,7 +3,6 @@ type: source
 source_type: article
 title: "2026: The State of Enterprise AI"
 authors: []
-published: null
 source_url: https://menlovc.com/perspective/2026-the-state-of-enterprise-ai/
 accessed: 2026-10-01
 tags: [enterprise-ai, ai-agents, llm-market, ai-spend, generative-ai]

@@ -3,7 +3,7 @@ type: source
 source_type: article
 title: "Modern Marketing"
 authors: ["Rajesh Jain"]
-published: null
+published: "2023-02-19"
 source_url: https://rajeshjain.com/
 accessed: null
 tags: [marketing, b2c, digital-marketing, strategy, trade-offs]

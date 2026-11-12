@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "How TikTok broke social media"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-03-21"
 source_url: https://www.economist.com/business/2023/03/21/how-tiktok-broke-social-media
 accessed: 2025-01-29
 tags: [social-media, short-form-video, digital-advertising, platform-economics]

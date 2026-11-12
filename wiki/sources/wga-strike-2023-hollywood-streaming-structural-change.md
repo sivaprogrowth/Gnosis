@@ -2,8 +2,8 @@
 type: source
 source_type: article
 title: "Writers on strike beware: Hollywood has changed for ever"
-authors: []
-published: null
+authors: ["The Economist"]
+published: "2023-05-10"
 source_url: https://www.economist.com/business/2023/05/10/writers-on-strike-beware-hollywood-has-changed-for-ever
 accessed: 2025-05-10
 tags: [hollywood, streaming, labor, media-industry, wga-strike]

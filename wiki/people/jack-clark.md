@@ -2,19 +2,19 @@
 type: person
 title: "Jack Clark"
 tags: [ingested]
-sources: ["how-ai-got-better-at-building-itself-economist-2026"]
+sources: ["economist-ai-change-computing-culture-history"]
 ---
 
 # Jack Clark
 
-_Stub page created automatically during ingest of [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]._
+_Stub page created automatically during ingest of [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]._
 
-Co-founder of Anthropic, which already has a company page. The wiki tracks Anthropic-adjacent people (e.g., Claude, multiple Anthropic tools) and other company founders/researchers (Elon Musk, Paul Graham, etc.). His specific 60% probability estimate on autonomous AI model-building is a citable data point likely to appear in future AI safety/RSI discussions.
+Already has an existing wiki page (concept/people/jack-clark) — confirmed cross-link target.
 
 ## Why this earned its own page
 
-Co-founder of Anthropic, which already has a company page. The wiki tracks Anthropic-adjacent people (e.g., Claude, multiple Anthropic tools) and other company founders/researchers (Elon Musk, Paul Graham, etc.). His specific 60% probability estimate on autonomous AI model-building is a citable data point likely to appear in future AI safety/RSI discussions.
+Already has an existing wiki page (concept/people/jack-clark) — confirmed cross-link target.
 
 ## Mentions
 
-- [[how-ai-got-better-at-building-itself-economist-2026|How artificial intelligence got better at building itself]]
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]

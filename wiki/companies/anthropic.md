@@ -20,6 +20,8 @@ Already has a page at concept/companies/anthropic.
 
 
 
+
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]

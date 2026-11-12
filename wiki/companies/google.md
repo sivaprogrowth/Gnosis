@@ -23,6 +23,8 @@ Already has a page at concept/companies/google.
 
 
 
+
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

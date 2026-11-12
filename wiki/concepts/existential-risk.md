@@ -17,4 +17,6 @@ Already exists as concept/concepts/existential-risk — promoting to confirm it 
 
 ## Mentions
 
+
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

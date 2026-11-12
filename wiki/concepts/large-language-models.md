@@ -2,19 +2,19 @@
 type: concept
 title: "Large Language Models"
 tags: [ingested]
-sources: ["how-to-worry-wisely-about-artificial-intelligence"]
+sources: ["economist-ai-change-computing-culture-history"]
 ---
 
 # Large Language Models
 
-_Stub page created automatically during ingest of [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]._
+_Stub page created automatically during ingest of [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]._
 
-Multiple existing pages (foundation-models, scaling-laws, emergent capabilities, AI governance, AI safety, ChatGPT, DeepSeek, GPT-5, Claude, etc.) would naturally cite this as the parent concept. It is a well-defined, repeatedly referenced technical category central to the wiki's AI coverage.
+Central to dozens of existing pages (foundation-models, scaling-laws, stochastic-parroting, hallucination, generative-ai-stack, etc.) and would naturally be cited by a wide swath of AI-related source and concept pages already in the wiki.
 
 ## Why this earned its own page
 
-Multiple existing pages (foundation-models, scaling-laws, emergent capabilities, AI governance, AI safety, ChatGPT, DeepSeek, GPT-5, Claude, etc.) would naturally cite this as the parent concept. It is a well-defined, repeatedly referenced technical category central to the wiki's AI coverage.
+Central to dozens of existing pages (foundation-models, scaling-laws, stochastic-parroting, hallucination, generative-ai-stack, etc.) and would naturally be cited by a wide swath of AI-related source and concept pages already in the wiki.
 
 ## Mentions
 
-- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]

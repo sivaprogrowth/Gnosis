@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Stochastic Parroting"
+title: "Stochastic Parrots"
 tags: [ingested]
-sources: ["chatgpt-heralds-an-intellectual-revolution"]
+sources: ["economist-ai-change-computing-culture-history"]
 ---
 
-# Stochastic Parroting
+# Stochastic Parrots
 
-_Stub page created automatically during ingest of [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]._
+_Stub page created automatically during ingest of [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]._
 
-Named technical concept (coined by AI researchers) for a specific failure mode distinct from hallucination. Would be cited by ai-hallucination-legal-filings, ai-slop, controlled-hallucination, and ai-sycophancy pages already in the wiki.
+Already has an existing wiki page (concept/concepts/stochastic-parroting) — promote as a cross-link target confirmed.
 
 ## Why this earned its own page
 
-Named technical concept (coined by AI researchers) for a specific failure mode distinct from hallucination. Would be cited by ai-hallucination-legal-filings, ai-slop, controlled-hallucination, and ai-sycophancy pages already in the wiki.
+Already has an existing wiki page (concept/concepts/stochastic-parroting) — promote as a cross-link target confirmed.
 
 ## Mentions
 
-- [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]

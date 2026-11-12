@@ -2,19 +2,19 @@
 type: entity
 title: "BloombergGPT"
 tags: [ingested]
-sources: ["lightspeed-ai-reading-list-may-2023"]
+sources: ["economist-ai-change-computing-culture-history"]
 ---
 
 # BloombergGPT
 
-_Stub page created automatically during ingest of [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]._
+_Stub page created automatically during ingest of [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]._
 
-Named, well-defined domain-specific LLM (50B parameters for finance). Connects to existing pages on AI semiconductor supply chain, foundation models, AI compute economics, and legal AI. Likely to be cited by pages on vertical AI moats, fintech AI, and domain-specific models.
+Already has an existing wiki page (entity/entities/bloomberggpt) — confirmed cross-link target.
 
 ## Why this earned its own page
 
-Named, well-defined domain-specific LLM (50B parameters for finance). Connects to existing pages on AI semiconductor supply chain, foundation models, AI compute economics, and legal AI. Likely to be cited by pages on vertical AI moats, fintech AI, and domain-specific models.
+Already has an existing wiki page (entity/entities/bloomberggpt) — confirmed cross-link target.
 
 ## Mentions
 
-- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]

@@ -22,6 +22,8 @@ Already has a page at concept/companies/microsoft.
 
 
 
+
+- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

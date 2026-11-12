@@ -2,19 +2,19 @@
 type: person
 title: "Yuval Noah Harari"
 tags: [ingested]
-sources: ["harari-economic-political-perils-of-ai"]
+sources: ["harari-ai-hacked-operating-system-civilisation"]
 ---
 
 # Yuval Noah Harari
 
-_Stub page created automatically during ingest of [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]._
+_Stub page created automatically during ingest of [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]._
 
-Harari is a major public intellectual whose ideas (techno-despotism, mass-production of intimacy, AI opacity) are directly adjacent to numerous existing pages on AI governance, AI consciousness, AI legal personhood, deepfakes, and political economy of AI. Multiple existing source and concept pages would naturally cite him, and the wiki already tracks similar high-profile thinkers (Dario Amodei, Sam Altman, Gary Marcus, Jaron Lanier, etc.).
+Already has an existing wiki page (concept/people/yuval-noah-harari). Promote to confirm existing page is the target.
 
 ## Why this earned its own page
 
-Harari is a major public intellectual whose ideas (techno-despotism, mass-production of intimacy, AI opacity) are directly adjacent to numerous existing pages on AI governance, AI consciousness, AI legal personhood, deepfakes, and political economy of AI. Multiple existing source and concept pages would naturally cite him, and the wiki already tracks similar high-profile thinkers (Dario Amodei, Sam Altman, Gary Marcus, Jaron Lanier, etc.).
+Already has an existing wiki page (concept/people/yuval-noah-harari). Promote to confirm existing page is the target.
 
 ## Mentions
 
-- [[harari-economic-political-perils-of-ai|Yuval Noah Harari on the economic and political perils of AI]]
+- [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]

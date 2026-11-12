@@ -2,19 +2,19 @@
 type: entity
 title: "ChatGPT"
 tags: [ingested]
-sources: ["leaked-google-memo-we-have-no-moat"]
+sources: ["harari-ai-hacked-operating-system-civilisation"]
 ---
 
 # ChatGPT
 
-_Stub page created automatically during ingest of [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]._
+_Stub page created automatically during ingest of [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]._
 
-Already has a page at entity/entities/chatgpt. Central benchmark referenced throughout the memo discussion.
+Already has an existing wiki page (entity/entities/chatgpt). Central tool referenced across many AI sources.
 
 ## Why this earned its own page
 
-Already has a page at entity/entities/chatgpt. Central benchmark referenced throughout the memo discussion.
+Already has an existing wiki page (entity/entities/chatgpt). Central tool referenced across many AI sources.
 
 ## Mentions
 
-- [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
+- [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]

@@ -21,6 +21,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 
 
+
+- [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]
 - [[overemployment-tech-workers-two-timing-employers|How to two-time your employer: a tech worker’s guide]]
 - [[ai-remixing-journalism-soup-of-language|Artificial intelligence is remixing journalism into a “soup” of language]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

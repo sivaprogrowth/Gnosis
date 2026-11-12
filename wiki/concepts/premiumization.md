@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Premiumization"
+title: "Premiumisation"
 tags: [ingested]
-sources: ["hul-ceo-sanjiv-mehta-competition-digital-fmcg"]
+sources: ["barbell-economy-walmart-tiffany-consumer-bifurcation"]
 ---
 
-# Premiumization
+# Premiumisation
 
-_Stub page created automatically during ingest of [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]._
+_Stub page created automatically during ingest of [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]._
 
-A well-defined, recurring economic/marketing concept (consumers trading up to higher-value products) adjacent to existing wiki pages on consumption patterns, brand strategy, and GLP-1/obesity trends. Likely to be referenced from HUL, FMCG, and broader consumer-economy pages.
+Already exists as concept/concepts/premiumization in the wiki — this is an exact match, so it should be promoted (it already has a page).
 
 ## Why this earned its own page
 
-A well-defined, recurring economic/marketing concept (consumers trading up to higher-value products) adjacent to existing wiki pages on consumption patterns, brand strategy, and GLP-1/obesity trends. Likely to be referenced from HUL, FMCG, and broader consumer-economy pages.
+Already exists as concept/concepts/premiumization in the wiki — this is an exact match, so it should be promoted (it already has a page).
 
 ## Mentions
 
-- [[hul-ceo-sanjiv-mehta-competition-digital-fmcg|Competition brings out the best in us: HUL CEO and MD]]
+- [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]

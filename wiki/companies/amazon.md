@@ -35,6 +35,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]
 - [[short-guide-to-corporate-rituals|A short guide to corporate rituals]]
 - [[wga-strike-2023-hollywood-streaming-structural-change|Writers on strike beware: Hollywood has changed for ever]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]

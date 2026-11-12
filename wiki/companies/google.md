@@ -22,6 +22,8 @@ Already has a page at concept/companies/google.
 
 
 
+
+- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

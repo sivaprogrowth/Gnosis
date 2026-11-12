@@ -17,4 +17,6 @@ Already has an existing wiki page (entity/entities/chatgpt). Central tool refere
 
 ## Mentions
 
+
+- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]

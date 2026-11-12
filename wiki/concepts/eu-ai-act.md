@@ -2,19 +2,19 @@
 type: concept
 title: "EU AI Act"
 tags: [ingested]
-sources: ["enterprises-winning-ai-agents-limiting-autonomy"]
+sources: ["how-to-worry-wisely-about-artificial-intelligence"]
 ---
 
 # EU AI Act
 
-_Stub page created automatically during ingest of [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]._
+_Stub page created automatically during ingest of [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]._
 
-The EU AI Act is a well-defined, named regulation with a hard compliance deadline (Dec 2027) cited as a primary driver of enterprise governance decisions. Multiple existing pages on AI governance (concept/concepts/agentic-workflow-governance, concept/concepts/ai-geopolitics, concept/concepts/ai-export-controls, concept/concepts/legal-ai) would naturally cite it, and future sources on AI regulation will reference it repeatedly.
+Already exists as concept/concepts/eu-ai-act — referenced across AI governance, AI export controls, and AI regulation discussions. Multiple existing pages would cite it.
 
 ## Why this earned its own page
 
-The EU AI Act is a well-defined, named regulation with a hard compliance deadline (Dec 2027) cited as a primary driver of enterprise governance decisions. Multiple existing pages on AI governance (concept/concepts/agentic-workflow-governance, concept/concepts/ai-geopolitics, concept/concepts/ai-export-controls, concept/concepts/legal-ai) would naturally cite it, and future sources on AI regulation will reference it repeatedly.
+Already exists as concept/concepts/eu-ai-act — referenced across AI governance, AI export controls, and AI regulation discussions. Multiple existing pages would cite it.
 
 ## Mentions
 
-- [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]
+- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

@@ -17,4 +17,6 @@ Already has a page at concept/concepts/ai-safety. The memo's argument that open-
 
 ## Mentions
 
+
+- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

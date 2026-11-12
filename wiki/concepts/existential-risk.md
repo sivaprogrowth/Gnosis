@@ -1,20 +1,20 @@
 ---
 type: concept
-title: "Existential Risk"
+title: "Existential risk"
 tags: [ingested]
-sources: ["humanity-not-ready-intelligence-explosion-marshall"]
+sources: ["how-to-worry-wisely-about-artificial-intelligence"]
 ---
 
-# Existential Risk
+# Existential risk
 
-_Stub page created automatically during ingest of [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]._
+_Stub page created automatically during ingest of [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]._
 
-A well-defined concept that cuts across multiple existing wiki topics — superintelligence, AI winters, recursive self-improvement, Fermi Paradox, AI governance. The 10–50% probability framing is a concrete, citable claim. Likely to be referenced repeatedly across AI risk and governance sources the user tracks.
+Already exists as concept/concepts/existential-risk — promoting to confirm it deserves its own page given citations from AI safety, superintelligence, AI governance, and this new source.
 
 ## Why this earned its own page
 
-A well-defined concept that cuts across multiple existing wiki topics — superintelligence, AI winters, recursive self-improvement, Fermi Paradox, AI governance. The 10–50% probability framing is a concrete, citable claim. Likely to be referenced repeatedly across AI risk and governance sources the user tracks.
+Already exists as concept/concepts/existential-risk — promoting to confirm it deserves its own page given citations from AI safety, superintelligence, AI governance, and this new source.
 
 ## Mentions
 
-- [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]
+- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

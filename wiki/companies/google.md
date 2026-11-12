@@ -2,39 +2,19 @@
 type: company
 title: "Google"
 tags: [ingested]
-sources: ["who-owns-the-generative-ai-platform"]
+sources: ["digital-2022-india"]
 ---
 
 # Google
 
-_Stub page created automatically during ingest of [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]._
+_Stub page created automatically during ingest of [[digital-2022-india|Digital 2022: India]]._
 
-Already has a page at concept/companies/google.
+Google already has a wiki page (concept/companies/google). Same situation as Meta — existing page covers this.
 
 ## Why this earned its own page
 
-Already has a page at concept/companies/google.
+Google already has a wiki page (concept/companies/google). Same situation as Meta — existing page covers this.
 
 ## Mentions
 
-
-
-
-
-
-
-
-
-
-
-- [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
-- [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
-- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
-- [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
-- [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]
-- [[harari-ai-hacked-operating-system-civilisation|Yuval Noah Harari argues that AI has hacked the operating system of human civilisation]]
-- [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
-- [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
-- [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
-- [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
-- [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
+- [[digital-2022-india|Digital 2022: India]]

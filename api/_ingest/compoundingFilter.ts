@@ -79,7 +79,7 @@ export async function compoundingFilter(args: {
 
   // Compact representation — minimise tokens while preserving signal
   const existingPagesText = args.existingPages
-    .map((p) => `${p.type}/${p.slug} — ${p.title}`)
+    .map((p) => `${p.slug} (${p.type}) — ${p.title}`)
     .join("\n")
 
   const candidatesText = args.candidates

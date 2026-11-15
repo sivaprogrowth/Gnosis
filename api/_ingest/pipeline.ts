@@ -12,6 +12,7 @@
 
 import { supabase } from "../_auth/supabase.js"
 import { getPageIndex } from "../_retrieval/pageIndex.js"
+import { sanitizeEntitySlug } from "./slug.js"
 import { compoundingFilter } from "./compoundingFilter.js"
 import { extractPdf } from "./extractPdf.js"
 import { fetchUrl } from "./fetchUrl.js"
@@ -112,10 +113,7 @@ async function findPriorSourceSlug(
   return slug || null
 }
 
-export async function runSynthesisOnly(
-  jobId: string,
-  sourceMeta: SourceMeta = {},
-): Promise<void> {
+export async function runSynthesisOnly(jobId: string, sourceMeta: SourceMeta = {}): Promise<void> {
   const { data: job, error: loadErr } = await supabase
     .from("gnosis_ingest_jobs")
     .select("source_type, source_url, source_filename, source_title, raw_markdown")
@@ -192,7 +190,12 @@ export async function runSynthesisOnly(
   // cap) invents a new slug and forks a second source page instead of
   // overwriting the first. Pin to the slug the last successful ingest of this
   // source used, if there is one.
-  const priorSlug = await findPriorSourceSlug(jobId, job.source_type, job.source_url, job.source_filename)
+  const priorSlug = await findPriorSourceSlug(
+    jobId,
+    job.source_type,
+    job.source_url,
+    job.source_filename,
+  )
   if (priorSlug && priorSlug !== synth.suggestedSlug) {
     console.warn(
       `[pipeline] job ${jobId}: reusing prior slug "${priorSlug}" instead of newly suggested "${synth.suggestedSlug}" so the re-ingest overwrites rather than forks.`,
@@ -326,6 +329,8 @@ export async function runCommit(
   onFrame({ stage: "writing", message: "Generating entity stubs…" })
 
   const files: Array<{ path: string; content: string }> = []
+  const index = getPageIndex()
+  const createdEntitySlugs: string[] = []
   files.push({
     path: `wiki/sources/${surfaced.suggestedSlug}.md`,
     content: applySourceMeta(surfaced.sourcePage, sourceMeta),
@@ -341,19 +346,35 @@ export async function runCommit(
             : entity.type === "tool"
               ? "entities"
               : "concepts"
-    const path = `wiki/${entityType}/${entity.suggestedSlug}.md`
+    // The model sometimes echoes an existing page back as its slug, complete
+    // with the type prefix the prompt showed it ("concept/companies/anthropic").
+    // Joining that under the type folder produced wiki/companies/concept/
+    // companies/anthropic.md (56 such pages, Aug 2026). Keep only the last
+    // path segment, and never write a stub over a page that already exists.
+    const slug = sanitizeEntitySlug(entity.suggestedSlug)
+    if (!slug) {
+      console.warn(
+        `[pipeline] skipping entity "${entity.name}": unusable slug "${entity.suggestedSlug}"`,
+      )
+      continue
+    }
+    if (index.bySlug.has(`${entityType}/${slug}`)) {
+      console.info(
+        `[pipeline] entity "${entity.name}" already exists at wiki/${entityType}/${slug}.md — not writing a stub`,
+      )
+      continue
+    }
+    const path = `wiki/${entityType}/${slug}.md`
     const content = buildEntityStub(entity, surfaced.sourceTitle, surfaced.suggestedSlug)
     files.push({ path, content })
+    createdEntitySlugs.push(slug)
   }
 
   // Backlink updates: scan the new source page for [[wiki-link]] markers and,
   // for each one that resolves to an existing wiki page, append a new entry
   // to that page's ## Mentions section. All updates land in the same atomic
   // commit, so the wiki stays consistent.
-  const newlyCreatedSlugs = new Set<string>([
-    surfaced.suggestedSlug,
-    ...surfaced.promote.map((e) => e.suggestedSlug),
-  ])
+  const newlyCreatedSlugs = new Set<string>([surfaced.suggestedSlug, ...createdEntitySlugs])
   const backlinkUpdates = await collectBacklinkUpdates({
     sourcePage: surfaced.sourcePage,
     newSourceSlug: surfaced.suggestedSlug,
@@ -785,9 +806,7 @@ export async function processClippingsCron(
   // stay invisible on the live site, so a failure here is loud but not fatal.
   if (summary.processed > 0) {
     try {
-      const sha = await triggerVercelRebuild(
-        `clippings cron wave (${summary.processed} ingested)`,
-      )
+      const sha = await triggerVercelRebuild(`clippings cron wave (${summary.processed} ingested)`)
       console.log(`[cron] wave rebuild triggered via main commit ${sha.slice(0, 7)}`)
     } catch (e) {
       console.error(
@@ -990,7 +1009,8 @@ export function applySourceMeta(sourcePage: string, meta: SourceMeta): string {
   }
 
   const data: Record<string, unknown> = { ...(parsed.data ?? {}) }
-  const hadNullPublished = data.published === null || data.published === "null" || data.published === ""
+  const hadNullPublished =
+    data.published === null || data.published === "null" || data.published === ""
   const hadEmptyAuthors =
     data.authors === null || (Array.isArray(data.authors) && data.authors.length === 0)
 
@@ -1003,7 +1023,10 @@ export function applySourceMeta(sourcePage: string, meta: SourceMeta): string {
   if (meta.authors && meta.authors.length > 0) data.authors = meta.authors
 
   const changed =
-    hadNullPublished || hadEmptyAuthors || !!meta.published || !!(meta.authors && meta.authors.length)
+    hadNullPublished ||
+    hadEmptyAuthors ||
+    !!meta.published ||
+    !!(meta.authors && meta.authors.length)
   return changed ? matter.stringify(parsed.content, data) : sourcePage
 }
 

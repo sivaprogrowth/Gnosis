@@ -1,12 +1,24 @@
 filters:
   type == "entity"
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+  words: '(file.size / 6).round(0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
+  formula.words:
+    displayName: "~Words"
 views:
   - type: table
-    name: Entities
+    name: "Entities"
     order:
       - file.name
+      - aliases
+      - formula.cites
+      - formula.words
       - tags
-      - file.backlinks
     sort:
-      - property: file.backlinks
+      - property: formula.cites
         direction: DESC
+      - property: file.name
+        direction: ASC

@@ -1,0 +1,28 @@
+# §4.7 weekly synthesis briefs (automated, land in wiki/queries/synthesis-YYYY-Www.md).
+filters:
+  and:
+    - type == "query"
+    - file.hasTag("synthesis")
+formulas:
+  week: 'file.basename.replace("synthesis-", "")'
+  words: '(file.size / 6).round(0)'
+  n_sources: 'if(sources, sources.length, 0)'
+properties:
+  formula.week:
+    displayName: "Week"
+  formula.words:
+    displayName: "~Words"
+  formula.n_sources:
+    displayName: "Sources"
+views:
+  - type: table
+    name: "Weekly briefs"
+    order:
+      - formula.week
+      - file.name
+      - formula.n_sources
+      - formula.words
+      - created
+    sort:
+      - property: file.basename
+        direction: DESC

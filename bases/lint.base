@@ -1,0 +1,82 @@
+# Live counterpart to scripts/lint-wiki.py for the checks Bases can express.
+# Undefined [[links]] and index drift still need the script.
+filters:
+  and:
+    - type != null
+    - type != "home"
+    - not:
+        - file.hasTag("newsletter-idea")
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+  words: '(file.size / 6).round(0)'
+  age_days: '(now() - file.mtime).days.round(0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
+  formula.words:
+    displayName: "~Words"
+  formula.age_days:
+    displayName: "Days since edit"
+views:
+  - type: table
+    name: "Stubs — ≤1 source and <120 words"
+    filters:
+      and:
+        - 'type != "source"'
+        - 'if(sources, sources.length, 0) <= 1'
+        - 'file.size < 720'
+    order:
+      - file.name
+      - type
+      - formula.cites
+      - formula.words
+    sort:
+      - property: type
+        direction: ASC
+      - property: file.size
+        direction: ASC
+  - type: table
+    name: "Stale — well-cited but untouched 180+ days"
+    filters:
+      and:
+        - 'type != "source"'
+        - 'if(sources, sources.length, 0) >= 3'
+        - '(now() - file.mtime).days > 180'
+    order:
+      - file.name
+      - type
+      - formula.cites
+      - formula.age_days
+    sort:
+      - property: formula.cites
+        direction: DESC
+  - type: table
+    name: "Sources missing author or date"
+    filters:
+      and:
+        - 'type == "source"'
+        - or:
+            - 'authors.isEmpty()'
+            - 'published.isEmpty()'
+    order:
+      - file.name
+      - authors
+      - published
+      - source_url
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: "Untagged or type-only tags"
+    filters:
+      and:
+        - or:
+            - 'tags.isEmpty()'
+            - 'tags.length <= 1'
+    order:
+      - file.name
+      - type
+      - tags
+    sort:
+      - property: type
+        direction: ASC

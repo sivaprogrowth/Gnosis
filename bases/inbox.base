@@ -1,13 +1,66 @@
+# Inbox — what is waiting to be ingested, from both capture paths.
+# Clippings/ = Obsidian Web Clipper → server cron (05:00 + 15:00 UTC) flips gnosis_ingested.
+# raw/articles/ = scripts/acquire.sh or hand-saved files, drained via CLAUDE.md §4.3.
 filters:
-  and:
-    - file.folder == "raw/articles"
-    - file.hasTag("inbox")
+  or:
+    - file.inFolder("Clippings")
+    - file.inFolder("raw/articles")
+formulas:
+  age_days: '(now() - file.ctime).days.round(0)'
+  words: '(file.size / 6).round(0)'
+  ingested_on: 'if(gnosis_ingested_at, date(gnosis_ingested_at).format("YYYY-MM-DD"), "")'
+properties:
+  formula.age_days:
+    displayName: "Days waiting"
+  formula.words:
+    displayName: "~Words"
+  formula.ingested_on:
+    displayName: "Ingested on"
+  note.gnosis_job_id:
+    displayName: "Job"
 views:
   - type: table
-    name: Inbox
+    name: "Waiting — clippings"
+    filters:
+      and:
+        - file.inFolder("Clippings")
+        - 'gnosis_ingested != true'
     order:
-      - file.ctime
-      - domain
+      - file.name
+      - author
+      - published
+      - formula.age_days
+      - formula.words
     sort:
       - property: file.ctime
         direction: ASC
+  - type: table
+    name: "Waiting — raw/articles"
+    filters:
+      and:
+        - file.inFolder("raw/articles")
+        - file.hasTag("inbox")
+    order:
+      - file.name
+      - domain
+      - author
+      - formula.age_days
+      - formula.words
+    sort:
+      - property: file.ctime
+        direction: ASC
+  - type: table
+    name: "Recently ingested"
+    limit: 15
+    filters:
+      and:
+        - file.inFolder("Clippings")
+        - 'gnosis_ingested == true'
+    order:
+      - file.name
+      - formula.ingested_on
+      - author
+      - formula.words
+    sort:
+      - property: gnosis_ingested_at
+        direction: DESC

@@ -1,0 +1,45 @@
+# One-idea pages backfilled from Farnam Street + James Clear newsletters (tag newsletter-idea).
+filters:
+  file.hasTag("newsletter-idea")
+formulas:
+  pub_year: 'if(published, published.toString().slice(0, 4), "undated")'
+  who: 'if(authors, authors.join(", "), "")'
+properties:
+  formula.pub_year:
+    displayName: "Year"
+  formula.who:
+    displayName: "Author"
+views:
+  - type: table
+    name: "Newest first"
+    limit: 50
+    order:
+      - file.name
+      - formula.who
+      - published
+      - tags
+    sort:
+      - property: published
+        direction: DESC
+  - type: table
+    name: "By author and year"
+    groupBy:
+      property: formula.who
+      direction: ASC
+    order:
+      - file.name
+      - published
+    sort:
+      - property: published
+        direction: DESC
+  - type: table
+    name: "Count by year"
+    groupBy:
+      property: formula.pub_year
+      direction: DESC
+    order:
+      - file.name
+      - formula.who
+    sort:
+      - property: published
+        direction: DESC

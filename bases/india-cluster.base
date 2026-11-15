@@ -2,18 +2,25 @@ filters:
   and:
     - type != null
     - or:
-        - tags.contains("india")
-        - tags.contains("telangana")
-        - tags.contains("shared-connection")
+        - file.hasTag("india")
+        - file.hasTag("telangana")
+        - file.hasTag("shared-connection")
+        - 'based-in.contains("India")'
+        - 'headquartered.contains("India")'
+properties:
+  note.based-in:
+    displayName: "Based in"
 views:
   - type: table
-    name: India / Telangana cluster
+    name: "India / Telangana cluster"
+    groupBy:
+      property: type
+      direction: ASC
     order:
       - file.name
-      - type
+      - based-in
+      - headquartered
       - tags
     sort:
-      - property: type
-        direction: ASC
       - property: file.name
         direction: ASC

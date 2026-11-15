@@ -1,13 +1,59 @@
+# Concepts, excluding the 3,088 one-idea newsletter pages (see newsletter-ideas.base).
+# "Cites" = length of the frontmatter sources list — cheap, unlike file.backlinks on 4k pages.
 filters:
-  type == "concept"
+  and:
+    - type == "concept"
+    - not:
+        - file.hasTag("newsletter-idea")
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+  words: '(file.size / 6).round(0)'
+  age_days: '(now() - file.mtime).days.round(0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
+  formula.words:
+    displayName: "~Words"
+  formula.age_days:
+    displayName: "Days since edit"
 views:
   - type: table
-    name: Concepts
+    name: "Most cited"
+    limit: 40
     order:
       - file.name
+      - formula.cites
       - tags
-      - file.links
-      - file.backlinks
+      - formula.words
+      - file.mtime
     sort:
-      - property: file.backlinks
+      - property: formula.cites
         direction: DESC
+      - property: file.mtime
+        direction: DESC
+    summaries:
+      formula.cites: Average
+      formula.words: Average
+  - type: table
+    name: "Stubs (≤1 source, <120 words)"
+    filters:
+      and:
+        - 'if(sources, sources.length, 0) <= 1'
+        - 'file.size < 720'
+    order:
+      - file.name
+      - formula.cites
+      - formula.words
+      - file.mtime
+    sort:
+      - property: file.size
+        direction: ASC
+  - type: table
+    name: "All concepts A–Z"
+    order:
+      - file.name
+      - formula.cites
+      - tags
+    sort:
+      - property: file.name
+        direction: ASC

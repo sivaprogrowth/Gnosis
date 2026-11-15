@@ -1,10 +1,27 @@
+# Uses file.backlinks, which is slow on a 4k-page vault and does not refresh live.
+# Scoped to hand-curated types; newsletter-idea pages are excluded (they are orphans by design).
 filters:
   and:
     - type != null
+    - type != "home"
+    - not:
+        - file.hasTag("newsletter-idea")
     - file.backlinks.isEmpty()
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
 views:
-  - type: list
-    name: Orphans
+  - type: table
+    name: "Orphans"
+    order:
+      - file.name
+      - type
+      - formula.cites
+      - file.mtime
     sort:
+      - property: type
+        direction: ASC
       - property: file.name
         direction: ASC

@@ -1,9 +1,23 @@
-filters: type != null
+filters:
+  type != null
+formulas:
+  words: '(file.size / 6).round(0)'
+properties:
+  formula.words:
+    displayName: "~Words"
 views:
   - type: table
-    name: Pages by type
+    name: "Pages by type"
     groupBy:
       property: type
       direction: ASC
     order:
       - file.name
+      - formula.words
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+    summaries:
+      formula.words: Sum
+      file.mtime: Latest

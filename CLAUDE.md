@@ -29,6 +29,8 @@ At the start of every session in this directory:
 ├── Now.md          # current week's work + 12-week-year theme (hand-maintained, updated Sundays)
 ├── Home.md         # OPTIONAL: Obsidian Bases dashboard at vault root (embeds bases/*.base)
 ├── bases/          # Obsidian Bases views (.base files) — replaces the legacy Dataview blocks
+│                   #   inbox / lint / weekly-briefs / newsletter-ideas + one per page type
+├── templates/      # Knap templates (raw-article.knap.md renders Defuddle JSON → raw/articles/)
 ├── .obsidian/      # LOCAL ONLY (gitignored): per-machine vault config
 ├── raw/            # IMMUTABLE source documents — you only read
 │   ├── articles/   #   web articles (.md from Web Clipper or fetched)
@@ -48,6 +50,8 @@ At the start of every session in this directory:
 │   ├── _template.md  #   starting point for a new deck
 │   └── dist/         #   export output (gitignored) — PDF / HTML / PPTX
 └── scripts/        # helper scripts for vault-side workflows
+    ├── acquire.sh       # §4.1 step 1: defuddle → knap → raw/articles/<date>-<slug>.md
+    ├── lint-wiki.py     # §4.5 checks Bases can't do (undefined links, index drift)
     └── build-slides.sh  # wraps `npx @marp-team/marp-cli` to export decks
 ```
 
@@ -69,7 +73,7 @@ When a single concrete noun could fit multiple folders, prefer the folder that b
 
 When the user says "ingest <URL>" or "ingest <path>":
 
-1. **Acquire** — if URL, fetch and save as markdown under `raw/articles/<slug>.md`. If path, confirm the file exists.
+1. **Acquire** — if URL, run `bash scripts/acquire.sh <url>`. Defuddle extracts clean markdown plus title / author / published / domain, and Knap renders it through `templates/raw-article.knap.md` into `raw/articles/<YYYY-MM-DD>-<slug>.md` with the standard `inbox` frontmatter. The script refuses to save anything under 200 words (paywall, consent wall, teaser) and says so — never fall back to a WebFetch/`r.jina.ai` copy silently; tell the user the page is thin and ask for a Web Clipper capture from a logged-in browser. If path, confirm the file exists.
 2. **Read** the full source.
 3. **Discuss** — summarize key takeaways in chat (3–7 bullet points). Wait for the user to react, guide emphasis, or ask follow-ups. Do not write anything yet.
 4. **Write the source page** at `wiki/sources/<slug>.md` with:
@@ -162,6 +166,8 @@ Produce a report (do not auto-apply fixes). Check for:
 - **Log gaps** — ingests that didn't produce log entries.
 
 Suggest specific fixes; ask before making them.
+
+`bases/lint.base` (embedded on `Home.md` under *Wiki health*) shows the stub / stale / missing-metadata subset live inside Obsidian; `scripts/lint-wiki.py` remains the authority for undefined links and index drift.
 
 ### 4.6 Drain the Readwise inbox (book ingest)
 
@@ -614,6 +620,8 @@ If you ever need to *change how the public site looks* (dashboard composition, w
 The mode is set per-task by the user's phrasing, not by a global setting. Switch back to interactive on the next ingest unless the user carries the compact instruction forward.
 
 ## 11. Obsidian MCP Tool Preference
+
+**Obsidian Skills (installed in Claude Code 2026-11-15, plugin `obsidian@obsidian-skills`).** Use the `obsidian-markdown` and `obsidian-bases` skills for syntax (properties, callouts, embeds, `.base` filters/formulas), `defuddle` + `knap` for the acquire step above. Where a skill's generic advice disagrees with §5 page conventions or §1 principles, **this file wins**. Everything under `wiki/` also has to render on the public Quartz site (§9): no Bases embeds, Canvas files, or `%%comment%%`-dependent content in wiki pages — those belong in `Home.md`, `bases/`, or root notes only. The `obsidian-cli` skill needs the Obsidian **1.12.7+ installer** and a running app; this Mac is on 1.10.3, so until the installer is upgraded keep using the MCP/filesystem rules below. Once upgraded, `obsidian orphans`, `unresolved`, `backlinks`, `search:context`, `property:set` and `base:query` replace most of `scripts/obsidian.py` and the orphan/undefined-link half of `scripts/lint-wiki.py`.
 
 When operating inside `~/Projects/gnosis/`, prefer the Obsidian MCP tools (`mcp__obsidian__*`) over filesystem `Read`/`Grep`/`Write`/`Edit` for vault work. The MCP server reads the live Obsidian vault — it sees unsaved edits, respects the index, and triggers re-indexing on writes. Filesystem operations only see what's on disk and bypass Obsidian's awareness.
 

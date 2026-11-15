@@ -1,13 +1,34 @@
 filters:
   type == "company"
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
+  note.founded-by:
+    displayName: "Founded by"
 views:
   - type: table
-    name: Companies
+    name: "Companies"
     order:
       - file.name
       - website
+      - headquartered
+      - formula.cites
       - tags
-      - file.backlinks
     sort:
-      - property: file.backlinks
+      - property: formula.cites
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: "By tag"
+    groupBy:
+      property: tags
+      direction: ASC
+    order:
+      - file.name
+      - formula.cites
+    sort:
+      - property: formula.cites
         direction: DESC

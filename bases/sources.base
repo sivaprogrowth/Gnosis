@@ -1,15 +1,72 @@
 filters:
   type == "source"
+formulas:
+  words: '(file.size / 6).round(0)'
+  age_days: '(now() - file.mtime).days.round(0)'
+  pub_year: 'if(published, published.toString().slice(0, 4), "")'
+properties:
+  formula.words:
+    displayName: "~Words"
+  formula.age_days:
+    displayName: "Days since edit"
+  formula.pub_year:
+    displayName: "Year"
+  note.source_type:
+    displayName: "Kind"
+  note.source_url:
+    displayName: "URL"
 views:
   - type: table
-    name: Sources
+    name: "Sources"
     order:
       - file.name
       - authors
       - published
-      - file.backlinks
+      - source_type
+      - formula.words
+      - source_url
     sort:
       - property: published
         direction: DESC
       - property: file.mtime
+        direction: DESC
+    summaries:
+      published: Latest
+      formula.words: Sum
+  - type: table
+    name: "By kind"
+    groupBy:
+      property: source_type
+      direction: ASC
+    order:
+      - file.name
+      - authors
+      - published
+    sort:
+      - property: published
+        direction: DESC
+  - type: table
+    name: "By year published"
+    groupBy:
+      property: formula.pub_year
+      direction: DESC
+    order:
+      - file.name
+      - authors
+      - source_type
+    sort:
+      - property: published
+        direction: DESC
+  - type: table
+    name: "Added in the last 30 days"
+    filters:
+      and:
+        - '(now() - file.ctime).days < 30'
+    order:
+      - file.name
+      - authors
+      - published
+      - file.ctime
+    sort:
+      - property: file.ctime
         direction: DESC

@@ -1,14 +1,43 @@
 filters:
   type == "person"
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+  words: '(file.size / 6).round(0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
+  formula.words:
+    displayName: "~Words"
+  note.based-in:
+    displayName: "Based in"
+  note.relationship-to-siva:
+    displayName: "Relationship"
 views:
   - type: table
-    name: People
+    name: "People"
     order:
       - file.name
       - role
       - company
       - based-in
+      - formula.cites
       - file.mtime
+    sort:
+      - property: formula.cites
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: "Thin profiles (no role, ≤1 source)"
+    filters:
+      and:
+        - 'role.isEmpty()'
+        - 'if(sources, sources.length, 0) <= 1'
+    order:
+      - file.name
+      - formula.cites
+      - formula.words
+      - tags
     sort:
       - property: file.name
         direction: ASC

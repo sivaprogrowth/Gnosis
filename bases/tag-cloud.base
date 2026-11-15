@@ -1,11 +1,15 @@
 filters:
-  type != null
+  and:
+    - type != null
+    - not:
+        - file.hasTag("newsletter-idea")
 views:
   - type: table
-    name: Tags by usage
-    order:
-      - file.name
+    name: "Tags by usage"
     groupBy:
       property: tags
       direction: ASC
-    limit: 20
+    limit: 25
+    order:
+      - file.name
+      - type

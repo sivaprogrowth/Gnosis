@@ -1,13 +1,24 @@
 filters:
   or:
-    - tags.contains("siva")
-    - tags.contains("progrowth")
-    - tags.contains("founder")
+    - file.hasTag("siva")
+    - file.hasTag("progrowth")
+    - file.hasTag("founder")
+formulas:
+  cites: 'if(sources, sources.length, 0)'
+properties:
+  formula.cites:
+    displayName: "Cites"
 views:
-  - type: list
-    name: Siva's orbit
+  - type: table
+    name: "Siva's orbit"
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - tags
+      - formula.cites
+      - file.mtime
     sort:
-      - property: type
-        direction: ASC
       - property: file.name
         direction: ASC

@@ -1,14 +1,39 @@
 filters:
-  type != null
+  and:
+    - type != null
+    - not:
+        - file.hasTag("newsletter-idea")
+formulas:
+  when: 'file.mtime.relative()'
+  cites: 'if(sources, sources.length, 0)'
+properties:
+  formula.when:
+    displayName: "Edited"
+  formula.cites:
+    displayName: "Cites"
 views:
   - type: table
-    name: Recently updated
+    name: "Recently updated"
+    limit: 15
     order:
       - file.name
       - type
-      - tags
-      - file.mtime
+      - formula.when
+      - formula.cites
     sort:
       - property: file.mtime
         direction: DESC
-    limit: 12
+  - type: table
+    name: "Touched this week"
+    filters:
+      and:
+        - '(now() - file.mtime).days < 7'
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - formula.when
+    sort:
+      - property: file.mtime
+        direction: DESC

@@ -4,9 +4,12 @@
  * Two-tier strategy:
  *
  *   Tier 1 (direct) — fetch with a 15s timeout + a real browser UA, parse with
- *   linkedom, run @mozilla/readability to strip nav/ads/etc, convert to
- *   markdown with turndown. Falls back to a full-page turndown if readability
- *   bails (GitHub READMEs, MDX docs) but still produces useful markdown.
+ *   linkedom, run Defuddle (the same extractor behind the Obsidian Web Clipper
+ *   and scripts/acquire.sh in the vault) to strip nav/ads/etc and emit
+ *   markdown, so a URL ingested here matches one clipped by hand. If Defuddle
+ *   returns a thin result it falls back to @mozilla/readability + turndown,
+ *   and from there to a full-page turndown (GitHub READMEs, MDX docs) which
+ *   still produces useful markdown.
  *
  *   Tier 2 (reader proxy) — a plain server-side fetch cannot get past bot
  *   management (Cloudflare Turnstile, PerimeterX, Incapsula). Those sites
@@ -22,6 +25,7 @@
  */
 
 import { Readability } from "@mozilla/readability"
+import { Defuddle } from "defuddle/node"
 import { parseHTML } from "linkedom"
 import TurndownService from "turndown"
 
@@ -172,9 +176,10 @@ async function tryDirectFetch(url: string, parsedUrl: URL): Promise<DirectAttemp
   const html = await res.text()
   if (!html.trim()) return { ok: false, reason: "direct fetch returned an empty body" }
 
-  // Parse + readability. linkedom over jsdom because jsdom fails to init in
+  // Parse with linkedom rather than jsdom because jsdom fails to init in
   // Vercel's serverless runtime (it needs Node internals not exposed there).
-  // Readability is happy with any DOM that quacks like the spec.
+  // Both Defuddle and Readability are happy with any DOM that quacks like the
+  // spec.
   const { document } = parseHTML(html)
   // Set base href so relative links resolve correctly during readability's parse
   if (!document.querySelector("base")) {
@@ -182,27 +187,55 @@ async function tryDirectFetch(url: string, parsedUrl: URL): Promise<DirectAttemp
     base.setAttribute("href", url)
     document.head?.appendChild(base)
   }
-  const reader = new Readability(document as unknown as Document)
-  const article = reader.parse()
-
   const td = makeTurndown()
-  let markdown: string
-  let title: string
+  let markdown = ""
+  let title = ""
   let byline: string | null = null
   let publishedTime: string | null = null
   let excerpt: string | null = null
+  let extractor: "defuddle" | "readability" | "full-page" = "full-page"
 
-  if (article && article.content && article.content.trim().length > 200) {
-    markdown = td.turndown(article.content)
-    title = article.title || parsedUrl.hostname
-    byline = article.byline ?? null
-    publishedTime = article.publishedTime ?? null
-    excerpt = article.excerpt ?? null
-  } else {
-    // Fallback: whole-document turndown (readability bailed)
-    markdown = td.turndown(document.body?.innerHTML ?? html)
-    title = document.querySelector("title")?.textContent?.trim() || parsedUrl.hostname
+  // Primary extractor: Defuddle. It rewrites the DOM it is given, so the
+  // Readability fallback below re-parses the HTML instead of reusing this
+  // document.
+  try {
+    const result = await Defuddle(document as unknown as Document, url, { markdown: true })
+    if (result.content && result.content.trim().length > 200) {
+      markdown = result.content
+      title = result.title || ""
+      byline = result.author || null
+      publishedTime = result.published || null
+      excerpt = result.description || null
+      extractor = "defuddle"
+    }
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    console.warn(`[fetchUrl] ${url}: defuddle threw (${msg}) — trying readability`)
   }
+
+  if (extractor !== "defuddle") {
+    const { document: fresh } = parseHTML(html)
+    if (!fresh.querySelector("base")) {
+      const base = fresh.createElement("base")
+      base.setAttribute("href", url)
+      fresh.head?.appendChild(base)
+    }
+    const article = new Readability(fresh as unknown as Document).parse()
+    if (article && article.content && article.content.trim().length > 200) {
+      markdown = td.turndown(article.content)
+      title = article.title || ""
+      byline = article.byline ?? null
+      publishedTime = article.publishedTime ?? null
+      excerpt = article.excerpt ?? null
+      extractor = "readability"
+    } else {
+      // Last resort: whole-document turndown (both extractors bailed)
+      markdown = td.turndown(fresh.body?.innerHTML ?? html)
+      title = fresh.querySelector("title")?.textContent?.trim() || ""
+      extractor = "full-page"
+    }
+  }
+  title = title || parsedUrl.hostname
 
   // A challenge page answers 200 with a tiny "Just a moment…" body, so the
   // status code alone doesn't catch it.
@@ -212,8 +245,9 @@ async function tryDirectFetch(url: string, parsedUrl: URL): Promise<DirectAttemp
 
   markdown = markdown.replace(/\n{3,}/g, "\n\n").trim()
   const wordCount = countWords(markdown)
+  console.info(`[fetchUrl] ${url}: ${extractor} extracted ${wordCount} words`)
   if (wordCount < MIN_WORDS) {
-    return { ok: false, reason: `direct fetch extracted only ${wordCount} words` }
+    return { ok: false, reason: `direct fetch (${extractor}) extracted only ${wordCount} words` }
   }
   // Escalate rather than reject: the proxy occasionally gets more of the body.
   if (looksPaywalled(markdown, wordCount)) {

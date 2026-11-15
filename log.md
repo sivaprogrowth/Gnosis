@@ -194,3 +194,5 @@ Parse last 5 entries: `grep "^## \[" log.md | tail -5`.
 
 - 542 issues from personal Gmail split into 3730 ideas and merged to 3088 unique one-idea pages; 23 promotional emails skipped.
 - Pages live in `wiki/concepts/` tagged `newsletter-idea`; quotes checked against the source emails; no new person or company stubs.
+
+## [2026-11-15 03:31] query | weekly synthesis brief — 32 highlights, 1 sources (automated)

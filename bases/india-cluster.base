@@ -5,7 +5,7 @@ filters:
         - file.hasTag("india")
         - file.hasTag("telangana")
         - file.hasTag("shared-connection")
-        - 'based-in.contains("India")'
+        - 'note["based-in"].contains("India")'
         - 'headquartered.contains("India")'
 properties:
   note.based-in:

@@ -2,6 +2,7 @@
 # Undefined [[links]] and index drift still need the script.
 filters:
   and:
+    - '!file.name.startsWith("_")'
     - type != null
     - type != "home"
     - not:

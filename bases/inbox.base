@@ -2,9 +2,11 @@
 # Clippings/ = Obsidian Web Clipper → server cron (05:00 + 15:00 UTC) flips gnosis_ingested.
 # raw/articles/ = scripts/acquire.sh or hand-saved files, drained via CLAUDE.md §4.3.
 filters:
-  or:
-    - file.inFolder("Clippings")
-    - file.inFolder("raw/articles")
+  and:
+    - '!file.name.startsWith("_")'
+    - or:
+        - file.inFolder("Clippings")
+        - file.inFolder("raw/articles")
 formulas:
   age_days: '(now() - file.ctime).days.round(0)'
   words: '(file.size / 6).round(0)'

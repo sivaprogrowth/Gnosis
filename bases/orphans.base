@@ -2,6 +2,7 @@
 # Scoped to hand-curated types; newsletter-idea pages are excluded (they are orphans by design).
 filters:
   and:
+    - '!file.name.startsWith("_")'
     - type != null
     - type != "home"
     - not:

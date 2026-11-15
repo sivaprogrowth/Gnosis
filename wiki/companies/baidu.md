@@ -2,7 +2,7 @@
 type: company
 title: Baidu
 tags: [ingested]
-sources: [ai-super-apps-remaking-chinas-internet]
+sources: ["americas-ai-labs-threat-cheap-chinese-rivals", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Baidu
@@ -17,12 +17,9 @@ China's first-era search monopoly; directly relevant to existing pages on Google
 
 ## Mentions
 
-
-
-
-
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

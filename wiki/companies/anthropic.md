@@ -2,7 +2,7 @@
 type: company
 title: "Anthropic"
 tags: [ingested]
-sources: ["who-owns-the-generative-ai-platform"]
+sources: ["who-owns-the-generative-ai-platform", "americas-ai-labs-threat-cheap-chinese-rivals", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Anthropic
@@ -17,12 +17,6 @@ Already has a page at concept/companies/anthropic.
 
 ## Mentions
 
-
-
-
-
-
-
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
@@ -30,3 +24,5 @@ Already has a page at concept/companies/anthropic.
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[lightspeed-ai-reading-list-may-2023|What Lightspeed Is Reading, Listening To, And Thinking About AI]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

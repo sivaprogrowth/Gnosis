@@ -2,7 +2,7 @@
 type: company
 title: "OpenAI"
 tags: [ingested]
-sources: ["job-safety-from-ai-economist-2023"]
+sources: ["job-safety-from-ai-economist-2023", "americas-ai-labs-threat-cheap-chinese-rivals", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # OpenAI
@@ -17,17 +17,6 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 ## Mentions
 
-
-
-
-
-
-
-
-
-
-
-
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
@@ -40,3 +29,4 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

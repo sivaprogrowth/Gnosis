@@ -2,7 +2,7 @@
 type: company
 title: "Google DeepMind"
 tags: [ingested]
-sources: ["how-ai-got-better-at-building-itself-economist-2026"]
+sources: ["how-ai-got-better-at-building-itself-economist-2026", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Google DeepMind
@@ -16,20 +16,6 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 A major AI lab distinct from Google (which has its own page). Multiple existing pages reference DeepMind-adjacent work (Gemini, AlphaEvolve, AI evals, long-horizon R&D). The wiki tracks AI labs (OpenAI, Anthropic, xAI, ByteDance); Google DeepMind belongs in that set.
 
 ## Mentions
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]

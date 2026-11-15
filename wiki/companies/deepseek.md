@@ -2,7 +2,7 @@
 type: company
 title: "DeepSeek"
 tags: [ingested]
-sources: ["future-made-in-china-new-yorker"]
+sources: ["future-made-in-china-new-yorker", "americas-ai-labs-threat-cheap-chinese-rivals"]
 ---
 
 # DeepSeek
@@ -17,13 +17,6 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 ## Mentions
 
-
-
-
-
-
-
-
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[ramp-aeo-experiment-ai-hidden-offer|Ramp, a $60B company, hid a secret offer on its...]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
@@ -32,3 +25,4 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[what-ai-has-in-common-with-dogs|What AI has in common with dogs]]
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

@@ -2,7 +2,7 @@
 type: entity
 title: "GPT-4o"
 tags: [ingested]
-sources: ["three-reasons-ai-more-reliable-wsj-2026"]
+sources: ["three-reasons-ai-more-reliable-wsj-2026", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # GPT-4o
@@ -18,3 +18,4 @@ A named, specific model that serves as an industry baseline in benchmarking disc
 ## Mentions
 
 - [[three-reasons-ai-more-reliable-wsj-2026|Three Reasons AI Is Now More Reliable Than Ever]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

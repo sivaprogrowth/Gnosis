@@ -2,7 +2,7 @@
 type: company
 title: Alibaba
 tags: [ingested]
-sources: [ai-super-apps-remaking-chinas-internet]
+sources: ["americas-ai-labs-threat-cheap-chinese-rivals"]
 ---
 
 # Alibaba
@@ -17,13 +17,6 @@ Major tech giant that would be naturally cited alongside existing pages on AI-na
 
 ## Mentions
 
-
-
-
-
-
-
-
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[how-to-invest-in-artificial-intelligence-economist-2023|How to invest in artificial intelligence]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
@@ -32,3 +25,4 @@ Major tech giant that would be naturally cited alongside existing pages on AI-na
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

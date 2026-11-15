@@ -2,7 +2,7 @@
 type: entity
 title: "Stable Diffusion"
 tags: [ingested]
-sources: ["wsj-beyond-smartphone-mwc-2023"]
+sources: ["wsj-beyond-smartphone-mwc-2023", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Stable Diffusion
@@ -16,7 +16,6 @@ Already has adjacency with AI tools tracked in the wiki (ChatGPT, Claude, Gemini
 Already has adjacency with AI tools tracked in the wiki (ChatGPT, Claude, Gemini, Grok, etc.). As a major generative AI model referenced across multiple AI source pages and likely to be cited in on-device AI, vibe coding, and AI copyright discussions, it earns its own page.
 
 ## Mentions
-
 
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

@@ -2,7 +2,7 @@
 type: company
 title: "Nvidia"
 tags: [ingested]
-sources: ["job-safety-from-ai-economist-2023"]
+sources: ["job-safety-from-ai-economist-2023", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Nvidia
@@ -16,9 +16,6 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 Already has an existing wiki page (concept/companies/nvidia). Identified as the biggest corporate winner from AI, frequently cited across AI economics and infrastructure topics already in the wiki.
 
 ## Mentions
-
-
-
 
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

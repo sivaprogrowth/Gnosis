@@ -2,7 +2,7 @@
 type: company
 title: "Andreessen Horowitz"
 tags: [ingested]
-sources: ["job-safety-from-ai-economist-2023"]
+sources: ["job-safety-from-ai-economist-2023", "economist-investors-generative-ai-chatgpt-boom-2023"]
 ---
 
 # Andreessen Horowitz
@@ -17,8 +17,7 @@ Already has an existing wiki page (concept/companies/andreessen-horowitz). Quote
 
 ## Mentions
 
-
-
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

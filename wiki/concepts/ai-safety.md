@@ -2,7 +2,7 @@
 type: concept
 title: "AI safety"
 tags: [ingested]
-sources: ["leaked-google-memo-we-have-no-moat"]
+sources: ["leaked-google-memo-we-have-no-moat", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # AI safety
@@ -16,8 +16,6 @@ Already has a page at concept/concepts/ai-safety. The memo's argument that open-
 Already has a page at concept/concepts/ai-safety. The memo's argument that open-source boosts safety research is a notable cite for this page.
 
 ## Mentions
-
-
 
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

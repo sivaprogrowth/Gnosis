@@ -2,7 +2,7 @@
 type: concept
 title: "Foundation models"
 tags: [ingested]
-sources: ["china-generative-ai-capabilities-economist-2023"]
+sources: ["china-generative-ai-capabilities-economist-2023", "economist-investors-generative-ai-chatgpt-boom-2023"]
 ---
 
 # Foundation models
@@ -17,6 +17,6 @@ Already has a wiki page at concept/concepts/foundation-models. This source is sq
 
 ## Mentions
 
-
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

@@ -2,7 +2,7 @@
 type: concept
 title: "AI copyright"
 tags: [ingested]
-sources: ["wired-generative-ai-editorial-policy"]
+sources: ["wired-generative-ai-editorial-policy", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # AI copyright
@@ -16,8 +16,6 @@ AI copyright — specifically the legal dispute over training data and generated
 AI copyright — specifically the legal dispute over training data and generated outputs — is a substantive, recurring legal/policy concept. The wiki tracks ai-export-controls, ai-legal-personhood, ai-rights, ai-geopolitics, and legal-ai. AI copyright litigation (Getty vs image generators, etc.) is a distinct domain that would be cited by sources on AI regulation, image generators, and media policy. Meets criteria 1 and 2.
 
 ## Mentions
-
-
 
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

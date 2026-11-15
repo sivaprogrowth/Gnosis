@@ -2,7 +2,7 @@
 type: company
 title: "Facebook"
 tags: [ingested]
-sources: ["do-things-that-dont-scale"]
+sources: ["do-things-that-dont-scale", "economist-investors-generative-ai-chatgpt-boom-2023"]
 ---
 
 # Facebook
@@ -16,18 +16,6 @@ Frequently cited across startup strategy, mimetic desire, AI super-app, and soci
 Frequently cited across startup strategy, mimetic desire, AI super-app, and social platform topics already in the wiki. Multiple existing pages would naturally reference it.
 
 ## Mentions
-
-
-
-
-
-
-
-
-
-
-
-
 
 - [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]

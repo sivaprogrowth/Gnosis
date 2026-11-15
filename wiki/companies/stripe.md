@@ -2,7 +2,7 @@
 type: company
 title: "Stripe"
 tags: [ingested]
-sources: ["do-things-that-dont-scale"]
+sources: ["do-things-that-dont-scale", "rise-of-million-dollar-one-person-companies"]
 ---
 
 # Stripe
@@ -16,10 +16,6 @@ Well-known company tracked in the wiki's company collection; the Collison instal
 Well-known company tracked in the wiki's company collection; the Collison installation example will be cited from multiple startup/growth-related pages. Similar companies (Airbnb, Facebook) are prominent enough to warrant tracking.
 
 ## Mentions
-
-
-
-
 
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[rise-of-million-dollar-one-person-companies|The Rise of Million-Dollar Companies With Just One Employee]]

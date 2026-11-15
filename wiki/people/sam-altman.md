@@ -2,7 +2,7 @@
 type: person
 title: "Sam Altman"
 tags: [ingested]
-sources: ["do-things-that-dont-scale"]
+sources: ["do-things-that-dont-scale", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Sam Altman
@@ -16,7 +16,6 @@ CEO of OpenAI (already a major wiki company page). Multiple existing pages (Open
 CEO of OpenAI (already a major wiki company page). Multiple existing pages (OpenAI, GPT-5, ChatGPT, agentic AI, etc.) would naturally cite him. He is clearly a tracked figure in this wiki.
 
 ## Mentions
-
 
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

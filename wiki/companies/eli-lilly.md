@@ -2,7 +2,7 @@
 type: company
 title: "Eli Lilly"
 tags: [ingested]
-sources: ["glp-1-agonists-obesity-drug-revolution"]
+sources: ["glp-1-agonists-obesity-drug-revolution", "novo-nordisk-obesity-drug-lessons"]
 ---
 
 # Eli Lilly
@@ -16,7 +16,6 @@ Second major player in the GLP-1 market (tirzepatide/Mounjaro); UBS called it po
 Second major player in the GLP-1 market (tirzepatide/Mounjaro); UBS called it potentially the 'biggest drug ever.' Would be cross-cited by tirzepatide and GLP-1 agonist pages, mirroring how Novo Nordisk gets its own page.
 
 ## Mentions
-
 
 - [[novo-nordisk-obesity-drug-lessons|Lessons from Novo Nordisk on the stampede for obesity drugs]]
 - [[glp-1-agonists-obesity-drug-revolution|A new class of drugs for weight loss could end obesity]]

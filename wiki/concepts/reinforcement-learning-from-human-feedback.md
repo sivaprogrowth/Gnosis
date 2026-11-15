@@ -2,7 +2,7 @@
 type: concept
 title: "Reinforcement Learning from Human Feedback"
 tags: [ingested]
-sources: ["chatbot-sycophancy-nguyen-wsj-2026"]
+sources: ["chatbot-sycophancy-nguyen-wsj-2026", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Reinforcement Learning from Human Feedback
@@ -18,3 +18,4 @@ RLHF is the core training mechanism behind sycophancy, post-training alignment, 
 ## Mentions
 
 - [[chatbot-sycophancy-nguyen-wsj-2026|Why I Told My Chatbot to Stop Kissing Up to Me]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

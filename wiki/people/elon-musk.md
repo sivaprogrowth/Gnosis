@@ -2,7 +2,7 @@
 type: person
 title: "Elon Musk"
 tags: [ingested]
-sources: ["elon-musk-tesla-body-new-yorker-satire"]
+sources: ["elon-musk-tesla-body-new-yorker-satire", "economist-investors-generative-ai-chatgpt-boom-2023"]
 ---
 
 # Elon Musk
@@ -18,3 +18,4 @@ Already has a wiki page at concept/people/elon-musk. Confirm promote to that exi
 ## Mentions
 
 - [[elon-musk-tesla-body-new-yorker-satire|Elon Musk’s New Frontier: Your Body | The New Yorker]]
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

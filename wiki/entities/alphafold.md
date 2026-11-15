@@ -2,7 +2,7 @@
 type: entity
 title: "AlphaFold"
 tags: [ingested]
-sources: ["chatgpt-heralds-an-intellectual-revolution"]
+sources: ["chatgpt-heralds-an-intellectual-revolution", "fast-company-most-innovative-ai-companies-2023"]
 ---
 
 # AlphaFold
@@ -18,3 +18,4 @@ Named landmark AI tool (by Google DeepMind) representing a concrete AI breakthro
 ## Mentions
 
 - [[chatgpt-heralds-an-intellectual-revolution|Opinion | ChatGPT Heralds an Intellectual Revolution]]
+- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

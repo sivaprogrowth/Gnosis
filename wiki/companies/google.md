@@ -2,7 +2,7 @@
 type: company
 title: "Google"
 tags: [ingested]
-sources: ["how-to-avoid-bad-hires"]
+sources: ["how-to-avoid-bad-hires", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Google
@@ -17,6 +17,6 @@ Google already has an existing wiki page (concept/companies/google). This is a p
 
 ## Mentions
 
-
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[how-to-avoid-bad-hires|How to avoid bad hires]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

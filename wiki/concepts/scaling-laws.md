@@ -2,7 +2,7 @@
 type: concept
 title: "Scaling Laws"
 tags: [ingested]
-sources: ["commanding-heights-ai-economics-thesis"]
+sources: ["commanding-heights-ai-economics-thesis", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Scaling Laws
@@ -18,3 +18,4 @@ A core, well-defined empirical concept in AI that drives the logic of compute sc
 ## Mentions
 
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

@@ -2,7 +2,7 @@
 type: concept
 title: "open-weight models"
 tags: [ingested]
-sources: ["ai-models-values-world-values-survey"]
+sources: ["ai-models-values-world-values-survey", "economist-investors-generative-ai-chatgpt-boom-2023", "americas-ai-labs-threat-cheap-chinese-rivals"]
 ---
 
 # open-weight models
@@ -17,6 +17,7 @@ A well-defined technical concept that is central to discussions of DeepSeek, Qwe
 
 ## Mentions
 
-
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

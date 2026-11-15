@@ -2,7 +2,7 @@
 type: person
 title: "Yann LeCun"
 tags: [ingested]
-sources: ["ai-boom-google-microsoft-power-concentration"]
+sources: ["ai-boom-google-microsoft-power-concentration", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Yann LeCun
@@ -18,3 +18,4 @@ A prominent, named AI scientist (Meta's chief AI scientist) who is a well-known 
 ## Mentions
 
 - [[ai-boom-google-microsoft-power-concentration|The AI Boom That Could Make Google and Microsoft Even More Powerful]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

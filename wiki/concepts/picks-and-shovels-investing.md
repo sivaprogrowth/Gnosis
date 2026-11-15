@@ -2,7 +2,7 @@
 type: concept
 title: "Picks-and-shovels investing"
 tags: [ingested]
-sources: ["ai-wealth-reshaping-south-korea"]
+sources: ["ai-wealth-reshaping-south-korea", "economist-investors-generative-ai-chatgpt-boom-2023"]
 ---
 
 # Picks-and-shovels investing
@@ -18,3 +18,4 @@ A named investment framework/metaphor with broad applicability across the wiki's
 ## Mentions
 
 - [[ai-wealth-reshaping-south-korea|How AI-fuelled wealth is reshaping South Korea]]
+- [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

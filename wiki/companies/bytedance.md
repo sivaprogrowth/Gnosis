@@ -2,7 +2,7 @@
 type: company
 title: ByteDance
 tags: [ingested]
-sources: [ai-super-apps-remaking-chinas-internet]
+sources: ["americas-ai-labs-threat-cheap-chinese-rivals"]
 ---
 
 # ByteDance
@@ -17,12 +17,6 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 
 ## Mentions
 
-
-
-
-
-
-
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-shein-came-crashing-down|How Shein came crashing down]]
@@ -30,3 +24,4 @@ Major platform company building agentic super-apps; adjacent to existing pages o
 - [[future-made-in-china-new-yorker|The Future, Made in China | The New Yorker]]
 - [[wsj-tiktok-financial-advice-breakdown-2026|A Breakdown of the Financial Advice That’s Flying All Over TikTok]]
 - [[ai-super-apps-remaking-chinas-internet|AI super-apps are remaking China’s internet]]
+- [[americas-ai-labs-threat-cheap-chinese-rivals|America’s AI labs are under threat from cheap Chinese rivals]]

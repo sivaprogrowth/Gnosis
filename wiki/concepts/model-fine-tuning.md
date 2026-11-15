@@ -2,7 +2,7 @@
 type: concept
 title: "Model fine-tuning"
 tags: [ingested]
-sources: ["small-language-models-do-the-real-work"]
+sources: ["small-language-models-do-the-real-work", "economist-ai-labs-race-heats-up-2023"]
 ---
 
 # Model fine-tuning
@@ -18,3 +18,4 @@ Well-defined, foundational ML technique that would be cited by small-language-mo
 ## Mentions
 
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
+- [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

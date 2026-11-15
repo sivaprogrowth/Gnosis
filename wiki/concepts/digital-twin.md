@@ -2,7 +2,7 @@
 type: concept
 title: "digital twin"
 tags: [ingested]
-sources: ["wsj-beyond-smartphone-mwc-2023"]
+sources: ["wsj-beyond-smartphone-mwc-2023", "fast-company-most-innovative-ai-companies-2023"]
 ---
 
 # digital twin
@@ -18,3 +18,4 @@ Already has a page: concept/concepts/digital-twin. This is a promote in the sens
 ## Mentions
 
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]
+- [[fast-company-most-innovative-ai-companies-2023|The 10 most innovative companies in artificial intelligence of 2023]]

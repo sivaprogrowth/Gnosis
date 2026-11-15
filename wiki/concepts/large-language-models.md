@@ -2,7 +2,7 @@
 type: concept
 title: "Large Language Models"
 tags: [ingested]
-sources: ["economist-ai-change-computing-culture-history"]
+sources: ["economist-ai-change-computing-culture-history", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Large Language Models
@@ -18,3 +18,4 @@ Central to dozens of existing pages (foundation-models, scaling-laws, stochastic
 ## Mentions
 
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

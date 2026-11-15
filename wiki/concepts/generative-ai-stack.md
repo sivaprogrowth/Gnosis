@@ -2,7 +2,7 @@
 type: concept
 title: "Generative AI stack"
 tags: [ingested]
-sources: ["who-owns-the-generative-ai-platform"]
+sources: ["who-owns-the-generative-ai-platform", "economist-large-creative-ai-models-transform-lives-labour"]
 ---
 
 # Generative AI stack
@@ -18,3 +18,4 @@ A well-defined analytical framework (apps/models/infra three-layer model) that m
 ## Mentions
 
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]
+- [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

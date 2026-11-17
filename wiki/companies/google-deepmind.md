@@ -17,6 +17,8 @@ A major AI lab distinct from Google (which has its own page). Multiple existing 
 
 ## Mentions
 
+
+- [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[ramaswamy-ai-buy-compute-sell-intelligence-token|sridhar (@RamaswmySridhar) on X]]
 - [[humanity-not-ready-intelligence-explosion-marshall|Humanity isn’t ready for the coming intelligence explosion]]

@@ -17,4 +17,6 @@ Distinct from but adjacent to existing concept/concepts/ai-safety and concept/co
 
 ## Mentions
 
+
+- [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]
 - [[how-to-worry-wisely-about-artificial-intelligence|How to worry wisely about artificial intelligence]]

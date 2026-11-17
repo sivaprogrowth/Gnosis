@@ -17,6 +17,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 ## Mentions
 
+
+- [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]

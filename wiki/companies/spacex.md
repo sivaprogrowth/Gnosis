@@ -22,6 +22,8 @@ Major tech/space company with multiple sub-topics (Starlink, Starship, orbital c
 
 
 
+
+- [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[elon-musk-tesla-body-new-yorker-satire|Elon Musk’s New Frontier: Your Body | The New Yorker]]
 - [[commanding-heights-ai-economics-thesis|The Commanding Heights]]
 - [[nvidia-driving-ai-boom-economist-2026|Nvidia is driving the AI boom. Good]]

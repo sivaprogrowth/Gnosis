@@ -17,4 +17,6 @@ Already has a page at concept/concepts/open-source-ai. This source is a primary 
 
 ## Mentions
 
+
+- [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[leaked-google-memo-we-have-no-moat|What does a leaked Google memo reveal about the future of AI?]]

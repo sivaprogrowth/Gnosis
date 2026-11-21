@@ -20,6 +20,8 @@ Already has a page at concept/companies/anthropic.
 
 
 
+
+- [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]

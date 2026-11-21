@@ -17,6 +17,8 @@ Already has an existing wiki page (concept/companies/andreessen-horowitz). Quote
 
 ## Mentions
 
+
+- [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

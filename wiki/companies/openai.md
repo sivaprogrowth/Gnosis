@@ -21,6 +21,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 
 
+
+- [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]

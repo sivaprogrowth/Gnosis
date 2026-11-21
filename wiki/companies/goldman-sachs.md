@@ -19,6 +19,8 @@ Already has an existing wiki page (concept/companies/goldman-sachs). Cited for A
 
 
 
+
+- [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[barbell-economy-walmart-tiffany-consumer-bifurcation|The business trend that unites Walmart and Tiffany & Co]]
 - [[is-chinese-power-about-to-peak|Is Chinese power about to peak?]]
 - [[job-safety-from-ai-economist-2023|Your job is (probably) safe from artificial intelligence]]

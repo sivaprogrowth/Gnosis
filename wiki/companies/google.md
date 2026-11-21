@@ -17,6 +17,8 @@ Google already has an existing wiki page (concept/companies/google). This is a p
 
 ## Mentions
 
+
+- [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[how-to-avoid-bad-hires|How to avoid bad hires]]
 - [[economist-ai-labs-race-heats-up-2023|The race of the AI labs heats up]]

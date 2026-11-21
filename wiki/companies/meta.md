@@ -19,6 +19,8 @@ Meta already has a wiki page (concept/companies/meta). This candidate is effecti
 
 
 
+
+- [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[digital-2022-india|Digital 2022: India]]

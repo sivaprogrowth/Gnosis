@@ -18,6 +18,8 @@ Already has a page at concept/companies/anthropic.
 ## Mentions
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

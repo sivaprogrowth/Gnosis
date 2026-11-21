@@ -17,4 +17,6 @@ AI-native coding company with autonomous 'Droids'; doubled revenue MoM for six s
 
 ## Mentions
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]

@@ -20,6 +20,8 @@ Notable AI-native customer-service startup co-founded by Bret Taylor (OpenAI cha
 
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[ai-adoption-coding-vs-other-industries|Will anybody use AI as much as coders do?]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

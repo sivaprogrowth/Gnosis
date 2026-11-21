@@ -17,6 +17,8 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 
 ## Mentions
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

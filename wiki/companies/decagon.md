@@ -18,5 +18,7 @@ Concrete Landgrab case study with quantified metrics (0→8-figure ARR in 18 mon
 ## Mentions
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]
 - [[lighthouse-or-landgrab-ai-sales-strategy|Lighthouse or Landgrab? How to Pick Your AI Sales Strategy]]

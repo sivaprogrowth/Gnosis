@@ -30,6 +30,8 @@ Major incumbent referenced in the context of SaaS disruption, Agentforce (which 
 
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[why-i-started-tigereye|Why I Started TigerEye]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[2026-state-of-enterprise-ai-menlo-ventures|2026: The State of Enterprise AI]]

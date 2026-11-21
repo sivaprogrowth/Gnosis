@@ -17,4 +17,6 @@ Already has a page at concept/companies/hugging-face.
 
 ## Mentions
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[who-owns-the-generative-ai-platform|Who Owns the Generative AI Platform?]]

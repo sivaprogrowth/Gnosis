@@ -18,6 +18,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 ## Mentions
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[ft-ai-shift-supercooperative-ai|The AI Shift: How can we create ‘supercooperative AI’?]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]

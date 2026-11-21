@@ -20,6 +20,8 @@ Shopify is a major, well-known e-commerce platform cited here for substantive ni
 
 
 
+
+- [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]
 - [[ai-native-companies-tiny-staffs-fewer-bosses|These AI-Native Companies Have Tiny Staffs and Fewer Bosses]]

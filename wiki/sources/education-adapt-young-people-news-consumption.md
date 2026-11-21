@@ -4,7 +4,7 @@ source_type: article
 title: "Education must adapt to how the young now get their news"
 authors: ["Sam Freedman"]
 published: 2026-11-16
-source_url: https://www.economist.com/weeklyedition/2026-11-21
+source_url: https://www.economist.com/by-invitation/2026/11/16/education-must-adapt-to-how-the-young-now-get-their-news
 accessed: 2026-11-21
 tags: [media-literacy, education, social-media, misinformation, polarisation]
 ---

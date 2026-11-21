@@ -17,5 +17,7 @@ Central to dozens of existing pages (foundation-models, scaling-laws, stochastic
 
 ## Mentions
 
+
+- [[ai-is-swallowing-maths-is-economics-next|AI is swallowing maths. Is economics next?]]
 - [[economist-ai-change-computing-culture-history|How AI could change computing, culture and the course of history]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

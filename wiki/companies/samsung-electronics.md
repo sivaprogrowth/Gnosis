@@ -21,6 +21,8 @@ A globally tracked semiconductor and tech giant already adjacent to multiple wik
 
 
 
+
+- [[transsion-global-south-smartphone-ai-bet|The global south’s smartphone king goes big on AI]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

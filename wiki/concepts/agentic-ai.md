@@ -17,4 +17,6 @@ Already has a page at concept/concepts/agentic-ai. The 'agentic economy' discuss
 
 ## Mentions
 
+
+- [[transsion-global-south-smartphone-ai-bet|The global south’s smartphone king goes big on AI]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

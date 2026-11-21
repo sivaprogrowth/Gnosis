@@ -40,6 +40,8 @@ Major investor in Anthropic that discovered the jailbreak triggering government 
 
 
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[evolution-of-platforms-enshittification|The evolution of platforms has spelt the descent of online tools]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]

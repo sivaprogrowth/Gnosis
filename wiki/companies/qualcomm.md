@@ -19,6 +19,8 @@ Multiple existing pages discuss AI semiconductor supply chain, on-device AI, and
 
 
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[nvidia-central-bank-of-ai|Nvidia is the central bank of AI]]
 - [[how-jensen-huang-became-ais-taylor-swift|How Jensen Huang became AI’s Taylor Swift]]
 - [[wsj-beyond-smartphone-mwc-2023|The New Tech That Will Take Us Beyond the Smartphone. Maybe.]]

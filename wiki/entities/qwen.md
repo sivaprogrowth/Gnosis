@@ -17,4 +17,6 @@ Already has a wiki page (entity/entities/qwen). Promoting to confirm it earns it
 
 ## Mentions
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]

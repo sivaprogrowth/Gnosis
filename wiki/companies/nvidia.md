@@ -18,6 +18,8 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 ## Mentions
 
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

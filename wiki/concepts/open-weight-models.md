@@ -17,6 +17,8 @@ A well-defined technical concept that is central to discussions of DeepSeek, Qwe
 
 ## Mentions
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[ai-models-values-world-values-survey|AI models’ values are very different from most people’s]]
 - [[economist-investors-generative-ai-chatgpt-boom-2023|Investors are going nuts for ChatGPT-ish artificial intelligence]]

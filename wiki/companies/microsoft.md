@@ -26,6 +26,8 @@ Already has a page at concept/companies/microsoft.
 
 
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[economist-large-creative-ai-models-transform-lives-labour|Large, creative AI models will transform lives and labour markets]]

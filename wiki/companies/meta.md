@@ -18,5 +18,7 @@ Meta already has a wiki page (concept/companies/meta). This candidate is effecti
 ## Mentions
 
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[digital-2022-india|Digital 2022: India]]

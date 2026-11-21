@@ -17,4 +17,6 @@ Open-source model whose weights are central to this article's argument. Multiple
 
 ## Mentions
 
+
+- [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

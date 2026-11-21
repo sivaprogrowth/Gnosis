@@ -17,4 +17,6 @@ A canonical management/governance concept explicitly framed in the article as a 
 
 ## Mentions
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[asia-family-business-succession-tata-sons|Asia’s Businesses Struggle to Shake Off the Sway of Their Founding Families]]

@@ -19,6 +19,8 @@ Classic startup case study cited across many startup, growth, and AI-native serv
 
 
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[how-to-earn-a-billion-dollars|How to Earn a Billion Dollars]]
 - [[small-language-models-do-the-real-work|Large Language Models Get All the Hype, but Small Models Do the Real Work]]
 - [[do-things-that-dont-scale|Do Things that Don't Scale]]

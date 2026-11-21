@@ -18,5 +18,7 @@ Major company heavily tracked across the wiki ecosystem (mentioned in multiple s
 ## Mentions
 
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[transsion-global-south-smartphone-ai-bet|The global south’s smartphone king goes big on AI]]
 - [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]

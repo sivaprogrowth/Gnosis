@@ -17,4 +17,6 @@ Already has an existing wiki page (concept/people/jensen-huang). CEO of Nvidia, 
 
 ## Mentions
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[economist-nvidia-ai-boom-dominance-2023|The AI boom has turbocharged Nvidia’s fortunes. Can it hold its position?]]

@@ -19,6 +19,8 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 
 
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

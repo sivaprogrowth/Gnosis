@@ -17,4 +17,6 @@ Already has an existing wiki page (concept/people/paul-graham). Confirm promotio
 
 ## Mentions
 
+
+- [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]
 - [[how-universities-should-prepare-founders|How Universities Should Prepare Founders]]

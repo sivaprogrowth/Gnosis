@@ -25,6 +25,7 @@ import { waitUntil } from "@vercel/functions"
 import { verifySessionToken } from "../_auth/auth.js"
 import { supabase } from "../_auth/supabase.js"
 import { resolvePublicOrigin } from "../_lib/publicOrigin.js"
+import { recordCron } from "../_loop/state.js"
 import {
   processClippingsCron,
   processReaderCron,
@@ -100,12 +101,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const clipWave = Math.max(0, Number(clipWaveRaw) || 0)
     const MAX_CLIP_WAVES = 50 // backstop; a real backlog drains long before this
     waitUntil(
-      processClippingsCron()
+      recordCron("ingest-clippings", "started", { wave: clipWave })
+        .then(() => processClippingsCron())
         .then(async (summary) => {
           console.log(
             `[cron] ingest-clippings wave ${clipWave} done:`,
             JSON.stringify(summary),
           )
+          await recordCron("ingest-clippings", "done", { wave: clipWave, ...summary })
           // Self-chain only if this wave made progress AND work remains.
           if (summary.remaining > 0 && summary.processed > 0 && clipWave < MAX_CLIP_WAVES) {
             console.log(
@@ -118,12 +121,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             )
           }
         })
-        .catch((err) =>
+        .catch(async (err) => {
           console.error(
             "[cron] ingest-clippings failed:",
             err instanceof Error ? err.message : err,
-          ),
-        ),
+          )
+          await recordCron("ingest-clippings", "failed", {
+            wave: clipWave,
+            error: (err instanceof Error ? err.message : String(err)).slice(0, 500),
+          })
+        }),
     )
     res.status(202).json({
       started: true,
@@ -149,9 +156,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const wave = Math.max(0, Number(waveRaw) || 0)
     const MAX_WAVES = 50 // backstop; a real burst empties long before this
     waitUntil(
-      processReaderCron()
+      recordCron("ingest-reader", "started", { wave })
+        .then(() => processReaderCron())
         .then(async (summary) => {
           console.log(`[cron] ingest-reader wave ${wave} done:`, JSON.stringify(summary))
+          await recordCron("ingest-reader", "done", { wave, ...summary })
           // Self-chain only if this wave made progress AND work remains.
           if (summary.remaining > 0 && summary.processed > 0 && wave < MAX_WAVES) {
             console.log(
@@ -164,9 +173,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             )
           }
         })
-        .catch((err) =>
-          console.error("[cron] ingest-reader failed:", err instanceof Error ? err.message : err),
-        ),
+        .catch(async (err) => {
+          console.error("[cron] ingest-reader failed:", err instanceof Error ? err.message : err)
+          await recordCron("ingest-reader", "failed", {
+            wave,
+            error: (err instanceof Error ? err.message : String(err)).slice(0, 500),
+          })
+        }),
     )
     res.status(202).json({ started: true, wave, message: "Reader cron started in background." })
     return

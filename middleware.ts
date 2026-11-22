@@ -75,7 +75,9 @@ export default async function middleware(req: Request): Promise<Response> {
   //     the edge: valid → pass through to the handler; invalid → 401 directly
   //     (returning fetch(req) for a request the handler would 401 trips the
   //     edge runtime, so we reject here instead of re-fetching).
-  if (pathname === "/api/ingest/from-life" || pathname === "/api/search") {
+  //     /api/status is the read-only health and cost report pg-life's watchdog
+  //     reads each morning; same secret, same rule.
+  if (pathname === "/api/ingest/from-life" || pathname === "/api/search" || pathname === "/api/status") {
     const auth = req.headers.get("authorization") || ""
     const m = auth.match(/^Bearer\s+(.+)$/i)
     const expected = (process.env.LIFE_SYSTEM_SECRET || "").trim()

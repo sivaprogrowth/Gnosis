@@ -2,8 +2,10 @@
  * Edge Middleware — gates the entire gnosis-main site behind a session cookie.
  *
  * Runs at Vercel's edge before any static asset or API function. Unauthenticated
- * HTML requests are redirected to /login. Static-asset and login-page requests
- * pass through (so the login form's CSS/JS can load). API auth routes also pass
+ * HTML requests are redirected to /login. Presentation assets (CSS, JS, fonts,
+ * images) and the login page pass through so the login form can load; data
+ * files (.json, .xml, .txt) need a session, because the content index and the
+ * feed carry the text of every page. API auth routes also pass
  * through (otherwise the user couldn't log in).
  *
  * Session verification uses Web Crypto API (the only crypto available on Edge).
@@ -91,16 +93,22 @@ export default async function middleware(req: Request): Promise<Response> {
     return fetch(req)
   }
 
-  // 3. Static assets — anything with a file extension other than .html.
-  //    The login page references CSS/JS/fonts/images by hash; we let those
-  //    through so the unauthenticated login UI renders correctly.
-  if (/\.(css|js|mjs|map|json|xml|txt|ico|png|jpg|jpeg|gif|svg|webp|avif|woff|woff2|ttf|otf|eot)$/i.test(pathname)) {
+  // 3. Presentation assets — CSS, scripts, fonts and images. The login page
+  //    references these by hash; we let them through so the unauthenticated
+  //    login UI renders correctly. They carry no wiki content.
+  //
+  //    DATA files (.json, .xml, .txt) are deliberately NOT here. Until
+  //    2026-11-22 they were, and /static/contentIndex.json (the full text of
+  //    every page, ~10 MB), /index.xml (the RSS feed, with page text) and
+  //    /sitemap.xml (every page slug) were readable by anyone without logging
+  //    in. They now fall through to the session check like any page.
+  if (/\.(css|js|mjs|map|ico|png|jpg|jpeg|gif|svg|webp|avif|woff|woff2|ttf|otf|eot)$/i.test(pathname)) {
     return fetch(req)
   }
 
-  // 4. Robots / sitemap — public crawler endpoints stay public so search engines
-  //    can at least see the site exists (they'll see the redirect, but not 401).
-  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
+  // 4. robots.txt stays public: it names no page. The sitemap does, so it is
+  //    behind the login with the rest.
+  if (pathname === "/robots.txt") {
     return fetch(req)
   }
 
@@ -115,6 +123,25 @@ export default async function middleware(req: Request): Promise<Response> {
   }
 
   // No / invalid session.
+
+  // The login page is a Quartz page, and Quartz's page script fetches the
+  // content index on every load (search, explorer, graph). Give a logged-out
+  // visitor an EMPTY index rather than a redirect to HTML, which the script
+  // would fail to parse: the login form keeps working and nothing is exposed.
+  if (pathname === "/static/contentIndex.json") {
+    return new Response("{}", {
+      status: 200,
+      headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+    })
+  }
+
+  // Any other data file: a clean 401, never the login page's HTML.
+  if (/\.(json|xml|txt)$/i.test(pathname)) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+    })
+  }
 
   // API requests (non-auth): return 401 JSON so fetch() callers see a clean error
   if (pathname.startsWith("/api/")) {

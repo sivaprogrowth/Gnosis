@@ -79,6 +79,20 @@ export const config = {
   maxDuration: 300,
 }
 
+/**
+ * Who may start a scheduled ingest: Vercel's cron (CRON_SECRET) or pg-life's
+ * scheduler (LIFE_SYSTEM_SECRET, the secret the two systems already share).
+ * pg-life is taking over the schedule (PL-42); both are accepted during the move.
+ * The follow-on waves re-send the same header, so a run started by either
+ * finishes the same way.
+ */
+export function isScheduler(authorization: string | string[] | undefined): boolean {
+  const got = Array.isArray(authorization) ? authorization[0] : authorization
+  if (!got) return false
+  const allowed = [process.env.CRON_SECRET, process.env.LIFE_SYSTEM_SECRET].filter((s): s is string => Boolean(s))
+  return allowed.some((secret) => got === `Bearer ${secret}`)
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET" && req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" })
@@ -92,8 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // waitUntil — sequential synth+commit per clipping takes 60-90s each, far
   // longer than Vercel middleware's ~25s invocation cap.
   if (req.method === "GET" && req.query.cron === "ingest-clippings") {
-    const expected = `Bearer ${process.env.CRON_SECRET || ""}`
-    if (!process.env.CRON_SECRET || req.headers.authorization !== expected) {
+    if (!isScheduler(req.headers.authorization)) {
       res.status(401).json({ error: "Unauthorized cron" })
       return
     }
@@ -114,7 +127,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             console.log(
               `[cron] ingest-clippings chaining wave ${clipWave + 1} (${summary.remaining} remaining)`,
             )
-            await chainNextWave(req, "ingest-clippings", clipWave + 1, expected)
+            await chainNextWave(req, "ingest-clippings", clipWave + 1, String(req.headers.authorization))
           } else if (summary.remaining > 0) {
             console.warn(
               `[cron] ingest-clippings stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${clipWave}) — next daily run will resume`,
@@ -147,8 +160,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // counter backstops runaway recursion (e.g. a doc that keeps failing without
   // shedding its trigger tag — though markReaderError should prevent that).
   if (req.method === "GET" && req.query.cron === "ingest-reader") {
-    const expected = `Bearer ${process.env.CRON_SECRET || ""}`
-    if (!process.env.CRON_SECRET || req.headers.authorization !== expected) {
+    if (!isScheduler(req.headers.authorization)) {
       res.status(401).json({ error: "Unauthorized cron" })
       return
     }
@@ -166,7 +178,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             console.log(
               `[cron] ingest-reader chaining wave ${wave + 1} (${summary.remaining} remaining)`,
             )
-            await chainNextWave(req, "ingest-reader", wave + 1, expected)
+            await chainNextWave(req, "ingest-reader", wave + 1, String(req.headers.authorization))
           } else if (summary.remaining > 0) {
             console.warn(
               `[cron] ingest-reader stopping with ${summary.remaining} remaining (processed=${summary.processed}, wave=${wave}) — next hourly run will resume`,

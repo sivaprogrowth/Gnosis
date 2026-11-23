@@ -1,5 +1,12 @@
 import { supabase } from "../_auth/supabase.js"
 
+/**
+ * The table Gnosis logs model costs to. "ai_usage" in its own database. When
+ * Gnosis moves into pg-life's database, whose ai_usage is pg-life's own, set
+ * GNOSIS_AI_USAGE_TABLE=gnosis_ai_usage together with the new database settings.
+ */
+export const AI_USAGE_TABLE = process.env.GNOSIS_AI_USAGE_TABLE || "ai_usage"
+
 // Per-token USD rates by model family (input, output). Cache reads bill at
 // 0.1x input; cache writes (5-minute TTL) at 1.25x input.
 function rates(model: string): { in: number; out: number } {
@@ -44,7 +51,7 @@ export async function logAiUsage(callSite: string, model: string, usage: unknown
   const cost = estimateCostUsd(model, usage)
   console.log(`[ai_usage] ${callSite} ${model} in=${input} out=${output} cost=$${cost.toFixed(6)}`)
   try {
-    const { error } = await supabase.from("ai_usage").insert({
+    const { error } = await supabase.from(AI_USAGE_TABLE).insert({
       call_site: callSite,
       model,
       input_tokens: input,

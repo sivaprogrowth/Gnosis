@@ -15,6 +15,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import { AI_USAGE_TABLE } from "./_lib/aiUsage.js"
 import { supabase } from "./_auth/supabase.js"
 
 export const config = { maxDuration: 30 }
@@ -64,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     supabase.from("gnosis_ingest_jobs").select(jobCols).gte("updated_at", since).order("updated_at", { ascending: false }).limit(500),
     supabase.from("gnosis_ingest_jobs").select(jobCols).in("status", IN_FLIGHT).lt("updated_at", stuckBefore).order("updated_at", { ascending: true }).limit(50),
     supabase.from("gnosis_loop_runs").select("kind, period, filed_to, created_at").not("kind", "like", "cron:%").order("created_at", { ascending: false }).limit(60),
-    supabase.from("ai_usage").select("created_at, call_site, model, cost_usd").gte("created_at", costSince).limit(5000),
+    supabase.from(AI_USAGE_TABLE).select("created_at, call_site, model, cost_usd").gte("created_at", costSince).limit(5000),
   ])
   const failedRead = [beats, jobs, stuck, loop, usage].find((r) => r.error)
   if (failedRead?.error) {

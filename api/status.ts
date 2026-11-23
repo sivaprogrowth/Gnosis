@@ -20,7 +20,10 @@ import { supabase } from "./_auth/supabase.js"
 
 export const config = { maxDuration: 30 }
 
-/** The scheduled ingests in vercel.json, in UTC. Kept here so the reader knows what to expect. */
+/**
+ * The scheduled ingests, in UTC. Since PL-42 stage 3 pg-life's bot starts them at these times
+ * (10:30 and 20:30, 22:00 IST); Vercel no longer does. Kept here so the reader knows what to expect.
+ */
 const CRONS = [
   { name: "ingest-clippings", schedule: "0 5,15 * * *" },
   { name: "ingest-reader", schedule: "30 16 * * *" },

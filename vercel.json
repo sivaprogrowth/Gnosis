@@ -15,15 +15,5 @@
     "api/ingest/from-life.ts": {
       "maxDuration": 300
     }
-  },
-  "crons": [
-    {
-      "path": "/api/ingest/job?cron=ingest-clippings",
-      "schedule": "0 5,15 * * *"
-    },
-    {
-      "path": "/api/ingest/job?cron=ingest-reader",
-      "schedule": "30 16 * * *"
-    }
-  ]
+  }
 }

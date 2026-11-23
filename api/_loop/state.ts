@@ -45,3 +45,33 @@ export async function lastRun(
   }
   return data
 }
+
+/**
+ * Heartbeat for the two scheduled ingests (clippings, reader).
+ *
+ * A quiet day creates no gnosis_ingest_jobs rows, so the jobs table cannot tell
+ * "the cron ran and found nothing" from "the cron never ran". Each wave leaves a
+ * row here when it starts and another when it ends (with its summary, or the
+ * error). /api/status reads them, and pg-life's watchdog reports a scheduled run
+ * that is missing, failed or never finished.
+ *
+ * Never throws and never delays the ingest: a heartbeat that cannot be written
+ * is logged and dropped.
+ */
+export async function recordCron(
+  name: "ingest-clippings" | "ingest-reader",
+  phase: "started" | "done" | "failed",
+  detail: Record<string, unknown> = {},
+): Promise<void> {
+  try {
+    const { error } = await supabase.from("gnosis_loop_runs").insert({
+      kind: `cron:${name}`,
+      period: new Date().toISOString().slice(0, 10),
+      filed_to: null,
+      detail: { phase, ...detail },
+    })
+    if (error) console.warn(`[loop/state] could not record cron ${name} ${phase}:`, error.message)
+  } catch (err) {
+    console.warn(`[loop/state] could not record cron ${name} ${phase}:`, err instanceof Error ? err.message : err)
+  }
+}

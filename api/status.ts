@@ -21,12 +21,12 @@ import { supabase } from "./_auth/supabase.js"
 export const config = { maxDuration: 30 }
 
 /**
- * The scheduled ingests, in UTC. Since PL-42 stage 3 pg-life's bot starts them at these times
- * (10:30 and 20:30, 22:00 IST); Vercel no longer does. Kept here so the reader knows what to expect.
+ * The scheduled ingests, in UTC. Since PL-42 stage 3 pg-life's bot starts them (10:45 and 20:45,
+ * 22:15 IST); Vercel no longer does. Kept here so the reader knows what to expect.
  */
 const CRONS = [
-  { name: "ingest-clippings", schedule: "0 5,15 * * *" },
-  { name: "ingest-reader", schedule: "30 16 * * *" },
+  { name: "ingest-clippings", schedule: "15 5,15 * * *" },
+  { name: "ingest-reader", schedule: "45 16 * * *" },
 ] as const
 
 /** A job in one of these states for longer than STUCK_MINUTES has stalled. */

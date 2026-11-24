@@ -18,5 +18,7 @@ Perplexity already has an existing wiki page (entity/entities/perplexity), so th
 ## Mentions
 
 
+
+- [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[ramp-aeo-experiment-ai-hidden-offer|Ramp, a $60B company, hid a secret offer on its...]]
 - [[can-reddit-survive-in-the-ai-era|Can Reddit survive in the AI era?]]

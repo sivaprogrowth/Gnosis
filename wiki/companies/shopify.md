@@ -21,6 +21,8 @@ Shopify is a major, well-known e-commerce platform cited here for substantive ni
 
 
 
+
+- [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[levels-of-pmf-first-round|Levels of PMF | First Round]]

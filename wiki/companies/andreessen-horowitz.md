@@ -18,6 +18,8 @@ Already has an existing wiki page (concept/companies/andreessen-horowitz). Quote
 ## Mentions
 
 
+
+- [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[casado-wsj-generative-ai-will-change|A Venture Capitalist Imagines What Generative AI Will Change]]

@@ -18,6 +18,8 @@ Google already has an existing wiki page (concept/companies/google). This is a p
 ## Mentions
 
 
+
+- [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]
 - [[how-to-avoid-bad-hires|How to avoid bad hires]]

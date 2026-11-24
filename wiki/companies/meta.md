@@ -20,6 +20,8 @@ Meta already has a wiki page (concept/companies/meta). This candidate is effecti
 
 
 
+
+- [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[wave-of-personal-ai-gadgets-is-coming|A wave of personal AI gadgets is coming]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

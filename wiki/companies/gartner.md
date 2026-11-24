@@ -19,6 +19,8 @@ Multiple existing pages reference Hype Cycle and related forecasting concepts (c
 
 
 
+
+- [[beyond-answer-engine-ai-era-b2b-marketing-tensions|Beyond the Answer Engine: The AI-Era Tensions Reshaping B2B Marketing]]
 - [[technology-skills-every-employee-should-have|The Technology Skills Every Employee Should Have Today]]
 - [[marketing-operations-ai-governance|The Emerging Role of Marketing Operations in AI Governance]]
 - [[enterprises-winning-ai-agents-limiting-autonomy|Enterprises winning with AI agents are limiting how much the agents can do alone]]

@@ -20,6 +20,8 @@ Primary industry body for Indian IT; cited as the authoritative source for emplo
 
 
 
+
+- [[bangalore-deep-tech-powerhouse-economist-2026|The world’s back office aims to become a “deep-tech” powerhouse]]
 - [[ondc-india-open-commerce-network-opportunity|Unpacking the $80+ billion ONDC opportunity: India’s next startup catalyst]]
 - [[india-angel-tax-foreign-investor-extension-2023|Foreign investors are being snagged by India’s tax net]]
 - [[ai-eating-services-how-to-win-lightspeed|AI is Eating Services. Here's How to Win.]]

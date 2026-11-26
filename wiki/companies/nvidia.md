@@ -22,6 +22,8 @@ Already has an existing wiki page (concept/companies/nvidia). Identified as the 
 
 
 
+
+- [[bangalore-deep-tech-powerhouse-economist-2026|The world’s back office aims to become a “deep-tech” powerhouse]]
 - [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[founder-mode-to-bounder-mode-economist-2026|Just how central should one person be to an organisation?]]

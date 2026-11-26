@@ -19,6 +19,8 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 
 
+
+- [[bangalore-deep-tech-powerhouse-economist-2026|The world’s back office aims to become a “deep-tech” powerhouse]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]
 - [[china-generative-ai-capabilities-economist-2023|Just how good can China get at generative AI?]]

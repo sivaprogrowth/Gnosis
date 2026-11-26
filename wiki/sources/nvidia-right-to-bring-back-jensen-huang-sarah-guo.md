@@ -6,7 +6,7 @@ authors:
   - Sarah Guo
 published: "2026-11-25"
 source_url: "https://www.economist.com/by-invitation/2026/11/25/nvidia-was-right-to-bring-back-jensen-huang-writes-sarah-guo"
-accessed: "2026-11-25"
+accessed: "2026-11-26"
 tags:
   - nvidia
   - ai-hardware

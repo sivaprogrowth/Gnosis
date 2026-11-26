@@ -5,7 +5,7 @@ title: The world's back office aims to become a "deep-tech" powerhouse
 published: '2026-11-23'
 source_url: >-
   https://www.economist.com/asia/2026/11/23/the-worlds-back-office-aims-to-become-a-deep-tech-powerhouse
-accessed: '2026-11-23'
+accessed: '2026-11-26'
 tags:
   - deep-tech
   - india

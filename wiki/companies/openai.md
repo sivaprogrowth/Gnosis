@@ -23,6 +23,8 @@ Already has an existing wiki page (concept/companies/openai). Central to AI mark
 
 
 
+
+- [[nvidia-right-to-bring-back-jensen-huang-sarah-guo|Nvidia was right to bring back Jensen Huang, writes Sarah Guo]]
 - [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]

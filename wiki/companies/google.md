@@ -19,6 +19,8 @@ Google already has an existing wiki page (concept/companies/google). This is a p
 
 
 
+
+- [[nvidia-right-to-bring-back-jensen-huang-sarah-guo|Nvidia was right to bring back Jensen Huang, writes Sarah Guo]]
 - [[b2a-economy-how-agents-buy|Welcome to the B2A Economy: How Agents Buy]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[where-are-the-killer-apps-of-ai|Where Are the "Killer Apps" of AI?]]

@@ -20,6 +20,8 @@ Already has an existing wiki page (entity/entities/deepseek). Confirmed promote.
 
 
 
+
+- [[nvidia-right-to-bring-back-jensen-huang-sarah-guo|Nvidia was right to bring back Jensen Huang, writes Sarah Guo]]
 - [[bangalore-deep-tech-powerhouse-economist-2026|The world’s back office aims to become a “deep-tech” powerhouse]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]

@@ -21,6 +21,8 @@ Already has a page at concept/companies/anthropic.
 
 
 
+
+- [[nvidia-right-to-bring-back-jensen-huang-sarah-guo|Nvidia was right to bring back Jensen Huang, writes Sarah Guo]]
 - [[jensen-huang-fall-accelerationists|Jensen Huang’s fall is bad news for Silicon Valley’s accelerationists]]
 - [[anthropic-ipo-openai-competition-2026|Anthropic’s giant IPO puts the heat on OpenAI]]
 - [[ai-agents-disruption-companies-economist-2026|AI agents will cause disruption for companies]]

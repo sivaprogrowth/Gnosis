@@ -20,6 +20,8 @@ India's ruling party is central to multiple existing wiki topics: ai-geopolitics
 
 
 
+
+- [[india-is-on-the-move-tabarrok-2026|India is on the Move]]
 - [[india-states-compete-for-investment-economist-2023|How India’s states compete for investment]]
 - [[chandrababu-naidu-amaravati-techno-utopian-vision|Chandrababu Naidu’s techno-utopian vision for his Indian state]]
 - [[india-vs-indonesia-growth-race-2023|Which will grow faster: India or Indonesia?]]

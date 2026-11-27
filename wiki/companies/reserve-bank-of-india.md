@@ -17,4 +17,6 @@ India's central bank is a major institutional actor referenced across multiple e
 
 ## Mentions
 
+
+- [[india-is-on-the-move-tabarrok-2026|India is on the Move]]
 - [[india-banks-turnaround-profits-2023|India’s once-troubled banks are generating huge profits]]
